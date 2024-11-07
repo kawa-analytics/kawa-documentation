@@ -1,6 +1,9 @@
 KAWA Docker-compose installation
 ==============
 
+* TOC
+{:toc}
+
 This setup is ideal for small to medium deployments. 
 
 **It is the recommended way to get started with the KAWA platform.**
