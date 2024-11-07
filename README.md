@@ -45,19 +45,19 @@ of the platform.
 
 There are 7 data source types in KAWA:
 
-- USER FILES: To create data sources of that types, users can upload CSV files from the GUI.
+- __USER FILES__: To create data sources of that types, users can upload CSV files from the GUI.
 
-- EXTERNAL SYSTEMS: This type of data sources is created by connecting to an external system directely from the GUI: Database, API, etc... 
+- __EXTERNAL SYSTEMS__: This type of data sources is created by connecting to an external system directely from the GUI: Database, API, etc... 
 
-- KYWY (Python client): This corresponds to data sources created from the Python client using the data loader.
+- __KYWY__ (Python client): This corresponds to data sources created from the Python client using the data loader.
 
-- LIVE CONNECT: Live connections are created by querying tables or views that are stored in the main data warehouse, without ETL or synchronisation.
+- __LIVE CONNECT__: Live connections are created by querying tables or views that are stored in the main data warehouse, without ETL or synchronisation.
 
-- PYTHON ETL: This type of data sources is created by scheduling a Python script decorated by the `@kawa_tool` decorator.
+- __PYTHON ETL__: This type of data sources is created by scheduling a Python script decorated by the `@kawa_tool` decorator.
 
-- FROM SCRATCH: This allows users to create data sources directly in the GUI and edit the values manually, like Excel.
+- __FROM SCRATCH__: This allows users to create data sources directly in the GUI and edit the values manually, like Excel.
 
-- TRANSFORMATIONS: Those are created by materializing existing views into new warehouse tables.
+- __TRANSFORMATIONS__: Those are created by materializing existing views into new warehouse tables.
 
 
 Each user (_Regular users_) can only create data sources of a type that was not explicitely restricted by administrators.
@@ -81,24 +81,24 @@ A workspace can also be configured as public. If that is the case,  all the regi
 
 In each workspace, users benefit from a set of permissions:
 
-Workspace administrative permissions:
+__Workspace administrative permissions:__
 
 - Edit workspace settings
 - Manage workspace members
 
-Sharing permissions:
+__Sharing permissions:__
 
 - Share Dashboards
 - Share Sheets and Views
 - Share Applications 
 
-Data access permissions:
+__Data access permissions:__
 
 - Manage row level and column level security
 - Access restricted data and restricted data providers
 
 
-Section access:
+__Section access:__
 
 - Access and manage Python scripts
 - Acess and manage AI agents
@@ -114,6 +114,45 @@ benefit from ALL those permissions by default.
 
 
 
+### 1.3 Teams
+
+Within each workspace, users can be grouped in Teams. 
+Teams can be used to share entities with user groups, such as applications,
+dashboards, sheets and datasources.
+
+
+
+## 2 Sharing
+
+The main assets of KAWA can be shared across the workspace to which they belong.
+Sharing allows to setup publishing and colloaborating flows between members of the KAWA workspaces.
+
+
+### 2.1 Sharing Sheets and Views
+
+
+A Sheet contains multiple views, such as charts, grids and pivot tables.
+They also contain the business logic, expfressed through formulas and python scripts.
+
+A sheet can be shared in Read or Write mode with other users or teams of the workspace.
+
+Within a sheet, views can be shared or private. When a view is shared,
+it inherits the sharing mode (Read or Write) from its parent sheet.
+
+If a sheet is shared with TeamA for Write, then all the shared views within that sheet will be editable by members of TeamA.
+
+
+
+
+
+
+
+
+### 2.2 Sharing Dashboards
+
+### 2.3 Sharing Applications
+
+### 2.4 Sharing Data Sources
 
 
 
