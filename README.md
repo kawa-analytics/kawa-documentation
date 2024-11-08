@@ -6,10 +6,44 @@ KAWA User Manual
 
 
 
+
+
 ## 1 User management and permissions
 
 Users in KAWA have a global profile that applies across all workspaces and some worksapce
 related permissions.
+
+### 1.1 Authentication
+
+#### a. KAWA internal authentication
+
+KAWA can be configured to authenticate users without relying on
+SSO. In this mode, administrators can either choose to let people
+create accounts using email activation codes or to manage the user
+accounts themselves through KAWA's Python API.
+
+KAWA will store the user's unique identifiers (must be the email address
+if people are making use of email activation), their first and last names, and their securly hashed passwords.
+
+#### b. Using external IDPs and SSO
+
+When configured to work with SSO, KAWA will automatically create users
+in its database when new authenticated users will connect.
+
+__Open ID Connect__:
+KAWA is compatible with OIDC to authenticate users. It can be integrated with providers such as OKTA, AWS Cognito, Auth0, Azure Active Directory, etc...
+
+__Kerberos SSO__: Kawa can be configured to integrate with Kerberos to authenticate users.
+
+__HTTP Header-based Authentication__: Users can be authenticated with HTTP Header based authentication. In that setup, the user information will be extracted from the incoming HTTP requests.
+
+
+#### c. Using API Keys
+
+KAWA provides a mechanism to allow users to generate API keys in order to authenticate. This is mainly used to work with KAWA's Python API.
+
+
+
 
 ### 1.1 Application wide profile
 
