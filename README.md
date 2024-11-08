@@ -10,7 +10,7 @@ KAWA User Manual
 
 ## 1 User management and permissions
 
-Users in KAWA have a global profile that applies across all workspaces and some worksapce
+Users in KAWA have a global profile that applies across all workspaces and some workspace
 related permissions.
 
 ### 1.1 Authentication
@@ -23,7 +23,7 @@ create accounts using email activation codes or to manage the user
 accounts themselves through KAWA's Python API.
 
 KAWA will store the user's unique identifiers (must be the email address
-if people are making use of email activation), their first and last names, and their securly hashed passwords.
+if people are making use of email activation), their first and last names, and their secure password hashes.
 
 #### b. Using external IDPs and SSO
 
@@ -52,7 +52,7 @@ KAWA provides a mechanism to allow users to generate API keys in order to authen
 There are 3 global roles in KAWA.
 Each user has one role that is valid for the entire application.
 
-**ADMINISTATORS**
+**ADMINISTRATORS**
 
 Administrators can access all the admin functionalities of the platform. 
 They can create, delete, activate, deactivate users. They can also modify user passwords
@@ -62,7 +62,7 @@ Administrators can also access all workspaces and all assets in all of the works
 
 They can access all data bypassing all the row level and column level security.
 
-> **Warning:** Typically, very few admin acconts should be created. They should be reserved for IT, global support and maintenance.
+> **Warning:** Typically, very few admin accounts should be created. They should be reserved for IT, global support and maintenance.
 
 **SETUP ADMINISTRATORS**
 
@@ -72,31 +72,31 @@ of admin users. It can never be disabled, deleted or switched to another user ro
 
 **REGULAR USERS**
 
-Most of the users should have this role. It allows to benefit from all the features
+Most of the users should have this role. It allows them to benefit from all the features
 of the platform.
 
 #### b. The restricted data source types
 
 There are 7 data source types in KAWA:
 
-- __USER FILES__: To create data sources of that types, users can upload CSV files from the GUI.
+- __USER FILES__: To create data sources of that type, users can upload CSV files from the GUI.
 
-- __EXTERNAL SYSTEMS__: This type of data sources is created by connecting to an external system directely from the GUI: Database, API, etc... 
+- __EXTERNAL SYSTEMS__: This type of data source is created by connecting to an external system directly from the GUI: Database, API, etc... 
 
 - __KYWY__ (Python client): This corresponds to data sources created from the Python client using the data loader.
 
-- __LIVE CONNECT__: Live connections are created by querying tables or views that are stored in the main data warehouse, without ETL or synchronisation.
+- __LIVE CONNECT__: Live connections are created by querying tables or views that are stored in the main data warehouse, without ETL or synchronization.
 
-- __PYTHON ETL__: This type of data sources is created by scheduling a Python script decorated by the `@kawa_tool` decorator.
+- __PYTHON ETL__: This type of data source is created by scheduling a Python script decorated by the `@kawa_tool` decorator.
 
 - __FROM SCRATCH__: This allows users to create data sources directly in the GUI and edit the values manually, like Excel.
 
 - __TRANSFORMATIONS__: Those are created by materializing existing views into new warehouse tables.
 
 
-Each user (_Regular users_) can only create data sources of a type that was not explicitely restricted by administrators.
+Each user (_Regular users_) can only create data sources of a type that was not explicitly restricted by administrators.
 
-This allows administrators to control what can the various users can load into the platform.
+This allows administrators to control what the various users can load into the platform.
 
 #### c. The overall permissions
 
@@ -110,7 +110,7 @@ the permission: `GENERATIVE_AI` must be granted. This grant will apply to the en
 
 Each workspace functions as a separate isolated tenant. 
 
-In order to access a given workspace, a user must be explicitely invited in it. 
+In order to access a given workspace, a user must be explicitly invited in it. 
 A workspace can also be configured as public. If that is the case,  all the registered users in the platform can access it without restriction.
 
 In each workspace, users benefit from a set of permissions:
@@ -135,13 +135,13 @@ __Data access permissions:__
 __Section access:__
 
 - Access and manage Python scripts
-- Acess and manage AI agents
+- Access and manage AI agents
 
 
 
 
-> **Warning:** Administrative and data access persmissions give users ability to directly or indirectly access all data. Those permissions should
-be reserved to worksapce administrators only.
+> **Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should
+be reserved to workspace administrators only.
 
 > **Warning:** Application wide Administrators will
 benefit from ALL those permissions by default.
@@ -152,21 +152,21 @@ benefit from ALL those permissions by default.
 
 Within each workspace, users can be grouped in Teams. 
 Teams can be used to share entities with user groups, such as applications,
-dashboards, sheets and datasources.
+dashboards, sheets and data sources.
 
 
 
 ## 2 Sharing
 
 The main assets of KAWA can be shared across the workspace to which they belong.
-Sharing allows to setup publishing and colloaborating flows between members of the KAWA workspaces.
+Sharing allows to setup publishing and collaborating flows between members of the KAWA workspaces.
 
 
 ### 2.1 Sharing Sheets and Views
 
 
 A Sheet contains multiple views, such as charts, grids and pivot tables.
-They also contain the business logic, expfressed through formulas and python scripts.
+They also contain the business logic, expressed through formulas and python scripts.
 
 A sheet can be shared in Read or Write mode with other users or teams of the workspace.
 
