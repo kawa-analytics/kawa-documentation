@@ -144,9 +144,10 @@ __Workspace administrative permissions:__
 
 __Sharing permissions:__
 
-- Share Dashboards
+
 - Share Sheets and Views
-- Share Applications 
+- Share Data Sources 
+- Share Dashboards
 
 __Data access permissions:__
 
@@ -195,7 +196,34 @@ There are two types of teams:
 The main assets of KAWA can be shared across the workspace to which they belong.
 Sharing allows to set up publishing and collaborating flows between members of the KAWA workspaces.
 
+No information contained in Sheets or Dashboards is confidential, those are mere configuration objects. The security in KAWA only stems from two sources:
+
+- Workspace isolation
+- Data ROW and COLUMN level security.
+
+All entities consuming the data (Sheets, Dashboards, Python computations) are without exception subject to the configured RLS and CLS policies.
+
+
 > **⚡ Important:** Entities can not be shared across workspaces.
+
+
+__Sharing options__:
+
+Entities can be shared with particular teams or with all the users who can access the workspace.
+When sharing an entity:
+
+- Set a general access policy: 
+    - `RESTRICTED` means users of the workspace cannot access the entity
+    - `VIEWER` means that users of the workspace can access the entity but cannot publish any change on it
+     -`EDITOR` this level means that all the users of the workspace can publish changes on the entity
+
+- Set a per team access policy: The same levels apply.
+
+
+> **⚡ Important:** A user affected by more than one policy will benefit from the higher available access.
+If a user is targeted by `RESTRICTED`, `VIEWER` and `EDITOR` simultaneously (through different teams perhaps), they will have the `EDITOR` policy on that entity.
+
+
 
 
 ### 2.1 Sharing Sheets and Views
@@ -227,6 +255,7 @@ When views are shared, a control becomes available on them.
 It lets user rollback to the latest published version,
 publish a new version (if the user has write permission on the view) or save the view as a new object.
 
+
 #### b. Columns: Formulas, Links, Mappings, Python
 
 Within sheets, you can share your columns:
@@ -243,7 +272,6 @@ Sharing columns will make them available to all users accessing the sheet. They 
 
 ### 2.2 Sharing Data Sources
 
-
 #### a. Data Sources
 
 Data Sources can be shared like sheets, within the application.
@@ -252,12 +280,12 @@ Data Sources can be shared like sheets, within the application.
 > **⚡ Important:** If a data source is shared with some users, those users might __NOT__ see it if the row level security (RLS) configuration is set to __DENY ALL__. Make sure to either upload some specific RLS rules or set the general access to __ALLOW ALL__.
 
 
-When a datasource is shared with writing permissions,
+When a data source is shared with writing permissions,
 users can configure them and manually override data.
 
-In order for a user to be able to configure row level and column security on a datasources, two conditions must be met:
+In order for a user to be able to configure row level and column security on a data sources, two conditions must be met:
 
-- The user must be able to edit the datasource (shared with writing permissions)
+- The user must be able to edit the data source (shared with writing permissions)
 - The user must have the `Manage Data Source Security` flag enabled.
 
 
@@ -268,5 +296,27 @@ When a data provider is restricted, only users with the `Access restricted data 
 
 
 ![Restricted Provider](./readme-assets/restricted_provider.png)
+
+
+### 2.3 Sharing Dashboards
+
+Dashboards can be shared in the UI, in the same way as sheets and data sources.
+All the widgets of the dashboards follow the dashboard sharing policies and publications.
+
+It means that the PUBLISH and ROLLBACK buttons on the dashboard will affect all views of the dashboards automatically.
+
+![Publish Dashboard](./readme-assets/publish_dashboard.png)
+
+
+> **⚡ Important:** When sharing a dashboard, KAWA will ask the user to make that all the underlying sheets of the dashboard are shared too.
+
+
+When sheets are used in shared dashboards, modifying elements of their model (like formulas for example), will result in a warning for the users:
+
+![Publish Dashboard](./readme-assets/impact.png)
+
+
+## 3 Securing the Data
+
 
 
