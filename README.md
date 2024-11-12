@@ -24,6 +24,16 @@ accounts themselves through KAWA's Python API.
 KAWA will store the user's unique identifiers (must be the email address
 if people are making use of email activation), their first and last names, and their secure password hashes.
 
+
+When using KAWA internal authentication mechanism, the following page will be shown to users:
+
+![Login page](./readme-assets/login_page.png)
+
+> **⚡ Important:** Note that the "Register in KAWA Analytics" section can be turned off if you do not wish users to signup by themselves.
+
+> **⚡ Important:** If you want to allow users to sign up, you need to configure SMTP support
+
+
 #### b. Using external IDPs and SSO
 
 When configured to work with SSO, KAWA will automatically create users
@@ -139,6 +149,9 @@ __Section access:__
 - Access and manage AI agents
 
 
+Workspace permissions are handled directly on the GUI, from the settings section (cog icon at the bottom left)
+
+![Manage Workspace on the UI](./readme-assets/manage_workspace_permissions.png)
 
 
 > **⚡ Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should
