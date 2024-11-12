@@ -204,6 +204,9 @@ Sharing allows to setup publishing and collaborating flows between members of th
 A Sheet contains multiple views, such as charts, grids and pivot tables.
 They also contain the business logic, expressed through formulas and python scripts.
 
+
+#### a. Sheets and Views
+
 A sheet can be shared in Read or Write mode with other users or teams of the workspace.
 
 Within a sheet, views can be shared or private. When a view is shared,
@@ -211,18 +214,36 @@ it inherits the sharing mode (Read or Write) from its parent sheet.
 
 If a sheet is shared with TeamA for Write, then all the shared views within that sheet will be editable by members of TeamA.
 
+In order to configure sharing parameters for a sheet, use the icon at the top, next to the sheet name.
+
+![sheet](./readme-assets/share_sheet.png)
+
+> **⚡ Information:** You can also individually share views, either from the sheet sharing parameters, either from the option menu within each individual view.
+
+
+__Note about views:__
+
+When views are shared, a control becomes available on them.
+It lets user rllback to the latest published version,
+publish a new version (if the user has write permission on the view) or save the view as a new object.
 
 
 
+#### b. Columns: Formulas, Links, Mappings, Python
 
+Within sheets, you can share your columns:
+- Formulas,
+- Mappings,
+- Linked columns,
+- Python columns.
 
+This can be done through the sheet model, using the shared checkbox.
 
+Sharing columns will make them available to all users accessing the sheet. They will be able to use those shared columns within their own formulas, and add them to their views - grids, pivots and charts.
 
-### 2.2 Sharing Dashboards
+![sheet model](./readme-assets/sheet_model.png)
 
-### 2.3 Sharing Applications
-
-### 2.4 Sharing Data Sources
+### 2.2 Sharing Data Sources
 
 
 
