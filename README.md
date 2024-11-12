@@ -6,12 +6,11 @@ KAWA User Manual
 
 
 
-
-
 ## 1 User management and permissions
 
 Users in KAWA have a global profile that applies across all workspaces and some workspace
 related permissions.
+
 
 ### 1.1 Authentication
 
@@ -43,14 +42,14 @@ __HTTP Header-based Authentication__: Users can be authenticated with HTTP Heade
 KAWA provides a mechanism to allow users to generate API keys in order to authenticate. This is mainly used to work with KAWA's Python API.
 
 
-
-
-### 1.1 Application wide profile
+### 1.2 Application wide profile
 
 #### a. The user roles
 
 There are 3 global roles in KAWA.
 Each user has one role that is valid for the entire application.
+
+Each time a new user is added in KAWA, they will get the _REGULAR USER_ role.
 
 **ADMINISTRATORS**
 
@@ -62,7 +61,7 @@ Administrators can also access all workspaces and all assets in all of the works
 
 They can access all data bypassing all the row level and column level security.
 
-> **Warning:** Typically, very few admin accounts should be created. They should be reserved for IT, global support and maintenance.
+> **⚡ Warning:** Typically, very few admin accounts should be created. They should be reserved for IT, global support and maintenance.
 
 **SETUP ADMINISTRATORS**
 
@@ -98,6 +97,8 @@ Each user (_Regular users_) can only create data sources of a type that was not 
 
 This allows administrators to control what the various users can load into the platform.
 
+> **⚡ Important:** by default, users will not have access to the __LIVE CONNECT__ data type.
+
 #### c. The overall permissions
 
 Overall permissions are a list of features that individual users have access to.
@@ -106,7 +107,7 @@ the permission: `GENERATIVE_AI` must be granted. This grant will apply to the en
 
 
 
-### 1.2 Workspace permissions
+### 1.3 Workspace permissions
 
 Each workspace functions as a separate isolated tenant. 
 
@@ -140,15 +141,15 @@ __Section access:__
 
 
 
-> **Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should
+> **⚡ Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should
 be reserved to workspace administrators only.
 
-> **Warning:** Application wide Administrators will
+> **⚡ Warning:** Application wide Administrators will
 benefit from ALL those permissions by default.
 
 
 
-### 1.3 Teams
+### 1.4 Teams
 
 Within each workspace, users can be grouped in Teams. 
 Teams can be used to share entities with user groups, such as applications,
@@ -160,6 +161,8 @@ dashboards, sheets and data sources.
 
 The main assets of KAWA can be shared across the workspace to which they belong.
 Sharing allows to setup publishing and collaborating flows between members of the KAWA workspaces.
+
+> **⚡ Important:** Entities can not be shared across workspaces.
 
 
 ### 2.1 Sharing Sheets and Views
