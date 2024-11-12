@@ -114,7 +114,7 @@ Each user (_Regular users_) can only create data sources of a type that was not 
 This allows administrators to control what the various users can load into the platform.
 
 
-In the GUI, when users create a datasource, the types they are allowed to work with are shown here:
+In the GUI, when users create a data source, the types they are allowed to work with are shown here:
 
 ![Login page](./readme-assets/datasource_types.png)
 
@@ -187,13 +187,13 @@ Teams are configured on the GUI, from the settings menu.
 There are two types of teams:
 
 - Sharing teams: Those teams are mainly used to share objects between users.
-- Security teams: They work exactly as sharing team with an additional property: a `security name`. Those are used in row level security and column security configuration policies.
+- Security teams: They work exactly as sharing teams with an additional property: a `security name`. Those are used in row level security and column security configuration policies.
 
 
 ## 2 Sharing
 
 The main assets of KAWA can be shared across the workspace to which they belong.
-Sharing allows to setup publishing and collaborating flows between members of the KAWA workspaces.
+Sharing allows to set up publishing and collaborating flows between members of the KAWA workspaces.
 
 > **⚡ Important:** Entities can not be shared across workspaces.
 
@@ -224,10 +224,8 @@ In order to configure sharing parameters for a sheet, use the icon at the top, n
 __Note about views:__
 
 When views are shared, a control becomes available on them.
-It lets user rllback to the latest published version,
+It lets user rollback to the latest published version,
 publish a new version (if the user has write permission on the view) or save the view as a new object.
-
-
 
 #### b. Columns: Formulas, Links, Mappings, Python
 
@@ -246,11 +244,29 @@ Sharing columns will make them available to all users accessing the sheet. They 
 ### 2.2 Sharing Data Sources
 
 
+#### a. Data Sources
+
+Data Sources can be shared like sheets, within the application.
 
 
+> **⚡ Important:** If a data source is shared with some users, those users might __NOT__ see it if the row level security (RLS) configuration is set to __DENY ALL__. Make sure to either upload some specific RLS rules or set the general access to __ALLOW ALL__.
 
 
+When a datasource is shared with writing permissions,
+users can configure them and manually override data.
+
+In order for a user to be able to configure row level and column security on a datasources, two conditions must be met:
+
+- The user must be able to edit the datasource (shared with writing permissions)
+- The user must have the `Manage Data Source Security` flag enabled.
 
 
+#### b. Data Providers
+
+Data providers are databases or external APIs to which KAWA is connected to import data.
+When a data provider is restricted, only users with the `Access restricted data and restricted data providers` flag can access them to create new data sources.
+
+
+![Restricted Provider](./readme-assets/restricted_provider.png)
 
 
