@@ -54,6 +54,11 @@ KAWA provides a mechanism to allow users to generate API keys in order to authen
 
 ### 1.2 Application wide profile
 
+Application wide profiles are configured through KYWY, KAWA's python client.
+
+Please refer to this repository: https://github.com/kawa-analytics/kywy-documentation which contains all the details and examples regarding the usage of this library.
+
+
 #### a. The user roles
 
 There are 3 global roles in KAWA.
@@ -76,13 +81,14 @@ They can access all data bypassing all the row level and column level security.
 **SETUP ADMINISTRATORS**
 
 There is only one such user for the entire KAWA platform. This user has all the privileges 
-of admin users. It can never be disabled, deleted or switched to another user role.
+of ADMINISTRATORS. It can never be disabled, deleted or switched to another user role.
 
 
 **REGULAR USERS**
 
 Most of the users should have this role. It allows them to benefit from all the features
 of the platform.
+
 
 #### b. The restricted data source types
 
@@ -107,6 +113,12 @@ Each user (_Regular users_) can only create data sources of a type that was not 
 
 This allows administrators to control what the various users can load into the platform.
 
+
+In the GUI, when users create a datasource, the types they are allowed to work with are shown here:
+
+![Login page](./readme-assets/datasource_types.png)
+
+
 > **⚡ Important:** by default, users will not have access to the __LIVE CONNECT__ data type.
 
 #### c. The overall permissions
@@ -114,7 +126,6 @@ This allows administrators to control what the various users can load into the p
 Overall permissions are a list of features that individual users have access to.
 For example, to benefit from all the Generative AI features,
 the permission: `GENERATIVE_AI` must be granted. This grant will apply to the entire KAWA platform.
-
 
 
 ### 1.3 Workspace permissions
@@ -168,6 +179,15 @@ Within each workspace, users can be grouped in Teams.
 Teams can be used to share entities with user groups, such as applications,
 dashboards, sheets and data sources.
 
+Teams are configured on the GUI, from the settings menu.
+
+![Manage teams](./readme-assets/team-configuration.png)
+
+
+There are two types of teams:
+
+- Sharing teams: Those teams are mainly used to share objects between users.
+- Security teams: They work exactly as sharing team with an additional property: a `security name`. Those are used in row level security and column security configuration policies.
 
 
 ## 2 Sharing
