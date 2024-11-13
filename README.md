@@ -1,4 +1,4 @@
-KAWA User Manual
+KAWA Reference Documentation
 ==============
 
 * TOC
