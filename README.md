@@ -5,14 +5,7 @@ KAWA Reference Documentation
 {:toc}
 
 
-# A Main Concepts
-
-
-
-
-
-
-# B Users, Sharing and Data Security
+# A Users, Sharing and Data Security
 
 ## 1 User management and permissions
 
@@ -145,28 +138,32 @@ A workspace can also be configured as public. If that is the case,  all the regi
 
 In each workspace, users benefit from a set of permissions:
 
-__Workspace administrative permissions:__
-
-- Edit workspace settings
-- Manage workspace members
 
 __Sharing permissions:__
-
 
 - Share Sheets and Views
 - Share Data Sources 
 - Share Dashboards
+- Share Applications
+
+__Misc:__
+
+- Access and manage Python scripts
+- Manage directories
 
 __Data access permissions:__
+
+>  **⚡ Warning:** Reserved to administrators of the workspace
 
 - Manage row level and column level security
 - Access restricted data and restricted data providers
 
+__Workspace administrative permissions:__
 
-__Section access:__
+>  **⚡ Warning:** Reserved to administrators of the workspace
 
-- Access and manage Python scripts
-- Access and manage AI agents
+- Edit workspace settings
+- Manage workspace members
 
 
 Workspace permissions are handled directly on the GUI, from the settings section (cog icon at the bottom left)
@@ -232,10 +229,7 @@ When sharing an entity:
 If a user is targeted by `RESTRICTED`, `VIEWER` and `EDITOR` simultaneously (through different teams perhaps), they will have the `EDITOR` policy on that entity.
 
 
-
-
 ### 2.1 Sharing Sheets and Views
-
 
 A Sheet contains multiple views, such as charts, grids and pivot tables.
 They also contain the business logic, expressed through formulas and python scripts.
@@ -316,12 +310,22 @@ It means that the PUBLISH and ROLLBACK buttons on the dashboard will affect all 
 ![Publish Dashboard](./readme-assets/publish_dashboard.png)
 
 
-> **⚡ Important:** When sharing a dashboard, KAWA will ask the user to make sure that all the underlying sheets of the dashboard are shared too.
-
-
 When sheets are used in shared dashboards, modifying elements of their model (like formulas for example), will result in a warning for the users:
 
-![Publish Dashboard](./readme-assets/impact.png)
+![Impact](./readme-assets/impact.png)
+
+
+### 2.4 Sharing Apps
+
+Applications can be shared in the UI, in the same way as sheets and data sources.
+All the pages of the apps follow the zpp sharing policies and publications.
+
+It means that the PUBLISH and ROLLBACK buttons on the app will affect all pages (views, dashboards) of the app automatically.
+
+![Publish App](./readme-assets/share_app.png)
+
+
+When sheets are used in shared apps, modifying elements of their model (like formulas for example), will result in a warning for the users.
 
 
 ## 3 Securing the Data
@@ -410,7 +414,6 @@ In addition to the normal data source configuration, Access Tables require its c
 
 #### b. Security Rules
 
-
 Security rules allow to define how a Security Mapping will be applied to a data source to secure it.
 
 ![rls rule](./readme-assets/rls_rule.png)
@@ -434,11 +437,7 @@ The global rule of a data source is applied for a given user in case NO RLS rule
 
 If at least one rule applies the user, then the Rule for missing user in each rule applies (Section 5 above)
 
-
-
-
 #### d. Example
-
 
 _fig1: Access Table:_
 
