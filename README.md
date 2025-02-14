@@ -519,7 +519,13 @@ Without window function, all the computations only "see" one row of data at a ti
 With window functions, computations can now see a Window of rows around the current row.
 We can now access rows such as: Previous and Next rows, all the rows before, all the rows after etc...
 
+The image below illustrates this:
+
+![Window Functions](./readme-assets/window_principle.png)
+
 When you write a window function, you need to define which rows will be accessible from each computation.
+
+
 
 ### 1.2 Examples
 
