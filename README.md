@@ -507,10 +507,132 @@ _Result_:
 
 # B Computations
 
-## 1 Window Functions
+## 1 General Concepts
+
+Computations are created in Sheets and can take various forms such as:
+
+- A formula
+- A mapping column
+- A lookup column
 
 
-### 1.1 What is a Window Function?
+### 1.1 Formulas
+
+Formulas are created from the Formula editor, available from the enrich data button.
+There are three modes to input formulas:
+- Text mode (Excel like)
+- Visual mode (Using blockly)
+- AI assisted mode, via prompt.
+
+
+Formulas can be composed of:
+- Other columns
+- Operators or Functions
+- Variables (From the control panel)
+- Constants
+
+Here is an example of a simple formula, in Visual mode and in Text mode.
+
+Visual:
+![Formula](./readme-assets/formula_1.png)
+
+Text:
+![Formula](./readme-assets/formula_2.png)
+
+This formula returns `ABOVE` if the profit is above `ProfitThreshold`
+and it returns `BELOW` otherwise.
+
+Note that:
+- `Profit` is a column of the sheet
+- `ProfitThreshold` is a variable from the control panel
+- We use the IF/THEN/ELSE operator as well as the Greater Than one.
+
+The return type of this formula is a `Text`, as indicated on the UI (Top left in text mode and top right in visual mode).
+
+### 1.2 Types and Levels of detail
+
+#### a. Types
+
+Formulas are typed. It means that they only return one type of data which can be:
+
+- `Text`
+- `Integer`
+- `Decimal`
+- `Date`
+- `Date Time`
+- `Boolean`
+
+Their type is derived from the operators they use and their various columns, constants and variables.
+For example: Concatenating two texts will yield a text, adding two integers will yield an integer etc... 
+
+You can always refer to the documentation of each operator directly on the GUI for that purpose:
+
+![Formula](./readme-assets/formula_3.png)
+
+
+#### b. Levels of detail
+
+In addition to being typed, formulas also have a Level of Detail.
+It can be either: `ROW`, `GROUP` or `ANY`.
+
+
+- **The ROW level of detail:**
+
+A ROW level of details means that the formula will be computed for each row of the data.
+
+For example, the formula `Profit / Quantity` will have a value for each row. When we sum the values of this formula - that might happen in Grid, Pivots and Charts - we apply the sum of the division for each row:
+`SUM(  Profit / Quantity  )`
+
+In other words, the computation is done at the row level and we simply aggregate those results together.
+
+
+- **The GROUP level of detail:**
+
+A GROUP level of details means that the formula will be computed for both the rows and directly for the group. The main difference is that a group function manipulates aggregating operators, such as SUM or AVERAGE etc..
+
+It allows us to write powerful formulas such as Weighted averages etc..
+
+Here is how you would write a weighted average using a GROUP formula:
+
+```
+WeightedAverage = SUM(weight * value) / SUM(weight)
+```
+
+
+
+- **Quick example:**
+
+The example below illustrates the difference between the two:
+
+Look a the two columns on the right of the grid:
+- `Profit / Quantity`
+- `SUM(Profit) / SUM(Quantity)`
+
+They both have the exact same value on each row, but the global aggregation of both, on the bottom row, is different.
+
+Because the first one is computed ONLY for each row and then aggregated, the global aggregation will be: 
+
+```
+SUM(Profit / Quantity) = 
+Profit1/Quantity1 + ... + Profitn/Quantityn
+```
+
+On the other hand, because the second one is computed directly at the group level, its aggregation will be:
+
+```
+SUM(Profit) / SUM(Quantity) = 
+(Profit1 + ... + Profitn)/(Quantity1 + ... + Quantityn)
+```
+
+Note that for the second formula, the aggregation at the bottom of the grid cannot be changed (the same goes for charts and pivots), because it is imposed by the formula itself.
+
+![Formula](./readme-assets/formula_4.png)
+
+
+## 2 Window Functions
+
+
+### 2.1 What is a Window Function?
 
 A Window Function is a ROW LEVEL computation operation. This means that it will compute one value for each row of data.
 
@@ -527,7 +649,7 @@ When you write a window function, you need to define which rows will be accessib
 
 
 
-### 1.2 Examples
+### 2.2 Examples
 
 - **Example 1: Average of surrounding rows**
 
@@ -573,7 +695,7 @@ As a result, the `ROWS` operator is interesting when you order by date and you w
 ![Window Functions](./readme-assets/window_example4.png)
 
 
-### 1.3 Creating and defining window functions
+### 2.3 Creating and defining window functions
 
 In order to configure Window function, create a new formula and use the
 Blockly mode. It has several prebuilt functions to help you getting started.
