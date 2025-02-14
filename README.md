@@ -333,7 +333,7 @@ When sheets are used in shared apps, modifying elements of their model (like for
 
 ### 2.5 Sharing Knowledge
 
-As the other entities, Knowledge can be shared in the workspace.
+As with the other entities, Knowledge can be shared in the workspace.
 When a user does not have read access to a knowledge, they will not be able to access the 
 content of the knowledge anywhere. (Parsed data, previews etc)
 
@@ -440,7 +440,7 @@ Section by section on the above screenshot:
 #### c. Global rule
 
 
-The global rule of a data source is applied for a given user in case NO RLS rule apply for that user. It can be either: ALLOW ALL or DENY ALL.
+The global rule of a data source is applied for a given user in case NO RLS rule applies for that user. It can be either: ALLOW ALL or DENY ALL.
 
 ![global rule](./readme-assets/global_rule.png)
 
@@ -501,7 +501,7 @@ _Result_:
 | 56   | R&D    |
 
 
-- All other users will be denied access to the data soure (Global rule applies)
+- All other users will be denied access to the data source (Global rule applies)
 
 
 
@@ -538,7 +538,7 @@ This defines how many rows before and after the current row we will look at in t
 
 There are two ways to define a range:
 
-- Using the `ROWS` opperator: This will be based on number of rows before and after the current one.
+- Using the `ROWS` operator: This will be based on the number of rows before and after the current one.
 
 - Using the `RANGE` operator: It will look for consecutive values. It makes sense for dates and date times.
 
