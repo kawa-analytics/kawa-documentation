@@ -145,10 +145,13 @@ __Sharing permissions:__
 - Share Data Sources 
 - Share Dashboards
 - Share Applications
+- Share Knowledge
+
 
 __Misc:__
 
 - Access and manage Python scripts
+- Run Python scripts
 - Manage directories
 
 __Data access permissions:__
@@ -328,6 +331,13 @@ It means that the PUBLISH and ROLLBACK buttons on the app will affect all pages 
 When sheets are used in shared apps, modifying elements of their model (like formulas for example), will result in a warning for the users.
 
 
+### 2.5 Sharing Knowledge
+
+As the other entities, Knowledge can be shared in the workspace.
+When a user does not have read access to a knowledge, they will not be able to access the 
+content of the knowledge anywhere. (Parsed data, previews etc)
+
+
 ## 3 Securing the Data
 
 In KAWA, securing the data can be done both at row (Row level Security) and column (Column level Security) level. This is always done at the data source level.
@@ -492,4 +502,86 @@ _Result_:
 
 
 - All other users will be denied access to the data soure (Global rule applies)
+
+
+
+# B Computations
+
+## 1 Window Functions
+
+
+### 1.1 What is a Window Function?
+
+A Window Function is a ROW LEVEL computation operation. This means that it will compute one value for each row of data.
+
+Without window function, all the computations only "see" one row of data at a time. If you write for exampe: `col1 + col2`, this means that `col1` and `col2` will be added for each row.
+
+With window functions, computations can now see a Window of rows around the current row.
+We can now access rows such as: Previous and Next rows, all the rows before, all the rows after etc...
+
+When you write a window function, you need to define which rows will be accessible from each computation.
+
+In order to define your Window, you must set the following parameters:
+
+1) **The Partition**: 
+
+The partition will define which dimension(s) will be used to build the Window function.
+It defines where to pick the rows that will constitute the Window. 
+
+2) **The Order By**:
+
+Within each Window, this clause define how the data will be sorted.
+
+3) **The Window Range**:
+
+This defines how many rows before and after the current row we will look at in the window.
+
+There are two ways to define a range:
+
+- Using the `ROWS` opperator: This will be based on number of rows before and after the current one.
+
+- Using the `RANGE` operator: It will look for consecutive values. It makes sense for dates and date times.
+
+
+### 1.2 Examples:
+
+- Example 1: **Average of surrounding rows**
+
+Below, an example of an Average of the row before, the row after and the current row, per client.
+
+![Window Functions](./readme-assets/window_example1.png)
+
+
+- Example 2: **Cumulative Sum**
+
+Here, we compute the Chronologic Cumulative sum per client.
+Notice the use of the `NO_LIMIT` block in the Window range. This lets you define unbounded windows.
+
+![Window Functions](./readme-assets/window_example2.png)
+
+
+- Example 3: **Delta between today's price and yesterday's price for Stock**
+
+
+Here is the formula you would use to perform this computation:
+
+Notice how we use the `ROWS` operator to define the range. This operator will just look at the rows and ignore gaps in the dates. Here `STOCK2` has gaps but the delta ignores them (always -$1).
+
+![Window Functions](./readme-assets/window_example3.png)
+
+With this syntax, we are using the `RANGE` operator.
+It will look at actual previous dates instead of previous rows. This means that if the previous date is missing, the window function will not return anything.
+It explains why we have numbers only if the previous row is a consecutive date. 
+
+
+![Window Functions](./readme-assets/window_example4.png)
+
+
+### 1.3 Formula editor
+
+In order to configure Window function, create a new formula and use the
+Blockly mode. It has several prebuilt functions to help you getting started.
+
+![Window Functions](./readme-assets/window_functions.png)
+
 
