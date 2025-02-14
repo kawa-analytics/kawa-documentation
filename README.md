@@ -541,21 +541,33 @@ Below, an example of an Average of the row before, the row after and the current
 Here, we compute the Chronologic Cumulative sum per client.
 Notice the use of the `NO_LIMIT` block in the Window range. This lets you define unbounded windows.
 
+It is also important to note that the ORDER defined in the WINDOW function is independant from the one defined in the main view. The WINDOW function will operate on its own ORDER function and ignore the one of the view.
+
 ![Window Functions](./readme-assets/window_example2.png)
 
 
 - **Example 3: Delta between today's price and yesterday's price for Stock**
 
 
-Here is the formula you would use to perform this computation:
+**Case 1: Using the ROWS operator**
 
-Notice how we use the `ROWS` operator to define the range. This operator will just look at the rows and ignore gaps in the dates. Here `STOCK2` has gaps but the delta ignores them (always -$1).
+Notice how we use the `ROWS` operator to define the range. This operator will just look at the rows and ignore gaps in the dates. Here `STOCK2` has gaps but the delta ignores them (always -$1). In short, the `ROWS` operator will load N rows before and P rows after without caring about the content of those rows.
 
 ![Window Functions](./readme-assets/window_example3.png)
 
+
+**Case 2: Using the RANGE operator**
+
 With this syntax, we are using the `RANGE` operator.
-It will look at actual previous dates instead of previous rows. This means that if the previous date is missing, the window function will not return anything.
-It explains why we have numbers only if the previous row is a consecutive date. 
+
+As opposed to the `ROWS` operator, the `RANGE` looks at the values from the `ORDER` clause.
+
+In this example, we order by date and we are looking at the actual previous date.
+So if a row is dated on the 2nd of January 2025, It will fetch the row dated on the 1st of January 2025 (Within the defined partition, here: The STOCK). If there is no such row, then the window function will not find any row. 
+
+In the below screenshot, it explains why, for STOCK2, the delta is defined only for the 16th of Feb 2025: it is because the WINDOW is able to pick up the previous date which exists.
+
+As a result, the `ROWS` operator is interesting when you order by date and you want to account for missing dates in your computation.
 
 
 ![Window Functions](./readme-assets/window_example4.png)
