@@ -199,6 +199,14 @@ There are two types of teams:
 - Security teams: They work exactly as sharing teams with an additional property: a `security name`. Those are used in row level security and column security configuration policies.
 
 
+#### Designating team administrators
+
+When adding members to teams, you can designate them as team administrators.
+Team administrators do NOT need any specific privileges to manage the members of the teams they administrate. They can add and remove team members without further privilege.
+
+![team admin](./readme-assets/team_admin.png)
+
+
 ## 2 Sharing
 
 The main assets of KAWA can be shared across the workspace to which they belong.
