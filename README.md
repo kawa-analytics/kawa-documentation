@@ -202,7 +202,7 @@ There are two types of teams:
 #### Designating team administrators
 
 When adding members to teams, you can designate them as team administrators.
-Team administrators do NOT need any specific privileges to manage the members of the teams they administrate. They can add and remove team members without further privilege.
+Team administrators do NOT need any specific privileges to manage the members of the teams they administrate.
 
 ![team admin](./readme-assets/team_admin.png)
 
