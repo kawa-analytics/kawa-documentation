@@ -4,18 +4,18 @@ title: Computation
 nav_order: 4
 ---
 
-* TOC
-{:toc}
-
-
-# 1 General Concepts
-
 Computations are created in Sheets and can take various forms such as:
 
 - A formula
 - A mapping column
 - A lookup column
 
+
+* TOC
+{:toc}
+
+
+# 1 General Concepts
 
 ## 1.1 Formulas
 

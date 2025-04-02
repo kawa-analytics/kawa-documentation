@@ -4,13 +4,12 @@ title: Data security
 nav_order: 3
 ---
 
-* TOC
-{:toc}
-
 In KAWA, securing the data can be done both at row (Row level Security) and column (Column level Security) level. This is always done at the data source level.
 
 In order to configure security on data sources, users must either own them or  have the 'Manage row level and column level security' permission and be granted write access on the data source.
 
+* TOC
+{:toc}
 
 # 1 Column level security
 
