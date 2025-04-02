@@ -8,7 +8,7 @@ nav_order: 2
 {:toc}
 
 
-## 1 General Concepts
+# 1 General Concepts
 
 Computations are created in Sheets and can take various forms such as:
 
@@ -17,7 +17,7 @@ Computations are created in Sheets and can take various forms such as:
 - A lookup column
 
 
-### 1.1 Formulas
+## 1.1 Formulas
 
 Formulas are created from the Formula editor, available from the enrich data button.
 There are three modes to input formulas:
@@ -50,9 +50,9 @@ Note that:
 
 The return type of this formula is a `Text`, as indicated on the UI (Top left in text mode and top right in visual mode).
 
-### 1.2 Types and Levels of detail
+## 1.2 Types and Levels of detail
 
-#### a. Types
+### a. Types
 
 Formulas are typed. It means that they only return one type of data which can be:
 
@@ -71,7 +71,7 @@ You can always refer to the documentation of each operator directly on the GUI f
 ![Formula](./readme-assets/formula_3.png)
 
 
-#### b. Levels of detail
+### b. Levels of detail
 
 In addition to being typed, formulas also have a Level of Detail.
 It can be either: `ROW`, `GROUP` or `ANY`.
@@ -130,10 +130,10 @@ Note that for the second formula, the aggregation at the bottom of the grid cann
 ![Formula](./readme-assets/formula_4.png)
 
 
-## 2 Window Functions
+# 2 Window Functions
 
 
-### 2.1 What is a Window Function?
+## 2.1 What is a Window Function?
 
 A Window Function is a ROW LEVEL computation operation. This means that it will compute one value for each row of data.
 
@@ -150,7 +150,7 @@ When you write a window function, you need to define which rows will be accessib
 
 
 
-### 2.2 Examples
+## 2.2 Examples
 
 - **Example 1: Average of surrounding rows**
 
@@ -196,7 +196,7 @@ As a result, the `ROWS` operator is interesting when you order by date and you w
 ![Window Functions](./readme-assets/window_example4.png)
 
 
-### 2.3 Creating and defining window functions
+## 2.3 Creating and defining window functions
 
 In order to configure Window function, create a new formula and use the
 Blockly mode. It has several prebuilt functions to help you getting started.
