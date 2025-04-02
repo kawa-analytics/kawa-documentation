@@ -4,7 +4,9 @@ title: User management and permissions
 nav_order: 1
 ---
 
+* TOC
 {:toc}
+
 
 ## 1 User management and permissions
 
