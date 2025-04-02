@@ -4,8 +4,7 @@ title: Computation
 nav_order: 2
 ---
 
-
-# B Computations
+{:toc}
 
 ## 1 General Concepts
 
