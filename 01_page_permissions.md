@@ -1,6 +1,6 @@
 ---
 layout: default
-title: User management and permissions
+title: Sharing and permissions
 nav_order: 1
 ---
 
