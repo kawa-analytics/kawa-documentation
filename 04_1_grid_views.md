@@ -140,3 +140,90 @@ Regardless of the type, you can:
 
 ![Format fields](./readme-assets/grid_view_format_data.png)
 
+
+# 2 Grouping and Aggregation
+
+Grids are a powerful tool to visualize both row data and aggregated data.
+You can define aggregation methods for each of your field and define a hierarchy of groupings to apply.
+
+## 2.1 Define groupings
+
+In order to group your data, you can use the Group button at the top left of the grid.
+Here, you can add new groups to your grid, reorder the existing groups and deleting unwanted ones.
+
+![Grouping](./readme-assets/grid_view_grouping1.png)
+
+*Here, you can see that two levels of grouping were applied, State then City. On the grid you can see the aggregated data per State, and per City and deploy the nodes to reach the row level data.*
+
+> Note the the action of deploying a group will result in a query to the database. It ensures that just the right amount of data is loaded to the interface for optimal performances.
+
+### 2.1.1 Time Sampling
+
+When applying grouping on temporal fields (`date` or `date time`), you have the option to apply time sampling on the groups.
+
+This is accessible via the small calendar icon from the grouping component.
+
+You will have the possibility to choose the time period
+you wish to sample your data on.
+
+![Grouping](./readme-assets/grid_view_grouping2.png)
+
+*In this example, we group twice on the date column to obtain a year on year monthly comparison. The first group is defined on the Month of the date, while the second one is defined on the Year of the date.*
+
+### 2.1.2 Number Binning
+
+When applying grouping on a numeric filter, you can apply binning to analyze distributions for example.
+
+This is accessible via the cog icon next to your defined groups.
+It lets you pick the binning methodology you wish to apply:
+
+- _Auto binning partitions:_ This defines in how many bins you want to split your data into. If you pick 20, then you will end up with (about) 20 groups. The overall range of your data will be divided in 20 even bins.
+
+- _Fixed bin Width:_ this defines the width of each bin. If you define 20, then you will cut your overall range in bins of 20. A range of 1000 will result in 50 groups.
+
+- _Custom bins_: Lets you define how your data will be divided by inputting the boundaries of the bins. For example: `0,10,100,1000` will group together all the numbers below 0, then all the numbers between 0 and 10 (excluded), then 10 and 100, 100 and 1000 and then above 1000.
+
+![Grouping](./readme-assets/grid_view_grouping3.png)
+
+
+## 2.2 Define aggregations
+
+On each field, you can define the methodology to aggregate data at the group level.
+
+> For example, if we deal with a profit column and we group our Grid by State, we need to define how to aggregate the profit per state. Are you interested in the TOTAL profit per state, or the AVERAGE, etc..
+
+> Note that the aggregation method is identical for all the levels of grouping and does not depend on what you group your data by.
+
+In order to define the aggregation method for a field, click on the bottom row of the grid and pick form the list. Its content will depend on the type of field you are looking at: text, number, date, boolean etc...
+
+![Grouping](./readme-assets/grid_view_grouping4.png)
+
+The aggregated valued will then be shown at the group level, and the overall aggregation on the bottom fixed row.
+
+> You may be interested in multiple aggregation for the same data, say: MIN, MAX and AVG. In that case, create 3 fields on the same data and set the three desired aggregations.
+
+
+
+# 3 Global settings
+
+# 3.1 Context menu
+
+By right clicking on any cell of the grid, you access the global settings and some shortcuts.
+
+- *Go to field:* Is very useful when you are working with a grid containing a lot of fields. It will scroll to and focus on any field that you are looking for.
+
+- *Select Row height:* Will let you pick the height of your rows.
+
+- *Auto size columns:* This option will triggered a resizing of all the columns of your grid, either based on the content off the cells or on the values of the headers.
+
+- *Headers:* Gives you access to the wrapping setting of the headers. You can configure if you want the content of the header to occupy many rows if the title is too long (Wrapped) or if you'd rather truncate them (Ellipsis).
+
+# 3.2 View settings
+
+From the context menu: right click > View Settings, you can access some global settings of the view. 
+
+- *Hide empty fields:* Will automatically hide the fields for which ALL the values are empty. This can be useful for sparse grids.
+
+- *Compute overall aggregations:* When you have too much data in your grid, say billions of rows, computing the overall aggregations (In the bottom row) can slow down the interactions. You can then opt to turn it off.
+
+- *Auto compute:* When turned off, modifications in the configuration of your Grid (sorting, grouping, filters, etc) will not be immediately taken in account. You will need to explicitly click on a compute button to trigger the calculation taking in account the new parameters. This is very useful if your grid takes several seconds to compute.
