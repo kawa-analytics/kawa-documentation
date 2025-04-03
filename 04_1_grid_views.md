@@ -206,7 +206,7 @@ The aggregated valued will then be shown at the group level, and the overall agg
 
 # 3 Global settings
 
-# 3.1 Context menu
+## 3.1 Context menu
 
 By right clicking on any cell of the grid, you access the global settings and some shortcuts.
 
@@ -218,7 +218,7 @@ By right clicking on any cell of the grid, you access the global settings and so
 
 - *Headers:* Gives you access to the wrapping setting of the headers. You can configure if you want the content of the header to occupy many rows if the title is too long (Wrapped) or if you'd rather truncate them (Ellipsis).
 
-# 3.2 View settings
+## 3.2 View settings
 
 From the context menu: right click > View Settings, you can access some global settings of the view. 
 
