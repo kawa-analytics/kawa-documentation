@@ -113,9 +113,9 @@ click on Color > + Rule > Color Scale.
 
 Similarly to the rule based formatting, pick the field you are basing the gradient on (not that you can compute the gradient on one field and color another).
 
-- Apply to: Gradient can either be applied to ROW values or GROUP values (Aggregations). If you pick group, you must also choose the aggregation to be used. For example: The average of Sales or the Maximum of profit.
+- _Apply to:_ Gradient can either be applied to ROW values or GROUP values (Aggregations). If you pick group, you must also choose the aggregation to be used. For example: The average of Sales or the Maximum of profit.
 
-- Gradient configuration: Pick the color you want and to which values they correspond. Note that the values below the lowest bound will be colored with the lowest bound color. The same goes for the highest bound.
+- _Gradient configuration:_ Pick the color you want and to which values they correspond. Note that the values below the lowest bound will be colored with the lowest bound color. The same goes for the highest bound.
 
 ![Format fields](./readme-assets/grid_view_color_scale.png)
 
