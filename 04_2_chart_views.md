@@ -53,7 +53,7 @@ The stacking option is found in the design section, in the upper horizontal tab.
 
 With two levels of grouping, the first level will be the X-Axis and the second level will be reflected as the various portions of each bar.
 
-![Chart config](./readme-assets/chart_view_bar_chart_3.png)
+![Chart config](./readme-assets/chart_view_bar_chart_4.png)
 
 *In the above example, you can see that the first level of grouping (Months) is shown on the X-Axis, while the second level of grouping is reflected on each bar (One color per year)*
 
