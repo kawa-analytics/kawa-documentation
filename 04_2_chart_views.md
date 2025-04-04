@@ -26,6 +26,12 @@ Configuring your chart is made through the Configure chart menu, accessible from
 
 You can pick your chart type at the top of the configuration panel.
 
+
+__The settings tab:__ Contains global settings that apply for most types of charts. They let you control legend, behavior of axis, display properties and zoom.
+
+The number of labels and label rotation work together. If you want to add more labels, you might need to rotate them by 45 or 90 degrees (vertical).
+
+
 ## 1.1 Configure a bar chart
 
 In the data section, pick the Series and the Groupings.
@@ -102,8 +108,7 @@ Adding a second level of grouping on top of a temporal dimension is useful to se
 
 *Here, we added the Segment as the second level of grouping -  as a result, we have one line showing the evolution of each segment over the days*
 
-
-### c. Special parameters for line charts
+### c. Specific settings for line charts
 
 In the design section, you can access the following parameters, specific to line charts:
 
