@@ -122,3 +122,31 @@ For each series, you can also configure if you want to:
 - Draw an area beneath the lines
 - Add a trend line (Polynomial or Linear)
 - Change line width / line style
+
+
+## 1.3 Configure a pie chart
+
+In the data section, pick the Series and the Groupings.
+A pie chart can have one or two levels of grouping and does not have any limit in the number of series.
+
+> When adding more than one series, KAWA will create as many pie charts as series.
+
+> Only show series containing positive values. Otherwise the pie chart can lead to misinterpretation of the data.
+
+
+![Chart config](./readme-assets/chart_view_pie1.png)
+
+*A simple pie chart showing the sales per state. A Pie chart will show the ten biggest categories and then aggregate all the others in an `Other` category*.
+
+
+![Chart config](./readme-assets/chart_view_pie2.png)
+
+*Make sure to select the Sunburst option in the settings tab for a pie chart with two levels of groupings*.
+
+> When using more than one level of grouping on a pie chart, you should use the `SUM` aggregation.
+
+The design tab offer special options for Pie charts:
+
+- _Doughnut:_ Plots as a doughnut instead of a pie chart
+
+- _Labels outside:_ Shows the labels outside of the chart. Can be more readable in some configurations.
