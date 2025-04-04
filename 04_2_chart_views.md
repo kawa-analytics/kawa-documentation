@@ -79,6 +79,41 @@ A line chart can have one or two levels of grouping and does not have any limit 
 > It is strongly recommended to have only one series when two levels of grouping are present, otherwise the chart will be difficult to read.
 
 
-
 ### a. Line chart with one level of grouping and one or more series
 
+In a bar chart, the first level of grouping will always be the X-Axis.
+
+![Chart config](./readme-assets/chart_view_line_chart1.png)
+
+*Simple line chart showing the evolution of profit per day*
+
+When plotting multiple series for one grouping, you can decide whether to plot all series on the same axis or on diverse axis. If you choose the split chart option, you can have one chart per axis.
+
+![Chart config](./readme-assets/chart_view_line_chart2.png)
+
+*Plotting both Quantity (Ranges from -2 to 26 on a given date) and the Profit (Ranges from -200K to 3M on a given date) on two different axis.*
+
+
+### b. Line chart with two levels of grouping and one series
+
+Adding a second level of grouping on top of a temporal dimension is useful to see the breakdown of some indicator per another dimension.
+
+![Chart config](./readme-assets/chart_view_line_chart3.png)
+
+*Here, we added the Segment as the second level of grouping -  as a result, we have one line showing the evolution of each segment over the days*
+
+
+### c. Special parameters for line charts
+
+In the design section, you can access the following parameters, specific to line charts:
+
+- _Align zero:_ If we have many different axis, this setting will determine whether or not to align all the 0 horizontally.
+
+- _Fill in temporal gaps:_ If the X-Axis is a temporal one, date or date time, empty points will be added in case the dataset is missing dates. For example, if the dataset has a point for the 1/1/2020, and one for the 1/3/2020 - the chart will add a tick on the X-Axis on the 1/2/2020. 
+
+For each series, you can also configure if you want to:
+
+- Smooth the lines
+- Draw an area beneath the lines
+- Add a trend line (Polynomial or Linear)
+- Change line width / line style
