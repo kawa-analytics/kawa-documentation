@@ -164,9 +164,9 @@ In order to configure an indicator chart this way, just pick one series and no g
 ![Chart config](./readme-assets/chart_view_indicator1.png)
 
 
-### b. Show the last value for a metric, and compare it its previous values
+### b. Show the last value for a metric, and compare it to its previous values
 
-Indicator charts can be configured to show the last value for a metric. It is very useful when dealing with a time series.
+Indicator charts can be configured to show the last value for a metric. 
 In order to do so, pick one series and one grouping. The chart will show the last point for that metrics applying the defined grouping.
 
 ![Chart config](./readme-assets/chart_view_indicator2.png)
@@ -186,8 +186,6 @@ You can pick many among:
 - _Constant goal:_ To compare the last value with a fixed value - that can represent a goal to reach for instance.
 
 > In the design section, you can set the color of the trend arrows - by default an Upward trend is Green, Downward is red and constant is Black.
-
-
 
 
 # 2 Series and Groups
