@@ -151,6 +151,44 @@ The design tab offer special options for Pie charts:
 
 - _Labels outside:_ Shows the labels outside of the chart. Can be more readable in some configurations.
 
+## 1.4 Configure an indicator chart
+
+Indicator charts are suited to show high level indictors or KPIs in dashboards. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) either to show the latest value for a metrics and compare it to the previous one.
+
+
+### a. Show a global metric
+
+This is the most basic usage of an indicator chart.
+In order to configure an indicator chart this way, just pick one series and no grouping.
+
+![Chart config](./readme-assets/chart_view_indicator1.png)
+
+
+### b. Show the last value for a metric, and compare it its previous values
+
+Indicator charts can be configured to show the last value for a metric. It is very useful when dealing with a time series.
+In order to do so, pick one series and one grouping. The chart will show the last point for that metrics applying the defined grouping.
+
+![Chart config](./readme-assets/chart_view_indicator2.png)
+
+The compare to menu at the bottom (below the Group by) is useful to set up some comparisons: 
+
+You can pick many among:
+
+- _Previous value:_ To see the evolution of a metrics from one group to the next.
+
+- _Minimum:_ To compare the last value with the minimum
+
+- _Maximum:_ To compare the last value with the maximum
+
+- _Average:_ To compare the last value with the average
+
+- _Constant goal:_ To compare the last value with a fixed value - that can represent a goal to reach for instance.
+
+> In the design section, you can set the color of the trend arrows - by default an Upward trend is Green, Downward is red and constant is Black.
+
+
+
 
 # 2 Series and Groups
 
@@ -215,3 +253,38 @@ Moving calculations can also be configured from within the Show As menu.
 ![Chart config](./readme-assets/chart_view_sliding_avg.png)
 
 _Above the result of using a moving calculation with: Apply to: Date, Aggregation: Average, Prev: 10, Next: 0, Current value: Yes. It computes the sliding average over the last 10 points._
+
+
+## 2.1 Chart groupings
+
+### 2.1.2 Role of groupings in various types of charts
+
+Groupings of a chart can be configured via the Group by section of the Data tab.
+Depending on the type of chart that you pick, grouping will play different roles.
+
+The table below illustrates the given configuration:
+
+Profit (Series) by Date (First level of grouping) and Segment (Second level of grouping)
+
+
+| Chart Type | 1st lvl of Grouping   |  2nd lvl of Grouping   
+|--------------------|---------------|--------|
+| Bar Chart          | X-Axis. One tick on the X-Axis per date | Defines how each bar will be broken down. Each bar will be split between segments to show the profit breakdown on a day, per segment.
+| Line Chart         | X-Axis. One tick on the X-Axis per date | Will correspond to the plotted lines. Here, we will have one line per segment, each one representing the evolution of profit for that segment.
+| Pie Chart          | Pie categories. Here, one pie slice per day. | When used as a sunburst chart, will define the second level of slices. 
+| Scatter Chart      | There will be one point on the scatter chart per value of the first level of grouping. Here, one point per date. | Ignored.
+| Indicator Chart    | WIll display the value of the last group if a first level of grouping is defined (Instead of the overall aggregation).        | Ignored.
+| Candlestick Chart | X-Axis. Same as bar chart | Ignored.
+| Boxplot           | X-Axis. Same as bar chart | Ignored.
+| Sankey Chart      | First level of the Sankey | Second level of the Sankey (There is no limit to the number of groups for the Sankey charts)
+| Map Chart         | The first level of grouping must be a geographic denomination like a Country or a State etc.. | Ignored.
+
+
+### 2.1.3 Configuration of Groupings
+
+Groupings can be configured in the same way as in the Grid view. Like in Grids, chart groups support Time sampling and Number binning.
+
+> Number binning can be used to plot the distribution of a measure across a dataset:
+
+![Chart config](./readme-assets/chart_view_binning.png)
+
