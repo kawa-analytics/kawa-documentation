@@ -170,6 +170,10 @@ cmd.replace_configuration('OpenAiConfiguration', {
 })
 ```
 
+List of configuration parameters to configure the connection the the completion API:
+
+> There is NO need to restart the KAWA platform for these parameters to be taken in account.
+
 | Parameter | Required | Default Value | Description  |
 |-----------|----------|---------------|--------------|
 | activated | Yes       | False         | Set to True to enable AI support.
