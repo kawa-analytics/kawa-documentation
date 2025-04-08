@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data security
-nav_order: 3
+nav_order: 20
 ---
 
 In KAWA, securing the data can be done both at row (Row level Security) and column (Column level Security) level. This is always done at the data source level.

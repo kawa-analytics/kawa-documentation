@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sharing and permissions
-nav_order: 2
+nav_order: 10
 ---
 
 * TOC
