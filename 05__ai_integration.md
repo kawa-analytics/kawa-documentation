@@ -129,3 +129,57 @@ Configuring the AI Metadata can also be done through the sheet model: Model > AI
 
 # 4. Connecting KAWA to your LLM through the Chat API
 
+This section is reserved for platform administrators with an ADMIN account.
+In order to connect to a LLM, KAWA must be configured to an Open AI API on any provider.
+The API must be strictly compatible with Open AI specifications. Please contact support@kawa.ai for any requests to adjust KAWA to your API.
+
+Examples of compatible providers:
+
+- DeepSeek (https://api-docs.deepseek.com/)
+- OpenAI (https://platform.openai.com/docs/api-reference/chat)
+- GrokCloud (https://console.groq.com/docs/overview)
+- Azure Open AI (https://learn.microsoft.com/en-us/azure/ai-services/openai/reference)
+
+We can provide connectivity to the following providers on request.
+
+- Claude AI
+- Mistral AI
+- Gemini
+
+> In order for KAWA to be fully operational, your model MUST support function calling through the `tools` parameter in the Completion API.
+
+
+This configuration is done through the KAWA Python SDK.
+Please cf https://github.com/kawa-analytics/kywy-documentation to install the SDK.
+
+
+```python
+from kywy.client.kawa_client import KawaClient as K
+
+kawa = K.load_client_from_environment()
+cmd = kawa.commands
+
+# Command to configure OPEN AI Completion API
+# CF the below table for the list of available parameters.
+cmd.replace_configuration('OpenAiConfiguration', {
+    'activated': True, 
+    'supportsStreaming': True,
+    'openAiApiKey': 'sk-.........',
+    'model':'gpt-4o',
+    'openAiApiUrl': 'https://api.openai.com/v1',
+})
+```
+
+| Parameter | Required | Default Value | Description  |
+|-----------|----------|---------------|--------------|
+| activated | Yes       | False         | Set to True to enable AI support.
+| supportsStreaming | No | True         | Set to True if the API supports Server Sent Events
+| openAiApiKey | Yes    | Empty text    | Use your provider's API Key. If omitted, AI support will be disabled
+| model    | Yes        | gpt-4o        | The LLM to use. Check with your provider for the list of available models
+| openAiApiUrl  | Yes   | https://api.openai.com/v1 | Kawa will use this URL:  `$(openAiApiUrl)/chat/completions`
+| completionApiUrl | No  | Empty text   | If set, Kawa will ignore `$(openAiApiUrl)` and POST requests directly on this url
+| additionalHeaders | No | Empty text   | Additional headers to send to the completion API. Syntax is: `HEADER1=VALUE1,HEADER2=VALUE2`
+| authenticatesWithKerberos | No | False | If set to True, wil authenticate to the completion API with kerberos. The prerequisite being that all the Kerberos credentials are properly configured on the host machine.
+
+
+
