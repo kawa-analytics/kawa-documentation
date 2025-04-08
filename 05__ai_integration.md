@@ -1,8 +1,13 @@
 ---
 layout: default
 title: AI Integration
-nav_order: 50
+nav_order: 9
 ---
 
 AI Integration
 ---
+
+
+
+* TOC
+{:toc}

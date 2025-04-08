@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data security
-nav_order: 20
+nav_order: 3
 ---
 
 Data security
