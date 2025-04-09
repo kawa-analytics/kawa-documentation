@@ -2,7 +2,7 @@
 layout: default
 title: Pivot Table Views
 parent: Visualization
-nav_order: 8
+nav_order: 5
 ---
 
 Pivot Table views

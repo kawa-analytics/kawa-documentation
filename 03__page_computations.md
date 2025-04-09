@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Computation
-nav_order: 4
+title: Formulas
+nav_order: 6
 ---
 
 Computation

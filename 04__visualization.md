@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Visualization
-nav_order: 5
+nav_order: 2
 ---
 
 Visualization
@@ -12,3 +12,8 @@ In Kawa, data can be visualized through charts, grids, and pivot tables, offerin
 A sample of some charts, grids and pivot tables to Visualize various aspects of your datasets:
 
 ![AI Assist](./readme-assets/dashboard1.png)
+
+
+Here is a video that gives a global overview about views and sheets.
+
+[Video tutorials about sheets and views](https://www.youtube.com/playlist?list=PL-glwHeQFKj4jEWqXz16I_RjzslAn2GO-)
