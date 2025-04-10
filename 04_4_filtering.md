@@ -87,3 +87,8 @@ The numeric filters have two modes:
 _The above filters only keep quantities that are either strictly lesser than 10 or strictly larger than 100._
 
 
+## 2.3 The Boolean filters
+
+The boolean filter has only one mode: 
+You can decide whether to keep `True`, `False` or `Empty`. There is a toggle between multi and single select modes at the top right of the filter card. (It lets you for example pick both `False` and `Empty`).
+
