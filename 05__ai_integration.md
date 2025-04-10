@@ -135,10 +135,10 @@ The API must be strictly compatible with Open AI specifications. Please contact 
 
 Examples of compatible providers:
 
-- DeepSeek (https://api-docs.deepseek.com/)
-- OpenAI (https://platform.openai.com/docs/api-reference/chat)
-- GrokCloud (https://console.groq.com/docs/overview)
-- Azure Open AI (https://learn.microsoft.com/en-us/azure/ai-services/openai/reference)
+- DeepSeek ([DeepSeek API](https://api-docs.deepseek.com/))
+- OpenAI ([OpenAI API](https://platform.openai.com/docs/api-reference/chat))
+- Groq Cloud ([Groc Cloud API](https://console.groq.com/docs/overview))
+- Azure Open AI ([Azure OpenAI API](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference))
 
 We can provide connectivity to the following providers on request.
 
@@ -150,7 +150,7 @@ We can provide connectivity to the following providers on request.
 
 
 This configuration is done through the KAWA Python SDK.
-Please cf https://github.com/kawa-analytics/kywy-documentation to install the SDK.
+Please cf [Kawa SDK on Github](https://github.com/kawa-analytics/kywy-documentation) to install the SDK.
 
 
 ```python
