@@ -92,3 +92,69 @@ _The above filters only keep quantities that are either strictly lesser than 10 
 The boolean filter has only one mode: 
 You can decide whether to keep `True`, `False` or `Empty`. There is a toggle between multi and single select modes at the top right of the filter card. (It lets you for example pick both `False` and `Empty`).
 
+
+## 2.4 Temporal filters
+
+Temporal filters are the most complex filters, they apply to both date and date time filters.
+
+
+### 2.1.1 Filtering using presets
+
+Presets are the quickest way to filter your temporal data. Each filter has their own sets of presets. By default, the Popular ones are shown:
+
+| Preset| Description |     
+|-------|-------------|
+| D       | Shows today's data
+| D-1     | Shows yesterday's data
+| M-1     | Shows data for previous Month
+| YoY YTD | Year on Year Year to Date: Shows data across all years until today's day. For example, if today is the 25th of June 2025, we will show data for 2025, 2024, 2023, ... until the 25th of June.
+| YTD     | Year To Date: Show all dates from the beginning of the year until today's date. 
+| MTD     | Month To Date: Show all dated from the beginning of the month until today's date.
+| Future  | Shows all the data after today
+| Past    | Shows all the data before today
+
+
+You can also display presets by time unit:
+
+- Minute (For date time filters only)
+- Hour (For date time filters only)
+- __D__ Day
+- __BD__ Business day (all days except weekends)
+- __W__ Week
+- __M__ Month
+- __Q__ Quarter
+- __S__ Semester
+- __Y__ Year
+
+Each category will show a list of presets similar to D+1 or D-1. The capital letter indicates the unit (Y for year, BD for business day) and the number indicates the offset. For example: BD+1 indicates the next business day. Q-1 indicates previous Quarter etc..
+
+### 2.1.2 Filtering using ranges
+
+There are three types of range available.
+
+__a. Fixed ranges:__ They correspond to a range defined by two fixed dates that you can pick. For example: all dates between 1/1/2020 and 2/1/2020. The min and max are included in the returned datasets. If you omit the Max, KAWA will give you all dates after the Min, and vice versa.
+
+
+__b. Rolling ranges:__ They corresponding to a rolling range, relative to today. It contains 3 parameters:
+
+- _From:_ A number to indicate how many units we start from (Minimum)
+- _To:_ A number to indicate how many units we go to (Maximum)
+- _Unit:_ A time unit
+
+Here are a few examples to illustrate this:
+_Let's suppose that today is the 25th of June 2025._
+
+`From -1 To 1 Month`: Means all dates from the 25th of May 2025 to the 25th of July 2025. (One month back to one month forward).
+
+`From -10 To 0 Day`: Means all dates from the 15th of June 2025 to the 25th of June 2025. (10 days back, 0 days forward).
+
+Special case for __Available date__: Available date can be picked as a Unit. Picking for example: -1 to 0 Available date will filter the data on the last available date in your dataset.
+
+__c. By Period:__ Lets you choose one period of time like: the Year 2023 or the month of March, or the month of April 2020.
+
+
+### 2.1.3 Filtering using conditions
+
+This mode is similar to text and number filters. It lets you pick multiple conditions and choose how you want to combine them: `OR` or `AND`. It operates only on static dates.
+
+For example, you can specify: any date after the 10th of July 2024 or before the 1st of Sept 2020.
