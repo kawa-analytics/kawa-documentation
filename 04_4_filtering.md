@@ -17,6 +17,8 @@ Kawa comes with powerful built in filters, adapted to all your data types: text,
 
 # 1. The filter panel
 
+## 1.1 Overview
+
 The filter panel is situated at the right of all the views (Charts, Grids and Pivots). It can be toggled on and of by clicking onf the green Filters button at the top right. This button indicates how many active filters are applied on your view.
 
 ![Filters](./readme-assets/filters1.png)
@@ -27,6 +29,16 @@ _Here, three filters are configured, but only one is applied. The toggle button 
 In this panel, you can configure the filters that are applied to you view, add new ones or remove existing ones.
 
 To add new filters, click on the (+) button situated at the top of the panel. You can then choose what you want to filter. You have the choices between the fields of the current view or the columns of the underlying sheet. __You do not need to add the filtered columns to your views.__
+
+## 1.2 Filtering grouped data
+
+When your view is grouped (It is always the case with pivot tables, often the case with Charts, and sometimes with Grids), you can decide at which level of grouping you want to apply your filter.
+
+In the apply to menu, pick which group and which aggregation you want to apply your filter on.
+
+![Filters](./readme-assets/filters2.png)
+
+_In this example, we want to keep only the states with a negative Total. We picked: Apply to State, aggregation: SUM._
 
 
 # 2. Configuring your filters
