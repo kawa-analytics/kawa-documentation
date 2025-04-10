@@ -72,3 +72,18 @@ The third tab lets you configure the behavior of the filter card itself.
 __Selection Mode:__ Can be set to multi-select or single-select. This will define how many can be selected in the selection (first tab).
 
 __Configure options:__ Lets you define the exact content of the list in the selection. You can either restrict the values that are offered to the users or group them into categories. 
+
+
+## 2.2 The Numeric filters
+
+The numeric filters have two modes:
+
+- _Simple range:_ Filter the number with a simple closed range. Note that both boundaries are optional. For example, if you specify only the Min, you will get all the values greater or equal to the Min. 
+
+- _Conditions:_ Works the same way as the text filters with numeric conditions.
+
+![Filters](./readme-assets/filter_number1.png)
+
+_The above filters only keep quantities that are either strictly lesser than 10 or strictly larger than 100._
+
+
