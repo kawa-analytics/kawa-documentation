@@ -19,14 +19,14 @@ Kawa comes with powerful built in filters, adapted to all your data types: text,
 
 ## 1.1 Overview
 
-The filter panel is situated at the right of all the views (Charts, Grids and Pivots). It can be toggled on and of by clicking onf the green Filters button at the top right. This button indicates how many active filters are applied on your view.
+The filter panel is situated at the right of all the views (Charts, Grids and Pivots). It can be toggled on and off by clicking onf the green Filters button at the top right. This button indicates how many active filters are applied on your view.
 
 ![Filters](./readme-assets/filters1.png)
 
 _Here, three filters are configured, but only one is applied. The toggle button on each filter card toggles on and off the corresponding filters._
 
 
-In this panel, you can configure the filters that are applied to you view, add new ones or remove existing ones.
+In this panel, you can configure the filters that are applied to your view, add new ones or remove existing ones.
 
 To add new filters, click on the (+) button situated at the top of the panel. You can then choose what you want to filter. You have the choices between the fields of the current view or the columns of the underlying sheet. __You do not need to add the filtered columns to your views.__
 
@@ -51,7 +51,7 @@ This mode (The first tab of the filter) will only keep rows whose values for the
 
 ![Filters](./readme-assets/filter_text1.png)
 
-_Here, I will only keep rows for which the city is Aberdeen or Akron_
+_Here, KAWA will only keep rows for which the city is Aberdeen or Akron_
 
 > IMPORTANT: The list of available values might not be exhaustive if there are too many (Above 300). This limitation exists to prevent millions and potentially billions of values to be sent to users. However, The search box has access to the entire list of values. For example, if the city `Miami` is not there in the initial set, typing the letter `M` will most likely filter down the list and make `Miami` available.
 
@@ -138,7 +138,7 @@ You can also display presets by time unit:
 - __S__ Semester
 - __Y__ Year
 
-Each category will show a list of presets similar to D+1 or D-1. The capital letter indicates the unit (Y for year, BD for business day) and the number indicates the offset. For example: BD+1 indicates the next business day. Q-1 indicates previous Quarter etc..
+Each category will show a list of presets similar to D+1 or D-1. The capital letter indicates the unit (Y for year, BD for business day, etc..) and the number indicates the offset. For example: BD+1 indicates the next business day. Q-1 indicates previous Quarter.
 
 ### 2.1.2 Filtering using ranges
 
