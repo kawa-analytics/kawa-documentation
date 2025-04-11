@@ -315,3 +315,34 @@ Groupings can be configured in the same way as in the Grid view. Like in Grids, 
 
 ![Chart config](./readme-assets/chart_view_binning.png)
 
+
+# 3 Drill down and Underlying data
+
+A chart always displays aggregated data, but KAWA offers options to either view the underlying raw data for each point or drill down into other dimensions.
+Both these options can be explored by doing a right click on a data point.
+
+
+## 3.1 Show underlying raw data
+
+Right clicking on a bar, and selecting "Show Underlying Data", a new section opens below the chart. It contains a Grid view filtered on the selected bar. 
+
+Because it is a Grid View, you an feel free to interact with it to get further insights about this particular data point.
+
+This bottom view can be expanded (full screen) or dismissed (closed) by clicking on the controls on its top right.
+
+![Chart config](./readme-assets/chart_view_raw_data.png)
+
+_Raw data is shown for Q3 2022._
+
+
+## 3.2 Drill down into other dimensions
+
+Right clicking on a bar, and selecting "Drill Down By" will open a sub menu that will let you select into which dimension you would like to drill down into.
+
+This can be repeated as many time as you need by doing consecutive drill downs. It can also be combined with show underlying data at any point.
+
+To help you keep track of what dimensions were picked, a breadcrumb will be displayed at the top left of the chart. CLicking on the (x) will reset the chart back to its original configuration.
+
+![Chart config](./readme-assets/chart_view_drill.png)
+
+_Here, we are showing the Total Sales per City having drilled down on Q2 2020n and then the state of California._

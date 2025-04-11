@@ -108,7 +108,7 @@ _Toggling on and off the total:_ You can toggle on and Off the Total checkbox to
 
 ## 2.1 Standard Drill Down
 
-A Pivot table only show aggregated values in its cells. Accessing the Raw data between each of them is done by clicking on the magnifying glass in any cell of the pivot.
+A Pivot table only show aggregated values in its cells. Accessing the Raw data for each of them is done by clicking on the magnifying glass in any cell of the pivot.
 
 A bottom section will then open, showing the raw data that was used to computed that particular value.
 
