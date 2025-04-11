@@ -199,13 +199,19 @@ Series and Groups define what data will be plotted in the charts. They play diff
 
 Each field has several configuration options:
 
-- _Display:_ You can configure the field name (how it will appear on the charts) as well as the format of labels associated with this field. (For example set a unit or a number of digits to show after the decimal point). All these parameters are accessible on the three dots menu of each field.
+### 2.1.1 Display options
 
-- _Aggregation:_ The charts will show aggregated values for each field. For example: The sum of profit per segment or The average of sales per region, etc... The first drop dow menu contains a list of aggregation to pick from.
+You can configure the field name (how it will appear on the charts) as well as the format of labels associated with this field. (For example set a unit or a number of digits to show after the decimal point). All these parameters are accessible on the three dots menu of each field.
+
+### 2.1.2 Aggregation
+
+The charts will show aggregated values for each field. For example: The sum of profit per segment or The average of sales per region, etc... The first drop dow menu contains a list of aggregation to pick from.
 
 > __IMPORTANT:__ Be mindful of the aggregation method when you are plotting time series with time sampling. It is recommended to use aggregations such as Average, Min or Max (and avoid SUM as the value will grow with the number of samples falling within each bucket).
 
-- _Calculation:_ In charts, you can define ad-hoc calculations to apply to your fields by setting the Show As parameter.
+### 2.1.3 Value calculation (Show As)
+
+In charts, you can define ad-hoc calculations to apply to your fields by setting the Show As parameter.
 
 __Table 1:__ Calculation Methods for one level of grouping:
 
