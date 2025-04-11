@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Reporting and Publishing
-nav_order: 04__publishing
+nav_order: 10
 ---
 
 Data Integration

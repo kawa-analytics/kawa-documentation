@@ -1,7 +1,7 @@
 ---
 layout: default
 title: AI Integration
-nav_order: 06__ai_integration
+nav_order: 12
 ---
 
 AI Integration

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Automating
-nav_order: 05__automations
+nav_order: 11
 ---
 
 Automations

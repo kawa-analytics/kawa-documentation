@@ -2,7 +2,7 @@
 layout: default
 title: Chart Views
 parent: Visualization
-nav_order: 03_02_chart_views
+nav_order: 7
 ---
 
 Chart views

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data Integration
-nav_order: 01__data_integration
+nav_order: 2
 ---
 
 Data Integration

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Visualization 
-nav_order: 03__visualization
+nav_order: 5
 ---
 
 Visualization - Views
