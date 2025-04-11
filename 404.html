@@ -3,9 +3,17 @@ layout: default
 permalink: /404.html
 ---
 
-<script>
-  // Redirect to root after a short delay
-  window.location.href = "/kawa-documentation";
-</script>
-
-<p>Your page has moved. Redirecting to <a href="/kawa-documentation">home</a>...</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta http-equiv="refresh" content="0; url=/kawa-documentation">
+  <script>
+    window.location.replace("/kawa-documentation");
+  </script>
+</head>
+<body>
+  <p>Your page has moved. If you are not redirected automatically, <a href="/kawa-documentation">click here</a>.</p>
+</body>
+</html>
