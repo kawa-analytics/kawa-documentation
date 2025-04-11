@@ -9,7 +9,7 @@ Chart views
 ---
 
 Chart views let you build powerful visualizations of your data.
-Many different types of charts are available and each one support a wide range of configuration parameters.
+Many different types of charts are available and each one supports a wide range of configuration parameters.
 
 * TOC
 {:toc}
@@ -27,7 +27,7 @@ Configuring your chart is made through the Configure chart menu, accessible from
 You can pick your chart type at the top of the configuration panel.
 
 
-__The settings tab:__ Contains global settings that apply for most types of charts. They let you control legend, behavior of axis, display properties and zoom.
+__The settings tab:__ Contains global settings that apply for most types of charts. They let you control legend, behavior of the axis, display properties and zoom.
 
 The number of labels and label rotation work together. If you want to add more labels, you might need to rotate them by 45 or 90 degrees (vertical).
 
@@ -93,11 +93,11 @@ In a bar chart, the first level of grouping will always be the X-Axis.
 
 *Simple line chart showing the evolution of profit per day*
 
-When plotting multiple series for one grouping, you can decide whether to plot all series on the same axis or on diverse axis. If you choose the split chart option, you can have one chart per axis.
+When plotting multiple series for one grouping, you can decide whether to plot all series on the same axis or on separate axes. If you choose the split chart option, you can have one chart per axis.
 
 ![Chart config](./readme-assets/chart_view_line_chart2.png)
 
-*Plotting both Quantity (Ranges from -2 to 26 on a given date) and the Profit (Ranges from -200K to 3M on a given date) on two different axis.*
+*Plotting both Quantity (Ranges from -2 to 26 on a given date) and the Profit (Ranges from -200K to 3M on a given date) on two different axes.*
 
 
 ### b. Line chart with two levels of grouping and one series
@@ -112,7 +112,7 @@ Adding a second level of grouping on top of a temporal dimension is useful to se
 
 In the design section, you can access the following parameters, specific to line charts:
 
-- _Align zero:_ If we have many different axis, this setting will determine whether or not to align all the 0 horizontally.
+- _Align zero:_ If we have many different axes, this setting will determine whether or not to align all the 0 horizontally.
 
 - _Fill in temporal gaps:_ If the X-Axis is a temporal one, date or date time, empty points will be added in case the dataset is missing dates. For example, if the dataset has a point for the 1/1/2020, and one for the 1/3/2020 - the chart will add a tick on the X-Axis on the 1/2/2020. 
 
@@ -153,7 +153,7 @@ The design tab offer special options for Pie charts:
 
 ## 1.4 Configure an indicator chart
 
-Indicator charts are suited to show high level indictors or KPIs in dashboards. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) either to show the latest value for a metrics and compare it to the previous one.
+Indicator charts are suited to show high level indicators or KPIs in dashboards. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) or to show the latest value for a metric and compare it to the previous one.
 
 
 ### a. Show a global metric
@@ -167,7 +167,7 @@ In order to configure an indicator chart this way, just pick one series and no g
 ### b. Show the last value for a metric, and compare it to its previous values
 
 Indicator charts can be configured to show the last value for a metric. 
-In order to do so, pick one series and one grouping. The chart will show the last point for that metrics applying the defined grouping.
+In order to do so, pick one series and one grouping. The chart will show the last point for that metric applying the defined grouping.
 
 ![Chart config](./readme-assets/chart_view_indicator2.png)
 
@@ -205,7 +205,7 @@ You can configure the field name (how it will appear on the charts) as well as t
 
 ### 2.1.2 Aggregation
 
-The charts will show aggregated values for each field. For example: The sum of profit per segment or The average of sales per region, etc... The first drop dow menu contains a list of aggregation to pick from.
+The charts will show aggregated values for each field. For example: The sum of profit per segment or The average of sales per region, etc... The first drop down menu contains a list of aggregation to pick from.
 
 > __IMPORTANT:__ Be mindful of the aggregation method when you are plotting time series with time sampling. It is recommended to use aggregations such as Average, Min or Max (and avoid SUM as the value will grow with the number of samples falling within each bucket).
 
@@ -275,7 +275,7 @@ Profit (Series) by Date (First level of grouping) and Segment (Second level of g
 |--------------------|---------------|--------|
 | Bar Chart          | X-Axis. One tick on the X-Axis per date | Defines how each bar will be broken down. Each bar will be split between segments to show the profit breakdown on a day, per segment.
 | Line Chart         | X-Axis. One tick on the X-Axis per date | Will correspond to the plotted lines. Here, we will have one line per segment, each one representing the evolution of profit for that segment.
-| Pie Chart          | Pie categories. Here, one pie slice per day. | When used as a sunburst chart, will define the second level of slices. 
+| Pie Chart          | Pie categories. Here, one pie slice per day. | When used as a sunburst chart, it will define the second level of slices. 
 | Scatter Chart      | There will be one point on the scatter chart per value of the first level of grouping. Here, one point per date. | Ignored.
 | Indicator Chart    | WIll display the value of the last group if a first level of grouping is defined (Instead of the overall aggregation).        | Ignored.
 | Candlestick Chart | X-Axis. Same as bar chart | Ignored.
