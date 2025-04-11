@@ -30,10 +30,9 @@ Clicking on the three dots menu next to each tab will display options. Here are 
 - Duplicate a view
 - Delete a view
 
-The sharing aspect will be discussed in the admin page.
+The sharing of sheets and views is documented here: [Sharing](./07_01_permissions.md#21-sharing-sheets-and-views)
 
 ![Manage views](./readme-assets/view_management.png)
-
 
 
 Here is a video that gives a global overview about views and sheets.

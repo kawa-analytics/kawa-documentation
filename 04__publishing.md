@@ -4,7 +4,7 @@ title: Reporting and Publishing
 nav_order: 10
 ---
 
-Data Integration
+Reporting and Publishing
 ---
 
 _Coming soon_
