@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Formulas
+parent: Data Modeling
 nav_order: 21
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Data security
+parent: Administration and Sharing
 nav_order: 72
 ---
 

@@ -4,5 +4,7 @@ title: Automating
 nav_order: 50
 ---
 
-Data Integration
+Automations
 ---
+
+_Coming soon_
