@@ -345,4 +345,4 @@ To help you keep track of what dimensions were picked, a breadcrumb will be disp
 
 ![Chart config](./readme-assets/chart_view_drill.png)
 
-_Here, we are showing the Total Sales per City having drilled down on Q2 2020n and then the state of California._
+_Here, we are showing the Total Sales per City having drilled down on Q2 2020 and then the state of California._
