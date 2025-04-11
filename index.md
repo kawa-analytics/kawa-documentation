@@ -15,9 +15,9 @@ nav_order: 1
 
 Ready to dive in? Start here:
 
-- [Visualize your data](./03__visualization.md#manage-your-views-in-sheets){: .btn .btn-primary }
-- [Create some powerful data models](/02__modeling.md){: .btn }
-- [Integrate your own data sources](/01__data_integration.md#data-integration){: .btn }
+- [Visualize your data](./03__visualization.html){: .btn .btn-primary }
+- [Create some powerful data models](./02__modeling.html){: .btn }
+- [Integrate your own data sources](./01__data_integration.md#data-integration.html){: .btn }
 
 ---
 
