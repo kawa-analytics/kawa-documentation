@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Formulas
-nav_order: 7
+nav_order: 21
 ---
 
 Computation
