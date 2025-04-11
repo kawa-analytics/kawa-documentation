@@ -9,7 +9,7 @@ Data Modeling - Sheets
 
 In KAWA, sheets can be used in several ways.
 
-The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: cf [The Visualization section](./03__visualization.md).
+The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: cf [The Visualization section](./03__visualization.html).
 
 
 However, sheets are much more powerful than that and can be used to build and share your enterprise data models.
