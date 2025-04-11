@@ -13,7 +13,7 @@ AI Integration
 
 # 1. AI Integration to assist configuration
 
-In Kawa, AI is integrated in various places to assist you configuring your data models and analytics.
+In KAWA, AI is integrated in various places to assist you configuring your data models and analytics.
 
 ## 1.1 Formula editor
 
@@ -180,8 +180,8 @@ List of configuration parameters to configure the connection the the completion 
 | supportsStreaming | No | True         | Set to True if the API supports Server Sent Events
 | openAiApiKey | Yes    | Empty text    | Use your provider's API Key. If omitted, AI support will be disabled
 | model    | Yes        | gpt-4o        | The LLM to use. Check with your provider for the list of available models
-| openAiApiUrl  | Yes   | https://api.openai.com/v1 | Kawa will use this URL:  `$(openAiApiUrl)/chat/completions`
-| completionApiUrl | No  | Empty text   | If set, Kawa will ignore `$(openAiApiUrl)` and POST requests directly on this url
+| openAiApiUrl  | Yes   | https://api.openai.com/v1 | KAWA will use this URL:  `$(openAiApiUrl)/chat/completions`
+| completionApiUrl | No  | Empty text   | If set, KAWA will ignore `$(openAiApiUrl)` and POST requests directly on this url
 | additionalHeaders | No | Empty text   | Additional headers to send to the completion API. Syntax is: `HEADER1=VALUE1,HEADER2=VALUE2`
 | authenticatesWithKerberos | No | False | If set to True, wil authenticate to the completion API with kerberos. The prerequisite being that all the Kerberos credentials are properly configured on the host machine.
 
