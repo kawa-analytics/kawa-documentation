@@ -25,13 +25,13 @@ Ready to dive in? Start here:
 
 | Section         | Description                                     |
 |----------------|-------------------------------------------------|
-| [Data Integration](./01__data_integration.md) | Connect to internal or external systems to feed data in KAWA |
-| [Data Modeling](./02__modeling.md) | Create your sheets to share powerful data models with your teams    |
-| [Visualization](./03__visualization.md) | Create charts, grids and pivot tables to explore your data in a few clicks         |
-| [Reporting and Publishing](./04__publishing.md) | Your data models are ready? Let's publish them with Dashboards or even Data applications        |
-| [Automations](./05__automations.md) | Create your own workflows, powered by your data       |
-| [AI Integration](./06__ai_integration.md) | Chat with your data in natural language and create a team of agents to help you with your tasks       |
-| [Admin](./07__administration.md) | Learn more about data security, sharing and permissions       |
+| [Data Integration](./01__data_integration.html) | Connect to internal or external systems to feed data in KAWA |
+| [Data Modeling](./02__modeling.html) | Create your sheets to share powerful data models with your teams    |
+| [Visualization](./03__visualization.html) | Create charts, grids and pivot tables to explore your data in a few clicks         |
+| [Reporting and Publishing](./04__publishing.html) | Your data models are ready? Let's publish them with Dashboards or even Data applications        |
+| [Automations](./05__automations.html) | Create your own workflows, powered by your data       |
+| [AI Integration](./06__ai_integration.html) | Chat with your data in natural language and create a team of agents to help you with your tasks       |
+| [Admin](./07__administration.html) | Learn more about data security, sharing and permissions       |
 
 ---
 
