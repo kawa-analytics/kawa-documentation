@@ -39,7 +39,7 @@ Ready to dive in? Start here:
 
 - [Python SDK](https://github.com/kawa-analytics/kywy-documentation){: target="_blank" }
 - [Install the KAWA Platform](https://github.com/kawa-analytics/kawa-docker-install){: target="_blank" }
-
+- [KAWA official website](https://www.kawa.ai){: target="_blank" }
 
 ---
 
