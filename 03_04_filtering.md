@@ -9,7 +9,7 @@ Filtering data
 ---
 
 Filters can be applied to all types of view through the same filter panel.
-Kawa comes with powerful built in filters, adapted to all your data types: text, number, booleans, date, date time.
+KAWA comes with powerful built-in filters, adapted to all your data types: text, number, booleans, date, date time.
 
 * TOC
 {:toc}
@@ -19,7 +19,7 @@ Kawa comes with powerful built in filters, adapted to all your data types: text,
 
 ## 1.1 Overview
 
-The filter panel is situated at the right of all the views (Charts, Grids and Pivots). It can be toggled on and off by clicking onf the green Filters button at the top right. This button indicates how many active filters are applied on your view.
+The filter panel is situated at the right of all the views (Charts, Grids and Pivots). It can be toggled on and off by clicking on the green "Filters" button at the top right. This button indicates how many active filters are applied on your view.
 
 ![Filters](./readme-assets/filters1.png)
 
@@ -62,9 +62,9 @@ _Here, KAWA will only keep rows for which the city is Aberdeen or Akron_
 The second tab of the text filter lets you configure multiple conditions.
 
 - You can add / remove conditions.
-- When you have more than one condition, you can pick wether you want them ALL to match (`AND`) or at least one (`OR`).
+- When you have more than one condition, you can pick whether you want them ALL to match (`AND`) or at least one (`OR`).
 - Each condition has an operator picked from the list: Begins with, Ends with, Contains, etc... and a text value (except for: Is empty and Is not empty).
-- Important: All the conditions are not sensitive to case.
+- Important: All the conditions are not case sensitive.
 
 __Examples:__
 
@@ -121,7 +121,7 @@ Presets are the quickest way to filter your temporal data. Each filter has their
 | M-1     | Shows data for previous Month
 | YoY YTD | Year on Year Year to Date: Shows data across all years until today's day. For example, if today is the 25th of June 2025, we will show data for 2025, 2024, 2023, ... until the 25th of June.
 | YTD     | Year To Date: Show all dates from the beginning of the year until today's date. 
-| MTD     | Month To Date: Show all dated from the beginning of the month until today's date.
+| MTD     | Month To Date: Show all dates from the beginning of the month until today's date.
 | Future  | Shows all the data after today
 | Past    | Shows all the data before today
 
@@ -138,7 +138,7 @@ You can also display presets by time unit:
 - __S__ Semester
 - __Y__ Year
 
-Each category will show a list of presets similar to D+1 or D-1. The capital letter indicates the unit (Y for year, BD for business day, etc..) and the number indicates the offset. For example: BD+1 indicates the next business day. Q-1 indicates previous Quarter.
+Each category will show a list of presets similar to D+1 or D-1. The capital letter indicates the unit (Y for year, BD for business day, etc..) and the number indicates the offset. For example: BD+1 indicates the next business day. Q-1 indicates the previous Quarter.
 
 ### 2.1.2 Filtering using ranges
 
@@ -147,7 +147,7 @@ There are three types of range available.
 __a. Fixed ranges:__ They correspond to a range defined by two fixed dates that you can pick. For example: all dates between 1/1/2020 and 2/1/2020. The min and max are included in the returned datasets. If you omit the Max, KAWA will give you all dates after the Min, and vice versa.
 
 
-__b. Rolling ranges:__ They corresponding to a rolling range, relative to today. It contains 3 parameters:
+__b. Rolling ranges:__ They correspond to a rolling range, relative to today. It contains 3 parameters:
 
 - _From:_ A number to indicate how many units we start from (Minimum)
 - _To:_ A number to indicate how many units we go to (Maximum)

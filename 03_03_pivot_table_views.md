@@ -32,7 +32,7 @@ In the following example, we configured a Pivot with:
 
 ## 1.1 Configuring the values
 
-Adding values to the pivot table can be done by clicking on the (+) button next to the Values header or by directly drag and dropping data from the Columns panel into the Value section.
+Adding values to the pivot table can be done by clicking on the (+) button next to the Values header or by directly dragging and dropping data from the Columns panel into the Value section.
 
 Value can be removed by using the Trash Can icon or simply disabled by toggling them off.
 
@@ -94,7 +94,7 @@ This is the same documented here (Similar as the one available in the Chart View
 
 Rows and Columns have identical configuration on the Pivot table.
 
-Adding rows/columns to the pivot table can be done by clicking on the (+) button next to the Rows/Columns header or by directly drag and dropping data from the Columns panel into the Rows/Columns section.
+Adding rows/columns to the pivot table can be done by clicking on the (+) button next to the Rows/Columns header or by directly dragging and dropping data from the Columns panel into the Rows/Columns section.
 
 Rows/Columns can be removed by using the Trash Can icon or simply disabled by toggling them off.
 
@@ -114,7 +114,7 @@ A bottom section will then open, showing the raw data that was used to computed 
 
 ![Pivot](./readme-assets/pivot_view4.png)
 
-_In this example, you can see the data that was used to compute the 3,242,055 in Sales for Binders in Florida. Note that this drill down vue is a Grid View and can be further configured. You could group by year and explore how this total is distributed across various periods of time._
+_In this example, you can see the data that was used to compute the 3,242,055 in Sales for Binders in Florida. Note that this drill down view is a Grid View and can be further configured. You could group by year and explore how this total is distributed across various periods of time._
 
 
 ## 2.2 Visual Drill Down
@@ -125,7 +125,7 @@ In the three dots menu of each Row and Column, clink on Link View. You can then 
 
 ![Pivot](./readme-assets/pivot_view5.png)
 
-_On this example, a monthly sales evolution chart was associated with the Accessories sub category. When a user clicks on a cell in this particular sub category, the chart will open, filtered in the Selected state. Notice that you can also go back to the drill down view by clicking on the corresponding tab on the lower section._
+_In this example, a monthly sales evolution chart was associated with the Accessories sub category. When a user clicks on a cell in this particular sub category, the chart will open, filtered in the Selected state. Notice that you can also go back to the drill down view by clicking on the corresponding tab on the lower section._
 
 
 # 3 Conditional formatting
@@ -156,6 +156,6 @@ You can multi select cells on the pivot to access local statistics. Copy and pas
 
 ## 4.3 CSV export
 
-By clicking on the tab and selecting "Download CSV" option, you will get a CSV representation of your pivot table.
+By clicking on the tab and selecting the "Download CSV" option, you will get a CSV representation of your pivot table.
 
 
