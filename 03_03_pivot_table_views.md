@@ -108,9 +108,9 @@ _Toggling on and off the total:_ You can toggle on and Off the Total checkbox to
 
 ## 2.1 Standard Drill Down
 
-A Pivot table only show aggregated values in its cells. Accessing the Row data between each of them is done by clicking on the magnifying glass in any cell of the pivot.
+A Pivot table only show aggregated values in its cells. Accessing the Raw data between each of them is done by clicking on the magnifying glass in any cell of the pivot.
 
-A bottom section will then open, showing the row data that was used to computed that particular value.
+A bottom section will then open, showing the raw data that was used to computed that particular value.
 
 ![Pivot](./readme-assets/pivot_view4.png)
 
@@ -145,11 +145,13 @@ _This pivot table was configured as a heatmap to show the breakdown of Quantity 
 ## 4.1 Auto sizing mode
 
 Right clicking anywhere on the pivot will bring specific display options.
-The Auto size mode is either: By content or Disabled. When By content is selected, each time the configuration of the pivot changes, the width of its columns will be recomputed based on the content of its cells. If you manually change a column width, this change will be persisted.
+The Auto size mode is either: _By content_ or _Disabled_. When _By content_ is selected, each time the configuration of the pivot changes, the width of its columns will be recomputed based on the content of its cells. If you manually change a column width, this change will be persisted.
 
 ## 4.2 Cell multi select
 
-You can multi select cells on the pivot to access to local statistics. Copy and paste into spreadsheet softwares works too.
+You can multi select cells on the pivot to access local statistics. Copy and paste into spreadsheet softwares works too.
+
+![Pivot](./readme-assets/pivot_view7.png)
 
 
 ## 4.3 CSV export
