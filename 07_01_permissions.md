@@ -260,7 +260,9 @@ it inherits the sharing mode (Read or Write) from its parent sheet.
 
 If a sheet is shared with TeamA for Write, then all the shared views within that sheet will be editable by members of TeamA.
 
-In order to configure sharing parameters for a sheet, use the icon at the top, next to the sheet name.
+In order to configure sharing parameters for a sheet, use the icon at the top right.
+
+![sheet](./readme-assets/sharing_button.png)
 
 ![sheet](./readme-assets/share_sheet.png)
 
