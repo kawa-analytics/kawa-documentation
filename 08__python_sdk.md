@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Python SDK
-nav_order: 80
+nav_order: 08__python_sdk
 ---
 
 Python SDK

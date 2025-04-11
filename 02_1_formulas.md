@@ -2,7 +2,7 @@
 layout: default
 title: Formulas
 parent: Data Modeling
-nav_order: 21
+nav_order: 02_1_formulas
 ---
 
 Computation
