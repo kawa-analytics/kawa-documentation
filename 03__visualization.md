@@ -7,7 +7,7 @@ nav_order: 5
 Visualization - Views
 ---
 
-In Kawa, data can be visualized through charts, grids, and pivot tables, offering flexible and intuitive ways to explore and analyze information. Whether you're tracking trends over time, comparing metrics across dimensions, or drilling down into granular details, Kawa's visualization tools help turn raw data into actionable insights.
+In KAWA, data can be visualized through charts, grids, and pivot tables, offering flexible and intuitive ways to explore and analyze information. Whether you're tracking trends over time, comparing metrics across dimensions, or drilling down into granular details, KAWA's visualization tools help turn raw data into actionable insights.
 
 A sample of some charts, grids and pivot tables to Visualize various aspects of your datasets:
 
@@ -17,7 +17,7 @@ A sample of some charts, grids and pivot tables to Visualize various aspects of 
 
 Views are created directly in sheets and accessible via the main Tabs.
 
-The tabs can be either Pinned (shown on the entire width of your screen) or Unpinned (Shown in a drop dow list). In order to switch between one mode and another, click on the pin icon at the left of the tab bar / or at the right of the tab drop down menu.
+The tabs can be either Pinned (shown on the entire width of your screen) or Unpinned (Shown in a drop down list). In order to switch between one mode and another, click on the pin icon at the left of the tab bar / or at the right of the tab drop down menu.
 
 _Create a new view:_ Click on the create view button situated at the top left (or inside the view drop down menu, when in the Unpinned mode). Then pick the type of view you need: Grid, Chart or Pivot.
 
