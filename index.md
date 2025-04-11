@@ -17,7 +17,7 @@ Ready to dive in? Start here:
 
 - [Visualize your data](./03__visualization.html){: .btn .btn-primary }
 - [Create some powerful data models](./02__modeling.html){: .btn }
-- [Integrate your own data sources](./01__data_integration.md#data-integration.html){: .btn }
+- [Integrate your own data sources](./01__data_integration.html#data-integration.html){: .btn }
 
 ---
 
