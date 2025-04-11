@@ -187,6 +187,20 @@ You can pick many among:
 
 > In the design section, you can set the color of the trend arrows - by default an Upward trend is Green, Downward is red and constant is Black.
 
+## 1.5 Configure an scatter plot
+
+Scatter plots require one level of grouping and at least two series.
+It will plot the correlation between the two first series, for each group.
+
+- The first field will be plotted on the X-Axis
+- The second on the Y-axis
+- The optional third field will define the color of each dot
+- There will be one point per Group
+
+![Chart config](./readme-assets/chart_view_scatter1.png)
+
+_In this example, we plot the correlation between Sales and Profit, for each Order Date of the dateset__
+
 
 # 2 Series and Groups
 
