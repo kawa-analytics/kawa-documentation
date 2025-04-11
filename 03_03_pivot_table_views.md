@@ -28,7 +28,13 @@ In the following example, we configured a Pivot with:
 
 ![Pivot](./readme-assets/pivot_view1.png)
 
+> Note that you can easily fold and unfold your rows and columns by clicking on the (plus) and (minus) signs. When multiple rows or columns are nested, clicking on upper level (plus) and (minus) lets you control which nodes are deployed in bulk.
+
 ## 1.1 Configuring the values
+
+Adding values to the pivot table can be done by clicking on the (+) button next to the Values header or by directly drag and dropping data from the Columns panel into the Value section.
+
+Value can be removed by using the Trash Can icon or simply disabled by toggling them off.
 
 For each value field, you can configure its format and name, its aggregation, and its calculation (Show as).
 
@@ -79,8 +85,75 @@ _In the above example:_
 
 - _Axis: Row and Grand total: Sum._ Here, we will compute the Red cell by adding together the Blue cells. It will be the SUM of the MINS of the SUMS.
 
-
-
 ### 1.1.3 Value calculation (Show As)
 
 This is the same documented here (Similar as the one available in the Chart Views): [Configure chart series](03_02_chart_views#213-value-calculation-show-as)
+
+
+## 1.2 Configuring the Rows and Columns
+
+Rows and Columns have identical configuration on the Pivot table.
+
+Adding rows/columns to the pivot table can be done by clicking on the (+) button next to the Rows/Columns header or by directly drag and dropping data from the Columns panel into the Rows/Columns section.
+
+Rows/Columns can be removed by using the Trash Can icon or simply disabled by toggling them off.
+
+_Configure the Binning or Time sampling:_ When you use temporal data as row or column, you can configure Binning (Click on the cog icon next to the field name) or Time sampling (Click on the calendar next to the field name). These features are described in the Grid View: [Configure Binning](03_01_grid_views#212-number-binning) and [Configure time sampling](03_01_grid_views#211-time-sampling). 
+
+_Configure order:_ The order of each row and column can be defined by picking a direction (Ascending, Descending, Absolute value Ascending and Descending for numeric metrics) and a field.
+
+_Toggling on and off the total:_ You can toggle on and Off the Total checkbox to show or hide the corresponding totals for this Row/Column.
+
+# 2 Drilling Down
+
+## 2.1 Standard Drill Down
+
+A Pivot table only show aggregated values in its cells. Accessing the Row data between each of them is done by clicking on the magnifying glass in any cell of the pivot.
+
+A bottom section will then open, showing the row data that was used to computed that particular value.
+
+![Pivot](./readme-assets/pivot_view4.png)
+
+_In this example, you can see the data that was used to compute the 3,242,055 in Sales for Binders in Florida. Note that this drill down vue is a Grid View and can be further configured. You could group by year and explore how this total is distributed across various periods of time._
+
+
+## 2.2 Visual Drill Down
+
+You can configure the pivot to open specific views instead of the basic drill down grid when users click on particular cells.
+
+In the three dots menu of each Row and Column, clink on Link View. You can then associate various existing views with each value of your rows or columns.
+
+![Pivot](./readme-assets/pivot_view5.png)
+
+_On this example, a monthly sales evolution chart was associated with the Accessories sub category. When a user clicks on a cell in this particular sub category, the chart will open, filtered in the Selected state. Notice that you can also go back to the drill down view by clicking on the corresponding tab on the lower section._
+
+
+# 3 Conditional formatting
+
+You can configure conditional formatting in Pivot tables in a similar way that you would in Grid views. In the pivot tables, there is no notion of Row Data, so you can only work on conditions operating at the group level. Please refer to this  [Conditional Formatting](03_01_grid_views#a-conditional-formatting). 
+
+Both rule based and gradient formatting are available in the pivot tables.
+
+
+![Pivot](./readme-assets/pivot_view6.png)
+
+_This pivot table was configured as a heatmap to show the breakdown of Quantity sold per quarter and category._
+
+
+# 4 Specific interactions
+
+## 4.1 Auto sizing mode
+
+Right clicking anywhere on the pivot will bring specific display options.
+The Auto size mode is either: By content or Disabled. When By content is selected, each time the configuration of the pivot changes, the width of its columns will be recomputed based on the content of its cells. If you manually change a column width, this change will be persisted.
+
+## 4.2 Cell multi select
+
+You can multi select cells on the pivot to access to local statistics. Copy and paste into spreadsheet softwares works too.
+
+
+## 4.3 CSV export
+
+By clicking on the tab and selecting "Download CSV" option, you will get a CSV representation of your pivot table.
+
+
