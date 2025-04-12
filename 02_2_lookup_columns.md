@@ -16,9 +16,8 @@ Lookup Columns
 
 Lookup columns are similar to VLookup in Excel. They allow to mix data from various sources in one place.
 
-## 1.1 Creating a first lookup column
-
-We have two sheets, one showing orders made by clients in an online store, and another one showing events to which clients were invited.
+Throughout this paragraph, we will use the following setup:
+Two sheets, one showing orders made by clients in an online store, and another one showing events to which clients were invited.
 
 _Table 1: Orders placed by clients_
 
@@ -31,21 +30,21 @@ _Table 2: Events where customer where invited_
 
 > Those two sheets have a column in common: `Customer name` in the Orders sheet and `guest name` in the Events sheet. Those columns have different name but their content is similar.
 
-If we want to answer the question: __Which customer is the most profitable?__ - Computing net profit by subtracting the cost of all events someone attended to the Profit that was made from Orders alone - We would need to bring in the same place the Profit from Orders and the Cost of events.
+## 1.1 Creating a first lookup column
 
-In order to do that, you first need to create a lookup column (That will lookup the total cost of event for each customer):
+If we want to bring in the Orders sheet the total cost of all events clients went to, we would need to create a lookup column:
 
 Clicking on Enrich Data > Lookup column brings up the following configuration form:
 
 ![Lookup](./readme-assets/lookup3.png)
 
-- _Select sheet:_ Which sheet do we want to bring column from. Here, working from within the ORDERS sheet, we want to bring data from the EVENTS sheet.
+- _Select sheet:_ Which sheet do we want to bring column from. Here, working from within the Orders sheet, we want to bring data from the Events sheet.
 
-- _Columns to add:_ From the EVENTS sheet, we are interested in the SUM of event cost.
+- _Columns to add:_ From the Events sheet, we are interested in the SUM of event cost.
 
-- _Map Lookup Columns:_ In this step, we define how the mapping between ORDERS sheet and EVENTS sheet will be made. Here, we ar looking up guest name in EVENTS with Customer name in ORDERS.
+- _Map Lookup Columns:_ In this step, we define how the mapping between ORDERS sheet and Events sheet will be made. Here, we ar looking up guest name in Events with Customer name in Orders.
 
-Clicking on APPLY will add a new column to the ORDERS sheet, as shown in red below:
+Clicking on APPLY will add a new column to the Orders sheet, as shown in red below:
 
 ![Lookup](./readme-assets/lookup4.png)
 
@@ -58,22 +57,21 @@ Clicking on APPLY will add a new column to the ORDERS sheet, as shown in red bel
 
 Lookup columns have the following parameters:
 
-- A main sheet: This is the sheet to which the lookup column belongs.
+- A main sheet: This is the sheet to which the lookup column belongs (The Orders sheet).
 
-- A target sheet: this is where data will be fetched from (It can be the same as the main sheet).
+- A target sheet: this is where data will be fetched from (It can be the same as the main sheet). Here: the Events sheet.
 
-- A metric from the target sheet: This is the column from the target sheet with an aggregation method, that we are connecting through the lookup column. For example: The SUM of EVENT COSTS.
+- A metric from the target sheet: This is the column from the target sheet with an aggregation method, that we are connecting through the lookup column. In our example: The SUM of EVENT COSTS.
 
-- A mapping (Or join) definition: It defines how the lookup will take place. This mapping requires a list of column pairings: One from the main sheet, with one of the target sheet. For example: 
+- A mapping (or join) definition: It defines how the lookup will take place. This mapping requires a list of column pairings: One from the main sheet, with one of the target sheet. In our example: 
 
-| Main Sheet   | Target Sheet
+| Main Sheet: Orders   | Target Sheet: Events
 |--------------|---------------|
-| Customer Name | Client Name
+| Customer Name | Guest Name
 
-_With this mapping configuration, Customer name from the main sheet will be matched against Client name in the target Sheet._
+_With this mapping configuration, "Customer name" from the main sheet will be matched against "Guest name" in the target sheet._
 
 It is very helpful to think of the mapping definition as the __Granularity__ of the Linked column. In our example, our linked column has a Granularity at the guest name level.
-
 
 In addition to these parameters, Lookup columns can also have filters. Those restrict the scope of what is available for Lookup. For example, I can filter by `event_year == current year`. This will restrict the scope and only return events for the current year. Our SUM of EVENT COSTS will only be SUM of EVENT COSTS for this year only.
 
@@ -205,3 +203,6 @@ KAWA will look at all the granularities within the aggregation and will automati
 
 
 The Total net profit is `$71,000 + $15,000 = $56,000`. Also note that the net profit at row level do not make much sense as we subtract the total cost per client with the profit for one order only. 
+
+
+# 2. Editing lookup columns
