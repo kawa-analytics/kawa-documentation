@@ -14,7 +14,8 @@ Lookup Columns
 
 # 1 What is a lookup column? 
 
-Lookup columns are similar to VLookup in Excel. They allow to mix data from various sources in one place.
+Lookup columns are similar to the VLookup operation in Excel. 
+They allow to mix data from various sources in one place. In KAWA, they allow to join data sources together in an intuitive and powerful way, keeping consistency in all derived computations.
 
 Throughout this paragraph, we will use the following setup:
 Two sheets, one showing orders made by clients in an online store, and another one showing events to which clients were invited.
@@ -42,7 +43,7 @@ Clicking on Enrich Data > Lookup column brings up the following configuration fo
 
 - _Columns to add:_ From the Events sheet, we are interested in the SUM of event cost.
 
-- _Map Lookup Columns:_ In this step, we define how the mapping between ORDERS sheet and Events sheet will be made. Here, we ar looking up guest name in Events with Customer name in Orders.
+- _Map Lookup Columns:_ In this step, we define how the mapping between the Orders sheet and Events sheet will be made. Here, we ar looking up guest name in Events with Customer name in Orders.
 
 Clicking on APPLY will add a new column to the Orders sheet, as shown in red below:
 
