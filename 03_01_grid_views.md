@@ -2,7 +2,7 @@
 layout: default
 title: Grid Views
 parent: Visualization
-nav_order: 6
+nav_order: 7
 ---
 
 Grid views
@@ -202,11 +202,50 @@ The aggregated values will then be shown at the group level, and the overall agg
 
 > You may be interested in multiple aggregation for the same data, say: MIN, MAX and AVG. In that case, create 3 fields on the same data and set the three desired aggregations.
 
+# 3 Linked Views
+
+Linked views can be created from the grid views.
+
+![Linked view](./readme-assets/linked_view.png)
+
+_On the image above, the top view is the main Grid view. It is linked to two views that open in the bottom section.
+Those views are connected to the main one: clicking on a row of it will filter the bottom one. Notice here (in green) the
+bottom view is filtered on Lindsay Castell._
+
+> Linked views can be created from any sheet within the workspace, providing an interactive and intuitive way to explore data across multiple data models.
+
+## 3.1 Creating a linked view
+
+To create a linked view, identify a field to which you want to link a view to. In the above example, the link was made with the _Customer Name_.
+Then, either click on the blue link icon in its header or go in the three dots menu > "Link View With".
 
 
-# 3 Global settings
+The configuration popup will ask you to complete the following steps:
 
-## 3.1 Context menu
+- First: select the sheet to link. It can be the same sheet (current sheet), or any other sheet of the workspace.
+- Second: from that sheet, pick the view you want to link. It can be any type of view: Grid, Chart and Pivot.
+- Last: configure the link itself by pairing up fields from the main view with fields of the linked views. There is no limit to the number of fields you can pick.
+
+Click on Apply - and a new linked view will be added. Clicking on any row of the top view will filter the bottom view on the field that you picked to create the link.
+
+## 3.2 Managing linked views
+
+On the three dot menu on the link view tabs, you can:
+
+- Delete a linked view
+- Rename one
+- Export them as CSV (for Grid views)
+
+The linked view panel can be expanded to occupy the full screen and collapsed.
+
+## 3.3 Creating lookup columns
+
+One of the main usage of linked views is to allow the creation of linked columns which are one of the most powerful feature of the platform.
+
+
+# 4 Global settings
+
+## 4.1 Context menu
 
 By right clicking on any cell of the grid, you access the global settings and some shortcuts.
 
@@ -218,7 +257,7 @@ By right clicking on any cell of the grid, you access the global settings and so
 
 - *Headers:* Gives you access to the wrapping setting of the headers. You can configure if you want the content of the header to occupy many rows if the title is too long (Wrapped) or if you'd rather truncate them (Ellipsis).
 
-## 3.2 View settings
+## 4.2 View settings
 
 From the context menu: right click > View Settings, you can access some global settings of the view. 
 
@@ -227,3 +266,5 @@ From the context menu: right click > View Settings, you can access some global s
 - *Compute overall aggregations:* When you have too much data in your grid, say billions of rows, computing the overall aggregations (In the bottom row) can slow down the interactions. You can then opt to turn it off.
 
 - *Auto compute:* When turned off, modifications in the configuration of your Grid (sorting, grouping, filters, etc) will not be immediately taken into account. You will need to explicitly click on a compute button to trigger the calculation taking in account the new parameters. This is very useful if your grid takes several seconds to compute.
+
+

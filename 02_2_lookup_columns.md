@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Formulas
+title: Lookup Columns
 parent: Data Modeling
-nav_order: 4
+nav_order: 5
 ---
 
-Formulas
+Lookup Columns
 ---
 
 * TOC

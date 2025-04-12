@@ -2,7 +2,7 @@
 layout: default
 title: Sharing and permissions
 parent: Administration and Sharing
-nav_order: 14
+nav_order: 15
 ---
 
 Sharing and permissions
