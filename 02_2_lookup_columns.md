@@ -28,11 +28,11 @@ _Table 2: Events where customer where invited_
 
 ![Lookup](./readme-assets/lookup2.png)
 
-> Those two sheets have a column in common: `Customer name` in the Orders sheet and `guest name` in the Events sheet. Those columns have different name but their content is similar.
+> Those two sheets have a column in common: `Customer name` in the Orders sheet and `guest name` in the Events sheet. Those columns have different names but their content is similar - they both refer to the same dimension and have values in common.
 
-## 1.1 Creating a first lookup column
+## 1.1 Creating our first lookup column
 
-If we want to bring in the Orders sheet the total cost of all events clients went to, we would need to create a lookup column:
+If we want to bring in the Orders sheet the cost of all events clients went to, we would need to create a lookup column:
 
 Clicking on Enrich Data > Lookup column brings up the following configuration form:
 
@@ -50,7 +50,9 @@ Clicking on APPLY will add a new column to the Orders sheet, as shown in red bel
 
 > The new column has a purple icon in its header that indicates that it is a Lookup Column. It contains, for each customer, the TOTAL of event cost they attended.
 
-> Notice also that this lookup columns will automatically perform a SUM DISTINCT per customer. Looking at "Aaron Bergman", you notice that the value 350 (which is the SUM of TOTAL event cost), is the same on the Group level and on each row. This is because, each customer will be counted only once in each SUM.
+> ℹ️ A One-to-Many join has been made: One customer corresponds to Many events.
+
+> ℹ️ Notice also that this lookup columns will automatically perform a SUM DISTINCT per customer. Looking at "Aaron Bergman", you notice that the value 350 (which is the SUM of TOTAL event cost), is the same on the Group level and on each row. This is because, each customer will be counted only once in each SUM.
 
 
 ## 1.2 Parameters of lookup columns
@@ -75,7 +77,7 @@ It is very helpful to think of the mapping definition as the __Granularity__ of 
 
 In addition to these parameters, Lookup columns can also have filters. Those restrict the scope of what is available for Lookup. For example, I can filter by `event_year == current year`. This will restrict the scope and only return events for the current year. Our SUM of EVENT COSTS will only be SUM of EVENT COSTS for this year only.
 
-> Filters cannot be configured when creating the columns themselves. They can only be added on once they already exist.
+> ℹ️ Filters cannot be configured when creating the columns themselves. They can only be added on once they already exist.
 
 ## 1.3 How are lookup columns computed
 
