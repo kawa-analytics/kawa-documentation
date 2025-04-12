@@ -123,8 +123,8 @@ _After step 1,the Event sheet is grouped by guest name and the Cost of all event
 
 ### 1.3.2 Step 2: Injecting the partitioned data in the main sheet (Orders)
 
-Once the partition has be computed, we can now inject their value in the main sheet.
-In the table below, see how we inject $6,000 to the lines where the customer is Bruce Wayne and how we inject $9,000 to the lines where the customer is Lucius Fix.
+Once the partition has been computed, we can now inject their value in the main sheet.
+In the table below, see how we inject $6,000 to the lines where the customer is Bruce Wayne and how we inject $9,000 to the lines where the customer is Lucius Fox.
 
 
 | order id     | Client name   | Profit   | Total Event Cost |
@@ -139,9 +139,9 @@ In the table below, see how we inject $6,000 to the lines where the customer is 
 
 ### 1.3.3 Step 3: Aggregating the injected data in the main sheet (Orders)
 
-Whether we are working in Grids, Pivot tables or Charts, we almost only deal with aggregated data. Data from lookup columns can also be aggregated in the Main sheet.
+Whether we are working in grids, pivot tables or charts, we almost only deal with aggregated data. Data from lookup columns can also be aggregated in the main sheet.
 
-In the table below, the aggregated values where indicated in the bottom row.
+In the table below, the aggregated values are indicated in the bottom row.
 
 | order id     | Client name   | Profit   | Event Cost per Client |
 |--------------|---------------|----------|------------------|
@@ -159,22 +159,22 @@ In the table below, the aggregated values where indicated in the bottom row.
 When adding the profit together, notice that KAWA does a simple SUM across all rows.
 In fact, `$10,000 + $15,000 + $10,000 + $12,000  + $10,000 + $14,000 = $71,000`.
 
-However, when adding the event cost by client, KAWA does a sum distinct, counting each client only once. More generally, at each level of grouping, KAWA will keep track of all the partitions met and count them only once.
+ℹ️ However, when adding the event cost by client, KAWA does a sum distinct, counting each client only once. More generally, at each level of grouping, KAWA will keep track of all the partitions met and count them only once.
 
-Here, there is only one group, containing all the rows (The grand total is performed on all the rows). KAWA detects that the partition `Bruce Wayne` appears twice and that the partition `Lucius Fox` is here three times. It then counts each one once only when performing the Sum.
+Here, there is only one group, containing all the rows (The grand total is performed on all the rows). KAWA detects that the partition `Bruce Wayne` appears twice and that the partition `Lucius Fox` is here three times. It then counts each one once only when performing the Sum. That explains why the SUM of event cost by client is: `$6,000 + $9,000 = $15,000` and not `$6,000 + $6,000 + $9,000 + $9,000 + $9,000 + $9,000`.
 
 
 ### 1.3.4 Step 4: Mixing local columns with lookup columns in a sheet
 
-To complete our example, we want to compute, for each customer, its net profit. This is done by subtracting the Total profit and the Event cost, for each customer.
+To complete our example, we want to compute the net profit per customer. This is done by subtracting the Total profit and the Event cost, for each customer.
 
 Here, the net profit for Bruce Wayne would be:
 
 `NET PROFIT('Bruce Wayne') = ( $10,000 + $15,000 ) - $6,000 = $19,000`
 
 Notice that in this formula, we are dealing with two different granularities:
-- Profit is at the Order granularity, there is one value per order.
-- Event cost is at the Customer granularity, there is only one value per customer.
+- Profit is at the _Order granularity_, there is one value per order.
+- Event cost is at the _Customer granularity_, there is only one value per customer.
 
 In KAWA, you would write this simply like this:
 
@@ -187,7 +187,7 @@ When aggregating values of this formula together, meaning computing:
 KAWA will look at all the granularities within the aggregation and will automatically apply the Distinct functions for each one, at the right level. Here, profit will be summed at the Order granularity and Cost by client at the client granularity.
 
 
-> ⚠️ This system will not work when one aggregation operations deal with multiple granularities originating from multiple linked columns. To make those case work, please refer to the [Level of detail documentation](./02_1_formulas#b-levels-of-detail). You would need to wrap each Linked column in its own group function. 
+> ⚠️ This system will not work when one aggregation operation deals with multiple granularities originating from multiple linked columns. To make those cases work, please refer to the [Level of detail documentation](./02_1_formulas#b-levels-of-detail). You would need to wrap each Linked column in its own group function. 
 
 | order id     | Client name   | Profit   | Cost per Client | Net Profit
 |--------------|---------------|----------|-----------------|-------------|
