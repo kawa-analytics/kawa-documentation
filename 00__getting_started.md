@@ -22,7 +22,7 @@ Loading data into KAWA is the first step, and it is done via the Data Source sec
 > If the data that you want to explore is already loaded in KAWA, go to the next paragraph.
 
 Let's create one from a simple CSV file.
-This example will use the following file that you can [download here](./readme-assets/store.csv) - but feel free to bring in your own.
+This example will use a [sample herCSV file](./readme-assets/store.csv) - but feel free to bring in your own.
 
 
 - ➡️ _Step 1:_ Go to the Data Source section (Top icon in the left bar), and click on the __(+ Data Source)__ button. Choose: __(Upload a file)__.
@@ -64,13 +64,13 @@ A good starting point is Grouping. Click on the __(Group)__ button (on the top r
 
 ![Starting](./readme-assets/start4.png)
 
-🔎 Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](./03_01_grid_views). There is a special section about [Filtering](./03_04_filtering.md).
+🔎 Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](./03_01_grid_views). There is a special section about [Filtering](./03_04_filtering).
 
 ## 2.2 Create a new simple formula
 
 The __(Enrich Data)__ button is the way to add data in your sheet to complement the one coming from your data source. It lets you join with other data sources (Lookup column), create ad-hoc mapping tables, create your own formulas and even connect to Python scripts.
 
-Let's create a simple formula to compute the unit profit by dividing the _Profit_ and the _Quantity_. 
+Let's create a simple formula to compute the unit profit by dividing the _Profit_ by the _Quantity_. 
 
 > This is based on the example file from the first paragraph, feel free to adapt to your own business logic.
 
