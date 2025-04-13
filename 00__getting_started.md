@@ -13,7 +13,7 @@ Getting Started
 
 # 1. Create your first Data Source
 
-
+[Download CSV](./readme-assets/store.csv)
 
 
 
