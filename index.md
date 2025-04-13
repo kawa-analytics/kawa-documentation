@@ -15,7 +15,8 @@ nav_order: 1
 
 Ready to dive in? Start here:
 
-- [Visualize your data](./03__visualization.html){: .btn .btn-primary }
+- [Getting started](./00__getting_started.html){: .btn .btn-primary }
+- [Visualize your data](./03__visualization.html){: .btn }
 - [Create some powerful data models](./02__modeling.html){: .btn }
 - [Integrate your own data sources](./01__data_integration.html#data-integration.html){: .btn }
 
