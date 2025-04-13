@@ -10,7 +10,7 @@ Getting Started
 KAWA contains 4 main sections:
 
 - Connect your data in the <span style="color: red;">Data Source</span> section
-- Build your models and explore in the <span style="color: purple;">Sheet</span>eet section
+- Build your models and explore in the <span style="color: purple;">Sheet</span> section
 - Publish in the <span style="color: blue;">Dashboard</span> and <span style="color: green;">Applications</span> sections
 
 ![Starting](./readme-assets/start1.png)
