@@ -7,4 +7,4 @@ nav_order: 13
 Automations
 ---
 
-_Coming soon_
+_Coming soon - April 2025 - Contact support@kawa.ai in the meantime._

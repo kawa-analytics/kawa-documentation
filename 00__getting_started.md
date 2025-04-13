@@ -133,5 +133,16 @@ Widgets can then be arranged in the layout of your choice. Dashboard are a power
 
 # 4. What's next?
 
-Those three paragraphs: __Data Source__, __Sheet__ and __Dashboard__ are giving a good overview of the structure of the KAWA platform.  
+Those three paragraphs: __Data Source__, __Sheet__ and __Dashboard__ are giving a good overview of the central structure of the KAWA platform. It is the base on which you can start building and sharing your data applications.
+
+| Objective                             | Link                                     |
+|---------------------------------------|-------------------------------------------------|
+| Connect your Python libraries to KAWA | [Python integration](./08__python_sdk)
+| Build and share data applications     | [Publishing](./04__publishing.md)
+| Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](./08__python_sdk)
+| Automate your workflows | [Automations](./05__automations.md)
+| Use AI to chat with your data | [AI Integration](./06__ai_integration.md)
+| Build and share data models | [Data Modeling](./02__modeling.md)
+| Build impactful visualizations | [Visualizations](./03__visualization.md)
+
 

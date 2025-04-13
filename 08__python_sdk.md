@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Python SDK
+title: Python Integration
 nav_order: 18
 ---
 
-Python SDK
+Python Integration
 ---
 
-_Coming soon_
+_Coming soon - April 2025 - Contact support@kawa.ai in the meantime._
