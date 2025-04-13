@@ -2,7 +2,7 @@
 layout: default
 title: Lookup Columns
 parent: Data Modeling
-nav_order: 5
+nav_order: 6
 ---
 
 Lookup Columns
