@@ -22,12 +22,12 @@ Loading data into KAWA is the first step, and it is done via the Data Source sec
 > If the data that you want to explore is already loaded in KAWA, go to the next paragraph.
 
 Let's create one from a simple CSV file.
-This example will use a [sample herCSV file](./readme-assets/store.csv) - but feel free to bring in your own.
+This example will use a [sample CSV file you can download](./readme-assets/store.csv) - but feel free to bring in your own.
 
 
 - ➡️ _Step 1:_ Go to the Data Source section (Top icon in the left bar), and click on the __(+ Data Source)__ button. Choose: __(Upload a file)__.
 
-- ➡️ _Step 2:_ Drag and Drop your file on the Drop Zone and once your data is displayed, click on __(Next)__
+- ➡️ _Step 2:_ Drag and Drop your file in the drop zone and once your data is displayed, click on __(Next)__
 
 - ➡️ _Step 3:_ Click directly on __(Save)__. In the form, choose a good name for your new Data Source, then click on __(Save and run)__.
 
@@ -116,7 +116,7 @@ Pivot tables in KAWA work like in any spreadsheet software, except that they can
 
 ![Starting](./readme-assets/start8.png)
 
-To know what is possible with the pivot tables, go to the [Pivot Documentation](./03_03_pivot_table_views.md).
+To know what is possible with the pivot tables, go to the [Pivot Documentation](./03_03_pivot_table_views).
 
 
 # 3. Put it together in a Dashboard
@@ -138,11 +138,11 @@ Those three paragraphs: __Data Source__, __Sheet__ and __Dashboard__ are giving 
 | Objective                             | Link                                     |
 |---------------------------------------|-------------------------------------------------|
 | Connect your Python libraries to KAWA | [Python integration](./08__python_sdk)
-| Build and share data applications     | [Publishing](./04__publishing.md)
+| Build and share data applications     | [Publishing](./04__publishing)
 | Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](./08__python_sdk)
-| Automate your workflows | [Automations](./05__automations.md)
-| Use AI to chat with your data | [AI Integration](./06__ai_integration.md)
-| Build and share data models | [Data Modeling](./02__modeling.md)
-| Build impactful visualizations | [Visualizations](./03__visualization.md)
+| Automate your workflows | [Automations](./05__automations)
+| Use AI to chat with your data | [AI Integration](./06__ai_integration)
+| Build and share data models | [Data Modeling](./02__modeling)
+| Build impactful visualizations | [Visualizations](./03__visualization)
 
 
