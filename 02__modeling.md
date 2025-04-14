@@ -24,6 +24,7 @@ A sheet is composed of the following main elements:
 - Some columns (similar to the columns of a table in a database)
 - Some metadata
 
+A sheet also has a control panel and some global sheet filters.
 All these concepts will be explored in specific pages.
 
 ## 1.1 The main data source

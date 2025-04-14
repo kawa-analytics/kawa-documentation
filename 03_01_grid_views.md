@@ -2,7 +2,7 @@
 layout: default
 title: Grid Views
 parent: Visualization
-nav_order: 8
+nav_order: 10
 ---
 
 Grid views

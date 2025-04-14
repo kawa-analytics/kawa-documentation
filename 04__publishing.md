@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Reporting and Publishing
-nav_order: 12
+nav_order: 14
 ---
 
 Reporting and Publishing
