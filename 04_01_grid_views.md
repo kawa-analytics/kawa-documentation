@@ -251,7 +251,7 @@ The linked view panel can be expanded to occupy the full screen and collapsed.
 
 ## 3.3 Creating lookup columns
 
-One of the main usage of linked views is to allow the creation of linked columns which are one of the most powerful feature of the platform. Please have a look at the [Documentation on Linked columns](./02_2_lookup_columns#1-what-is-a-lookup-column) for more details.
+One of the main usage of linked views is to allow the creation of linked columns which are one of the most powerful feature of the platform. Please have a look at the [Documentation on Linked columns](./03_02_lookup_columns#1-what-is-a-lookup-column) for more details.
 
 
 # 4 Global settings

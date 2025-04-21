@@ -7,4 +7,11 @@ nav_order: 4
 Import CSV
 ---
 
-_Coming soon - April 2025 - Contact support@kawa.ai in the meantime._
+This is the most straightforward way to import data in KAWA.
+
+* TOC
+{:toc}
+
+
+
+
