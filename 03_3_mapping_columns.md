@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Mapping Columns
-parent: Data Modeling
-nav_order: 7
+parent: Computation
+nav_order: 9
 ---
 
 Mapping Columns

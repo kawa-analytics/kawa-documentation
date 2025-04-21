@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Formulas
-parent: Data Modeling
-nav_order: 5
+parent: Computation
+nav_order: 7
 ---
 
 Formulas

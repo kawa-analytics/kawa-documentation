@@ -1,11 +1,10 @@
 ---
 layout: default
-title: Control Panel
-parent: Data Modeling
-nav_order: 8
+title: Automating
+nav_order: 17
 ---
 
-Control Panel
+Automations
 ---
 
 _Coming soon - April 2025 - Contact support@kawa.ai in the meantime._

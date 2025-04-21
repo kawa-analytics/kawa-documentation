@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Automating
-nav_order: 15
+title: Python Integration
+nav_order: 21
 ---
 
-Automations
+Python Integration
 ---
 
 _Coming soon - April 2025 - Contact support@kawa.ai in the meantime._

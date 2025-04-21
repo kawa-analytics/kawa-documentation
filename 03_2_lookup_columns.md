@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Lookup Columns
-parent: Data Modeling
-nav_order: 6
+parent: Computation
+nav_order: 8
 ---
 
 Lookup Columns
