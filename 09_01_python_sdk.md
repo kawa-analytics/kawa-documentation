@@ -10,7 +10,7 @@ The KAWA Python SDK
 
 KAWA offers a Python SDK that lets you perform various operations: Computations, Data loading and Advanced administration tasks.
 
-> You can find example workbooks and additional documentation here: [KAWA Python SDK Github Repository](https://github.com/kawa-analytics/kywy-documentation).
+📚 You can find example workbooks and additional documentation here: [KAWA Python SDK Github Repository](https://github.com/kawa-analytics/kywy-documentation).
 
 
 * TOC
@@ -44,7 +44,7 @@ kawa-........
 
 ## 1.3 Connect and authenticate to KAWA
 
-The recommended way to connect to KAWA with the Python is SDK is by creating a `.env` file in your project root directory.
+The recommended way to connect to KAWA with the Python SDK is by creating a `.env` file in your project root directory.
 
 > The `.env` file will be located by searching upward from the current working directory until the file is found or the root directory is reached.
 
@@ -56,21 +56,23 @@ Here is what the content of your `.env` file should look like:
     KAWA_WORKSPACE=1
 ```
 
-_Specify the correct URL - with the correct port -, your API Key and the workspace ID you want to connect to._
+Specify the following:
+
+- _KAWA_URL:_ Enter your URL with the correct port
+- _KAWA_API_KEY:_ Fill in the API key that was generated at the previous step
+- _KAWA_WORKSPACE:_ Specify in which workspace you want to be authenticated
 
 When the file has been created, run the following:
 
 ```python
 from kywy.client.kawa_client import KawaClient as K
-
 kawa = K.load_client_from_environment()
 ```
 
-Alternatively, you can authenticate without using the `.env` file:
+Alternatively, you can authenticate without using the `.env` file (not recommended):
 
 ```python
 from kywy.client.kawa_client import KawaClient as K
-
 kawa = KawaClient(kawa_api_url='https://your-domain:your-port')
 kawa.set_api_key(api_key='kawa-****')
 kawa.set_active_workspace_id('1')
@@ -101,7 +103,7 @@ loader.load_data()
 
 📚 Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/01_load_data_notebook.ipynb) for a complete documentation of the data loading API.
 
-> Note that you can also use arrow tables instead of pandas dataframe for improved performances. This is all detailed in the cited notebook.
+> Note that you can also use arrow tables instead of pandas dataframe for improved performances. This is all detailed in the notebook mentioned above.
 
 
 # 3 Run computations on KAWA from the Python SDK
@@ -120,7 +122,9 @@ query = (kawa
          .order_by('Profit', ascending=False)
          .limit(5))
 
-query.compute()
+df = query.compute()
+
+# df is a regular Pandas dataframe that can be further manipulated.
 ```
 
 📚 Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/02_compute_notebook.ipynb) for a complete documentation of the computing API.
