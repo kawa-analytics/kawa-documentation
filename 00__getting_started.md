@@ -64,7 +64,7 @@ A good starting point is Grouping. Click on the __(Group)__ button (on the top r
 
 ![Starting](./readme-assets/start4.png)
 
-🔎 Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](./03_01_grid_views). There is a special section about [Filtering](./03_04_filtering).
+🔎 Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](./04_01_grid_views). There is a special section about [Filtering](./04_04_filtering).
 
 ## 2.2 Create a new simple formula
 
@@ -99,7 +99,7 @@ In order to explore your data in a more visual way, let's now create a chart. In
 
 ![Starting](./readme-assets/start7.png)
 
-Please refer to the complete [Chart Documentation](./03_02_chart_views) to learn how to customize your charts.
+Please refer to the complete [Chart Documentation](./04_02_chart_views) to learn how to customize your charts.
 
 ## 2.4 Create a Pivot Table
 
@@ -116,7 +116,7 @@ Pivot tables in KAWA work like in any spreadsheet software, except that they can
 
 ![Starting](./readme-assets/start8.png)
 
-To know what is possible with the pivot tables, go to the [Pivot Documentation](./03_03_pivot_table_views).
+To know what is possible with the pivot tables, go to the [Pivot Documentation](./04_03_pivot_table_views).
 
 
 # 3. Put it together in a Dashboard
@@ -137,12 +137,12 @@ Those three paragraphs: __Data Source__, __Sheet__ and __Dashboard__ are giving 
 
 | Objective                             | Link                                     |
 |---------------------------------------|-------------------------------------------------|
-| Connect your Python libraries to KAWA | [Python integration](./08__python_sdk)
-| Build and share data applications     | [Publishing](./04__publishing)
-| Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](./08__python_sdk)
-| Automate your workflows | [Automations](./05__automations)
-| Use AI to chat with your data | [AI Integration](./06__ai_integration)
-| Build and share data models | [Data Modeling](./02__modeling)
-| Build impactful visualizations | [Visualizations](./03__visualization)
+| Connect your Python libraries to KAWA | [Python integration](./09_00_python_integration)
+| Build and share data applications     | [Publishing](./05_00_publishing)
+| Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](./09_00_python_integration)
+| Automate your workflows | [Automations](./07_00_automations)
+| Use AI to chat with your data | [AI Integration](./06_00_ai_integration)
+| Build and share data models | [Data Modeling](./02_00_modeling)
+| Build impactful visualizations | [Visualizations](./04_00_visualization)
 
 
