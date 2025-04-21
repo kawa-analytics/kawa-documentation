@@ -141,6 +141,17 @@ Regardless of the type, you can:
 ![Format fields](./readme-assets/grid_view_format_data.png)
 
 
+__Rendering URLs in the Grid:__
+
+When a column of the grid contains a URL, you can apply a formatter to make that URL clickable:
+
+![Format fields](./readme-assets/link1.png)
+
+In order to do so, click on the three dot menu of the column containing the URL, and click on __Format Data__.
+
+Check the option: _Format data as link_. You can then pick the column to use to render the labels. For example here, the column CITY was used to render the URL name. As a result, when clicking on the New York city value, the link associated with this row will be opened in a new tab.
+
+
 # 2 Grouping and Aggregation
 
 Grids are a powerful tool to visualize both row data and aggregated data.
