@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Automating
-nav_order: 18
+parent: Data Integration
+nav_order: 4
 ---
 
-Automations
+Import CSV
 ---
 
 _Coming soon - April 2025 - Contact support@kawa.ai in the meantime._

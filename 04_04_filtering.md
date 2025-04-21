@@ -2,7 +2,7 @@
 layout: default
 title: Filtering data
 parent: Visualization
-nav_order: 14
+nav_order: 15
 ---
 
 Filtering data

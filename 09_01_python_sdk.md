@@ -2,7 +2,7 @@
 layout: default
 title: Python SDK
 parent: Python Integration
-nav_order: 22
+nav_order: 23
 ---
 
 The KAWA Python SDK
