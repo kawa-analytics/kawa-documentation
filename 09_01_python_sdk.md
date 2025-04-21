@@ -51,9 +51,9 @@ The recommended way to connect to KAWA with the Python SDK is by creating a `.en
 Here is what the content of your `.env` file should look like:
 
 ```bash
-    KAWA_URL=https://your-domain:your-port
-    KAWA_API_KEY=kawa-****
-    KAWA_WORKSPACE=1
+KAWA_URL=https://your-domain:your-port
+KAWA_API_KEY=kawa-****
+KAWA_WORKSPACE=1
 ```
 
 Specify the following:
@@ -85,8 +85,6 @@ In order to upload any pandas dataframe to KAWA:
 
 ```python
 from kywy.client.kawa_client import KawaClient as K
-
-
 kawa = K.load_client_from_environment()
 
 # Define your dataframe
