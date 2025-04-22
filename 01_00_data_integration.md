@@ -10,13 +10,13 @@ Data Integration - Data Sources
 There are several ways to connect KAWA with your data.
 KAWA supports: Importing files, Connecting to external systems such as CRMs, databases, APIS etc, Linking to existing tables in the main warehouse, Importing unstructured data, Importing data from Python scripts.
 
-# 1 Indicators
+# 1 Data Source columns 
 
-In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns (referred to as `Indicators`). 
+In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. 
 
-## 1.1 Indicator types
+## 1.1 Column types
 
-Each Indicator has a given type:
+Each Data Source column has a given type:
 
 | Type | Example | Comment | 
 |------|---------|---------|
@@ -45,13 +45,13 @@ Let's take the example of a Data Source with some market data.
 | WONKA   | 2025-06-27 | 234.7    |
 
 
-It has three indicators:
+It has three columns:
 
-- __Symbol:__ a text indicator, first primary key.
-- __Date:__ a date indicator, second primary key.
-- __Price:__ a decimal indicator 
+- __Symbol:__ a text column, first primary key.
+- __Date:__ a date column, second primary key.
+- __Price:__ a decimal column 
 
-Each row of the dataset is identified by the value of the symbol indicator and the date indicator. There cannot be any duplicate pairs (Symbol, Date).
+Each row of the dataset is identified by the value of the symbol column and the date indcolumnicator. There cannot be any duplicate pairs (Symbol, Date).
 
 ## 1.3 Indicators in the KAWA GUI
 
@@ -59,11 +59,21 @@ In the KAWA GUI, the overview tab of each Data Source give information about its
 
 ![Data](./readme-assets/data1.png)
 
-On the right part, you can see all the indicators of the Data Source, with an icon representing the type, and a red key to represent whether or not an indicator is a primary key. Here, there are two primary keys: Symbol and Date.
-
+On the right part, you can see all the columns of the Data Source, with an icon representing the type, and a red key to represent whether or not an column is a primary key. Here, there are two primary keys: Symbol and Date.
 
 # 2 Data profile and Data preparation
 
+In the GUI, under the __Data__ tab of any Data Source, you can access global information such as the total number of rows, value distributions for each column, and other dataset-wide statistics.
+
+![Data](./readme-assets/data2.png)
+
+_Above, the data profile for the Market Data set._
+
+Each column header give information about that particular column. The right panel gives contextual statistics. Clicking on any column header will move the context to that particular column.
+
+![Data](./readme-assets/data3.png)
+
+_Here for example, after clicking on the Price column, we get statistics about it. We can also add some computation to sanitize the values of the column._
 
 
 
