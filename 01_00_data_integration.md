@@ -51,7 +51,7 @@ It has three columns:
 - __Date:__ a date column, second primary key.
 - __Price:__ a decimal column 
 
-Each row of the dataset is identified by the value of the symbol column and the date indcolumnicator. There cannot be any duplicate pairs (Symbol, Date).
+Each row of the dataset is identified by the value of the symbol column and the date indcolumn. There cannot be any duplicate pairs (Symbol, Date).
 
 ## 1.3 Column definitions in the KAWA GUI
 
