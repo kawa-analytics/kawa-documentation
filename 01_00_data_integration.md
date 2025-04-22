@@ -35,7 +35,7 @@ Each Data Source includes at least one primary key, whose values uniquely identi
 
 Let's take the example of a Data Source with some market data.
 
-| Symbol  | Date       | Price    | 
+| 🔑 Symbol   | 🔑 Date        | Price    | 
 |---------|------------|----------|
 | WAYNE   | 2025-06-25 | 123.4    |
 | WAYNE   | 2025-06-26 | 123.5    |
@@ -53,9 +53,9 @@ It has three columns:
 
 Each row of the dataset is identified by the value of the symbol column and the date indcolumnicator. There cannot be any duplicate pairs (Symbol, Date).
 
-## 1.3 Indicators in the KAWA GUI
+## 1.3 Column definitions in the KAWA GUI
 
-In the KAWA GUI, the overview tab of each Data Source give information about its structure.
+In the KAWA GUI, the overview tab of each Data Source gives information about its structure.
 
 ![Data](./readme-assets/data1.png)
 
