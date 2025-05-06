@@ -73,7 +73,7 @@ Alternatively, you can authenticate without using the `.env` file (not recommend
 
 ```python
 from kywy.client.kawa_client import KawaClient as K
-kawa = KawaClient(kawa_api_url='https://your-domain:your-port')
+kawa = K(kawa_api_url='https://your-domain:your-port')
 kawa.set_api_key(api_key='kawa-****')
 kawa.set_active_workspace_id('1')
 ```
