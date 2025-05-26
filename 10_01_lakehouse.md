@@ -7,7 +7,7 @@ nav_order: 26
 
 ## Data Lakehouse integration
 
-This section illustrates how KAWA can be integrated in your data lakehouse in the Consumption layer.
+This section illustrates how KAWA can be integrated in your data lakehouse.
 
 * TOC
 {:toc}
