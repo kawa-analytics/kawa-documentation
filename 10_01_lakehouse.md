@@ -26,7 +26,7 @@ This guide supposes the following prerequisites:
 
 - Working instance of a hive metastore
 - An existing S3 bucket with a R/W account for KAWA
-- A Trino instance with a Read only account for KAWA
+- A Trino instance with a Read only account for KAWA + CREATE and DROP views in a catalogue managed by KAWA.
 
 ## 2.1 Configuring Trino
 
