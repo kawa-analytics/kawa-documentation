@@ -219,13 +219,14 @@ When the user adds **a third series**, each dot on the scatter plot shows one ob
 
 ![Chart config](readme-assets/scatter_plot_3s_1g.png)
 
-<em>When you add Population as a third variable, it is shown by the color of each point:<br>
-- Darker colors represent countries with a larger population<br>
-- Lighter colors show countries with a smaller population<br>
-This allows you to explore three variables at once:<br>
-- Position shows GDP and life expectancy<br>
-- Color shows how many people live in each country<br>
-You can still see a positive trend: countries with higher GDP per capita often have higher life expectancy — and now you can also notice how population size varies across them.</em>
+When you add Population as a third variable, it is shown by the color of each point:
+
+- Darker colors represent countries with a larger population
+- Lighter colors show countries with a smaller population
+This allows you to explore three variables at once:
+- Position shows GDP and life expectancy
+- Color shows how many people live in each country
+You can still see a positive trend: countries with higher GDP per capita often have higher life expectancy — and now you can also notice how population size varies across them.
 
 ### b. Scatter Plots with Two Levels of Grouping
 
@@ -234,22 +235,22 @@ Each point represents one group. Points differ in color depending on which group
 
 ![Chart config](readme-assets/scatter_plot_2s_2g.png)
 
-<em>In the example above, you can see the relationship between the average life expectancy of people (shown on the X-axis) and GDP per capita (Y-axis) for different countries in two years — 1995 and 2025.<br> 
-- Each point represents a specific country in one of the selected years.<br>
-- The color of the point indicates the year (blue — 1995, red — 2025).<br>
-- The chart shows a positive correlation — countries with higher GDP per capita tend to have higher life expectancy.<br>
-- The grouping is done by the fields Country and Year, allowing comparison of trends across years.</em>
+In the example above, you can see the relationship between the average life expectancy of people (shown on the X-axis) and GDP per capita (Y-axis) for different countries in two years — 1995 and 2025. 
+- Each point represents a specific country in one of the selected years.
+- The color of the point indicates the year (blue — 1995, red — 2025).
+- The chart shows a positive correlation — countries with higher GDP per capita tend to have higher life expectancy.
+- The grouping is done by the fields Country and Year, allowing comparison of trends across years.
 
 **Scatter plots with three series**  
 Each point represents one group. Points differ in color depending on which group they belong to. Their position is determined by two variables (X, Y), and the size indicates the value of a third variable.
 
 ![Chart config](readme-assets/scatter_plot_3s_2g.png)
 
-<em>When a third variable is added, each point not only shows a country's GDP per capita (X-axis) and life expectancy (Y-axis), but also uses size to represent an additional value — for example, population.<br>
-- Position shows GDP and life expectancy<br>
-- Color indicates the year<br>
-- Size represents the third variable (e.g., population)<br>
-This lets you see three types of data at once and compare countries by economy, health, and population size.</em>
+When a third variable is added, each point not only shows a country's GDP per capita (X-axis) and life expectancy (Y-axis), but also uses size to represent an additional value — for example, population.
+- Position shows GDP and life expectancy
+- Color indicates the year
+- Size represents the third variable (e.g., population)
+This lets you see three types of data at once and compare countries by economy, health, and population size.
 
 ## 1.6 Configure a Sankey chart
 
