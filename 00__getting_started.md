@@ -27,7 +27,13 @@ This example will use a [sample CSV file you can download](./readme-assets/store
 
 - ➡️ _Step 1:_ Go to the Data Source section (Top icon in the left bar), and click on the __(+ Data Source)__ button. Choose: __(Upload a file)__.
 
+![Starting](./readme-assets/start10.png)
+
+
 - ➡️ _Step 2:_ Drag and Drop your file in the drop zone and once your data is displayed, click on __(Next)__
+
+![Starting](./readme-assets/start11.png)
+
 
 - ➡️ _Step 3:_ Click directly on __(Save)__. In the form, choose a good name for your new Data Source, then click on __(Save and run)__.
 
@@ -77,6 +83,9 @@ Let's create a simple formula to compute the unit profit by dividing the _Profit
 
 - ➡️ _Step 1:_ Click on the __(Enrich Data)__ button, then __(Formula)__.
 
+![Starting](./readme-assets/start14.png)
+
+
 - ➡️ _Step 2:_ If AI is enabled on your platform, you can just type: "Calculate unit profit". If it is not, just type `Profit / Quantity` (Do not copy paste, type in the formula). KAWA will assist you on the way.
 
 - ➡️ _Step 3:_ Type in a name for your formula and __(Create)__. The new column will be added in your grid, at the last position.
@@ -88,6 +97,8 @@ Let's create a simple formula to compute the unit profit by dividing the _Profit
 In order to explore your data in a more visual way, let's now create a chart. In our example, let's have a look at a profit trend over the years.
 
 - ➡️ _Step 1:_ On the top left, click on __(Create View)__, and pick __(Graph/Chart)__.
+
+![Starting](./readme-assets/start13.png)
 
 - ➡️ _Step 2:_ In the configuration panel, search for the _Profit_ column and drag and drop it in the Series Zone. 
 
@@ -108,11 +119,11 @@ Pivot tables in KAWA work like in any spreadsheet software, except that they can
 
 - ➡️ _Step 1:_ On the top left, click on __(Create View)__, and pick __(Pivot Table)__.
 
-- ➡️ _Step 2:_ In the Rows section, add the _State_ column. This can be done either by drag and drop or by clicking on the __(+)__ and selecting the State column.
+![Starting](./readme-assets/start12.png)
 
+- ➡️ _Step 2:_ In the Rows section, add the _State_ column. This can be done either by drag and drop or by clicking on the __(+)__ and selecting the State column.
 - ➡️ _Step 3:_ In the Columns section, add the _Segment_ column. 
 - ➡️ _Step 4:_ In the Values section, add the _Sales_ column. 
-
 
 ![Starting](./readme-assets/start8.png)
 
