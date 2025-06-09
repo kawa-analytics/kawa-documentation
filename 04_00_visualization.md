@@ -11,7 +11,7 @@ In KAWA, data can be visualized through charts, grids, and pivot tables, offerin
 
 A sample of some charts, grids and pivot tables to Visualize various aspects of your datasets:
 
-![AI Assist](./readme-assets/dashboard1.png)
+![Dashboard](./readme-assets/dashboard1.png)
 
 ## Manage your views in sheets
 
