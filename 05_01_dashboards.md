@@ -8,6 +8,8 @@ nav_order: 17
 Dashboards
 ---
 
+* TOC
+{:toc}
 
 Dashboards in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA dashboards facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These dashboards are designed to be customizable, catering to diverse user needs and preferences.
 
@@ -15,10 +17,6 @@ Dashboards in KAWA serve as dynamic, interactive interfaces that consolidate and
 ![Dashboard](./readme-assets/dashboard1.png)
 
 ![Dashboards](./readme-assets/dashboard2.png)
-
-
-* TOC
-{:toc}
 
 
 # 1 Creating dashboards and adding new widgets
