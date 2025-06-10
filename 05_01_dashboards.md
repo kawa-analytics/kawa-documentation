@@ -70,7 +70,7 @@ _They provide an easy way to insert static texts to illustrate your dashboards. 
 
 - An image block
 
-_They let you upload any image into your dashboard.__
+_They let you upload any image into your dashboards._
 
 ![Dashboards](./readme-assets/dashboard5.png)
 
@@ -79,8 +79,8 @@ _They let you upload any image into your dashboard.__
 
 All your widgets can be resized and moved on the dashboard:
 
-- Move with the The drag handle at the top left of each widget
-- Resize with the Resize handle at the bottom right of each widget.
+- Move with the the drag handle at the top left of each widget.
+- Resize with the resize handle at the bottom right of each widget.
 
 ![Dashboards](./readme-assets/dashboard6.png)
 
