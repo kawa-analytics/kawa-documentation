@@ -28,7 +28,7 @@ Connect to your snowflake instance with a user that can create databases, roles 
 
 ### a. Creating a database and schema for KAWA to write in
 
-KAWA will create tables containing user data such as CSV uploads, pandas data frames etc..
+KAWA will create tables containing user data such as CSV uploads, pandas data frames etc.. in this database and schema.
 
 ```sql
 CREATE DATABASE KAWA_ANALYTICS_DB 
@@ -40,7 +40,7 @@ CREATE SCHEMA KAWA_ANALYTICS_DB.KAWA;
 ### b. Create a role and a user with all permissions in the new schema
 
 
-This creates a role with Write back capabilities in the kawa database and schema.
+This creates a role with Write Back capabilities in the kawa database and schema.
 
 ```sql
 CREATE ROLE kawa_write_back_role;
@@ -86,6 +86,10 @@ GRANT ROLE kawa_write_back_role TO USER kawa_write_back_user;
 ### c. Create a role / user with readonly access on selected databases
 
 The readonly user must have permission to read the `kawa_analytics_db` created in the previous steps.
+It must also be able to access all the schemas and databases (__SELECT only__) that you want to connect to KAWA.
+
+Make also sure that this user can create views in the KAWA database and schema.
+
 
 ```sql
 CREATE ROLE kawa_readonly_role;
@@ -93,7 +97,7 @@ CREATE ROLE kawa_readonly_role;
 -- Grand access to a warehouse
 GRANT USAGE ON WAREHOUSE compute_wh TO ROLE kawa_readonly_role;
 
--- Specific for the kawa schema
+-- 🚨 Specific for the kawa schema
 GRANT CREATE VIEW  ON SCHEMA kawa_analytics_db.kawa TO ROLE kawa_readonly_role;
 
 
@@ -104,6 +108,10 @@ GRANT SELECT ON ALL TABLES IN SCHEMA kawa_analytics_db.kawa  TO ROLE kawa_readon
 GRANT SELECT ON ALL VIEWS IN SCHEMA kawa_analytics_db.kawa  TO ROLE kawa_readonly_role;
 GRANT SELECT ON FUTURE TABLES IN SCHEMA kawa_analytics_db.kawa  TO ROLE kawa_readonly_role;
 GRANT SELECT ON FUTURE VIEWS IN SCHEMA kawa_analytics_db.kawa  TO ROLE kawa_readonly_role;
+
+-- Add all the necessary USAGE and SELECT grants to all the 
+-- databases and schemas that you want to connect to KAWA.
+-- 🚨 DO NOT GRANT ANY OTHER PERMISSIONS BESIDES SELECT and USAGE to this role.
 ```
 
 Now, create a user with the new readonly role.
@@ -124,13 +132,6 @@ GRANT ROLE kawa_readonly_role TO USER kawa_readonly_user;
 KAWA needs the following environment variables to work with this setup:
 
 
-
-![Snowflake](./readme-assets/snowflake2.png)
-![Snowflake](./readme-assets/snowflake3.png)
-
-_In the snowflake GUI, you can easily retrieve your account identifier_.
-
-
 ```bash
 # Common: Warehouse and account
 KAWA_SNOWFLAKE_ACCOUNT=ACCOUNT1
@@ -147,3 +148,13 @@ KAWA_SNOWFLAKE_WRITER_SCHEMA=KAWA
 KAWA_SNOWFLAKE_WRITER_TABLE_PREFIX=KW__
 KAWA_SNOWFLAKE_WRITER_USER=kawa_write_back_user
 ```
+
+
+_In the snowflake GUI, you can easily retrieve your account identifier_.
+
+
+![Snowflake](./readme-assets/snowflake2.png)
+![Snowflake](./readme-assets/snowflake3.png)
+
+
+
