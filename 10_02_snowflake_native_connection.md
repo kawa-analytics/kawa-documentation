@@ -127,6 +127,31 @@ CREATE USER kawa_readonly_user
 GRANT ROLE kawa_readonly_role TO USER kawa_readonly_user;
 ```
 
+
+> ℹ️ Alternatively, you can opt to configure a RSA keypair to authenticate your users. In oder to do so, for each user:
+
+1) Generate a private key with:
+
+```bash
+# Key has to be in the PKCS8 format (Starting with: -----BEGIN PRIVATE KEY-----)
+openssl genrsa -out rsa_key.pem 2048
+```
+
+2) Derive your public key from the private key:
+
+```bash
+openssl rsa -in rsa_key.pem -pubout -out rsa_key.pub
+```
+
+
+3) Configure your users
+
+```sql
+-- Extract the base64 part from your public key
+ALTER USER kawa_readonly_user 
+SET RSA_PUBLIC_KEY='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkm.....9QIDAQA';
+```
+
 ## 2.2 Configuring KAWA
 
 KAWA needs the following environment variables to work with this setup:
@@ -137,16 +162,25 @@ KAWA needs the following environment variables to work with this setup:
 KAWA_SNOWFLAKE_ACCOUNT=ACCOUNT1
 KAWA_SNOWFLAKE_WAREHOUSE=compute_wh
 
-# configure the readonly user
+# configure the readonly user (do not use password if using a private key)
 KAWA_SNOWFLAKE_PASSWORD=@StrongPassword@
 KAWA_SNOWFLAKE_USER=kawa_readonly_user
 
-# Configure the write back user
+# Configure the write back user (do not use password if using a private key)
 KAWA_SNOWFLAKE_WRITER_CATALOG=KAWA_ANALYTICS_DB
 KAWA_SNOWFLAKE_WRITER_PASSWORD=@StrongPassword@
 KAWA_SNOWFLAKE_WRITER_SCHEMA=KAWA
 KAWA_SNOWFLAKE_WRITER_TABLE_PREFIX=KW__
 KAWA_SNOWFLAKE_WRITER_USER=kawa_write_back_user
+```
+
+If you opted for the keypair authentication method, set the following two variables
+instead of the passwords:
+
+```bash
+# The private key files should be accessible from the Java instance
+KAWA_SNOWFLAKE_PATH_TO_PRIVATE_KEY="/path/to/private/key/for/readonly/user"
+KAWA_SNOWFLAKE_WRITER_PATH_TO_PRIVATE_KEY="/path/to/private/key/for/writeback/user"
 ```
 
 
