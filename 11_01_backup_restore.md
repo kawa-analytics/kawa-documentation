@@ -115,3 +115,21 @@ fi
 
 rm -rf "$TEMP_DIR"
 ```
+
+
+
+# 2. Backup and Restore the clickhouse Database
+
+In order to backup and restore a clickhouse database, we use the native BACKUP and RESTORE utilities from Clickhouse.
+
+Connect to your clickhouse database with a SQL client:
+```sql
+BACKUP DATABASE default TO Disk('backups', 'default.zip')
+```
+
+To restore a database:
+
+```sql
+ RESTORE DATABASE default FROM Disk('backups', 'default.zip')
+ ```
+
