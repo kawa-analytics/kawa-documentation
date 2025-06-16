@@ -133,3 +133,4 @@ To restore a database:
  RESTORE DATABASE default FROM Disk('backups', 'default.zip')
  ```
 
+The backups will be generated in the `assets/backup` directory of your docker compose install folder. Please refer to https://clickhouse.com/docs/operations/backup for additional configuration options and details.
