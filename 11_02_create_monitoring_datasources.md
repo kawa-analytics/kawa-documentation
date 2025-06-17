@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Backup and Restore
-parent: Create Monitoring views
+title: Create Monitoring views
+parent: Exploitation
 nav_order: 31
 ---
 
