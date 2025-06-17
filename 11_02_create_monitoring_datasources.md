@@ -24,7 +24,7 @@ Pick the postgres connector:
 ![Exploitation](./readme-assets/exploitation2.png)
 
 
-And configure the connection the KAWA store (The configuration is present in KAWA server configuration, in the _POSTGRES JDBC URL_). Click on Test Connection and then Create.
+Then, configure the connection to the KAWA store (The configuration is present in KAWA server configuration, in the _POSTGRES JDBC URL_). Click on Test Connection and then Create.
 
 ![Exploitation](./readme-assets/exploitation1.png)
 
@@ -66,10 +66,9 @@ FROM kawa.application_event as E
 
 CLick on (Preview data) > (Next) > (Save).
 
-Input a name for your datasource: Application Events then click on (Save and Run).
+Input a name for your datasource: __Application Events__ then click on (Save and Run).
 
 ![Exploitation](./readme-assets/exploitation4.png)
-
 
 Once your data is ready, feel free to schedule it:
 
