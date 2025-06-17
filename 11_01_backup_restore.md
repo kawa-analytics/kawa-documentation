@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Backup and Restore
-parent: Exploitation Scripts
+parent: Exploitation
 nav_order: 30
 ---
 
