@@ -2,7 +2,7 @@
 layout: default
 title: Create Monitoring views
 parent: Exploitation
-nav_order: 31
+nav_order: 32
 ---
 
 ## Create monitoring views
