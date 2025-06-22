@@ -37,7 +37,7 @@ You have two main options when configuring your Version Control System:
 
 > ℹ️ This configuration is made _at the workspace level_, and can differ from one to the other. You can for instance have a sandbox workspace that is making use of the simple Kawa file store configuration. You can also work on a staging workspace connected to a staging branch and a production workspace connected to a production branch.
 
-## 1.1 Using KAWA file store
+## 1.1 Using the KAWA file store
 
 In the settings, go to (Source Control) and pick KAWA File Store.
 There is no further configuration to do. All your scripts can directly edited in the GUI and will be saved on KAWA.
@@ -88,7 +88,7 @@ A very simplistic valid repository could look like this:
 - length.py
 ```
 
-> 📚Please refer to https://github.com/kawa-analytics/kawa-toolkits for more details about tools and toolkits. (This repository can be loaded in KAWA, it contains many examples).
+> 📚Please refer to [KAWA Tools Github Repository](https://github.com/kawa-analytics/kawa-toolkits) for more details about tools and toolkits. (This repository can be loaded in KAWA, it contains many examples).
 
 ### 1.2.2 Configure the connection
 
@@ -129,9 +129,9 @@ _On Bitbucket, in the Clone section, (do not copy the `ssh://`):_
 
 KAWA tools are regular python functions, decorated with the `@kawa_tool` decorator. (It requires `pip install kywy` and `from kywy.client.kawa_decorators import kawa_tool`).
 
-The kywy library is available on pypi: https://pypi.org/project/kywy/
+The kywy library is available on [pypi](https://pypi.org/project/kywy/). 
 
-Please refer to this for details and examples: https://github.com/kawa-analytics/kawa-toolkits/blob/main/README.md.
+Please refer to this for details and examples: [KAWA Tools Github Repository](https://github.com/kawa-analytics/kawa-toolkits).
 
 
 In order to access these features, make sure you have the two following permissions:
