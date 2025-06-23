@@ -21,7 +21,10 @@ After clicking the Configure button, the Add new control panel opens from the ri
 
 These include:
 
-# 1 Filter Control
+* TOC
+{:toc}
+
+# 1. Filter Control
 
 The Filter control lets users interactively narrow down the data in the current sheet view by selecting specific values from a chosen column. It is part of the Controls Panel system and is especially useful for narrowing down datasets interactively without modifying the underlying data or requiring complex formulas.
 
@@ -81,7 +84,7 @@ For fields with a different data type (e.g., date, datetime), the Display Type s
 
 ![Controls panel](./readme-assets/controls_panel_filter7.png)
 
-# 2 Button Control
+# 2. Button Control
 
 Button controls serve as interactive triggers for preconfigured Python tool. They can execute Python scripts (code inside a Python tool that can be inserted, but it is not tied to the UI) directly from the interface, making them a powerful feature for data transformation, filtering, statistical analysis, or any automated logic embedded in the sheet. Button controls serve as interactive triggers for preconfigured workflows. They can execute Python scripts directly from the interface, making them a powerful feature for data transformation, filtering, statistical analysis, or any automated logic embedded in the sheet. This control is particularly useful for users who want to apply logic, run analytics, or initiate processes manually with a single click.
 
@@ -99,7 +102,7 @@ To link a tool, use the “Python tool” dropdown to choose from available tool
 
 *Add a new Python tool from the library.*
 
-# 3 Variable control
+# 3. Variable control
 
 Variable Controls allow users to enter values that can be used in other parts of the sheet, such as formulas and filters. They work like parameters that can be changed at any time, without needing to edit the structure of the table. Variables are independent elements — they do not filter data on their own, but can be linked to other components.
 
@@ -377,3 +380,64 @@ Usage in Formula
 Returns Selected only for rows matching the selected category; otherwise returns 0ther.
 
 ![Controls panel](./readme-assets/controls_panel_multi2.png)
+
+## Interaction with controls
+
+Each created control in the Controls panel includes the correct visual and functional elements: reorder handle, type icon, display name, eye icon (Toggle visibility), pencil icon (Edit control) and trash icon (Delete control).
+
+![Controls panel](./readme-assets/controls_panel_interaction1.png)
+
+The reorder handle is used for drag-and-drop to change the order of controls in the list.
+
+Toggle visibility enables or disables showing the selected control on the panel. When the control is visible (icon active), its filter applies to the table and users can use it. When the control is hidden (icon crossed out), it does not appear in the interface and its settings don’t affect the data view.
+
+![Controls panel](./readme-assets/controls_panel_interaction2.png)
+
+Edit control opens the selected control in edit mode. Clicking it opens the side panel where you can change the filter’s type, data column, default values, label, and other settings.
+
+![Controls panel](./readme-assets/controls_panel_interaction3.png)
+
+Delete control permanently removes the selected control from the panel. After clicking, a confirmation dialog “Are you sure you want to delete this filter control?” appears to prevent accidents. Once deleted, the control no longer applies any filter and disappears from the interface.
+
+![Controls panel](./readme-assets/controls_panel_interaction4.png)
+
+## Tab-Specific Control Behavior
+
+The control panels in the Sheets, Dashboards, and Applications tabs are independent. Changes you make to controls in one tab do not affect controls in any other tab. This lets you configure each tab’s controls separately without worrying about impacting settings elsewhere.
+
+In KAWA, the controls you can use depend on which tab you’re in:
+
+- Sheets
+You can add and configure all control types: Filters, Buttons, Variables.
+- Dashboards and Applications
+You can only use Filters in these tabs.
+
+## How Sheet Controls Impact Views
+
+Filters set up in the Sheets tab are automatically applied to every View linked to that Sheet. All other control types (buttons, variables) do not affect what data appears in the View.
+
+## Access to Controls in Sheets, Dashboards and Applications
+
+Users can set access for the artifacts they create (Sheets, Dashboards, or Applications) in each tab.
+
+### Example: Setting access for a Sheet
+
+- Private
+If a user marks their Sheet as Private, only they can view it and use all controls created for that Sheet.
+- Public
+If a user marks their Sheet as Public, only members of their workspace or of a team within the workspace can access it and its controls.
+  - General access – every member of the workspace.
+  - Teams with access – only the specified teams.
+  - If both options are selected, General access takes priority.
+
+![Controls panel](./readme-assets/controls_panel_sharing1.png)
+
+Access levels within Public
+- Viewing
+  - Users can apply the controls the author created, but they use their own values and run their own analysis.
+
+![Controls panel](./readme-assets/controls_panel_sharing2.png) 
+
+- Editing
+  - Users can create, edit, and delete their own controls on that Sheet.
+  - The Sheet’s author also has access to these new controls and can use them regardless of who created them.

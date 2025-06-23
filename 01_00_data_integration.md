@@ -4,17 +4,16 @@ title: Data Integration
 nav_order: 3
 ---
 
-Data Integration - Data Sources
----
+# Data Sources
 
 There are several ways to connect KAWA with your data.
-KAWA supports: Importing files, Connecting to external systems such as CRMs, databases, APIS etc, Linking to existing tables in the main warehouse, Importing unstructured data, Importing data from Python scripts.
+KAWA supports: Importing files, Connecting to external systems such as CRMs, databases, APIS etc, Linking to existing tables in the main warehouse, Importing unstructured data, Importing data from Python scripts, creating a data source from scratch, importing data from Knowledge.
 
-# 1 Data Source columns 
+## 1 Data Source columns
 
 In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. 
 
-## 1.1 Column types
+### 1.1 Column types
 
 Each Data Source column has a given type:
 
@@ -29,7 +28,7 @@ Each Data Source column has a given type:
 
 KAWA also supports lists of texts and list of numbers.
 
-## 1.2 Primary keys
+### 1.2 Primary keys
 
 Each Data Source includes at least one primary key, whose values uniquely identify every individual row within the dataset.
 
@@ -53,7 +52,7 @@ It has three columns:
 
 Each row of the dataset is identified by the value of the symbol column and the date indcolumn. There cannot be any duplicate pairs (Symbol, Date).
 
-## 1.3 Column definitions in the KAWA GUI
+### 1.3 Column definitions in the KAWA GUI
 
 In the KAWA GUI, the overview tab of each Data Source gives information about its structure.
 
@@ -61,7 +60,7 @@ In the KAWA GUI, the overview tab of each Data Source gives information about it
 
 On the right part, you can see all the columns of the Data Source, with an icon representing the type, and a red key to represent whether or not an column is a primary key. Here, there are two primary keys: Symbol and Date.
 
-# 2 Data profile and Data preparation
+## 2 Data profile and Data preparation
 
 In the GUI, under the __Data__ tab of any Data Source, you can access global information such as the total number of rows, value distributions for each column, and other dataset-wide statistics.
 
