@@ -2,7 +2,7 @@
 layout: default
 title: Dashboards
 parent: Reporting and Publishing
-nav_order: 17
+nav_order: 18
 ---
 
 Dashboards

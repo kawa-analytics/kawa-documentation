@@ -2,7 +2,7 @@
 layout: default
 title: Formulas
 parent: Computation
-nav_order: 8
+nav_order: 9
 ---
 
 Formulas
