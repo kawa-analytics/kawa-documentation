@@ -16,10 +16,11 @@ This feature lets you manually edit data from the GUI.
 
 # 1. Data edition
 
-KAWA has two main mechanisms for manual data edits.
+KAWA has three main mechanisms for manual data edits.
 
 - Direct edits (Like in Excel or Google Sheet)
 - Manual patching
+- Via mapping tables
 
 All edits will be stored on the original tables and _will propagate in the entire KAWA application, for all users._
 
@@ -127,8 +128,49 @@ _Example:_
 
 4) The next day at 9AM, my deals are synchronized again and the data team fixed the issue. I can now safely remove my patch and the corrected value will be taken in account.
 
+## 1.3 Mappings
+
+Mappings are a way to edit data directly at the sheet level. Data will not be written in the underlying data source.
+
+
+### a. Create a new mapping (also called: manual input columns)
+
+From the sheet section (Grid, but also charts and pivots), click on the Manual Input item in the (Enrich data) menu.
+
+![Manual](./readme-assets/manual-input1.png)
+
+Then, in the configuration modal, choose:
+
+- The column to map.
+- The type of the mapping (Text or Numeric)
+- The name of the new column
+
+- The bottom of the screen lets you define the behavior to adopt when the value is not mapped.
+
+![Manual](./readme-assets/manual-input2.png)
+
+More details about mappings are available here: [Mapping columns](./03_03_mapping_columns.html)
+
+### b. Edit mapping column values directly in the Grid
+
+KAWA lets you edit mapping values directly in the grid.
+
+> 🚨 For this to work, you must have AT LEAST one defined primary key that is not the `automatic_uuid` column. This is very important for _LIVE CONNECT_ data sources.
+
+If your data source is _LIVE CONNECT_, go to the datasource model, and select the correct primary leys for your data source. Make sure that their combination yields to a unique definition of each record from your table.
+
+![Manual](./readme-assets/pk1.png)
+
+In order to edit data directly from the grid, open a grid view (It can be in a dashboard widget, in an application or in a sheet). You can then double click on any cell (on a mapping column) to edit its value.
+
+![Manual](./readme-assets/manual-input3.png)
+
+> 🚨 If the mapping is not at the level of the primary key (in the above example, it is a comment per state), each edit will result in multiple impacted cells. If I input a comment for the state of California, all the rows for that state will receive the same value.
+
 
 # 2. Data edition permissions
+
+## 2.1 Set edit permissions at the data source level
 
 KAWA provides a profile based mechanism to restrict edition permissions on data sources.
 
@@ -162,3 +204,16 @@ Each profile has the following parameters:
 ![Manual](./readme-assets/manual9.png)
 
 _Here, the ADMINS team can add and remove rows, add columns and edit all fields. All other users (public profile) can only edit the `Title` column._
+
+
+## 2.2 Set edit permissions for the mapping columns
+
+To control whether a mapping column is editable by users other than its creator, you need to share the sheet it resides in.
+
+![Manual](./readme-assets/share-mapping.png)
+
+In order to share a mapping column, go to the model section of the sheet it belongs to and click on the (Shared) checkbox.
+
+> If this option is disabled for you, it means that you do not have enough permission on the sheet. Contact the sheet owner to get this permission.
+
+__Only users with whom the sheet will be shared as Editors will be able to edit the mapping columns.__
