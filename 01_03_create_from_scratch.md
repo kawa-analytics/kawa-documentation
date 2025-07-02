@@ -34,7 +34,7 @@ Click the + button at the bottom-left of the grid to insert a new row. Each clic
 
 - Add columns
 Hover over the top right of the header area and click the + icon to define a new column. You’ll specify:
- - A column name
- - A data type (Text, Number, Date, etc.)
+  - A column name
+  - A data type (Text, Number, Date, etc.)
 
 ![Data](./readme-assets/data_source_scratch4.png)

@@ -403,14 +403,19 @@ Delete control permanently removes the selected control from the panel. After cl
 
 ## Tab-Specific Control Behavior
 
-The control panels in the Sheets, Dashboards, and Applications tabs are independent. Changes you make to controls in one tab do not affect controls in any other tab. This lets you configure each tab’s controls separately without worrying about impacting settings elsewhere.
-
-In KAWA, the controls you can use depend on which tab you’re in:
-
 - Sheets
-You can add and configure all control types: Filters, Buttons, Variables.
-- Dashboards and Applications
-You can only use Filters in these tabs.
+
+You can create Filters, Buttons, and Variables here.
+
+- Dashboards & Applications
+
+You can reuse Buttons and Variables defined in Sheets, but:
+
+  - Filters must be created separately on each tab and have no connection across tabs.
+
+  - Variables, while shareable, store values independently per tab (changing a variable’s value in Dashboards won’t affect its value in Sheets, and vice versa).
+
+This approach lets you define Buttons and Variables once in Sheets for consistency, yet configure Filters and adjust Variable inputs independently on every tab.
 
 ## How Sheet Controls Impact Views
 
