@@ -106,7 +106,7 @@ To link a tool, use the “Python tool” dropdown to choose from available tool
 
 Variable Controls allow users to enter values that can be used in other parts of the sheet, such as formulas and filters. They work like parameters that can be changed at any time, without needing to edit the structure of the table. Variables are independent elements — they do not filter data on their own, but can be linked to other components.
 
-### Available Variable Controls
+## 3.1 Available Variable Controls
 
 The following variable types are available when adding a new control:
 
@@ -122,18 +122,18 @@ The following variable types are available when adding a new control:
 | **Switch**             | A binary toggle (on/off, true/false). Used for enabling/disabling conditions or options.                         |
 | **Single select list** | Dropdown menu allowing the user to choose one value from a predefined list of options.                           |
 
-## 3.1 Text variable
+## 3.2 Text variable
 
 A Text control allows the user to manually enter any string value. It is useful for filtering, defining conditions in formulas, or dynamically providing parameters — such as a city name, region, or keyword.
 
-### Behavior:
+### a. Behavior:
 
 - Displays as a single-line text input field.
 - Accepts any user-entered string.
 - Stores the value as a named variable that can be used in filters and formulas.
 - The variable updates in real time and applies within the current sheet view.
 
-### Example Use Case:
+### b. Example Use Case:
 
 You can bind the Location control to a filter on the City column with the following condition:
 Operator: Begins with → Variable: Location
@@ -163,18 +163,18 @@ Example:
 
 ![Controls panel](./readme-assets/controls_panel_text5.png)
 
-## 3.2 Number variable
+## 3.3 Number variable
 
 A Number control allows the user to manually enter a single numeric value. This value is stored as a variable and can be used in formulas and filters to create parameterized logic.
 
-### Behavior:
+### a. Behavior:
 
 - Displays as a single-line numeric input field in the Controls Panel.
 - Accepts any valid number (integer or decimal) entered by the user.
 - Stores the input as a named variable that can be referenced in filters, formulas, and Python tools.
 - The value updates in real time and is applied instantly across the current view wherever the variable is used.
 
-### Example Use Case:
+### b. Example Use Case:
 
 You can bind a Number control to a Profit numeric column in a filter. For example:
 Operator: Greater than or equals → Variable: Min Profit
@@ -200,7 +200,7 @@ Example:
 
 ![Controls panel](./readme-assets/controls_panel_number4.png)
 
-## 3.3 Number range variable
+## 3.4 Number range variable
 
 The Number range control allows users to enter a minimum and maximum numeric value to define an interval.
 
@@ -208,7 +208,7 @@ The Number range control allows users to enter a minimum and maximum numeric val
 
 ![Controls panel](./readme-assets/controls_panel_number_range2.png)
 
-### Example Use Case:
+### a. Example Use Case:
 
 Usage in Formulas. To reference the range in a formula, use both boundaries:
 
@@ -216,18 +216,18 @@ Usage in Formulas. To reference the range in a formula, use both boundaries:
 
 ![Controls panel](./readme-assets/controls_panel_number_range4.png)
 
-## 3.4 Date variable
+## 3.5 Date variable
 
 The Date control allows users to select a specific calendar date through a visual date picker. It stores the selected value as a variable that can be used in filters and formulas and - enabling dynamic, date-driven logic in the sheet view.
 
-### Behavior
+### a. Behavior
 
 - Renders a single date picker input
 - Accepts any valid calendar date
 - Stores the selected date as a named variable
 - Updates all connected components (filters, formulas) in real time
 
-### Example Use Case:
+### b. Example Use Case:
 
 You can bind a Date control to a Order Date column in a filter. For example:
 Operator: Is on or after → Variable: StartDate
@@ -246,11 +246,11 @@ This formula uses the date selected in the control to label rows based on whethe
 
 ![Controls panel](./readme-assets/controls_panel_date4.png)
 
-## 3.5 Date range variable
+## 3.6 Date range variable
 
 The Date range control allows users to select a start and end date to define a time interval.
 
-### Example Use Case:
+### a. Example Use Case:
 
 Usage in Formulas. To reference the range in a formula, use both boundaries:
 
@@ -258,18 +258,18 @@ Usage in Formulas. To reference the range in a formula, use both boundaries:
 
 ![Controls panel](./readme-assets/controls_panel_date_range2.png)
 
-## 3.6 Date time variable
+## 3.7 Date time variable
 
 Date Time control allows users to input a precise date and time value, stored as a variable. This control is ideal for scenarios where both the calendar date and the specific time of day are important for filtering data, running calculations.
 
-### Behavior:
+### a. Behavior:
 
 - Appears as a combined date and time picker
 - Saves the selected value as a named variable (e.g. StartTime)
 - Variable can be referenced in filters or formulas
 - Updates dynamically — changes take effect across all components using the variable
 
-### Example Use Case:
+### b. Example Use Case:
 
 You can bind a Date time control to a Created At column in a filter. For example:
 Operator: Is on or after → Variable: StartTime
@@ -288,11 +288,11 @@ This formula returns "Late" for records created after the specified time, and "O
 
 ![Controls panel](./readme-assets/controls_panel_datetime4.png)
 
-## 3.7 Datetime range variable
+## 3.8 Datetime range variable
 
 The Datetime range control allows the user to select a range that includes both the start and end date and exact time.
 
-### Example Use Case:
+### a. Example Use Case:
 
 Usage in Formulas. To reference the range in a formula, use both boundaries:
 
@@ -300,11 +300,11 @@ Usage in Formulas. To reference the range in a formula, use both boundaries:
 
 ![Controls panel](./readme-assets/controls_panel_datetime_range2.png)
 
-## 3.8 Switch variable
+## 3.9 Switch variable
 
 The Switch control is a toggle input designed for binary user choices such as true/false, yes/no, or on/off conditions.
 
-### Example Use Case:
+### a. Example Use Case:
 
 Usage in Formulas
 
@@ -313,11 +313,11 @@ Usage in Formulas
 - With MySwitch = Off, SwitchStatus shows “Disabled” 
 - Toggling MySwitch = On changes all SwitchStatus values to “Enabled” instantly
 
-## 3.9 Single select list variable
+## 3.10 Single select list variable
 
 The Single Select List control allows users to choose one option from a predefined dropdown list. The selected value is stored as a variable that can be used throughout the sheet - in filters and formulas.
 
-### Behavior:
+### a. Behavior:
 
 - Appears as a dropdown menu with a fixed list of values
 - Only one value can be selected at a time
@@ -335,7 +335,7 @@ The user selects a column from a table, and all unique values from that column a
 
 ![Controls panel](./readme-assets/controls_panel_single2.png)
 
-### Example Use Case:
+### b. Example Use Case:
 
 You can bind a Single Select List control to a City column in a filter. For example:
 Operator: Equals → Variable: Location
@@ -354,11 +354,11 @@ Returns Sales only for rows matching the selected category; otherwise returns 0.
 
 ![Controls panel](./readme-assets/controls_panel_single6.png)
 
-## 3.10 Multi select list variable
+## 3.11 Multi select list variable
 
 The Multi select list variable control allows users to choose multiple values from a predefined or dynamically loaded list. This control is useful when filtering or computing data based on more than one matching value.
 
-### Behavior:
+### a. Behavior:
 
 - Appears as a dropdown menu with a fixed list of values
 - Multiple value can be selected at a time
@@ -371,7 +371,7 @@ A user can add values to a Multi select list variable in two ways:
 - From a column
   The user selects a column from a table, and all unique values from that column are automatically used as options.
 
-### Example Use Case:
+### b. Example Use Case:
 
 Usage in Formula
 
@@ -381,7 +381,7 @@ Returns Selected only for rows matching the selected category; otherwise returns
 
 ![Controls panel](./readme-assets/controls_panel_multi2.png)
 
-## Interaction with controls
+# 4. Interaction with controls
 
 Each created control in the Controls panel includes the correct visual and functional elements: reorder handle, type icon, display name, eye icon (Toggle visibility), pencil icon (Edit control) and trash icon (Delete control).
 
@@ -401,7 +401,7 @@ Delete control permanently removes the selected control from the panel. After cl
 
 ![Controls panel](./readme-assets/controls_panel_interaction4.png)
 
-## Tab-Specific Control Behavior
+# 5. Tab-Specific Control Behavior
 
 - Sheets
 
@@ -417,15 +417,15 @@ You can reuse Buttons and Variables defined in Sheets, but:
 
 This approach lets you define Buttons and Variables once in Sheets for consistency, yet configure Filters and adjust Variable inputs independently on every tab.
 
-## How Sheet Controls Impact Views
+# 6. How Sheet Controls Impact Views
 
 Filters set up in the Sheets tab are automatically applied to every View linked to that Sheet. All other control types (buttons, variables) do not affect what data appears in the View.
 
-## Access to Controls in Sheets, Dashboards and Applications
+# 7. Access to Controls in Sheets, Dashboards and Applications
 
 Users can set access for the artifacts they create (Sheets, Dashboards, or Applications) in each tab.
 
-### Example: Setting access for a Sheet
+## 7.1 Example: Setting access for a Sheet
 
 - Private
 If a user marks their Sheet as Private, only they can view it and use all controls created for that Sheet.
