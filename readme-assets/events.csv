@@ -1,0 +1,2342 @@
+event id,guest name,event type,event date,event cost,event state
+1,Mick Crebagga,Sport,2023-12-19,68,Massachusetts
+2,Mick Crebagga,Meal,2023-08-23,146,South Dakota
+3,Mick Crebagga,Meal,2024-04-03,60,New Jersey
+4,Mick Crebagga,Party,2023-01-07,86,Oregon
+5,Greg Matthias,Meal,2023-04-28,158,Kentucky
+6,Greg Matthias,Sport,2023-10-24,153,North Carolina
+7,Greg Matthias,Sport,2023-01-24,123,Louisiana
+8,Greg Matthias,Concert,2024-10-09,114,New Jersey
+9,Greg Matthias,Sport,2024-05-10,73,Colorado
+10,Ryan Akin,Concert,2023-09-02,169,Indiana
+11,Ryan Akin,Concert,2023-12-28,110,Wyoming
+12,Ryan Akin,Sport,2023-10-30,154,Ohio
+13,Ryan Akin,Concert,2023-02-15,175,Arkansas
+14,Ryan Akin,Concert,2024-08-14,79,North Dakota
+15,Toby Swindell,Meal,2024-04-01,165,New York
+16,Toby Swindell,Sport,2024-11-16,123,New Hampshire
+17,Robert Dilbeck,Meal,2024-09-27,68,Kentucky
+18,Robert Dilbeck,Meal,2024-02-23,130,New Hampshire
+19,Robert Dilbeck,Sport,2024-10-24,160,Michigan
+20,Anna Gayman,Sport,2023-09-26,177,Wisconsin
+21,Becky Martin,Meal,2024-04-10,112,Vermont
+22,Thomas Seio,Party,2023-02-18,70,Indiana
+23,Thomas Seio,Sport,2024-08-09,108,Michigan
+24,Thomas Seio,Concert,2024-09-15,84,Maryland
+25,Thomas Seio,Sport,2024-06-10,167,Ohio
+26,Thomas Seio,Party,2024-08-28,137,Louisiana
+27,Jennifer Ferguson,Sport,2024-08-09,198,Minnesota
+28,Jennifer Ferguson,Sport,2023-06-19,113,Wyoming
+29,Jennifer Ferguson,Meal,2023-10-09,171,Ohio
+30,Jennifer Ferguson,Meal,2024-04-17,170,Ohio
+31,Jennifer Ferguson,Sport,2024-10-13,62,Montana
+32,Tracy Hopkins,Meal,2023-01-01,118,Colorado
+33,Tracy Hopkins,Sport,2023-07-26,80,Nebraska
+34,Tracy Hopkins,Meal,2023-04-09,153,Colorado
+35,Thomas Boland,Sport,2023-06-25,78,Hawaii
+36,Gary Hansen,Sport,2024-04-12,98,Alabama
+37,Gary Hansen,Meal,2024-03-06,103,Iowa
+38,Gary Hansen,Party,2023-03-18,65,Iowa
+39,Cyra Reiten,Party,2023-06-11,142,Iowa
+40,Cyra Reiten,Concert,2023-04-08,81,Arkansas
+41,Cyra Reiten,Party,2024-08-29,100,New Jersey
+42,Cyra Reiten,Sport,2024-02-21,138,Michigan
+43,Cyra Reiten,Sport,2023-12-31,198,Montana
+44,Frank Merwin,Sport,2023-11-14,51,South Dakota
+45,Frank Merwin,Meal,2024-05-15,149,Alaska
+46,Nancy Lomonaco,Concert,2024-11-15,160,Alaska
+47,Nancy Lomonaco,Meal,2023-03-06,53,South Carolina
+48,Nancy Lomonaco,Sport,2024-09-10,121,Colorado
+49,Nancy Lomonaco,Concert,2023-02-02,126,Arizona
+50,Nancy Lomonaco,Concert,2023-01-27,180,Massachusetts
+51,Gary Zandusky,Concert,2023-02-15,123,Nebraska
+52,Gary Zandusky,Sport,2023-01-27,172,Kansas
+53,Gary Zandusky,Meal,2024-05-25,156,Oregon
+54,Gary Zandusky,Meal,2024-10-29,78,Florida
+55,Gary Zandusky,Sport,2023-07-12,105,Kentucky
+56,Katherine Nockton,Sport,2023-06-18,172,Virginia
+57,Christina DeMoss,Sport,2023-07-06,152,Wyoming
+58,Christina DeMoss,Meal,2023-05-25,131,Montana
+59,Christina DeMoss,Meal,2024-06-29,137,Massachusetts
+60,Joni Blumstein,Meal,2023-02-11,83,Wyoming
+61,Joni Blumstein,Sport,2023-02-09,94,Texas
+62,Joni Blumstein,Concert,2024-01-24,74,Ohio
+63,Joni Blumstein,Sport,2024-05-21,100,Alaska
+64,Ben Peterman,Sport,2024-01-10,93,Nevada
+65,Ben Peterman,Meal,2023-12-03,142,Rhode Island
+66,Ben Peterman,Sport,2024-06-14,150,Virginia
+67,Bryan Spruell,Party,2023-09-01,86,Vermont
+68,Elizabeth Moffitt,Concert,2024-10-24,59,Colorado
+69,Elizabeth Moffitt,Meal,2024-02-17,166,New Hampshire
+70,Elizabeth Moffitt,Sport,2023-05-22,182,New York
+71,Sarah Bern,Sport,2024-08-22,57,New Jersey
+72,Sarah Bern,Party,2023-03-24,188,Colorado
+73,Sarah Bern,Meal,2024-08-12,111,Oregon
+74,Sarah Bern,Meal,2023-09-19,199,Mississippi
+75,Sarah Bern,Party,2024-11-01,136,Oregon
+76,Raymond Buch,Meal,2024-01-30,191,Kansas
+77,Raymond Buch,Party,2024-05-31,147,Ohio
+78,Raymond Buch,Sport,2024-02-11,113,Hawaii
+79,Alan Haines,Sport,2024-12-06,186,Idaho
+80,Alan Haines,Sport,2023-08-06,96,Colorado
+81,Alan Haines,Party,2024-12-21,129,Missouri
+82,Alan Haines,Meal,2024-04-16,198,Wyoming
+83,Philisse Overcash,Sport,2024-11-18,61,Delaware
+84,Philisse Overcash,Sport,2024-07-15,135,North Carolina
+85,Philisse Overcash,Concert,2024-03-16,128,Indiana
+86,Philisse Overcash,Sport,2023-04-23,153,Hawaii
+87,Thomas Thornton,Sport,2024-09-01,128,Vermont
+88,Thomas Thornton,Sport,2024-02-19,118,New Hampshire
+89,Thomas Thornton,Concert,2023-04-19,193,Washington
+90,Thomas Thornton,Meal,2024-10-18,199,Nevada
+91,Mike Gockenbach,Sport,2023-10-12,182,Kansas
+92,Maria Etezadi,Meal,2023-01-11,161,Minnesota
+93,Emily Ducich,Sport,2023-11-14,103,Alaska
+94,Emily Ducich,Sport,2024-09-18,51,New York
+95,Suzanne McNair,Party,2023-09-14,54,Vermont
+96,Suzanne McNair,Meal,2024-07-23,90,Washington
+97,Brad Norvell,Sport,2024-04-18,68,Oklahoma
+98,Brad Norvell,Sport,2023-06-17,154,Georgia
+99,Brad Norvell,Meal,2023-06-21,181,New York
+100,Brad Norvell,Sport,2024-07-10,131,Michigan
+101,Brad Norvell,Sport,2023-11-25,61,Louisiana
+102,Tamara Dahlen,Sport,2024-09-11,90,Massachusetts
+103,Tamara Dahlen,Meal,2024-11-02,131,California
+104,Sara Luxemburg,Meal,2024-07-02,189,Arkansas
+105,Charlotte Melton,Sport,2024-09-07,131,Virginia
+106,Corinna Mitchell,Concert,2023-11-11,144,Indiana
+107,Corinna Mitchell,Meal,2023-10-18,112,North Carolina
+108,Jeremy Ellison,Sport,2024-12-08,72,Virginia
+109,Jeremy Ellison,Concert,2023-11-01,85,Vermont
+110,Jeremy Ellison,Meal,2023-05-08,156,California
+111,Jeremy Ellison,Concert,2024-12-11,64,Arizona
+112,Lena Cacioppo,Sport,2024-07-27,145,Arkansas
+113,Lena Cacioppo,Concert,2024-10-15,199,Maryland
+114,Laura Armstrong,Sport,2024-11-17,77,Arizona
+115,Laura Armstrong,Concert,2023-10-31,76,Wisconsin
+116,Sample Company A,Concert,2024-06-16,142,Utah
+117,Sample Company A,Sport,2024-02-18,50,Mississippi
+118,Sample Company A,Sport,2023-06-02,172,Illinois
+119,Khloe Miller,Meal,2023-11-05,149,Wyoming
+120,Toby Carlisle,Concert,2024-04-11,152,Florida
+121,Toby Carlisle,Concert,2023-07-14,176,South Dakota
+122,Toby Carlisle,Concert,2024-12-15,66,Delaware
+123,Matt Abelman,Sport,2024-02-26,140,South Dakota
+124,Cathy Hwang,Party,2024-12-12,158,Oklahoma
+125,Lori Olson,Concert,2024-08-28,79,Wyoming
+126,Lori Olson,Concert,2023-01-21,105,Ohio
+127,Nona Balk,Meal,2023-03-20,59,Alaska
+128,Nona Balk,Meal,2023-03-07,99,California
+129,Nona Balk,Meal,2023-08-15,106,Connecticut
+130,Nona Balk,Concert,2023-12-08,91,Tennessee
+131,Ted Butterfield,Concert,2023-10-25,196,Illinois
+132,Ted Butterfield,Party,2023-01-29,171,North Dakota
+133,Ted Butterfield,Concert,2023-02-18,196,Hawaii
+134,Liz Preis,Meal,2024-11-08,95,Maine
+135,Liz Preis,Meal,2023-12-13,104,New Mexico
+136,Liz Preis,Party,2024-06-15,106,Connecticut
+137,Liz Preis,Meal,2023-12-01,111,Arkansas
+138,Grant Thornton,Concert,2024-07-28,70,Rhode Island
+139,Grant Thornton,Meal,2023-06-05,158,Illinois
+140,Grant Thornton,Concert,2024-11-26,144,Colorado
+141,Grant Thornton,Meal,2023-05-05,185,New Hampshire
+142,Sung Shariari,Meal,2024-12-11,187,Nebraska
+143,Deirdre Greer,Sport,2023-10-01,156,Oklahoma
+144,Deirdre Greer,Sport,2024-06-15,83,Idaho
+145,Deirdre Greer,Meal,2024-03-05,138,Missouri
+146,Deirdre Greer,Party,2023-04-11,191,Maryland
+147,Deirdre Greer,Party,2024-03-17,149,Pennsylvania
+148,Sylvia Foulston,Sport,2024-08-29,90,Nebraska
+149,Sylvia Foulston,Meal,2023-10-20,154,North Dakota
+150,Sylvia Foulston,Sport,2024-06-30,91,Nevada
+151,Sylvia Foulston,Concert,2023-07-19,52,Nevada
+152,Sylvia Foulston,Meal,2023-07-26,98,Ohio
+153,David Wiener,Party,2023-04-26,200,New Mexico
+154,Alejandro Grove,Sport,2024-05-12,168,Rhode Island
+155,Alejandro Grove,Party,2023-08-06,136,New Hampshire
+156,Alejandro Grove,Party,2023-08-10,153,Nebraska
+157,Alejandro Grove,Sport,2024-03-16,121,Rhode Island
+158,Roland Schwarz,Sport,2024-09-15,167,New York
+159,Roland Schwarz,Sport,2024-08-12,200,Kansas
+160,Roland Schwarz,Sport,2024-12-30,186,Idaho
+161,Sandra Flanagan,Sport,2024-02-24,135,Minnesota
+162,Sandra Flanagan,Party,2023-10-10,128,New Jersey
+163,Sandra Flanagan,Party,2024-03-04,75,Utah
+164,Sandra Flanagan,Sport,2023-11-08,84,South Carolina
+165,Sandra Flanagan,Meal,2024-05-01,125,Rhode Island
+166,Rob Beeghly,Meal,2023-06-22,60,Kentucky
+167,Rob Beeghly,Party,2024-01-19,89,Nevada
+168,Amy Hunt,Meal,2024-05-13,158,North Dakota
+169,Amy Hunt,Sport,2024-10-14,194,Kentucky
+170,Amy Hunt,Meal,2023-01-16,131,New Hampshire
+171,Amy Hunt,Sport,2023-12-23,118,Nebraska
+172,Amy Hunt,Concert,2023-07-08,174,Indiana
+173,Giulietta Weimer,Meal,2023-12-03,126,Utah
+174,Giulietta Weimer,Sport,2024-03-29,162,Texas
+175,Giulietta Weimer,Party,2024-06-07,155,Oregon
+176,Giulietta Weimer,Meal,2024-05-15,189,Rhode Island
+177,Jamie Frazer,Meal,2023-10-06,161,South Dakota
+178,Jamie Frazer,Concert,2023-12-06,196,South Dakota
+179,Jamie Frazer,Sport,2023-02-05,158,New Jersey
+180,Jamie Frazer,Party,2024-01-02,109,Mississippi
+181,Alan Shonely,Meal,2024-07-31,134,Washington
+182,Alan Shonely,Meal,2023-06-03,187,Illinois
+183,Alan Shonely,Party,2023-07-01,157,Iowa
+184,Sonia Cooley,Meal,2023-12-24,72,Ohio
+185,Sonia Cooley,Concert,2024-12-08,194,Utah
+186,Aleksandra Gannaway,Party,2023-05-31,70,Montana
+187,Aleksandra Gannaway,Meal,2023-09-27,174,Kentucky
+188,Aleksandra Gannaway,Meal,2023-09-14,100,Washington
+189,Aleksandra Gannaway,Sport,2024-07-10,161,Washington
+190,Nat Carroll,Sport,2024-10-26,134,Wisconsin
+191,Nat Carroll,Meal,2024-04-16,178,Alabama
+192,Nat Carroll,Meal,2023-12-21,80,Pennsylvania
+193,Nat Carroll,Sport,2024-10-28,153,Montana
+194,Bruce Degenhardt,Party,2023-08-27,149,North Dakota
+195,Bruce Degenhardt,Meal,2024-11-14,131,North Carolina
+196,Bruce Degenhardt,Meal,2024-11-02,63,Maryland
+197,Jennifer Braxton,Sport,2023-10-24,168,Nevada
+198,Jennifer Braxton,Concert,2024-04-22,76,Wyoming
+199,Jennifer Braxton,Meal,2024-03-10,188,Maine
+200,Lena Radford,Concert,2023-02-03,165,Nebraska
+201,Adam Shillingsburg,Sport,2023-09-04,68,Maine
+202,Adam Shillingsburg,Sport,2024-02-12,94,Iowa
+203,Adam Shillingsburg,Concert,2024-01-10,72,Oklahoma
+204,Adam Shillingsburg,Concert,2024-02-04,91,Iowa
+205,Penelope Sewall,Meal,2023-02-24,177,West Virginia
+206,Penelope Sewall,Meal,2024-06-27,150,West Virginia
+207,Penelope Sewall,Sport,2024-08-30,158,Utah
+208,Penelope Sewall,Concert,2023-04-27,122,Oklahoma
+209,Maureen Gnade,Sport,2024-04-17,102,Maine
+210,Maureen Gnade,Meal,2023-12-11,131,Hawaii
+211,Maureen Gnade,Sport,2023-03-18,112,Idaho
+212,Maureen Gnade,Meal,2024-06-16,153,Wisconsin
+213,Max Ludwig,Meal,2024-03-25,86,Missouri
+214,Max Ludwig,Concert,2024-02-12,126,California
+215,Max Ludwig,Sport,2024-07-20,76,Tennessee
+216,Max Ludwig,Meal,2024-09-19,182,Washington
+217,Sally Matthias,Meal,2023-05-21,181,New York
+218,Sally Matthias,Sport,2023-05-01,133,Washington
+219,Peter McVee,Meal,2024-05-25,159,Tennessee
+220,Peter McVee,Concert,2023-10-12,145,Wisconsin
+221,Peter McVee,Sport,2023-11-21,104,Virginia
+222,Peter McVee,Sport,2024-08-07,194,Idaho
+223,Peter McVee,Meal,2023-06-05,112,New Hampshire
+224,Justin Ritter,Party,2024-10-18,126,Nebraska
+225,Justin Ritter,Sport,2023-05-04,130,Washington
+226,Justin Ritter,Sport,2023-01-21,97,Missouri
+227,Justin Ritter,Party,2024-05-16,191,Wyoming
+228,Rachel Payne,Sport,2024-04-17,188,Ohio
+229,Rachel Payne,Concert,2023-01-22,114,Arkansas
+230,Rachel Payne,Sport,2024-03-04,170,Maine
+231,Rachel Payne,Sport,2024-02-01,58,Kentucky
+232,Rick Huthwaite,Meal,2023-03-09,83,North Carolina
+233,Rick Huthwaite,Concert,2023-06-18,115,Missouri
+234,Rick Huthwaite,Sport,2024-08-05,113,Mississippi
+235,Rick Huthwaite,Party,2024-12-28,75,North Carolina
+236,Rick Huthwaite,Sport,2024-02-06,99,Texas
+237,Evan Henry,Meal,2024-06-16,73,South Carolina
+238,Evan Henry,Sport,2024-09-09,188,Tennessee
+239,Evan Henry,Sport,2023-09-13,153,Illinois
+240,Benjamin Patterson,Concert,2023-10-20,79,Oregon
+241,Benjamin Patterson,Meal,2024-03-13,112,Texas
+242,Julie Creighton,Meal,2024-11-16,96,Rhode Island
+243,Julie Creighton,Sport,2024-01-29,93,Iowa
+244,Julie Creighton,Sport,2024-04-27,129,South Carolina
+245,Julie Creighton,Sport,2024-07-31,132,Arkansas
+246,Julie Creighton,Meal,2024-02-03,178,Kansas
+247,Duane Noonan,Party,2024-03-09,168,Missouri
+248,Duane Noonan,Concert,2023-03-28,50,Massachusetts
+249,Duane Noonan,Meal,2024-12-05,93,Louisiana
+250,Dan Campbell,Meal,2023-11-23,118,Minnesota
+251,Dan Campbell,Meal,2023-02-15,151,Montana
+252,Dan Campbell,Party,2023-02-03,114,Arizona
+253,Sarah Jordon,Party,2024-08-23,63,Washington
+254,Sarah Jordon,Meal,2024-09-17,77,New Jersey
+255,Cari Schnelling,Party,2024-08-23,174,Utah
+256,Cari Schnelling,Meal,2023-05-21,59,Michigan
+257,Cari Schnelling,Concert,2023-05-18,107,Washington
+258,Rick Bensley,Meal,2023-09-20,178,Georgia
+259,Rick Bensley,Concert,2023-07-05,66,Pennsylvania
+260,Rick Bensley,Concert,2024-01-25,189,Delaware
+261,Rick Bensley,Sport,2023-08-12,151,New Jersey
+262,Rick Bensley,Sport,2023-04-25,140,Nevada
+263,Maria Bertelson,Meal,2023-02-22,91,Wyoming
+264,Maria Bertelson,Meal,2023-10-19,102,South Carolina
+265,Maria Bertelson,Meal,2024-05-28,67,North Dakota
+266,Maria Bertelson,Concert,2024-05-12,65,Mississippi
+267,Brooke Gillingham,Meal,2023-02-26,55,North Dakota
+268,Brooke Gillingham,Concert,2023-03-04,127,Hawaii
+269,Karen Seio,Sport,2024-03-02,78,Mississippi
+270,Karen Seio,Sport,2024-12-03,194,New York
+271,Karen Seio,Sport,2023-02-11,116,Minnesota
+272,Karen Seio,Sport,2023-06-17,192,Oklahoma
+273,Shaun Weien,Party,2023-09-20,181,Texas
+274,Shaun Weien,Sport,2023-09-19,183,Hawaii
+275,Daniel Lacy,Sport,2024-09-21,194,Washington
+276,Daniel Lacy,Meal,2024-12-11,189,Pennsylvania
+277,Shaun Chance,Party,2024-03-01,99,New Hampshire
+278,Shaun Chance,Concert,2024-02-27,114,Alaska
+279,Mike Vittorini,Meal,2023-11-12,88,Rhode Island
+280,Mike Vittorini,Sport,2024-05-21,73,Oregon
+281,Mike Vittorini,Meal,2023-06-26,143,Maine
+282,Mike Vittorini,Sport,2023-10-11,98,Maine
+283,Mike Vittorini,Concert,2023-07-29,104,South Carolina
+284,Neola Schneider,Meal,2024-01-11,145,New York
+285,Neola Schneider,Sport,2024-07-31,105,California
+286,Neola Schneider,Meal,2024-09-16,133,Wyoming
+287,Susan Vittorini,Sport,2023-03-07,160,Ohio
+288,Susan Vittorini,Sport,2024-04-18,173,Florida
+289,Susan Vittorini,Sport,2024-11-01,89,Missouri
+290,Shui Tom,Concert,2023-06-01,127,Florida
+291,Candace McMahon,Sport,2023-06-12,66,New Hampshire
+292,Candace McMahon,Party,2023-09-03,56,North Carolina
+293,Candace McMahon,Sport,2024-05-05,179,Connecticut
+294,Candace McMahon,Party,2023-12-26,53,Kansas
+295,Candace McMahon,Meal,2023-12-31,185,Oregon
+296,Elpida Rittenbach,Meal,2023-08-07,66,Illinois
+297,Elpida Rittenbach,Sport,2023-06-23,50,West Virginia
+298,Maxwell Schwartz,Party,2023-03-23,138,New Jersey
+299,Maxwell Schwartz,Meal,2024-05-28,107,Iowa
+300,Maxwell Schwartz,Concert,2023-05-08,58,Connecticut
+301,Maxwell Schwartz,Sport,2023-07-26,198,Colorado
+302,Maxwell Schwartz,Sport,2024-05-29,158,Georgia
+303,Aaron Hawkins,Party,2023-09-17,64,North Dakota
+304,Aaron Hawkins,Party,2023-03-29,123,Iowa
+305,Aaron Hawkins,Meal,2023-12-30,148,Maryland
+306,Aaron Hawkins,Sport,2023-10-17,195,Arizona
+307,Craig Leslie,Sport,2023-08-06,183,Tennessee
+308,Craig Leslie,Meal,2024-05-21,174,North Carolina
+309,Craig Leslie,Sport,2024-10-09,102,Wyoming
+310,Ken Black,Concert,2023-08-21,102,North Dakota
+311,Ken Black,Sport,2024-09-17,144,Idaho
+312,Justin MacKendrick,Party,2023-07-01,63,Arkansas
+313,Justin MacKendrick,Sport,2023-07-24,60,Arizona
+314,Justin MacKendrick,Meal,2024-03-26,62,Georgia
+315,Justin MacKendrick,Party,2023-03-14,200,New York
+316,Justin MacKendrick,Concert,2024-12-15,110,Indiana
+317,Alan Schoenberger,Sport,2023-10-28,77,New Hampshire
+318,Speros Goranitis,Meal,2023-09-03,140,Ohio
+319,Speros Goranitis,Concert,2023-03-08,171,Virginia
+320,Meg Tillman,Party,2023-10-26,128,Washington
+321,Meg Tillman,Sport,2024-05-13,72,Utah
+322,Meg Tillman,Concert,2023-03-13,64,Connecticut
+323,Meg Tillman,Sport,2024-12-25,108,Nebraska
+324,Meg Tillman,Party,2023-05-19,64,Illinois
+325,Erica Hernandez,Meal,2023-03-03,50,South Dakota
+326,Erica Hernandez,Sport,2024-08-17,199,Colorado
+327,Erica Hernandez,Concert,2024-09-03,52,Arkansas
+328,Erica Hernandez,Meal,2024-08-18,79,Tennessee
+329,Erica Hernandez,Sport,2023-03-10,155,Tennessee
+330,Matt Collister,Sport,2024-03-24,152,Florida
+331,Vicky Freymann,Sport,2023-04-29,55,Ohio
+332,Linda Southworth,Sport,2023-12-19,102,Nevada
+333,Linda Southworth,Meal,2024-11-23,96,Nebraska
+334,Linda Southworth,Sport,2024-12-03,66,Nevada
+335,Linda Southworth,Sport,2023-05-27,145,Indiana
+336,Stuart Calhoun,Sport,2024-03-06,138,Nevada
+337,Stuart Calhoun,Meal,2024-08-06,159,Illinois
+338,Stuart Calhoun,Sport,2024-12-14,100,Idaho
+339,Stuart Calhoun,Concert,2023-05-15,74,Mississippi
+340,Stuart Calhoun,Meal,2024-09-23,65,Idaho
+341,Maurice Satty,Meal,2024-06-23,91,Oregon
+342,Maurice Satty,Meal,2024-06-10,103,Illinois
+343,Maurice Satty,Sport,2023-09-04,195,Pennsylvania
+344,Maurice Satty,Sport,2024-11-13,152,Nevada
+345,Christopher Conant,Meal,2024-08-08,176,Minnesota
+346,Dianna Vittorini,Sport,2024-05-28,173,Wyoming
+347,Dianna Vittorini,Sport,2024-01-25,113,Kansas
+348,Lynn Smith,Meal,2024-09-25,184,Louisiana
+349,Lynn Smith,Meal,2023-09-03,122,Kentucky
+350,Lynn Smith,Meal,2023-08-09,111,Hawaii
+351,Chris Selesnick,Sport,2024-03-31,122,North Dakota
+352,Chris Selesnick,Meal,2023-10-03,101,Nebraska
+353,Chris Selesnick,Party,2023-10-29,77,Nevada
+354,Chris Selesnick,Concert,2023-06-18,200,California
+355,Chris Selesnick,Meal,2024-10-30,190,Utah
+356,Paul Van Hugh,Meal,2023-03-19,56,New York
+357,Sandra Glassco,Sport,2023-08-28,198,Montana
+358,Sandra Glassco,Party,2024-02-01,200,Oregon
+359,Sandra Glassco,Meal,2023-10-07,194,Delaware
+360,Sandra Glassco,Sport,2024-03-02,162,Ohio
+361,Mark Haberlin,Meal,2023-05-21,188,Maine
+362,Mark Haberlin,Meal,2023-11-29,175,Ohio
+363,Eileen Kiefer,Meal,2024-08-10,175,Virginia
+364,Eileen Kiefer,Meal,2024-12-15,121,Idaho
+365,Eileen Kiefer,Meal,2024-04-27,169,Georgia
+366,Eileen Kiefer,Meal,2024-07-24,173,Utah
+367,Eileen Kiefer,Sport,2023-06-29,175,New Hampshire
+368,Delfina Latchford,Sport,2024-10-04,114,Ohio
+369,Delfina Latchford,Sport,2024-06-15,123,Michigan
+370,Delfina Latchford,Meal,2023-01-01,53,South Carolina
+371,Delfina Latchford,Meal,2024-11-06,179,South Carolina
+372,Karen Bern,Sport,2023-04-28,80,Illinois
+373,Karen Bern,Meal,2023-01-17,174,Texas
+374,Natalie Fritzler,Concert,2023-10-27,90,Iowa
+375,Natalie Fritzler,Sport,2023-09-27,79,Alaska
+376,Natalie Fritzler,Meal,2023-11-05,99,New Mexico
+377,Natalie Fritzler,Sport,2023-08-03,79,Kansas
+378,Natalie Fritzler,Party,2024-04-24,52,New Hampshire
+379,Natalie DeCherney,Party,2024-03-11,176,Washington
+380,Natalie DeCherney,Sport,2024-05-26,95,South Dakota
+381,Natalie DeCherney,Concert,2023-08-14,182,Wyoming
+382,Natalie DeCherney,Concert,2024-01-18,122,Alaska
+383,Jay Fein,Sport,2024-03-14,94,Utah
+384,John Stevenson,Meal,2024-06-07,153,Alabama
+385,John Stevenson,Meal,2024-12-16,75,Alaska
+386,John Stevenson,Concert,2024-09-04,54,Arizona
+387,John Stevenson,Sport,2024-08-13,184,Colorado
+388,Fred Hopkins,Party,2024-12-15,88,Louisiana
+389,Fred Hopkins,Meal,2024-01-20,126,Nebraska
+390,Jane Waco,Meal,2023-09-23,68,Arkansas
+391,Jane Waco,Meal,2023-12-09,155,Arkansas
+392,Jane Waco,Meal,2024-09-10,179,New Hampshire
+393,Lindsay Williams,Concert,2023-05-02,127,Massachusetts
+394,Lindsay Williams,Meal,2023-03-23,138,Indiana
+395,Lindsay Williams,Sport,2023-08-23,130,Tennessee
+396,Lindsay Williams,Sport,2023-04-29,116,Missouri
+397,Andrew Roberts,Concert,2024-11-27,127,Indiana
+398,Richard Eichhorn,Sport,2023-06-28,155,New Jersey
+399,Corey Catlett,Sport,2023-12-25,61,Iowa
+400,Corey Catlett,Party,2023-06-05,154,New Mexico
+401,Corey Catlett,Sport,2024-03-23,124,New York
+402,Corey Catlett,Sport,2024-11-25,170,Delaware
+403,Corey Catlett,Sport,2024-01-27,131,Missouri
+404,Don Jones,Party,2023-11-28,169,Wisconsin
+405,Don Jones,Meal,2023-02-19,174,California
+406,Don Jones,Meal,2024-05-09,127,Pennsylvania
+407,Don Jones,Concert,2024-09-01,197,Colorado
+408,Quincy Jones,Concert,2023-11-20,104,Vermont
+409,Quincy Jones,Party,2024-07-05,71,Arkansas
+410,Quincy Jones,Party,2024-06-27,60,Maine
+411,Quincy Jones,Sport,2023-10-03,93,Wyoming
+412,Cathy Prescott,Meal,2023-06-06,97,Connecticut
+413,Cathy Prescott,Sport,2024-10-03,59,Wisconsin
+414,Cathy Prescott,Sport,2023-06-17,155,Wisconsin
+415,Cathy Prescott,Sport,2024-10-30,190,Nevada
+416,Anthony Johnson,Concert,2024-03-10,173,Missouri
+417,Anthony Johnson,Meal,2023-03-28,136,Massachusetts
+418,Neil Französisch,Party,2024-06-01,167,Pennsylvania
+419,Neil Französisch,Concert,2023-06-25,150,Alaska
+420,Neil Französisch,Party,2024-12-10,133,Kentucky
+421,Neil Französisch,Concert,2024-11-16,69,Hawaii
+422,Rick Duston,Meal,2024-06-25,114,New Mexico
+423,Rick Duston,Sport,2023-03-14,169,Indiana
+424,Rick Duston,Meal,2023-06-29,76,Kansas
+425,Roy Phan,Sport,2023-03-05,145,Mississippi
+426,Roy Phan,Meal,2023-10-27,164,Pennsylvania
+427,Roy Phan,Concert,2023-09-15,143,Alaska
+428,Roy Phan,Party,2024-04-29,118,Montana
+429,Roy Phan,Concert,2024-04-16,61,Hawaii
+430,Matt Connell,Meal,2023-11-09,73,Virginia
+431,Matt Connell,Meal,2023-12-04,103,California
+432,Odella Nelson,Sport,2024-06-07,83,Hawaii
+433,Odella Nelson,Meal,2023-01-14,198,Wisconsin
+434,Odella Nelson,Sport,2023-04-24,198,Wisconsin
+435,Paul Prost,Meal,2023-01-23,80,Nebraska
+436,Paul Prost,Concert,2024-04-01,76,Washington
+437,Eugene Barchas,Sport,2023-03-01,152,Delaware
+438,Eugene Barchas,Meal,2023-05-24,148,Kansas
+439,Eugene Barchas,Sport,2023-05-22,57,Massachusetts
+440,Eugene Barchas,Meal,2023-09-05,195,Arizona
+441,Eugene Barchas,Sport,2024-06-22,119,Rhode Island
+442,Christine Kargatis,Sport,2023-08-12,116,Maine
+443,Christine Kargatis,Concert,2023-08-07,152,Vermont
+444,Christine Kargatis,Sport,2024-04-05,109,Wyoming
+445,Christine Kargatis,Concert,2023-12-04,109,Tennessee
+446,Andrew Gjertsen,Meal,2023-01-20,128,Illinois
+447,Andrew Gjertsen,Meal,2024-10-04,106,Iowa
+448,Andrew Gjertsen,Sport,2024-12-10,93,Rhode Island
+449,Michael Granlund,Sport,2023-09-08,110,Idaho
+450,Michael Granlund,Meal,2023-12-06,107,Arizona
+451,Michael Granlund,Meal,2023-09-14,122,Ohio
+452,Alex Avila,Meal,2023-05-11,66,Arkansas
+453,Alex Avila,Sport,2023-02-26,86,South Carolina
+454,Alex Avila,Meal,2023-02-23,142,Michigan
+455,Julie Kriz,Meal,2024-11-02,181,Kansas
+456,Julie Kriz,Sport,2024-03-15,69,Colorado
+457,Julie Kriz,Sport,2024-10-08,109,Massachusetts
+458,Tamara Chand,Sport,2023-06-19,80,Arizona
+459,Tamara Chand,Meal,2024-10-27,128,Alabama
+460,Tamara Chand,Concert,2023-05-31,171,Pennsylvania
+461,Melanie Seite,Concert,2023-07-10,108,New York
+462,Melanie Seite,Meal,2023-08-26,100,Virginia
+463,Melanie Seite,Party,2024-01-02,139,South Dakota
+464,Melanie Seite,Concert,2024-04-11,128,Pennsylvania
+465,Yana Sorensen,Concert,2023-04-24,72,Vermont
+466,Yana Sorensen,Sport,2024-07-01,107,New Jersey
+467,Yana Sorensen,Meal,2024-03-26,116,Missouri
+468,Victoria Wilson,Meal,2023-04-15,102,Hawaii
+469,Ionia McGrath,Sport,2023-04-15,99,Florida
+470,Ionia McGrath,Sport,2023-08-28,187,Oklahoma
+471,Ionia McGrath,Meal,2023-12-10,135,Rhode Island
+472,Ionia McGrath,Sport,2024-03-28,168,North Dakota
+473,Alejandro Ballentine,Sport,2023-08-05,66,Delaware
+474,Alejandro Ballentine,Sport,2023-06-20,180,South Dakota
+475,Alejandro Ballentine,Sport,2024-11-07,124,South Dakota
+476,Alejandro Ballentine,Sport,2024-02-01,72,Wisconsin
+477,Alejandro Ballentine,Sport,2023-06-05,67,New Hampshire
+478,Giulietta Dortch,Meal,2024-08-28,158,New Mexico
+479,Giulietta Dortch,Sport,2023-10-23,65,Louisiana
+480,Jennifer Halladay,Meal,2023-12-13,116,Tennessee
+481,Jennifer Halladay,Meal,2024-01-31,63,Alabama
+482,Pauline Webber,Meal,2024-07-21,96,Iowa
+483,Pauline Webber,Concert,2023-12-31,177,New Hampshire
+484,Clay Rozendal,Sport,2023-01-28,174,New York
+485,Clay Rozendal,Party,2024-08-08,180,Louisiana
+486,Clay Rozendal,Sport,2024-09-11,116,Tennessee
+487,Clay Rozendal,Sport,2024-01-08,95,West Virginia
+488,Clay Rozendal,Concert,2024-03-02,94,Colorado
+489,Valerie Dominguez,Sport,2023-07-26,153,Minnesota
+490,Valerie Dominguez,Concert,2024-12-19,140,Connecticut
+491,Dionis Lloyd,Meal,2023-10-06,153,Alabama
+492,Dionis Lloyd,Sport,2023-02-08,89,Nevada
+493,Dionis Lloyd,Meal,2024-04-29,163,California
+494,Sibella Parks,Meal,2023-03-18,186,New Mexico
+495,Helen Wasserman,Meal,2023-01-11,144,Kansas
+496,Ross Baird,Concert,2024-12-20,76,North Carolina
+497,Ross Baird,Meal,2024-12-25,149,Ohio
+498,Ross Baird,Sport,2023-04-01,114,Delaware
+499,Dan Reichenbach,Concert,2023-03-06,122,South Carolina
+500,Dan Reichenbach,Sport,2024-12-26,67,Louisiana
+501,Mike Pelletier,Meal,2023-05-16,83,Vermont
+502,Mike Pelletier,Meal,2024-10-25,183,Texas
+503,Mike Pelletier,Concert,2023-10-11,95,Idaho
+504,Mike Pelletier,Meal,2023-02-02,91,Kansas
+505,Charles Sheldon,Party,2024-01-13,196,Delaware
+506,Charles Sheldon,Concert,2024-01-28,92,Rhode Island
+507,Charles Sheldon,Concert,2024-10-09,102,New York
+508,Charles Sheldon,Sport,2023-05-16,177,Louisiana
+509,Nicole Brennan,Sport,2023-03-25,161,Vermont
+510,Gary Mitchum,Concert,2024-11-10,134,South Dakota
+511,Gary Mitchum,Party,2024-08-22,129,Kansas
+512,Steve Carroll,Concert,2023-06-04,107,Georgia
+513,Steve Carroll,Meal,2024-03-23,178,California
+514,Steve Carroll,Meal,2023-10-01,186,Kentucky
+515,Steve Carroll,Concert,2023-01-20,192,Alaska
+516,Katrina Edelman,Sport,2023-10-11,63,New Hampshire
+517,Katrina Edelman,Sport,2024-10-09,53,New Hampshire
+518,Katrina Edelman,Sport,2024-03-30,105,Indiana
+519,Katrina Edelman,Sport,2023-08-14,132,Vermont
+520,Katrina Edelman,Sport,2024-10-16,145,Montana
+521,Claudia Bergmann,Sport,2024-12-04,62,Missouri
+522,Claudia Bergmann,Sport,2024-07-27,67,Alaska
+523,Claudia Bergmann,Meal,2024-09-03,166,Oklahoma
+524,Claudia Bergmann,Sport,2023-12-13,168,New Mexico
+525,Claudia Bergmann,Concert,2023-01-14,62,Colorado
+526,Bryan Mills,Party,2024-11-22,98,Tennessee
+527,Bill Eplett,Meal,2023-11-19,200,Ohio
+528,Bill Eplett,Sport,2024-06-16,158,Colorado
+529,Bill Eplett,Concert,2023-04-17,173,Florida
+530,Bill Eplett,Meal,2023-06-22,134,Mississippi
+531,Bill Eplett,Sport,2023-09-05,166,Montana
+532,Jeremy Pistek,Sport,2023-06-28,126,Virginia
+533,Jill Stevenson,Party,2023-07-05,137,Iowa
+534,Jill Stevenson,Meal,2024-09-05,188,Oklahoma
+535,Jill Stevenson,Party,2023-12-24,65,Delaware
+536,Jill Stevenson,Sport,2024-12-10,71,Texas
+537,Deanra Eno,Meal,2023-07-21,102,New Hampshire
+538,Alyssa Crouse,Meal,2023-04-25,152,Vermont
+539,Alyssa Crouse,Concert,2023-05-28,53,Maine
+540,Alyssa Crouse,Concert,2023-01-27,185,Pennsylvania
+541,Darren Powers,Sport,2023-10-04,178,Vermont
+542,Darren Powers,Party,2024-10-19,53,Kentucky
+543,Darren Powers,Meal,2024-07-10,95,Washington
+544,Darren Powers,Meal,2024-01-26,148,Tennessee
+545,Brendan Sweed,Meal,2023-10-18,169,California
+546,Brendan Sweed,Concert,2023-08-21,199,Iowa
+547,Brendan Sweed,Concert,2024-09-07,189,Arkansas
+548,Brendan Sweed,Meal,2023-04-15,177,South Dakota
+549,Vivian Mathis,Sport,2024-11-14,179,Maryland
+550,Astrea Jones,Party,2024-09-02,113,South Dakota
+551,Astrea Jones,Party,2023-05-29,85,Connecticut
+552,Astrea Jones,Concert,2023-03-23,84,Maryland
+553,Astrea Jones,Meal,2024-03-25,196,Maryland
+554,Max Engle,Sport,2024-09-28,164,Ohio
+555,Max Engle,Meal,2024-09-23,163,Texas
+556,Max Engle,Meal,2024-10-08,195,Arkansas
+557,Erin Mull,Sport,2023-06-06,127,South Carolina
+558,Erin Mull,Sport,2024-09-12,68,Wisconsin
+559,Erin Mull,Concert,2024-02-02,84,Arizona
+560,Erin Mull,Party,2024-04-24,172,Connecticut
+561,Larry Blacks,Sport,2024-09-27,60,Maryland
+562,Larry Blacks,Meal,2024-08-23,86,Vermont
+563,Christina VanderZanden,Party,2023-07-31,176,Virginia
+564,Christina VanderZanden,Meal,2024-04-16,176,Montana
+565,Christina VanderZanden,Meal,2023-08-26,83,Michigan
+566,Arianne Irving,Concert,2024-07-02,135,Virginia
+567,Christina Anderson,Meal,2023-12-30,74,Rhode Island
+568,Christina Anderson,Party,2023-03-21,115,Oregon
+569,Carol Darley,Meal,2023-08-01,197,Mississippi
+570,Carol Darley,Sport,2023-12-12,54,Kansas
+571,Carol Darley,Concert,2024-12-17,83,South Dakota
+572,Steven Ward,Party,2024-07-06,180,Oklahoma
+573,Steven Ward,Meal,2024-02-04,193,South Dakota
+574,Steven Ward,Meal,2023-11-14,61,Connecticut
+575,Steven Ward,Concert,2023-02-28,162,California
+576,William Brown,Concert,2024-12-23,161,Wyoming
+577,William Brown,Sport,2024-11-18,116,Montana
+578,Corey-Lock,Sport,2024-02-20,149,Vermont
+579,Jenna Caffey,Meal,2023-01-03,103,Rhode Island
+580,Jenna Caffey,Meal,2024-10-28,89,Texas
+581,Kimberly Carter,Meal,2023-04-25,156,Minnesota
+582,Kimberly Carter,Concert,2023-04-29,136,Delaware
+583,Kimberly Carter,Sport,2023-02-06,67,West Virginia
+584,Kimberly Carter,Meal,2023-10-29,69,Wyoming
+585,Kimberly Carter,Concert,2024-05-20,182,Rhode Island
+586,Patrick Ryan,Concert,2023-11-05,171,Louisiana
+587,Patrick Ryan,Party,2024-07-19,101,California
+588,Patrick Ryan,Sport,2024-04-16,100,Ohio
+589,Cindy Stewart,Concert,2023-06-02,124,Mississippi
+590,Tamara Manning,Sport,2024-04-18,162,New Mexico
+591,Tamara Manning,Meal,2023-07-03,105,Missouri
+592,Tamara Manning,Concert,2024-07-17,112,Minnesota
+593,Trudy Brown,Party,2023-08-07,157,Kansas
+594,Trudy Brown,Sport,2023-07-10,64,Arizona
+595,Trudy Brown,Concert,2024-10-29,148,Louisiana
+596,Trudy Brown,Concert,2024-01-10,137,Kentucky
+597,Marc Harrigan,Sport,2023-09-27,183,Nevada
+598,Marc Harrigan,Meal,2023-03-26,148,Delaware
+599,Marc Harrigan,Meal,2024-05-27,166,Washington
+600,Marc Harrigan,Sport,2024-02-13,151,Arkansas
+601,Marc Harrigan,Sport,2024-04-08,73,North Carolina
+602,Chad Sievert,Sport,2023-10-07,56,Oregon
+603,Chad Sievert,Party,2024-05-23,58,Colorado
+604,Chad Sievert,Concert,2023-05-31,188,Missouri
+605,Adam Hart,Sport,2024-05-16,198,California
+606,Adam Hart,Sport,2024-01-28,79,Colorado
+607,Adam Hart,Concert,2023-10-23,123,Nebraska
+608,Adam Hart,Concert,2023-12-20,70,Maryland
+609,Adam Hart,Concert,2023-12-18,78,Georgia
+610,Andy Yotov,Sport,2023-01-31,52,New Hampshire
+611,Andy Yotov,Concert,2024-06-02,62,Connecticut
+612,Andy Yotov,Sport,2024-05-19,128,Colorado
+613,Andy Yotov,Sport,2024-06-11,183,Florida
+614,Craig Reiter,Meal,2024-02-10,57,North Carolina
+615,Beth Paige,Meal,2024-01-12,113,Kansas
+616,Beth Paige,Sport,2023-09-27,174,Georgia
+617,Thea Hudgings,Concert,2024-04-19,147,Oklahoma
+618,Thea Hudgings,Sport,2024-07-04,159,Nebraska
+619,Thea Hudgings,Sport,2024-08-20,193,Louisiana
+620,Thea Hudgings,Sport,2023-07-24,192,New York
+621,David Bremer,Sport,2023-08-11,179,Maryland
+622,David Bremer,Meal,2024-01-04,60,Rhode Island
+623,David Bremer,Concert,2024-07-16,168,Arizona
+624,David Bremer,Sport,2024-11-02,194,Iowa
+625,James Lanier,Sport,2024-04-16,156,Maine
+626,James Lanier,Sport,2024-02-05,133,Minnesota
+627,James Lanier,Sport,2023-07-20,80,Missouri
+628,James Lanier,Meal,2023-06-21,109,Georgia
+629,James Lanier,Meal,2024-06-10,175,Kansas
+630,Ed Braxton,Meal,2024-08-31,92,New Mexico
+631,Julie Prescott,Meal,2024-01-11,88,Virginia
+632,Julie Prescott,Sport,2024-03-24,75,Indiana
+633,Julie Prescott,Sport,2024-11-07,139,Maine
+634,Julie Prescott,Sport,2023-10-23,117,Kentucky
+635,Dean percer,Party,2024-05-16,73,Mississippi
+636,Dean percer,Concert,2023-09-04,60,Kentucky
+637,Dean percer,Concert,2023-03-28,63,Maryland
+638,Dean percer,Sport,2023-02-19,184,Connecticut
+639,Logan Haushalter,Sport,2024-07-01,160,Virginia
+640,Logan Haushalter,Sport,2023-01-27,192,Indiana
+641,Logan Haushalter,Party,2024-03-31,59,Texas
+642,Logan Haushalter,Concert,2023-09-18,167,Alabama
+643,Logan Haushalter,Sport,2024-03-18,164,Alaska
+644,Christopher Schild,Meal,2023-05-07,115,Indiana
+645,Christopher Schild,Concert,2024-09-11,135,New Mexico
+646,Roy Französisch,Meal,2023-10-22,197,Connecticut
+647,Roy Französisch,Sport,2024-10-08,137,Connecticut
+648,Roy Französisch,Sport,2023-04-04,139,Massachusetts
+649,Roy Französisch,Meal,2023-08-30,191,Arizona
+650,Roy Französisch,Meal,2024-09-22,97,Delaware
+651,Caroline Jumper,Concert,2024-01-15,120,Nevada
+652,Caroline Jumper,Party,2024-01-07,177,Alabama
+653,Chris Cortes,Party,2024-11-09,183,Wyoming
+654,Chris Cortes,Sport,2024-08-06,109,Connecticut
+655,Chris Cortes,Sport,2023-12-08,136,California
+656,Chris Cortes,Concert,2024-12-10,121,Arizona
+657,Chris Cortes,Concert,2023-04-05,198,Idaho
+658,Carl Ludwig,Sport,2024-10-13,85,California
+659,Carl Ludwig,Sport,2024-12-17,163,Mississippi
+660,Carl Ludwig,Meal,2024-11-06,119,Iowa
+661,Lisa Hazard,Concert,2024-03-27,163,Idaho
+662,Deborah Brumfield,Meal,2024-11-10,89,Connecticut
+663,Deborah Brumfield,Sport,2023-06-07,159,Maryland
+664,Karen Daniels,Party,2024-11-04,139,New Hampshire
+665,Karen Daniels,Party,2024-01-17,74,Arkansas
+666,Karen Daniels,Meal,2023-04-24,123,Arkansas
+667,Darrin Martin,Meal,2024-09-04,114,Alabama
+668,Darrin Martin,Sport,2024-07-09,101,Indiana
+669,Darrin Martin,Sport,2023-03-11,101,Connecticut
+670,Darrin Martin,Concert,2024-02-22,196,California
+671,Tony Sayre,Meal,2023-06-14,101,California
+672,Tony Sayre,Meal,2023-07-10,53,North Dakota
+673,Tony Sayre,Concert,2024-08-19,117,Colorado
+674,Tony Sayre,Concert,2023-01-29,124,Arkansas
+675,Tony Sayre,Party,2024-09-18,52,Texas
+676,Bill Shonely,Sport,2024-09-15,176,Iowa
+677,Shirley Schmidt,Concert,2023-01-25,166,Iowa
+678,Shirley Schmidt,Meal,2023-12-22,76,West Virginia
+679,Shirley Schmidt,Sport,2024-11-30,86,Iowa
+680,Shirley Schmidt,Meal,2023-10-19,53,Florida
+681,Brendan Dodson,Meal,2023-10-26,97,Kentucky
+682,Brendan Dodson,Meal,2023-07-29,97,Pennsylvania
+683,Bobby Trafton,Concert,2024-04-10,139,Kentucky
+684,Bobby Trafton,Meal,2023-12-07,89,Minnesota
+685,Sally Knutson,Meal,2023-05-18,141,North Carolina
+686,Sanjit Jacobs,Meal,2023-07-25,195,Tennessee
+687,Sanjit Jacobs,Sport,2023-10-10,80,Virginia
+688,Sanjit Jacobs,Concert,2024-05-15,90,New York
+689,Sanjit Jacobs,Party,2023-09-04,147,Maryland
+690,Sanjit Jacobs,Party,2024-09-21,119,New York
+691,Erica Hackney,Sport,2024-09-07,145,California
+692,Erica Hackney,Meal,2023-11-04,72,Oregon
+693,Erica Hackney,Meal,2024-08-21,112,Pennsylvania
+694,Jill Fjeld,Sport,2024-03-13,77,Utah
+695,Jill Fjeld,Meal,2023-09-25,127,Iowa
+696,Jill Fjeld,Meal,2023-10-23,65,Kansas
+697,Jill Fjeld,Party,2024-06-23,172,Oklahoma
+698,Arthur Prichep,Sport,2023-07-12,92,West Virginia
+699,Arthur Prichep,Sport,2024-11-04,190,Colorado
+700,Arthur Prichep,Sport,2023-02-09,173,North Dakota
+701,Arthur Prichep,Meal,2024-09-08,154,Rhode Island
+702,Arthur Prichep,Sport,2023-02-25,77,Idaho
+703,Herbert Flentye,Sport,2024-11-06,154,Utah
+704,Herbert Flentye,Sport,2023-11-19,169,Michigan
+705,Herbert Flentye,Sport,2024-08-01,133,New York
+706,Herbert Flentye,Sport,2024-07-13,120,California
+707,Herbert Flentye,Sport,2023-09-11,124,Michigan
+708,Greg Maxwell,Meal,2023-10-11,101,New Jersey
+709,Greg Maxwell,Sport,2023-07-16,160,South Dakota
+710,Cynthia Voltz,Sport,2024-01-10,182,Maryland
+711,Vivek Gonzalez,Party,2023-03-19,162,Maryland
+712,Vivek Gonzalez,Meal,2024-06-03,138,Oregon
+713,Vivek Gonzalez,Concert,2024-11-28,151,Alabama
+714,Vivek Gonzalez,Sport,2023-09-14,196,Maine
+715,Alan Hwang,Concert,2024-01-07,87,Virginia
+716,Stephanie Phelps,Sport,2023-11-24,53,Montana
+717,Stephanie Phelps,Meal,2023-12-23,171,Washington
+718,Arthur Wiediger,Party,2024-02-17,78,Missouri
+719,Arthur Wiediger,Sport,2023-11-08,191,Florida
+720,Arthur Wiediger,Sport,2023-01-28,109,Missouri
+721,Arthur Wiediger,Sport,2024-11-17,123,Ohio
+722,Arthur Wiediger,Party,2023-01-23,64,Colorado
+723,Nicole Fjeld,Meal,2024-01-24,67,Alabama
+724,Nicole Fjeld,Sport,2024-01-01,152,Delaware
+725,Nicole Fjeld,Sport,2024-03-18,154,Georgia
+726,Nicole Fjeld,Meal,2024-05-14,68,Vermont
+727,Bobby Odegard,Party,2024-07-27,173,New Hampshire
+728,Bobby Odegard,Sport,2023-11-28,154,Arkansas
+729,Bobby Odegard,Concert,2023-03-26,63,Oregon
+730,Bobby Odegard,Sport,2024-06-01,83,Texas
+731,Magdelene Morse,Sport,2024-10-24,120,Washington
+732,Laurel Workman,Sport,2024-01-05,138,Ohio
+733,Laurel Workman,Sport,2023-08-22,183,Vermont
+734,Laurel Workman,Sport,2024-02-20,184,North Dakota
+735,Laurel Workman,Concert,2023-01-09,158,South Dakota
+736,Laurel Workman,Meal,2024-04-29,198,New York
+737,Katherine Murray,Meal,2023-04-10,81,West Virginia
+738,Luke Foster,Concert,2023-07-27,115,Nevada
+739,Luke Foster,Concert,2024-07-10,122,Nebraska
+740,Luke Foster,Concert,2023-08-24,148,New York
+741,Dave Brooks,Meal,2024-11-09,137,Wisconsin
+742,Barry Weirich,Meal,2023-01-19,178,Idaho
+743,Barry Weirich,Meal,2024-02-11,98,Maine
+744,Barry Weirich,Concert,2023-04-10,128,Kentucky
+745,Barry Weirich,Party,2023-07-16,57,North Dakota
+746,Harold Dahlen,Sport,2023-03-07,143,Idaho
+747,Harold Dahlen,Meal,2024-07-31,102,Maine
+748,Harold Dahlen,Concert,2024-09-14,90,Washington
+749,Larry Tron,Sport,2024-09-14,140,Maine
+750,Larry Tron,Sport,2024-02-26,120,Nevada
+751,Larry Tron,Meal,2024-08-22,150,California
+752,Larry Tron,Sport,2023-04-07,124,Arkansas
+753,Maya Herman,Meal,2023-12-02,127,Washington
+754,Mitch Willingham,Concert,2024-08-19,127,Virginia
+755,Mitch Willingham,Meal,2024-02-14,149,West Virginia
+756,Mitch Willingham,Sport,2024-01-03,135,Utah
+757,Nicole Hansen,Party,2024-03-24,184,Mississippi
+758,Nicole Hansen,Concert,2023-04-26,90,Arkansas
+759,Nicole Hansen,Meal,2023-01-07,78,Utah
+760,Nicole Hansen,Party,2024-12-18,106,Arkansas
+761,Nora Preis,Meal,2023-04-27,155,Nevada
+762,Nora Preis,Concert,2024-05-09,53,Michigan
+763,Carl Jackson,Concert,2024-06-04,104,Alabama
+764,Carl Jackson,Concert,2024-03-05,139,Arizona
+765,Carl Jackson,Meal,2024-09-06,152,Connecticut
+766,Carl Jackson,Concert,2023-12-09,148,Mississippi
+767,Anthony Witt,Concert,2024-10-25,125,Washington
+768,Anthony Witt,Sport,2023-05-22,151,Wisconsin
+769,Anthony Witt,Sport,2024-10-26,113,Louisiana
+770,Toby Gnade,Sport,2024-11-23,79,South Dakota
+771,Toby Gnade,Sport,2023-02-20,100,Hawaii
+772,Toby Gnade,Meal,2024-09-08,121,Oregon
+773,Toby Gnade,Sport,2023-11-21,92,Wyoming
+774,Eric Hoffmann,Meal,2023-10-12,106,Rhode Island
+775,Eric Hoffmann,Meal,2024-12-09,105,Maine
+776,Eric Hoffmann,Meal,2023-01-06,127,Idaho
+777,Eric Hoffmann,Sport,2023-07-27,83,Maine
+778,Eric Hoffmann,Meal,2023-08-10,143,New Mexico
+779,Stefanie Holloman,Meal,2023-04-07,105,North Dakota
+780,Denny Ordway,Sport,2024-02-27,188,Idaho
+781,Denny Ordway,Sport,2023-09-02,55,Connecticut
+782,Denny Ordway,Concert,2023-08-14,152,Nebraska
+783,Darren Koutras,Party,2023-04-20,198,Michigan
+784,Darren Koutras,Sport,2023-09-12,125,Maryland
+785,Darren Koutras,Meal,2023-03-13,116,Georgia
+786,Michael Grace,Meal,2023-02-10,151,Tennessee
+787,Theresa Coyne,Meal,2024-04-15,139,Wyoming
+788,Theresa Coyne,Sport,2024-05-15,163,Colorado
+789,Sanjit Engle,Meal,2024-04-27,157,Idaho
+790,Sanjit Engle,Sport,2024-11-25,188,Idaho
+791,Sanjit Engle,Sport,2024-04-03,161,New Jersey
+792,Sanjit Engle,Sport,2024-08-26,162,Arizona
+793,Sanjit Engle,Concert,2023-03-17,72,Iowa
+794,Maribeth Schnelling,Concert,2023-05-03,183,Massachusetts
+795,Maribeth Schnelling,Concert,2024-04-16,148,Kentucky
+796,Maribeth Schnelling,Meal,2023-10-17,190,Nebraska
+797,Maribeth Schnelling,Sport,2024-04-15,70,Tennessee
+798,Maribeth Schnelling,Meal,2024-02-20,63,Connecticut
+799,Mark Cousins,Sport,2023-06-09,107,North Dakota
+800,Cari Sayre,Meal,2024-11-24,192,Georgia
+801,Cari Sayre,Meal,2024-11-17,154,Texas
+802,Bryan Davis,Party,2024-02-05,124,New Hampshire
+803,Guy Thornton,Sport,2023-06-25,125,Virginia
+804,Guy Thornton,Party,2023-10-26,155,Wyoming
+805,Guy Thornton,Party,2024-07-09,162,Massachusetts
+806,John Huston,Meal,2023-03-07,55,New Jersey
+807,John Huston,Meal,2023-10-22,185,Alabama
+808,John Huston,Sport,2023-04-04,87,Mississippi
+809,Lena Hernandez,Meal,2023-12-11,139,Vermont
+810,Lena Hernandez,Sport,2023-11-21,173,Illinois
+811,Lena Hernandez,Concert,2023-06-04,151,Mississippi
+812,Lena Hernandez,Sport,2024-08-30,65,New Hampshire
+813,Lena Hernandez,Meal,2024-10-09,145,California
+814,Chad Cunningham,Concert,2023-05-11,117,Ohio
+815,Chad Cunningham,Sport,2023-08-04,80,Massachusetts
+816,Chad Cunningham,Meal,2023-05-13,99,North Carolina
+817,Sean Wendt,Meal,2024-05-20,199,Kentucky
+818,Sean Wendt,Sport,2023-01-13,87,Wisconsin
+819,Pete Armstrong,Concert,2024-08-26,157,Kentucky
+820,Pete Armstrong,Party,2023-08-10,159,Iowa
+821,Pete Armstrong,Concert,2023-11-08,177,Maryland
+822,Pete Armstrong,Concert,2023-03-23,188,Wisconsin
+823,Pete Armstrong,Sport,2023-04-05,137,Alabama
+824,Lela Donovan,Meal,2023-12-14,129,Tennessee
+825,Lela Donovan,Concert,2023-10-15,117,Indiana
+826,Lela Donovan,Party,2024-01-20,158,New Mexico
+827,Lela Donovan,Sport,2024-06-18,86,Alaska
+828,Lela Donovan,Sport,2024-11-14,142,Oregon
+829,Christine Sundaresam,Sport,2024-05-31,156,West Virginia
+830,Christine Sundaresam,Meal,2023-12-03,117,Florida
+831,Christine Sundaresam,Sport,2023-05-05,183,Maine
+832,Christine Sundaresam,Sport,2023-08-07,107,Colorado
+833,Corey Roper,Sport,2023-07-29,173,New Jersey
+834,Corey Roper,Party,2023-04-08,157,Connecticut
+835,Corey Roper,Sport,2023-08-24,56,Virginia
+836,Carlos Soltero,Meal,2023-12-09,165,North Dakota
+837,Carlos Soltero,Concert,2024-06-15,120,Tennessee
+838,Carlos Soltero,Meal,2023-08-27,175,Florida
+839,Carlos Soltero,Sport,2023-09-29,168,Washington
+840,Tom Prescott,Sport,2023-07-21,99,North Carolina
+841,Tom Prescott,Meal,2023-12-15,185,Alabama
+842,Tom Prescott,Party,2024-06-15,116,Maryland
+843,Tom Prescott,Concert,2024-04-13,147,Oklahoma
+844,Jonathan Doherty,Concert,2023-08-06,52,Washington
+845,Jonathan Doherty,Party,2023-08-03,151,Oregon
+846,Jonathan Doherty,Meal,2023-04-06,185,Michigan
+847,Jonathan Doherty,Sport,2023-02-16,89,Colorado
+848,Edward Hooks,Sport,2024-01-29,157,Minnesota
+849,Edward Hooks,Meal,2023-06-28,176,Hawaii
+850,Edward Hooks,Concert,2023-01-10,151,Connecticut
+851,Edward Hooks,Sport,2023-02-21,110,Hawaii
+852,Tracy Zic,Meal,2024-11-27,177,Nevada
+853,Chris McAfee,Meal,2024-10-05,128,Hawaii
+854,Bradley Drucker,Meal,2023-01-21,77,Tennessee
+855,Bradley Drucker,Sport,2024-06-11,189,Indiana
+856,Bradley Drucker,Meal,2023-07-27,93,Connecticut
+857,Paul Knutson,Concert,2023-12-19,126,Florida
+858,Janet Martin,Sport,2023-04-02,151,Arizona
+859,Janet Martin,Sport,2024-04-28,179,Montana
+860,Janet Martin,Concert,2023-05-19,176,Arkansas
+861,Janet Martin,Sport,2024-08-24,164,Wyoming
+862,Janet Martin,Party,2024-09-05,74,Oregon
+863,Troy Staebel,Meal,2024-08-11,156,Iowa
+864,Troy Staebel,Sport,2023-05-13,52,Utah
+865,Troy Staebel,Concert,2024-02-14,75,Alabama
+866,Aimee Bixby,Sport,2024-11-02,100,Indiana
+867,Aimee Bixby,Sport,2024-02-16,125,Arkansas
+868,Aimee Bixby,Meal,2024-04-11,111,Connecticut
+869,Aimee Bixby,Sport,2023-08-21,76,Indiana
+870,Craig Molinari,Sport,2023-04-19,170,Arizona
+871,Craig Molinari,Concert,2023-03-26,114,Oklahoma
+872,Eugene Hildebrand,Party,2024-10-23,83,Florida
+873,Eugene Hildebrand,Meal,2024-08-03,142,Pennsylvania
+874,Eugene Hildebrand,Meal,2023-09-20,98,Wyoming
+875,Jessica Myrick,Sport,2023-06-22,86,Alaska
+876,Jessica Myrick,Concert,2024-12-24,187,Wisconsin
+877,Jessica Myrick,Sport,2024-06-02,98,Washington
+878,Jessica Myrick,Concert,2023-06-04,60,Hawaii
+879,Rob Dowd,Meal,2024-03-25,153,Alaska
+880,Rob Dowd,Concert,2023-05-20,116,Rhode Island
+881,Rob Dowd,Concert,2024-03-21,100,Tennessee
+882,Rob Dowd,Party,2023-10-31,75,New Hampshire
+883,Mitch Webber,Party,2024-11-09,57,West Virginia
+884,Noah Childs,Party,2024-06-10,180,West Virginia
+885,Noah Childs,Meal,2024-02-06,65,Maryland
+886,Noah Childs,Concert,2024-03-17,174,Nevada
+887,Paul MacIntyre,Meal,2023-03-23,67,Alabama
+888,Paul MacIntyre,Sport,2023-09-10,106,Oregon
+889,Paul MacIntyre,Meal,2023-12-27,137,Idaho
+890,Ivan Liston,Sport,2023-12-10,101,Kentucky
+891,Ivan Liston,Sport,2023-10-12,136,West Virginia
+892,Rick Reed,Sport,2023-01-23,180,California
+893,Rick Reed,Sport,2024-10-31,171,Idaho
+894,Rick Reed,Meal,2024-08-22,166,Arizona
+895,Rick Reed,Sport,2024-10-03,131,Wisconsin
+896,Sanjit Chand,Meal,2023-09-19,80,New York
+897,Sanjit Chand,Sport,2023-08-15,64,Maine
+898,Sanjit Chand,Party,2023-04-13,72,Kansas
+899,Susan Gilcrest,Sport,2024-08-27,158,Colorado
+900,Susan Gilcrest,Concert,2024-10-15,200,Rhode Island
+901,Susan Gilcrest,Sport,2023-03-13,97,North Dakota
+902,Susan Gilcrest,Meal,2023-04-30,59,Maine
+903,Tracy Blumstein,Meal,2023-03-07,185,Delaware
+904,Tracy Blumstein,Sport,2023-03-11,152,Nebraska
+905,Dave Kipp,Meal,2024-02-17,112,Maryland
+906,Dave Kipp,Meal,2024-11-19,168,Idaho
+907,Dave Kipp,Meal,2024-10-01,196,Alaska
+908,Dave Kipp,Meal,2024-04-26,180,Mississippi
+909,Juliana Krohn,Concert,2023-06-13,110,Kansas
+910,Juliana Krohn,Meal,2024-06-08,176,Colorado
+911,Juliana Krohn,Sport,2023-12-18,149,South Dakota
+912,Juliana Krohn,Meal,2023-12-14,171,South Dakota
+913,Justin Hirsh,Party,2023-09-04,192,South Carolina
+914,Justin Hirsh,Sport,2024-01-19,103,Missouri
+915,Justin Hirsh,Concert,2023-05-06,157,New Hampshire
+916,Hunter Glantz,Sport,2024-02-15,199,Maryland
+917,Hunter Glantz,Sport,2024-02-03,134,Connecticut
+918,Hunter Glantz,Concert,2024-05-26,72,Massachusetts
+919,Liz Pelletier,Sport,2024-06-25,87,Oregon
+920,Liz Pelletier,Concert,2023-11-12,199,Oregon
+921,Dianna Arnett,Meal,2023-01-25,191,Alaska
+922,Dianna Arnett,Sport,2023-06-27,157,Idaho
+923,Alejandro Savely,Sport,2024-12-01,115,Colorado
+924,Peter Bühler,Sport,2024-12-12,137,South Dakota
+925,Peter Bühler,Sport,2023-05-09,98,Illinois
+926,Peter Bühler,Concert,2024-12-30,143,Kentucky
+927,Peter Bühler,Sport,2024-02-14,167,Alabama
+928,Peter Bühler,Sport,2024-03-04,120,Oklahoma
+929,Eugene Moren,Party,2024-02-04,94,Massachusetts
+930,Ricardo Emerson,Sport,2024-04-26,131,Illinois
+931,Ricardo Emerson,Concert,2024-08-22,156,Wisconsin
+932,Ricardo Emerson,Sport,2024-01-17,174,Oregon
+933,Michelle Lonsdale,Sport,2024-12-05,64,Wisconsin
+934,Michelle Lonsdale,Concert,2023-03-24,194,Kansas
+935,Giulietta Baptist,Sport,2024-05-23,84,California
+936,Jack Garza,Sport,2024-11-21,164,Nevada
+937,Jack Garza,Sport,2023-12-29,78,Idaho
+938,Larry Hughes,Concert,2023-08-13,127,Mississippi
+939,Larry Hughes,Concert,2023-07-27,184,West Virginia
+940,Larry Hughes,Sport,2023-12-09,189,South Carolina
+941,Harry Marie,Party,2024-08-12,178,North Carolina
+942,Harry Marie,Sport,2023-07-04,98,Alaska
+943,Harry Marie,Meal,2024-03-14,174,West Virginia
+944,Harry Marie,Sport,2024-04-02,139,Delaware
+945,Liz Willingham,Meal,2024-01-07,108,Arizona
+946,Liz Willingham,Sport,2023-10-06,186,South Dakota
+947,Liz Willingham,Meal,2023-01-18,171,Illinois
+948,Liz Willingham,Meal,2023-07-18,155,Oregon
+949,Anna Andreadi,Sport,2023-09-30,198,Vermont
+950,Anna Andreadi,Meal,2023-09-03,73,Kansas
+951,Paul Stevenson,Sport,2024-02-07,127,Rhode Island
+952,Paul Stevenson,Meal,2024-12-10,63,Virginia
+953,Paul Stevenson,Meal,2023-11-09,60,Indiana
+954,Paul Stevenson,Party,2024-05-08,186,South Carolina
+955,Paul Stevenson,Sport,2024-12-19,88,South Carolina
+956,Neil Knudson,Concert,2023-03-10,156,Rhode Island
+957,Neil Knudson,Concert,2023-07-15,187,Arkansas
+958,Darrin Van Huff,Sport,2024-08-15,68,Texas
+959,Darrin Van Huff,Sport,2024-06-23,58,Arizona
+960,Naresj Patel,Meal,2023-06-11,193,Texas
+961,Naresj Patel,Sport,2023-03-19,58,Colorado
+962,Naresj Patel,Concert,2023-12-17,124,Minnesota
+963,Naresj Patel,Meal,2024-03-23,181,Indiana
+964,Sean Braxton,Sport,2024-06-15,78,Florida
+965,Sean Braxton,Sport,2023-09-26,82,Indiana
+966,Sean Braxton,Sport,2024-10-11,105,Iowa
+967,Sean Braxton,Meal,2023-05-29,69,Connecticut
+968,Valerie Mitchum,Concert,2024-10-09,143,Illinois
+969,Duane Benoit,Sport,2024-10-25,124,California
+970,Edward Becker,Sport,2024-02-21,80,Minnesota
+971,Edward Becker,Meal,2023-11-01,96,Kansas
+972,Roland Fjeld,Concert,2023-04-23,51,Montana
+973,Roland Fjeld,Party,2024-04-22,200,New York
+974,Roland Fjeld,Sport,2023-06-25,178,Mississippi
+975,Kean Thornton,Sport,2023-05-04,183,Arkansas
+976,Kean Thornton,Meal,2023-09-12,92,Kentucky
+977,Kean Thornton,Concert,2023-10-27,199,Vermont
+978,Kean Thornton,Meal,2023-01-10,114,Nevada
+979,Katrina Bavinger,Meal,2023-06-25,51,Oregon
+980,Katrina Bavinger,Sport,2024-12-03,169,New Jersey
+981,Katrina Bavinger,Meal,2023-09-02,162,Arizona
+982,Adrian Shami,Sport,2023-03-08,63,New Mexico
+983,Don Miller,Sport,2023-02-23,122,Vermont
+984,Don Miller,Sport,2024-09-16,97,Colorado
+985,Don Miller,Concert,2024-04-03,50,Oklahoma
+986,Don Miller,Sport,2023-10-11,183,Delaware
+987,Emily Burns,Meal,2024-05-03,54,Alaska
+988,Emily Burns,Meal,2024-11-11,116,Tennessee
+989,Jim Sink,Sport,2023-10-30,51,Texas
+990,Jim Sink,Party,2023-01-29,161,Oregon
+991,Jim Sink,Meal,2023-02-22,65,West Virginia
+992,Jim Sink,Meal,2023-09-02,153,Arkansas
+993,Henry MacAllister,Sport,2023-08-04,107,Oklahoma
+994,Henry MacAllister,Sport,2023-12-27,165,Washington
+995,Emily Grady,Sport,2024-04-14,183,Connecticut
+996,Emily Grady,Sport,2024-03-28,100,North Carolina
+997,Emily Grady,Concert,2024-12-23,197,Oregon
+998,Emily Grady,Party,2024-06-29,191,Colorado
+999,Emily Grady,Meal,2023-01-20,61,Nebraska
+1000,Stewart Carmichael,Meal,2024-05-01,101,Idaho
+1001,Irene Maddox,Concert,2024-12-19,133,Maryland
+1002,Irene Maddox,Sport,2023-11-04,76,Arizona
+1003,Irene Maddox,Sport,2024-08-30,71,Maine
+1004,Irene Maddox,Concert,2023-07-25,54,Iowa
+1005,Michael Paige,Sport,2024-01-01,145,South Carolina
+1006,Michael Paige,Sport,2023-05-04,176,Vermont
+1007,Michael Paige,Sport,2023-07-17,52,Pennsylvania
+1008,Michael Paige,Sport,2024-07-21,146,Georgia
+1009,Skye Norling,Meal,2024-06-05,98,Tennessee
+1010,Daniel Raglin,Meal,2024-04-12,186,New Hampshire
+1011,Daniel Raglin,Concert,2024-03-25,148,Wyoming
+1012,Daniel Raglin,Meal,2023-08-09,106,Nebraska
+1013,Daniel Raglin,Meal,2024-04-18,195,Maryland
+1014,Jill Matthias,Meal,2023-05-26,79,Kentucky
+1015,Jill Matthias,Concert,2024-09-15,158,Missouri
+1016,Jill Matthias,Sport,2024-06-01,123,Michigan
+1017,Ashley Jarboe,Sport,2023-08-18,153,Florida
+1018,Ashley Jarboe,Concert,2024-11-15,151,Virginia
+1019,Lycoris Saunders,Sport,2023-06-07,111,South Carolina
+1020,Lycoris Saunders,Sport,2024-03-01,123,California
+1021,Lycoris Saunders,Concert,2023-11-09,141,Illinois
+1022,Harold Engle,Sport,2024-01-21,114,Wisconsin
+1023,Harold Engle,Meal,2023-08-21,144,Nebraska
+1024,Harold Engle,Sport,2023-05-24,105,Nevada
+1025,Harold Engle,Concert,2023-11-02,163,Nebraska
+1026,Harold Engle,Sport,2024-04-03,84,Vermont
+1027,Emily Phan,Sport,2023-03-30,148,Louisiana
+1028,Emily Phan,Sport,2024-09-26,198,Wisconsin
+1029,Emily Phan,Sport,2024-05-25,109,Montana
+1030,Emily Phan,Meal,2023-07-14,87,Minnesota
+1031,Emily Phan,Concert,2024-05-12,131,Vermont
+1032,Bart Folk,Sport,2024-01-20,66,North Carolina
+1033,Bart Folk,Sport,2023-02-18,85,Indiana
+1034,Matthew Clasen,Sport,2023-03-02,87,Virginia
+1035,Matthew Clasen,Party,2024-03-10,160,Rhode Island
+1036,Matthew Clasen,Party,2023-09-15,100,Nevada
+1037,Pauline Chand,Meal,2023-09-22,53,North Carolina
+1038,Pauline Chand,Party,2024-03-05,128,Arkansas
+1039,Pauline Chand,Concert,2023-03-10,109,New Hampshire
+1040,Mike Caudle,Party,2023-09-28,155,Texas
+1041,Mike Caudle,Meal,2024-07-13,108,North Dakota
+1042,Mike Caudle,Meal,2024-01-02,125,Arkansas
+1043,Mike Caudle,Sport,2024-04-27,78,New York
+1044,Pamela Coakley,Meal,2023-09-29,76,Rhode Island
+1045,Pamela Coakley,Meal,2023-05-07,64,Missouri
+1046,Cassandra Brandow,Party,2023-11-19,170,Arizona
+1047,Cassandra Brandow,Sport,2023-07-24,71,Illinois
+1048,Clytie Kelty,Meal,2024-12-06,122,Georgia
+1049,Victoria Pisteka,Concert,2024-11-22,51,Wyoming
+1050,Victoria Pisteka,Meal,2023-08-08,112,Colorado
+1051,Victoria Pisteka,Sport,2024-07-23,160,Pennsylvania
+1052,Victoria Pisteka,Sport,2023-10-27,132,Alaska
+1053,Victoria Pisteka,Concert,2023-02-17,80,Virginia
+1054,Maureen Gastineau,Concert,2024-03-15,128,Illinois
+1055,Maureen Gastineau,Sport,2024-05-03,82,Arizona
+1056,Maureen Gastineau,Meal,2024-09-07,193,Michigan
+1057,Patrick Jones,Meal,2024-04-09,80,Idaho
+1058,Zuschuss Carroll,Party,2024-06-03,123,Missouri
+1059,Zuschuss Carroll,Concert,2023-07-10,159,Utah
+1060,Zuschuss Carroll,Meal,2024-02-02,191,New Jersey
+1061,Zuschuss Carroll,Sport,2024-07-06,52,Tennessee
+1062,Carlos Daly,Sport,2024-01-23,122,Washington
+1063,Carlos Daly,Meal,2023-09-27,82,Maryland
+1064,Gary McGarr,Sport,2023-04-28,130,Wisconsin
+1065,Gary McGarr,Concert,2024-04-23,90,Nebraska
+1066,Gary McGarr,Meal,2023-06-03,59,Wyoming
+1067,Julia Barnett,Sport,2024-07-17,73,Washington
+1068,Georgia Rosenberg,Party,2023-10-06,192,Delaware
+1069,Georgia Rosenberg,Party,2024-07-10,172,Louisiana
+1070,Georgia Rosenberg,Sport,2024-07-16,189,Oklahoma
+1071,Georgia Rosenberg,Concert,2024-05-16,136,Tennessee
+1072,Georgia Rosenberg,Sport,2024-10-01,78,New York
+1073,Mike Kennedy,Meal,2024-12-09,80,Montana
+1074,Mike Kennedy,Concert,2023-01-19,162,North Dakota
+1075,Mike Kennedy,Sport,2024-01-08,158,Oregon
+1076,Mike Kennedy,Concert,2024-01-04,117,Alaska
+1077,Jennifer Jackson,Meal,2023-06-10,178,South Carolina
+1078,Jennifer Jackson,Meal,2023-04-29,106,Oklahoma
+1079,Joel Eaton,Sport,2023-03-05,162,Delaware
+1080,Joel Eaton,Sport,2023-09-09,98,Washington
+1081,Joel Eaton,Meal,2023-01-24,129,Mississippi
+1082,Joel Eaton,Meal,2023-06-09,86,South Carolina
+1083,Jason Klamczynski,Concert,2024-04-02,98,Alabama
+1084,Jeremy Lonsdale,Party,2023-04-01,167,Mississippi
+1085,Vivek Sundaresam,Sport,2023-01-23,100,Maine
+1086,Vivek Sundaresam,Concert,2024-02-04,56,Iowa
+1087,Vivek Sundaresam,Sport,2024-07-12,142,Wyoming
+1088,Dean Katz,Sport,2024-04-18,102,Rhode Island
+1089,Dean Katz,Sport,2023-05-04,192,South Dakota
+1090,Dean Katz,Party,2024-09-13,189,South Carolina
+1091,Dorothy Wardle,Meal,2024-05-16,76,Massachusetts
+1092,Anthony Garverick,Meal,2024-04-23,161,Tennessee
+1093,Anthony Garverick,Meal,2023-06-07,200,Arizona
+1094,Anthony Garverick,Concert,2024-08-25,183,Ohio
+1095,Anthony Garverick,Sport,2023-09-18,189,Virginia
+1096,Anthony Garverick,Sport,2023-11-16,159,Delaware
+1097,Bill Stewart,Sport,2024-11-30,102,Wyoming
+1098,Bill Stewart,Concert,2024-03-07,51,Ohio
+1099,Paul Lucas,Meal,2024-10-03,192,South Carolina
+1100,Paul Lucas,Meal,2024-04-08,186,Massachusetts
+1101,Paul Lucas,Sport,2023-04-25,161,Arizona
+1102,Paul Lucas,Concert,2024-04-04,177,Kansas
+1103,Nick Crebassa,Meal,2024-01-21,96,Washington
+1104,Keith Dawkins,Sport,2024-08-20,138,Hawaii
+1105,Keith Dawkins,Sport,2024-12-27,104,Idaho
+1106,Keith Dawkins,Meal,2024-02-21,110,Ohio
+1107,Steve Chapman,Sport,2024-11-12,69,Illinois
+1108,Dave Poirier,Meal,2024-03-02,141,Massachusetts
+1109,Dave Poirier,Meal,2023-01-05,114,Minnesota
+1110,Ken Heidel,Sport,2023-06-18,149,Alabama
+1111,Alex Russell,Meal,2023-09-05,104,West Virginia
+1112,Alex Russell,Party,2023-01-29,109,Pennsylvania
+1113,Alex Russell,Concert,2024-01-25,161,Indiana
+1114,Alex Russell,Sport,2023-03-01,110,Connecticut
+1115,Guy Phonely,Concert,2024-01-24,117,Arizona
+1116,Guy Phonely,Concert,2024-09-10,113,Iowa
+1117,Guy Phonely,Meal,2024-10-30,197,New Mexico
+1118,Guy Phonely,Sport,2023-07-20,75,South Dakota
+1119,Guy Phonely,Sport,2023-06-15,199,South Carolina
+1120,Kelly Andreada,Sport,2023-09-17,74,Virginia
+1121,Kelly Andreada,Sport,2023-08-09,50,Oregon
+1122,Kelly Andreada,Concert,2024-05-02,185,West Virginia
+1123,Kelly Andreada,Sport,2023-04-02,139,Wisconsin
+1124,Kelly Andreada,Concert,2024-03-28,167,Kansas
+1125,Brian DeCherney,Party,2023-04-23,192,Idaho
+1126,Brian DeCherney,Meal,2024-01-16,84,Illinois
+1127,Denise Monton,Sport,2024-08-31,129,Arkansas
+1128,Denise Monton,Concert,2023-05-16,85,Virginia
+1129,Tonja Turnell,Sport,2024-06-01,176,North Carolina
+1130,Tonja Turnell,Meal,2023-12-28,140,South Dakota
+1131,Tonja Turnell,Concert,2024-06-05,120,Montana
+1132,Brian Stugart,Concert,2023-09-01,80,Pennsylvania
+1133,Brian Stugart,Sport,2023-01-29,140,New Hampshire
+1134,Brian Stugart,Meal,2024-12-20,130,Colorado
+1135,Patrick Gardner,Meal,2023-05-31,125,Washington
+1136,Patrick Gardner,Concert,2023-12-11,121,Tennessee
+1137,Patrick Gardner,Party,2023-01-18,73,Illinois
+1138,Patrick Gardner,Party,2024-01-05,161,Kentucky
+1139,Tim Brockman,Meal,2024-10-05,157,West Virginia
+1140,Tim Brockman,Party,2024-05-04,169,Nebraska
+1141,Tim Brockman,Sport,2024-09-06,128,Louisiana
+1142,Tim Brockman,Party,2024-09-24,146,Massachusetts
+1143,Vivek Grady,Meal,2024-09-20,144,Nebraska
+1144,Brian Thompson,Meal,2024-06-04,115,Arkansas
+1145,Brian Thompson,Meal,2023-03-13,78,Iowa
+1146,Brian Thompson,Sport,2024-05-06,141,South Dakota
+1147,Daniel Byrd,Sport,2024-11-07,81,Mississippi
+1148,Daniel Byrd,Meal,2023-02-15,104,New Jersey
+1149,Daniel Byrd,Sport,2023-11-13,56,Texas
+1150,Daniel Byrd,Sport,2023-08-13,108,Connecticut
+1151,Daniel Byrd,Sport,2024-03-27,195,Michigan
+1152,Anne McFarland,Sport,2023-05-01,116,Arkansas
+1153,Theone Pippenger,Concert,2024-10-20,128,Montana
+1154,Theone Pippenger,Party,2023-12-26,75,North Dakota
+1155,Fred Chung,Meal,2024-07-07,193,Michigan
+1156,Fred Chung,Meal,2023-12-26,59,Minnesota
+1157,Fred Chung,Meal,2023-07-21,98,Minnesota
+1158,Anna Häberlin,Party,2024-07-29,199,South Carolina
+1159,Anna Häberlin,Meal,2024-12-11,164,Kansas
+1160,Anna Häberlin,Sport,2023-09-10,60,Oregon
+1161,Sung Pak,Meal,2024-08-10,52,West Virginia
+1162,Sung Pak,Sport,2024-11-15,113,Delaware
+1163,Sung Pak,Concert,2024-12-02,186,South Dakota
+1164,Erica Smith,Meal,2023-05-07,159,Georgia
+1165,Erica Smith,Sport,2024-11-02,157,Virginia
+1166,Erica Smith,Sport,2024-04-17,118,Illinois
+1167,Erica Smith,Concert,2024-11-09,106,Nebraska
+1168,Barry Französisch,Meal,2023-11-21,114,Wisconsin
+1169,Evan Bailliet,Meal,2023-12-18,118,North Carolina
+1170,Edward Nazzal,Meal,2023-01-05,192,Arizona
+1171,Ed Ludwig,Sport,2023-08-03,125,Arizona
+1172,Ed Ludwig,Meal,2023-05-02,54,Rhode Island
+1173,Ed Ludwig,Sport,2023-03-29,138,Ohio
+1174,Hallie Redmond,Meal,2024-07-07,194,Montana
+1175,Hallie Redmond,Sport,2023-10-05,94,Utah
+1176,Scott Williamson,Sport,2023-10-02,185,Michigan
+1177,Scott Williamson,Meal,2023-01-05,106,Colorado
+1178,Scott Williamson,Sport,2023-04-24,114,Rhode Island
+1179,Scott Williamson,Meal,2024-08-08,189,Montana
+1180,Scott Williamson,Concert,2023-06-02,183,Nevada
+1181,Barry Franz,Sport,2024-03-02,52,Florida
+1182,Barry Franz,Meal,2024-11-17,84,Texas
+1183,Barry Franz,Meal,2023-07-07,177,Texas
+1184,Denise Leinenbach,Party,2024-07-17,99,South Carolina
+1185,Denise Leinenbach,Meal,2024-10-07,160,Rhode Island
+1186,Denise Leinenbach,Sport,2023-12-25,197,Virginia
+1187,Denise Leinenbach,Meal,2024-11-27,76,Arizona
+1188,Denise Leinenbach,Party,2023-05-07,176,New Jersey
+1189,Steven Cartwright,Sport,2023-06-10,146,North Dakota
+1190,Steven Cartwright,Sport,2023-10-04,56,Nebraska
+1191,Steven Cartwright,Party,2023-04-11,107,Tennessee
+1192,Katherine Hughes,Party,2024-10-21,85,Alaska
+1193,Katherine Hughes,Party,2023-05-15,87,Ohio
+1194,Katherine Hughes,Sport,2024-01-12,99,Massachusetts
+1195,Katherine Hughes,Party,2024-05-01,100,Wyoming
+1196,Katherine Hughes,Sport,2023-12-31,100,Wyoming
+1197,Cathy Armstrong,Meal,2024-06-01,82,Kansas
+1198,Charles McCrossin,Meal,2024-03-03,93,Washington
+1199,Charles McCrossin,Concert,2023-04-24,74,South Dakota
+1200,Charles McCrossin,Meal,2023-02-23,173,Utah
+1201,Charles McCrossin,Meal,2024-04-01,83,Hawaii
+1202,Tom Boeckenhauer,Concert,2023-10-18,165,Hawaii
+1203,Tom Boeckenhauer,Meal,2024-07-18,61,Oklahoma
+1204,Tom Boeckenhauer,Concert,2023-09-04,57,Wyoming
+1205,Tom Boeckenhauer,Sport,2024-02-26,189,Texas
+1206,Bill Overfelt,Sport,2023-07-27,161,Iowa
+1207,Bill Overfelt,Sport,2024-06-08,98,Arizona
+1208,Bruce Geld,Sport,2024-02-01,160,Utah
+1209,Bruce Geld,Meal,2024-03-31,92,North Carolina
+1210,Bruce Geld,Sport,2024-07-15,141,Arkansas
+1211,Adrian Barton,Concert,2023-06-27,184,Alabama
+1212,Adrian Barton,Sport,2024-01-12,58,Iowa
+1213,Adrian Barton,Sport,2023-01-08,98,Missouri
+1214,Adrian Barton,Sport,2023-10-22,152,North Carolina
+1215,Adrian Barton,Concert,2024-10-01,195,West Virginia
+1216,Jennifer Patt,Meal,2023-04-25,55,Ohio
+1217,Jennifer Patt,Sport,2023-07-23,64,Missouri
+1218,Jennifer Patt,Concert,2024-08-27,125,Illinois
+1219,Tom Ashbrook,Meal,2024-05-19,128,Virginia
+1220,Tom Ashbrook,Sport,2023-10-02,141,Virginia
+1221,Tom Ashbrook,Meal,2023-11-15,183,Oregon
+1222,Thea Hendricks,Sport,2024-02-23,133,Florida
+1223,Thea Hendricks,Sport,2024-05-01,63,Tennessee
+1224,Thea Hendricks,Party,2023-01-18,140,Montana
+1225,Barry Pond,Sport,2024-10-17,111,Washington
+1226,Barry Pond,Party,2024-04-25,141,Texas
+1227,Barry Pond,Concert,2024-07-04,167,Montana
+1228,Bart Pistole,Party,2023-03-09,153,Texas
+1229,Bart Pistole,Party,2024-11-29,140,Utah
+1230,Bart Pistole,Meal,2023-12-25,122,Arkansas
+1231,Chuck Clark,Meal,2023-05-21,176,Texas
+1232,Chuck Clark,Sport,2024-01-28,55,Mississippi
+1233,Chuck Clark,Party,2023-09-26,142,Pennsylvania
+1234,Chuck Clark,Meal,2024-12-21,101,Wisconsin
+1235,Cindy Schnelling,Meal,2023-04-01,68,North Carolina
+1236,Cindy Schnelling,Sport,2023-04-21,155,Maine
+1237,Cindy Schnelling,Meal,2024-05-25,186,Massachusetts
+1238,Cindy Schnelling,Sport,2023-07-30,139,North Carolina
+1239,Cindy Schnelling,Meal,2023-07-13,79,Tennessee
+1240,Jocasta Rupert,Meal,2023-02-02,93,Minnesota
+1241,Jocasta Rupert,Meal,2023-09-23,101,New Mexico
+1242,Jocasta Rupert,Meal,2024-10-22,99,Ohio
+1243,Jocasta Rupert,Concert,2023-08-20,163,Wyoming
+1244,Kelly Lampkin,Meal,2024-12-23,88,Alaska
+1245,Kelly Lampkin,Meal,2023-01-22,195,Arizona
+1246,Kelly Lampkin,Party,2024-09-11,62,Missouri
+1247,Kelly Lampkin,Concert,2023-10-20,130,Georgia
+1248,David Flashing,Meal,2024-11-20,192,Connecticut
+1249,David Flashing,Sport,2023-02-12,113,Delaware
+1250,David Flashing,Party,2024-05-09,170,South Carolina
+1251,Rob Haberlin,Sport,2024-09-17,165,North Dakota
+1252,Rob Haberlin,Concert,2024-10-02,93,New Jersey
+1253,Rob Haberlin,Meal,2024-02-28,117,New York
+1254,Parhena Norris,Party,2024-02-03,167,Louisiana
+1255,Parhena Norris,Meal,2023-04-06,148,Missouri
+1256,Parhena Norris,Sport,2023-03-18,91,Texas
+1257,Parhena Norris,Meal,2023-05-14,102,Vermont
+1258,Theresa Swint,Party,2023-04-09,115,Kansas
+1259,Stefania Perrino,Meal,2023-07-05,92,Virginia
+1260,Stefania Perrino,Meal,2024-03-01,197,Hawaii
+1261,Stefania Perrino,Sport,2024-05-23,148,Vermont
+1262,Stefania Perrino,Concert,2023-12-20,118,Michigan
+1263,Tim Taslimi,Sport,2023-11-14,193,Indiana
+1264,Tim Taslimi,Concert,2023-10-09,175,Connecticut
+1265,Tim Taslimi,Concert,2024-10-22,83,Alaska
+1266,Tim Taslimi,Meal,2023-07-15,184,Oregon
+1267,Ralph Arnett,Concert,2023-01-27,58,Wyoming
+1268,Ralph Arnett,Sport,2023-08-26,155,Oklahoma
+1269,Ralph Arnett,Sport,2023-07-12,89,Maine
+1270,Aaron Bergman,Meal,2023-05-11,187,New York
+1271,Aaron Bergman,Sport,2024-11-10,163,Oregon
+1272,Evan Minnotte,Sport,2024-05-20,200,Ohio
+1273,Brian Derr,Party,2024-07-14,106,Wyoming
+1274,Brian Derr,Sport,2023-10-31,95,South Carolina
+1275,Brian Derr,Concert,2024-11-13,112,Connecticut
+1276,Michelle Huthwaite,Sport,2023-05-17,185,Georgia
+1277,Michelle Huthwaite,Meal,2024-05-14,111,Missouri
+1278,Michelle Huthwaite,Meal,2023-10-04,67,Alaska
+1279,Ruben Ausman,Meal,2024-10-16,200,Alaska
+1280,Ruben Ausman,Sport,2024-05-24,75,Indiana
+1281,Ruben Ausman,Sport,2024-01-29,141,Georgia
+1282,Ruben Ausman,Concert,2023-08-16,121,Idaho
+1283,Ruben Ausman,Party,2024-05-08,69,Indiana
+1284,Mary Zewe,Sport,2023-12-13,184,Delaware
+1285,Mary Zewe,Sport,2024-04-22,79,Oklahoma
+1286,Mary Zewe,Sport,2024-11-09,68,Michigan
+1287,Mary Zewe,Meal,2023-10-03,166,Connecticut
+1288,Robert Waldorf,Sport,2023-10-10,152,Illinois
+1289,Robert Waldorf,Concert,2024-11-18,174,Florida
+1290,Robert Waldorf,Meal,2024-11-25,124,New York
+1291,Robert Waldorf,Meal,2024-12-21,82,Rhode Island
+1292,Alan Dominguez,Meal,2023-10-03,199,Utah
+1293,Alan Dominguez,Sport,2024-09-30,65,Indiana
+1294,Alan Dominguez,Concert,2023-09-30,139,New Mexico
+1295,Alan Dominguez,Meal,2024-03-30,71,Kansas
+1296,Andy Reiter,Meal,2023-08-25,64,Georgia
+1297,Andy Reiter,Meal,2024-07-13,139,Alabama
+1298,Andy Reiter,Sport,2023-08-15,87,Michigan
+1299,Sung Chung,Meal,2024-01-03,128,Wyoming
+1300,Sung Chung,Concert,2023-09-02,168,Nevada
+1301,Sung Chung,Party,2023-04-21,110,Oregon
+1302,Sung Chung,Sport,2023-02-20,85,Maine
+1303,Ann Steele,Meal,2024-03-27,121,Georgia
+1304,Ann Steele,Sport,2024-04-13,126,Texas
+1305,Ann Steele,Concert,2024-01-17,52,Louisiana
+1306,Sue Ann Reed,Party,2024-08-10,90,Virginia
+1307,Sue Ann Reed,Sport,2023-08-05,76,New York
+1308,Sue Ann Reed,Meal,2024-11-08,189,Vermont
+1309,Rick Hansen,Sport,2024-10-10,126,New Mexico
+1310,Rick Hansen,Sport,2023-03-04,140,Pennsylvania
+1311,Rick Hansen,Sport,2023-09-13,104,Ohio
+1312,Rick Hansen,Sport,2024-08-11,171,Georgia
+1313,Susan MacKendrick,Meal,2024-05-24,116,West Virginia
+1314,Susan MacKendrick,Party,2023-09-13,198,Virginia
+1315,Susan MacKendrick,Sport,2024-03-20,180,Wyoming
+1316,Susan MacKendrick,Sport,2023-05-22,176,Minnesota
+1317,Susan MacKendrick,Sport,2023-12-03,67,Connecticut
+1318,Julia Dunbar,Sport,2023-06-14,157,Connecticut
+1319,Julia Dunbar,Sport,2024-01-15,193,Tennessee
+1320,Julia Dunbar,Meal,2024-06-03,76,Kansas
+1321,Julia Dunbar,Sport,2023-09-03,87,New Mexico
+1322,Julia Dunbar,Meal,2024-11-23,114,Maine
+1323,Maria Zettner,Meal,2024-08-18,163,Vermont
+1324,Maria Zettner,Sport,2023-03-28,183,New Mexico
+1325,Maria Zettner,Sport,2023-07-31,191,North Dakota
+1326,Neil Ducich,Sport,2024-08-28,68,Utah
+1327,Neil Ducich,Meal,2024-08-25,174,Maryland
+1328,Neil Ducich,Party,2023-08-23,135,Missouri
+1329,Steven Roelle,Sport,2023-05-22,127,Idaho
+1330,Steven Roelle,Meal,2024-10-18,85,Rhode Island
+1331,Steven Roelle,Concert,2023-07-23,73,Oregon
+1332,Steven Roelle,Party,2024-07-20,61,Tennessee
+1333,Steven Roelle,Sport,2023-04-22,144,Washington
+1334,James Galang,Meal,2023-05-04,149,North Dakota
+1335,James Galang,Concert,2023-12-30,164,North Dakota
+1336,James Galang,Sport,2023-11-25,132,Utah
+1337,Frank Carlisle,Meal,2024-10-26,155,Minnesota
+1338,Frank Carlisle,Concert,2023-09-29,75,Indiana
+1339,Ed Jacobs,Concert,2024-02-07,177,Oklahoma
+1340,Ed Jacobs,Concert,2024-01-21,132,Mississippi
+1341,Victor Preis,Sport,2024-11-12,189,New Jersey
+1342,Victor Preis,Meal,2024-07-06,127,Louisiana
+1343,Victor Preis,Meal,2024-10-24,53,Virginia
+1344,Victor Preis,Sport,2024-03-06,78,Wyoming
+1345,Victor Preis,Sport,2023-09-19,119,Massachusetts
+1346,Brian Moss,Sport,2023-10-15,133,Washington
+1347,Ross DeVincentis,Meal,2024-01-30,95,Pennsylvania
+1348,Ross DeVincentis,Meal,2023-10-03,81,Hawaii
+1349,Sally Hughsby,Meal,2023-09-15,80,Alabama
+1350,Sally Hughsby,Sport,2024-12-09,73,Kansas
+1351,Sally Hughsby,Meal,2023-05-21,169,Indiana
+1352,Sally Hughsby,Concert,2023-02-16,131,Michigan
+1353,Harry Greene,Meal,2024-01-24,172,Colorado
+1354,Harry Greene,Meal,2024-06-12,195,Idaho
+1355,Harry Greene,Meal,2023-05-23,106,Texas
+1356,Harry Greene,Sport,2024-12-14,193,New Mexico
+1357,Becky Pak,Concert,2023-06-28,89,California
+1358,Becky Pak,Meal,2023-05-02,111,Nebraska
+1359,Becky Pak,Sport,2024-11-20,64,Oklahoma
+1360,Andrew Allen,Sport,2024-02-16,82,Massachusetts
+1361,Andrew Allen,Meal,2024-05-02,126,West Virginia
+1362,Andrew Allen,Meal,2023-11-26,183,South Dakota
+1363,Andrew Allen,Meal,2023-08-08,153,Illinois
+1364,Andrew Allen,Sport,2023-10-12,51,South Dakota
+1365,Fred Wasserman,Sport,2024-12-15,104,Vermont
+1366,Fred Wasserman,Concert,2024-04-10,59,North Carolina
+1367,Joe Kamberova,Sport,2023-06-02,101,Georgia
+1368,Joe Kamberova,Concert,2023-10-03,155,Virginia
+1369,Joe Kamberova,Concert,2023-02-16,123,Arkansas
+1370,Joe Kamberova,Sport,2024-02-16,149,South Dakota
+1371,Joe Kamberova,Concert,2023-12-05,111,West Virginia
+1372,Shirley Daniels,Sport,2023-09-17,179,Louisiana
+1373,David Smith,Meal,2023-06-13,153,Louisiana
+1374,David Smith,Meal,2024-11-07,63,Montana
+1375,David Smith,Meal,2024-02-04,156,Kentucky
+1376,Laurel Beltran,Meal,2024-07-20,165,Alabama
+1377,Laurel Beltran,Meal,2023-04-17,141,Hawaii
+1378,Frank Preis,Concert,2024-07-08,162,Alabama
+1379,Frank Preis,Sport,2024-08-10,60,New York
+1380,Frank Preis,Meal,2024-02-01,176,South Carolina
+1381,Frank Preis,Sport,2024-02-14,93,New Jersey
+1382,Frank Preis,Meal,2023-08-28,88,Connecticut
+1383,Phillip Flathmann,Sport,2023-01-09,142,Georgia
+1384,Phillip Flathmann,Concert,2023-04-04,79,New York
+1385,Phillip Flathmann,Meal,2023-01-12,119,Washington
+1386,Shahid Collister,Meal,2024-08-29,97,Alaska
+1387,Shahid Collister,Meal,2024-02-29,132,Michigan
+1388,Xylona Preis,Meal,2024-12-22,195,Georgia
+1389,Xylona Preis,Party,2024-04-02,200,New Jersey
+1390,Xylona Preis,Concert,2023-08-05,55,Idaho
+1391,Xylona Preis,Meal,2024-12-26,73,Arizona
+1392,Benjamin Farhat,Party,2024-05-21,172,Rhode Island
+1393,Benjamin Farhat,Party,2023-04-14,114,Nebraska
+1394,Benjamin Farhat,Concert,2023-07-26,172,Kentucky
+1395,Benjamin Farhat,Party,2024-06-29,66,Colorado
+1396,Benjamin Farhat,Sport,2023-08-25,114,Mississippi
+1397,Chloris Kastensmidt,Sport,2024-11-18,192,Georgia
+1398,Chloris Kastensmidt,Concert,2023-06-14,67,Georgia
+1399,Denny Joy,Meal,2023-09-29,93,Arizona
+1400,Denny Joy,Sport,2023-03-23,77,Iowa
+1401,Denny Joy,Concert,2024-11-04,51,Virginia
+1402,Denny Joy,Meal,2023-02-02,107,Hawaii
+1403,Hunter Lopez,Concert,2024-07-25,87,Vermont
+1404,Hunter Lopez,Meal,2024-05-24,57,Oklahoma
+1405,Hunter Lopez,Sport,2023-09-09,57,Georgia
+1406,Frank Olsen,Concert,2024-12-20,121,Nevada
+1407,Frank Olsen,Concert,2023-06-16,137,Montana
+1408,Frank Olsen,Meal,2024-02-04,172,New York
+1409,Frank Olsen,Sport,2023-05-23,114,New Hampshire
+1410,Frank Olsen,Party,2024-01-26,150,Nevada
+1411,Pierre Wener,Concert,2023-02-22,68,Maine
+1412,Stephanie Ulpright,Sport,2024-05-26,123,South Dakota
+1413,Stephanie Ulpright,Concert,2024-02-15,190,West Virginia
+1414,Stephanie Ulpright,Sport,2024-10-14,136,New Jersey
+1415,Randy Bradley,Sport,2024-04-24,75,Arkansas
+1416,Valerie Takahito,Sport,2024-05-16,173,Florida
+1417,Linda Cazamias,Sport,2024-08-16,172,New Hampshire
+1418,Linda Cazamias,Party,2024-01-06,82,Hawaii
+1419,Linda Cazamias,Sport,2023-12-09,122,Tennessee
+1420,Linda Cazamias,Party,2023-11-23,134,Minnesota
+1421,Michael Moore,Meal,2023-05-15,101,South Carolina
+1422,Mitch Gastineau,Concert,2023-12-09,68,West Virginia
+1423,Sonia Sunley,Meal,2024-02-05,150,Vermont
+1424,Sonia Sunley,Concert,2024-10-23,168,Nevada
+1425,Christine Phan,Meal,2023-12-28,164,Wisconsin
+1426,Ted Trevino,Concert,2023-08-23,94,Massachusetts
+1427,Cindy Chapman,Sport,2023-05-30,156,Georgia
+1428,Cindy Chapman,Sport,2023-07-06,148,Texas
+1429,Cindy Chapman,Meal,2023-07-17,55,West Virginia
+1430,Cindy Chapman,Sport,2024-11-29,165,North Dakota
+1431,John Grady,Meal,2024-09-29,130,South Carolina
+1432,John Grady,Sport,2024-10-19,90,Alabama
+1433,John Grady,Sport,2023-11-20,131,Arizona
+1434,Benjamin Venier,Concert,2023-10-20,137,Utah
+1435,Victoria Brennan,Sport,2024-03-26,159,Oregon
+1436,Victoria Brennan,Sport,2023-07-12,195,New York
+1437,Victoria Brennan,Sport,2024-08-21,140,Delaware
+1438,Christy Brittain,Sport,2024-10-09,152,North Carolina
+1439,Christy Brittain,Meal,2024-03-07,148,Idaho
+1440,Christy Brittain,Concert,2023-09-16,93,Maine
+1441,Christy Brittain,Concert,2024-03-11,56,Pennsylvania
+1442,Carol Triggs,Meal,2024-05-15,140,North Carolina
+1443,Carol Triggs,Meal,2024-09-30,181,Connecticut
+1444,Carol Triggs,Sport,2023-08-21,129,Oklahoma
+1445,Carol Triggs,Sport,2023-12-23,191,Washington
+1446,Carol Triggs,Concert,2024-11-05,136,Minnesota
+1447,Jay Kimmel,Party,2024-11-16,176,Hawaii
+1448,Jay Kimmel,Party,2024-05-09,56,Kentucky
+1449,Jay Kimmel,Meal,2023-04-20,101,Missouri
+1450,Nathan Cano,Concert,2024-05-08,54,Arizona
+1451,Nathan Cano,Concert,2023-09-17,78,Minnesota
+1452,Susan Pistek,Concert,2024-03-01,131,New York
+1453,Susan Pistek,Sport,2024-01-16,191,Rhode Island
+1454,Susan Pistek,Sport,2024-06-21,77,Wisconsin
+1455,Susan Pistek,Party,2023-10-11,65,Connecticut
+1456,Gene McClure,Concert,2024-07-05,110,Mississippi
+1457,Gene McClure,Concert,2023-02-17,188,Hawaii
+1458,Gene McClure,Concert,2023-07-26,197,Tennessee
+1459,Gene McClure,Sport,2024-04-20,143,Oregon
+1460,Gene McClure,Meal,2024-08-28,142,Rhode Island
+1461,Doug Jacobs,Meal,2023-02-16,88,Utah
+1462,Doug Jacobs,Party,2023-11-18,147,Texas
+1463,Shirley Jackson,Concert,2023-12-19,170,Nevada
+1464,Shirley Jackson,Concert,2024-11-16,102,Arizona
+1465,Shirley Jackson,Meal,2024-03-23,178,Georgia
+1466,Kristen Hastings,Sport,2023-06-25,121,Tennessee
+1467,Joy Daniels,Sport,2024-10-05,137,South Carolina
+1468,Joy Daniels,Meal,2023-05-19,110,Wisconsin
+1469,Joy Daniels,Sport,2024-01-18,167,Missouri
+1470,Claire Gute,Meal,2023-10-04,63,Idaho
+1471,Claire Gute,Sport,2024-01-29,175,New Hampshire
+1472,Claire Gute,Party,2024-09-24,119,New Hampshire
+1473,Claire Gute,Concert,2024-03-16,77,South Carolina
+1474,Claire Gute,Sport,2024-02-16,134,Indiana
+1475,Kelly Williams,Sport,2024-09-26,133,Georgia
+1476,Kelly Williams,Sport,2024-06-26,92,Vermont
+1477,Kelly Williams,Meal,2023-10-07,155,Virginia
+1478,Kelly Williams,Meal,2024-10-04,110,Oklahoma
+1479,Becky Castell,Concert,2023-04-17,143,New Jersey
+1480,Becky Castell,Concert,2023-06-13,156,New York
+1481,Becky Castell,Meal,2024-01-07,55,Georgia
+1482,Becky Castell,Sport,2024-08-07,158,Alabama
+1483,Becky Castell,Concert,2024-09-09,142,South Dakota
+1484,Brendan Murry,Meal,2024-11-28,73,Arkansas
+1485,Brendan Murry,Meal,2024-02-09,118,Utah
+1486,Brendan Murry,Meal,2024-11-08,170,New Mexico
+1487,Brendan Murry,Meal,2024-10-06,87,Nebraska
+1488,Brendan Murry,Meal,2024-09-26,95,Kansas
+1489,Ellis Ballard,Meal,2024-02-01,140,Indiana
+1490,Ellis Ballard,Meal,2024-02-23,137,Connecticut
+1491,Ellis Ballard,Concert,2024-10-18,181,Iowa
+1492,Ellis Ballard,Concert,2024-07-08,187,Florida
+1493,Hilary Holden,Sport,2024-12-18,139,New Hampshire
+1494,Hilary Holden,Sport,2023-11-26,127,West Virginia
+1495,Kelly Collister,Meal,2024-03-05,136,Kentucky
+1496,Kelly Collister,Party,2024-07-05,139,Maryland
+1497,Kelly Collister,Concert,2024-04-25,185,Tennessee
+1498,Kelly Collister,Sport,2024-09-08,100,Kentucky
+1499,Sean Miller,Concert,2024-05-24,152,Washington
+1500,Sean Miller,Sport,2024-04-01,145,Wisconsin
+1501,Sean Miller,Sport,2023-10-06,88,New Jersey
+1502,Mathew Reese,Party,2024-10-24,114,Georgia
+1503,Mathew Reese,Party,2023-07-05,169,Colorado
+1504,Mathew Reese,Sport,2024-11-08,55,West Virginia
+1505,Mathew Reese,Concert,2024-08-16,161,South Carolina
+1506,Erica Bern,Concert,2023-04-11,135,Maine
+1507,Erica Bern,Party,2023-05-19,103,Delaware
+1508,Erica Bern,Sport,2023-07-10,172,Kansas
+1509,Erica Bern,Party,2023-04-05,168,Arizona
+1510,Ken Lonsdale,Meal,2024-05-19,162,Oregon
+1511,Henry Goldwyn,Sport,2023-03-29,136,Florida
+1512,Henry Goldwyn,Concert,2024-05-29,164,Connecticut
+1513,Henry Goldwyn,Party,2023-10-27,55,Oregon
+1514,Zuschuss Donatelli,Sport,2024-11-26,155,Utah
+1515,Zuschuss Donatelli,Concert,2023-03-08,129,Connecticut
+1516,Zuschuss Donatelli,Sport,2023-06-14,196,Connecticut
+1517,Zuschuss Donatelli,Meal,2024-04-10,55,North Carolina
+1518,Zuschuss Donatelli,Sport,2024-09-02,135,New Mexico
+1519,Ralph Ritter,Meal,2023-10-24,102,Virginia
+1520,Ralph Ritter,Sport,2023-01-08,73,Illinois
+1521,Ralph Ritter,Sport,2024-07-15,167,Minnesota
+1522,Brosina Hoffman,Sport,2023-10-11,199,North Carolina
+1523,Brosina Hoffman,Party,2023-09-30,168,Nebraska
+1524,Brosina Hoffman,Party,2023-05-19,120,West Virginia
+1525,Brosina Hoffman,Meal,2023-10-23,111,Pennsylvania
+1526,Brosina Hoffman,Sport,2024-12-21,137,Hawaii
+1527,Rick Wilson,Party,2024-11-09,139,Nevada
+1528,Raymond Messe,Party,2023-07-30,139,Oregon
+1529,Raymond Messe,Sport,2023-05-05,144,Massachusetts
+1530,Raymond Messe,Sport,2024-03-13,56,South Dakota
+1531,Raymond Messe,Concert,2023-06-02,165,Texas
+1532,Brenda Bowman,Meal,2024-01-27,188,Virginia
+1533,Brenda Bowman,Meal,2024-09-24,134,Maryland
+1534,Brenda Bowman,Concert,2024-10-24,77,Nebraska
+1535,Brenda Bowman,Party,2023-07-20,124,North Carolina
+1536,Brenda Bowman,Meal,2023-08-27,123,Connecticut
+1537,Beth Thompson,Concert,2023-07-30,129,Alaska
+1538,Adam Bellavance,Meal,2024-07-30,107,Indiana
+1539,Adam Bellavance,Meal,2024-07-03,54,Nevada
+1540,Adam Bellavance,Sport,2024-04-16,150,Virginia
+1541,Adam Bellavance,Concert,2023-05-03,106,Alaska
+1542,Russell Applegate,Meal,2023-09-09,86,Virginia
+1543,Angele Hood,Meal,2023-03-11,164,Minnesota
+1544,Joseph Holt,Meal,2024-12-07,134,Alaska
+1545,Joseph Holt,Meal,2024-09-18,133,Nevada
+1546,Joseph Holt,Concert,2023-01-05,107,Michigan
+1547,Saphhira Shifley,Meal,2024-12-29,86,Arizona
+1548,Saphhira Shifley,Sport,2024-05-13,187,Washington
+1549,Saphhira Shifley,Sport,2023-08-16,140,Iowa
+1550,Saphhira Shifley,Meal,2023-11-14,77,West Virginia
+1551,Saphhira Shifley,Party,2023-07-06,102,Virginia
+1552,Nick Radford,Sport,2023-04-16,110,Kansas
+1553,Nick Radford,Sport,2024-09-23,197,Illinois
+1554,Roger Barcio,Sport,2024-02-18,140,Maine
+1555,Dorothy Badders,Sport,2023-12-07,88,Rhode Island
+1556,Dorothy Badders,Sport,2023-06-02,132,Idaho
+1557,Dorothy Badders,Concert,2024-01-21,65,Rhode Island
+1558,Dorothy Badders,Sport,2023-07-26,60,Massachusetts
+1559,Dorothy Badders,Sport,2023-06-17,141,California
+1560,Dennis Pardue,Concert,2023-07-30,162,Rhode Island
+1561,Dennis Pardue,Meal,2024-05-19,198,Arkansas
+1562,Dennis Pardue,Sport,2024-12-11,82,Oregon
+1563,Kalyca Meade,Concert,2024-03-31,165,West Virginia
+1564,Kalyca Meade,Concert,2023-05-16,74,Mississippi
+1565,Kalyca Meade,Meal,2024-01-19,182,Wyoming
+1566,Kalyca Meade,Sport,2024-09-17,200,Illinois
+1567,Charles Crestani,Sport,2024-12-07,109,Georgia
+1568,Charles Crestani,Sport,2024-12-15,156,Louisiana
+1569,Dorothy Dickinson,Meal,2023-04-08,125,Missouri
+1570,Dorothy Dickinson,Meal,2024-05-28,62,Florida
+1571,Dorothy Dickinson,Meal,2024-09-03,71,Arkansas
+1572,Dorothy Dickinson,Concert,2024-01-11,94,Ohio
+1573,Dorothy Dickinson,Meal,2023-09-22,63,Alabama
+1574,Anne Pryor,Sport,2023-11-21,188,New Hampshire
+1575,Anne Pryor,Sport,2024-10-18,54,Rhode Island
+1576,Adrian Hane,Meal,2023-08-03,188,North Dakota
+1577,Adrian Hane,Meal,2024-05-22,79,Utah
+1578,Adrian Hane,Sport,2024-04-10,141,Texas
+1579,Adrian Hane,Sport,2024-09-23,95,Virginia
+1580,Barry Gonzalez,Sport,2023-05-21,175,North Carolina
+1581,Barry Gonzalez,Sport,2024-07-23,90,Minnesota
+1582,Matt Collins,Meal,2024-12-05,145,Ohio
+1583,Bill Tyler,Concert,2024-06-12,162,Washington
+1584,Bill Tyler,Sport,2023-02-12,108,Nebraska
+1585,Bill Tyler,Meal,2024-05-16,142,Pennsylvania
+1586,Bill Tyler,Sport,2024-11-21,127,South Dakota
+1587,Kean Nguyen,Concert,2023-04-06,139,New Hampshire
+1588,Kean Nguyen,Sport,2023-01-23,173,Alabama
+1589,Kean Nguyen,Sport,2023-11-08,100,Tennessee
+1590,Aaron Smayling,Party,2024-06-02,183,Pennsylvania
+1591,Aaron Smayling,Sport,2024-05-18,87,Hawaii
+1592,Aaron Smayling,Sport,2023-11-04,156,South Carolina
+1593,Berenike Kampe,Party,2024-01-01,85,Alaska
+1594,Berenike Kampe,Meal,2023-04-04,66,South Dakota
+1595,Berenike Kampe,Sport,2023-11-07,54,Virginia
+1596,Berenike Kampe,Meal,2023-05-25,192,Indiana
+1597,Joel Jenkins,Party,2024-08-12,113,Mississippi
+1598,Joel Jenkins,Party,2023-10-17,176,Missouri
+1599,Joel Jenkins,Sport,2023-12-25,120,Kentucky
+1600,Tony Molinari,Concert,2024-05-29,124,Maryland
+1601,Tony Molinari,Sport,2023-04-07,180,Wyoming
+1602,Tony Molinari,Sport,2023-06-22,87,Idaho
+1603,Tony Molinari,Sport,2024-01-29,121,Illinois
+1604,Tony Molinari,Meal,2023-07-10,161,Louisiana
+1605,Frank Gastineau,Sport,2024-03-13,137,Rhode Island
+1606,Frank Gastineau,Sport,2023-01-13,145,Vermont
+1607,Frank Gastineau,Party,2023-03-28,79,Alaska
+1608,Frank Gastineau,Concert,2023-11-04,65,California
+1609,Allen Armold,Sport,2024-07-26,67,Arkansas
+1610,Michael Dominguez,Sport,2023-07-18,73,Illinois
+1611,Carlos Meador,Sport,2023-06-27,178,Nebraska
+1612,Carlos Meador,Sport,2024-01-27,173,New York
+1613,Carlos Meador,Sport,2023-01-17,181,Idaho
+1614,Kunst Miller,Party,2023-05-23,81,Louisiana
+1615,Bill Donatelli,Sport,2024-01-28,200,Massachusetts
+1616,Bill Donatelli,Concert,2024-08-07,105,Oregon
+1617,Bill Donatelli,Sport,2023-08-07,145,Virginia
+1618,Bill Donatelli,Concert,2024-10-26,197,North Dakota
+1619,John Castell,Sport,2024-09-28,138,Kansas
+1620,John Castell,Concert,2023-04-24,115,Mississippi
+1621,Joy Smith,Sport,2024-06-21,197,Alaska
+1622,Joy Smith,Sport,2023-09-11,174,South Carolina
+1623,Joy Smith,Party,2023-06-17,131,Arkansas
+1624,Joy Smith,Sport,2023-04-17,180,Arkansas
+1625,Darren Budd,Sport,2023-01-02,144,South Carolina
+1626,Erin Ashbrook,Party,2024-11-02,90,Delaware
+1627,Erin Ashbrook,Concert,2023-07-21,92,Minnesota
+1628,Erin Ashbrook,Sport,2023-02-21,59,Georgia
+1629,Erin Ashbrook,Sport,2023-11-19,193,Indiana
+1630,Shahid Hopkins,Sport,2023-08-04,77,Michigan
+1631,Shahid Hopkins,Meal,2023-12-25,127,Idaho
+1632,Shahid Hopkins,Party,2024-06-18,55,Nevada
+1633,Shahid Hopkins,Sport,2023-02-21,165,Tennessee
+1634,Sean Christensen,Sport,2024-12-06,96,Maryland
+1635,Sean Christensen,Concert,2024-09-27,187,Nevada
+1636,Sean Christensen,Sport,2024-07-19,155,Oregon
+1637,Sean Christensen,Sport,2024-08-31,196,New Hampshire
+1638,Sean Christensen,Concert,2024-03-16,199,Alaska
+1639,Toby Ritter,Concert,2023-01-31,64,Maine
+1640,Toby Ritter,Sport,2023-03-01,173,Colorado
+1641,Sam Craven,Meal,2023-08-18,132,Minnesota
+1642,Sam Craven,Sport,2023-10-13,153,New York
+1643,Sam Craven,Meal,2024-01-11,157,Kansas
+1644,Sam Craven,Sport,2023-12-30,92,North Carolina
+1645,Sam Craven,Sport,2023-01-12,60,New Hampshire
+1646,Clay Cheatham,Sport,2023-06-10,198,Oregon
+1647,Clay Cheatham,Meal,2023-12-21,112,North Carolina
+1648,Clay Cheatham,Party,2024-12-12,63,Indiana
+1649,Clay Cheatham,Sport,2024-10-23,134,Oklahoma
+1650,Beth Fritzler,Sport,2023-10-22,55,Wisconsin
+1651,Beth Fritzler,Sport,2024-12-21,79,North Dakota
+1652,Beth Fritzler,Concert,2023-09-08,115,Alabama
+1653,Beth Fritzler,Meal,2024-05-21,177,New Hampshire
+1654,Beth Fritzler,Sport,2024-01-14,129,Virginia
+1655,Dorris liebe,Sport,2024-02-27,113,California
+1656,Dorris liebe,Meal,2024-10-01,189,Oklahoma
+1657,Dorris liebe,Sport,2023-01-20,157,Utah
+1658,Lena Creighton,Meal,2024-06-04,56,Michigan
+1659,Lena Creighton,Sport,2024-07-23,136,Wyoming
+1660,Lena Creighton,Concert,2024-06-16,122,Alabama
+1661,Lena Creighton,Sport,2023-09-09,197,Arkansas
+1662,Carl Weiss,Meal,2024-05-15,173,Indiana
+1663,Carl Weiss,Concert,2023-03-27,65,Virginia
+1664,Carl Weiss,Concert,2023-07-30,80,California
+1665,Carl Weiss,Sport,2023-03-01,124,New York
+1666,Harold Pawlan,Concert,2023-10-05,63,Iowa
+1667,Harold Pawlan,Sport,2024-10-28,194,Ohio
+1668,Denny Blanton,Sport,2023-05-01,128,Missouri
+1669,Jeremy Farry,Sport,2024-03-19,126,Delaware
+1670,Jeremy Farry,Concert,2024-02-11,179,Wyoming
+1671,Jeremy Farry,Sport,2023-12-12,187,Oregon
+1672,Jeremy Farry,Sport,2024-09-03,86,Illinois
+1673,Jeremy Farry,Party,2024-05-25,164,New Hampshire
+1674,Cynthia Arntzen,Sport,2023-11-08,78,California
+1675,Cynthia Arntzen,Sport,2023-02-08,156,Alaska
+1676,Alex Grayson,Concert,2023-05-04,170,West Virginia
+1677,Alex Grayson,Concert,2023-11-03,188,Utah
+1678,Muhammed MacIntyre,Meal,2023-07-29,196,Colorado
+1679,Yoseph Carroll,Sport,2023-11-19,72,North Carolina
+1680,Yoseph Carroll,Concert,2023-11-16,113,Vermont
+1681,Yoseph Carroll,Sport,2023-02-07,123,New York
+1682,Philip Brown,Sport,2023-08-10,138,Michigan
+1683,Philip Brown,Sport,2024-01-23,108,Vermont
+1684,Philip Brown,Sport,2024-03-06,109,Oregon
+1685,Philip Brown,Party,2024-02-04,75,Vermont
+1686,Philip Brown,Sport,2023-08-28,102,New Mexico
+1687,Nat Gilpin,Concert,2023-06-07,159,Arizona
+1688,Sheri Gordon,Meal,2023-08-16,103,Colorado
+1689,Sheri Gordon,Sport,2024-05-29,178,Maine
+1690,Sheri Gordon,Concert,2024-08-05,103,Oregon
+1691,Sheri Gordon,Sport,2023-09-12,168,Maine
+1692,Sheri Gordon,Concert,2023-09-23,154,Georgia
+1693,Craig Carroll,Meal,2023-01-26,104,Oregon
+1694,Craig Carroll,Concert,2023-05-14,60,Nebraska
+1695,Craig Carroll,Meal,2023-01-24,56,Indiana
+1696,Michelle Arnett,Sport,2024-10-25,71,Hawaii
+1697,Michelle Arnett,Sport,2024-05-25,114,Ohio
+1698,Michelle Arnett,Meal,2023-08-26,91,Washington
+1699,Michelle Arnett,Sport,2024-10-21,61,New York
+1700,Sarah Brown,Concert,2023-03-14,178,West Virginia
+1701,Sarah Brown,Sport,2024-10-30,174,Hawaii
+1702,Sarah Brown,Concert,2024-12-10,120,Oregon
+1703,Sarah Brown,Sport,2023-01-25,91,South Dakota
+1704,Sarah Brown,Meal,2023-08-15,66,Rhode Island
+1705,Sam Zeldin,Sport,2024-07-02,176,Delaware
+1706,Sam Zeldin,Sport,2024-11-11,54,Connecticut
+1707,Roy Collins,Concert,2023-01-12,169,West Virginia
+1708,Roy Collins,Sport,2024-11-05,136,Kentucky
+1709,Ben Ferrer,Sport,2024-11-29,71,Hawaii
+1710,Ben Ferrer,Sport,2023-10-04,142,Vermont
+1711,Ben Ferrer,Meal,2024-08-26,152,Montana
+1712,Ben Ferrer,Party,2023-12-18,61,California
+1713,Julia West,Sport,2023-10-11,71,Louisiana
+1714,Julia West,Sport,2023-01-15,129,Virginia
+1715,Julia West,Sport,2024-08-20,122,Tennessee
+1716,Cyma Kinney,Sport,2023-02-20,131,Wisconsin
+1717,Barry Blumstein,Meal,2023-02-05,198,Rhode Island
+1718,Barry Blumstein,Meal,2024-10-26,178,Iowa
+1719,Barry Blumstein,Meal,2024-03-04,162,Vermont
+1720,Greg Tran,Sport,2023-09-09,93,Kentucky
+1721,Greg Tran,Meal,2023-02-19,74,Michigan
+1722,Greg Tran,Concert,2024-07-26,182,Michigan
+1723,Greg Tran,Meal,2024-12-05,147,Nevada
+1724,Greg Tran,Sport,2023-05-12,140,Wyoming
+1725,Todd Boyes,Party,2023-08-17,81,Virginia
+1726,Todd Boyes,Meal,2023-12-30,158,North Dakota
+1727,Ruben Dartt,Meal,2024-08-25,200,Wyoming
+1728,Ruben Dartt,Party,2024-03-20,178,South Carolina
+1729,Ruben Dartt,Concert,2024-09-17,174,Utah
+1730,Ruben Dartt,Concert,2024-10-09,142,Wisconsin
+1731,Phillina Ober,Sport,2023-12-02,186,Idaho
+1732,Phillina Ober,Party,2023-04-19,120,Massachusetts
+1733,Phillina Ober,Sport,2024-04-27,97,Colorado
+1734,Jim Karlsson,Meal,2024-06-09,77,Connecticut
+1735,Jim Karlsson,Party,2024-12-02,117,Texas
+1736,Michael Oakman,Meal,2023-05-15,180,Vermont
+1737,Michael Oakman,Party,2024-11-12,129,Maryland
+1738,Michael Oakman,Concert,2024-10-19,110,Wisconsin
+1739,Michael Oakman,Sport,2023-03-12,186,Nebraska
+1740,Michael Oakman,Meal,2024-07-23,133,Alabama
+1741,John Lee,Meal,2024-03-26,65,Ohio
+1742,John Lee,Sport,2024-02-12,173,New York
+1743,John Lee,Sport,2023-10-19,179,Iowa
+1744,John Lee,Meal,2024-01-02,124,Idaho
+1745,Toby Braunhardt,Sport,2024-01-20,113,Florida
+1746,Monica Federle,Concert,2023-05-28,90,New York
+1747,Monica Federle,Sport,2024-01-27,158,Wyoming
+1748,Monica Federle,Sport,2023-07-15,180,Maine
+1749,Monica Federle,Sport,2024-05-05,134,New York
+1750,Dan Lawera,Sport,2024-02-07,146,Missouri
+1751,Nick Zandusky,Party,2024-08-05,146,Wisconsin
+1752,Nick Zandusky,Concert,2024-03-04,77,Indiana
+1753,Nick Zandusky,Concert,2023-11-09,194,South Carolina
+1754,Catherine Glotzbach,Sport,2024-10-17,69,Massachusetts
+1755,Richard Bierner,Sport,2024-01-10,95,Maryland
+1756,Richard Bierner,Concert,2023-09-02,123,Arkansas
+1757,Richard Bierner,Sport,2024-12-23,80,Nevada
+1758,Allen Goldenen,Concert,2024-02-03,131,Maine
+1759,Allen Goldenen,Meal,2023-02-21,125,California
+1760,Allen Goldenen,Sport,2024-09-10,158,West Virginia
+1761,Allen Goldenen,Party,2024-09-13,164,Rhode Island
+1762,Dennis Kane,Meal,2024-01-15,53,Nebraska
+1763,Dennis Kane,Sport,2024-02-19,63,Louisiana
+1764,Dennis Kane,Sport,2024-06-05,149,Maine
+1765,Dennis Kane,Sport,2024-06-13,135,West Virginia
+1766,Dennis Kane,Party,2023-05-01,110,Connecticut
+1767,Art Foster,Sport,2024-10-16,162,Louisiana
+1768,Art Foster,Sport,2023-08-26,149,Maine
+1769,Art Foster,Concert,2023-01-05,154,Alabama
+1770,Ralph Kennedy,Sport,2024-11-11,75,Maryland
+1771,Ralph Kennedy,Party,2024-01-31,156,Minnesota
+1772,Ralph Kennedy,Party,2023-10-13,67,Arizona
+1773,Don Weiss,Party,2023-02-05,149,Arkansas
+1774,Don Weiss,Sport,2024-04-14,78,Missouri
+1775,Don Weiss,Sport,2024-10-30,161,Wyoming
+1776,Eva Jacobs,Party,2023-10-24,192,Kentucky
+1777,Luke Schmidt,Concert,2024-03-01,200,Vermont
+1778,Luke Schmidt,Meal,2024-11-13,87,West Virginia
+1779,Luke Schmidt,Meal,2024-05-05,157,Georgia
+1780,Luke Schmidt,Sport,2024-01-03,141,Vermont
+1781,David Kendrick,Sport,2024-12-07,72,Georgia
+1782,David Kendrick,Meal,2024-04-11,190,Colorado
+1783,Pete Kriz,Meal,2024-03-17,78,Arkansas
+1784,Pete Kriz,Meal,2023-07-17,104,New Mexico
+1785,Pete Kriz,Concert,2024-12-08,87,Vermont
+1786,Dave Hallsten,Sport,2023-03-04,137,South Dakota
+1787,Annie Thurman,Meal,2024-03-06,117,Missouri
+1788,Annie Thurman,Concert,2024-04-07,114,Ohio
+1789,Annie Thurman,Sport,2023-06-08,188,Massachusetts
+1790,Annie Thurman,Meal,2024-10-01,92,Nebraska
+1791,Luke Weiss,Sport,2024-05-30,112,North Carolina
+1792,Luke Weiss,Party,2023-05-02,71,Connecticut
+1793,Luke Weiss,Concert,2024-10-29,115,Utah
+1794,Thais Sissman,Sport,2023-11-16,57,Nebraska
+1795,Thais Sissman,Concert,2024-09-22,154,South Dakota
+1796,Resi Pölking,Meal,2023-12-17,64,South Dakota
+1797,George Ashbrook,Sport,2023-08-14,99,Alabama
+1798,Barbara Fisher,Sport,2023-09-09,198,Nebraska
+1799,Eric Barreto,Sport,2023-01-14,157,North Dakota
+1800,Eric Barreto,Sport,2024-05-03,157,Texas
+1801,Eric Barreto,Sport,2024-08-01,117,California
+1802,Eric Barreto,Concert,2023-02-27,176,Connecticut
+1803,Marc Crier,Meal,2023-01-12,58,Michigan
+1804,Marc Crier,Meal,2024-06-10,57,Hawaii
+1805,Frank Hawley,Sport,2023-09-01,145,Maryland
+1806,Frank Hawley,Concert,2023-03-06,148,Nebraska
+1807,Annie Zypern,Meal,2024-07-19,61,New Mexico
+1808,Annie Zypern,Sport,2024-11-09,139,Colorado
+1809,Annie Zypern,Concert,2024-03-31,100,Missouri
+1810,Annie Zypern,Meal,2024-11-11,180,Pennsylvania
+1811,Jonathan Howell,Meal,2024-05-11,115,South Dakota
+1812,Jonathan Howell,Sport,2024-02-12,63,Mississippi
+1813,Jamie Kunitz,Sport,2024-12-06,177,New York
+1814,Karen Ferguson,Party,2024-03-01,171,Indiana
+1815,Karen Ferguson,Meal,2023-10-03,194,Arkansas
+1816,Jim Radford,Meal,2024-08-08,160,Texas
+1817,Jim Radford,Meal,2024-03-16,71,Connecticut
+1818,Jim Radford,Sport,2024-06-13,162,Arkansas
+1819,Jim Radford,Sport,2024-08-17,51,South Dakota
+1820,Jim Radford,Concert,2023-09-22,96,Colorado
+1821,Dean Braden,Party,2023-06-22,165,Indiana
+1822,Greg Hansen,Meal,2023-04-10,165,Maryland
+1823,Greg Hansen,Meal,2023-04-28,59,West Virginia
+1824,Greg Hansen,Meal,2023-11-30,145,Indiana
+1825,Greg Hansen,Concert,2023-11-25,118,Massachusetts
+1826,Greg Hansen,Sport,2023-07-24,92,Vermont
+1827,Amy Cox,Concert,2023-10-17,182,Alaska
+1828,Amy Cox,Party,2024-07-28,91,Delaware
+1829,Dana Kaydos,Sport,2023-11-30,198,Maryland
+1830,Dana Kaydos,Sport,2024-11-17,59,Iowa
+1831,Dana Kaydos,Sport,2024-09-27,165,Connecticut
+1832,Dana Kaydos,Meal,2024-01-16,106,Utah
+1833,Tiffany House,Sport,2023-02-17,190,New York
+1834,Tiffany House,Sport,2023-01-31,63,New York
+1835,Tiffany House,Meal,2024-10-17,87,South Carolina
+1836,Tiffany House,Party,2024-12-19,134,North Carolina
+1837,Tiffany House,Meal,2023-01-26,107,Kansas
+1838,Olvera Toch,Concert,2023-10-10,120,Idaho
+1839,Olvera Toch,Meal,2024-07-24,84,Florida
+1840,Olvera Toch,Sport,2023-12-19,64,Maryland
+1841,Guy Armstrong,Party,2024-05-06,56,Iowa
+1842,Guy Armstrong,Sport,2023-12-02,190,Wyoming
+1843,Karl Braun,Sport,2024-03-20,81,Tennessee
+1844,Lindsay Shagiari,Sport,2024-07-02,133,Vermont
+1845,Lindsay Shagiari,Sport,2023-10-06,58,Colorado
+1846,Patricia Hirasaki,Meal,2023-08-03,139,Wyoming
+1847,Patricia Hirasaki,Sport,2024-05-05,97,North Dakota
+1848,Patricia Hirasaki,Sport,2023-06-25,59,Hawaii
+1849,Mark Packer,Party,2023-08-21,180,Louisiana
+1850,Mark Packer,Meal,2024-08-20,125,Kansas
+1851,Mark Packer,Meal,2023-09-18,183,Virginia
+1852,Mark Packer,Meal,2024-09-05,183,New Hampshire
+1853,Mark Packer,Meal,2024-02-11,124,Georgia
+1854,Chuck Magee,Meal,2023-05-10,162,Nebraska
+1855,Chuck Magee,Meal,2024-02-21,151,Texas
+1856,Chuck Magee,Party,2024-04-01,167,Virginia
+1857,Chuck Magee,Sport,2023-09-06,167,Oklahoma
+1858,Janet Lee,Sport,2024-07-22,97,Nevada
+1859,Cynthia Delaney,Party,2024-11-14,131,Rhode Island
+1860,Cynthia Delaney,Sport,2024-03-03,124,Maryland
+1861,Cynthia Delaney,Meal,2024-04-08,71,Arkansas
+1862,Cynthia Delaney,Party,2024-02-04,82,Michigan
+1863,Bobby Elias,Party,2024-03-09,97,Indiana
+1864,Bobby Elias,Meal,2023-01-29,56,Texas
+1865,Bobby Elias,Party,2023-04-13,150,Alabama
+1866,Bobby Elias,Meal,2024-03-15,156,Colorado
+1867,Bobby Elias,Sport,2024-11-26,120,Ohio
+1868,Tracy Poddar,Sport,2023-11-10,93,North Carolina
+1869,Tracy Poddar,Meal,2023-09-25,145,Maine
+1870,Tracy Poddar,Concert,2024-06-06,151,New Jersey
+1871,Fred Harton,Sport,2024-01-16,72,Idaho
+1872,Fred Harton,Sport,2024-01-24,88,Utah
+1873,Fred Harton,Sport,2024-11-17,191,Indiana
+1874,Fred Harton,Sport,2023-02-25,85,South Dakota
+1875,Fred Harton,Meal,2023-09-25,71,Wyoming
+1876,Grace Kelly,Party,2023-04-18,75,Utah
+1877,John Dryer,Concert,2023-06-03,76,New Jersey
+1878,John Dryer,Sport,2024-05-14,63,Illinois
+1879,John Dryer,Meal,2023-12-20,91,Mississippi
+1880,John Dryer,Sport,2024-06-06,127,Arkansas
+1881,Nora Pelletier,Party,2023-03-27,67,Michigan
+1882,Nora Pelletier,Meal,2023-11-18,124,New Hampshire
+1883,Nora Pelletier,Meal,2024-03-23,70,Delaware
+1884,Nora Pelletier,Concert,2024-11-17,167,Utah
+1885,Natalie Webber,Party,2023-07-11,182,Oregon
+1886,Natalie Webber,Concert,2024-04-16,123,Pennsylvania
+1887,Natalie Webber,Concert,2024-06-24,166,Alabama
+1888,Paul Gonzalez,Concert,2023-05-19,56,Connecticut
+1889,Paul Gonzalez,Sport,2023-11-08,115,Maine
+1890,Paul Gonzalez,Meal,2023-02-23,188,Minnesota
+1891,Stuart Van,Concert,2023-10-24,84,Tennessee
+1892,Joe Elijah,Sport,2023-01-14,188,New York
+1893,Anthony Jacobs,Meal,2023-02-11,90,Texas
+1894,Anthony Jacobs,Concert,2023-12-13,71,Oregon
+1895,Anthony Jacobs,Sport,2023-10-27,143,Illinois
+1896,Anthony Jacobs,Meal,2024-12-16,101,Alabama
+1897,Dianna Wilson,Sport,2023-01-24,178,California
+1898,Dianna Wilson,Sport,2024-04-22,185,South Dakota
+1899,Robert Barroso,Sport,2024-08-29,138,New Mexico
+1900,Robert Barroso,Sport,2023-02-28,171,Missouri
+1901,Robert Barroso,Meal,2023-03-11,109,Florida
+1902,Robert Barroso,Meal,2023-07-24,124,California
+1903,Robert Barroso,Party,2024-05-13,143,South Dakota
+1904,Christopher Martinez,Meal,2024-09-27,128,Mississippi
+1905,Christopher Martinez,Concert,2023-10-27,121,Kentucky
+1906,Christopher Martinez,Meal,2023-06-11,179,Tennessee
+1907,Christopher Martinez,Party,2023-04-07,195,Montana
+1908,Fred McMath,Meal,2024-02-19,194,Indiana
+1909,Fred McMath,Sport,2024-01-24,116,Minnesota
+1910,Joseph Airdo,Sport,2024-02-23,144,Colorado
+1911,Joseph Airdo,Sport,2024-08-24,57,Delaware
+1912,Joseph Airdo,Party,2024-10-21,95,California
+1913,Ann Blume,Sport,2024-07-04,81,Montana
+1914,Ann Blume,Sport,2023-06-16,127,North Carolina
+1915,Roland Murray,Sport,2024-08-04,56,Kansas
+1916,Roland Murray,Meal,2023-11-22,149,Wisconsin
+1917,Roland Murray,Concert,2023-07-23,182,Delaware
+1918,Roland Murray,Concert,2024-01-16,114,Ohio
+1919,Roland Murray,Sport,2023-09-17,109,Illinois
+1920,Darrin Sayre,Meal,2024-11-12,141,California
+1921,Darrin Sayre,Sport,2024-02-15,115,Missouri
+1922,Darrin Sayre,Meal,2023-08-23,116,Montana
+1923,Darrin Sayre,Meal,2023-04-22,131,Nebraska
+1924,Darrin Sayre,Sport,2024-05-01,192,Georgia
+1925,Jim Epp,Meal,2023-05-05,94,Oregon
+1926,Matt Hagelstein,Sport,2024-05-17,190,New Mexico
+1927,Shahid Shariari,Concert,2024-08-24,82,Iowa
+1928,Shahid Shariari,Concert,2024-07-15,154,Utah
+1929,Shahid Shariari,Sport,2024-09-12,55,South Dakota
+1930,Karen Carlisle,Sport,2023-08-22,174,Maryland
+1931,Joy Bell-,Sport,2024-10-17,191,West Virginia
+1932,Rob Williams,Party,2023-10-28,70,Utah
+1933,Rob Williams,Sport,2024-09-01,58,Minnesota
+1934,Rob Williams,Meal,2024-07-29,129,Nevada
+1935,Rob Williams,Party,2023-09-23,69,Pennsylvania
+1936,Neoma Murray,Sport,2023-09-03,187,Indiana
+1937,Neoma Murray,Concert,2024-07-20,142,Hawaii
+1938,Neoma Murray,Sport,2024-07-30,139,Kansas
+1939,Neoma Murray,Sport,2024-12-19,91,Utah
+1940,Nora Paige,Concert,2024-12-20,58,Montana
+1941,Thomas Brumley,Meal,2023-09-20,117,Washington
+1942,Bart Watters,Meal,2024-09-10,72,New Mexico
+1943,Chad McGuire,Sport,2024-11-10,165,Arizona
+1944,Chad McGuire,Sport,2023-10-09,179,Massachusetts
+1945,Chad McGuire,Concert,2024-05-02,122,Iowa
+1946,Chad McGuire,Concert,2023-04-18,124,Iowa
+1947,Chad McGuire,Meal,2023-04-05,153,Missouri
+1948,Scott Cohen,Concert,2024-02-20,119,Mississippi
+1949,Jim Kriz,Meal,2023-01-31,63,Delaware
+1950,Jim Kriz,Meal,2024-08-24,151,Wisconsin
+1951,Jim Kriz,Sport,2022-12-31,58,Nevada
+1952,Jim Kriz,Party,2024-06-18,193,Arizona
+1953,Jim Kriz,Meal,2024-12-20,162,Michigan
+1954,Heather Jas,Sport,2024-09-11,71,New York
+1955,Heather Jas,Meal,2024-08-25,127,South Carolina
+1956,Heather Jas,Meal,2024-04-22,192,Arkansas
+1957,Heather Jas,Meal,2023-03-10,157,Virginia
+1958,Heather Jas,Meal,2024-07-25,65,Louisiana
+1959,Brian Dahlen,Meal,2024-05-22,113,Iowa
+1960,David Philippe,Meal,2023-12-21,152,Arkansas
+1961,David Philippe,Sport,2023-05-25,159,Iowa
+1962,David Philippe,Concert,2023-03-23,130,Tennessee
+1963,Ricardo Sperren,Meal,2024-09-17,194,Iowa
+1964,Jesus Ocampo,Meal,2023-12-27,101,Oregon
+1965,Jesus Ocampo,Sport,2023-06-09,111,Florida
+1966,Philip Fox,Party,2024-04-02,74,Kansas
+1967,Philip Fox,Concert,2023-02-16,141,South Dakota
+1968,Philip Fox,Concert,2023-11-16,187,Virginia
+1969,Ritsa Hightower,Concert,2024-01-02,81,Missouri
+1970,Ritsa Hightower,Concert,2023-03-21,134,West Virginia
+1971,Ritsa Hightower,Party,2024-11-09,131,Iowa
+1972,Ritsa Hightower,Meal,2023-06-20,116,Ohio
+1973,Tracy Collins,Meal,2023-11-30,89,Hawaii
+1974,Mick Hernandez,Concert,2023-03-27,188,Kansas
+1975,Mick Hernandez,Sport,2024-06-29,118,Ohio
+1976,Mick Hernandez,Sport,2023-12-08,129,Georgia
+1977,Mick Hernandez,Sport,2024-01-22,93,Wyoming
+1978,Stewart Visinsky,Sport,2023-07-10,59,Vermont
+1979,Stewart Visinsky,Sport,2024-01-01,196,Washington
+1980,Stewart Visinsky,Concert,2024-08-09,110,Illinois
+1981,Jason Gross,Party,2023-07-08,128,Maine
+1982,Justin Deggeller,Sport,2023-01-19,51,Rhode Island
+1983,Justin Deggeller,Party,2024-01-16,98,Maryland
+1984,MaryBeth Skach,Meal,2023-08-28,160,Maine
+1985,MaryBeth Skach,Sport,2023-03-16,104,Arizona
+1986,Erin Smith,Meal,2023-06-16,182,Vermont
+1987,Erin Smith,Sport,2024-08-26,52,Colorado
+1988,Katharine Harms,Party,2024-01-24,126,Missouri
+1989,Katharine Harms,Sport,2024-05-28,162,Vermont
+1990,Katharine Harms,Sport,2024-01-16,79,Vermont
+1991,Katharine Harms,Concert,2023-12-29,134,South Carolina
+1992,Lindsay Castell,Sport,2023-04-09,181,Maine
+1993,Lindsay Castell,Concert,2023-04-23,166,Kentucky
+1994,Lindsay Castell,Concert,2024-01-02,129,Tennessee
+1995,Lindsay Castell,Party,2024-08-07,164,Indiana
+1996,Nathan Mautz,Meal,2024-06-12,96,New Jersey
+1997,Nathan Mautz,Concert,2023-05-20,82,Minnesota
+1998,Nathan Mautz,Meal,2024-08-16,177,Idaho
+1999,Helen Andreada,Sport,2024-10-20,83,Washington
+2000,Helen Andreada,Sport,2023-10-18,104,Tennessee
+2001,Helen Andreada,Sport,2023-04-26,55,New Mexico
+2002,Ivan Gibson,Party,2023-02-27,93,Florida
+2003,Ivan Gibson,Party,2023-06-17,145,Alaska
+2004,Debra Catini,Concert,2023-01-22,134,Mississippi
+2005,Debra Catini,Sport,2024-10-27,62,Minnesota
+2006,Debra Catini,Meal,2023-06-14,74,West Virginia
+2007,Harold Ryan,Meal,2023-09-13,124,Rhode Island
+2008,Harold Ryan,Meal,2024-02-16,168,Arizona
+2009,Harold Ryan,Sport,2023-05-10,68,Alabama
+2010,Kristina Nunn,Concert,2023-03-06,65,Florida
+2011,Kristina Nunn,Concert,2023-03-11,171,Illinois
+2012,Kristina Nunn,Meal,2023-12-14,64,New Mexico
+2013,Kristina Nunn,Sport,2024-06-03,138,Connecticut
+2014,Dennis Bolton,Sport,2023-11-21,58,Minnesota
+2015,Dennis Bolton,Sport,2024-10-31,56,California
+2016,Dennis Bolton,Meal,2024-03-15,157,Pennsylvania
+2017,Rob Lucas,Sport,2024-06-07,134,Maine
+2018,Rob Lucas,Party,2024-11-15,71,Montana
+2019,Rob Lucas,Concert,2023-01-13,167,Arizona
+2020,Rob Lucas,Party,2024-11-07,200,Virginia
+2021,Rob Lucas,Concert,2023-10-15,164,Massachusetts
+2022,Duane Huffman,Meal,2023-03-31,149,Maine
+2023,Duane Huffman,Sport,2023-01-16,177,West Virginia
+2024,Duane Huffman,Sport,2024-05-23,149,Kentucky
+2025,Duane Huffman,Meal,2023-03-05,76,North Dakota
+2026,Duane Huffman,Concert,2024-03-12,71,Washington
+2027,Anna Chung,Meal,2024-12-04,120,Kansas
+2028,Anna Chung,Meal,2024-06-11,121,Missouri
+2029,Anna Chung,Sport,2023-02-06,80,North Carolina
+2030,Pamela Stobb,Meal,2023-09-04,87,South Dakota
+2031,Pamela Stobb,Meal,2023-04-10,149,Arizona
+2032,Pamela Stobb,Meal,2023-12-17,156,Minnesota
+2033,Liz Carlisle,Sport,2024-06-22,192,Nevada
+2034,Liz Carlisle,Sport,2023-01-07,103,Montana
+2035,Liz Carlisle,Concert,2024-02-03,195,Pennsylvania
+2036,Katherine Ducich,Party,2023-05-09,76,Rhode Island
+2037,Katherine Ducich,Concert,2023-07-12,139,Massachusetts
+2038,Michael Kennedy,Concert,2023-03-20,171,Mississippi
+2039,Michael Kennedy,Meal,2023-03-27,168,New Mexico
+2040,Michael Kennedy,Party,2024-08-02,81,Florida
+2041,Seth Vernon,Concert,2024-06-09,186,Iowa
+2042,Seth Vernon,Meal,2024-08-16,120,Massachusetts
+2043,Seth Vernon,Concert,2024-09-18,175,Delaware
+2044,Seth Vernon,Sport,2024-07-29,89,New Jersey
+2045,Greg Guthrie,Meal,2024-02-11,78,California
+2046,Greg Guthrie,Sport,2024-01-29,161,Tennessee
+2047,Mark Van Huff,Concert,2024-01-23,77,Montana
+2048,Mark Van Huff,Sport,2023-06-15,187,North Dakota
+2049,Mark Van Huff,Meal,2024-05-15,131,Georgia
+2050,Mark Van Huff,Sport,2023-10-23,86,Ohio
+2051,Roger Demir,Party,2024-07-18,187,Ohio
+2052,Frank Atkinson,Sport,2024-03-04,68,New Mexico
+2053,Frank Atkinson,Meal,2023-01-26,109,West Virginia
+2054,Frank Atkinson,Concert,2024-05-10,163,Ohio
+2055,Frank Atkinson,Sport,2024-07-06,138,Idaho
+2056,Frank Atkinson,Meal,2023-03-19,105,Delaware
+2057,Maribeth Yedwab,Concert,2024-02-26,108,Pennsylvania
+2058,Maribeth Yedwab,Sport,2024-01-08,80,Tennessee
+2059,Maribeth Yedwab,Meal,2023-03-19,168,Nevada
+2060,Maribeth Yedwab,Meal,2023-09-18,110,Alabama
+2061,Maribeth Yedwab,Meal,2023-01-29,179,New York
+2062,Alan Barnes,Sport,2023-04-28,73,Alaska
+2063,Mick Brown,Sport,2024-04-12,171,Nevada
+2064,Mick Brown,Concert,2024-09-29,67,North Dakota
+2065,Mick Brown,Concert,2024-04-29,94,Pennsylvania
+2066,Mick Brown,Sport,2023-10-14,138,West Virginia
+2067,Mick Brown,Sport,2023-03-01,106,Kansas
+2068,John Murray,Meal,2023-05-08,152,Delaware
+2069,John Murray,Concert,2023-12-05,133,Kentucky
+2070,John Murray,Sport,2023-11-08,80,Minnesota
+2071,John Murray,Concert,2024-09-28,79,Pennsylvania
+2072,Jason Fortune-,Concert,2024-02-21,165,Utah
+2073,Jason Fortune-,Meal,2024-04-08,107,Florida
+2074,Liz Thompson,Concert,2024-10-24,130,Vermont
+2075,Liz Thompson,Meal,2024-11-05,183,Nevada
+2076,Liz Thompson,Sport,2023-12-08,170,North Dakota
+2077,Brad Thomas,Concert,2024-04-29,147,Maryland
+2078,Brad Thomas,Sport,2024-03-26,121,Arizona
+2079,Brad Thomas,Meal,2024-02-02,194,North Dakota
+2080,Brad Thomas,Concert,2023-10-17,134,Connecticut
+2081,Brad Thomas,Meal,2024-04-24,62,California
+2082,Gene Hale,Party,2023-03-27,100,Rhode Island
+2083,Gene Hale,Meal,2023-02-27,107,Utah
+2084,Gene Hale,Concert,2023-04-24,194,Louisiana
+2085,Gene Hale,Concert,2023-09-30,155,Virginia
+2086,Gene Hale,Concert,2024-11-05,151,Kentucky
+2087,Keith Herrera,Party,2024-04-19,91,Utah
+2088,Keith Herrera,Sport,2024-12-14,147,Illinois
+2089,Bradley Nguyen,Sport,2024-11-10,198,Idaho
+2090,Bradley Nguyen,Sport,2023-12-15,151,Kansas
+2091,Bradley Nguyen,Concert,2024-04-08,117,New York
+2092,Bradley Nguyen,Meal,2023-06-04,172,Alaska
+2093,Art Ferguson,Sport,2024-10-26,200,Indiana
+2094,Art Ferguson,Concert,2023-09-12,53,Kentucky
+2095,Art Ferguson,Concert,2024-12-24,190,Rhode Island
+2096,Art Ferguson,Meal,2024-11-04,61,Delaware
+2097,Art Ferguson,Party,2024-01-16,191,Nebraska
+2098,Anemone Ratner,Meal,2024-03-15,137,Mississippi
+2099,Anemone Ratner,Meal,2023-11-15,159,Alabama
+2100,Anemone Ratner,Concert,2023-05-14,170,Massachusetts
+2101,Liz MacKendrick,Sport,2023-10-31,150,Kentucky
+2102,Craig Carreira,Sport,2023-11-02,127,Alaska
+2103,Matthew Grinstein,Concert,2024-08-06,188,Wyoming
+2104,Matthew Grinstein,Concert,2024-01-29,182,New Mexico
+2105,Matthew Grinstein,Sport,2024-09-18,111,Oregon
+2106,Matthew Grinstein,Concert,2024-11-06,130,Ohio
+2107,Sharelle Roach,Party,2024-02-02,143,Ohio
+2108,Sharelle Roach,Sport,2023-06-27,144,South Carolina
+2109,Sharelle Roach,Sport,2024-05-28,145,Indiana
+2110,Sharelle Roach,Sport,2024-01-29,125,Vermont
+2111,Sharelle Roach,Meal,2023-09-08,124,Vermont
+2112,Arthur Gainer,Concert,2024-02-26,94,South Carolina
+2113,Steve Nguyen,Concert,2023-07-01,79,Kansas
+2114,Craig Yedwab,Concert,2023-03-05,58,South Dakota
+2115,Craig Yedwab,Sport,2024-10-26,69,West Virginia
+2116,Joni Wasserman,Concert,2024-09-24,121,Idaho
+2117,Joni Wasserman,Meal,2024-04-12,89,Indiana
+2118,Joni Wasserman,Meal,2024-09-04,56,Nevada
+2119,Joni Wasserman,Sport,2024-09-19,180,Wyoming
+2120,Phillip Breyer,Sport,2023-08-22,188,Oklahoma
+2121,Phillip Breyer,Concert,2024-07-16,89,Georgia
+2122,Phillip Breyer,Sport,2023-07-10,106,West Virginia
+2123,Phillip Breyer,Meal,2023-09-11,170,Arkansas
+2124,Ryan Crowe,Meal,2023-10-16,67,New Mexico
+2125,Ryan Crowe,Sport,2023-06-22,111,Utah
+2126,Ryan Crowe,Meal,2023-02-28,132,New Jersey
+2127,Ann Chong,Sport,2024-02-19,76,Vermont
+2128,Clay Ludtke,Sport,2024-12-14,72,Pennsylvania
+2129,Clay Ludtke,Meal,2024-06-07,124,Alaska
+2130,Clay Ludtke,Party,2024-08-13,196,California
+2131,Clay Ludtke,Sport,2024-10-01,108,Texas
+2132,Justin Ellison,Concert,2023-11-23,91,South Dakota
+2133,Chuck Sachs,Meal,2023-09-02,96,Wyoming
+2134,Chuck Sachs,Sport,2024-02-26,195,Maine
+2135,Chuck Sachs,Meal,2024-09-17,97,Michigan
+2136,Muhammed Yedwab,Sport,2024-08-14,156,Arizona
+2137,Muhammed Yedwab,Meal,2024-04-29,85,Colorado
+2138,Ken Brennan,Sport,2024-10-25,104,Arkansas
+2139,Ken Brennan,Concert,2023-01-22,114,New Jersey
+2140,Ken Brennan,Meal,2024-06-02,66,Washington
+2141,Tanja Norvell,Meal,2024-06-11,169,Oregon
+2142,Mark Hamilton,Meal,2024-05-20,182,Minnesota
+2143,Mark Hamilton,Concert,2024-08-02,74,Nevada
+2144,Mark Hamilton,Meal,2023-12-30,85,New Hampshire
+2145,Doug Bickford,Meal,2024-09-29,79,Maine
+2146,Doug Bickford,Sport,2023-08-13,124,Wisconsin
+2147,Tamara Willingham,Sport,2024-02-13,91,Rhode Island
+2148,Tamara Willingham,Party,2024-12-23,107,Arkansas
+2149,Tamara Willingham,Concert,2023-07-06,90,New Mexico
+2150,Tamara Willingham,Meal,2024-11-07,54,New Mexico
+2151,Marina Lichtenstein,Sport,2024-05-02,74,Iowa
+2152,Marina Lichtenstein,Party,2024-10-06,129,Florida
+2153,Michelle Moray,Sport,2024-08-09,111,Iowa
+2154,Michelle Moray,Sport,2023-04-02,109,Arizona
+2155,Michelle Moray,Concert,2023-06-26,169,Maryland
+2156,Michelle Moray,Concert,2024-07-20,126,Mississippi
+2157,Michelle Moray,Concert,2023-06-22,94,Illinois
+2158,Carol Adams,Sport,2023-09-15,111,Pennsylvania
+2159,Carol Adams,Sport,2023-10-09,191,Maine
+2160,Carol Adams,Sport,2024-07-28,81,Alaska
+2161,Carol Adams,Concert,2024-03-02,136,Oregon
+2162,Jasper Cacioppo,Sport,2023-03-01,132,Idaho
+2163,Jasper Cacioppo,Meal,2024-11-08,101,Michigan
+2164,Jasper Cacioppo,Meal,2024-11-07,156,Maryland
+2165,Brad Eason,Sport,2023-12-29,74,Utah
+2166,Brad Eason,Meal,2023-12-23,182,Texas
+2167,Brad Eason,Concert,2023-08-02,179,Pennsylvania
+2168,Michael Nguyen,Sport,2024-06-22,192,South Carolina
+2169,John Lucas,Sport,2024-01-13,107,Nebraska
+2170,Scot Wooten,Sport,2024-10-22,82,Missouri
+2171,Scot Wooten,Sport,2024-07-16,167,Alaska
+2172,Scot Wooten,Meal,2024-09-28,190,South Dakota
+2173,Scot Wooten,Concert,2023-02-05,144,Wisconsin
+2174,Dario Medina,Concert,2024-05-22,53,South Dakota
+2175,Dario Medina,Meal,2023-12-28,113,Alaska
+2176,Dario Medina,Concert,2023-03-02,142,Missouri
+2177,Dario Medina,Meal,2024-08-02,134,Rhode Island
+2178,Pete Takahito,Meal,2024-12-03,133,Louisiana
+2179,Pete Takahito,Concert,2024-08-16,189,Kentucky
+2180,Pete Takahito,Meal,2023-05-20,163,New Jersey
+2181,Alice McCarthy,Concert,2023-07-17,57,Maine
+2182,Alice McCarthy,Meal,2023-05-31,191,Maine
+2183,Alice McCarthy,Party,2023-09-21,182,Maine
+2184,Alice McCarthy,Sport,2024-04-23,113,Hawaii
+2185,Alice McCarthy,Sport,2024-04-08,121,Mississippi
+2186,Helen Abelman,Sport,2024-12-27,108,South Carolina
+2187,Helen Abelman,Party,2024-10-17,114,Michigan
+2188,Helen Abelman,Party,2024-10-26,134,Pennsylvania
+2189,Helen Abelman,Sport,2023-05-30,99,Virginia
+2190,Helen Abelman,Sport,2023-10-07,80,Rhode Island
+2191,Noel Staavos,Concert,2023-03-18,58,South Carolina
+2192,Noel Staavos,Party,2023-06-16,139,Indiana
+2193,Troy Blackwell,Meal,2023-04-04,83,South Dakota
+2194,Troy Blackwell,Concert,2023-11-08,79,Florida
+2195,Troy Blackwell,Sport,2024-02-12,129,Colorado
+2196,Troy Blackwell,Sport,2023-03-14,135,Wisconsin
+2197,Troy Blackwell,Sport,2024-09-30,143,South Carolina
+2198,Jack Lebron,Meal,2023-10-27,91,Minnesota
+2199,Jack Lebron,Concert,2023-10-01,162,South Dakota
+2200,Michelle Tran,Concert,2024-07-11,193,Arizona
+2201,Tony Chapman,Sport,2024-12-02,139,Ohio
+2202,Tony Chapman,Meal,2024-11-01,160,Ohio
+2203,Tony Chapman,Party,2024-06-08,91,Alabama
+2204,Tony Chapman,Sport,2024-07-18,184,Oregon
+2205,Tony Chapman,Meal,2024-04-07,175,Idaho
+2206,Tom Stivers,Concert,2023-10-20,166,Massachusetts
+2207,Tom Stivers,Sport,2023-01-06,164,New York
+2208,Tom Stivers,Meal,2023-09-20,85,North Carolina
+2209,Trudy Glocke,Concert,2024-03-21,159,Florida
+2210,Trudy Glocke,Party,2024-12-07,167,Louisiana
+2211,Trudy Glocke,Concert,2024-03-16,166,Wyoming
+2212,Christine Abelman,Meal,2023-09-23,85,Iowa
+2213,Christine Abelman,Sport,2023-05-08,118,South Dakota
+2214,Ken Dana,Sport,2024-07-08,152,Wyoming
+2215,Ken Dana,Sport,2024-01-24,95,Virginia
+2216,Ken Dana,Concert,2024-01-22,133,South Dakota
+2217,Erin Creighton,Sport,2023-07-31,128,Nevada
+2218,Erin Creighton,Party,2024-07-14,60,Ohio
+2219,Gary Hwang,Party,2024-05-08,188,Colorado
+2220,Gary Hwang,Sport,2024-04-13,162,Pennsylvania
+2221,Gary Hwang,Sport,2024-06-17,195,Illinois
+2222,Patrick Bzostek,Sport,2023-05-24,153,Oklahoma
+2223,Patrick Bzostek,Sport,2023-08-05,175,Delaware
+2224,Patrick Bzostek,Sport,2024-02-15,180,Georgia
+2225,Patrick Bzostek,Sport,2023-02-27,94,Louisiana
+2226,Patrick Bzostek,Sport,2023-08-27,199,Louisiana
+2227,Maris LaWare,Meal,2023-03-18,82,West Virginia
+2228,Maris LaWare,Sport,2024-12-19,149,New York
+2229,Michelle Ellison,Concert,2024-12-02,90,Massachusetts
+2230,Michelle Ellison,Sport,2024-08-30,144,Illinois
+2231,Michelle Ellison,Meal,2023-11-13,61,Kentucky
+2232,Michelle Ellison,Party,2023-12-28,134,Hawaii
+2233,Pauline Johnson,Meal,2024-11-03,141,Colorado
+2234,Pauline Johnson,Meal,2024-02-08,128,Indiana
+2235,Pauline Johnson,Party,2024-05-01,153,Maine
+2236,Ben Wallace,Concert,2023-10-02,132,New Mexico
+2237,Ben Wallace,Sport,2023-08-01,129,Pennsylvania
+2238,Ben Wallace,Sport,2023-10-25,110,Indiana
+2239,Lisa DeCherney,Meal,2024-08-30,125,Florida
+2240,Eudokia Martin,Sport,2023-03-03,189,Arizona
+2241,George Zrebassa,Concert,2024-07-27,106,Colorado
+2242,George Zrebassa,Meal,2024-08-05,138,Connecticut
+2243,Nathan Gelder,Sport,2023-03-14,173,Pennsylvania
+2244,Nathan Gelder,Concert,2023-09-12,193,Kansas
+2245,Nathan Gelder,Sport,2023-04-08,177,Tennessee
+2246,Nathan Gelder,Sport,2023-07-26,126,Ohio
+2247,Michael Chen,Concert,2023-08-01,85,Missouri
+2248,Michael Stewart,Sport,2024-09-08,68,Alaska
+2249,Michael Stewart,Meal,2024-07-24,183,North Dakota
+2250,Michael Stewart,Meal,2023-01-17,198,Virginia
+2251,Michael Stewart,Sport,2024-10-29,146,West Virginia
+2252,Jim Mitchum,Concert,2024-01-23,169,New Hampshire
+2253,Jim Mitchum,Concert,2023-04-16,119,Vermont
+2254,Filia McAdams,Party,2023-06-05,51,Vermont
+2255,Laurel Elliston,Concert,2024-12-01,143,Texas
+2256,Laurel Elliston,Party,2023-10-22,136,North Dakota
+2257,Laurel Elliston,Sport,2023-11-12,50,Vermont
+2258,Kean Takahito,Meal,2024-12-25,122,West Virginia
+2259,Peter Fuller,Meal,2023-12-23,179,Iowa
+2260,Peter Fuller,Concert,2023-05-30,137,Ohio
+2261,Peter Fuller,Concert,2023-09-08,140,Montana
+2262,Peter Fuller,Party,2023-10-11,117,New Jersey
+2263,Logan Currie,Party,2023-05-19,142,New Hampshire
+2264,Logan Currie,Meal,2023-12-15,156,New Hampshire
+2265,Joni Sundaresam,Sport,2024-02-21,172,Arkansas
+2266,Joni Sundaresam,Concert,2023-10-12,93,Oklahoma
+2267,Maureen Fritzler,Sport,2023-09-30,118,Ohio
+2268,Muhammed Lee,Sport,2024-04-21,134,North Carolina
+2269,Muhammed Lee,Sport,2024-05-23,55,Kentucky
+2270,Muhammed Lee,Meal,2023-07-24,149,Tennessee
+2271,Muhammed Lee,Meal,2024-11-21,95,Arkansas
+2272,Damala Kotsonis,Sport,2024-06-25,104,Delaware
+2273,Damala Kotsonis,Meal,2023-02-06,163,Virginia
+2274,Damala Kotsonis,Meal,2024-03-10,143,Rhode Island
+2275,Heather Kirkland,Meal,2023-12-28,113,Nebraska
+2276,Heather Kirkland,Party,2023-04-11,91,New Hampshire
+2277,Heather Kirkland,Meal,2024-10-12,139,New Mexico
+2278,Heather Kirkland,Sport,2024-03-07,191,Rhode Island
+2279,Anthony Rawles,Concert,2024-11-08,82,Nevada
+2280,Anthony Rawles,Concert,2023-10-29,59,Delaware
+2281,Anthony Rawles,Concert,2023-07-20,140,West Virginia
+2282,Katrina Willman,Meal,2023-08-24,75,Texas
+2283,Katrina Willman,Concert,2024-07-07,109,New York
+2284,Katrina Willman,Concert,2024-05-31,134,Montana
+2285,Sarah Foster,Concert,2024-02-08,193,Virginia
+2286,Sarah Foster,Meal,2024-09-26,108,Massachusetts
+2287,Sarah Foster,Sport,2024-02-09,76,Louisiana
+2288,Sarah Foster,Sport,2023-04-03,190,Pennsylvania
+2289,Lisa Ryan,Concert,2024-12-10,70,Hawaii
+2290,Lisa Ryan,Party,2023-09-16,156,Rhode Island
+2291,Bradley Talbott,Meal,2023-05-11,95,Louisiana
+2292,Bradley Talbott,Meal,2024-10-28,133,Nebraska
+2293,Bradley Talbott,Meal,2023-06-15,180,Iowa
+2294,Bradley Talbott,Concert,2023-05-30,58,New Hampshire
+2295,Bradley Talbott,Party,2023-02-10,100,Idaho
+2296,Randy Ferguson,Meal,2024-08-26,186,New Jersey
+2297,Todd Sumrall,Sport,2024-10-06,171,Kansas
+2298,Todd Sumrall,Sport,2023-12-05,165,Louisiana
+2299,Todd Sumrall,Meal,2023-01-28,182,Alaska
+2300,Todd Sumrall,Meal,2024-08-06,96,Kentucky
+2301,Max Jones,Sport,2023-05-04,72,Minnesota
+2302,Max Jones,Party,2023-09-21,54,Georgia
+2303,Max Jones,Meal,2023-04-17,75,Texas
+2304,Max Jones,Party,2023-06-24,97,New Jersey
+2305,Max Jones,Meal,2023-09-03,109,New York
+2306,Robert Marley,Concert,2023-09-30,141,Connecticut
+2307,Robert Marley,Sport,2023-03-31,139,Louisiana
+2308,Robert Marley,Sport,2023-06-28,94,Montana
+2309,Robert Marley,Meal,2023-05-14,63,Rhode Island
+2310,Henia Zydlo,Sport,2024-07-07,128,Iowa
+2311,Henia Zydlo,Sport,2023-02-06,79,Virginia
+2312,Henia Zydlo,Party,2023-07-12,148,Ohio
+2313,Alyssa Tate,Sport,2023-07-08,106,Utah
+2314,Alyssa Tate,Concert,2023-03-02,57,Utah
+2315,Alyssa Tate,Sport,2024-12-27,58,Rhode Island
+2316,Lauren Leatherbury,Concert,2024-06-26,118,Kentucky
+2317,Bruce Stewart,Sport,2024-06-26,86,Ohio
+2318,Bruce Stewart,Concert,2023-05-24,188,Ohio
+2319,Bruce Stewart,Sport,2024-10-12,64,Virginia
+2320,Allen Rosenblatt,Meal,2023-01-11,183,Maine
+2321,Allen Rosenblatt,Sport,2024-03-01,194,Hawaii
+2322,Allen Rosenblatt,Concert,2023-09-05,113,Texas
+2323,George Bell,Sport,2024-05-25,178,Colorado
+2324,George Bell,Meal,2023-06-08,177,Minnesota
+2325,Maribeth Dona,Sport,2023-05-29,97,Nebraska
+2326,Maribeth Dona,Sport,2024-08-07,125,Kentucky
+2327,Maribeth Dona,Sport,2024-10-16,59,Missouri
+2328,Maribeth Dona,Sport,2023-07-18,158,Connecticut
+2329,Maribeth Dona,Sport,2023-03-29,166,Wisconsin
+2330,Trudy Schmidt,Sport,2024-07-16,179,California
+2331,Eleni McCrary,Party,2023-07-27,185,Mississippi
+2332,Eleni McCrary,Sport,2023-04-18,155,Maine
+2333,Eric Murdock,Sport,2024-04-20,104,Wisconsin
+2334,Roy Skaria,Sport,2024-10-10,148,Arizona
+2335,Janet Molinari,Meal,2024-09-28,58,Massachusetts
+2336,Scot Coram,Concert,2023-02-12,139,Kentucky
+2337,Scot Coram,Meal,2024-08-13,152,Colorado
+2338,Scot Coram,Meal,2023-11-21,57,Oklahoma
+2339,Scot Coram,Sport,2024-04-05,79,Nebraska
+2340,Andy Gerbode,Meal,2023-07-01,59,Connecticut
+2341,Andy Gerbode,Sport,2023-01-11,141,Missouri
