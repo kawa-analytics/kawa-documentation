@@ -8,7 +8,7 @@ nav_order: 18
 # Applications
 
 * TOC
-  {:toc}
+{:toc}
 
 Applications in KAWA let you create and deploy full-featured web apps directly on your datasets, using Views and Dashboards as pages. Each page can be customized to control user interactions such as filtering, sorting, grouping, and deploying/folding nodes.Also, the applications now include a built-in AI assistant for natural-language interaction with the data you see on the page.KAWA Applications make it quick and simple to turn raw data set into tailored interfaces that speed up work and help you make better decisions.
 
@@ -133,6 +133,8 @@ Launch the context-aware AI assistant for natural-language queries against the v
 ![Application](./readme-assets/application12.png)
 
 ![Application](./readme-assets/application13.png)
+
+You can read more about this in the AI Integration section ([06_00_ai_integration.md](06_00_ai_integration.md))
 
 ### 3.2 Main Canvas (Content Area)
 
