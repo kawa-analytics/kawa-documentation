@@ -1,0 +1,27 @@
+/* assets/css/extra.css */
+.btn {
+    display: inline-block;
+    padding: 0.6em 1.2em;
+    margin: 0.4em 0;
+    border-radius: 0.5em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.btn-primary {
+    background-color: #6F52ED;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #5938c6;
+    transform: translateY(-1px);
+}
+.btn-secondary {
+    background-color: #f4f4f4;
+    color: #333;
+}
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-1px);
+}
