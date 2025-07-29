@@ -15,18 +15,8 @@ nav_order: 1
 
 Ready to dive in? Start here:
 
-<ul style="list-style:none; padding-left:0">
-  <li>
-    <a href="{{ '/00__ getting_started.html' | relative_url }}" class="btn btn-primary">
-      Getting started
-    </a>
-  </li>
-  <li>
-    <a href="{{ '/videos.html' | relative_url }}" class="btn btn-secondary">
-      Video tutorials
-    </a>
-  </li>
-</ul>
+- [Getting Started](00_getting_started.md){: .btn .btn-primary }
+- [Watch Video Tutorials](videos.md){: .btn target="_blank" }
 
 Short videos to get started with Kawa — a step-by-step video guide:
 
