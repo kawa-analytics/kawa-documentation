@@ -11,18 +11,18 @@ nav_order: 1
 
 ---
 
-## 🚀 Start Your First Project Now
+## Start Your First Project Now
 
 Ready to dive in? Start here:
 
 <ul style="list-style:none; padding-left:0">
-  <li><a href="00_getting_started.html" class="btn btn-primary">Getting started</a></li>
+  <li><a href="00__getting_started.md" class="btn btn-primary">Getting started</a></li>
 </ul>
 
 Short videos to get started with Kawa — a step-by-step video guide:
 
 <ul style="list-style:none; padding-left:0">
-  <li><a href="videos.html"              class="btn btn-secondary">Video tutorials</a></li>
+  <li><a href="videos.md" class="btn btn-secondary">Video tutorials</a></li>
 </ul>
 
 ---
