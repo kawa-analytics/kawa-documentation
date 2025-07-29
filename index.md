@@ -15,11 +15,15 @@ nav_order: 1
 
 Ready to dive in? Start here:
 
-[Getting started](./00__getting_started.html){: .btn .btn-primary }
+<ul style="list-style:none; padding-left:0">
+  <li><a href="00_getting_started.md" class="btn btn-primary">Getting started</a></li>
+</ul>
 
 Short videos to get started with Kawa — a step-by-step video guide:
 
-[Video tutorials](https://docs.kawa.ai/video-tutorials/english-tutorials){: .btn target="_blank"}
+<ul style="list-style:none; padding-left:0">
+  <li><a href="videos.md"              class="btn btn-secondary">Video tutorials</a></li>
+</ul>
 
 ---
 
