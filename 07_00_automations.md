@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Automating
+title: Automations
 nav_order: 20
 ---
 
