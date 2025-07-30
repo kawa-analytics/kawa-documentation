@@ -18,21 +18,45 @@ nav_order: 1
 
 ---
 
-## 🚀 Start Your First Project Now
+<h2>
+  <img
+    src="{{ '/assets/icons/rocket.svg' | relative_url }}"
+    alt="Start"
+    width="36"
+    style="vertical-align: middle; margin-right: 8px;"
+  />
+  Start Your First Project Now
+</h2>
 
 Ready to dive in? Start here:
 
 [Getting started](./00__getting_started.html){: .btn .btn-primary }
 
-## Short videos to get started with Kawa
+<h2>
+  <img
+    src="{{ '/assets/icons/play_circle.svg' | relative_url }}"
+    alt="Video"
+    width="36"
+    style="vertical-align: middle; margin-right: 8px;"
+  />
+  Short videos to get started with Kawa
+</h2>
 
 A step-by-step video guide:
 
-[Video tutorials](https://docs.kawa.ai/video-tutorials/english-tutorials){: .btn target="_blank"}
+[Video tutorials](https://docs.kawa.ai/video-tutorials/english-tutorials){: .btn .btn-primary target="_blank" }
 
 ---
 
-## 📚 What's Inside
+<h2>
+  <img
+    src="{{ '/assets/icons/data_table.svg' | relative_url }}"
+    alt="Inside"
+    width="36"
+    style="vertical-align: middle; margin-right: 8px;"
+  />
+  What's Inside
+</h2>
 
 | Section         | Description                                                                                       |
 |----------------|---------------------------------------------------------------------------------------------------|
@@ -50,7 +74,15 @@ A step-by-step video guide:
 
 ---
 
-## 🔗 Useful Links
+<h2>
+  <img
+    src="{{ '/assets/icons/link.svg' | relative_url }}"
+    alt="Inside"
+    width="36"
+    style="vertical-align: middle; margin-right: 8px;"
+  />
+  Useful Links
+</h2>
 
 - [Python SDK](https://github.com/kawa-analytics/kywy-documentation){: target="_blank" }
 - [Install the KAWA Platform](https://github.com/kawa-analytics/kawa-docker-install){: target="_blank" }
