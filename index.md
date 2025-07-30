@@ -5,9 +5,14 @@ nav_order: 1
 ---
 
 <h1>
-  <img src="/assets/icons/door_open.png" alt="Welcome" width="24" />
+  <img
+    src="{{ '/assets/icons/icon.png' | relative_url }}"
+    alt="My Icon"
+    width="24"
+    style="vertical-align: middle; margin-right: 8px;"
+  />
   Welcome to Kawa Documentation
-</h1> 
+</h1>
 
 Kawa is everything you need to build, run, and scale no-code analytics — fast, easy, and reliable.
 
