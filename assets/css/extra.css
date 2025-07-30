@@ -1,52 +1,32 @@
 /* assets/css/extra.css */
-/* Контейнер карток */
 .link-card-group {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    margin: 1.5rem 0;
 }
 
-/* Базовий стиль картки */
 .link-card {
     flex: 1 1 200px;
-    padding: 1.25rem;
+    padding: 1rem;
     border: 1px solid #e0e0e0;
-    border-radius: 0.75rem;
+    border-radius: .5rem;
+    background: #fff;
     text-decoration: none;
     color: inherit;
-    background: #fff;
-    transition: transform .15s, box-shadow .2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    transition: transform .2s, box-shadow .2s;
 }
 
-/* Стиль для “основної” картки */
 .link-card.primary {
     background: #6F52ED;
     color: #fff;
     border-color: #6F52ED;
 }
 
-/* Заголовок картки */
 .link-card h4 {
     margin: 0 0 0.5rem;
-    font-size: 1rem;
 }
 
-/* Опис картки */
 .link-card p {
     margin: 0;
-    font-size: 0.875rem;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-/* Ховер-ефекти */
-.link-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-.link-card.primary:hover {
-    box-shadow: 0 8px 16px rgba(111,82,237,0.3);
+    font-size: .9rem;
 }
