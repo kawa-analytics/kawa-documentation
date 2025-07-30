@@ -14,7 +14,7 @@ nav_order: 1
   Welcome to Kawa Documentation
 </h1>
 
-## Kawa is everything you need to **build**, **run**, and **scale** no-code analytics — fast, easy, and reliable.
+### Kawa is everything you need to **build**, **run**, and **scale** no-code analytics — fast, easy, and reliable.
 
 ---
 
@@ -22,7 +22,13 @@ nav_order: 1
 
 Ready to dive in? Start here:
 
-{% include link-cards.html %}
+[Getting started](./00__getting_started.html){: .btn .btn-primary }
+
+## Short videos to get started with Kawa
+
+A step-by-step video guide:
+
+[Video tutorials](https://docs.kawa.ai/video-tutorials/english-tutorials){: .btn target="_blank"}
 
 ---
 
