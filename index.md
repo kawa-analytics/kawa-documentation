@@ -6,7 +6,7 @@ nav_order: 1
 
 <h1>
   <img
-    src="{{ '/assets/icons/icon.png' | relative_url }}"
+    src="{{ '/assets/icons/door_open.png' | relative_url }}"
     alt="My Icon"
     width="24"
     style="vertical-align: middle; margin-right: 8px;"
