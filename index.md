@@ -19,14 +19,17 @@ nav_order: 1
 ---
 
 <div class="link-card-group">
+
   <a href="./00__getting_started.html" class="link-card primary">
     <h4>Getting started</h4>
     <p>A fast intro to Kawa’s core concepts.</p>
   </a>
+
   <a href="https://docs.kawa.ai/video-tutorials/english-tutorials" class="link-card">
     <h4>Video tutorials</h4>
     <p>Short step-by-step guides to get you up and running.</p>
   </a>
+
 </div>
 
 ---
