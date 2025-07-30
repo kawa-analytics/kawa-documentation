@@ -6,9 +6,9 @@ nav_order: 1
 
 <h1>
   <img
-    src="{{ '/assets/icons/door_open.png' | relative_url }}"
-    alt="My Icon"
-    width="24"
+    src="{{ '/assets/icons/door_open.svg' | relative_url }}"
+    alt="Welkome"
+    width="48"
     style="vertical-align: middle; margin-right: 8px;"
   />
   Welcome to Kawa Documentation
