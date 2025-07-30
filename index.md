@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 <h1>
-  <img src="/assets/icons/door_open.svg" alt="Welcome" width="24" />
+  <img src="/assets/icons/door_open.png" alt="Welcome" width="24" />
   Welcome to Kawa Documentation
 </h1> 
 
