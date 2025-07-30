@@ -9,10 +9,11 @@ nav_order: 1
     src="{{ '/assets/icons/door_open.svg' | relative_url }}"
     alt="Door Open"
     width="24"
-    style="vertical-align: middle; margin-right: 8px;"
-  >
+    style="vertical-align: middle; margin-right: 8px;" />
   Welcome to Kawa Documentation
-</h1> Kawa is everything you need to build, run, and scale no-code analytics — fast, easy, and reliable.
+</h1> 
+
+Kawa is everything you need to build, run, and scale no-code analytics — fast, easy, and reliable.
 
 ---
 
