@@ -1,32 +1,55 @@
 /* assets/css/extra.css */
+/* Контейнер: картки поруч, але не з’їжджають */
 .link-card-group {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
+/* Базова картка: flex-стовпець, відступи помірні */
 .link-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
     flex: 1 1 200px;
     padding: 1rem;
     border: 1px solid #e0e0e0;
-    border-radius: .5rem;
-    background: #fff;
+    border-radius: .75rem;
+
     text-decoration: none;
     color: inherit;
-    transition: transform .2s, box-shadow .2s;
+    background: #fff;
+
+    transition: transform .15s, box-shadow .2s;
 }
 
+/* Основна (перший лінк) */
 .link-card.primary {
     background: #6F52ED;
     color: #fff;
     border-color: #6F52ED;
 }
 
+/* Заголовок у картці */
 .link-card h4 {
-    margin: 0 0 0.5rem;
+    margin: 0 0 .5rem;
+    font-size: 1rem;
 }
 
+/* Текст у картці */
 .link-card p {
     margin: 0;
-    font-size: .9rem;
+    font-size: .875rem;
+    line-height: 1.3;
+}
+
+/* Hover-ефект */
+.link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.link-card.primary:hover {
+    box-shadow: 0 6px 12px rgba(111,82,237,0.4);
 }
