@@ -5,11 +5,7 @@ nav_order: 1
 ---
 
 <h1>
-  <img
-    src="{{ '/assets/icons/door_open.svg' | relative_url }}"
-    alt="Door Open"
-    width="24"
-    style="vertical-align: middle; margin-right: 8px;" />
+  <img src="/assets/icons/door_open.svg" alt="Welcome" width="24" />
   Welcome to Kawa Documentation
 </h1> 
 
