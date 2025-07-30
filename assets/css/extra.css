@@ -1,27 +1,52 @@
 /* assets/css/extra.css */
-.btn {
-    display: inline-block;
-    padding: 0.6em 1.2em;
-    margin: 0.4em 0;
-    border-radius: 0.5em;
+/* Контейнер карток */
+.link-card-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+/* Базовий стиль картки */
+.link-card {
+    flex: 1 1 200px;
+    padding: 1.25rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem;
     text-decoration: none;
-    font-weight: 500;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: inherit;
+    background: #fff;
+    transition: transform .15s, box-shadow .2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
-.btn-primary {
-    background-color: #6F52ED;
+
+/* Стиль для “основної” картки */
+.link-card.primary {
+    background: #6F52ED;
     color: #fff;
+    border-color: #6F52ED;
 }
-.btn-primary:hover {
-    background-color: #5938c6;
-    transform: translateY(-1px);
+
+/* Заголовок картки */
+.link-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
 }
-.btn-secondary {
-    background-color: #f4f4f4;
-    color: #333;
+
+/* Опис картки */
+.link-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.7);
 }
-.btn-secondary:hover {
-    background-color: #e0e0e0;
-    transform: translateY(-1px);
+
+/* Ховер-ефекти */
+.link-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.link-card.primary:hover {
+    box-shadow: 0 8px 16px rgba(111,82,237,0.3);
 }
