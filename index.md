@@ -32,6 +32,8 @@ Ready to dive in? Start here:
 
 [Getting started](./00__getting_started.html){: .btn .btn-primary }
 
+---
+ 
 <h2>
   <img
     src="{{ '/assets/icons/play_circle.svg' | relative_url }}"
@@ -76,7 +78,7 @@ A step-by-step video guide:
 
 <h2>
   <img
-    src="{{ '/assets/icons/link.svg' | relative_url }}"
+    src="{{ '/assets/icons/link .svg' | relative_url }}"
     alt="Inside"
     width="36"
     style="vertical-align: middle; margin-right: 8px;"
@@ -85,8 +87,13 @@ A step-by-step video guide:
 </h2>
 
 - [Python SDK](https://github.com/kawa-analytics/kywy-documentation){: target="_blank" }
+_Get Python running on Kawa in minutes—no hassle._
+
 - [Install the KAWA Platform](https://github.com/kawa-analytics/kawa-docker-install){: target="_blank" }
+_A step-by-step guide to installation and setup._
+
 - [KAWA official website](https://www.kawa.ai){: target="_blank" }
+_Explore all features on the official site._
 
 ---
 
