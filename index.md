@@ -14,7 +14,13 @@ nav_order: 1
   Welcome to Kawa Documentation
 </h1>
 
-### Kawa is everything you need to **build**, **run**, and **scale** no-code analytics — fast, easy, and reliable.
+### Accelerate Your Data Workflows with Kawa
+
+{% include admonition.html
+type="note"
+title="Note"
+content="Kawa is everything you need to **build**, **run**, and **scale** no-code analytics — fast, easy, and reliable."
+%}
 
 ---
 
