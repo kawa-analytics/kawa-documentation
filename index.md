@@ -14,9 +14,7 @@ nav_order: 1
   Welcome to Kawa Documentation
 </h1>
 
-           _Accelerate Your Data Workflows with Kawa_
-
-### Kawa is everything you need to **build**, **run**, and **scale** no-code analytics — fast, easy, and reliable.
+### Accelerate your analytics workflows with Kawa — the fast, simple, and reliable no-code data platform: **build**, **run**, and **scale** projects in minutes without writing a single line of code. Choose Kawa for its intuitive interface, flexible integrations, and enterprise-grade stability.
 
 ---
 
