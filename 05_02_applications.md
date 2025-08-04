@@ -63,7 +63,7 @@ Renders your active page - whether it’s a sheet, dashbord, presentation, or an
 
 Above it, the toolbar gives you one-click access to:
 
-- Configure: after clicking the Configure button, the Add new control panel opens from the right side of the screen. You can read more about this in the Control Panel section ([02_01_control_panel.md](02_01_control_panel.md))
+- Configure: after clicking the Configure button, the Add new control panel opens from the right side of the screen. You can read more about this in the Control Panel section [Control Panel](02_01_control_panel.md)
 - Added active Controls.
 
 Within the canvas itself, users can filter, sort, group, collapse/expand nodes, and even edit records directly. Which of these features are available at any moment depends on your settings in the Right Sidebar (Page Settings): toggling off “Add/Remove filters” will cause the filter icon of each column to disappear and in the canvas itself and block the creation of new filters, and disabling the "Change Aggregation" feature will prevent you from changing the aggregation of each column. In this way, every control on the canvas reflects the toggles you choose, ensuring that the page’s behavior always matches your configuration.
@@ -134,7 +134,7 @@ Launch the context-aware AI assistant for natural-language queries against the v
 
 ![Application](./readme-assets/application13.png)
 
-You can read more about this in the AI Integration section ([06_00_ai_integration.md](06_00_ai_integration.md))
+You can read more about this in the AI Integration section [AI Integration](06_00_ai_integration.md)
 
 ### 3.2 Main Canvas (Content Area)
 
