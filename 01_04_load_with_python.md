@@ -10,7 +10,7 @@ nav_order: 4
 In the Load with Python section you’ll find two ways to create a new data source with your own ETL code:
 - Quick deploy in the KAWA File Store – just write or paste your load_data() function through the UI;
 - Full DevOps workflow – connect your GitHub/GitLab repo as Source Control, version your scripts in Git, and KAWA will automatically scan the branch and list them under Python tools.
-Both approaches let you easily manage data updates and set up scheduled runs.
+Both approaches let you easily manage data updates and set up scheduled runs. You can read more about this in the [Python tools](09_02_python_tools.md) section. You can find example workbooks and additional documentation here: [KAWA Tools Github Repository](https://github.com/kawa-analytics/kawa-toolkits).
 
 The next step is to create a new data source by running your own Python script in the __Data Source__ section, click on __(+ Data Source)__ then __(Load with Python)__.
 
