@@ -6,7 +6,9 @@ nav_order: 4
 ---
 
 # Connect to an External system
-___
+
+* TOC
+{:toc}
 
 KAWA allows you to connect to an external system. You may choose your connector from the existing list.
 
@@ -27,7 +29,7 @@ If you wish to connect to restricted sheets, follow this guide.
 In the data source section:
 
 - Click on “+ Data source” button and choose: “Connect to an external system” 
-- Then, click on “+ Create new connection ” button next to the data import section 
+- Then, click on “+ Create new connection” button next to the data import section 
 - Pick the **Google Sheet** provider 
 
 ### 1.2 Configure your service account JSON key
@@ -42,24 +44,23 @@ Your service account key can be found on your Google Cloud Platform console, in 
 
 ![external_system](./readme-assets/connectors5.png)
 
-Please refer to this section for help creating a service account: 
-https://cloud.google.com/iam/docs/service-accounts-create
+Please refer to this section for help creating a service account: <https://cloud.google.com/iam/docs/service-accounts-create>
 
 > While keeping your sheets protected, share them with the service account whose key you’ve used.
 
 ![external_system](./readme-assets/connectors6.png)
 
-Click on Test Connection then Create. 
+Click on "Test Connection" then "Create". 
 
 ![external_system](./readme-assets/connectors7.png)
 
-In the Select a connection field you’ll see your new Google Sheet connector. Paste your spreadsheet link into Sheet URL and enter the sheet’s name in Tab name. Click Preview data to check the first rows and make sure it loaded correctly. Choose your Feed Type (Reset before insert, Incremental, or Snapshot). When you’re ready, click Next and complete creating the new data source.
+In the Select a connection field you’ll see your new Google Sheet connector. Paste your spreadsheet link into "Sheet URL" and enter the sheet’s name in "Tab name". Click "Preview data" to check the first rows and make sure it loaded correctly. Choose your Feed Type (Reset before insert, Incremental, or Snapshot). When you’re ready, click "Next" and complete creating the new data source.
 
 ## 2. Connecting with Airtable (personal Access token)
 
 ### 2.1 Create a personal access token to your airtable data
 
-Follow this link > https://airtable.com/create/tokens
+Follow this link > <https://airtable.com/create/tokens>
 
 - ➡️ _Step 1:_ Click on “Create new Token” from the “Personal access tokens” section
 
@@ -78,14 +79,14 @@ Follow this link > https://airtable.com/create/tokens
 In the data source section:
 
 - Click on “+ Data source” button and choose: “Connect to an external system”
-- Then, click on “+ Create new connection ” button next to the data import section
+- Then, click on “+ Create new connection” button next to the data import section
 - Pick the **Airtable** provider
 
 Fill in the following form:
 
 ![external_system](./readme-assets/connectors11.png)
 
-Click on Test Connection then Create.
+Click on "Test Connection" then "Create".
 
 ![external_system](./readme-assets/connectors12.png)
 
@@ -97,7 +98,7 @@ In order to import data, select the provider that you created in the previous st
 
 ![external_system](./readme-assets/connectors14.png)
 
-Click on Preview Data, then Next.
+Click on "Preview Data", then "Next".
 
 ## 3. Connecting to Oracle DB (via JDBC)
 
@@ -116,11 +117,11 @@ Enter the required connection details for your Oracle database:
 
 ![external_system](./readme-assets/connectors15.png)
 
-> Here is a documentation about how to build the JDBC URL: https://docs.oracle.com/en/database/oracle/oracle-database/21/jajdb/index.html#:~:text=Examples%3A,mydbhost1%2Cmydbhost2%3A1521%2Fmydbservice
+> Here is a documentation about how to build the JDBC URL: <https://docs.oracle.com/en/database/oracle/oracle-database/21/jajdb/index.html#:~:text=Examples%3A,mydbhost1%2Cmydbhost2%3A1521%2Fmydbservice>
 
 ![external_system](./readme-assets/connectors16.png)
 
-Click on Test Connection then Create.
+Click on "Test Connection" then "Create".
 
 You can import data either by picking a database and a table or by writing your own query.
 
@@ -157,7 +158,7 @@ Enter the required connection details for your PostgreSQL database:
 
 ![external_system](./readme-assets/connectors18.png)
 
-Click on Test Connection then Create.
+Click on "Test Connection" then "Create".
 
 ## 5. Connecting with Snowflake
 
@@ -186,7 +187,7 @@ Here is how a valid configuration looks like:
 
 ![external_system](./readme-assets/connectors20.png)
 
-Click on Test Connection then Create.
+Click on "Test Connection" then "Create".
 
 ## 6. Connecting with Google BigQuery
 
@@ -209,7 +210,7 @@ Your service account is now created. Click into the service account and select t
 
 Click `Add Key` and make sure you create a JSON key (not a P12 key). The key will be automatically downloaded to your computer.
 
-> Refer to this section for more help creating a service account: https://cloud.google.com/iam/docs/service-accounts-create.
+> Refer to this section for more help creating a service account: <https://cloud.google.com/iam/docs/service-accounts-create>.
 
 ### 6.2 Configure the provider on KAWA
 
@@ -226,4 +227,4 @@ Enter the required connection details for your BigQuery database:
 
 ![external_system](./readme-assets/connectors21.png)
 
-Click on Test Connection then Create. 
+Click on "Test Connection" then "Create" . 
