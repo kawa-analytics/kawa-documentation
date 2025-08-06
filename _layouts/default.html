@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<head>
+    {% include head_custom.html %}
+    <!-- Підключіть власні стилі після темових -->
+    <link rel="stylesheet" href="{{ "/assets/css/override.css" | relative_url }}">
+</head>
+<body>
+{% include nav_footer_custom.html %}
+
+<main class="full-width-content">
+    {{ content }}
+</main>
+
+{% include footer.html %}
+</body>
+</html>
