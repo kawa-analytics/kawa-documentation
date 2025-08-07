@@ -1,5 +1,7 @@
 title: KAWA Reference Documentation
-theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
+plugins:
+  - jekyll-remote-theme
 url: https://kawa-analytics.github.io
 baseurl: ""
 favicon_ico: "/favicon.ico"
