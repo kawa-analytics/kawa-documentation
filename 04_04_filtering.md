@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Filtering data
 parent: Visualization
 nav_order: 16

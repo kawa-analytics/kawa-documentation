@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Python SDK
 parent: Python Integration
 nav_order: 25

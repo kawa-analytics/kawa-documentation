@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Data Modeling
 nav_order: 6
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Grid Views
 parent: Visualization
 nav_order: 13

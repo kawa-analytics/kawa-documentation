@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Backup and Restore
 parent: Exploitation
 nav_order: 32

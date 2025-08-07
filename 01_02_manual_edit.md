@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Manual Edit
 parent: Data Integration
 nav_order: 5

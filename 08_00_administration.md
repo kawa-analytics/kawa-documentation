@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Administration and Sharing
 nav_order: 21
 ---

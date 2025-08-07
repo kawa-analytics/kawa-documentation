@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Connect to an External system
 parent: Data Integration
 nav_order: 4

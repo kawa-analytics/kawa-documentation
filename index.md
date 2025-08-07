@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Home
 nav_order: 1
 ---

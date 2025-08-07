@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Chart Views
 parent: Visualization
 nav_order: 14
