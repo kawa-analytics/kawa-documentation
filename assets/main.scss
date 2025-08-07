@@ -1,16 +1,18 @@
 ---
 ---
-/* assets/css/main.scss */
-
-/* 1) Override: контент на всю ширину */
 $content-width: 100vw !default;
-
-/* 2) Імпортуємо всю тему just-the-docs */
 @import "just-the-docs";
 
+/* Наш оверрайд */
+@media (min-width: 50rem) {
+  div.main#top {
+    margin: 0 !important;
+    max-width: none !important;
+    width: 100vw !important;
+  }
+}
 div.main#top {
+  margin: 0 !important;
   max-width: none !important;
   width: 100vw !important;
-  margin: 0 calc(-50vw + 50%) !important;
-  padding: 0 !important;
 }
