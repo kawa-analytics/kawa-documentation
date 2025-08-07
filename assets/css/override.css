@@ -1,14 +1,23 @@
-/* reset бокових відступів */
+/* 1. Повністю очищуємо відступи у <html> та <body> */
 html, body {
     margin: 0 !important;
     padding: 0 !important;
-    overflow-x: hidden !important;
+    overflow-x: hidden !important; /* щоб не було горизонтального скролу */
 }
 
-/* забираємо обмеження ширини вікна у основного контейнера */
-.main, .docs-main, .page__content {
+/* 2. Знімаємо обмеження ширини у основних блоків just-the-docs */
+.main,               /* загальна обгортка для header+контенту */
+.main-content-wrap,  /* обгортка навколо breadcrumbs + #main-content */
+#main-content,       /* саме поле з вашим {{ content }} */
+.main-content {      /* іноді додається цей клас */
     max-width: none !important;
+    width: 100% !important;  /* тягнемо на всю ширину батьківського .main */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 3. Виносимо <main> на всю viewport-width (гарантія без білих полів) */
+#main-content {
     width: 100vw !important;
     margin-left: calc(-50vw + 50%) !important;
-    padding: 0 !important;
 }
