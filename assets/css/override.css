@@ -1,0 +1,10 @@
+/* assets/css/override.css */
+html, body {
+    margin: 0; padding: 0; overflow-x: hidden;
+}
+.full-width-content {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 0;
+    max-width: none;
+}
