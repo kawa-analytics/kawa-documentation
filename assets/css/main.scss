@@ -1,0 +1,17 @@
+---
+# front-matter потрібен, щоб Jekyll обробив файл як SCSS
+---
+
+/* 1) Переоприділяємо ширину контенту на всю ширину вікна */
+$content-width: 100vw !default;
+
+/* 2) Підключаємо тему: */
+@import "just-the-docs";
+
+/* 3) (Додатково) Кілька рядків CSS-оверайду, якщо потрібно точково: */
+div.main#top {
+  max-width: none !important;
+  width: 100vw !important;
+  margin: 0 calc(-50vw + 50%) !important;
+  padding: 0 !important;
+}
