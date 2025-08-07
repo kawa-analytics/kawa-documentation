@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Mapping Columns
 parent: Computation
 nav_order: 11

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: AI Integration
 nav_order: 19
 ---

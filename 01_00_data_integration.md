@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Data Integration
 nav_order: 3
 ---

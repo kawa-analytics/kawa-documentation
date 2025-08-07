@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Formulas
 parent: Computation
 nav_order: 9

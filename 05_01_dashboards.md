@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Dashboards
 parent: Reporting and Publishing
 nav_order: 18

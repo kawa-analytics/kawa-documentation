@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Python Tools
 parent: Python Integration
 nav_order: 26

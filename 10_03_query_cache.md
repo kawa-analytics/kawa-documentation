@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: KAWA Query cache
 parent: Architecture
 nav_order: 30

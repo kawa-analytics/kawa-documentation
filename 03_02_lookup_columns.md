@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Lookup Columns
 parent: Computation
 nav_order: 10

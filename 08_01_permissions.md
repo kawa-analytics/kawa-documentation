@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Sharing and permissions
 parent: Administration and Sharing
 nav_order: 22

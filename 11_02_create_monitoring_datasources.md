@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Create Monitoring views
 parent: Exploitation
 nav_order: 33

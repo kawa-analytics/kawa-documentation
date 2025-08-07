@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Computation
 nav_order: 8
 ---

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Visualization 
 nav_order: 12
 ---

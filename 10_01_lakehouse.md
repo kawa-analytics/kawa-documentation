@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: fullwidth
 title: Data Lakehouse
 parent: Architecture
 nav_order: 28
