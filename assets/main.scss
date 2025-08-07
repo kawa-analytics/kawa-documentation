@@ -1,9 +1,0 @@
----
-# only here front matter to make Jekyll process this file as SCSS
-  ---
-
-/* 1) Переоприділяємо ширину контенту на всю viewport */
-$content-width: 100vw !default;
-
-/* 2) Імпортуємо саму тему just-the-docs, щоб наш override застосувався */
-@import "just-the-docs";
