@@ -1,5 +1,5 @@
 ---
-layout: fullwidth
+layout: default
 title: CSV Import
 parent: Data Integration
 nav_order: 4

@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Backup and Restore
 parent: Exploitation
-nav_order: 32
+nav_order: 37
 ---
 
 ## Backup and Restore scripts

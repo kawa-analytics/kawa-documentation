@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Python SDK
 parent: Python Integration
-nav_order: 25
+nav_order: 30
 ---
 
 The KAWA Python SDK

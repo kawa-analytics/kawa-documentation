@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Create from Scratch
 parent: Data Integration
-nav_order: 4
+nav_order: 7
 ---
 
 # Create from Scratch

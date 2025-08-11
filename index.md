@@ -1,24 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Home
 nav_order: 1
 ---
-<!-- INLINE FULL-WIDTH HACK -->
-<style>
-  /* розгорнути div.main#top на всю ширину */
-  div.main#top {
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: none !important;
-    width: 100vw !important;
-  }
-  /* прибрати зсув через sidebar */
-  @media (min-width: 50rem) {
-    .side-bar + div.main#top {
-      margin-left: 0 !important;
-    }
-  }
-</style>
 
 <h1>
   <img

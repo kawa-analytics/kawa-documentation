@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Snowflake native connection
 parent: Architecture
-nav_order: 29
+nav_order: 34
 ---
 
 ## Snowflake native connection

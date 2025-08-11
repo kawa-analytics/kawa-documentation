@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Lookup Columns
 parent: Computation
-nav_order: 10
+nav_order: 14
 ---
 
 

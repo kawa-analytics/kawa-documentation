@@ -1,7 +1,7 @@
 ---
-layout: fullwidth
+layout: default
 title: Data Modeling
-nav_order: 6
+nav_order: 10
 ---
 
 Data Modeling - Sheets
