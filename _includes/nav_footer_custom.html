@@ -2,43 +2,44 @@
     &copy; 2025 Kawa Analytics Corp.
 </div>
 
-<!-- Full-width patch: CSS + дубль через JS у <head> -->
-<style id="fullwidth-patch-inline">
-    /* зняти авто-центрування */
-    div.main#top { margin: 0 !important; }
-
-    /* зняти кап 50rem, дати 100% ширини */
-    @media (min-width: 50rem) {
-        div.main#top {
-            position: relative;
-            max-width: none !important;
-            width: 100% !important;
-        }
-        /* контент починається після сайдбару */
-        .side-bar + div.main#top {
-            margin-left: 15.5rem !important; /* свій реальний nav-width */
-        }
-    }
-
-    /* контейнер не повинен звужуватись */
-    .main-content-wrap { max-width: none !important; }
-</style>
-
 <script>
-    // На випадок, якщо стилі в <body> десь обрізаються — продублюємо у <head>.
-    (function() {
-        if (!document.getElementById('fullwidth-patch')) {
-            var s = document.createElement('style');
-            s.id = 'fullwidth-patch';
-            s.textContent = `
-        div.main#top { margin: 0 !important; }
-        @media (min-width: 50rem) {
-          div.main#top { position: relative; max-width: none !important; width: 100% !important; }
-          .side-bar + div.main#top { margin-left: 15.5rem !important; }
+    // ДЛЯ ДІАГНОСТИКИ — побачиш у консолі, що скрипт дійсно виконався
+    console.log('[fullwidth] nav_footer_custom loaded');
+
+    (function () {
+        function applyFullWidth() {
+            var main = document.querySelector('div.main#top');
+            if (!main) return;
+
+            // 1) Знімаємо центрування і "стелю"
+            main.style.margin = '0';
+            main.style.maxWidth = 'none';
+            main.style.width = '100%';
+
+            // 2) Даємо відступ зліва рівний фактичній ширині сайдбару на десктопі
+            var mq = window.matchMedia('(min-width: 50rem)'); // такий самий брейкпоінт як у теми
+            var sidebar = document.querySelector('.side-bar');
+
+            if (mq.matches && sidebar) {
+                var w = sidebar.getBoundingClientRect().width; // реальна ширина
+                main.style.marginLeft = w + 'px';
+            } else {
+                main.style.marginLeft = '0';
+            }
         }
-        .main-content-wrap { max-width: none !important; }
-      `;
-            document.head.appendChild(s);
-        }
+
+        // Запускаємо зараз і при ресайзі
+        applyFullWidth();
+        window.addEventListener('resize', applyFullWidth);
     })();
 </script>
+
+<style>
+    /* Підстраховка: якщо з якоїсь причини JS не виконався,
+       все одно пробуємо перебити тему через !important */
+    .main { margin: 0 !important; }
+    @media (min-width: 50rem) {
+        .main { position: relative; max-width: none !important; width: 100% !important; }
+    }
+    .main-content-wrap { max-width: none !important; }
+</style>
