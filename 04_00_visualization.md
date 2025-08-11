@@ -1,7 +1,7 @@
 ---
-layout: fullwidth
+layout: default
 title: Visualization 
-nav_order: 12
+nav_order: 16
 ---
 
 Visualization - Views

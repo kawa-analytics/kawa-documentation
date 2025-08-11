@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Load with Python
 parent: Data Integration
-nav_order: 4
+nav_order: 8
 ---
 
 # Load with Python

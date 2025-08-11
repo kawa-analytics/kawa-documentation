@@ -1,7 +1,7 @@
 ---
-layout: fullwidth
+layout: default
 title: Automations
-nav_order: 20
+nav_order: 25
 ---
 
 Automations

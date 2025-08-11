@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Manual Edit
 parent: Data Integration
-nav_order: 5
+nav_order: 6
 ---
 
 Manual Edit

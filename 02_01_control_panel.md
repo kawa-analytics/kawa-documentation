@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Control Panel
 parent: Data Modeling
-nav_order: 7
+nav_order:11
 ---
 
 Control Panel

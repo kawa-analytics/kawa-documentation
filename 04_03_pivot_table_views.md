@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Pivot Table Views
 parent: Visualization
-nav_order: 15
+nav_order: 19
 ---
 
 Pivot Table views

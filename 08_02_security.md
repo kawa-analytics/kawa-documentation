@@ -1,8 +1,8 @@
 ---
-layout: fullwidth
+layout: default
 title: Data security
 parent: Administration and Sharing
-nav_order: 23
+nav_order: 28
 ---
 
 Data security
