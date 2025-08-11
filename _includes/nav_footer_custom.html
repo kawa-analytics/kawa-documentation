@@ -1,3 +1,44 @@
 <div style="width: 100%; margin-top: 2rem; font-size: 0.75em; color: #888; display: flex; justify-content: center;">
     &copy; 2025 Kawa Analytics Corp.
 </div>
+
+<!-- Full-width patch: CSS + дубль через JS у <head> -->
+<style id="fullwidth-patch-inline">
+    /* зняти авто-центрування */
+    div.main#top { margin: 0 !important; }
+
+    /* зняти кап 50rem, дати 100% ширини */
+    @media (min-width: 50rem) {
+        div.main#top {
+            position: relative;
+            max-width: none !important;
+            width: 100% !important;
+        }
+        /* контент починається після сайдбару */
+        .side-bar + div.main#top {
+            margin-left: 15.5rem !important; /* свій реальний nav-width */
+        }
+    }
+
+    /* контейнер не повинен звужуватись */
+    .main-content-wrap { max-width: none !important; }
+</style>
+
+<script>
+    // На випадок, якщо стилі в <body> десь обрізаються — продублюємо у <head>.
+    (function() {
+        if (!document.getElementById('fullwidth-patch')) {
+            var s = document.createElement('style');
+            s.id = 'fullwidth-patch';
+            s.textContent = `
+        div.main#top { margin: 0 !important; }
+        @media (min-width: 50rem) {
+          div.main#top { position: relative; max-width: none !important; width: 100% !important; }
+          .side-bar + div.main#top { margin-left: 15.5rem !important; }
+        }
+        .main-content-wrap { max-width: none !important; }
+      `;
+            document.head.appendChild(s);
+        }
+    })();
+</script>
