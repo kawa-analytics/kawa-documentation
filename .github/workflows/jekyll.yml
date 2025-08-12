@@ -48,6 +48,42 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
+      - name: Inject full-width CSS patch (TEST one page)
+        run: |
+          set -e
+            
+          # 1) створюємо CSS з патчем у зібраному сайті
+          mkdir -p _site/assets/css
+          cat > _site/assets/css/fullwidth.css <<'EOF'
+/* ---- FULLWIDTH PATCH (separate file) ---- */
+.main{margin:0!important}
+@media (min-width:50rem){
+  .main{position:relative;max-width:none!important;width:100%!important}
+  .side-bar+.main{margin-left:15.5rem!important}
+  }
+.main-content-wrap{max-width:none!important}
+html,body{overflow-x:hidden}
+/* ---- /FULLWIDTH PATCH ---- */
+    EOF
+    
+    # 2) підключаємо ЛИШЕ в одну сторінку (змінюй за потреби)
+    TEST_PAGE="_site/index.html"
+    
+    if [ ! -f "$TEST_PAGE" ]; then
+    echo ">> Test page not found: $TEST_PAGE"
+    echo ">> First 50 HTML files under _site:"
+    find _site -type f -name '*.html' | head -n 50
+    exit 1
+    fi
+    
+    BP="${{ steps.pages.outputs.base_path }}"
+    echo ">> Patching only $TEST_PAGE with link to ${BP}/assets/css/fullwidth.css"
+    
+    # Вставляємо <link> перед ПЕРШИМ </head> (тільки у TEST_PAGE)
+    sed -i "0,/<\/head>/s#</head>#<link rel=\"stylesheet\" href=\"${BP}/assets/css/fullwidth.css?v=${{ github.run_number }}\">\n</head>#" "$TEST_PAGE"
+    
+    echo ">> Injected <head> snippet:"
+    awk 'BEGIN{show=0}/<head>/{show=1}show;/<\/head>/{print;exit}' "$TEST_PAGE"    
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
