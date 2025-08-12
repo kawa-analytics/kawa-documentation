@@ -1,43 +1,43 @@
 <!-- Full-width patch injected from footer -->
 <script>
-    console.log('[fullwidth] footer_custom loaded');
-
     (function () {
         function applyFullWidth() {
             var main = document.querySelector('div.main#top');
+            var sidebar = document.querySelector('.side-bar');
             if (!main) return;
 
-            // інлайн + !important (сильніше за тему)
-            main.style.setProperty('margin', '0', 'important');
+            // скидаємо обмеження
             main.style.setProperty('max-width', 'none', 'important');
-            main.style.setProperty('width', '100%', 'important');
+            main.style.setProperty('margin', '0', 'important');
 
-            // відступ під реальну ширину сайдбару на десктопі
-            var mq = window.matchMedia('(min-width: 50rem)');
-            var sidebar = document.querySelector('.side-bar');
-            if (mq.matches && sidebar) {
-                var w = sidebar.getBoundingClientRect().width;
+            var desktop = window.matchMedia('(min-width: 50rem)').matches;
+
+            if (desktop && sidebar) {
+                var w = Math.ceil(sidebar.getBoundingClientRect().width); // реальна ширина сайдбару
                 main.style.setProperty('margin-left', w + 'px', 'important');
+                // ширина контенту = ширина вʼюпорта мінус ширина сайдбару
+                main.style.setProperty('width', 'calc(100vw - ' + w + 'px)', 'important');
             } else {
+                // мобілка: все як у теми, але без «капа»
                 main.style.setProperty('margin-left', '0', 'important');
+                main.style.setProperty('width', 'auto', 'important');
             }
+
+            // на всякий випадок вимкнемо горизонтальний скрол
+            document.documentElement.style.setProperty('overflow-x', 'hidden');
+            document.body.style.setProperty('overflow-x', 'hidden');
         }
 
         if (document.readyState !== 'loading') applyFullWidth();
         else document.addEventListener('DOMContentLoaded', applyFullWidth);
 
         window.addEventListener('resize', applyFullWidth);
-        new MutationObserver(applyFullWidth)
-            .observe(document.documentElement, { childList: true, subtree: true });
+        new MutationObserver(applyFullWidth).observe(document.documentElement, { childList: true, subtree: true });
     })();
 </script>
 
 <style>
-    /* Фолбек, якщо JS заблокується */
-    .main { margin: 0 !important; }
-    @media (min-width: 50rem) {
-        .main { position: relative; max-width: none !important; width: 100% !important; }
-        .side-bar + .main { margin-left: 15.5rem !important; }
-    }
+    /* Фолбек, якщо JS раптом заблокований */
+    .main { margin: 0 !important; max-width: none !important; }
     .main-content-wrap { max-width: none !important; }
 </style>
