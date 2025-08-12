@@ -1,5 +1,4 @@
-<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/favicon.ico">
-
+<!-- Full-width patch injected from footer -->
 <script>
     console.log('[fullwidth] footer_custom loaded');
 
@@ -32,3 +31,13 @@
             .observe(document.documentElement, { childList: true, subtree: true });
     })();
 </script>
+
+<style>
+    /* Фолбек, якщо JS заблокується */
+    .main { margin: 0 !important; }
+    @media (min-width: 50rem) {
+        .main { position: relative; max-width: none !important; width: 100% !important; }
+        .side-bar + .main { margin-left: 15.5rem !important; }
+    }
+    .main-content-wrap { max-width: none !important; }
+</style>
