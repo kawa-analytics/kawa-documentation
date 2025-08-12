@@ -2,44 +2,50 @@
     &copy; 2025 Kawa Analytics Corp.
 </div>
 
+<!-- Full-width patch injected from footer -->
 <script>
-    // ДЛЯ ДІАГНОСТИКИ — побачиш у консолі, що скрипт дійсно виконався
-    console.log('[fullwidth] nav_footer_custom loaded');
+    console.log('[fullwidth] footer include loaded');
 
     (function () {
         function applyFullWidth() {
             var main = document.querySelector('div.main#top');
             if (!main) return;
 
-            // 1) Знімаємо центрування і "стелю"
-            main.style.margin = '0';
-            main.style.maxWidth = 'none';
-            main.style.width = '100%';
+            // Перебиваємо тему інлайном із пріоритетом !important
+            main.style.setProperty('margin', '0', 'important');
+            main.style.setProperty('max-width', 'none', 'important');
+            main.style.setProperty('width', '100%', 'important');
 
-            // 2) Даємо відступ зліва рівний фактичній ширині сайдбару на десктопі
-            var mq = window.matchMedia('(min-width: 50rem)'); // такий самий брейкпоінт як у теми
+            // Відступ від сайдбару на десктопі
+            var mq = window.matchMedia('(min-width: 50rem)');
             var sidebar = document.querySelector('.side-bar');
 
             if (mq.matches && sidebar) {
-                var w = sidebar.getBoundingClientRect().width; // реальна ширина
-                main.style.marginLeft = w + 'px';
+                var w = sidebar.getBoundingClientRect().width;
+                main.style.setProperty('margin-left', w + 'px', 'important');
             } else {
-                main.style.marginLeft = '0';
+                main.style.setProperty('margin-left', '0', 'important');
             }
         }
 
-        // Запускаємо зараз і при ресайзі
+        // 1) одразу
         applyFullWidth();
+
+        // 2) при зміні розміру
         window.addEventListener('resize', applyFullWidth);
+
+        // 3) на випадок, якщо DOM підвантажується пізніше – слідкуємо й докручуємо
+        var mo = new MutationObserver(applyFullWidth);
+        mo.observe(document.documentElement, { childList: true, subtree: true });
     })();
 </script>
 
+<!-- CSS-підстраховка, якщо раптом JS заблокується -->
 <style>
-    /* Підстраховка: якщо з якоїсь причини JS не виконався,
-       все одно пробуємо перебити тему через !important */
     .main { margin: 0 !important; }
     @media (min-width: 50rem) {
         .main { position: relative; max-width: none !important; width: 100% !important; }
+        .side-bar + .main { margin-left: 15.5rem !important; } /* підкоригуй за потреби */
     }
     .main-content-wrap { max-width: none !important; }
 </style>
