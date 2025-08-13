@@ -2,7 +2,7 @@
 layout: default
 title: Data Lakehouse
 parent: Architecture
-nav_order: 33
+nav_order: 28
 ---
 
 ## Data Lakehouse integration

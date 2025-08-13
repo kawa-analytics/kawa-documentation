@@ -2,7 +2,7 @@
 layout: default
 title: Applications
 parent: Reporting and Publishing
-nav_order: 23
+nav_order: 18
 ---
 
 # Applications
