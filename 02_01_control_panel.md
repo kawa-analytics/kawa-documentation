@@ -2,7 +2,7 @@
 layout: default
 title: Control Panel
 parent: Data Modeling
-nav_order:11
+nav_order: 7
 ---
 
 Control Panel

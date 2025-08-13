@@ -2,7 +2,7 @@
 layout: default
 title: Manual Edit
 parent: Data Integration
-nav_order: 6
+nav_order: 5
 ---
 
 Manual Edit

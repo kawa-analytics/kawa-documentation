@@ -2,7 +2,7 @@
 layout: default
 title: Snowflake native connection
 parent: Architecture
-nav_order: 34
+nav_order: 29
 ---
 
 ## Snowflake native connection

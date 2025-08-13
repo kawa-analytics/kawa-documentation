@@ -2,7 +2,7 @@
 layout: default
 title: Create from Scratch
 parent: Data Integration
-nav_order: 7
+nav_order: 4
 ---
 
 # Create from Scratch

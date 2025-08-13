@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data Modeling
-nav_order: 10
+nav_order: 6
 ---
 
 Data Modeling - Sheets

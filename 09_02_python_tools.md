@@ -2,7 +2,7 @@
 layout: default
 title: Python Tools
 parent: Python Integration
-nav_order: 31
+nav_order: 26
 ---
 
 Python tools
