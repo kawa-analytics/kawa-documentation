@@ -205,11 +205,11 @@ KAWA will look at all the granularities within the aggregation and will automati
 
 The Total net profit is `$71,000 + $15,000 = $56,000`. Also note that the net profit at row level do not make much sense as we subtract the total cost per client with the profit for one order only. 
 
-## 2. Using Lookup Columns with a Single Table
+## 2. Using Lookup Columns with a Single Sheet
 
 ### 2.1 When is this useful?
 
-You don’t need two tables to use Lookup Columns. Even with a single table, you can match rows to each other. This is helpful when:
+You don’t need two sheets to use Lookup Columns. Even with a single sheet, you can match rows to each other. This is helpful when:
 
 - You want to compare detailed data to totals (e.g. each order vs. total by region).
 - You want to bring in group-level metrics (like sums or averages) next to individual rows.
@@ -217,7 +217,7 @@ You don’t need two tables to use Lookup Columns. Even with a single table, you
 
 ### 2.2 Example: Sales Data
 
-Let’s say you have a table called Sales with each row as an order:
+Let’s say you have a sheet called **Sales** with each row as an order:
 
 | Order ID | Region | Year | Product | Sales Amount |
 | -------- | ------ | ---- | ------- | ------------ |
@@ -228,7 +228,7 @@ Let’s say you have a table called Sales with each row as an order:
 | O-005    | West   | 2025 | Laptop  | 600          |
 | O-006    | East   | 2025 | Laptop  | 700          |
 
-### 2.3 Step-by-step: Adding Lookup Columns in the same table
+### 2.3 Step-by-step: Adding Lookup Columns in the same sheet
 
 #### 2.3.1 Step 1 — Total sales per Region & Year
 
@@ -269,6 +269,14 @@ Your table will now look like this:
 | O-005    | West   | 2025 | Laptop  | 600          | 600                          | 466.7                  | 3                 |
 | O-006    | East   | 2025 | Laptop  | 700          | 700                          | 566.7                  | 3                 |
 
+These three examples show how Lookup Columns can give you different perspectives on your data without leaving the original sheet.
+
+- **Sales Amount by Region**, Year helps you quickly compare each row’s sales to the total for its region in a specific year.
+- **Sales Amount by Region** shows the typical sales value for that region, useful for benchmarking performance.
+- **Order ID by Region** reveals the volume of transactions, allowing you to spot high-activity areas.
+
+By combining these aggregations, you can analyze sales performance, identify trends, and uncover patterns — all dynamically, without manual grouping or formulas.
+
 ### 2.3 Different grouping levels
 
 - Group by 1 field → e.g., Region only → total sales for all years and products in that region.
@@ -285,6 +293,10 @@ Your table will now look like this:
 
 The grouping level is defined by the fields you map in Map lookup columns.
 
+- With fewer grouping fields, you get a higher-level summary for broad trends and strategic insights.
+- With more grouping fields, you can drill down into detailed performance, compare specific product lines, or analyze results within precise segments.
+
+This flexibility means you can move seamlessly between a big-picture overview and granular investigation, all within the same table and without creating separate reports.
 ### 2.4 Why this is powerful
 
 - Easy comparison: See both row-level and group-level data side by side.
