@@ -5,15 +5,12 @@ parent: Computation
 nav_order: 10
 ---
 
-
-Lookup Columns
----
+# Lookup Columns
 
 * TOC
 {:toc}
 
-
-# 1 What is a lookup column? 
+## 1 What is a lookup column?
 
 Lookup columns are similar to the VLookup operation in Excel. 
 They allow to mix data from various sources in one place. In KAWA, they allow to join data sources together in an intuitive and powerful way, keeping consistency in all derived computations.
@@ -32,7 +29,7 @@ _Table 2: Events where customer where invited_
 
 > Those two sheets have a column in common: `Customer name` in the Orders sheet and `guest name` in the Events sheet. Those columns have different names but their content is similar - they both refer to the same dimension and have values in common.
 
-## 1.1 Creating our first lookup column
+### 1.1 Creating our first lookup column
 
 If we want to bring in the Orders sheet the cost of all events clients went to, we would need to create a lookup column:
 
@@ -57,7 +54,7 @@ Clicking on APPLY will add a new column to the Orders sheet, as shown in red bel
 > ℹ️ Notice also that this lookup columns will automatically perform a SUM DISTINCT per customer. Looking at "Aaron Bergman", you notice that the value 350 (which is the SUM of TOTAL event cost), is the same on the Group level and on each row. This is because, each customer will be counted only once in each SUM.
 
 
-## 1.2 Parameters of lookup columns
+### 1.2 Parameters of lookup columns
 
 Lookup columns have the following parameters:
 
@@ -81,7 +78,7 @@ In addition to these parameters, Lookup columns can also have filters. Those res
 
 > ℹ️ Filters cannot be configured when creating the columns themselves. They can only be added on once they already exist.
 
-## 1.3 How are lookup columns computed
+### 1.3 How are lookup columns computed
 
 Let's keep our example: The TOTAL COST of events per customer.
 Here is the raw data:
@@ -109,7 +106,7 @@ _Orders sheet:_ It shows various orders with profit and customer
 | O-12352      | Lucius Fox    | $14,000  |
 
 
-### 1.3.1 Step 1: Partitioning and aggregating the target sheet (Events)
+#### 1.3.1 Step 1: Partitioning and aggregating the target sheet (Events)
 
 The Target sheet (Events) is partitioned by the Granularity (Here the guest name). Each partition will have: 
 
@@ -125,7 +122,7 @@ _After step 1,the Event sheet is grouped by guest name and the Cost of all event
 
 > Note that the aggregation (here SUM) can be set to anything. It is a parameter of the linked column. 
 
-### 1.3.2 Step 2: Injecting the partitioned data in the main sheet (Orders)
+#### 1.3.2 Step 2: Injecting the partitioned data in the main sheet (Orders)
 
 Once the partition has been computed, we can now inject their value in the main sheet.
 In the table below, see how we inject $6,000 to the lines where the customer is Bruce Wayne and how we inject $9,000 to the lines where the customer is Lucius Fox.
@@ -141,7 +138,7 @@ In the table below, see how we inject $6,000 to the lines where the customer is 
 | O-12352      | Lucius Fox    | $14,000  | $9,000
 
 
-### 1.3.3 Step 3: Aggregating the injected data in the main sheet (Orders)
+#### 1.3.3 Step 3: Aggregating the injected data in the main sheet (Orders)
 
 Whether we are working in grids, pivot tables or charts, we almost only deal with aggregated data. Data from lookup columns can also be aggregated in the main sheet.
 
@@ -168,7 +165,7 @@ In fact, `$10,000 + $15,000 + $10,000 + $12,000  + $10,000 + $14,000 = $71,000`.
 Here, there is only one group, containing all the rows (The grand total is performed on all the rows). KAWA detects that the partition `Bruce Wayne` appears twice and that the partition `Lucius Fox` is here three times. It then counts each one once only when performing the Sum. That explains why the SUM of event cost by client is: `$6,000 + $9,000 = $15,000` and not `$6,000 + $6,000 + $9,000 + $9,000 + $9,000 + $9,000`.
 
 
-### 1.3.4 Step 4: Mixing local columns with lookup columns in a sheet
+#### 1.3.4 Step 4: Mixing local columns with lookup columns in a sheet
 
 To complete our example, we want to compute the net profit per customer. This is done by subtracting the Total profit and the Event cost, for each customer.
 
@@ -208,6 +205,90 @@ KAWA will look at all the granularities within the aggregation and will automati
 
 The Total net profit is `$71,000 + $15,000 = $56,000`. Also note that the net profit at row level do not make much sense as we subtract the total cost per client with the profit for one order only. 
 
-## 2. Self‑lookup (same table)
+## 2. Using Lookup Columns with a Single Table
+
+### 2.1 When is this useful?
+
+You don’t need two tables to use Lookup Columns. Even with a single table, you can match rows to each other. This is helpful when:
+
+- You want to compare detailed data to totals (e.g. each order vs. total by region).
+- You want to bring in group-level metrics (like sums or averages) next to individual rows.
+- You want to avoid using formulas or manually duplicating summary data.
+
+### 2.2 Example: Sales Data
+
+Let’s say you have a table called Sales with each row as an order:
+
+| Order ID | Region | Year | Product | Sales Amount |
+| -------- | ------ | ---- | ------- | ------------ |
+| O-001    | West   | 2024 | Laptop  | 500          |
+| O-002    | West   | 2024 | Phone   | 300          |
+| O-003    | East   | 2024 | Laptop  | 450          |
+| O-004    | East   | 2024 | Phone   | 550          |
+| O-005    | West   | 2025 | Laptop  | 600          |
+| O-006    | East   | 2025 | Laptop  | 700          |
+
+### 2.3 Step-by-step: Adding Lookup Columns in the same table
+
+#### 2.3.1 Step 1 — Total sales per Region & Year
+
+- In the Sales sheet, click on “Enrich Data” → choose Lookup Column.
+- Under Select sheet, choose the Current sheet (Sales).
+- In Columns to add, choose the column Sales Amount and set aggregation to SUM.
+- Under Map lookup columns, match:
+  - Current Sheet: Region ↔ Lookup Sheet (also Sales): Region
+  - Current Sheet: Year ↔ Lookup Sheet (also Sales): Year
+- Click Create.
+- Get a column: Sales Amount by Region, Year.
+
+#### 2.3.2 Step 2 — Average sales per Region
+
+In the same Lookup Column setup:
+- Column to add: Sales Amount → Aggregation: AVERAGE.
+- Map lookup columns:
+  - Region ↔ Region
+- Get a column: Sales Amount by Region.
+
+#### 2.3.3 Step 3 — Order count per Region
+
+- Column to add: Order ID → Aggregation: COUNT.
+- Map lookup columns:
+  - Region ↔ Region
+- Get a column: Order ID by Region .
+
+#### 2.2.4 Result
+
+Your table will now look like this:
+
+| Order ID | Region | Year | Product | Sales Amount | Sales Amount by Region, Year | Sales Amount by Region | Order ID by Region|
+| -------- | ------ | ---- | ------- | ------------ |------------------------------| ---------------------- | ----------------- |
+| O-001    | West   | 2024 | Laptop  | 500          | 800                          | 466.7                  | 3                 |
+| O-002    | West   | 2024 | Phone   | 300          | 800                          | 466.7                  | 3                 |
+| O-003    | East   | 2024 | Laptop  | 450          | 1 000                        | 566.7                  | 3                 |
+| O-004    | East   | 2024 | Phone   | 550          | 1 000                        | 566.7                  | 3                 |
+| O-005    | West   | 2025 | Laptop  | 600          | 600                          | 466.7                  | 3                 |
+| O-006    | East   | 2025 | Laptop  | 700          | 700                          | 566.7                  | 3                 |
+
+### 2.3 Different grouping levels
+
+- Group by 1 field → e.g., Region only → total sales for all years and products in that region.
+
+![Lookup](./readme-assets/lookup6.png)
+
+- Group by 2 fields → e.g., Region + Year → total sales for that region in that year.
+
+![Lookup](./readme-assets/lookup7.png)
+
+- Group by 3 fields → e.g., Region + Year + Product → most granular aggregation.
+
+![Lookup](./readme-assets/lookup8.png)
+
+The grouping level is defined by the fields you map in Map lookup columns.
+
+### 2.4 Why this is powerful
+
+- Easy comparison: See both row-level and group-level data side by side.
+- Auto aggregation: KAWA calculates the totals — no formulas needed.
+- Flexible: You can use this with categories, dates, customers, etc.
 
 ## 3. Editing lookup columns
