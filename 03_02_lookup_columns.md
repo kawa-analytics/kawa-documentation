@@ -208,5 +208,6 @@ KAWA will look at all the granularities within the aggregation and will automati
 
 The Total net profit is `$71,000 + $15,000 = $56,000`. Also note that the net profit at row level do not make much sense as we subtract the total cost per client with the profit for one order only. 
 
+## 2. Self‑lookup (same table)
 
-# 2. Editing lookup columns
+## 3. Editing lookup columns
