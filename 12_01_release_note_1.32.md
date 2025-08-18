@@ -7,6 +7,9 @@ nav_order: 35
 
 # Release note - KAWA 1.32
 
+* TOC
+{:toc}
+
 ## 1. New Features
 
 ### 1.1 Cross Filters — on dashboards, filter multiple widgets at once with a single selection
@@ -19,7 +22,7 @@ nav_order: 35
 
 ![Release](./readme-assets/release(1.32)2.png)
 
-- Each widget has a filter status icon that lists active filters (cross + dashboard) and lets you turn them on/off for that widget.
+- Each widget has a filter status icon that lists active filters (cross + dashboard + control panel) and lets you turn them on/off for that widget.
 
 ![Release](./readme-assets/release(1.32)4.png)
 
