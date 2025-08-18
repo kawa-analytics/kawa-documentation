@@ -36,7 +36,7 @@ All type of widgets ( charts , pivot and grid) will have an new icon full screen
 ### 1.3 The query cache on external DataSources
 
 Query cache configuration (per data source). Turn caching on/off, set TTL in seconds, and define an optional daily UTC window when cache is bypassed. Existing Clear query cache action remains available.
-For complete documentation and setup details, please visit: [KAWA Query Cache](10_03_query_cache.md)) section.
+For complete documentation and setup details, please visit: [KAWA Query Cache](10_03_query_cache.md) section.
 
 ### 1.4 Python scripts: File upload parameters 
 
