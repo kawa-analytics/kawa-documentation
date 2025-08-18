@@ -74,6 +74,18 @@ Quick upload — upload a CSV and start editing right away (uses the existing CS
 - Data constraints in datasource model
 - Copy / PAste ranges of data
 
-### Other
+### 2.3 Pivot table & charts:
+
+- Improved pivot table functionality (Modify Pivot behaviour)
+- Charting improvements
+- Add stacked line chart
+- Change legend behaviour
+
+### 2.4 Other
 
 - Security mapping for Live connections. Map source-side row/column permissions to KAWA roles when the data source uses Live connection.
+- UI updates (Dashbords, Applications, Control panel)
+- Add filter null in CP filter
+- Fix BUG in last date filter (on date time)
+- Improved exploration mode in apps
+- Improved all home pages grids
