@@ -21,8 +21,6 @@ nav_order: 35
 
 - Each widget has a filter status icon that lists active filters (cross + dashboard) and lets you turn them on/off for that widget.
 
-![Release](./readme-assets/release(1.32)3.png)
-
 ![Release](./readme-assets/release(1.32)4.png)
 
 Benefits: fewer duplicate filters, faster analysis, shared context across widgets.
