@@ -100,3 +100,50 @@ Here are all the actions that you can perform on the widgets. They are available
 - _Duplicate:_ This creates a copy of a widget.
 
 - _Delete:_ This removes the widget from the dashboard. If it was added from a sheet, it will not affect the original view.
+
+## 3. Cross Filters
+
+Cross filters let you explore a dashboard by clicking directly on a widget (bar, slice, point, cell, etc.). Each click adds a filter chip to the top bar, and all other linked widgets recalculate. It’s fast, in-context analysis without opening editors or changing the base views.
+
+> ℹ️ Need a widget to ignore dashboard filters (including cross filters)? In its menu, turn on Ignore filters.
+
+### 3.1 How it works
+
+- _Source:_ Clicking a value in a Chart, Grid, or Pivot Table adds a filter for that dimension (e.g., Segment = Consumer).
+- _Scope:_ By default, the filter applies to all linked widgets on the dashboard. Widgets with Ignore filters do not react.
+- _Combination logic:_ Selections from different fields combine with AND (e.g., State = PA AND Segment = Consumer).
+- _Local vs. dashboard:_ Local filters inside a widget still apply; cross filters further narrow the result.
+
+### 3.2 Interacting with widgets
+
+- _Single select:_ Click a bar/slice/point or a value in a table.
+- _Multi-select (same field):_ Hold Ctrl/Cmd and click more items.
+- _Transparency:_ Tooltips show the active selection.
+
+### 3.3 Configure via the Config panel
+
+Manage cross-filter behavior for the whole dashboard in Configure → Cross filtering.
+
+#### 3.3.1 Enable
+
+Go to Cross filtering -> Turn on the Cross filtering toggle — after this, clicks in widgets will add filter chips.
+
+#### 3.3.2 Cross-filter groups
+
+A cross-filter group is a named set of columns (often from different datasets/widgets) that should be filtered together.
+
+- Click **+ Add cross filter**.
+- In Select 1 or more columns to create a filter:
+
+  - Find fields via Search or expand datasets (e.g., orders, sales).
+  - Select one or more columns with the same meaning (e.g., State (orders) and State (sales)).
+  - Enter a clear Filter name (e.g., Location, Customer, Product).
+
+- Click Create Filter — the group appears in the list (with **edit** and **delete** icons).
+
+What happens on click: If a user clicks a value in a column that belongs to a group, the system creates a chip and applies the same filter to all other columns in that group across related widgets. Groups do not affect widgets that don’t use the group’s fields or that have Ignore filters enabled.
+
+#### 3.3.3 Examples:
+
+- _Location:_ State (orders) + State (sales) — clicking a state in the orders table filters sales widgets by that state.
+- _Product:_ Product (orders) + Product (sales) — clicking a product in a pie chart filters KPIs and tables from another dataset.
