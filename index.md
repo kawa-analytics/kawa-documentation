@@ -76,6 +76,7 @@ A step-by-step video guide:
 | [Architecture](10_00_architecture.md) | Discover how Kawa manages storage, caching, and native connections behind the scenes              |
 | [Exploitation](11_00_exploitation.md) | Back up your databases and create monitoring views to track user activity and script execution    |
 | [Release Notes](12_00_release_notes.md) | Stay up to date with KAWA releases: new features and improvements             |
+
 ---
 
 <h2>
