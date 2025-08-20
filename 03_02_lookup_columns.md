@@ -381,7 +381,7 @@ Year never affects grouping (it’s in exclude).
 
 Dynamic partitions adapt to the fields visible in the current view and its filters. Use them for exploratory analysis; for fixed KPIs prefer Fixed partitions.
 
-#### 3.1.4 Step 4 — Aggregations
+#### 3.1.5 Step 5 — Aggregations
 
 ![Lookup](./readme-assets/lookup17.png) 
 
@@ -390,7 +390,7 @@ Dynamic partitions adapt to the fields visible in the current view and its filte
 - Added totals appear at the bottom as chips (e.g., Sum: 3,100, First: West).
 - Totals are calculated within the current partition and respect the Filters.
 
-### 3.1 Summary — Why this matters
+### 3.2 Summary — Why this matters
 
 Editing Lookup Columns lets you reshape metrics without rebuilding or writing formulas.
 
