@@ -297,6 +297,7 @@ The grouping level is defined by the fields you map in Map lookup columns.
 - With more grouping fields, you can drill down into detailed performance, compare specific product lines, or analyze results within precise segments.
 
 This flexibility means you can move seamlessly between a big-picture overview and granular investigation, all within the same table and without creating separate reports.
+
 ### 2.4 Why this is powerful
 
 - Easy comparison: See both row-level and group-level data side by side.
@@ -304,3 +305,97 @@ This flexibility means you can move seamlessly between a big-picture overview an
 - Flexible: You can use this with categories, dates, customers, etc.
 
 ## 3. Editing lookup columns
+
+> This section explains how to edit an existing Lookup Column and change the grouping level using aggregations, filters, and partitions (fixed or dynamic), using a single Sales table as the example.
+
+### 3.1 Example: from simple counting to flexible analysis
+
+#### 3.1.1 Step 1 — Open editing
+
+Click the **Sales Amount by Region, Year** column header.
+
+#### 3.1.2 Step 2 — Open editing
+
+- In Column name, enter Sales Amount by Region, Year (2024).
+- In Filters, turn off Sync with main view (so it won’t inherit global filters).
+- Click + → add Year = 2024.
+
+![Lookup](./readme-assets/lookup9.png)
+
+- Click Apply.
+
+Result: West will be 2 (orders O-001 and O-002). For East, it’s 2 as well.
+
+![Lookup](./readme-assets/lookup10.png)
+
+You now have a column with a local 2024 filter, independent of other views.
+
+#### 3.1.3 Step 3 — Fixed grouping: Region & Year (Fixed partitions tab)
+
+- Next to Static Partition: Region, click Edit icon → Configure partition.
+
+![Lookup](./readme-assets/lookup11.png)
+
+- Switch to Fixed partitions.
+- In Configure links, delete:
+  - Year ↔ Year
+
+![Lookup](./readme-assets/lookup12.png)
+
+- Click Apply.
+
+![Lookup](./readme-assets/lookup13.png)
+
+What you’ll see (as in the screenshots):
+
+- Before: the header shows Static Partition: Region, Year, and the preview now has Region: [ ] Year: [ ] will be [ ].Region, and the preview has a single input Region: [ ] will be [ ].
+- After: the header updates to Static Partition: Region, and the preview has a single input Region: [ ] will be [ ].
+- The aggregation chips at the bottom (e.g., Count: 6, First: West) remain, but their values will respond to the new partition once you test keys or apply filters.
+
+Use the preview to validate:  
+
+- Enter Region = West → will be 1400
+
+![Lookup](./readme-assets/lookup14.png)
+
+- Enter Region = West, Year = 2025 → will be 1700
+
+> Tip: If you still have a Year = 2024 filter from the previous step, counts for 2025 will show 0.
+
+#### 3.1.4 Step 4 — Adaptive grouping (Dynamic partitions tab)
+
+- Next to Static Partition: Region, click Edit icon → Configure partition.
+- Switch to Dynamic partitions.
+- Columns to include: select Region.
+- Columns to exclude: select Year.
+
+![Lookup](./readme-assets/lookup15.png)
+
+- Click Apply.
+
+How it works: Automatically Region = East → 1700.
+
+![Lookup](./readme-assets/lookup16.png)
+
+Year never affects grouping (it’s in exclude).
+
+Dynamic partitions adapt to the fields visible in the current view and its filters. Use them for exploratory analysis; for fixed KPIs prefer Fixed partitions.
+
+#### 3.1.4 Step 4 — Aggregations
+
+![Lookup](./readme-assets/lookup17.png) 
+
+- Click the aggregations link (under the column name).
+- Choose a function: SUM, COUNT, AVERAGE, MIN, MAX, etc.
+- Added totals appear at the bottom as chips (e.g., Sum: 3,100, First: West).
+- Totals are calculated within the current partition and respect the Filters.
+
+### 3.1 Summary — Why this matters
+
+Editing Lookup Columns lets you reshape metrics without rebuilding or writing formulas.
+
+- Fixed vs Dynamic partitions: keep KPIs stable or let groupings adapt to the view.
+- Column-level filters: scope a metric (e.g., 2024 only) without touching other views.
+- Instant feedback: preview + aggregation chips show results immediately.
+
+Net result: from one Sales table you can get the right totals, counts, and averages at the right granularity, faster analysis, and cleaner, reusable reports.
