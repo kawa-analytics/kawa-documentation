@@ -324,8 +324,6 @@ Click the **Sales Amount by Region, Year** column header.
 
 - Click Apply.
 
-Result: West will be 2 (orders O-001 and O-002). For East, it’s 2 as well.
-
 ![Lookup](./readme-assets/lookup10.png)
 
 You now have a column with a local 2024 filter, independent of other views.
@@ -348,7 +346,7 @@ You now have a column with a local 2024 filter, independent of other views.
 
 What you’ll see (as in the screenshots):
 
-- Before: the header shows Static Partition: Region, Year, and the preview now has Region: [ ] Year: [ ] will be [ ].Region, and the preview has a single input Region: [ ] will be [ ].
+- Before: the header shows Static Partition: Region, Year, and the preview now has Region: [ ] Year: [ ] will be [ ].
 - After: the header updates to Static Partition: Region, and the preview has a single input Region: [ ] will be [ ].
 - The aggregation chips at the bottom (e.g., Count: 6, First: West) remain, but their values will respond to the new partition once you test keys or apply filters.
 
