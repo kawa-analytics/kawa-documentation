@@ -1,61 +1,66 @@
-/* ─── базове: широкі сторінки без переповнення ─────────────────────────── */
+/* ─── базове ───────────────────────────────────────────────────────────── */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-.main, .main-content, .page, .page-content, .content,
-.docs-content, .td-content, .td-main,
-.container, .container-lg, .container-xl, .wrapper {
-    max-width: none !important;
-    width: auto !important; /* не 100%, щоб не вилазити праворуч */
-}
-
-/* налаштовувані відступи */
+/* налаштовувані значення теми (взято з DevTools) */
 :root{
-    --kawa-gutter: 6px;          /* відстань між сайдбаром і контентом (менше) */
-    --kawa-sidebar-pad: 8px;     /* повітря для логотипа/сайдбара (трохи більше) */
+    --sidebar-width: 15.5rem;   /* фактична ширина .side-bar на desktop */
+    --kawa-gutter: 10px;        /* зазор між бордером сайдбара і контентом */
+    --sidebar-pad: 8px;         /* трохи повітря для логотипа у сайдбарі */
 }
 
-/* ─── сайдбар: логотип не впритул, меню без зайвих внутр. відступів ─────── */
+/* робимо контент широким, але без переповнення */
+.main-content, .page-content, .content,
+.docs-content, .td-content, .td-main {
+    max-width: none !important;
+    width: auto !important;
+}
+
+/* ─── сайдбар ──────────────────────────────────────────────────────────── */
 @media (min-width: 50rem) {
     .side-bar{
         align-items: flex-start !important;     /* тема ставить flex-end */
-        padding-left: var(--kawa-sidebar-pad) !important;
+        width: var(--sidebar-width) !important; /* фіксуємо, щоб розрахувати main */
+        padding-left: var(--sidebar-pad) !important;
     }
+    /* чисті ліві краї всередині меню */
     .side-bar .site-header,
     .side-bar .site-title,
-    .side-bar .site-logo{
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-    }
+    .side-bar .site-logo,
     .side-bar nav,
     .side-bar nav ul{
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
     .side-bar .nav-list .nav-list-item > .nav-list-link{
-        padding-left: .375rem !important;       /* акуратніший відступ пунктів */
+        padding-left: .5rem !important;
     }
 }
 
-/* ─── головний заголовок + пошук: рівно по лінії з контентом ───────────── */
+/* ─── основний стовпчик + пошук ───────────────────────────────────────── */
 @media (min-width: 50rem) {
-    .main      { padding-left: 0 !important; margin-left: auto !important; }
+    /* РЕЗЕРВ місця під лівий сайдбар (головне, щоб нічого не їхало) */
+    .main{
+        margin-left: var(--sidebar-width) !important;
+        padding-left: 0 !important;
+    }
 
-    /* однаковий жолоб зліва і для заголовка, і для контенту */
+    /* однаковий жолоб для заголовка й контенту */
     .main-header,
     .main-content{
         padding-left: var(--kawa-gutter) !important;
         padding-right: var(--kawa-gutter) !important;
-        margin-left: 0 !important;  /* на випадок негативних margin у теми */
+        margin-left: 0 !important;
     }
 
-    /* пошук не виступає і заповнює контейнер коректно */
+    /* пошук рівно по лінії з контентом, не виступає */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
-        padding-left: 0 !important;
+        padding: 0 !important;
         box-sizing: border-box !important;
+        display: block !important;
     }
     .main-header input[type="search"]{
         width: 100% !important;
@@ -63,10 +68,10 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     }
 }
 
-/* ─── запобіжники ───────────────────────────────────────────────────────── */
+/* ─── запобіжники ─────────────────────────────────────────────────────── */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* якщо десь лишився старий full-bleed клас */
+/* на випадок, якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
