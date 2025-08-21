@@ -1,16 +1,15 @@
-/* скинь браузерний відступ сторінки */
-html, body { margin: 0 !important; }
+/* скинути стандартні зовнішні відступи сторінки */
+html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* прибрати лівий внутрішній відступ у сайдбарі (desktop) */
+/* прибрати внутрішній відступ саме у лівій панелі навігації */
 @media (min-width: 992px) {
-    /* найтиповіші класи для jekyll-док-тем, включно з Just the Docs */
+    /* контейнер сайдбару */
     .side-bar,
     .sidebar,
     .site-sidebar {
         padding-left: 0 !important;
     }
-
-    /* елементи всередині шапки сайдбару (логотип, заголовок) без зсувів */
+    /* шапка/логотип у сайдбарі */
     .side-bar .site-header,
     .side-bar .site-title,
     .side-bar .site-logo,
@@ -20,20 +19,19 @@ html, body { margin: 0 !important; }
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
-
-    /* список навігації без додаткового внутрішнього відступу ліворуч */
+    /* список навігації в сайдбарі */
     .side-bar nav,
     .side-bar nav ul,
     .sidebar nav,
     .sidebar nav ul,
-    .nav-list,
-    .navigation-list {
+    .navigation-list,
+    .nav-list {
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
 }
 
-/* залишаємо попередні “широкі” налаштування, щоб не зламати контент */
+/* залишаємо глобальну «ширину» контенту, без примусу 100% */
 .main, .main-content, .page, .page-content, .content,
 .docs-content, .td-content, .td-main,
 .container, .container-lg, .container-xl, .wrapper {
@@ -41,8 +39,10 @@ html, body { margin: 0 !important; }
     width: auto !important;
 }
 
-/* запобіжники від переливів */
-html, body { overflow-x: hidden; }
+/* запобіжники від переливів усередині широкого полотна */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
+
+/* якщо десь лишився наш старий full-bleed клас — нейтралізуємо */
+.full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
