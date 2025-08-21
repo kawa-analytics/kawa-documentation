@@ -1,21 +1,19 @@
-/* базове */
+/* ---------- базове: широкі сторінки без переповнень --------------------- */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* Робимо широкий контент (без width:100% щоб не вилазило праворуч) */
 .main, .main-content, .page, .page-content, .content,
 .docs-content, .td-content, .td-main,
 .container, .container-lg, .container-xl, .wrapper {
     max-width: none !important;
-    width: auto !important;
+    width: auto !important;       /* не 100%, щоб не вилазити праворуч */
 }
 
-/* === САЙДБАР: прибрати вирівнювання вправо та внутрішній паддінг === */
+/* ---------- Сайдбар: контент прилягає до лівого краю -------------------- */
 @media (min-width: 50rem) {
-    .side-bar {                      /* було align-items:flex-end у темі */
-        align-items: flex-start !important;
+    .side-bar {
+        align-items: flex-start !important;  /* тема ставить flex-end */
         padding-left: 0 !important;
     }
-
     .side-bar .site-header,
     .side-bar .site-title,
     .side-bar .site-logo,
@@ -24,36 +22,36 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding-left: 0 !important;
         margin-left: 0 !important;
     }
-
-    /* зменшити відступи лінків меню, щоб текст став ближче до лівого краю */
-    .side-bar .nav-list .nav-list-item > .nav-list-link {
-        padding-left: .5rem !important;   /* було ~1–1.5rem */
-    }
-    .side-bar .nav-list .nav-list-expander {
-        margin-left: 0 !important;
-    }
 }
 
-/* === ХЕДЕР + КОНТЕНТ: прибрати лівий “жолоб” між сайдбаром і main ==== */
+/* ---------- Єдиний «жолоб» між сайдбаром і основним контентом ----------- */
+/* налаштовувана змінна: 12px — рекомендовано; збільш/зменшуй за потреби */
+:root { --kawa-gutter: 12px; }
+
 @media (min-width: 50rem) {
+    /* не додаємо додаткового внутрішнього паддінга контейнеру */
+    .main { padding-left: 0 !important; }
+
+    /* однаковий лівий відступ для заголовка (з пошуком) і для контенту */
     .main-header,
-    .main-content,
-    .main {                 /* на деяких версіях тема задає паддінг тут */
-        padding-left: 0 !important;
+    .main-content {
+        padding-left: var(--kawa-gutter) !important;
     }
 
-    /* якщо пошук має власний лівий відступ — обнулимо його */
+    /* вирівнюємо блок пошуку по тій самій лінії, не даємо йому «виступати» */
     .main-header .search,
     .main-header .search-input-wrap {
         margin-left: 0 !important;
         padding-left: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
 
-/* запобіжники від переливів усередині широкого полотна */
+/* ---------- Запобіжники від переливів усередині широкого полотна -------- */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* на випадок, якщо десь лишився старий "full-bleed" клас */
+/* на випадок, якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
