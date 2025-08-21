@@ -1,25 +1,23 @@
 /* ───────── базове ───────── */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* налаштовувані розміри */
+/* налаштовувані розміри (можете підкрутити цифри під себе) */
 :root{
-    --sidebar-width: 18.5rem;   /* зробили панель навігації ширшою */
-    --gutter: 18px;             /* симетричний відступ у main (зліва/справа) */
-    --sidebar-pad: 10px;        /* трохи повітря в лівій панелі під логотип/контент */
+    --sidebar-width: 19rem;  /* ширша ліва панель */
+    --gutter: 20px;          /* однаковий відступ усередині main (зліва і справа) */
+    --sidebar-pad: 10px;     /* трохи повітря для логотипа/контенту в сайдбарі */
 }
 
-/* не обмежуємо контент вузьким max-width */
+/* не обмежуємо контент штучними max-width */
 .page, .page-content, .main-content, .content,
-.docs-content, .td-content, .td-main {
-    max-width: none !important;
-}
+.docs-content, .td-content, .td-main { max-width: none !important; }
 
 /* ───────── лівий сайдбар ───────── */
 @media (min-width: 50rem){
     .side-bar{
-        align-items: flex-start !important;        /* у теми було flex-end */
-        width: var(--sidebar-width) !important;    /* фіксована ширина */
-        padding-left: var(--sidebar-pad) !important;
+        align-items: flex-start !important;          /* тема ставила flex-end */
+        width: var(--sidebar-width) !important;      /* фіксована ширина панелі */
+        padding-left: var(--sidebar-pad) !important; /* повітря біля логотипа */
     }
     .side-bar .site-header,
     .side-bar .site-title,
@@ -29,37 +27,40 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding-left: 0 !important;
     }
     .side-bar .nav-list .nav-list-item > .nav-list-link{
-        padding-left: .5rem !important;            /* акуратніші відступи пунктів */
+        padding-left: .5rem !important;
     }
 }
 
 /* ───────── основна колонка + пошук ───────── */
 @media (min-width: 50rem){
-    /* резервуємо місце під ширший сайдбар і прибираємо «праву пустелю» */
+    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main,
+       щоб справа не лишалося порожнього простору */
     .main{
-        margin-left: var(--sidebar-width) !important;              /* від’їзд під меню */
-        width: calc(100% - var(--sidebar-width)) !important;       /* без виступів справа */
-        padding-left: 0 !important;
+        margin-left: var(--sidebar-width) !important;
+        width: calc(100% - var(--sidebar-width)) !important;
+        max-width: none !important;
+        padding: 0 !important;
     }
 
-    /* симетричний жолоб для заголовка (з пошуком) і для контенту */
+    /* симетричні відступи для заголовка (з пошуком) і основного контенту */
     .main-header,
-    .main-content{
-        padding-inline: var(--gutter) !important;                  /* лівий = правий */
-        box-sizing: border-box !important;
+    .main-content,
+    #main-content{
+        padding-inline: var(--gutter) !important;  /* лівий = правий */
         margin: 0 !important;
-        width: 100% !important;                                    /* тягнемось на всю ширину main */
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    /* пошук рівно по одній вертикалі з контентом і не виступає */
+    /* пошук не виступає за межі основного контенту */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
         max-width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-        box-sizing: border-box !important;
         display: block !important;
+        box-sizing: border-box !important;
     }
     .main-header input[type="search"]{
         width: 100% !important;
