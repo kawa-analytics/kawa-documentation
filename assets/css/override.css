@@ -1,37 +1,7 @@
-/* скинути стандартні зовнішні відступи сторінки */
+/* загальні речі залишаємо */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* прибрати внутрішній відступ саме у лівій панелі навігації */
-@media (min-width: 992px) {
-    /* контейнер сайдбару */
-    .side-bar,
-    .sidebar,
-    .site-sidebar {
-        padding-left: 0 !important;
-    }
-    /* шапка/логотип у сайдбарі */
-    .side-bar .site-header,
-    .side-bar .site-title,
-    .side-bar .site-logo,
-    .sidebar .site-header,
-    .sidebar .site-title,
-    .sidebar .site-logo {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-    }
-    /* список навігації в сайдбарі */
-    .side-bar nav,
-    .side-bar nav ul,
-    .sidebar nav,
-    .sidebar nav ul,
-    .navigation-list,
-    .nav-list {
-        margin-left: 0 !important;
-        padding-left: 0 !important;
-    }
-}
-
-/* залишаємо глобальну «ширину» контенту, без примусу 100% */
+/* Робимо широкий контент без переповнення */
 .main, .main-content, .page, .page-content, .content,
 .docs-content, .td-content, .td-main,
 .container, .container-lg, .container-xl, .wrapper {
@@ -39,10 +9,34 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     width: auto !important;
 }
 
-/* запобіжники від переливів усередині широкого полотна */
+/* === ГОЛОВНЕ: прибрати «порожнє поле» зліва у сайдбарі ===
+   Перекриваємо правило теми з layout.scss (@media min-width: 50rem) */
+@media (min-width: 50rem) {
+    /* вирівнюємо контент у сайдбарі до ЛІВОГО краю */
+    .side-bar { align-items: flex-start !important; }
+
+    /* скасовуємо можливі відступи у внутрішніх елементах */
+    .side-bar .site-header,
+    .side-bar .site-title,
+    .side-bar .site-logo {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .side-bar nav,
+    .side-bar nav ul,
+    .side-bar .navigation-list,
+    .side-bar .nav-list,
+    .side-bar ul {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+/* страховки від переливів усередині широкого полотна */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* якщо десь лишився наш старий full-bleed клас — нейтралізуємо */
+/* нейтралізація старого класу, якщо десь лишився */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
