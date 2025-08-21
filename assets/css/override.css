@@ -1,7 +1,7 @@
-/* загальні речі залишаємо */
+/* базове */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* Робимо широкий контент без переповнення */
+/* Робимо широкий контент (без width:100% щоб не вилазило праворуч) */
 .main, .main-content, .page, .page-content, .content,
 .docs-content, .td-content, .td-main,
 .container, .container-lg, .container-xl, .wrapper {
@@ -9,34 +9,51 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     width: auto !important;
 }
 
-/* === ГОЛОВНЕ: прибрати «порожнє поле» зліва у сайдбарі ===
-   Перекриваємо правило теми з layout.scss (@media min-width: 50rem) */
+/* === САЙДБАР: прибрати вирівнювання вправо та внутрішній паддінг === */
 @media (min-width: 50rem) {
-    /* вирівнюємо контент у сайдбарі до ЛІВОГО краю */
-    .side-bar { align-items: flex-start !important; }
+    .side-bar {                      /* було align-items:flex-end у темі */
+        align-items: flex-start !important;
+        padding-left: 0 !important;
+    }
 
-    /* скасовуємо можливі відступи у внутрішніх елементах */
     .side-bar .site-header,
     .side-bar .site-title,
-    .side-bar .site-logo {
+    .side-bar .site-logo,
+    .side-bar nav,
+    .side-bar nav ul {
         padding-left: 0 !important;
         margin-left: 0 !important;
     }
 
-    .side-bar nav,
-    .side-bar nav ul,
-    .side-bar .navigation-list,
-    .side-bar .nav-list,
-    .side-bar ul {
-        padding-left: 0 !important;
+    /* зменшити відступи лінків меню, щоб текст став ближче до лівого краю */
+    .side-bar .nav-list .nav-list-item > .nav-list-link {
+        padding-left: .5rem !important;   /* було ~1–1.5rem */
+    }
+    .side-bar .nav-list .nav-list-expander {
         margin-left: 0 !important;
     }
 }
 
-/* страховки від переливів усередині широкого полотна */
+/* === ХЕДЕР + КОНТЕНТ: прибрати лівий “жолоб” між сайдбаром і main ==== */
+@media (min-width: 50rem) {
+    .main-header,
+    .main-content,
+    .main {                 /* на деяких версіях тема задає паддінг тут */
+        padding-left: 0 !important;
+    }
+
+    /* якщо пошук має власний лівий відступ — обнулимо його */
+    .main-header .search,
+    .main-header .search-input-wrap {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* запобіжники від переливів усередині широкого полотна */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* нейтралізація старого класу, якщо десь лишився */
+/* на випадок, якщо десь лишився старий "full-bleed" клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
