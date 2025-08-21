@@ -1,10 +1,39 @@
-/* ---- Global safety ------------------------------------------------------- */
-html, body { overflow-x: hidden; }      /* відрізає випадкові 1–2px переливу */
+/* скинь браузерний відступ сторінки */
+html, body { margin: 0 !important; }
 
-/* ---- Wide layout (без примусу width:100%) --------------------------------
-   Вимикаємо лише max-width; ширина лишається auto,
-   тому вона враховує лівий відступ під сайдбар і не вилазить справа.
-*/
+/* прибрати лівий внутрішній відступ у сайдбарі (desktop) */
+@media (min-width: 992px) {
+    /* найтиповіші класи для jekyll-док-тем, включно з Just the Docs */
+    .side-bar,
+    .sidebar,
+    .site-sidebar {
+        padding-left: 0 !important;
+    }
+
+    /* елементи всередині шапки сайдбару (логотип, заголовок) без зсувів */
+    .side-bar .site-header,
+    .side-bar .site-title,
+    .side-bar .site-logo,
+    .sidebar .site-header,
+    .sidebar .site-title,
+    .sidebar .site-logo {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    /* список навігації без додаткового внутрішнього відступу ліворуч */
+    .side-bar nav,
+    .side-bar nav ul,
+    .sidebar nav,
+    .sidebar nav ul,
+    .nav-list,
+    .navigation-list {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* залишаємо попередні “широкі” налаштування, щоб не зламати контент */
 .main, .main-content, .page, .page-content, .content,
 .docs-content, .td-content, .td-main,
 .container, .container-lg, .container-xl, .wrapper {
@@ -12,22 +41,8 @@ html, body { overflow-x: hidden; }      /* відрізає випадкові 1
     width: auto !important;
 }
 
-/* Якщо десь лишився наш колишній "full-bleed" клас — нейтралізуємо його */
-.full-width-content {
-    width: auto !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    max-width: none !important;
-}
-
-/* ---- Content guards ------------------------------------------------------ */
+/* запобіжники від переливів */
+html, body { overflow-x: hidden; }
 img, video, canvas, svg { max-width: 100%; height: auto; }
-
-pre { overflow-x: auto; }               /* довгі рядки коду */
-code { word-break: break-word; }        /* довгі слова/посилання */
-
-table {                                  /* широкі таблиці не ламають верстку */
-    width: 100%;
-    display: block;
-    overflow-x: auto;
-}
+pre { overflow-x: auto; }
+table { width: 100%; display: block; overflow-x: auto; }
