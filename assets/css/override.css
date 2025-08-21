@@ -1,23 +1,33 @@
-/* 1) Прибрати обмеження ширини з основного контенту (покриває поширені класи різних тем) */
+/* ---- Global safety ------------------------------------------------------- */
+html, body { overflow-x: hidden; }      /* відрізає випадкові 1–2px переливу */
+
+/* ---- Wide layout (без примусу width:100%) --------------------------------
+   Вимикаємо лише max-width; ширина лишається auto,
+   тому вона враховує лівий відступ під сайдбар і не вилазить справа.
+*/
 .main, .main-content, .page, .page-content, .content,
 .docs-content, .td-content, .td-main,
-.container, .container-lg, .container-xl {
+.container, .container-lg, .container-xl, .wrapper {
     max-width: none !important;
-    width: 100% !important;
+    width: auto !important;
 }
 
-/* 2) Забрати внутрішні відступи/порожні поля, що звужують полотно */
-.main-content, .page-content, .content, .docs-content, .td-content {
+/* Якщо десь лишився наш колишній "full-bleed" клас — нейтралізуємо його */
+.full-width-content {
+    width: auto !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    max-width: none !important;
 }
 
-/* 3) Вимкнути горизонтальний скрол, якщо щось трохи вилазить */
-body { overflow-x: hidden; }
-
-/* 4) Захист від переливів всередині широкого полотна */
+/* ---- Content guards ------------------------------------------------------ */
 img, video, canvas, svg { max-width: 100%; height: auto; }
+
 pre { overflow-x: auto; }               /* довгі рядки коду */
-table { width: 100%; display: block; overflow-x: auto; } /* широкі таблиці */
+code { word-break: break-word; }        /* довгі слова/посилання */
+
+table {                                  /* широкі таблиці не ламають верстку */
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+}
