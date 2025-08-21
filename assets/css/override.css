@@ -1,0 +1,30 @@
+/* 1) Прибери обмеження ширини у типових контейнерах тем Jekyll */
+.container,
+.wrapper,
+.content,
+.main,
+.main-content,
+.page,
+.page-content,
+.docs-content,
+.td-content,
+.usa-layout-docs__main {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* 2) Вимкни горизонтальний скрол, якщо щось вилазить за межі */
+body { overflow-x: hidden; }
+
+/* 3) Щоб медіа не розривали макет на широких сторінках */
+img, video, canvas, svg { max-width: 100%; height: auto; }
+
+/* 4) Довгі рядки коду/посилань не повинні ламати верстку */
+pre, code { white-space: pre-wrap; word-break: break-word; }
+
+/* 5) Широкі таблиці — з горизонтальним прокручуванням, але без розламу сторінки */
+table { width: 100%; display: block; overflow-x: auto; }
