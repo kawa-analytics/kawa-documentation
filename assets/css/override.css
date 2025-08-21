@@ -1,30 +1,23 @@
-/* 1) Прибери обмеження ширини у типових контейнерах тем Jekyll */
-.container,
-.wrapper,
-.content,
-.main,
-.main-content,
-.page,
-.page-content,
-.docs-content,
-.td-content,
-.usa-layout-docs__main {
+/* 1) Прибрати обмеження ширини з основного контенту (покриває поширені класи різних тем) */
+.main, .main-content, .page, .page-content, .content,
+.docs-content, .td-content, .td-main,
+.container, .container-lg, .container-xl {
     max-width: none !important;
     width: 100% !important;
+}
+
+/* 2) Забрати внутрішні відступи/порожні поля, що звужують полотно */
+.main-content, .page-content, .content, .docs-content, .td-content {
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
-/* 2) Вимкни горизонтальний скрол, якщо щось вилазить за межі */
+/* 3) Вимкнути горизонтальний скрол, якщо щось трохи вилазить */
 body { overflow-x: hidden; }
 
-/* 3) Щоб медіа не розривали макет на широких сторінках */
+/* 4) Захист від переливів всередині широкого полотна */
 img, video, canvas, svg { max-width: 100%; height: auto; }
-
-/* 4) Довгі рядки коду/посилань не повинні ламати верстку */
-pre, code { white-space: pre-wrap; word-break: break-word; }
-
-/* 5) Широкі таблиці — з горизонтальним прокручуванням, але без розламу сторінки */
-table { width: 100%; display: block; overflow-x: auto; }
+pre { overflow-x: auto; }               /* довгі рядки коду */
+table { width: 100%; display: block; overflow-x: auto; } /* широкі таблиці */
