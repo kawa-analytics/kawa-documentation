@@ -1,33 +1,30 @@
-/* ─── базове ───────────────────────────────────────────────────────────── */
+/* ───────────────── базове ───────────────── */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* налаштовувані значення теми (взято з DevTools) */
+/* Під себе фіксуємо ключові розміри теми */
 :root{
     --sidebar-width: 15.5rem;   /* фактична ширина .side-bar на desktop */
-    --kawa-gutter: 10px;        /* зазор між бордером сайдбара і контентом */
-    --sidebar-pad: 8px;         /* трохи повітря для логотипа у сайдбарі */
+    --gutter: 12px;             /* однаковий відступ між сайдбаром і main */
+    --sidebar-pad: 8px;         /* трохи повітря в сайдбарі під логотип */
 }
 
-/* робимо контент широким, але без переповнення */
-.main-content, .page-content, .content,
-.docs-content, .td-content, .td-main {
+/* Робимо контент широким, але не задаємо 100% (щоб не переповнювати) */
+.page, .page-content, .main-content, .content {
     max-width: none !important;
     width: auto !important;
 }
 
-/* ─── сайдбар ──────────────────────────────────────────────────────────── */
-@media (min-width: 50rem) {
+/* ───────────────── сайдбар ───────────────── */
+@media (min-width: 50rem){
     .side-bar{
-        align-items: flex-start !important;     /* тема ставить flex-end */
-        width: var(--sidebar-width) !important; /* фіксуємо, щоб розрахувати main */
+        align-items: flex-start !important;     /* у теми було flex-end */
+        width: var(--sidebar-width) !important; /* стабільна ширина */
         padding-left: var(--sidebar-pad) !important;
     }
-    /* чисті ліві краї всередині меню */
     .side-bar .site-header,
     .side-bar .site-title,
     .side-bar .site-logo,
-    .side-bar nav,
-    .side-bar nav ul{
+    .side-bar nav, .side-bar nav ul{
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
@@ -36,23 +33,24 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     }
 }
 
-/* ─── основний стовпчик + пошук ───────────────────────────────────────── */
-@media (min-width: 50rem) {
-    /* РЕЗЕРВ місця під лівий сайдбар (головне, щоб нічого не їхало) */
+/* ───────────────── основна колонка ───────────────── */
+@media (min-width: 50rem){
+    /* 1) Резервуємо місце під сайдбар і ЗАДАЄМО ШИРИНУ main */
     .main{
         margin-left: var(--sidebar-width) !important;
+        width: calc(100% - var(--sidebar-width)) !important;  /* ключове */
         padding-left: 0 !important;
     }
 
-    /* однаковий жолоб для заголовка й контенту */
+    /* 2) Єдиний симетричний жолоб для хедера і контенту */
     .main-header,
     .main-content{
-        padding-left: var(--kawa-gutter) !important;
-        padding-right: var(--kawa-gutter) !important;
-        margin-left: 0 !important;
+        padding-inline: var(--gutter) !important; /* лівий = правий */
+        box-sizing: border-box !important;
+        margin: 0 !important;
     }
 
-    /* пошук рівно по лінії з контентом, не виступає */
+    /* 3) Пошук не виступає і йде по одній вертикалі з контентом */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -68,10 +66,10 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     }
 }
 
-/* ─── запобіжники ─────────────────────────────────────────────────────── */
+/* ───────────── запобіжники від переливів ─────────── */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* на випадок, якщо десь лишився старий full-bleed клас */
+/* На випадок, якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
