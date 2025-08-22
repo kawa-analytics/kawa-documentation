@@ -6,9 +6,9 @@ table { width: 100%; display: block; overflow-x: auto; }
 /* ======= Vars ======= */
 :root{
     --sidebar-width: 22rem;        /* left sidebar width */
-    --gutter-left: 40px;           /* left spacing inside main (visible) */
+    --gutter-left: 50px;           /* left spacing inside main (visible) */
     --gutter-right: 10px;          /* right padding inside main */
-    --sidebar-left-inset: 40px;    /* same left inset for logo and menu items */
+    --sidebar-left-inset: 50px;    /* same left inset for logo and menu items */
     --sidebar-content-pad-r: 12px; /* right padding for nav text (keeps text off scrollbar) */
 }
 
