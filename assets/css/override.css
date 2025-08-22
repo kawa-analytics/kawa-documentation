@@ -77,3 +77,32 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* На випадок старого full-bleed класу */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
+
+@media (min-width: 50rem){
+    :root{
+        /* підкрути цифру, якщо треба трохи правіше/лівіше */
+        --sidebar-left-inset: 28px;
+    }
+
+    /* сам сайдбар без свого паддінга — керуємо відступом у дітях */
+    .side-bar{ padding-left: 0 !important; }
+
+    /* логотип/шапка: той самий inset */
+    .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
+
+    /* навігаційний список теж з таким самим inset’ом */
+    .side-bar nav,
+    .side-bar nav ul,
+    .side-bar .navigation-list,
+    .side-bar .nav-list{
+        padding-left: var(--sidebar-left-inset) !important;
+        margin-left: 0 !important;
+    }
+
+    /* самі лінки без додаткового внутрішнього лівого паддінга,
+       щоб не було “подвійного” зсуву */
+    .side-bar .nav-list .nav-list-item > .nav-list-link,
+    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
+        padding-left: 0 !important;
+    }
+}
