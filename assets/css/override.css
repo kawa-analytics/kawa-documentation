@@ -5,7 +5,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* ======= Vars ======= */
 :root{
-    --sidebar-width: 19rem;   /* left sidebar width */
+    --sidebar-width: 22rem;   /* left sidebar width */
     --gutter-left: 28px;      /* left spacing inside main (visible) */
     --gutter-right: 10px;     /* right padding inside main */
     --sidebar-left-inset: 14px; /* same left inset for the logo and menu items */
