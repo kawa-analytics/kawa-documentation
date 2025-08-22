@@ -1,23 +1,24 @@
-/* ───────── базове ───────── */
+/* ====== базове ====== */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* налаштовувані розміри (можете підкрутити цифри під себе) */
+/* налаштовувані значення */
 :root{
-    --sidebar-width: 19rem;  /* ширша ліва панель */
-    --gutter: 20px;          /* однаковий відступ усередині main (зліва і справа) */
-    --sidebar-pad: 10px;     /* трохи повітря для логотипа/контенту в сайдбарі */
+    --sidebar-width: 19rem;   /* ширша ліва навігація */
+    --gutter-left: 30px;      /* БІЛЬША відстань зліва для контенту */
+    --gutter-right: 20px;     /* відстань справа (можете зрівняти зліва/справа) */
+    --sidebar-pad: 10px;      /* трохи повітря для логотипа/контенту в сайдбарі */
 }
 
-/* не обмежуємо контент штучними max-width */
+/* не звужуємо контент штучним max-width */
 .page, .page-content, .main-content, .content,
 .docs-content, .td-content, .td-main { max-width: none !important; }
 
-/* ───────── лівий сайдбар ───────── */
+/* ====== лівий сайдбар ====== */
 @media (min-width: 50rem){
     .side-bar{
-        align-items: flex-start !important;          /* тема ставила flex-end */
-        width: var(--sidebar-width) !important;      /* фіксована ширина панелі */
-        padding-left: var(--sidebar-pad) !important; /* повітря біля логотипа */
+        align-items: flex-start !important;         /* тема мала flex-end */
+        width: var(--sidebar-width) !important;     /* фікс ширини панелі */
+        padding-left: var(--sidebar-pad) !important;
     }
     .side-bar .site-header,
     .side-bar .site-title,
@@ -31,10 +32,9 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     }
 }
 
-/* ───────── основна колонка + пошук ───────── */
+/* ====== основна колонка та пошук ====== */
 @media (min-width: 50rem){
-    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main,
-       щоб справа не лишалося порожнього простору */
+    /* 1) Резервуємо місце під сайдбар і прибираємо «праву пустелю» */
     .main{
         margin-left: var(--sidebar-width) !important;
         width: calc(100% - var(--sidebar-width)) !important;
@@ -42,17 +42,18 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding: 0 !important;
     }
 
-    /* симетричні відступи для заголовка (з пошуком) і основного контенту */
+    /* 2) ОКРЕМО задаємо відступи зліва/справа для хедера і контенту */
     .main-header,
     .main-content,
     #main-content{
-        padding-inline: var(--gutter) !important;  /* лівий = правий */
+        padding-left: var(--gutter-left) !important;   /* більше зліва */
+        padding-right: var(--gutter-right) !important; /* менше справа */
         margin: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    /* пошук не виступає за межі основного контенту */
+    /* 3) Пошук не виступає за межі контенту */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -68,26 +69,10 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     }
 }
 
-/* ───────── запобіжники ───────── */
+/* запобіжники від переливів */
 img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
 /* якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
-
-/* — Тонке налаштування жолоба: ліва і права сторони окремо — */
-:root{
-    --gutter-left: 28px;   /* зроби більше/менше за потреби */
-    --gutter-right: 18px;  /* поточний правий відступ */
-}
-
-@media (min-width: 50rem){
-    /* контент і хедер з пошуком мають більший відступ ЗЛІВА */
-    .main-header,
-    .main-content,
-    #main-content{
-        padding-left: var(--gutter-left) !important;
-        padding-right: var(--gutter-right) !important;
-    }
-}
