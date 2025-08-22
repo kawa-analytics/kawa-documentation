@@ -9,7 +9,8 @@ table { width: 100%; display: block; overflow-x: auto; }
     --gutter-left: 28px;           /* left spacing inside main (visible) */
     --gutter-right: 10px;          /* right padding inside main */
     --sidebar-left-inset: 28px;    /* same left inset for logo and menu items */
-    --sidebar-content-pad-r: 12px; /* breathing room for text near the scrollbar */
+    --sidebar-content-pad-r: 12px; /* right padding for nav text (keeps text off scrollbar) */
+    --sidebar-top-gap: 20px;       /* extra space above the logo */
 }
 
 /* do not narrow content with an artificial max-width */
@@ -19,15 +20,19 @@ table { width: 100%; display: block; overflow-x: auto; }
 /* ======= Desktop ======= */
 @media (min-width: 50rem){
 
-    /* — Sidebar — */
+    /* — Sidebar container — */
     .side-bar{
         align-items: flex-start !important;
         width: var(--sidebar-width) !important;
-        padding-left: 0 !important;     /* control left spacing on children only */
-        padding-right: 0 !important;    /* DO NOT push scrollbar inwards */
+        padding-left: var(--sidebar-left-inset) !important;  /* align logo and menu */
+        padding-right: 0 !important;                         /* keep scrollbar at right border */
+        box-sizing: border-box !important;
     }
 
-    /* the actual scroll container in Just-the-Docs is the nav element */
+    /* space above the logo */
+    .side-bar .site-header{ padding-top: var(--sidebar-top-gap) !important; }
+
+    /* the actual scroll container in Just-the-Docs */
     .side-bar .site-nav,
     .side-bar nav,
     #site-nav{
@@ -42,22 +47,28 @@ table { width: 100%; display: block; overflow-x: auto; }
     .side-bar nav::-webkit-scrollbar,
     #site-nav::-webkit-scrollbar{ width: 10px; } /* Chrome/Edge/Safari */
 
-    /* logo/header: same inset as menu items */
-    .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
-    .side-bar .site-title, .side-bar .site-logo{ margin-left: 0 !important; }
-
-    /* lists: no own left padding; add only right padding for text spacing */
-    .side-bar nav, .side-bar nav ul{ padding-left: 0 !important; margin-left: 0 !important; }
+    /* remove extra left padding inside; add only right padding for text */
+    .side-bar .site-title,
+    .side-bar .site-logo,
+    .side-bar .site-nav,
+    .side-bar nav,
+    .side-bar nav ul,
+    .side-bar .navigation-list,
+    .side-bar .nav-list{
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
     .side-bar .nav-list,
     .side-bar .navigation-list{
-        padding-right: var(--sidebar-content-pad-r) !important; /* keeps text off the scrollbar */
+        padding-right: var(--sidebar-content-pad-r) !important;
     }
 
-    /* menu items align with logo on the left */
-    .side-bar .nav-list .nav-list-item > .nav-list-link,
-    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
-        padding-left: var(--sidebar-left-inset) !important;
+    /* top-level items: no extra left padding (keeps same left edge as logo) */
+    .side-bar .nav-list > .nav-list-item > .nav-list-link,
+    .side-bar .navigation-list > .navigation-list-item > .navigation-list-link{
+        padding-left: 0 !important;
     }
+    .side-bar .nav-list-expander{ margin-left: 0 !important; }
 
     /* — Main column — */
     .main{
@@ -65,11 +76,11 @@ table { width: 100%; display: block; overflow-x: auto; }
         width: calc(100% - var(--sidebar-width)) !important;          /* no empty space on the right */
         padding-left: var(--gutter-left) !important;                  /* visible gap on the left */
         padding-right: var(--gutter-right) !important;
-        box-sizing: border-box !important;
         max-width: none !important;
+        box-sizing: border-box !important;
     }
 
-    /* inner containers without their own padding (use .main only) */
+    /* inner containers: rely on .main for horizontal spacing */
     .main-header, .main-content, #main-content{
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -96,34 +107,3 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* in case an old full-bleed class remains */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
-
-/* Align left edges of the logo and the nav items */
-@media (min-width: 50rem){
-    :root { --sidebar-left-inset: 40px; }  /* adjust this value if needed */
-
-    /* 1) apply one left inset to the whole sidebar */
-    .side-bar{
-        padding-left: var(--sidebar-left-inset) !important; /* logo and menu share the same left edge */
-        padding-right: 0 !important;                        /* keep the scrollbar flush to the right border */
-    }
-
-    /* 2) remove extra left padding inside (avoid a “double” shift) */
-    .side-bar .site-header,
-    .side-bar .site-title,
-    .side-bar .site-logo,
-    .side-bar .site-nav,
-    .side-bar nav,
-    .side-bar nav ul,
-    .side-bar .navigation-list,
-    .side-bar .nav-list{
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-    }
-
-    /* 3) links and expanders without extra left offset */
-    .side-bar .nav-list .nav-list-item > .nav-list-link,
-    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
-        padding-left: 0 !important;
-    }
-    .side-bar .nav-list-expander{ margin-left: 0 !important; }
-}
