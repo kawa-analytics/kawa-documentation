@@ -5,10 +5,11 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* ======= Vars ======= */
 :root{
-    --sidebar-width: 22rem;   /* left sidebar width */
-    --gutter-left: 28px;      /* left spacing inside main (visible) */
-    --gutter-right: 10px;     /* right padding inside main */
-    --sidebar-left-inset: 14px; /* same left inset for the logo and menu items */
+    --sidebar-width: 22rem;        /* left sidebar width */
+    --gutter-left: 28px;           /* left spacing inside main (visible) */
+    --gutter-right: 10px;          /* right padding inside main */
+    --sidebar-left-inset: 28px;    /* same left inset for logo and menu items */
+    --sidebar-content-pad-r: 12px; /* breathing room for text near the scrollbar */
 }
 
 /* do not narrow content with an artificial max-width */
@@ -20,21 +21,39 @@ table { width: 100%; display: block; overflow-x: auto; }
 
     /* — Sidebar — */
     .side-bar{
-        align-items: flex-start !important;          /* theme had flex-end */
+        align-items: flex-start !important;
         width: var(--sidebar-width) !important;
-        padding-left: 0 !important;                  /* control left spacing on children only */
+        padding-left: 0 !important;     /* control left spacing on children only */
+        padding-right: 0 !important;    /* DO NOT push scrollbar inwards */
     }
+
+    /* the actual scroll container in Just-the-Docs is the nav element */
+    .side-bar .site-nav,
+    .side-bar nav,
+    #site-nav{
+        overflow-y: auto !important;
+        padding-right: 0 !important;        /* scrollbar sits at the border */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        scrollbar-gutter: stable;           /* prevent layout shift */
+        scrollbar-width: thin;              /* Firefox */
+    }
+    .side-bar .site-nav::-webkit-scrollbar,
+    .side-bar nav::-webkit-scrollbar,
+    #site-nav::-webkit-scrollbar{ width: 10px; } /* Chrome/Edge/Safari */
+
     /* logo/header: same inset as menu items */
     .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
     .side-bar .site-title, .side-bar .site-logo{ margin-left: 0 !important; }
 
-    /* lists without their own left padding */
-    .side-bar nav, .side-bar nav ul{
-        padding-left: 0 !important;
-        margin-left: 0 !important;
+    /* lists: no own left padding; add only right padding for text spacing */
+    .side-bar nav, .side-bar nav ul{ padding-left: 0 !important; margin-left: 0 !important; }
+    .side-bar .nav-list,
+    .side-bar .navigation-list{
+        padding-right: var(--sidebar-content-pad-r) !important; /* keeps text off the scrollbar */
     }
 
-    /* menu items: left inset = logo → left edges align */
+    /* menu items align with logo on the left */
     .side-bar .nav-list .nav-list-item > .nav-list-link,
     .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
         padding-left: var(--sidebar-left-inset) !important;
@@ -77,57 +96,3 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* in case an old full-bleed class remains */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
-
-@media (min-width: 50rem){
-    :root{
-        /* tweak this value if you need a bit more left/right */
-        --sidebar-left-inset: 28px;
-    }
-
-    /* no left padding on the sidebar itself — control spacing on its children */
-    .side-bar{ padding-left: 0 !important; }
-
-    /* logo/header: use the same left inset */
-    .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
-
-    /* navigation list uses the same left inset */
-    .side-bar nav,
-    .side-bar nav ul,
-    .side-bar .navigation-list,
-    .side-bar .nav-list{
-        padding-left: var(--sidebar-left-inset) !important;
-        margin-left: 0 !important;
-    }
-
-    /* links: no extra left padding to avoid a “double” shift */
-    .side-bar .nav-list .nav-list-item > .nav-list-link,
-    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
-        padding-left: 0 !important;
-    }
-}
-
-/* Move sidebar scrollbar to the far right, keep inner text readable */
-@media (min-width: 50rem){
-    :root{
-        --sidebar-scroll-gap: 0px;   /* 0 = scrollbar flush to border; increase if you want a tiny gap */
-        --sidebar-content-pad-r: 12px; /* right padding for nav text so it doesn't touch the scrollbar */
-    }
-
-    /* The scroll container: remove right padding so the scrollbar sits at the border */
-    .side-bar{
-        padding-right: var(--sidebar-scroll-gap) !important;
-        overflow-y: auto;                 /* ensure it's the scrolling element */
-        scrollbar-gutter: stable;         /* reserve space for scrollbar (no layout shift) */
-        /* Optional: slimmer scrollbar */
-        scrollbar-width: thin;            /* Firefox */
-    }
-    .side-bar::-webkit-scrollbar{ width: 10px; } /* Chrome/Edge/Safari (optional) */
-
-    /* Give the content inside some right breathing room instead */
-    .side-bar nav,
-    .side-bar nav ul,
-    .side-bar .navigation-list,
-    .side-bar .nav-list{
-        padding-right: var(--sidebar-content-pad-r) !important;
-    }
-}
