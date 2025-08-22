@@ -1,84 +1,58 @@
+/* ───────── базове ───────── */
 html, body { margin: 0 !important; overflow-x: hidden; }
-img, video, canvas, svg { max-width: 100%; height: auto; }
-pre { overflow-x: auto; }
-table { width: 100%; display: block; overflow-x: auto; }
 
-/* ======= Vars ======= */
+/* налаштовувані розміри (можете підкрутити цифри під себе) */
 :root{
-    --sidebar-width: 22rem;        /* left sidebar width */
-    --gutter-left: 28px;           /* left spacing inside main (visible) */
-    --gutter-right: 10px;          /* right padding inside main */
-    --sidebar-left-inset: 28px;    /* same left inset for logo and menu items */
-    --sidebar-content-pad-r: 12px; /* breathing room for text near the scrollbar */
+    --sidebar-width: 19rem;  /* ширша ліва панель */
+    --gutter: 20px;          /* однаковий відступ усередині main (зліва і справа) */
+    --sidebar-pad: 10px;     /* трохи повітря для логотипа/контенту в сайдбарі */
 }
 
-/* do not narrow content with an artificial max-width */
+/* не обмежуємо контент штучними max-width */
 .page, .page-content, .main-content, .content,
 .docs-content, .td-content, .td-main { max-width: none !important; }
 
-/* ======= Desktop ======= */
+/* ───────── лівий сайдбар ───────── */
 @media (min-width: 50rem){
-
-    /* — Sidebar — */
     .side-bar{
-        align-items: flex-start !important;
-        width: var(--sidebar-width) !important;
-        padding-left: 0 !important;     /* control left spacing on children only */
-        padding-right: 0 !important;    /* DO NOT push scrollbar inwards */
+        align-items: flex-start !important;          /* тема ставила flex-end */
+        width: var(--sidebar-width) !important;      /* фіксована ширина панелі */
+        padding-left: var(--sidebar-pad) !important; /* повітря біля логотипа */
     }
-
-    /* the actual scroll container in Just-the-Docs is the nav element */
-    .side-bar .site-nav,
-    .side-bar nav,
-    #site-nav{
-        overflow-y: auto !important;
-        padding-right: 0 !important;        /* scrollbar sits at the border */
-        width: 100% !important;
-        box-sizing: border-box !important;
-        scrollbar-gutter: stable;           /* prevent layout shift */
-        scrollbar-width: thin;              /* Firefox */
-    }
-    .side-bar .site-nav::-webkit-scrollbar,
-    .side-bar nav::-webkit-scrollbar,
-    #site-nav::-webkit-scrollbar{ width: 10px; } /* Chrome/Edge/Safari */
-
-    /* logo/header: same inset as menu items */
-    .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
-    .side-bar .site-title, .side-bar .site-logo{ margin-left: 0 !important; }
-
-    /* lists: no own left padding; add only right padding for text spacing */
-    .side-bar nav, .side-bar nav ul{ padding-left: 0 !important; margin-left: 0 !important; }
-    .side-bar .nav-list,
-    .side-bar .navigation-list{
-        padding-right: var(--sidebar-content-pad-r) !important; /* keeps text off the scrollbar */
-    }
-
-    /* menu items align with logo on the left */
-    .side-bar .nav-list .nav-list-item > .nav-list-link,
-    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
-        padding-left: var(--sidebar-left-inset) !important;
-    }
-
-    /* — Main column — */
-    .main{
-        margin-left: var(--sidebar-width) !important;                 /* reserve space for sidebar */
-        width: calc(100% - var(--sidebar-width)) !important;          /* no empty space on the right */
-        padding-left: var(--gutter-left) !important;                  /* visible gap on the left */
-        padding-right: var(--gutter-right) !important;
-        box-sizing: border-box !important;
-        max-width: none !important;
-    }
-
-    /* inner containers without their own padding (use .main only) */
-    .main-header, .main-content, #main-content{
+    .side-bar .site-header,
+    .side-bar .site-title,
+    .side-bar .site-logo,
+    .side-bar nav, .side-bar nav ul{
+        margin-left: 0 !important;
         padding-left: 0 !important;
-        padding-right: 0 !important;
+    }
+    .side-bar .nav-list .nav-list-item > .nav-list-link{
+        padding-left: .5rem !important;
+    }
+}
+
+/* ───────── основна колонка + пошук ───────── */
+@media (min-width: 50rem){
+    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main,
+       щоб справа не лишалося порожнього простору */
+    .main{
+        margin-left: var(--sidebar-width) !important;
+        width: calc(100% - var(--sidebar-width)) !important;
+        max-width: none !important;
+        padding: 0 !important;
+    }
+
+    /* симетричні відступи для заголовка (з пошуком) і основного контенту */
+    .main-header,
+    .main-content,
+    #main-content{
+        padding-inline: var(--gutter) !important;  /* лівий = правий */
         margin: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    /* search aligned with content, no overflow */
+    /* пошук не виступає за межі основного контенту */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -94,78 +68,10 @@ table { width: 100%; display: block; overflow-x: auto; }
     }
 }
 
-/* in case an old full-bleed class remains */
+/* ───────── запобіжники ───────── */
+img, video, canvas, svg { max-width: 100%; height: auto; }
+pre { overflow-x: auto; }
+table { width: 100%; display: block; overflow-x: auto; }
+
+/* якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
-
-/* Align left edges of logo and nav items */
-@media (min-width: 50rem){
-    :root { --sidebar-left-inset: 60px; }  /* підкрути значення за потреби */
-
-    /* 1) задаємо базовий inset для всієї панелі */
-    .side-bar{
-        padding-left: var(--sidebar-left-inset) !important; /* логотип і меню вирівняні */
-        padding-right: 0 !important;                        /* скролбар лишається упритул справа */
-    }
-
-    /* 2) усередині не додаємо додаткових лівих відступів (щоб не було "подвійного" зсуву) */
-    .side-bar .site-header,
-    .side-bar .site-title,
-    .side-bar .site-logo,
-    .side-bar .site-nav,
-    .side-bar nav,
-    .side-bar nav ul,
-    .side-bar .navigation-list,
-    .side-bar .nav-list{
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-    }
-
-    /* 3) самі лінки та експандери без додаткових зсувів */
-    .side-bar .nav-list .nav-list-item > .nav-list-link,
-    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
-        padding-left: 0 !important;
-    }
-    .side-bar .nav-list-expander{ margin-left: 0 !important; }
-}
-
-:root{
-    --kawa-font-size: 15px;   /* change to 15/17 if you prefer */
-    --kawa-line-height: 1.65;
-}
-
-/* base size for the page */
-html { font-size: var(--kawa-font-size); }
-body { line-height: var(--kawa-line-height); }
-
-/* strongest overrides for Just-the-Docs style nav */
-@media (min-width: 50rem){
-    /* container inherits the same size */
-    .side-bar,
-    .side-bar .site-nav{
-        font-size: 1rem !important;
-        line-height: var(--kawa-line-height) !important;
-    }
-
-    /* apply directly to all typical text carriers in the nav */
-    .side-bar .site-nav a.nav-list-link,
-    .side-bar .site-nav .nav-list-link,
-    .side-bar .site-nav .navigation-list-link,
-    .side-bar .site-nav .nav-list-item,
-    .side-bar .site-nav .navigation-list-item,
-    .side-bar .site-nav button.nav-list-expander,
-    .side-bar .site-nav summary,
-    .side-bar .site-nav a,
-    .side-bar .site-nav li,
-    .side-bar .site-nav span,
-    .side-bar .site-nav button,
-    .side-bar .site-nav label {
-        font-size: 1rem !important;          /* = var(--kawa-font-size) */
-        line-height: var(--kawa-line-height) !important;
-    }
-}
-
-/* keep search input consistent too */
-.main-header input[type="search"]{
-    font-size: 1rem !important;
-    line-height: var(--kawa-line-height) !important;
-}
