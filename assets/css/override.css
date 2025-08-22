@@ -99,7 +99,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* Align left edges of logo and nav items */
 @media (min-width: 50rem){
-    :root { --sidebar-left-inset: 40px; }  /* підкрути значення за потреби */
+    :root { --sidebar-left-inset: 60px; }  /* підкрути значення за потреби */
 
     /* 1) задаємо базовий inset для всієї панелі */
     .side-bar{
