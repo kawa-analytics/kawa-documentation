@@ -99,7 +99,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* Align left edges of logo and nav items */
 @media (min-width: 50rem){
-    :root { --sidebar-left-inset: 20px; }  /* підкрути значення за потреби */
+    :root { --sidebar-left-inset: 40px; }  /* підкрути значення за потреби */
 
     /* 1) задаємо базовий inset для всієї панелі */
     .side-bar{
@@ -126,4 +126,45 @@ table { width: 100%; display: block; overflow-x: auto; }
         padding-left: 0 !important;
     }
     .side-bar .nav-list-expander{ margin-left: 0 !important; }
+}
+
+/* === Unified font size for main content and left nav === */
+:root{
+    --kawa-font-size: 16px;   /* change to 15/17/etc if you prefer */
+    --kawa-line-height: 1.65;
+}
+
+/* базове значення для сторінки */
+html { font-size: var(--kawa-font-size); }
+body { line-height: var(--kawa-line-height); }
+
+/* основний контент — явно під ті самі значення */
+.main-content,
+.page-content,
+#main-content {
+    font-size: 1rem;                 /* = var(--kawa-font-size) */
+    line-height: var(--kawa-line-height);
+}
+
+/* ліва навігація — той самий розмір/міжрядковий (перекриваємо тему) */
+.side-bar,
+.side-bar .site-nav,
+.side-bar .nav-list,
+.side-bar .navigation-list {
+    font-size: 1rem !important;      /* зрівняти з контентом */
+    line-height: var(--kawa-line-height) !important;
+}
+
+/* посилання та експандери в навігації не зменшуються на вкладених рівнях */
+.side-bar .nav-list .nav-list-item > .nav-list-link,
+.side-bar .navigation-list .navigation-list-item > .navigation-list-link,
+.side-bar .nav-list-expander {
+    font-size: 1em !important;       /* 1em відносно контейнера = як у контенті */
+    line-height: inherit !important;
+}
+
+/* пошук у хедері теж у базному розмірі */
+.main-header input[type="search"] {
+    font-size: 1rem !important;
+    line-height: var(--kawa-line-height) !important;
 }
