@@ -6,11 +6,10 @@ table { width: 100%; display: block; overflow-x: auto; }
 /* ======= Vars ======= */
 :root{
     --sidebar-width: 22rem;        /* left sidebar width */
-    --gutter-left: 28px;           /* left spacing inside main (visible) */
+    --gutter-left: 40px;           /* left spacing inside main (visible) */
     --gutter-right: 10px;          /* right padding inside main */
-    --sidebar-left-inset: 28px;    /* same left inset for logo and menu items */
+    --sidebar-left-inset: 40px;    /* same left inset for logo and menu items */
     --sidebar-content-pad-r: 12px; /* right padding for nav text (keeps text off scrollbar) */
-    --sidebar-top-gap: 20px;       /* extra space above the logo */
 }
 
 /* do not narrow content with an artificial max-width */
@@ -29,10 +28,7 @@ table { width: 100%; display: block; overflow-x: auto; }
         box-sizing: border-box !important;
     }
 
-    /* space above the logo */
-    .side-bar .site-header{ padding-top: var(--sidebar-top-gap) !important; }
-
-    /* the actual scroll container in Just-the-Docs */
+       /* the actual scroll container in Just-the-Docs */
     .side-bar .site-nav,
     .side-bar nav,
     #site-nav{
