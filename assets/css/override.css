@@ -105,3 +105,29 @@ table { width: 100%; display: block; overflow-x: auto; }
         padding-left: 0 !important;
     }
 }
+
+/* Move sidebar scrollbar to the far right, keep inner text readable */
+@media (min-width: 50rem){
+    :root{
+        --sidebar-scroll-gap: 0px;   /* 0 = scrollbar flush to border; increase if you want a tiny gap */
+        --sidebar-content-pad-r: 12px; /* right padding for nav text so it doesn't touch the scrollbar */
+    }
+
+    /* The scroll container: remove right padding so the scrollbar sits at the border */
+    .side-bar{
+        padding-right: var(--sidebar-scroll-gap) !important;
+        overflow-y: auto;                 /* ensure it's the scrolling element */
+        scrollbar-gutter: stable;         /* reserve space for scrollbar (no layout shift) */
+        /* Optional: slimmer scrollbar */
+        scrollbar-width: thin;            /* Firefox */
+    }
+    .side-bar::-webkit-scrollbar{ width: 10px; } /* Chrome/Edge/Safari (optional) */
+
+    /* Give the content inside some right breathing room instead */
+    .side-bar nav,
+    .side-bar nav ul,
+    .side-bar .navigation-list,
+    .side-bar .nav-list{
+        padding-right: var(--sidebar-content-pad-r) !important;
+    }
+}
