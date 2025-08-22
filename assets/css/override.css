@@ -75,3 +75,19 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
+
+/* — Тонке налаштування жолоба: ліва і права сторони окремо — */
+:root{
+    --gutter-left: 28px;   /* зроби більше/менше за потреби */
+    --gutter-right: 18px;  /* поточний правий відступ */
+}
+
+@media (min-width: 50rem){
+    /* контент і хедер з пошуком мають більший відступ ЗЛІВА */
+    .main-header,
+    .main-content,
+    #main-content{
+        padding-left: var(--gutter-left) !important;
+        padding-right: var(--gutter-right) !important;
+    }
+}
