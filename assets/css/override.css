@@ -5,7 +5,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* ======= Vars ======= */
 :root{
-    --sidebar-width: 20rem;        /* left sidebar width */
+    --sidebar-width: 22rem;        /* left sidebar width */
     --gutter-left: 50px;           /* left spacing inside main (visible) */
     --gutter-right: 10px;          /* right padding inside main */
     --sidebar-left-inset: 50px;    /* same left inset for logo and menu items */
@@ -103,3 +103,31 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* in case an old full-bleed class remains */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
+
+/* === Make sidebar text the same size as the main content === */
+:root{
+    --content-font-size: 16px;   /* base font size for the site */
+    --content-line-height: 1.65; /* line height same as content */
+}
+
+body{
+    font-size: var(--content-font-size);
+    line-height: var(--content-line-height);
+}
+
+/* match the navigation to the same values */
+.side-bar,
+.side-bar .site-nav,
+.side-bar .nav-list,
+.side-bar .navigation-list{
+    font-size: var(--content-font-size) !important;
+    line-height: var(--content-line-height) !important;
+}
+
+/* links and expand buttons should not shrink on nested levels */
+.side-bar .nav-list .nav-list-item > .nav-list-link,
+.side-bar .navigation-list .navigation-list-item > .navigation-list-link,
+.side-bar .nav-list .nav-list-expander{
+    font-size: 1em !important;       /* 1em relative to the parent = same as content */
+    line-height: inherit !important;  /* use the same line height */
+}
