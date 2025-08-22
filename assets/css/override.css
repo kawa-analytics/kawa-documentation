@@ -128,43 +128,44 @@ table { width: 100%; display: block; overflow-x: auto; }
     .side-bar .nav-list-expander{ margin-left: 0 !important; }
 }
 
-/* === Unified font size for main content and left nav === */
 :root{
-    --kawa-font-size: 16px;   /* change to 15/17/etc if you prefer */
+    --kawa-font-size: 16px;   /* change to 15/17 if you prefer */
     --kawa-line-height: 1.65;
 }
 
-/* базове значення для сторінки */
+/* base size for the page */
 html { font-size: var(--kawa-font-size); }
 body { line-height: var(--kawa-line-height); }
 
-/* основний контент — явно під ті самі значення */
-.main-content,
-.page-content,
-#main-content {
-    font-size: 1rem;                 /* = var(--kawa-font-size) */
-    line-height: var(--kawa-line-height);
+/* strongest overrides for Just-the-Docs style nav */
+@media (min-width: 50rem){
+    /* container inherits the same size */
+    .side-bar,
+    .side-bar .site-nav{
+        font-size: 1rem !important;
+        line-height: var(--kawa-line-height) !important;
+    }
+
+    /* apply directly to all typical text carriers in the nav */
+    .side-bar .site-nav a.nav-list-link,
+    .side-bar .site-nav .nav-list-link,
+    .side-bar .site-nav .navigation-list-link,
+    .side-bar .site-nav .nav-list-item,
+    .side-bar .site-nav .navigation-list-item,
+    .side-bar .site-nav button.nav-list-expander,
+    .side-bar .site-nav summary,
+    .side-bar .site-nav a,
+    .side-bar .site-nav li,
+    .side-bar .site-nav span,
+    .side-bar .site-nav button,
+    .side-bar .site-nav label {
+        font-size: 1rem !important;          /* = var(--kawa-font-size) */
+        line-height: var(--kawa-line-height) !important;
+    }
 }
 
-/* ліва навігація — той самий розмір/міжрядковий (перекриваємо тему) */
-.side-bar,
-.side-bar .site-nav,
-.side-bar .nav-list,
-.side-bar .navigation-list {
-    font-size: 1rem !important;      /* зрівняти з контентом */
-    line-height: var(--kawa-line-height) !important;
-}
-
-/* посилання та експандери в навігації не зменшуються на вкладених рівнях */
-.side-bar .nav-list .nav-list-item > .nav-list-link,
-.side-bar .navigation-list .navigation-list-item > .navigation-list-link,
-.side-bar .nav-list-expander {
-    font-size: 1em !important;       /* 1em відносно контейнера = як у контенті */
-    line-height: inherit !important;
-}
-
-/* пошук у хедері теж у базному розмірі */
-.main-header input[type="search"] {
+/* keep search input consistent too */
+.main-header input[type="search"]{
     font-size: 1rem !important;
     line-height: var(--kawa-line-height) !important;
 }
