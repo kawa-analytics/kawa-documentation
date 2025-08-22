@@ -5,52 +5,52 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* ======= Vars ======= */
 :root{
-    --sidebar-width: 19rem;   /* ширина лівої панелі */
-    --gutter-left: 28px;      /* відстань зліва всередині main (видима) */
-    --gutter-right: 15px;     /* відступ справа всередині main */
-    --sidebar-left-inset: 14px; /* ОДИНАКОВИЙ лівий відступ для логотипа і пунктів меню */
+    --sidebar-width: 19rem;   /* left sidebar width */
+    --gutter-left: 28px;      /* left spacing inside main (visible) */
+    --gutter-right: 10px;     /* right padding inside main */
+    --sidebar-left-inset: 14px; /* same left inset for the logo and menu items */
 }
 
-/* не звужуємо контент штучним max-width */
+/* do not narrow content with an artificial max-width */
 .page, .page-content, .main-content, .content,
 .docs-content, .td-content, .td-main { max-width: none !important; }
 
 /* ======= Desktop ======= */
 @media (min-width: 50rem){
 
-    /* — Сайдбар — */
+    /* — Sidebar — */
     .side-bar{
-        align-items: flex-start !important;          /* у теми було flex-end */
+        align-items: flex-start !important;          /* theme had flex-end */
         width: var(--sidebar-width) !important;
-        padding-left: 0 !important;                  /* керуємо відступом тільки в дітях */
+        padding-left: 0 !important;                  /* control left spacing on children only */
     }
-    /* логотип/шапка: той самий inset, що й у пунктів меню */
+    /* logo/header: same inset as menu items */
     .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
     .side-bar .site-title, .side-bar .site-logo{ margin-left: 0 !important; }
 
-    /* списки без власних лівих відступів */
+    /* lists without their own left padding */
     .side-bar nav, .side-bar nav ul{
         padding-left: 0 !important;
         margin-left: 0 !important;
     }
 
-    /* Пункти меню: ВІДСТУП = логотипу → ліві краї збігаються */
+    /* menu items: left inset = logo → left edges align */
     .side-bar .nav-list .nav-list-item > .nav-list-link,
     .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
         padding-left: var(--sidebar-left-inset) !important;
     }
 
-    /* — Основна колонка — */
+    /* — Main column — */
     .main{
-        margin-left: var(--sidebar-width) !important;                 /* резерв під панель */
-        width: calc(100% - var(--sidebar-width)) !important;          /* без «пустелі» справа */
-        padding-left: var(--gutter-left) !important;                  /* видимий зазор зліва */
+        margin-left: var(--sidebar-width) !important;                 /* reserve space for sidebar */
+        width: calc(100% - var(--sidebar-width)) !important;          /* no empty space on the right */
+        padding-left: var(--gutter-left) !important;                  /* visible gap on the left */
         padding-right: var(--gutter-right) !important;
         box-sizing: border-box !important;
         max-width: none !important;
     }
 
-    /* внутрішні контейнери без власних паддінгів (керує .main) */
+    /* inner containers without their own padding (use .main only) */
     .main-header, .main-content, #main-content{
         padding-left: 0 !important;
         padding-right: 0 !important;
@@ -59,7 +59,7 @@ table { width: 100%; display: block; overflow-x: auto; }
         box-sizing: border-box !important;
     }
 
-    /* пошук по тій самій вертикалі, не виступає */
+    /* search aligned with content, no overflow */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -75,22 +75,22 @@ table { width: 100%; display: block; overflow-x: auto; }
     }
 }
 
-/* На випадок старого full-bleed класу */
+/* in case an old full-bleed class remains */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
 
 @media (min-width: 50rem){
     :root{
-        /* підкрути цифру, якщо треба трохи правіше/лівіше */
-        --sidebar-left-inset: 28px;
+        /* tweak this value if you need a bit more left/right */
+        --sidebar-left-inset: 20px;
     }
 
-    /* сам сайдбар без свого паддінга — керуємо відступом у дітях */
+    /* no left padding on the sidebar itself — control spacing on its children */
     .side-bar{ padding-left: 0 !important; }
 
-    /* логотип/шапка: той самий inset */
+    /* logo/header: use the same left inset */
     .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
 
-    /* навігаційний список теж з таким самим inset’ом */
+    /* navigation list uses the same left inset */
     .side-bar nav,
     .side-bar nav ul,
     .side-bar .navigation-list,
@@ -99,8 +99,7 @@ table { width: 100%; display: block; overflow-x: auto; }
         margin-left: 0 !important;
     }
 
-    /* самі лінки без додаткового внутрішнього лівого паддінга,
-       щоб не було “подвійного” зсуву */
+    /* links: no extra left padding to avoid a “double” shift */
     .side-bar .nav-list .nav-list-item > .nav-list-link,
     .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
         padding-left: 0 !important;
