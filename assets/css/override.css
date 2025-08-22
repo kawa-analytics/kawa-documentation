@@ -3,24 +3,24 @@ img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* НАЛАШТОВУВАНІ РОЗМІРИ */
+/* налаштовувані значення (підкручуй за потреби) */
 :root{
-    --sidebar-width: 19rem;   /* ширина лівої навігаційної панелі */
-    --left-gap: 28px;         /* додатковий зазор між панеллю і контентом (ЗЛІВА) */
-    --right-gap: 20px;        /* внутрішній відступ ПРАВОРУЧ усередині main */
-    --sidebar-pad: 10px;      /* трохи повітря всередині сайдбару під логотип */
+    --sidebar-width: 19rem;   /* ширина лівої панелі */
+    --gutter-left: 30px;      /* ВІДСТАНЬ ЗЛІВА всередині main (видима) */
+    --gutter-right: 20px;     /* відступ справа всередині main */
+    --sidebar-pad: 10px;      /* трохи повітря для логотипа в панелі */
 }
 
-/* ЗНЯТИ ШТУЧНІ ОБМЕЖЕННЯ ШИРИНИ */
+/* не звужуємо контент штучним max-width */
 .page, .page-content, .main-content, .content,
 .docs-content, .td-content, .td-main { max-width: none !important; }
 
-/* DESKTOP */
+/* ── Desktop ─────────────────────────────────────────────────────────── */
 @media (min-width: 50rem){
 
-    /* ЛІВИЙ САЙДБАР: ширина + акуратні відступи */
+    /* ліва панель: фіксована ширина + акуратні відступи */
     .side-bar{
-        align-items: flex-start !important;         /* у теми було flex-end */
+        align-items: flex-start !important;      /* тема ставить flex-end */
         width: var(--sidebar-width) !important;
         padding-left: var(--sidebar-pad) !important;
     }
@@ -31,33 +31,33 @@ table { width: 100%; display: block; overflow-x: auto; }
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
-    .side-bar .nav-list .nav-list-item > .nav-list-link{
-        padding-left: .5rem !important;
-    }
 
-    /* ОСНОВНА КОЛОНКА: резервація місця + додатковий лівий зазор
-       ВАЖЛИВО: ширина main зменшена на той самий зазор — справа пустоти не буде */
+    /* ГОЛОВНЕ:
+       1) резервуємо місце під сайдбар (margin-left)
+       2) задаємо ширину main, щоб справа не було пустоти
+       3) даємо внутрішні відступи всередині main → саме вони видно зліва/справа */
     .main{
-        margin-left: calc(var(--sidebar-width) + var(--left-gap)) !important;
-        width: calc(100% - var(--sidebar-width) - var(--left-gap)) !important;
-        max-width: none !important;
-        padding: 0 !important;
+        margin-left: var(--sidebar-width) !important;
+        width: calc(100% - var(--sidebar-width)) !important;
+        padding-left: var(--gutter-left) !important;   /* ← збільшує видиму відстань зліва */
+        padding-right: var(--gutter-right) !important;
         box-sizing: border-box !important;
+        max-width: none !important;
     }
 
-    /* ХЕДЕР (із пошуком) і КОНТЕНТ усередині main */
+    /* обнуляємо внутрішні паддінги в дочірніх контейнерах,
+       щоб відступи брались лише з .main */
     .main-header,
     .main-content,
     #main-content{
-        /* лівий відступ формуємо через margin у .main; тут тільки правий */
         padding-left: 0 !important;
-        padding-right: var(--right-gap) !important;
+        padding-right: 0 !important;
         margin: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    /* Пошук рівно в межах основного контенту */
+    /* пошук рівно в межах .main, без «виступів» */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -73,5 +73,5 @@ table { width: 100%; display: block; overflow-x: auto; }
     }
 }
 
-/* Якщо десь лишився старий full-bleed клас — нейтралізуємо */
+/* на випадок, якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
