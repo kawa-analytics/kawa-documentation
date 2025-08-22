@@ -129,7 +129,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 }
 
 :root{
-    --kawa-font-size: 16px;   /* change to 15/17 if you prefer */
+    --kawa-font-size: 15px;   /* change to 15/17 if you prefer */
     --kawa-line-height: 1.65;
 }
 
