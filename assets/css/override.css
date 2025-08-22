@@ -81,7 +81,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 @media (min-width: 50rem){
     :root{
         /* tweak this value if you need a bit more left/right */
-        --sidebar-left-inset: 20px;
+        --sidebar-left-inset: 28px;
     }
 
     /* no left padding on the sidebar itself — control spacing on its children */
