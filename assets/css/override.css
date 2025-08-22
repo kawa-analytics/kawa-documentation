@@ -3,53 +3,55 @@ img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
 
-/* налаштовувані значення (підкручуй за потреби) */
+/* ======= Vars ======= */
 :root{
     --sidebar-width: 19rem;   /* ширина лівої панелі */
-    --gutter-left: 30px;      /* ВІДСТАНЬ ЗЛІВА всередині main (видима) */
-    --gutter-right: 20px;     /* відступ справа всередині main */
-    --sidebar-pad: 10px;      /* трохи повітря для логотипа в панелі */
+    --gutter-left: 28px;      /* відстань зліва всередині main (видима) */
+    --gutter-right: 15px;     /* відступ справа всередині main */
+    --sidebar-left-inset: 14px; /* ОДИНАКОВИЙ лівий відступ для логотипа і пунктів меню */
 }
 
 /* не звужуємо контент штучним max-width */
 .page, .page-content, .main-content, .content,
 .docs-content, .td-content, .td-main { max-width: none !important; }
 
-/* ── Desktop ─────────────────────────────────────────────────────────── */
+/* ======= Desktop ======= */
 @media (min-width: 50rem){
 
-    /* ліва панель: фіксована ширина + акуратні відступи */
+    /* — Сайдбар — */
     .side-bar{
-        align-items: flex-start !important;      /* тема ставить flex-end */
+        align-items: flex-start !important;          /* у теми було flex-end */
         width: var(--sidebar-width) !important;
-        padding-left: var(--sidebar-pad) !important;
+        padding-left: 0 !important;                  /* керуємо відступом тільки в дітях */
     }
-    .side-bar .site-header,
-    .side-bar .site-title,
-    .side-bar .site-logo,
+    /* логотип/шапка: той самий inset, що й у пунктів меню */
+    .side-bar .site-header{ padding-left: var(--sidebar-left-inset) !important; }
+    .side-bar .site-title, .side-bar .site-logo{ margin-left: 0 !important; }
+
+    /* списки без власних лівих відступів */
     .side-bar nav, .side-bar nav ul{
-        margin-left: 0 !important;
         padding-left: 0 !important;
+        margin-left: 0 !important;
     }
 
-    /* ГОЛОВНЕ:
-       1) резервуємо місце під сайдбар (margin-left)
-       2) задаємо ширину main, щоб справа не було пустоти
-       3) даємо внутрішні відступи всередині main → саме вони видно зліва/справа */
+    /* Пункти меню: ВІДСТУП = логотипу → ліві краї збігаються */
+    .side-bar .nav-list .nav-list-item > .nav-list-link,
+    .side-bar .navigation-list .navigation-list-item > .navigation-list-link{
+        padding-left: var(--sidebar-left-inset) !important;
+    }
+
+    /* — Основна колонка — */
     .main{
-        margin-left: var(--sidebar-width) !important;
-        width: calc(100% - var(--sidebar-width)) !important;
-        padding-left: var(--gutter-left) !important;   /* ← збільшує видиму відстань зліва */
+        margin-left: var(--sidebar-width) !important;                 /* резерв під панель */
+        width: calc(100% - var(--sidebar-width)) !important;          /* без «пустелі» справа */
+        padding-left: var(--gutter-left) !important;                  /* видимий зазор зліва */
         padding-right: var(--gutter-right) !important;
         box-sizing: border-box !important;
         max-width: none !important;
     }
 
-    /* обнуляємо внутрішні паддінги в дочірніх контейнерах,
-       щоб відступи брались лише з .main */
-    .main-header,
-    .main-content,
-    #main-content{
+    /* внутрішні контейнери без власних паддінгів (керує .main) */
+    .main-header, .main-content, #main-content{
         padding-left: 0 !important;
         padding-right: 0 !important;
         margin: 0 !important;
@@ -57,7 +59,7 @@ table { width: 100%; display: block; overflow-x: auto; }
         box-sizing: border-box !important;
     }
 
-    /* пошук рівно в межах .main, без «виступів» */
+    /* пошук по тій самій вертикалі, не виступає */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -73,5 +75,5 @@ table { width: 100%; display: block; overflow-x: auto; }
     }
 }
 
-/* на випадок, якщо десь лишився старий full-bleed клас */
+/* На випадок старого full-bleed класу */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
