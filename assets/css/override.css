@@ -99,7 +99,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* Align left edges of the logo and the nav items */
 @media (min-width: 50rem){
-    :root { --sidebar-left-inset: 30px; }  /* adjust this value if needed */
+    :root { --sidebar-left-inset: 40px; }  /* adjust this value if needed */
 
     /* 1) apply one left inset to the whole sidebar */
     .side-bar{
