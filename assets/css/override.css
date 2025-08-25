@@ -80,3 +80,15 @@ table { width: 100%; display: block; overflow-x: auto; }
 body {
     font-family: 'Inter', sans-serif;
 }
+
+/* Звичайні посилання */
+a {
+    color: #473982; /* або будь-який інший колір */
+    text-decoration: none; /* (опціонально) прибрати підкреслення */
+}
+
+/* Посилання при наведенні */
+a:hover {
+    color: #312759;
+    text-decoration: underline; /* (опціонально) повернути підкреслення */
+}
