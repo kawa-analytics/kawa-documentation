@@ -6,7 +6,7 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     --sidebar-width: 19rem;  /* ширша ліва панель */
     --gutter-left: 40px;      /* відстань зліва всередині main (видима) */
     --gutter-right: 10px;     /* відступ справа всередині main */
-    --sidebar-pad: 35px;     /* трохи повітря для логотипа/контенту в сайдбарі */
+    --sidebar-pad: 40px;     /* трохи повітря для логотипа/контенту в сайдбарі */
 }
 
 /* не обмежуємо контент штучними max-width */
