@@ -76,3 +76,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 /* якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
+
+body {
+    font-family: 'Inter', sans-serif;
+}
