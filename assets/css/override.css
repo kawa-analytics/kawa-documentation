@@ -19,6 +19,7 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         align-items: flex-start !important;          /* тема ставила flex-end */
         width: var(--sidebar-width) !important;      /* фіксована ширина панелі */
         padding-left: var(--sidebar-pad) !important; /* повітря біля логотипа */
+        background: none !important;
     }
     .side-bar .site-header,
     .side-bar .site-title,
@@ -79,7 +80,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 
 body {
     font-family: 'Inter', sans-serif;
-    color: #0f0f14;
+    color: #111117;
 }
 
 /* Звичайні посилання */
