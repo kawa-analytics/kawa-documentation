@@ -5,16 +5,14 @@ parent: Computation
 nav_order: 11
 ---
 
-Mapping Columns
----
+# Mapping Columns
 
 Mapping columns are a useful feature for performing ad-hoc data enrichment by manually associating values from a dimension with custom mapped values.
 
 * TOC
 {:toc}
 
-
-# 1 Creating mapping columns
+## 1 Creating mapping columns
 
 Mapping columns can be created from the Enrich Data section > __Manual Input__.
 
@@ -33,7 +31,6 @@ _Here, we are defining a mapping column for the Trader dimension. A Desk name wa
 ![Lookup](./readme-assets/mapping3.png)
 
 The name of the newly created mapping column should be entered in the header of the input column, as shown on the screenshot above.
-
 
 __CSV imports and exports:__
 Your mapping can be exported as a CSV file and imported into the software.
@@ -55,15 +52,13 @@ __Handling values without mapping:__
 
 When the mapping does not cover all the values of your dimension, for example: after an ETL, a new trader was added into the system - and they were not assigned to a desk yet.
 
-
 - _Empty cell:_ All the unmapped values will not be filled and left empty.
 
 - _Original value:_ Unmapped values will stay unchanged. A trader without a desk will be rendered as the trader name without change.
 
 - _Custom value:_ You can define a placeholder there for unmapped values like: N/A etc...
 
-
-# 2 Editing a mapping column
+## 2 Editing a mapping column
 
 In the 3 dots menu of a mapping column, click on __Edit Mapping__. You can then change the mapped values (either manually or by loading a new CSV file), you can rename the column and change the behavior for unmapped values.
 

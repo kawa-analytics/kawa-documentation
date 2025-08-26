@@ -5,8 +5,7 @@ parent: Visualization
 nav_order: 16
 ---
 
-Filtering data
----
+# Filtering data
 
 Filters can be applied to all types of view through the same filter panel.
 KAWA comes with powerful built-in filters, adapted to all your data types: text, number, booleans, date, date time.
@@ -14,10 +13,9 @@ KAWA comes with powerful built-in filters, adapted to all your data types: text,
 * TOC
 {:toc}
 
+## 1. The filter panel
 
-# 1. The filter panel
-
-## 1.1 Overview
+### 1.1 Overview
 
 The filter panel is situated at the right of all the views (Charts, Grids and Pivots). It can be toggled on and off by clicking on the green "Filters" button at the top right. This button indicates how many active filters are applied on your view.
 
@@ -25,12 +23,11 @@ The filter panel is situated at the right of all the views (Charts, Grids and Pi
 
 _Here, three filters are configured, but only one is applied. The toggle button on each filter card toggles on and off the corresponding filters._
 
-
 In this panel, you can configure the filters that are applied to your view, add new ones or remove existing ones.
 
 To add new filters, click on the (+) button situated at the top of the panel. You can then choose what you want to filter. You have the choices between the fields of the current view or the columns of the underlying sheet. __You do not need to add the filtered columns to your views.__
 
-## 1.2 Filtering grouped data
+### 1.2 Filtering grouped data
 
 When your view is grouped (It is always the case with pivot tables, often the case with Charts, and sometimes with Grids), you can decide at which level of grouping you want to apply your filter.
 
@@ -40,10 +37,9 @@ In the apply to menu, pick which group and which aggregation you want to apply y
 
 _In this example, we want to keep only the states with a negative Total. We picked: Apply to State, aggregation: SUM._
 
+## 2. Configuring your filters
 
-# 2. Configuring your filters
-
-## 2.1 The Text filters
+### 2.1 The Text filters
 
 ### 2.1.1 Filtering particular values
 
@@ -71,11 +67,9 @@ __Examples:__
 - Begins with _W_ `AND` Ends with _E_ will match the word Wayne.
 - Begins with _W_ `OR` Ends with _E_ will match the words Bruce, Walter and Wayne.
 
-
 ![Filters](./readme-assets/filter_text2.png)
 
 _Keeps only the cities whose name starts with A, ends with A and contains T._
-
 
 ### 2.1.3 Advanced settings for text filters
 
@@ -85,8 +79,7 @@ __Selection Mode:__ Can be set to multi-select or single-select. This will defin
 
 __Configure options:__ Lets you define the exact content of the list in the selection. You can either restrict the values that are offered to the users or group them into categories. 
 
-
-## 2.2 The Numeric filters
+### 2.2 The Numeric filters
 
 The numeric filters have two modes:
 
@@ -98,17 +91,14 @@ The numeric filters have two modes:
 
 _The above filters only keep quantities that are either strictly lesser than 10 or strictly larger than 100._
 
-
-## 2.3 The Boolean filters
+### 2.3 The Boolean filters
 
 The boolean filter has only one mode: 
 You can decide whether to keep `True`, `False` or `Empty`. There is a toggle between multi and single select modes at the top right of the filter card. (It lets you for example pick both `False` and `Empty`).
 
-
-## 2.4 Temporal filters
+### 2.4 Temporal filters
 
 Temporal filters are the most complex filters, they apply to both date and date time filters.
-
 
 ### 2.1.1 Filtering using presets
 
@@ -146,7 +136,6 @@ There are three types of range available.
 
 __a. Fixed ranges:__ They correspond to a range defined by two fixed dates that you can pick. For example: all dates between 1/1/2020 and 2/1/2020. The min and max are included in the returned datasets. If you omit the Max, KAWA will give you all dates after the Min, and vice versa.
 
-
 __b. Rolling ranges:__ They correspond to a rolling range, relative to today. It contains 3 parameters:
 
 - _From:_ A number to indicate how many units we start from (Minimum)
@@ -163,7 +152,6 @@ _Let's suppose that today is the 25th of June 2025._
 Special case for __Available date__: Available date can be picked as a Unit. Picking for example: -1 to 0 Available date will filter the data on the last available date in your dataset.
 
 __c. By Period:__ Lets you choose one period of time like: the Year 2023 or the month of March, or the month of April 2020.
-
 
 ### 2.1.3 Filtering using conditions
 

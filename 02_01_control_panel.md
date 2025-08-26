@@ -5,8 +5,8 @@ parent: Data Modeling
 nav_order: 7
 ---
 
-Control Panel
----
+# Control Panel
+
 The Controls Panel allows users to dynamically customize and interact with data views within the Sheets workspace. It is designed to provide flexibility, improve data exploration, and support user-driven input directly from the interface.
 
 A control is an interactive interface element that is linked to the data on the sheet and allows the user to dynamically filter, configure, or enter values directly in the interface for the immediate updating and viewing of the corresponding data.
@@ -24,7 +24,7 @@ These include:
 * TOC
 {:toc}
 
-# 1. Filter Control
+## 1. Filter Control
 
 The Filter control lets users interactively narrow down the data in the current sheet view by selecting specific values from a chosen column. It is part of the Controls Panel system and is especially useful for narrowing down datasets interactively without modifying the underlying data or requiring complex formulas.
 
@@ -84,7 +84,7 @@ For fields with a different data type (e.g., date, datetime), the Display Type s
 
 ![Controls panel](./readme-assets/controls_panel_filter7.png)
 
-# 2. Button Control
+## 2. Button Control
 
 Button controls serve as interactive triggers for preconfigured Python tool. They can execute Python scripts (code inside a Python tool that can be inserted, but it is not tied to the UI) directly from the interface, making them a powerful feature for data transformation, filtering, statistical analysis, or any automated logic embedded in the sheet. Button controls serve as interactive triggers for preconfigured workflows. They can execute Python scripts directly from the interface, making them a powerful feature for data transformation, filtering, statistical analysis, or any automated logic embedded in the sheet. This control is particularly useful for users who want to apply logic, run analytics, or initiate processes manually with a single click.
 
@@ -102,11 +102,11 @@ To link a tool, use the “Python tool” dropdown to choose from available tool
 
 *Add a new Python tool from the library.*
 
-# 3. Variable control
+## 3. Variable control
 
 Variable Controls allow users to enter values that can be used in other parts of the sheet, such as formulas and filters. They work like parameters that can be changed at any time, without needing to edit the structure of the table. Variables are independent elements — they do not filter data on their own, but can be linked to other components.
 
-## 3.1 Available Variable Controls
+### 3.1 Available Variable Controls
 
 The following variable types are available when adding a new control:
 
@@ -122,7 +122,7 @@ The following variable types are available when adding a new control:
 | **Switch**             | A binary toggle (on/off, true/false). Used for enabling/disabling conditions or options.                         |
 | **Single select list** | Dropdown menu allowing the user to choose one value from a predefined list of options.                           |
 
-## 3.2 Text variable
+### 3.2 Text variable
 
 A Text control allows the user to manually enter any string value. It is useful for filtering, defining conditions in formulas, or dynamically providing parameters — such as a city name, region, or keyword.
 
@@ -163,7 +163,7 @@ Example:
 
 ![Controls panel](./readme-assets/controls_panel_text5.png)
 
-## 3.3 Number variable
+### 3.3 Number variable
 
 A Number control allows the user to manually enter a single numeric value. This value is stored as a variable and can be used in formulas and filters to create parameterized logic.
 
@@ -200,7 +200,7 @@ Example:
 
 ![Controls panel](./readme-assets/controls_panel_number4.png)
 
-## 3.4 Number range variable
+### 3.4 Number range variable
 
 The Number range control allows users to enter a minimum and maximum numeric value to define an interval.
 
@@ -216,7 +216,7 @@ Usage in Formulas. To reference the range in a formula, use both boundaries:
 
 ![Controls panel](./readme-assets/controls_panel_number_range4.png)
 
-## 3.5 Date variable
+### 3.5 Date variable
 
 The Date control allows users to select a specific calendar date through a visual date picker. It stores the selected value as a variable that can be used in filters and formulas and - enabling dynamic, date-driven logic in the sheet view.
 
@@ -246,7 +246,7 @@ This formula uses the date selected in the control to label rows based on whethe
 
 ![Controls panel](./readme-assets/controls_panel_date4.png)
 
-## 3.6 Date range variable
+### 3.6 Date range variable
 
 The Date range control allows users to select a start and end date to define a time interval.
 
@@ -258,7 +258,7 @@ Usage in Formulas. To reference the range in a formula, use both boundaries:
 
 ![Controls panel](./readme-assets/controls_panel_date_range2.png)
 
-## 3.7 Date time variable
+### 3.7 Date time variable
 
 Date Time control allows users to input a precise date and time value, stored as a variable. This control is ideal for scenarios where both the calendar date and the specific time of day are important for filtering data, running calculations.
 
@@ -288,7 +288,7 @@ This formula returns "Late" for records created after the specified time, and "O
 
 ![Controls panel](./readme-assets/controls_panel_datetime4.png)
 
-## 3.8 Datetime range variable
+### 3.8 Datetime range variable
 
 The Datetime range control allows the user to select a range that includes both the start and end date and exact time.
 
@@ -300,7 +300,7 @@ Usage in Formulas. To reference the range in a formula, use both boundaries:
 
 ![Controls panel](./readme-assets/controls_panel_datetime_range2.png)
 
-## 3.9 Switch variable
+### 3.9 Switch variable
 
 The Switch control is a toggle input designed for binary user choices such as true/false, yes/no, or on/off conditions.
 
@@ -313,7 +313,7 @@ Usage in Formulas
 - With MySwitch = Off, SwitchStatus shows “Disabled” 
 - Toggling MySwitch = On changes all SwitchStatus values to “Enabled” instantly
 
-## 3.10 Single select list variable
+### 3.10 Single select list variable
 
 The Single Select List control allows users to choose one option from a predefined dropdown list. The selected value is stored as a variable that can be used throughout the sheet - in filters and formulas.
 
@@ -354,7 +354,7 @@ Returns Sales only for rows matching the selected category; otherwise returns 0.
 
 ![Controls panel](./readme-assets/controls_panel_single6.png)
 
-## 3.11 Multi select list variable
+### 3.11 Multi select list variable
 
 The Multi select list variable control allows users to choose multiple values from a predefined or dynamically loaded list. This control is useful when filtering or computing data based on more than one matching value.
 
@@ -381,7 +381,7 @@ Returns Selected only for rows matching the selected category; otherwise returns
 
 ![Controls panel](./readme-assets/controls_panel_multi2.png)
 
-# 4. Interaction with controls
+## 4. Interaction with controls
 
 Each created control in the Controls panel includes the correct visual and functional elements: reorder handle, type icon, display name, eye icon (Toggle visibility), pencil icon (Edit control) and trash icon (Delete control).
 
@@ -401,7 +401,7 @@ Delete control permanently removes the selected control from the panel. After cl
 
 ![Controls panel](./readme-assets/controls_panel_interaction4.png)
 
-# 5. Tab-Specific Control Behavior
+## 5. Tab-Specific Control Behavior
 
 - Sheets
 
@@ -417,15 +417,15 @@ You can reuse Buttons and Variables defined in Sheets, but:
 
 This approach lets you define Buttons and Variables once in Sheets for consistency, yet configure Filters and adjust Variable inputs independently on every tab.
 
-# 6. How Sheet Controls Impact Views
+## 6. How Sheet Controls Impact Views
 
 Filters set up in the Sheets tab are automatically applied to every View linked to that Sheet. All other control types (buttons, variables) do not affect what data appears in the View.
 
-# 7. Access to Controls in Sheets, Dashboards and Applications
+## 7. Access to Controls in Sheets, Dashboards and Applications
 
 Users can set access for the artifacts they create (Sheets, Dashboards, or Applications) in each tab.
 
-## 7.1 Example: Setting access for a Sheet
+### 7.1 Example: Setting access for a Sheet
 
 - Private
 If a user marks their Sheet as Private, only they can view it and use all controls created for that Sheet.

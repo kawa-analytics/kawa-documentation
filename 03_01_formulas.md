@@ -5,23 +5,21 @@ parent: Computation
 nav_order: 9
 ---
 
-Formulas
----
+# Formulas
 
 * TOC
 {:toc}
 
 
-# 1 General Concepts
+## 1 General Concepts
 
-## 1.1 Formulas
+### 1.1 Formulas
 
 Formulas are created from the Formula editor, available from the enrich data button.
 There are three modes to input formulas:
 - Text mode (Excel like)
 - Visual mode (Using blockly)
 - AI assisted mode, via prompt.
-
 
 Formulas can be composed of:
 - Other columns
@@ -47,7 +45,7 @@ Note that:
 
 The return type of this formula is a `Text`, as indicated on the UI (Top left in text mode and top right in visual mode).
 
-## 1.2 Types and Levels of detail
+### 1.2 Types and Levels of detail
 
 ### a. Types
 
@@ -67,12 +65,10 @@ You can always refer to the documentation of each operator directly on the GUI f
 
 ![Formula](./readme-assets/formula_3.png)
 
-
 ### b. Levels of detail
 
 In addition to being typed, formulas also have a Level of Detail.
 It can be either: `ROW`, `GROUP` or `ANY`.
-
 
 - **The ROW level of detail:**
 
@@ -82,7 +78,6 @@ For example, the formula `Profit / Quantity` will have a value for each row. Whe
 `SUM(  Profit / Quantity  )`
 
 In other words, the computation is done at the row level and we simply aggregate those results together.
-
 
 - **The GROUP level of detail:**
 
@@ -95,8 +90,6 @@ Here is how you would write a weighted average using a GROUP formula:
 ```
 WeightedAverage = SUM(weight * value) / SUM(weight)
 ```
-
-
 
 - **Quick example:**
 
@@ -126,11 +119,9 @@ Note that for the second formula, the aggregation at the bottom of the grid cann
 
 ![Formula](./readme-assets/formula_4.png)
 
+## 2 Window Functions
 
-# 2 Window Functions
-
-
-## 2.1 What is a Window Function?
+### 2.1 What is a Window Function?
 
 A Window Function is a ROW LEVEL computation operation. This means that it will compute one value for each row of data.
 
@@ -145,16 +136,13 @@ The image below illustrates this:
 
 When you write a window function, you need to define which rows will be accessible from each computation.
 
-
-
-## 2.2 Examples
+### 2.2 Examples
 
 - **Example 1: Average of surrounding rows**
 
 Below, an example of an Average of the row before, the row after and the current row, per client.
 
 ![Window Functions](./readme-assets/window_example1.png)
-
 
 - **Example 2: Cumulative Sum**
 
@@ -165,16 +153,13 @@ It is also important to note that the ORDER defined in the WINDOW function is in
 
 ![Window Functions](./readme-assets/window_example2.png)
 
-
 - **Example 3: Delta between today's price and yesterday's price for Stock**
-
 
 **Case 1: Using the ROWS operator**
 
 Notice how we use the `ROWS` operator to define the range. This operator will just look at the rows and ignore gaps in the dates. Here `STOCK2` has gaps but the delta ignores them (always -$1). In short, the `ROWS` operator will load N rows before and P rows after without caring about the content of those rows.
 
 ![Window Functions](./readme-assets/window_example3.png)
-
 
 **Case 2: Using the RANGE operator**
 
@@ -189,17 +174,14 @@ In the below screenshot, it explains why, for STOCK2, the delta is defined only 
 
 As a result, the `ROWS` operator is interesting when you order by date and you want to account for missing dates in your computation.
 
-
 ![Window Functions](./readme-assets/window_example4.png)
 
-
-## 2.3 Creating and defining window functions
+### 2.3 Creating and defining window functions
 
 In order to configure Window function, create a new formula and use the
 Blockly mode. It has several prebuilt functions to help you getting started.
 
 ![Window Functions](./readme-assets/window_functions.png)
-
 
 In order to define your Window, you must set the following parameters:
 

@@ -4,18 +4,16 @@ title: AI Integration
 nav_order: 19
 ---
 
-AI Integration
----
+# AI Integration
 
 * TOC
 {:toc}
 
-
-# 1. AI Integration to assist configuration
+## 1. AI Integration to assist configuration
 
 In KAWA, AI is integrated in various places to assist you configuring your data models and analytics.
 
-## 1.1 Formula editor
+### 1.1 Formula editor
 
 Within the sheet section, the formula editor comes with an AI section that can write formulas from a description in natural language.
 
@@ -23,7 +21,7 @@ Within the sheet section, the formula editor comes with an AI section that can w
 
 The AI also provides a list of suggested prompts that you can leverage.
 
-## 1.2 Chart creation
+### 1.2 Chart creation
 
 When creating new charts, the AI can help by generating the appropriate configuration from a prompt.
 
@@ -31,18 +29,17 @@ When creating new charts, the AI can help by generating the appropriate configur
 
 Like for the formulas, it suggests a list of relevant charts that you can use.
 
-## 1.3 Python script generation
+### 1.3 Python script generation
 
 From within the Script section, you can use AI to generate scripts with the correct syntax, tailored to your data and context. 
 
 ![AI Assist](./readme-assets/ai_assist3.png)
 
-
-# 2. Integrated AI Chat
+## 2. Integrated AI Chat
 
 You can interact with your data intuitively using Kawa's integrated AI Chat. It utilizes a comprehensive understanding of sheet structures and employs a multi-agent approach to facilitate seamless data exploration. This feature allows you to engage with your data naturally, enhancing the efficiency and effectiveness of data analysis. By integrating AI capabilities, Kawa ensures that you can easily access and interpret complex datasets, making informed decisions based on real-time insights.
 
-## 2.1 Using the chat
+### 2.1 Using the chat
 
 The chat can be found in three places:
 
@@ -60,7 +57,6 @@ When you send a message in a conversation, it's directed to a specific agent. Th
 
 > When you switch agents, you'll see the relevant commands and suggestions defined by that agent's configuration in the right panel.
 
-
 __Data Analytics:__
 The agents have access to all the sheets of your context. 
 
@@ -69,7 +65,6 @@ The agents have access to all the sheets of your context.
 | Sheet            | The current sheet |
 | Dashboard        | All the sheets of the Dashboard |
 | Application        | All the sheets associated with the Application |
-
 
 When asked a question that is relative to data stored in one (or many sheets), the agent will often query the data to provide an answer.
 
@@ -85,7 +80,7 @@ The outcome of an analytics session can be bookmarked and, when working within a
 
 ![Chat](./readme-assets/ai-chat2.png)
 
-# 3. Configuring Agents and Metadata
+## 3. Configuring Agents and Metadata
 
 This defines the context for the messages you send in the chat. Each interaction includes:
 
@@ -97,8 +92,7 @@ This defines the context for the messages you send in the chat. Each interaction
 
 Together, these elements ensure the AI has the necessary context to generate accurate and relevant responses.
 
-
-## 3.1 AI Agents
+### 3.1 AI Agents
 
 Each workspace includes a default AI agent named Paul. Agents are configured with specific instructions, connected knowledge sources (including unstructured data), a set of commands, and defined capabilities to assist with tasks and queries.
 
@@ -112,7 +106,7 @@ Agents can be added, updated and removed. Note: The default agent can be edited 
 
 Agents are accessible within the various AI chats, allowing users to interact with them directly to retrieve information, execute commands, or perform specific tasks based on the agent's configuration.
 
-## 3.2 Sheet Metadata
+### 3.2 Sheet Metadata
 
 When chatting with data, the AI model has access to sheet metadata from multiple sources:
 
@@ -127,7 +121,7 @@ Model > Three dots menu of any column > Update description
 
 Configuring the AI Metadata can also be done through the sheet model: Model > AI Metadata (third tab on the right)
 
-# 4. Connecting KAWA to your LLM through the Chat API
+## 4. Connecting KAWA to your LLM through the Chat API
 
 This section is reserved for platform administrators with an ADMIN account.
 In order to connect to a LLM, KAWA must be configured to an Open AI API on any provider.
@@ -148,10 +142,8 @@ We can provide connectivity to the following providers on request.
 
 > In order for KAWA to be fully operational, your model MUST support function calling through the `tools` parameter in the Completion API.
 
-
 This configuration is done through the KAWA Python SDK.
 Please cf [Kawa SDK on Github](https://github.com/kawa-analytics/kywy-documentation) to install the SDK.
-
 
 ```python
 from kywy.client.kawa_client import KawaClient as K

@@ -5,8 +5,7 @@ parent: Visualization
 nav_order: 14
 ---
 
-Chart views
----
+# Chart views
 
 Chart views let you build powerful visualizations of your data.
 Many different types of charts are available and each one supports a wide range of configuration parameters.
@@ -16,7 +15,7 @@ Many different types of charts are available and each one supports a wide range 
 
 In order to create a new Chart View, click on the plus button at the top left of your sheet, and pick: Chart.
 
-# 1 Configure  your Chart
+## 1 Configure  your Chart
 
 Configuring your chart is made through the Configure chart menu, accessible from the top right.
 
@@ -26,19 +25,16 @@ Configuring your chart is made through the Configure chart menu, accessible from
 
 You can pick your chart type at the top of the configuration panel.
 
-
 __The settings tab:__ Contains global settings that apply for most types of charts. They let you control legend, behavior of the axis, display properties and zoom.
 
 The number of labels and label rotation work together. If you want to add more labels, you might need to rotate them by 45 or 90 degrees (vertical).
 
-
-## 1.1 Configure a bar chart
+### 1.1 Configure a bar chart
 
 In the data section, pick the Series and the Groupings.
 A bar chart can have one or two levels of grouping and does not have any limit in the number of series.
 
 > It is strongly recommended to have only one series when two levels of grouping are present.
-
 
 ### a. Bar chart with one level of grouping and one or more series
 
@@ -54,7 +50,6 @@ The stacking option is found in the design section, in the upper horizontal tab.
 
 *Bar chart showing the profit and sales per sub-category, with and without Stacking*
 
-
 ### b. Bar chart with two levels of grouping and one series
 
 With two levels of grouping, the first level will be the X-Axis and the second level will be reflected as the various portions of each bar.
@@ -62,7 +57,6 @@ With two levels of grouping, the first level will be the X-Axis and the second l
 ![Chart config](./readme-assets/chart_view_bar_chart_4.png)
 
 *In the above example, you can see that the first level of grouping (Months) is shown on the X-Axis, while the second level of grouping is reflected on each bar (One color per year)*
-
 
 ### c. Specific settings for the bar charts
 
@@ -74,8 +68,7 @@ In the design section, you have several options to customize your bar charts:
 - Show the totals on top of each bar
 - Make the bar chart horizontal (Only works for one level of grouping)
 
-
-## 1.2 Configure a line chart
+### 1.2 Configure a line chart
 
 Line charts are similar to Bar charts, but are generally preferred to plot trends or evolutions of metrics.
 
@@ -83,7 +76,6 @@ In the data section, pick the Series and the Groupings.
 A line chart can have one or two levels of grouping and does not have any limit in the number of series.
 
 > It is strongly recommended to have only one series when two levels of grouping are present, otherwise the chart will be difficult to read.
-
 
 ### a. Line chart with one level of grouping and one or more series
 
@@ -123,8 +115,7 @@ For each series, you can also configure if you want to:
 - Add a trend line (Polynomial or Linear)
 - Change line width / line style
 
-
-## 1.3 Configure a pie chart
+### 1.3 Configure a pie chart
 
 In the data section, pick the Series and the Groupings.
 A pie chart can have one or two levels of grouping and does not have any limit in the number of series.
@@ -133,11 +124,9 @@ A pie chart can have one or two levels of grouping and does not have any limit i
 
 > Only show series containing positive values. Otherwise the pie chart can lead to misinterpretation of the data.
 
-
 ![Chart config](./readme-assets/chart_view_pie1.png)
 
 *A simple pie chart showing the sales per state. A Pie chart will show the ten biggest categories and then aggregate all the others in an `Other` category*.
-
 
 ![Chart config](./readme-assets/chart_view_pie2.png)
 
@@ -151,10 +140,9 @@ The design tab offer special options for Pie charts:
 
 - _Labels outside:_ Shows the labels outside of the chart. Can be more readable in some configurations.
 
-## 1.4 Configure an indicator chart
+### 1.4 Configure an indicator chart
 
 Indicator charts are suited to show high level indicators or KPIs in dashboards. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) or to show the latest value for a metric and compare it to the previous one.
-
 
 ### a. Show a global metric
 
@@ -162,7 +150,6 @@ This is the most basic usage of an indicator chart.
 In order to configure an indicator chart this way, just pick one series and no grouping.
 
 ![Chart config](./readme-assets/chart_view_indicator1.png)
-
 
 ### b. Show the last value for a metric, and compare it to its previous values
 
@@ -187,7 +174,7 @@ You can pick many among:
 
 > In the design section, you can set the color of the trend arrows - by default an Upward trend is Green, Downward is red and constant is Black.
 
-## 1.5 Configure a scatter plot
+### 1.5 Configure a scatter plot
 
 A scatter plot is a chart that displays the values of two (or three) variables (series) as points on a chart. Each point on the plot represents one item (or group) and shows how two values are related to each other.
 
@@ -252,22 +239,19 @@ When a third variable is added, each point not only shows a country's GDP per ca
 - Size represents the third variable (e.g., population)
 This lets you see three types of data at once and compare countries by economy, health, and population size.
 
-## 1.6 Configure a Sankey chart
+### 1.6 Configure a Sankey chart
 
 Sankey charts work with one series and as many levels of grouping that you need. It requires no specific configuration in addition to this. 
-
 
 ![Chart config](./readme-assets/chart_view_sankey1.png)
 
 _This chart shows how the Sales of each quarter are distributed across Segments then States._
 
-
-# 2 Series and Groups
+## 2 Series and Groups
 
 Series and Groups define what data will be plotted in the charts. They play different roles in different types of charts.
 
-
-## 2.1 Chart series
+### 2.1 Chart series
 
 ![Chart config](./readme-assets/chart_view_fields.png)
 
@@ -299,7 +283,6 @@ __Table 1:__ Calculation Methods for one level of grouping:
 | % of difference with    | Displays the difference between the current value and the one before it in proportion. No value will be shown for the first data point.
 | % of previous value | Shows each point as the percentage of the previous one.
 
-
 __Table 2:__ Calculation Methods for two levels of grouping:
 
 | Calculation| Description   |     
@@ -311,7 +294,6 @@ __Table 2:__ Calculation Methods for two levels of grouping:
 | Difference with    | Displays the difference between the current value and the one before it, in the same group. No value will be shown for the first data point.
 | % of difference with    | Displays the difference between the current value and the one before it, within each group, in proportion. No value will be shown for the first data point.
 | % of previous value | Shows each point as the percentage of the previous one in the same group.
-
 
 __Moving calculations:__
 Moving calculations can also be configured from within the Show As menu. 
@@ -326,14 +308,11 @@ Moving calculations can also be configured from within the Show As menu.
 
 - _Current value:_ Specifies whether or not to include the current value.
 
-
-
 ![Chart config](./readme-assets/chart_view_sliding_avg.png)
 
 _Above the result of using a moving calculation with: Apply to: Date, Aggregation: Average, Prev: 10, Next: 0, Current value: Yes. It computes the sliding average over the last 10 points._
 
-
-## 2.1 Chart groupings
+### 2.1 Chart groupings
 
 ### 2.1.2 Role of groupings in various types of charts
 
@@ -343,7 +322,6 @@ Depending on the type of chart that you pick, grouping will play different roles
 The table below illustrates the given configuration:
 
 Profit (Series) by Date (First level of grouping) and Segment (Second level of grouping)
-
 
 | Chart Type | 1st lvl of Grouping   |  2nd lvl of Grouping   
 |--------------------|---------------|--------|
@@ -357,7 +335,6 @@ Profit (Series) by Date (First level of grouping) and Segment (Second level of g
 | Sankey Chart      | First level of the Sankey | Second level of the Sankey (There is no limit to the number of groups for the Sankey charts)
 | Map Chart         | The first level of grouping must be a geographic denomination like a Country or a State etc.. | Ignored.
 
-
 ### 2.1.3 Configuration of Groupings
 
 Groupings can be configured in the same way as in the Grid view. Like in Grids, chart groups support Time sampling and Number binning.
@@ -366,14 +343,12 @@ Groupings can be configured in the same way as in the Grid view. Like in Grids, 
 
 ![Chart config](./readme-assets/chart_view_binning.png)
 
-
-# 3 Drill down and Underlying data
+## 3 Drill down and Underlying data
 
 A chart always displays aggregated data, but KAWA offers options to either view the underlying raw data for each point or drill down into other dimensions.
 Both these options can be explored by doing a right click on a data point.
 
-
-## 3.1 Show underlying raw data
+### 3.1 Show underlying raw data
 
 Right clicking on a bar, and selecting "Show Underlying Data", a new section opens below the chart. It contains a Grid view filtered on the selected bar. 
 
@@ -385,8 +360,7 @@ This bottom view can be expanded (full screen) or dismissed (closed) by clicking
 
 _Raw data is shown for Q3 2022._
 
-
-## 3.2 Drill down into other dimensions
+### 3.2 Drill down into other dimensions
 
 Right clicking on a bar, and selecting "Drill Down By" will open a sub menu that will let you select into which dimension you would like to drill down into.
 

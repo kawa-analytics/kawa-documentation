@@ -16,7 +16,6 @@ This is the most straightforward way to import data in KAWA.
 
 In order to import a new CSV file, from the __Data Source__ section, click on __(+ Data Source)__ then __(Upload a File)__.
 
-
 ### 1.1 Step 1 of 2: Select the data to import
 
 In the first step, use the file picker on the right to drag and drop a file or select a file from your system.

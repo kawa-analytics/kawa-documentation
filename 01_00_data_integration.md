@@ -46,7 +46,6 @@ Let's take the example of a Data Source with some market data.
 | WONKA   | 2025-06-26 | 234.6    |
 | WONKA   | 2025-06-27 | 234.7    |
 
-
 It has three columns:
 
 - __Symbol:__ a text column, first primary key.
@@ -139,7 +138,6 @@ Data in KAWA after initial import:
 |-------|----------
 | WAYNE | 23
 | WONKA | 12
-
 
 > The data will be copied in KAWA after the initial import, exactly as is.
 

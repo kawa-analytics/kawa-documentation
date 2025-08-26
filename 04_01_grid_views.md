@@ -5,8 +5,7 @@ parent: Visualization
 nav_order: 13
 ---
 
-Grid views
----
+# Grid views
 
 Grid view is the most powerful type of visualization in KAWA.
 They support an unlimited number of rows and have a very wide range of features.
@@ -20,10 +19,9 @@ In order to create a new Grid View, click on the plus button at the top left of 
 
 ![Create grid](./readme-assets/grid_view_create.png)
 
+## 1 Manage the fields of your grids
 
-# 1 Manage the fields of your grids
-
-## 1.1 Field visibility
+### 1.1 Field visibility
 
 You can show and hide your fields using the Hide Fields button situated at the top right of the grid. 
 
@@ -37,7 +35,7 @@ Also note that you can directly reorder fields in the grid by rearranging them f
 
 > Hiding a field does not mean that it is removed from your Grid. 
 
-## 1.2 Adding and removing fields
+### 1.2 Adding and removing fields
 
 In order to add new fields to your Grid, go to the add fields menu, situated at the top of the Grid. This will let you choose various types of data you can create fields from.
 
@@ -57,7 +55,7 @@ Once you find the fields you wish to add, drag and drop it from the add field pa
 
 Removing fields from the grid is done via the three dots menu on the header of the field. Click on the delete field option.
 
-## 1.3 Reordering your fields
+### 1.3 Reordering your fields
 
 To reorder your fields, you have several options:
 
@@ -73,7 +71,7 @@ From there, you can either move your field to the first and last position, or mo
 
 > From the same menu, you can also Freeze your field. Frozen fields are moved to the first position and become insensitive to horizontal scrolling.
 
-## 1.4 Formatting the fields
+### 1.4 Formatting the fields
 
 You have many ways to format your fields in KAWA.
 
@@ -85,7 +83,7 @@ It will either set a style if a value matches a condition or apply some gradient
 
 This type of formatting, click on the Color button at the top of your grid.
 
-#### i Rule based formatting:
+### i Rule based formatting:
 
 In order to create a new Rule based formatting,
 Click on Color > + Rule > Single color.
@@ -106,7 +104,7 @@ Here are the items to configure:
 
 _Here we color in orange all row values above 100,000 `OR` below 0. The color is applied to the profit field._
 
-#### ii Gradient based formatting:
+### ii Gradient based formatting:
 
 In order to configure a new Gradient based formatting rule, 
 click on Color > + Rule > Color Scale.
@@ -121,7 +119,7 @@ Similarly to the rule based formatting, pick the field you are basing the gradie
 
 _Here we apply a gradient to the Row values of the quantity field_
 
-#### iii Managing your rules
+### iii Managing your rules
 
 The rules can be removed and reordered to define in which priority they are applied. The first one will be applied first, then the second, and so on.
 
@@ -140,7 +138,6 @@ Regardless of the type, you can:
 
 ![Format fields](./readme-assets/grid_view_format_data.png)
 
-
 __Rendering URLs in the Grid:__
 
 When a column of the grid contains a URL, you can apply a formatter to make that URL clickable:
@@ -151,13 +148,12 @@ In order to do so, click on the three dot menu of the column containing the URL,
 
 Check the option: _Format data as link_. You can then pick the column to use to render the labels. For example here, the column CITY was used to render the URL name. As a result, when clicking on the New York city value, the link associated with this row will be opened in a new tab.
 
-
-# 2 Grouping and Aggregation
+## 2 Grouping and Aggregation
 
 Grids are a powerful tool to visualize both row data and aggregated data.
 You can define aggregation methods for each of your fields and define a hierarchy of groupings to apply.
 
-## 2.1 Define groupings
+### 2.1 Define groupings
 
 In order to group your data, you can use the Group button at the top left of the grid.
 Here, you can add new groups to your grid, reorder the existing groups and delete unwanted ones.
@@ -196,8 +192,7 @@ It lets you pick the binning methodology you wish to apply:
 
 ![Grouping](./readme-assets/grid_view_grouping3.png)
 
-
-## 2.2 Define aggregations
+### 2.2 Define aggregations
 
 For each field, you can specify the method used to aggregate data at the group level.
 
@@ -213,7 +208,7 @@ The aggregated values will then be shown at the group level, and the overall agg
 
 > You may be interested in multiple aggregation for the same data, say: MIN, MAX and AVG. In that case, create 3 fields on the same data and set the three desired aggregations.
 
-# 3 Linked Views
+## 3 Linked Views
 
 Linked views can be created from the grid views.
 
@@ -225,11 +220,10 @@ bottom view is filtered on Lindsay Castell._
 
 > Linked views can be created from any sheet within the workspace, providing an interactive and intuitive way to explore data across multiple data models.
 
-## 3.1 Creating a linked view
+### 3.1 Creating a linked view
 
 To create a linked view, identify a field to which you want to link a view to. In the above example, the link was made with the _Customer Name_.
 Then, either click on the blue link icon in its header or go in the three dots menu > "Link View With".
-
 
 The configuration popup will ask you to complete the following steps:
 
@@ -239,7 +233,7 @@ The configuration popup will ask you to complete the following steps:
 
 Click on Apply - and a new linked view will be added. Clicking on any row of the top view will filter the bottom view on the field that you picked to create the link.
 
-## 3.2 Managing linked views
+### 3.2 Managing linked views
 
 On the three dot menu on the link view tabs, you can:
 
@@ -249,14 +243,13 @@ On the three dot menu on the link view tabs, you can:
 
 The linked view panel can be expanded to occupy the full screen and collapsed.
 
-## 3.3 Creating lookup columns
+### 3.3 Creating lookup columns
 
 One of the main usage of linked views is to allow the creation of linked columns which are one of the most powerful feature of the platform. Please have a look at the [Documentation on Linked columns](./03_02_lookup_columns#1-what-is-a-lookup-column) for more details.
 
+## 4 Global settings
 
-# 4 Global settings
-
-## 4.1 Context menu
+### 4.1 Context menu
 
 By right clicking on any cell of the grid, you access the global settings and some shortcuts.
 
@@ -268,7 +261,7 @@ By right clicking on any cell of the grid, you access the global settings and so
 
 - *Headers:* Gives you access to the wrapping setting of the headers. You can configure if you want the content of the header to occupy many rows if the title is too long (Wrapped) or if you'd rather truncate them (Ellipsis).
 
-## 4.2 View settings
+### 4.2 View settings
 
 From the context menu: right click > View Settings, you can access some global settings of the view. 
 

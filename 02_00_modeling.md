@@ -4,17 +4,15 @@ title: Data Modeling
 nav_order: 6
 ---
 
-Data Modeling - Sheets
----
+# Data Modeling - Sheets
 
 In KAWA, sheets can be used in several ways.
 
 The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: cf [The Visualization section](./04_00_visualization).
 
-
 However, sheets are much more powerful than that and can be used to build and share your enterprise data models.
 
-# 1. The structure of a Sheet
+## 1. The structure of a Sheet
 
 A sheet is composed of the following main elements:
 
@@ -27,7 +25,7 @@ A sheet is composed of the following main elements:
 A sheet also has a control panel and some global sheet filters.
 All these concepts will be explored in specific pages.
 
-## 1.1 The main data source
+### 1.1 The main data source
 
 The main data source of a Sheet (cf [Data Integration](./01_00_data_integration) for details about data sources) will dictate the sheet data granularity. In other words, it will define the primary keys of your sheet. 
 
@@ -35,8 +33,7 @@ For example, if you choose a position system as a main data source, your sheet w
 
 > The primary data source is set during sheet creation and cannot be modified afterward.
 
-
-## 1.2 Linked data sources
+### 1.2 Linked data sources
 
 You can add several linked data sources to an existing sheet. They will be used to enrich your sheet with data coming from various systems and data sets. Because main data source imposes its granularity, the linked data sources will not affect the number of row, but rather adding columns to existing ones. 
 
@@ -44,11 +41,11 @@ In a database vocabulary, the linked data sources will be joined using `LEFT JOI
 
 > Working with a Star Schema for example, where you would have one central Transaction table and related dimension tables: you would create a sheet on the Transaction table and then join in the various dimension tables.
 
-## 1.3 Views
+### 1.3 Views
 
 A Sheet contains views that offer diverse perspectives on its data. cf the [The Visualization section](./04_00_visualization).
 
-## 1.4 Columns
+### 1.4 Columns
 
 The columns of a sheet represent the individual fields or attributes that define the structure of its data. Each column corresponds to a specific type of information, such as:
 
@@ -64,8 +61,7 @@ Columns define what kind of data the model captures and how it can be queried, g
 
 Columns can originate directly from the underlying data sources or be derived through formulas, mappings, Python scripts, and more. Their values can be displayed as-is, or further aggregated and formatted for analysis and visualization.
 
-
-## 1.5 Metadata
+### 1.5 Metadata
 
 In a sheet, metadata refers to the descriptive information that defines and contextualizes the structure and behavior of the underlying data model.
 
