@@ -34,7 +34,7 @@ When clicking on the (Add Widget) button, the widget selector will be displayed.
 
 ![Dashboards](./readme-assets/dashboard4.png)
 
-#### a. Adding widgets from existing sheets
+### a. Adding widgets from existing sheets
 
 In the widget selector, click on the (Sheets) tab. You will see the list of all the sheets in the workspace. Clicking on a sheet will show all the views contained in that sheet.
 
@@ -45,13 +45,13 @@ From that point, you can either:
 
 > ℹ️ All the views that are added to the dashboards will be copies of the ones from the sheet section.
 
-#### b. Adding widgets from another dashboard
+### b. Adding widgets from another dashboard
 
 In the dashboards section of the widget selector, you will see all the widgets of each existing dashboard. Simply click on a widget to insert it in the current dashboard.
 
 > ℹ️ All widgets will be copied and will not retain any link with the originals.
 
-#### c. Adding content blocks
+### c. Adding content blocks
 
 There are two types of content block:
 
@@ -111,13 +111,13 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 Manage cross-filter behavior for the whole dashboard in Configure → Cross filtering.
 
-#### 3.3.1 Enable
+### 3.3.1 Enable
 
 Go to Cross filtering -> Turn on the Cross filtering toggle — after this, clicks in widgets will add filter chips.
 
 ![Dashboards](./readme-assets/dashboard9.png)
 
-#### 3.3.2 Cross-filter groups
+### 3.3.2 Cross-filter groups
 
 A cross-filter group is a named set of columns (often from different datasets/widgets) that should be filtered together.
 
@@ -136,7 +136,7 @@ A cross-filter group is a named set of columns (often from different datasets/wi
 
 What happens on click: If a user clicks a value in a column that belongs to a group, the system creates a chip and applies the same filter to all other columns in that group across related widgets. Groups do not affect widgets that don’t use the group’s fields or that have Ignore filters enabled.
 
-#### 3.3.3 Examples:
+### 3.3.3 Examples:
 
 - _Location:_ State (orders) + State (sales) — clicking a state in the orders table filters sales widgets by that state.
 - _Product:_ Product (orders) + Product (sales) — clicking a product in a pie chart filters KPIs and tables from another dataset.

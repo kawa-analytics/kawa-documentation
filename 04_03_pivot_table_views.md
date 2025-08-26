@@ -36,13 +36,13 @@ Value can be removed by using the Trash Can icon or simply disabled by toggling 
 
 For each value field, you can configure its format and name, its aggregation, and its calculation (Show as).
 
-#### 1.1.1 Value format and name
+### 1.1.1 Value format and name
 
 In order to rename a field, click on the three dots menu next to it and click on: Rename Field.
 
 The format can be changed too by clicking on the three dots menu and Format data. The dialog will depend on the type of the field.
 
-#### 1.1.2 Value aggregation
+### 1.1.2 Value aggregation
 
 __Simple aggregations:__ The pivot table will always show aggregated values. In the first drop down of the value cards, pick the aggregation that you wish to use. The list of available aggregations will depend on the type of the data.
 
@@ -77,7 +77,7 @@ _In the above example:_
 
 - _Axis: Row and Grand total: Sum._ Here, we will compute the Red cell by adding together the Blue cells. It will be the SUM of the MINS of the SUMS.
 
-#### 1.1.3 Value calculation (Show As)
+### 1.1.3 Value calculation (Show As)
 
 This is the same documented here (Similar as the one available in the Chart Views): [Configure chart series](04_02_chart_views#213-value-calculation-show-as)
 
@@ -138,13 +138,13 @@ The Auto size mode is either: _By content_ or _Disabled_. When _By content_ is s
 
 Controls where the metric name (Sales, Profit, etc.) appears in multi‑level column headers.
 
-#### 4.3.1 How to use
+### 4.3.1 How to use
 
 Right clicking anywhere on the pivot → Choose Aggregation position → Top (default) or Bottom.
 
 ![Pivot](./readme-assets/pivot_view7.png)
 
-#### 4.3.2 What it does
+### 4.3.2 What it does
 
 - **Top** — the metric name is above the dimension headers.
 

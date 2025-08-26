@@ -5,8 +5,7 @@ parent: Data Integration
 nav_order: 5
 ---
 
-Manual Edit
----
+# Manual Edit
 
 This feature lets you manually edit data from the GUI.
 (This feature is under active development)
@@ -14,7 +13,7 @@ This feature lets you manually edit data from the GUI.
 * TOC
 {:toc}
 
-# 1. Data edition
+## 1. Data edition
 
 KAWA has three main mechanisms for manual data edits.
 
@@ -28,8 +27,7 @@ All edits will be stored on the original tables and _will propagate in the entir
 
 > 🔐 Edit permissions are handled on the data source level and provide a flexible system to control who can edit what in each data source.
 
-
-# 1.1 Direct edits (Excel like)
+### 1.1 Direct edits (Excel like)
 
 Direct edits can only be done in specific data sources: `Create from Scratch`.
 
@@ -47,7 +45,6 @@ __The main differences with Excel are:__
 
 - Columns cannot be removed (but can be hidden)
 
-
 ### a. Create an editable datasource
 
 In order to create an editable data source, navigate to the DataSource section, (+ Data source), Create from scratch.
@@ -57,7 +54,6 @@ In order to create an editable data source, navigate to the DataSource section, 
 And then, click on explore to go to the associated sheet.
 
 ![Manual](./readme-assets/manual2.png)
-
 
 ### b. Edit data from the sheet section
 
@@ -70,7 +66,6 @@ It behaves like a regular grid with the following main differences:
 - Grouping is not available
 - It always show all the editable columns by default
 
-
 On this view you can:
 
 - Add new rows (Add row button in the action bar on the top)
@@ -81,18 +76,15 @@ In order to edit a cell, either use double click on a cell to input your value, 
 
 ![Manual](./readme-assets/manual4.png)
 
-
 ### c. Edit data from dashboards or applications
 
 The editable views can be added to your dashboards or you applications to provide more interactivity. 
 
 __In a dashboard__, simply pick the editable view in the widget selector:
 
-
 ![Manual](./readme-assets/manual5.png)
 
 _The editable widget has all the options of the editable view, directly in the dashboard_.
-
 
 __From within an application__: 
 
@@ -102,21 +94,17 @@ Make sure to have the "Edit data in grid" toggle enabled.
 
 _Users of the application will then be able to edit directly from the application page_.
 
-
-# 1.2 Data patching
+### 1.2 Data patching
 
 When you datasource is not created only for edits, manual edits are still possible. Those edits behave like patches that can be easily reverted.
 
 __Example__: The DEALS datasource is connected to my trading system and is refreshed every morning. If a user detects an issue in the table during the day (for example: name of the counterparty is wrong), they can edit that value in KAWA - the edit will propagate in all the connected analytics. Once the data is fixed in the original system, that edit can then be removed.
 
-
 ![Manual](./readme-assets/manual7.png)
 
 _On the image above, the Segment has been patched (yellow border). If you hover your mouse over the patch, you will see that you can remove that patch_.
 
-
 > ℹ️ When removing a patch, the value will be reverted to the latest value that was synchronized from your remote system.
-
 
 _Example:_
 
@@ -128,10 +116,9 @@ _Example:_
 
 4) The next day at 9AM, my deals are synchronized again and the data team fixed the issue. I can now safely remove my patch and the corrected value will be taken in account.
 
-## 1.3 Mappings
+### 1.3 Mappings
 
 Mappings are a way to edit data directly at the sheet level. Data will not be written in the underlying data source.
-
 
 ### a. Create a new mapping (also called: manual input columns)
 
@@ -167,10 +154,9 @@ In order to edit data directly from the grid, open a grid view (It can be in a d
 
 > 🚨 If the mapping is not at the level of the primary key (in the above example, it is a comment per state), each edit will result in multiple impacted cells. If I input a comment for the state of California, all the rows for that state will receive the same value.
 
+## 2. Data edition permissions
 
-# 2. Data edition permissions
-
-## 2.1 Set edit permissions at the data source level
+### 2.1 Set edit permissions at the data source level
 
 KAWA provides a profile based mechanism to restrict edition permissions on data sources.
 
@@ -196,17 +182,13 @@ Each profile has the following parameters:
 
 - _Editable columns_: Defines the set of columns that can be edited in a datasource. This will be set to `All Columns` if the profile lets users add and remove rows.
 
-
 > ℹ️ As soon as the data source is editable (at least one profile), the owner of the data source can access all the permissions, meaning that they can edit all columns, add and remove rows and add columns. 
-
-
 
 ![Manual](./readme-assets/manual9.png)
 
 _Here, the ADMINS team can add and remove rows, add columns and edit all fields. All other users (public profile) can only edit the `Title` column._
 
-
-## 2.2 Set edit permissions for the mapping columns
+### 2.2 Set edit permissions for the mapping columns
 
 To control whether a mapping column is editable by users other than its creator, you need to share the sheet it resides in.
 
