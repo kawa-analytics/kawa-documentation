@@ -79,7 +79,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex San', sans-serif;
     color: #111117;
 }
 
