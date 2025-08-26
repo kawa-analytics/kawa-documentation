@@ -79,7 +79,7 @@ table { width: 100%; display: block; overflow-x: auto; }
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
 
 body {
-    font-family: 'JetBrains Mono', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #111117;
 }
 
@@ -93,4 +93,27 @@ a {
 a:hover {
     color: #312759;
     text-decoration: underline; /* (опціонально) повернути підкреслення */
+}
+
+/* Брендові кольори */
+:root{
+    --brand: #473982;      /* основний */
+    --brand-hover: #312759;/* ховер/active темніший */
+}
+
+/* Узагальнений таргет для типових класів кнопок */
+a.btn, .btn, a.button, .button, .cta {
+    background: var(--brand) !important;
+    background-image: none !important;   /* прибрати градієнт теми */
+    border-color: var(--brand) !important;
+    color: #fff !important;
+}
+a.btn:hover, .btn:hover, a.button:hover, .button:hover, .cta:hover {
+    background: var(--brand-hover) !important;
+    border-color: var(--brand-hover) !important;
+    color: #fff !important;
+}
+a.btn:focus, .btn:focus, a.button:focus, .button:focus {
+    outline: 2px solid var(--brand-hover);
+    outline-offset: 2px;
 }
