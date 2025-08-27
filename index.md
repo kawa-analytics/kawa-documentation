@@ -34,7 +34,6 @@ nav_order: 1
   Start Your First Project Now
 </h2>
 
-
 Ready to dive in? Start here:
 
 [Getting started](./00__getting_started.html){: .btn .btn-primary }
