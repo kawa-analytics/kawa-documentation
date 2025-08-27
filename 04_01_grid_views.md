@@ -19,7 +19,7 @@ In order to create a new Grid View, click on the plus button at the top left of 
 
 ![Create grid](./readme-assets/grid_view_create.png)
 
-## 1 Manage the fields of your grids
+## 1. Manage the fields of your grids
 
 ### 1.1 Field visibility
 
@@ -148,7 +148,7 @@ In order to do so, click on the three dot menu of the column containing the URL,
 
 Check the option: _Format data as link_. You can then pick the column to use to render the labels. For example here, the column CITY was used to render the URL name. As a result, when clicking on the New York city value, the link associated with this row will be opened in a new tab.
 
-## 2 Grouping and Aggregation
+## 2. Grouping and Aggregation
 
 Grids are a powerful tool to visualize both row data and aggregated data.
 You can define aggregation methods for each of your fields and define a hierarchy of groupings to apply.
@@ -208,7 +208,7 @@ The aggregated values will then be shown at the group level, and the overall agg
 
 > You may be interested in multiple aggregation for the same data, say: MIN, MAX and AVG. In that case, create 3 fields on the same data and set the three desired aggregations.
 
-## 3 Linked Views
+## 3. Linked Views
 
 Linked views can be created from the grid views.
 
@@ -247,7 +247,7 @@ The linked view panel can be expanded to occupy the full screen and collapsed.
 
 One of the main usage of linked views is to allow the creation of linked columns which are one of the most powerful feature of the platform. Please have a look at the [Documentation on Linked columns](./03_02_lookup_columns#1-what-is-a-lookup-column) for more details.
 
-## 4 Global settings
+## 4. Global settings
 
 ### 4.1 Context menu
 

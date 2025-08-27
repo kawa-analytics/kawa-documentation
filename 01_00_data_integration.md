@@ -91,7 +91,7 @@ Please refer tpo the three examples below:
 
 ### 3.1 Reset Before Insert
 
-__1️⃣ Initial import:__
+__Initial import:__
 
 | 🔑 Stock | Position
 |-------|----------
@@ -107,7 +107,7 @@ Data in KAWA after initial import:
 
 > The data will be copied in KAWA after the initial import, exactly as is.
 
-__2️⃣ Second import:__
+__Second import:__
 
 | 🔑 Stock | Position
 |-------|----------
@@ -125,7 +125,7 @@ In the Reset Before Insert mode, the data is deleted in KAWA before importing th
 
 ### 3.2 Incremental
 
-__1️⃣ Initial import:__
+__Initial import:__
 
 | 🔑 Stock | Position
 |-------|----------
@@ -141,7 +141,7 @@ Data in KAWA after initial import:
 
 > The data will be copied in KAWA after the initial import, exactly as is.
 
-__2️⃣ Second import:__
+__Second import:__
 
 | 🔑 Stock | Position
 |-------|----------
@@ -160,7 +160,7 @@ In the incremental mode, the content of the second import will be appended to th
 
 ### 3.3 Snapshot
 
-__1️⃣ Initial import:__
+__Initial import:__
 
 | 🔑 Stock | Position
 |-------|----------
@@ -176,7 +176,7 @@ Data in KAWA after initial import:
 
 > Two additional columns will be added: snapshot id and snapshot date time, both of which become part of the composite primary key alongside the existing key columns. For the first import, because this is the initial snapshot, every row will receive a snapshot id of 1 and a snapshot date time set to the moment of import (e.g. 2025-06-25 12:34:56). 
 
-__2️⃣ Second import:__
+__Second import:__
 
 | 🔑 Stock | Position
 |-------|----------

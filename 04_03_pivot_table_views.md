@@ -14,7 +14,7 @@ Pivot tables are a great way to dynamically reshape and aggregate data across mu
 
 In order to create a new Pivot Table, click on the plus button at the top left of your sheet, and pick: Pivot Table.
 
-## 1 Rows, Columns and Values
+## 1. Rows, Columns and Values
 
 In the following example, we configured a Pivot with:
 
@@ -95,7 +95,7 @@ _Configure order:_ The order of each row and column can be defined by picking a 
 
 _Toggling on and off the total:_ You can toggle on and Off the Total checkbox to show or hide the corresponding totals for this Row/Column.
 
-## 2 Drilling Down
+## 2. Drilling Down
 
 ### 2.1 Standard Drill Down
 
@@ -117,7 +117,7 @@ In the three dots menu of each Row and Column, clink on Link View. You can then 
 
 _In this example, a monthly sales evolution chart was associated with the Accessories sub category. When a user clicks on a cell in this particular sub category, the chart will open, filtered in the Selected state. Notice that you can also go back to the drill down view by clicking on the corresponding tab on the lower section._
 
-## 3 Conditional formatting
+## 3. Conditional formatting
 
 You can configure conditional formatting in Pivot tables in a similar way that you would in Grid views. In the pivot tables, there is no notion of Row Data, so you can only work on conditions operating at the group level. Please refer to this  [Conditional Formatting](03_01_grid_views#a-conditional-formatting). 
 
@@ -127,7 +127,7 @@ Both rule based and gradient formatting are available in the pivot tables.
 
 _This pivot table was configured as a heatmap to show the breakdown of Quantity sold per quarter and category._
 
-## 4 Specific interactions
+## 4. Specific interactions
 
 ### 4.1 Auto sizing mode
 

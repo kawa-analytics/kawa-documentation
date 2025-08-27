@@ -15,7 +15,7 @@ Many different types of charts are available and each one supports a wide range 
 
 In order to create a new Chart View, click on the plus button at the top left of your sheet, and pick: Chart.
 
-## 1 Configure  your Chart
+## 1. Configure  your Chart
 
 Configuring your chart is made through the Configure chart menu, accessible from the top right.
 
@@ -90,7 +90,6 @@ When plotting multiple series for one grouping, you can decide whether to plot a
 ![Chart config](./readme-assets/chart_view_line_chart2.png)
 
 *Plotting both Quantity (Ranges from -2 to 26 on a given date) and the Profit (Ranges from -200K to 3M on a given date) on two different axes.*
-
 
 ### b. Line chart with two levels of grouping and one series
 
@@ -247,7 +246,7 @@ Sankey charts work with one series and as many levels of grouping that you need.
 
 _This chart shows how the Sales of each quarter are distributed across Segments then States._
 
-## 2 Series and Groups
+## 2. Series and Groups
 
 Series and Groups define what data will be plotted in the charts. They play different roles in different types of charts.
 
@@ -343,7 +342,7 @@ Groupings can be configured in the same way as in the Grid view. Like in Grids, 
 
 ![Chart config](./readme-assets/chart_view_binning.png)
 
-## 3 Drill down and Underlying data
+## 3. Drill down and Underlying data
 
 A chart always displays aggregated data, but KAWA offers options to either view the underlying raw data for each point or drill down into other dimensions.
 Both these options can be explored by doing a right click on a data point.

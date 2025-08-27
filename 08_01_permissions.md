@@ -10,7 +10,7 @@ nav_order: 22
 * TOC
 {:toc}
 
-## 1 User management and permissions
+## 1. User management and permissions
 
 Users in KAWA have a global profile that applies across all workspaces and some workspace
 related permissions.
@@ -189,7 +189,7 @@ Team administrators do NOT need any specific privileges to manage the members of
 
 ![team admin](./readme-assets/team_admin.png)
 
-# 2 Sharing
+# 2. Sharing
 
 The main assets of KAWA can be shared across the workspace to which they belong.
 Sharing allows to set up publishing and collaborating flows between members of the KAWA workspaces.

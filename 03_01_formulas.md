@@ -11,7 +11,7 @@ nav_order: 9
 {:toc}
 
 
-## 1 General Concepts
+## 1. General Concepts
 
 ### 1.1 Formulas
 
@@ -119,7 +119,7 @@ Note that for the second formula, the aggregation at the bottom of the grid cann
 
 ![Formula](./readme-assets/formula_4.png)
 
-## 2 Window Functions
+## 2. Window Functions
 
 ### 2.1 What is a Window Function?
 
