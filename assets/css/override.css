@@ -143,7 +143,7 @@ h3, .main-content h3 { font-weight: 700; }  /* або 800, якщо хочеш �
 }
 
 :root{
-    --img-frame: rgba(0,0,0,.16); /* темніший відтінок, щоб точно було видно */
+    --img-frame: #e5e7eb;
     --img-bg: #fff;
 }
 
@@ -155,7 +155,7 @@ article img,
 a > img,
 figure > img {
     border: 1.5px solid var(--img-frame) !important;
-    border-radius: 12px;
+    border-radius: 6px;
     background: var(--img-bg);
     box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
     display: block;
