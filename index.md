@@ -16,7 +16,9 @@ nav_order: 1
 
 ### Accelerate your analytics workflows and start smarter with **Kawa** — the fast, simple, and reliable data platform that lets you **build**, **run**, and **scale** projects in minutes. Leverage an intuitive interface, flexible integrations, and enterprise-grade stability alongside AI-powered guidance for formulas, charts, Python scripts, real-time chat, custom agents. **Try Kawa today!**
 
+
 ![home_page](./readme-assets/home1.png)
+
 
 ---
 
@@ -29,6 +31,7 @@ nav_order: 1
   />
   Start Your First Project Now
 </h2>
+
 
 Ready to dive in? Start here:
 

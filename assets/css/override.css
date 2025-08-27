@@ -147,18 +147,28 @@ h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш �
     --img-bg: #fff;
 }
 
-/* рамка для будь-яких зображень у контенті */
-.main-content img,
-.page-content img,
-.markdown img,
-article img,
-a > img,
-figure > img {
-    border: 1.5px solid var(--img-frame) !important;
-    border-radius: 6px;
-    background: var(--img-bg);
-    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
+/* РАМКА — тільки для скріншотів */
+img.screenshot,
+p.screenshot > img,
+figure.screenshot > img {
     display: block;
     margin: 12px auto;
+    max-width: 100%;
     height: auto;
+
+    border: 1.5px solid #d0d7de;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
+}
+
+/* ІКОНКИ — повертаємо звичну поведінку (на випадок, якщо щось лишилося від старих правил) */
+img.icon, .icon > img, .btn img, .badge img, .nav img, header img {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    vertical-align: middle;
 }
