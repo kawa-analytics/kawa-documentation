@@ -125,9 +125,9 @@ h1, h2, h3,
     letter-spacing: -0.01em;     /* трохи щільніше, виглядає «важче» */
 }
 
-h1, .main-content h1 { font-weight: 800; }
-h2, .main-content h2 { font-weight: 800; }
-h3, .main-content h3 { font-weight: 700; }  /* або 800, якщо хочеш ще товстіше */
+h1, .main-content h1 { font-weight: 700; }
+h2, .main-content h2 { font-weight: 700; }
+h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш ще товстіше */
 
 /* За замовчуванням робимо всі зображення у контенті меншими */
 .main-content img:not(.no-resize) {
