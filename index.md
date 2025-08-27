@@ -6,6 +6,7 @@ nav_order: 1
 
 <h1>
   <img
+    class="icon no-resize"
     src="{{ '/assets/icons/door_open.svg' | relative_url }}"
     alt="Welkome"
     width="48"
@@ -24,6 +25,7 @@ nav_order: 1
 
 <h2>
   <img
+    class="icon no-resize"
     src="{{ '/assets/icons/rocket.svg' | relative_url }}"
     alt="Start"
     width="36"
@@ -41,6 +43,7 @@ Ready to dive in? Start here:
  
 <h2>
   <img
+    class="icon no-resize"
     src="{{ '/assets/icons/play_circle.svg' | relative_url }}"
     alt="Video"
     width="36"
@@ -57,6 +60,7 @@ A step-by-step video guide:
 
 <h2>
   <img
+    class="icon no-resize"
     src="{{ '/assets/icons/data_table.svg' | relative_url }}"
     alt="Inside"
     width="36"
@@ -84,6 +88,7 @@ A step-by-step video guide:
 
 <h2>
   <img
+    class="icon no-resize"
     src="{{ '/assets/icons/link.svg' | relative_url }}"
     alt="Inside"
     width="36"

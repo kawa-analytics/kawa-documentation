@@ -140,3 +140,27 @@ h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш �
 @media (max-width: 768px){
     .main-content img:not(.no-resize){ max-width: 100%; }
 }
+
+/* 1) Масштабування тільки для «контентних» зображень, а не для іконок у H1–H3 */
+.main-content p > img:not(.no-resize),
+.main-content figure > img:not(.no-resize){
+    display: block;
+    margin: 12px auto;
+    max-width: 75%;
+    height: auto;
+}
+@media (max-width: 768px){
+    .main-content p > img:not(.no-resize),
+    .main-content figure > img:not(.no-resize){ max-width: 100%; }
+}
+
+/* 2) Іконки в заголовках — завжди в одному рядку з текстом */
+h1 > img.icon, h2 > img.icon, h3 > img.icon{
+    display: inline-block !important;
+    vertical-align: middle;
+    margin: 0 .5rem 0 0;     /* відступ справа від іконки */
+    width: 1.6em !important; /* масштабується разом із розміром заголовка */
+    height: auto !important;
+    float: none !important;  /* на випадок, якщо десь стоїть float */
+    border: 0 !important; box-shadow: none !important; background: transparent !important;
+}
