@@ -6,6 +6,7 @@ nav_order: 2
 
 # Getting Started
 
+
 KAWA contains 4 main sections:
 
 - Connect your data in the <span style="color: red;">Data Source</span> section
@@ -15,6 +16,7 @@ KAWA contains 4 main sections:
 ![Starting](./readme-assets/start1.png)
 
 ## 1. Create your first Data Source
+
 
 Loading data into KAWA is the first step, and it is done via the Data Source section. 
 
@@ -45,6 +47,7 @@ You can click on the various columns to get detailed information about them.
 
 ## 2. Create your first Sheet
 
+
 There are two ways to create a Sheet on top of a Data Source.
 
 - From the Data Source section, click on your Data Source and click on the __(Explore)__ button at the top. You will be redirected it the new sheet.
@@ -54,6 +57,7 @@ There are two ways to create a Sheet on top of a Data Source.
 A Sheet works like an Excel Workbook. When created, it has only one tab, which is the default Grid. This is the ideal tool to explore your data in KAWA.
 
 ### 2.1 Manipulate your data in the grid
+
 
 Feel free to explore the main actions by using the buttons on the top right of the Grid.
 
@@ -66,6 +70,7 @@ A good starting point is Grouping. Click on the __(Group)__ button (on the top r
 🔎 Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](./04_01_grid_views). There is a special section about [Filtering](./04_04_filtering).
 
 ### 2.2 Create a new simple formula
+
 
 The __(Enrich Data)__ button is the way to add data in your sheet to complement the one coming from your data source. It lets you join with other data sources (Lookup column), create ad-hoc mapping tables, create your own formulas and even connect to Python scripts.
 
@@ -84,6 +89,7 @@ Let's create a simple formula to compute the unit profit by dividing the _Profit
 ![Starting](./readme-assets/start6.png)
 
 ### 2.3 Create a first simple chart
+
 
 In order to explore your data in a more visual way, let's now create a chart. In our example, let's have a look at a profit trend over the years.
 
@@ -105,6 +111,7 @@ Please refer to the complete [Chart Documentation](./04_02_chart_views) to learn
 
 ### 2.4 Create a Pivot Table
 
+
 Pivot tables in KAWA work like in any spreadsheet software, except that they can scale on billions of rows.
 
 - ➡️ _Step 1:_ On the top left, click on __(Create View)__, and pick __(Pivot Table)__.
@@ -121,6 +128,7 @@ To know what is possible with the pivot tables, go to the [Pivot Documentation](
 
 ## 3. Put it together in a Dashboard
 
+
 Go to the __Dashboard__ section (Third icon from the top in the left bar). Click on __(+ Dashboard)__, then __(Dashboard)__.
 
 You will be redirected to a new empty dashboard.
@@ -131,6 +139,7 @@ Widgets can then be arranged in the layout of your choice. Dashboard are a power
 ![Starting](./readme-assets/start9.png)
 
 ## 4. What's next?
+
 
 Those three paragraphs: __Data Source__, __Sheet__ and __Dashboard__ are giving a good overview of the central structure of the KAWA platform. It is the base on which you can start building and sharing your data applications.
 
