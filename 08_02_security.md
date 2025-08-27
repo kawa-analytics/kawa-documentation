@@ -18,7 +18,7 @@ In order to configure security on data sources, users must either own them or  h
 
 Column level associates to one column in a data source a set of rules to limit access to that column.
 
-> **⚡ Important:** If one of the below condition is matched, the user will __BYPASS__ the column level security and see the entire dataset regardless of what is configured: 
+> **Important:** If one of the below condition is matched, the user will __BYPASS__ the column level security and see the entire dataset regardless of what is configured: 
 User OWNS the data source, User is an application ADMIN, or User has the ` Access restricted data and restricted data providers` workspace flag.
 
 A rule targets a given Audience (Teams or individual users), and has a particular action:
@@ -37,7 +37,7 @@ If a user is targeted by more than one rule, the most restrictive applies.
 
 Row level security will filter the rows of a given data source based on a set of rules.
 
-> **⚡ Important:** If one of the below condition is matched, the user will __BYPASS__ the row level security and see the entire dataset regardless of what is configured: 
+> **Important:** If one of the below condition is matched, the user will __BYPASS__ the row level security and see the entire dataset regardless of what is configured: 
 User OWNS the data source, User is an application ADMIN, or User has the ` Access restricted data and restricted data providers` workspace flag.
 
 ### a. Security Mapping

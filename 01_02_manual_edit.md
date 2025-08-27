@@ -23,9 +23,9 @@ KAWA has three main mechanisms for manual data edits.
 
 All edits will be stored on the original tables and _will propagate in the entire KAWA application, for all users._
 
-> ℹ️ KAWA will not write in `Live Connect` type datasources. Only in table that were created through the platform.
+> KAWA will not write in `Live Connect` type datasources. Only in table that were created through the platform.
 
-> 🔐 Edit permissions are handled on the data source level and provide a flexible system to control who can edit what in each data source.
+> Edit permissions are handled on the data source level and provide a flexible system to control who can edit what in each data source.
 
 ### 1.1 Direct edits (Excel like)
 
@@ -104,7 +104,7 @@ __Example__: The DEALS datasource is connected to my trading system and is refre
 
 _On the image above, the Segment has been patched (yellow border). If you hover your mouse over the patch, you will see that you can remove that patch_.
 
-> ℹ️ When removing a patch, the value will be reverted to the latest value that was synchronized from your remote system.
+> When removing a patch, the value will be reverted to the latest value that was synchronized from your remote system.
 
 _Example:_
 
@@ -142,7 +142,7 @@ More details about mappings are available here: [Mapping columns](./03_03_mappin
 
 KAWA lets you edit mapping values directly in the grid.
 
-> 🚨 For this to work, you must have AT LEAST one defined primary key that is not the `automatic_uuid` column. This is very important for _LIVE CONNECT_ data sources.
+> For this to work, you must have AT LEAST one defined primary key that is not the `automatic_uuid` column. This is very important for _LIVE CONNECT_ data sources.
 
 If your data source is _LIVE CONNECT_, go to the datasource model, and select the correct primary leys for your data source. Make sure that their combination yields to a unique definition of each record from your table.
 
@@ -152,7 +152,7 @@ In order to edit data directly from the grid, open a grid view (It can be in a d
 
 ![Manual](./readme-assets/manual-input3.png)
 
-> 🚨 If the mapping is not at the level of the primary key (in the above example, it is a comment per state), each edit will result in multiple impacted cells. If I input a comment for the state of California, all the rows for that state will receive the same value.
+> If the mapping is not at the level of the primary key (in the above example, it is a comment per state), each edit will result in multiple impacted cells. If I input a comment for the state of California, all the rows for that state will receive the same value.
 
 ## 2. Data edition permissions
 
@@ -182,7 +182,7 @@ Each profile has the following parameters:
 
 - _Editable columns_: Defines the set of columns that can be edited in a datasource. This will be set to `All Columns` if the profile lets users add and remove rows.
 
-> ℹ️ As soon as the data source is editable (at least one profile), the owner of the data source can access all the permissions, meaning that they can edit all columns, add and remove rows and add columns. 
+> As soon as the data source is editable (at least one profile), the owner of the data source can access all the permissions, meaning that they can edit all columns, add and remove rows and add columns. 
 
 ![Manual](./readme-assets/manual9.png)
 

@@ -193,18 +193,18 @@ Click on "Test Connection" then "Create".
 
 ### 6.1 Create a BigQuery service account
 
-- ➡️ _Step 1:_ Create a service account in GCP by going to [IAM > Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts).
+- _Step 1:_ Create a service account in GCP by going to [IAM > Service accounts](https://console.cloud.google.com/iam-admin/serviceaccounts).
 
-- ➡️ _Step 2:_ Select + Create Service Account from the top of the page.
+- _Step 2:_ Select + Create Service Account from the top of the page.
 
-- ➡️ _Step 3:_ When prompted you will need to add four IAM roles below:
+- _Step 3:_ When prompted you will need to add four IAM roles below:
 
 - `BigQuery User`
 - `BigQuery Data Viewer`
 - `BigQuery Job User`
 - `BigQuery Metadata Viewer`
 
-- ➡️ _Step 4:_ Create JSON key 
+- _Step 4:_ Create JSON key 
 
 Your service account is now created. Click into the service account and select the `Keys` tab.
 

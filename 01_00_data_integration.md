@@ -12,7 +12,7 @@ KAWA supports: Importing files, Connecting to external systems such as CRMs, dat
 * TOC
 {:toc}
 
-## 1 Data Source columns
+## 1. Data Source columns
 
 In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. 
 

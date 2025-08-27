@@ -97,7 +97,7 @@ In order to explore your data in a more visual way, let's now create a chart. In
 
 - _Step 4:_  Next to the Order Date in the Group By Zone, click on the small Calendar and pick: __(Year/Month)__. This will sample the data by month. 
 
-- ➡ _Step 5:_ Click on the line chart icon.
+- _Step 5:_ Click on the line chart icon.
 
 ![Starting](./readme-assets/start7.png)
 
