@@ -173,3 +173,23 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
     background: #fff;
     box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
 }
+
+/* Більша відстань після заголовків тільки в контенті */
+:root{
+    --h-mb-lg: 1.25rem; /* H1–H2 */
+    --h-mb:    1.0rem;  /* H3 */
+    --h-mb-sm: 0.75rem; /* H4–H6 */
+}
+
+.main-content h1 { margin-bottom: var(--h-mb-lg) !important; }
+.main-content h2 { margin-bottom: var(--h-mb-lg) !important; }
+.main-content h3 { margin-bottom: var(--h-mb) !important; }
+.main-content h4,
+.main-content h5,
+.main-content h6 { margin-bottom: var(--h-mb-sm) !important; }
+
+/* На вузьких екранах трохи щільніше */
+@media (max-width: 768px){
+    .main-content h1,
+    .main-content h2 { margin-bottom: 1rem !important; }
+}
