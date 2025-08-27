@@ -22,7 +22,7 @@ In order to install the SDK, run the following:
 
 `pip install kywy`
 
-> ℹ️ The SDK is hosted on [PyPI](https://pypi.org/project/kywy/).
+> The SDK is hosted on [PyPI](https://pypi.org/project/kywy/).
 
 ### 1.2 Retrieve your API Key
 

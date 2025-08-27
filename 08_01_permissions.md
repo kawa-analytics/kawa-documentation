@@ -31,9 +31,9 @@ When using KAWA internal authentication mechanism, the following page will be sh
 
 ![Login page](./readme-assets/login_page.png)
 
-> **⚡ Important:** Note that the "Register in KAWA Analytics" section can be turned off if you do not wish users to sign up by themselves. The feature flag name is: `user-sign-up`.
+> **Important:** Note that the "Register in KAWA Analytics" section can be turned off if you do not wish users to sign up by themselves. The feature flag name is: `user-sign-up`.
 
-> **⚡ Important:** If you want to allow users to sign up, you need to configure SMTP support
+> **Important:** If you want to allow users to sign up, you need to configure SMTP support
 
 ### b. Using external IDPs and SSO
 
@@ -74,7 +74,7 @@ Administrators can also access all workspaces and all assets in all of the works
 
 They can access all data bypassing all the row level and column level security.
 
-> **⚡ Warning:** Typically, very few admin accounts should be created. They should be reserved for IT, global support and maintenance.
+> **Warning:** Typically, very few admin accounts should be created. They should be reserved for IT, global support and maintenance.
 
 **SETUP ADMINISTRATORS**
 
@@ -112,7 +112,7 @@ In the GUI, when users create a data source, the types they are allowed to work 
 
 ![Login page](./readme-assets/datasource_types.png)
 
-> **⚡ Important:** by default, users will not have access to the __LIVE CONNECT__ data type.
+> **Important:** by default, users will not have access to the __LIVE CONNECT__ data type.
 
 ### c. The overall permissions
 
@@ -145,14 +145,14 @@ __Misc:__
 
 __Data access permissions:__
 
->  **⚡ Warning:** Reserved to administrators of the workspace
+>  **Warning:** Reserved to administrators of the workspace
 
 - Manage row level and column level security
 - Access restricted data and restricted data providers
 
 __Workspace administrative permissions:__
 
->  **⚡ Warning:** Reserved to administrators of the workspace
+>  **Warning:** Reserved to administrators of the workspace
 
 - Edit workspace settings
 - Manage workspace members
@@ -161,10 +161,10 @@ Workspace permissions are handled directly on the GUI, from the settings section
 
 ![Manage Workspace on the UI](./readme-assets/manage_workspace_permissions.png)
 
-> **⚡ Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should
+> **Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should
 be reserved to workspace administrators only.
 
-> **⚡ Warning:** Application wide Administrators will
+> **Warning:** Application wide Administrators will
 benefit from ALL those permissions by default.
 
 ### 1.4 Teams
@@ -201,7 +201,7 @@ No information contained in Sheets or Dashboards is confidential, those are mere
 
 All entities consuming the data (Sheets, Dashboards, Python computations) are without exception subject to the configured RLS and CLS policies.
 
-> **⚡ Important:** Entities can not be shared across workspaces.
+> **Important:** Entities can not be shared across workspaces.
 
 __Sharing options__:
 
@@ -215,7 +215,7 @@ When sharing an entity:
 
 - Set a per team access policy: The same levels apply.
 
-> **⚡ Important:** A user affected by more than one policy will benefit from the higher available access.
+> **Important:** A user affected by more than one policy will benefit from the higher available access.
 If a user is targeted by `RESTRICTED`, `VIEWER` and `EDITOR` simultaneously (through different teams perhaps), they will have the `EDITOR` policy on that entity.
 
 ### 2.1 Sharing Sheets and Views
@@ -238,7 +238,7 @@ In order to configure sharing parameters for a sheet, use the icon at the top ri
 
 ![sheet](./readme-assets/share_sheet.png)
 
-> **⚡ Information:** You can also individually share views, either from the sheet sharing parameters, or from the option menu within each individual view.
+> **Information:** You can also individually share views, either from the sheet sharing parameters, or from the option menu within each individual view.
 
 __Note about views:__
 
@@ -266,7 +266,7 @@ Sharing columns will make them available to all users accessing the sheet. They 
 
 Data Sources can be shared like sheets, within the application.
 
-> **⚡ Important:** If a data source is shared with some users, those users might __NOT__ see it if the row level security (RLS) configuration is set to __DENY ALL__. Make sure to either upload some specific RLS rules or set the general access to __ALLOW ALL__.
+> **Important:** If a data source is shared with some users, those users might __NOT__ see it if the row level security (RLS) configuration is set to __DENY ALL__. Make sure to either upload some specific RLS rules or set the general access to __ALLOW ALL__.
 
 When a data source is shared with writing permissions,
 users can configure them and manually override data.
