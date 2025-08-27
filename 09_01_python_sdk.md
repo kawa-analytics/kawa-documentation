@@ -5,21 +5,18 @@ parent: Python Integration
 nav_order: 25
 ---
 
-The KAWA Python SDK
----
+# The KAWA Python SDK
 
 KAWA offers a Python SDK that lets you perform various operations: Computations, Data loading and Advanced administration tasks.
 
-📚 You can find example workbooks and additional documentation here: [KAWA Python SDK Github Repository](https://github.com/kawa-analytics/kywy-documentation).
-
+You can find example workbooks and additional documentation here: [KAWA Python SDK Github Repository](https://github.com/kawa-analytics/kywy-documentation).
 
 * TOC
 {:toc}
 
+## 1. Getting started with the SDK
 
-# 1 Getting started with the SDK
-
-## 1.1 Installation
+### 1.1 Installation
 
 In order to install the SDK, run the following:
 
@@ -27,8 +24,7 @@ In order to install the SDK, run the following:
 
 > ℹ️ The SDK is hosted on [PyPI](https://pypi.org/project/kywy/).
 
-
-## 1.2 Retrieve your API Key
+### 1.2 Retrieve your API Key
 
 The API Key can be retrieved from the KAWA GUI. Click on __Settings__ > __API Key__.
 
@@ -40,9 +36,9 @@ The key is of the following format:
 kawa-........
 ```
 
-> 🚨 Once generated and copied, the key can no longer be retrieved. If you lost you key, you will need to generate a new one.
+> Once generated and copied, the key can no longer be retrieved. If you lost you key, you will need to generate a new one.
 
-## 1.3 Connect and authenticate to KAWA
+### 1.3 Connect and authenticate to KAWA
 
 The recommended way to connect to KAWA with the Python SDK is by creating a `.env` file in your project root directory.
 
@@ -78,7 +74,7 @@ kawa.set_api_key(api_key='kawa-****')
 kawa.set_active_workspace_id('1')
 ```
 
-# 2 Upload data to KAWA using the Python SDK
+## 2. Upload data to KAWA using the Python SDK
 
 In order to upload any pandas dataframe to KAWA:
 
@@ -99,12 +95,11 @@ loader.create_datasource()
 loader.load_data()
 ```
 
-📚 Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/01_load_data_notebook.ipynb) for a complete documentation of the data loading API.
+Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/01_load_data_notebook.ipynb) for a complete documentation of the data loading API.
 
 > Note that you can also use arrow tables instead of pandas dataframe for improved performances. This is all detailed in the notebook mentioned above.
 
-
-# 3 Run computations on KAWA from the Python SDK
+## 3. Run computations on KAWA from the Python SDK
 
 This feature lets you query your data and download it as a pandas dataframe directly in your existing scripts. The execution of the query (Filtering, Aggregations, etc...) will be deported into the KAWA data warehouse to ensure low latency and a small memory footprint in your own Python runtime.
 
@@ -125,4 +120,4 @@ df = query.compute()
 # df is a regular Pandas dataframe that can be further manipulated.
 ```
 
-📚 Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/02_compute_notebook.ipynb) for a complete documentation of the computing API.
+Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/02_compute_notebook.ipynb) for a complete documentation of the computing API.

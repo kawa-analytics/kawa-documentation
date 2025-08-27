@@ -5,20 +5,20 @@ parent: Architecture
 nav_order: 28
 ---
 
-## Data Lakehouse integration
+# Data Lakehouse integration
 
 This section illustrates how KAWA can be integrated in your data lakehouse.
 
 * TOC
 {:toc}
 
-# 1. Overview
+## 1. Overview
 
 KAWA integrates seamlessly into the consumption layer of your data lakehouse, providing an intuitive interface for data exploration and analytics while directly leveraging the Iceberg API to manage KAWA tables and ingest user data—all within a dedicated S3 bucket. It bridges to the processing layer by utilizing existing execution engines like Trino to perform scalable analytical queries using standard SQL. This integration allows users to harness the full suite of KAWA’s features—such as Python ETL, dynamic columns, and rich visualizations—natively within the lakehouse, combining performance, flexibility, and usability in a unified environment.
 
 ![Data lakehouse](./readme-assets/lakehouse.png)
 
-# 2. Configuration guide
+## 2. Configuration guide
 
 This configuration guide outlines how to integrate KAWA into a data lakehouse architecture using Trino as the execution engine, S3 as the object storage layer, and Hive Metastore as the metadata layer.
 
@@ -28,9 +28,9 @@ This guide supposes the following prerequisites:
 - An existing S3 bucket with a R/W account for KAWA
 - A Trino instance with a Read only account for KAWA + CREATE and DROP views in a catalogue managed by KAWA.
 
-## 2.1 Configuring Trino
+### 2.1 Configuring Trino
 
-> ℹ️ If you do not wish to activate the write back feature, you can skip this paragraph.
+> If you do not wish to activate the write back feature, you can skip this paragraph.
 
 ### 2.1.1 Creating an Iceberg catalog
 
@@ -133,9 +133,7 @@ kawa.commands.replace_configuration('IcebergConfiguration', {
 
 For these to be taken in account, the KAWA server must be restarted.
 
-
-
-## 2.3 Recap of the configured components
+### 2.3 Recap of the configured components
 
 ![Data lakehouse](./readme-assets/lakehouse_config.png)
 

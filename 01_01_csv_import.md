@@ -32,7 +32,7 @@ The following formats are accepted:
 
 Once the file has been loaded on KAWA and a preview has been generated, use the right pane to configure the import.
 
-> ℹ️ Most of the time, no additional configuration will be required as KAWA tries to auto detect all the parameters.
+> Most of the time, no additional configuration will be required as KAWA tries to auto detect all the parameters.
 
 Here are the available parameters:
 

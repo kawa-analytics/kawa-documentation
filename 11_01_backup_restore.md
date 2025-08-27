@@ -5,7 +5,7 @@ parent: Exploitation
 nav_order: 32
 ---
 
-## Backup and Restore scripts
+# Backup and Restore scripts
 
 This section contains scripts to backup and restore your postgres and clickhouse databases.
 It is compatible with a docker based installation, but can be adapted to work with bare metal setups.
@@ -13,11 +13,11 @@ It is compatible with a docker based installation, but can be adapted to work wi
 * TOC
 {:toc}
 
-# 1. Backup and Restore the postgres Database
+## 1. Backup and Restore the postgres Database
 
-> ℹ️ Run these scripts from directory that contains the `docker-compose.yml`file.
+> Run these scripts from directory that contains the `docker-compose.yml`file.
 
-## 1.1 Backup postgres
+### 1.1 Backup postgres
 
 KAWA Postgres database contains all the state of the application - dashboards, applications, sheets, datasources, views, etc...
 It also contains user accounts if using KAWA's internal authentication mechanism.
@@ -57,8 +57,7 @@ else
 fi
 ```
 
-
-## 1.2 Restore the postgres database
+### 1.2 Restore the postgres database
 
 
 ```bash
@@ -116,9 +115,7 @@ fi
 rm -rf "$TEMP_DIR"
 ```
 
-
-
-# 2. Backup and Restore the clickhouse Database
+## 2. Backup and Restore the clickhouse Database
 
 In order to backup and restore a clickhouse database, we use the native BACKUP and RESTORE utilities from Clickhouse.
 

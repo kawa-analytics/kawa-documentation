@@ -5,16 +5,14 @@ parent: Exploitation
 nav_order: 33
 ---
 
-## Create monitoring views
+# Create monitoring views
 
 * TOC
 {:toc}
 
+## 1. Monitor user events
 
-
-# 1. Monitor user events
-
-## 1.1 Setup a connection to KAWA's database from the KAWA GUI
+### 1.1 Setup a connection to KAWA's database from the KAWA GUI
 
 From the datasource section, create a new data source:
 (+ Data Source) > (Connect to an external system) > (+ Create new connection)
@@ -23,16 +21,13 @@ Pick the postgres connector:
 
 ![Exploitation](./readme-assets/exploitation2.png)
 
-
 Then, configure the connection to the KAWA store (The configuration is present in KAWA server configuration, in the _POSTGRES JDBC URL_). Click on Test Connection and then Create.
 
 ![Exploitation](./readme-assets/exploitation1.png)
 
 _The above screenshot contains some example parameters_.
 
-
-## 1.2 Create a new datasource to load application events
-
+### 1.2 Create a new datasource to load application events
 
 Making sure that you selected your new connection (here KAWA), click on the Custom SQL query option.
 
@@ -76,11 +71,9 @@ Once your data is ready, feel free to schedule it:
 
 _On this example, we schedule a full refresh of this data every 10 minutes. Feel free to adjust the frequency to your requirements._
 
-
-## 1.3 Create some charts and views to visualize this data
+### 1.3 Create some charts and views to visualize this data
 
 Below are a few examples of views that you can do to visualize the data:
-
 
 _Chart to show number of interactions per user and command name:_:
 
@@ -95,14 +88,11 @@ _Chart that shows which show the evolution of events per type_:
 
 ![Exploitation](./readme-assets/exploitation8.png)
 
-
-
-# 2. Monitor script execution
+## 2. Monitor script execution
 
 In order to monitor script execution, please follow the steps described in 1.1 to connect to KAWA's database.
 
-## 2.1 Create a new datasource to load the script monitoring table
-
+### 2.1 Create a new datasource to load the script monitoring table
 
 Making sure that you selected your new connection (here KAWA), click on the Custom SQL query option.
 
@@ -130,17 +120,13 @@ Input a name for your datasource: Application Events then click on (Save and Run
 
 ![Exploitation](./readme-assets/exploitation0.png)
 
-
 Like for the events, feel free to schedule the ETL to run automatically.
 
-
-## 2.2 Create some charts and views to visualize this data
-
+### 2.2 Create some charts and views to visualize this data
 
 _Boxplot chart to show script execution time_:
 
 ![Exploitation](./readme-assets/exploitation9.png)
-
 
 _Boxplot chart to show script status over time_:
 

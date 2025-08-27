@@ -5,24 +5,24 @@ parent: Architecture
 nav_order: 29
 ---
 
-## Snowflake native connection
+# Snowflake native connection
 
 This section illustrates how KAWA can leverage Snowflake as its data warehouse.
 
 * TOC
 {:toc}
 
-# 1. Overview
+## 1. Overview
 
 KAWA integrates natively with Snowflake as a primary data warehouse, enabling seamless connectivity to your centralized enterprise datasets. By leveraging Snowflake’s scalable compute and elastic storage architecture, KAWA empowers users to explore, transform, and visualize data through its intuitive analytics interface—while maintaining full SQL compatibility and direct access to live Snowflake tables. This integration unlocks powerful capabilities such as Python-based ETL, dynamic schema augmentation, and real-time insights, all orchestrated within the Snowflake ecosystem. With KAWA, organizations can unify interactive analytics and advanced data workflows on Snowflake, combining performance, governance, and usability in one streamlined platform.
 
 ![Snowflake](./readme-assets/snowflake1.png)
 
-# 2. Configuration guide
+## 2. Configuration guide
 
 This configuration guide outlines how to connect KAWA to a snowflake data warehouse.
 
-## 2.1 Configuring Snowflake
+### 2.1 Configuring Snowflake
 
 Connect to your snowflake instance with a user that can create databases, roles and users.
 
@@ -38,7 +38,6 @@ CREATE SCHEMA KAWA_ANALYTICS_DB.KAWA;
 ```
 
 ### b. Create a role and a user with all permissions in the new schema
-
 
 This creates a role with Write Back capabilities in the kawa database and schema.
 
@@ -82,14 +81,12 @@ CREATE USER kawa_write_back_user
 GRANT ROLE kawa_write_back_role TO USER kawa_write_back_user;
 ```
 
-
 ### c. Create a role / user with readonly access on selected databases
 
 The readonly user must have permission to read the `kawa_analytics_db` created in the previous steps.
 It must also be able to access all the schemas and databases (__SELECT only__) that you want to connect to KAWA.
 
 Make also sure that this user can create views in the KAWA database and schema.
-
 
 ```sql
 CREATE ROLE kawa_readonly_role;
@@ -127,8 +124,7 @@ CREATE USER kawa_readonly_user
 GRANT ROLE kawa_readonly_role TO USER kawa_readonly_user;
 ```
 
-
-> ℹ️ Alternatively, you can opt to configure a RSA keypair to authenticate your users. In oder to do so, for each user:
+> Alternatively, you can opt to configure a RSA keypair to authenticate your users. In oder to do so, for each user:
 
 1) Generate a private key with:
 
@@ -143,7 +139,6 @@ openssl genrsa -out rsa_key.pem 2048
 openssl rsa -in rsa_key.pem -pubout -out rsa_key.pub
 ```
 
-
 3) Configure your users
 
 ```sql
@@ -152,7 +147,7 @@ ALTER USER kawa_readonly_user
 SET RSA_PUBLIC_KEY='MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkm.....9QIDAQA';
 ```
 
-## 2.2 Configuring KAWA
+### 2.2 Configuring KAWA
 
 KAWA needs the following environment variables to work with this setup:
 
@@ -183,11 +178,10 @@ KAWA_SNOWFLAKE_PATH_TO_PRIVATE_KEY="/path/to/private/key/for/readonly/user"
 KAWA_SNOWFLAKE_WRITER_PATH_TO_PRIVATE_KEY="/path/to/private/key/for/writeback/user"
 ```
 
-
 _In the snowflake GUI, you can easily retrieve your account identifier_.
 
-
 ![Snowflake](./readme-assets/snowflake2.png)
+
 ![Snowflake](./readme-assets/snowflake3.png)
 
 

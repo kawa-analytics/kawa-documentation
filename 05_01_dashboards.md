@@ -43,13 +43,13 @@ From that point, you can either:
 - Pick an existing view from that sheet
 - Create a new view, that will exist only in the dashboard
 
-> ℹ️ All the views that are added to the dashboards will be copies of the ones from the sheet section.
+> All the views that are added to the dashboards will be copies of the ones from the sheet section.
 
 ### b. Adding widgets from another dashboard
 
 In the dashboards section of the widget selector, you will see all the widgets of each existing dashboard. Simply click on a widget to insert it in the current dashboard.
 
-> ℹ️ All widgets will be copied and will not retain any link with the originals.
+> All widgets will be copied and will not retain any link with the originals.
 
 ### c. Adding content blocks
 
@@ -88,7 +88,7 @@ Here are all the actions that you can perform on the widgets. They are available
 
 Cross filters let you explore a dashboard by clicking directly on a widget (bar, slice, point, cell, etc.). Each click adds a filter chip to the top bar, and all other linked widgets recalculate. It’s fast, in-context analysis without opening editors or changing the base views.
 
-> ℹ️ Need a widget to ignore dashboard filters (including cross filters)? In its menu, turn on Ignore filters.
+> Need a widget to ignore dashboard filters (including cross filters)? In its menu, turn on Ignore filters.
 
 ![Dashboards](./readme-assets/dashboard7.png)
 

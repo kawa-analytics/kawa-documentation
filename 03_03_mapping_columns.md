@@ -12,7 +12,7 @@ Mapping columns are a useful feature for performing ad-hoc data enrichment by ma
 * TOC
 {:toc}
 
-## 1 Creating mapping columns
+## 1. Creating mapping columns
 
 Mapping columns can be created from the Enrich Data section > __Manual Input__.
 
@@ -26,7 +26,7 @@ For example, you can manually define the desks at which your traders work:
 
 _Here, we are defining a mapping column for the Trader dimension. A Desk name was manually selected for each trader of the firm._
 
-> 🚨 When a dimension has a high cardinality, some of the available values might be missing from the displayed list. It is recommended to use CSV files to configure exhaustive mappings of large dimensions.
+> When a dimension has a high cardinality, some of the available values might be missing from the displayed list. It is recommended to use CSV files to configure exhaustive mappings of large dimensions.
 
 ![Lookup](./readme-assets/mapping3.png)
 
@@ -58,7 +58,7 @@ When the mapping does not cover all the values of your dimension, for example: a
 
 - _Custom value:_ You can define a placeholder there for unmapped values like: N/A etc...
 
-## 2 Editing a mapping column
+## 2. Editing a mapping column
 
 In the 3 dots menu of a mapping column, click on __Edit Mapping__. You can then change the mapped values (either manually or by loading a new CSV file), you can rename the column and change the behavior for unmapped values.
 

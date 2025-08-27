@@ -10,7 +10,7 @@ nav_order: 10
 * TOC
 {:toc}
 
-## 1 What is a lookup column?
+## 1. What is a lookup column?
 
 Lookup columns are similar to the VLookup operation in Excel. 
 They allow to mix data from various sources in one place. In KAWA, they allow to join data sources together in an intuitive and powerful way, keeping consistency in all derived computations.
@@ -48,9 +48,9 @@ Clicking on APPLY will add a new column to the Orders sheet, as shown in red bel
 
 > The new column has a purple icon in its header that indicates that it is a Lookup Column. It contains, for each customer, the TOTAL of event cost they attended.
 
-> ℹ️ A One-to-Many join has been made: One customer corresponds to Many events.
+> A One-to-Many join has been made: One customer corresponds to Many events.
 
-> ℹ️ Notice also that this lookup columns will automatically perform a SUM DISTINCT per customer. Looking at "Aaron Bergman", you notice that the value 350 (which is the SUM of TOTAL event cost), is the same on the Group level and on each row. This is because, each customer will be counted only once in each SUM.
+> Notice also that this lookup columns will automatically perform a SUM DISTINCT per customer. Looking at "Aaron Bergman", you notice that the value 350 (which is the SUM of TOTAL event cost), is the same on the Group level and on each row. This is because, each customer will be counted only once in each SUM.
 
 ### 1.2 Parameters of lookup columns
 
@@ -74,7 +74,7 @@ It is very helpful to think of the mapping definition as the __Granularity__ of 
 
 In addition to these parameters, Lookup columns can also have filters. Those restrict the scope of what is available for Lookup. For example, I can filter by `event_year == current year`. This will restrict the scope and only return events for the current year. Our SUM of EVENT COSTS will only be SUM of EVENT COSTS for this year only.
 
-> ℹ️ Filters cannot be configured when creating the columns themselves. They can only be added on once they already exist.
+> Filters cannot be configured when creating the columns themselves. They can only be added on once they already exist.
 
 ### 1.3 How are lookup columns computed
 
@@ -153,7 +153,7 @@ In the table below, the aggregated values are indicated in the bottom row.
 When adding the profit together, notice that KAWA does a simple SUM across all rows.
 In fact, `$10,000 + $15,000 + $10,000 + $12,000  + $10,000 + $14,000 = $71,000`.
 
-ℹ️ However, when adding the event cost by client, KAWA does a sum distinct, counting each client only once. More generally, at each level of grouping, KAWA will keep track of all the partitions met and count them only once.
+> However, when adding the event cost by client, KAWA does a sum distinct, counting each client only once. More generally, at each level of grouping, KAWA will keep track of all the partitions met and count them only once.
 
 Here, there is only one group, containing all the rows (The grand total is performed on all the rows). KAWA detects that the partition `Bruce Wayne` appears twice and that the partition `Lucius Fox` is here three times. It then counts each one once only when performing the Sum. That explains why the SUM of event cost by client is: `$6,000 + $9,000 = $15,000` and not `$6,000 + $6,000 + $9,000 + $9,000 + $9,000 + $9,000`.
 
@@ -179,7 +179,7 @@ When aggregating values of this formula together, meaning computing:
 
 KAWA will look at all the granularities within the aggregation and will automatically apply the Distinct functions for each one, at the right level. Here, profit will be summed at the Order granularity and Cost by client at the client granularity.
 
-> ⚠️ This system will not work when one aggregation operation deals with multiple granularities originating from multiple linked columns. To make those cases work, please refer to the [Level of detail documentation](./03_01_formulas#b-levels-of-detail). You would need to wrap each Linked column in its own group function. 
+> This system will not work when one aggregation operation deals with multiple granularities originating from multiple linked columns. To make those cases work, please refer to the [Level of detail documentation](./03_01_formulas#b-levels-of-detail). You would need to wrap each Linked column in its own group function. 
 
 | order id     | Client name   | Profit   | Cost per Client | Net Profit
 |--------------|---------------|----------|-----------------|-------------|
