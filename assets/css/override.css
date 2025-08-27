@@ -1,99 +1,110 @@
 /* ───────── базове ───────── */
-html, body { margin: 0; overflow-x: hidden; }
-img, video, canvas, svg { max-width: 100%; height: auto; }
+html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* ───────── змінні ───────── */
+/* налаштовувані розміри (можете підкрутити цифри під себе) */
 :root{
-    /* layout */
-    --sidebar-width: 19rem;
-    --gutter-left: 40px;
-    --gutter-right: 10px;
-    --sidebar-pad: 40px;
-
-    /* бренд / посилання */
-    --brand: #473982;
-    --brand-hover: #312759;
-
-    /* рамка для скріншотів */
-    --img-frame: #d0d7de;
-    --img-bg: #fff;
+    --sidebar-width: 19rem;  /* ширша ліва панель */
+    --gutter-left: 40px;     /* відстань зліва всередині main (видима) */
+    --gutter-right: 10px;    /* відступ справа всередині main */
+    --sidebar-pad: 40px;     /* трохи повітря для логотипа/контенту в сайдбарі */
 }
 
 /* не обмежуємо контент штучними max-width */
 .page, .page-content, .main-content, .content,
-.docs-content, .td-content, .td-main { max-width: none; }
+.docs-content, .td-content, .td-main { max-width: none !important; }
 
 /* ───────── лівий сайдбар ───────── */
 @media (min-width: 50rem){
     .side-bar{
-        align-items: flex-start;
-        width: var(--sidebar-width);
-        padding-left: var(--sidebar-pad);
-        background: none;
+        align-items: flex-start !important;          /* тема ставила flex-end */
+        width: var(--sidebar-width) !important;      /* фіксована ширина панелі */
+        padding-left: var(--sidebar-pad) !important; /* повітря біля логотипа */
+        background: none !important;
     }
     .side-bar .site-header,
     .side-bar .site-title,
     .side-bar .site-logo,
     .side-bar nav, .side-bar nav ul{
-        margin-left: 0;
-        padding-left: 0;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
     }
-    .side-bar .nav-list .nav-list-item > .nav-list-link{ padding-left: .5rem; }
+    .side-bar .nav-list .nav-list-item > .nav-list-link{
+        padding-left: .5rem !important;
+    }
 }
 
 /* ───────── основна колонка + пошук ───────── */
 @media (min-width: 50rem){
+    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main,
+       щоб справа не лишалося порожнього простору */
     .main{
-        margin-left: var(--sidebar-width);
-        width: calc(100% - var(--sidebar-width));
-        max-width: none;
-        padding: 0;
+        margin-left: var(--sidebar-width) !important;
+        width: calc(100% - var(--sidebar-width)) !important;
+        max-width: none !important;
+        padding: 0 !important;
     }
 
+    /* симетричні відступи для заголовка (з пошуком) і основного контенту */
     .main-header,
     .main-content,
     #main-content{
-        padding-left: var(--gutter-left);
-        padding-right: var(--gutter-right);
-        margin: 0;
-        width: 100%;
-        box-sizing: border-box;
+        padding-inline: var(--gutter) !important;  /* лівий = правий */
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
+    /* пошук не виступає за межі основного контенту */
     .main-header .search,
     .main-header .search-input-wrap{
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        display: block;
-        box-sizing: border-box;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+        box-sizing: border-box !important;
     }
     .main-header input[type="search"]{
-        width: 100%;
-        box-sizing: border-box;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
 
-/* ───────── дрібні запобіжники ───────── */
+/* ───────── запобіжники ───────── */
+img, video, canvas, svg { max-width: 100%; height: auto; }
 pre { overflow-x: auto; }
 table { width: 100%; display: block; overflow-x: auto; }
+
+/* якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
 
-/* ───────── типографіка ───────── */
 body {
     font-family: 'Inter', sans-serif;
     color: #111117;
 }
 
-/* посилання */
-a { color: var(--brand); text-decoration: none; }
-a:hover { color: var(--brand-hover); text-decoration: underline; }
+/* Звичайні посилання */
+a {
+    color: #473982;           /* або будь-який інший колір */
+    text-decoration: none;    /* (опціонально) прибрати підкреслення */
+}
 
-/* кнопки */
+/* Посилання при наведенні */
+a:hover {
+    color: #312759;
+    text-decoration: underline; /* (опціонально) повернути підкреслення */
+}
+
+/* Брендові кольори */
+:root{
+    --brand: #473982;       /* основний */
+    --brand-hover: #312759; /* ховер/active темніший */
+}
+
+/* Узагальнений таргет для типових класів кнопок */
 a.btn, .btn, a.button, .button, .cta {
     background: var(--brand) !important;
-    background-image: none !important;
+    background-image: none !important;   /* прибрати градієнт теми */
     border-color: var(--brand) !important;
     color: #fff !important;
 }
@@ -107,55 +118,25 @@ a.btn:focus, .btn:focus, a.button:focus, .button:focus {
     outline-offset: 2px;
 }
 
-/* заголовки */
+/* Якщо тема має власні стилі, таргетимо контентну область теж */
 h1, h2, h3,
 .main-content h1, .main-content h2, .main-content h3 {
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.01em;     /* трохи щільніше, виглядає «важче» */
 }
 h1, .main-content h1 { font-weight: 700; }
 h2, .main-content h2 { font-weight: 700; }
-h3, .main-content h3 { font-weight: 600; }
+h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш ще товстіше */
 
-/* ───────── зображення у контенті: лише масштабування (без рамок) ───────── */
-.main-content img:not(.no-resize){
+/* За замовчуванням робимо всі зображення у контенті меншими */
+.main-content img:not(.no-resize) {
     display: block;
     margin: 12px auto;
-    max-width: 75%;
+    max-width: 75%;   /* було 100%, тепер займає 75% ширини колонки */
     height: auto;
 }
+
+/* На мобільних повертаємо повну ширину */
 @media (max-width: 768px){
     .main-content img:not(.no-resize){ max-width: 100%; }
-}
-
-/* ───────── РАМКИ — тільки для скріншотів ───────── */
-/* Додавай клас .screenshot на <img> або на обгортку <p>/<figure> */
-img.screenshot,
-p.screenshot > img,
-figure.screenshot > img{
-    border: 1.5px solid var(--img-frame);
-    border-radius: 12px;
-    background: var(--img-bg);
-    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
-}
-img.screenshot.pad,
-p.screenshot.pad > img,
-figure.screenshot.pad > img{ padding: 8px; }
-
-/* утиліта — вимкнути рамку/тінь */
-.no-frame{ border: 0 !important; box-shadow: none !important; background: none !important; }
-
-/* ───────── ІКОНКИ — явний «захист» ───────── */
-header img, .nav img, .navbar img, .sidebar img, .side-bar img,
-.btn img, .button img, .badge img, .card__icon img, .toc img,
-.footer img, .site-logo img, .site-title img, .search img {
-    border: 0 !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-block !important;
-    max-width: none;          /* зберегти власний розмір іконок */
-    height: auto;
-    vertical-align: middle;
 }
