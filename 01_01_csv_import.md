@@ -26,7 +26,7 @@ The following formats are accepted:
 - .csv.gz
 - .csv.zip
 
-> 💡 It is recommended to use compressed csv formats when the volume of data exceeds 100MB.
+> It is recommended to use compressed csv formats when the volume of data exceeds 100MB.
 
 ### 1.2 Configure the CSV import parameters
 
