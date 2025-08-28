@@ -193,3 +193,23 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
     .main-content h1,
     .main-content h2 { margin-bottom: 1rem !important; }
 }
+
+.main-content h4{
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 1.04rem;
+    line-height: 1.4;
+    color: #111117;
+    letter-spacing: 0;
+    text-transform: none;
+
+    margin-top: 1.1rem;
+    margin-bottom: .6rem;
+
+    /* скидання «дивного» вигляду теми */
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
