@@ -14,6 +14,9 @@ KAWA contains 4 main sections:
 
 ![Starting](./readme-assets/start1.png)
 
+* TOC
+{:toc}
+
 ## 1. Create your first Data Source
 
 Loading data into KAWA is the first step, and it is done via the Data Source section. 
