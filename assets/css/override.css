@@ -194,32 +194,39 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
     .main-content h2 { margin-bottom: 1rem !important; }
 }
 
-/* H4 — більший і читабельний, без «бейджика» */
-.main-content h4{
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 1.125rem;      /* ≈18px, точно не менше за body (16px) */
-    line-height: 1.4;
-    color: #111117;
+/* H4 — більше за body, менше за H3; без «бейджа» */
+.main-content h4,
+.page-content h4,
+.markdown h4,
+.markdown-body h4,
+article h4{
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.125rem !important;       /* ≈ 18px — точно не менше за body */
+    line-height: 1.4 !important;
+    color: #111117 !important;
 
-    /* відмінність від H3 — лівий акцент */
-    padding-left: .75rem;
-    border-left: 3px solid var(--brand);
 
-    /* скидання «дивного» стилю теми */
-    text-transform: none;
-    letter-spacing: 0;
-    padding-top: 0; padding-bottom: 0;
-    border-top: 0; border-right: 0; border-bottom: 0;
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
+    /* скинути стиль «бейджа», який ставить тема */
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
 
-    margin-top: 1.1rem;
-    margin-bottom: .7rem;
+    margin-top: 1.1rem !important;
+    margin-bottom: .7rem !important;
 }
 
-/* трохи компактніше на вузьких екранах */
-@media (max-width: 768px){
-    .main-content h4{ font-size: 1.0625rem; } /* ≈17px */
+/* якщо всередині H4 є span/label, які додають «рамку» — скидаємо їх */
+.main-content h4 > span,
+.main-content h4 > .label,
+.main-content h4 > .badge{
+    all: unset;                /* скинути все від теми */
+    font: inherit !important;  /* підхопити розмір/вагу H4 */
 }
