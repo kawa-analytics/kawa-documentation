@@ -36,7 +36,7 @@ A bar chart can have one or two levels of grouping and does not have any limit i
 
 > It is strongly recommended to have only one series when two levels of grouping are present.
 
-### a. Bar chart with one level of grouping and one or more series
+#### a. Bar chart with one level of grouping and one or more series
 
 In a bar chart, the first level of grouping will always be the X-Axis.
 
@@ -50,7 +50,7 @@ The stacking option is found in the design section, in the upper horizontal tab.
 
 *Bar chart showing the profit and sales per sub-category, with and without Stacking*
 
-### b. Bar chart with two levels of grouping and one series
+#### b. Bar chart with two levels of grouping and one series
 
 With two levels of grouping, the first level will be the X-Axis and the second level will be reflected as the various portions of each bar.
 
@@ -58,7 +58,7 @@ With two levels of grouping, the first level will be the X-Axis and the second l
 
 *In the above example, you can see that the first level of grouping (Months) is shown on the X-Axis, while the second level of grouping is reflected on each bar (One color per year)*
 
-### c. Specific settings for the bar charts
+#### c. Specific settings for the bar charts
 
 In the design section, you have several options to customize your bar charts:
 
@@ -68,7 +68,7 @@ In the design section, you have several options to customize your bar charts:
 - Show the totals on top of each bar
 - Make the bar chart horizontal (Only works for one level of grouping)
 
-### 1.2 Configure a line chart
+#### 1.2 Configure a line chart
 
 Line charts are similar to Bar charts, but are generally preferred to plot trends or evolutions of metrics.
 
@@ -77,7 +77,7 @@ A line chart can have one or two levels of grouping and does not have any limit 
 
 > It is strongly recommended to have only one series when two levels of grouping are present, otherwise the chart will be difficult to read.
 
-### a. Line chart with one level of grouping and one or more series
+#### a. Line chart with one level of grouping and one or more series
 
 In a bar chart, the first level of grouping will always be the X-Axis.
 
@@ -91,7 +91,7 @@ When plotting multiple series for one grouping, you can decide whether to plot a
 
 *Plotting both Quantity (Ranges from -2 to 26 on a given date) and the Profit (Ranges from -200K to 3M on a given date) on two different axes.*
 
-### b. Line chart with two levels of grouping and one series
+#### b. Line chart with two levels of grouping and one series
 
 Adding a second level of grouping on top of a temporal dimension is useful to see the breakdown of some indicator per another dimension.
 
@@ -99,7 +99,7 @@ Adding a second level of grouping on top of a temporal dimension is useful to se
 
 *Here, we added the Segment as the second level of grouping -  as a result, we have one line showing the evolution of each segment over the days*
 
-### c. Specific settings for line charts
+#### c. Specific settings for line charts
 
 In the design section, you can access the following parameters, specific to line charts:
 
@@ -143,14 +143,14 @@ The design tab offer special options for Pie charts:
 
 Indicator charts are suited to show high level indicators or KPIs in dashboards. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) or to show the latest value for a metric and compare it to the previous one.
 
-### a. Show a global metric
+#### a. Show a global metric
 
 This is the most basic usage of an indicator chart.
 In order to configure an indicator chart this way, just pick one series and no grouping.
 
 ![Chart config](./readme-assets/chart_view_indicator1.png)
 
-### b. Show the last value for a metric, and compare it to its previous values
+#### b. Show the last value for a metric, and compare it to its previous values
 
 Indicator charts can be configured to show the last value for a metric. 
 In order to do so, pick one series and one grouping. The chart will show the last point for that metric applying the defined grouping.
@@ -183,7 +183,7 @@ Purpose of a scatter plot:
 - Identify trends, patterns, clusters, outliers, or possible groupings.
 - Examine whether a change in one variable affects another.
 
-### a. Scatter plots with one grouping level 
+#### a. Scatter plots with one grouping level
 
 Scatter plots require at least **one grouping level and two series**. The chart will build a correlation graph between the two series for each group:
 
@@ -214,7 +214,7 @@ This allows you to explore three variables at once:
 - Color shows how many people live in each country
 You can still see a positive trend: countries with higher GDP per capita often have higher life expectancy — and now you can also notice how population size varies across them.
 
-### b. Scatter Plots with Two Levels of Grouping
+#### b. Scatter Plots with Two Levels of Grouping
 
 **Scatter plots with two series**  
 Each point represents one group. Points differ in color depending on which group they belong to. Their position is determined by two variables (X, Y).
@@ -256,17 +256,17 @@ Series and Groups define what data will be plotted in the charts. They play diff
 
 Each field has several configuration options:
 
-### 2.1.1 Display options
+#### 2.1.1 Display options
 
 You can configure the field name (how it will appear on the charts) as well as the format of labels associated with this field. (For example set a unit or a number of digits to show after the decimal point). All these parameters are accessible on the three dots menu of each field.
 
-### 2.1.2 Aggregation
+#### 2.1.2 Aggregation
 
 The charts will show aggregated values for each field. For example: The sum of profit per segment or The average of sales per region, etc... The first drop down menu contains a list of aggregation to pick from.
 
 > __IMPORTANT:__ Be mindful of the aggregation method when you are plotting time series with time sampling. It is recommended to use aggregations such as Average, Min or Max (and avoid SUM as the value will grow with the number of samples falling within each bucket).
 
-### 2.1.3 Value calculation (Show As)
+#### 2.1.3 Value calculation (Show As)
 
 In charts, you can define ad-hoc calculations to apply to your fields by setting the Show As parameter.
 
@@ -313,7 +313,7 @@ _Above the result of using a moving calculation with: Apply to: Date, Aggregatio
 
 ### 2.1 Chart groupings
 
-### 2.1.2 Role of groupings in various types of charts
+#### 2.1.1 Role of groupings in various types of charts
 
 Groupings of a chart can be configured via the Group by section of the Data tab.
 Depending on the type of chart that you pick, grouping will play different roles.
@@ -334,7 +334,7 @@ Profit (Series) by Date (First level of grouping) and Segment (Second level of g
 | Sankey Chart      | First level of the Sankey | Second level of the Sankey (There is no limit to the number of groups for the Sankey charts)
 | Map Chart         | The first level of grouping must be a geographic denomination like a Country or a State etc.. | Ignored.
 
-### 2.1.3 Configuration of Groupings
+#### 2.1.2 Configuration of Groupings
 
 Groupings can be configured in the same way as in the Grid view. Like in Grids, chart groups support Time sampling and Number binning.
 

@@ -40,7 +40,7 @@ Row level security will filter the rows of a given data source based on a set of
 > **Important:** If one of the below condition is matched, the user will __BYPASS__ the row level security and see the entire dataset regardless of what is configured: 
 User OWNS the data source, User is an application ADMIN, or User has the ` Access restricted data and restricted data providers` workspace flag.
 
-### a. Security Mapping
+#### a. Security Mapping
 
 Those rules will be defined as a mapping between user or team names and particular values for dimensions. 
 
@@ -88,7 +88,7 @@ Access Tables require the 'Manage row level and column level security' to be cre
 
 In addition to the normal data source configuration, Access Tables require its creator to explicitly designate which column contains a user identifier (which can be user ids or security team `security names`).
 
-### b. Security Rules
+#### b. Security Rules
 
 Security rules allow to define how a Security Mapping will be applied to a data source to secure it.
 
@@ -102,7 +102,7 @@ Section by section on the above screenshot:
 - Section 4: The dimension to secure (Above: we are securing `Segment` in the orders data source, matching it against the `segment` column in the security mapping)
 - Section 5: Defines what to do for users who are not present (directly or through a team) in the Security Mapping.
 
-### c. Global rule
+#### c. Global rule
 
 The global rule of a data source is applied for a given user in case NO RLS rule applies for that user. It can be either: ALLOW ALL or DENY ALL.
 
@@ -110,7 +110,7 @@ The global rule of a data source is applied for a given user in case NO RLS rule
 
 If at least one rule applies the user, then the Rule for missing user in each rule applies (Section 5 above)
 
-### d. Example
+#### d. Example
 
 _fig1: Access Table:_
 

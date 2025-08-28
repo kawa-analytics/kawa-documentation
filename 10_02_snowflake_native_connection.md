@@ -26,7 +26,7 @@ This configuration guide outlines how to connect KAWA to a snowflake data wareho
 
 Connect to your snowflake instance with a user that can create databases, roles and users.
 
-### a. Creating a database and schema for KAWA to write in
+#### a. Creating a database and schema for KAWA to write in
 
 KAWA will create tables containing user data such as CSV uploads, pandas data frames etc.. in this database and schema.
 
@@ -37,7 +37,7 @@ CREATE DATABASE KAWA_ANALYTICS_DB
 CREATE SCHEMA KAWA_ANALYTICS_DB.KAWA;
 ```
 
-### b. Create a role and a user with all permissions in the new schema
+#### b. Create a role and a user with all permissions in the new schema
 
 This creates a role with Write Back capabilities in the kawa database and schema.
 
@@ -81,7 +81,7 @@ CREATE USER kawa_write_back_user
 GRANT ROLE kawa_write_back_role TO USER kawa_write_back_user;
 ```
 
-### c. Create a role / user with readonly access on selected databases
+#### c. Create a role / user with readonly access on selected databases
 
 The readonly user must have permission to read the `kawa_analytics_db` created in the previous steps.
 It must also be able to access all the schemas and databases (__SELECT only__) that you want to connect to KAWA.

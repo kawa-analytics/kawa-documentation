@@ -45,7 +45,7 @@ __The main differences with Excel are:__
 
 - Columns cannot be removed (but can be hidden)
 
-### a. Create an editable datasource
+#### a. Create an editable datasource
 
 In order to create an editable data source, navigate to the DataSource section, (+ Data source), Create from scratch.
 
@@ -55,7 +55,7 @@ And then, click on explore to go to the associated sheet.
 
 ![Manual](./readme-assets/manual2.png)
 
-### b. Edit data from the sheet section
+#### b. Edit data from the sheet section
 
 When opening a sheet based on an editable datasource, the default view is an editable grid:
 
@@ -76,7 +76,7 @@ In order to edit a cell, either use double click on a cell to input your value, 
 
 ![Manual](./readme-assets/manual4.png)
 
-### c. Edit data from dashboards or applications
+#### c. Edit data from dashboards or applications
 
 The editable views can be added to your dashboards or you applications to provide more interactivity. 
 
@@ -120,7 +120,7 @@ _Example:_
 
 Mappings are a way to edit data directly at the sheet level. Data will not be written in the underlying data source.
 
-### a. Create a new mapping (also called: manual input columns)
+#### a. Create a new mapping (also called: manual input columns)
 
 From the sheet section (Grid, but also charts and pivots), click on the Manual Input item in the (Enrich data) menu.
 
@@ -138,7 +138,7 @@ Then, in the configuration modal, choose:
 
 More details about mappings are available here: [Mapping columns](./03_03_mapping_columns.html)
 
-### b. Edit mapping column values directly in the Grid
+#### b. Edit mapping column values directly in the Grid
 
 KAWA lets you edit mapping values directly in the grid.
 

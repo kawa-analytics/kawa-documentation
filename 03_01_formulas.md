@@ -47,7 +47,7 @@ The return type of this formula is a `Text`, as indicated on the UI (Top left in
 
 ### 1.2 Types and Levels of detail
 
-### a. Types
+#### a. Types
 
 Formulas are typed. It means that they only return one type of data which can be:
 
@@ -65,7 +65,7 @@ You can always refer to the documentation of each operator directly on the GUI f
 
 ![Formula](./readme-assets/formula_3.png)
 
-### b. Levels of detail
+#### b. Levels of detail
 
 In addition to being typed, formulas also have a Level of Detail.
 It can be either: `ROW`, `GROUP` or `ANY`.

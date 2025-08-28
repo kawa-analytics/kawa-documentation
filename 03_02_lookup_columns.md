@@ -102,7 +102,7 @@ _Orders sheet:_ It shows various orders with profit and customer
 | O-12351      | Lucius Fox    | $10,000  |
 | O-12352      | Lucius Fox    | $14,000  |
 
-### 1.3.1 Step 1: Partitioning and aggregating the target sheet (Events)
+#### 1.3.1 Step 1: Partitioning and aggregating the target sheet (Events)
 
 The Target sheet (Events) is partitioned by the Granularity (Here the guest name). Each partition will have: 
 
@@ -118,7 +118,7 @@ _After step 1,the Event sheet is grouped by guest name and the Cost of all event
 
 > Note that the aggregation (here SUM) can be set to anything. It is a parameter of the linked column. 
 
-### 1.3.2 Step 2: Injecting the partitioned data in the main sheet (Orders)
+#### 1.3.2 Step 2: Injecting the partitioned data in the main sheet (Orders)
 
 Once the partition has been computed, we can now inject their value in the main sheet.
 In the table below, see how we inject $6,000 to the lines where the customer is Bruce Wayne and how we inject $9,000 to the lines where the customer is Lucius Fox.
@@ -132,7 +132,7 @@ In the table below, see how we inject $6,000 to the lines where the customer is 
 | O-12351      | Lucius Fox    | $10,000  | $9,000
 | O-12352      | Lucius Fox    | $14,000  | $9,000
 
-### 1.3.3 Step 3: Aggregating the injected data in the main sheet (Orders)
+#### 1.3.3 Step 3: Aggregating the injected data in the main sheet (Orders)
 
 Whether we are working in grids, pivot tables or charts, we almost only deal with aggregated data. Data from lookup columns can also be aggregated in the main sheet.
 
@@ -157,7 +157,7 @@ In fact, `$10,000 + $15,000 + $10,000 + $12,000  + $10,000 + $14,000 = $71,000`.
 
 Here, there is only one group, containing all the rows (The grand total is performed on all the rows). KAWA detects that the partition `Bruce Wayne` appears twice and that the partition `Lucius Fox` is here three times. It then counts each one once only when performing the Sum. That explains why the SUM of event cost by client is: `$6,000 + $9,000 = $15,000` and not `$6,000 + $6,000 + $9,000 + $9,000 + $9,000 + $9,000`.
 
-### 1.3.4 Step 4: Mixing local columns with lookup columns in a sheet
+#### 1.3.4 Step 4: Mixing local columns with lookup columns in a sheet
 
 To complete our example, we want to compute the net profit per customer. This is done by subtracting the Total profit and the Event cost, for each customer.
 
@@ -220,7 +220,7 @@ Let’s say you have a sheet called **Sales** with each row as an order:
 
 ### 2.3 Step-by-step: Adding Lookup Columns in the same sheet
 
-### 2.3.1 Step 1 — Total sales per Region & Year
+#### 2.3.1 Step 1 — Total sales per Region & Year
 
 - In the Sales sheet, click on “Enrich Data” → choose Lookup Column.
 - Under Select sheet, choose the Current sheet (Sales).
@@ -231,7 +231,7 @@ Let’s say you have a sheet called **Sales** with each row as an order:
 - Click Create.
 - Get a column: Sales Amount by Region, Year.
 
-### 2.3.2 Step 2 — Average sales per Region
+#### 2.3.2 Step 2 — Average sales per Region
 
 In the same Lookup Column setup:
 - Column to add: Sales Amount → Aggregation: AVERAGE.
@@ -239,14 +239,14 @@ In the same Lookup Column setup:
   - Region ↔ Region
 - Get a column: Sales Amount by Region.
 
-### 2.3.3 Step 3 — Order count per Region
+#### 2.3.3 Step 3 — Order count per Region
 
 - Column to add: Order ID → Aggregation: COUNT.
 - Map lookup columns:
   - Region ↔ Region
 - Get a column: Order ID by Region .
 
-### 2.2.4 Result
+#### 2.2.4 Result
 
 Your table will now look like this:
 
@@ -300,11 +300,11 @@ This flexibility means you can move seamlessly between a big-picture overview an
 
 ### 3.1 Example: from simple counting to flexible analysis
 
-### 3.1.1 Step 1 — Open editing
+#### 3.1.1 Step 1 — Open editing
 
 Click the **Sales Amount by Region, Year** column header.
 
-### 3.1.2 Step 2 — Open editing
+#### 3.1.2 Step 2 — Open editing
 
 - In Column name, enter Sales Amount by Region, Year (2024).
 - In Filters, turn off Sync with main view (so it won’t inherit global filters).
@@ -318,7 +318,7 @@ Click the **Sales Amount by Region, Year** column header.
 
 You now have a column with a local 2024 filter, independent of other views.
 
-### 3.1.3 Step 3 — Fixed grouping: Region & Year (Fixed partitions tab)
+#### 3.1.3 Step 3 — Fixed grouping: Region & Year (Fixed partitions tab)
 
 - Next to Static Partition: Region, click Edit icon → Configure partition.
 
@@ -350,7 +350,7 @@ Use the preview to validate:
 
 > Tip: If you still have a Year = 2024 filter from the previous step, counts for 2025 will show 0.
 
-### 3.1.4 Step 4 — Adaptive grouping (Dynamic partitions tab)
+#### 3.1.4 Step 4 — Adaptive grouping (Dynamic partitions tab)
 
 - Next to Static Partition: Region, click Edit icon → Configure partition.
 - Switch to Dynamic partitions.
@@ -369,7 +369,7 @@ Year never affects grouping (it’s in exclude).
 
 Dynamic partitions adapt to the fields visible in the current view and its filters. Use them for exploratory analysis; for fixed KPIs prefer Fixed partitions.
 
-### 3.1.5 Step 5 — Aggregations
+#### 3.1.5 Step 5 — Aggregations
 
 ![Lookup](./readme-assets/lookup17.png) 
 

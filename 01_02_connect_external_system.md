@@ -62,15 +62,15 @@ In the Select a connection field you’ll see your new Google Sheet connector. P
 
 Follow this link > <https://airtable.com/create/tokens>
 
-- ➡️ _Step 1:_ Click on “Create new Token” from the “Personal access tokens” section
+- _Step 1:_ Click on “Create new Token” from the “Personal access tokens” section
 
 ![external_system](./readme-assets/connectors8.png)
 
-- ➡️ _Step 2:_ Configure your access token as follows
+- _Step 2:_ Configure your access token as follows
 
 ![external_system](./readme-assets/connectors9.png)
 
-- ➡️ _Step 3:_ Copy your token
+- _Step 3:_ Copy your token
 
 ![external_system](./readme-assets/connectors10.png)
 
@@ -137,7 +137,7 @@ We strongly advise creating a dedicated user for KAWA to enhance tracking of usa
 
 Follow the instructions provided in the PostgreSQL documentation at this link: [Create User in PostgreSQL](https://www.postgresql.org/docs/current/role-membership.html).
 
-##### b. Assigning Appropriate Roles:
+#### b. Assigning Appropriate Roles:
 
 Grant the necessary roles to the user to enable querying of your analytics data. Detailed guidance can be found here: [Role Membership in PostgreSQL](https://www.postgresql.org/docs/current/role-membership.html).
 

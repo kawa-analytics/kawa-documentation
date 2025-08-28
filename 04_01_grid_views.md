@@ -75,7 +75,7 @@ From there, you can either move your field to the first and last position, or mo
 
 You have many ways to format your fields in KAWA.
 
-### a. Conditional formatting
+#### a. Conditional formatting
 
 Conditional formatting will apply some style to
 your fields based on their values. 
@@ -83,7 +83,7 @@ It will either set a style if a value matches a condition or apply some gradient
 
 This type of formatting, click on the Color button at the top of your grid.
 
-### i Rule based formatting:
+#### i Rule based formatting:
 
 In order to create a new Rule based formatting,
 Click on Color > + Rule > Single color.
@@ -104,7 +104,7 @@ Here are the items to configure:
 
 _Here we color in orange all row values above 100,000 `OR` below 0. The color is applied to the profit field._
 
-### ii Gradient based formatting:
+#### ii Gradient based formatting:
 
 In order to configure a new Gradient based formatting rule, 
 click on Color > + Rule > Color Scale.
@@ -119,13 +119,13 @@ Similarly to the rule based formatting, pick the field you are basing the gradie
 
 _Here we apply a gradient to the Row values of the quantity field_
 
-### iii Managing your rules
+#### iii Managing your rules
 
 The rules can be removed and reordered to define in which priority they are applied. The first one will be applied first, then the second, and so on.
 
 ![Format fields](./readme-assets/grid_view_manage_rules.png)
 
-### b. Formatting the fields values
+#### b. Formatting the fields values
 
 Another way to format the fields is to apply a static configuration on all values.
 
@@ -164,7 +164,7 @@ Here, you can add new groups to your grid, reorder the existing groups and delet
 
 > Note that the action of deploying a group will result in a query to the database. It ensures that just the right amount of data is loaded to the interface for optimal performances.
 
-### 2.1.1 Time Sampling
+#### 2.1.1 Time Sampling
 
 When applying grouping on temporal fields (`date` or `date time`), you have the option to apply time sampling on the groups.
 
@@ -177,7 +177,7 @@ you wish to sample your data on.
 
 *In this example, we group twice on the date column to obtain a year on year monthly comparison. The first group is defined on the Month of the date, while the second one is defined on the Year of the date.*
 
-### 2.1.2 Number Binning
+#### 2.1.2 Number Binning
 
 When applying grouping on a numeric filter, you can apply binning to analyze distributions for example.
 

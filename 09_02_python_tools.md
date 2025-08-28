@@ -42,7 +42,7 @@ There is no further configuration to do. All your scripts can directly edited in
 
 ### 1.2 Connection to your GIT server using SSH
 
-### 1.2.1 Prepare your repository
+#### 1.2.1 Prepare your repository
 
 Before you setup the connection, it is necessary to add the following files in your repository:
 
@@ -85,7 +85,7 @@ A very simplistic valid repository could look like this:
 
 > Please refer to [KAWA Tools Github Repository](https://github.com/kawa-analytics/kawa-toolkits) for more details about tools and toolkits. (This repository can be loaded in KAWA, it contains many examples).
 
-### 1.2.2 Configure the connection
+#### 1.2.2 Configure the connection
 
 In the settings, go to (Source Control) and pick Git (SSH).
 Please fill in:

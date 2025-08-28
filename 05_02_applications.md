@@ -36,23 +36,23 @@ Once your application is created, you’ll arrive at the Page Editor, which is o
 
 The left sidebar lets you fully control your application’s structure:
 
-### a. Application Title & Rename
+#### a. Application Title & Rename
 
 - Your application’s name appears at the top.
 - Click the pencil icon next to the title (e.g. “Events App”) to rename it in place.
 
-### b. Add New Pages
+#### b. Add New Pages
 
 - Hit the + button to add a new page - choose from View, Dashboard, or Presentation.
 
 ![Application](./readme-assets/application5.png)
 
-### c. Manage Existing Pages
+#### c. Manage Existing Pages
 
 - Each page (e.g. “events”, “orders”, “% of sales per segment”) is listed below the title.
 - Click the three-dot kebab menu ⋮ on any page to Rename or Delete it.
 
-### d. Reorder Pages
+#### d. Reorder Pages
 
 - Drag any page up or down the list to change its position.
 - The sidebar—and your app’s navigation—will update immediately to reflect the new order.
@@ -80,19 +80,19 @@ Provides on/off toggles and text fields to customize the active page. The right 
 
 Above the canvas, the header gives you quick access to global page actions:
 
-### a. Sheets
+#### a. Sheets
 
 Delete or add the underlying data source for this page.
 
 ![Application](./readme-assets/application8.png)
 
-### b. Share
+#### b. Share
 
 Adjust who can view and edit it.
 
 ![Application](./readme-assets/application9.png)
 
-### c. Pages/Agents Toggle
+#### c. Pages/Agents Toggle
 
 Flip between page layout controls and AI-assistant settings.
 
@@ -100,7 +100,7 @@ When you switch to the AI Agents tab, you can adjust every setting of the select
 
 ![Application](./readme-assets/application10.png)
 
-### d. Done
+#### d. Done
 
 When you’ve finished configuring, click Done in the top-right corner to save and exit the editor.  
 
@@ -114,19 +114,19 @@ In Viewer Mode, your team sees the clean, final version of the app—no editing 
 
 ### 3.1 Left Sidebar
 
-### a. Back Arrow:
+#### a. Back Arrow:
 
 Return to the Home - Applications page.
 
-### b. App Title:
+#### b. App Title:
 
 Shows your application’s name.
 
-### c. Page List:
+#### c. Page List:
 
 Navigate between all published pages (Views, Dashboards, Presentations) in the order you defined.
 
-### d. Chat with your data:
+#### d. Chat with your data:
 
 Launch the context-aware AI assistant for natural-language queries against the visible dataset. Open a focused workspace where you pick an AI agent, choose from suggested prompts, or type your own questions. The agent uses your current page’s data to deliver context-aware answers—charts, tables, or summaries—in a clean, standalone view. Use the back link to return to the main application when you’re done.
 
@@ -145,7 +145,7 @@ This Viewer Mode is what your end users will interact with day-to-day: a streaml
 
 ![Application](./readme-assets/application14.png)
 
-### a. Exploration mode
+#### a. Exploration mode
 
 On this toolbar you’ll see the Explore button (binoculars icon) with a dropdown. It lets you instantly switch between three data exploration modes. 
 
