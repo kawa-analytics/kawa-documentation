@@ -41,7 +41,7 @@ _In this example, we want to keep only the states with a negative Total. We pick
 
 ### 2.1 The Text filters
 
-### 2.1.1 Filtering particular values
+#### 2.1.1 Filtering particular values
 
 This mode (The first tab of the filter) will only keep rows whose values for the picked column fall in a selection.
 
@@ -53,7 +53,7 @@ _Here, KAWA will only keep rows for which the city is Aberdeen or Akron_
 
 > IMPORTANT: As a consequence of the previous note, if you have text columns with a very high cardinality, do not use this mode to filter everything out EXCEPT a few values. (Clicking on select all followed by unchecking a few)
 
-### 2.1.2 Filtering based on conditions
+#### 2.1.2 Filtering based on conditions
 
 The second tab of the text filter lets you configure multiple conditions.
 
@@ -71,7 +71,7 @@ __Examples:__
 
 _Keeps only the cities whose name starts with A, ends with A and contains T._
 
-### 2.1.3 Advanced settings for text filters
+#### 2.1.3 Advanced settings for text filters
 
 The third tab lets you configure the behavior of the filter card itself.
 
@@ -100,7 +100,7 @@ You can decide whether to keep `True`, `False` or `Empty`. There is a toggle bet
 
 Temporal filters are the most complex filters, they apply to both date and date time filters.
 
-### 2.1.1 Filtering using presets
+#### 2.1.1 Filtering using presets
 
 Presets are the quickest way to filter your temporal data. Each filter has their own sets of presets. By default, the Popular ones are shown:
 
@@ -114,7 +114,6 @@ Presets are the quickest way to filter your temporal data. Each filter has their
 | MTD     | Month To Date: Show all dates from the beginning of the month until today's date.
 | Future  | Shows all the data after today
 | Past    | Shows all the data before today
-
 
 You can also display presets by time unit:
 
@@ -130,7 +129,7 @@ You can also display presets by time unit:
 
 Each category will show a list of presets similar to D+1 or D-1. The capital letter indicates the unit (Y for year, BD for business day, etc..) and the number indicates the offset. For example: BD+1 indicates the next business day. Q-1 indicates the previous Quarter.
 
-### 2.1.2 Filtering using ranges
+#### 2.1.2 Filtering using ranges
 
 There are three types of range available.
 
@@ -153,7 +152,7 @@ Special case for __Available date__: Available date can be picked as a Unit. Pic
 
 __c. By Period:__ Lets you choose one period of time like: the Year 2023 or the month of March, or the month of April 2020.
 
-### 2.1.3 Filtering using conditions
+#### 2.1.3 Filtering using conditions
 
 This mode is similar to text and number filters. It lets you pick multiple conditions and choose how you want to combine them: `OR` or `AND`. It operates only on static dates.
 

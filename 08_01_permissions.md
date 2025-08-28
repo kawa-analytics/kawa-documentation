@@ -17,7 +17,7 @@ related permissions.
 
 ### 1.1 Authentication
 
-### a. KAWA internal authentication
+#### a. KAWA internal authentication
 
 KAWA can be configured to authenticate users without relying on
 SSO. In this mode, administrators can either choose to let people
@@ -35,7 +35,7 @@ When using KAWA internal authentication mechanism, the following page will be sh
 
 > **Important:** If you want to allow users to sign up, you need to configure SMTP support
 
-### b. Using external IDPs and SSO
+#### b. Using external IDPs and SSO
 
 When configured to work with SSO, KAWA will automatically create users
 in its database when new authenticated users will connect.
@@ -47,7 +47,7 @@ __Kerberos SSO__: Kawa can be configured to integrate with Kerberos to authentic
 
 __HTTP Header-based Authentication__: Users can be authenticated with HTTP Header based authentication. In that setup, the user information will be extracted from the incoming HTTP requests.
 
-### c. Using API Keys
+#### c. Using API Keys
 
 KAWA provides a mechanism to allow users to generate API keys in order to authenticate. This is mainly used to work with KAWA's Python API.
 
@@ -57,7 +57,7 @@ Application wide profiles are configured through KYWY, KAWA's python client.
 
 Please refer to this repository: https://github.com/kawa-analytics/kywy-documentation which contains all the details and examples regarding the usage of this library.
 
-### a. The user roles
+#### a. The user roles
 
 There are 3 global roles in KAWA.
 Each user has one role that is valid for the entire application.
@@ -86,7 +86,7 @@ of ADMINISTRATORS. It can never be disabled, deleted or switched to another user
 Most of the users should have this role. It allows them to benefit from all the features
 of the platform.
 
-### b. The restricted data source types
+#### b. The restricted data source types
 
 There are 7 data source types in KAWA:
 
@@ -114,7 +114,7 @@ In the GUI, when users create a data source, the types they are allowed to work 
 
 > **Important:** by default, users will not have access to the __LIVE CONNECT__ data type.
 
-### c. The overall permissions
+#### c. The overall permissions
 
 Overall permissions are a list of features that individual users have access to.
 For example, to benefit from all the Generative AI features,
@@ -182,7 +182,7 @@ There are two types of teams:
 - Sharing teams: Those teams are mainly used to share objects between users.
 - Security teams: They work exactly as sharing teams with an additional property: a `security name`. Those are used in row level security and column security configuration policies.
 
-### Designating team administrators
+#### 1.4.1 Designating team administrators
 
 When adding members to teams, you can designate them as team administrators.
 Team administrators do NOT need any specific privileges to manage the members of the teams they administrate.
@@ -223,7 +223,7 @@ If a user is targeted by `RESTRICTED`, `VIEWER` and `EDITOR` simultaneously (thr
 A Sheet contains multiple views, such as charts, grids and pivot tables.
 They also contain the business logic, expressed through formulas and python scripts.
 
-### a. Sheets and Views
+#### a. Sheets and Views
 
 A sheet can be shared in Read or Write mode with other users or teams of the workspace.
 
@@ -246,7 +246,7 @@ When views are shared, a control becomes available on them.
 It lets users rollback to the latest published version,
 publish a new version (if the user has write permission on the view) or save the view as a new object.
 
-### b. Columns: Formulas, Links, Mappings, Python
+#### b. Columns: Formulas, Links, Mappings, Python
 
 Within sheets, you can share your columns:
 - Formulas,
@@ -262,7 +262,7 @@ Sharing columns will make them available to all users accessing the sheet. They 
 
 ### 2.2 Sharing Data Sources
 
-### a. Data Sources
+#### a. Data Sources
 
 Data Sources can be shared like sheets, within the application.
 
@@ -276,7 +276,7 @@ In order for a user to be able to configure row level and column security on a d
 - The user must be able to edit the data source (shared with writing permissions)
 - The user must have the `Manage Data Source Security` flag enabled.
 
-### b. Data Providers
+#### b. Data Providers
 
 Data providers are databases or external APIs to which KAWA is connected to import data.
 When a data provider is restricted, only users with the `Access restricted data and restricted data providers` flag can access them to create new data sources.

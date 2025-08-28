@@ -32,7 +32,7 @@ This guide supposes the following prerequisites:
 
 > If you do not wish to activate the write back feature, you can skip this paragraph.
 
-### 2.1.1 Creating an Iceberg catalog
+#### 2.1.1 Creating an Iceberg catalog
 
 In Trino, you have to configure a new catalogue using the iceberg connector.
 
@@ -59,7 +59,7 @@ s3.path-style-access=true
 s3.region=us-east-1
 ```
 
-### 2.1.2 Create a new schema via Trino
+#### 2.1.2 Create a new schema via Trino
 
 In the new catalog (Here, we are working in the `kawa` catalogue), create a new schema via Trino.
 
@@ -69,7 +69,7 @@ CREATE SCHEMA IF NOT EXISTS kawa.kawa_sandbox
 
 ## 2.2 Configuring KAWA
 
-### 2.2.1 Readonly configuration
+#### 2.2.1 Readonly configuration
 
 In order for KAWA to function in read only mode on Trino, you need the following four environment variables:
 
@@ -80,7 +80,7 @@ export KAWA_TRINO_JDBC_URL=jdbc:trino://host:port
 export KAWA_WAREHOUSE_TYPE=TRINO
 ```
 
-### 2.2.2 Read+Write configuration
+#### 2.2.2 Read+Write configuration
 
 To add the write back capability, __in addition to the four variables described above__, three more variables are necessary
 
