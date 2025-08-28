@@ -133,7 +133,7 @@ You can import data either by picking a database and a table or by writing your 
 
 We strongly advise creating a dedicated user for KAWA to enhance tracking of usage and performance metrics with appropriate permissions. To set up this user, please refer to the following resources:
 
-##### a. Creating a User Account:
+#### a. Creating a User Account:
 
 Follow the instructions provided in the PostgreSQL documentation at this link: [Create User in PostgreSQL](https://www.postgresql.org/docs/current/role-membership.html).
 
