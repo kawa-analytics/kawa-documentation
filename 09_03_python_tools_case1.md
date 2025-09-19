@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Use case: Create a Scheduled Python ETL to transform your data
+title: Create a Scheduled Python ETL to transform your data
 parent: Python Integration
 nav_order: 31
 ---
