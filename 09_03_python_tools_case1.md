@@ -140,3 +140,7 @@ Make sure to configure scheduling in your datasource:
 
 ![Python](./readme-assets/python_4.png)
 
+You can also declare the parent datasource as _upstream_.
+In that way, each time the parent datasource is refreshed, the child one will be too.
+
+![Python](./readme-assets/python_5.png)
