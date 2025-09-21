@@ -4,6 +4,12 @@ title: Home
 nav_order: 1
 ---
 
+# What is KAWA?
+
+Kawa is a modern, collaborative analytics workspace to connect, model, and operationalize data — with built-in AI, automations, and Python.
+
+---
+
 <h1>
   <img
     class="icon no-resize"
