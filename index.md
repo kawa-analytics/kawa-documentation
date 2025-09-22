@@ -29,19 +29,26 @@ Kawa unifies your flow from raw data to published apps. Connect sources, model a
 
 ---
 
-## Start Your First Project Now
+<section class="grid">
+  <article class="card">
+    <span class="eyebrow">Quickstart</span>
+    <p>Ready to dive in? Start here:</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="/getting-started">Getting started</a>
+      <span class="badge">3 min</span>
+    </div>
+  </article>
 
-Ready to dive in? Start here:
-
-[Getting started](./00_01_getting_started.html){: .btn .btn-primary }
-
----
- 
-## Short videos to get started with Kawa
-
-A step-by-step video guide:
-
-[Video tutorials](https://docs.kawa.ai/video-tutorials/english-tutorials){: .btn .btn-primary target="_blank" }
+  <article class="card">
+    <span class="eyebrow">Videos</span>
+    <h3>Learn by watching</h3>
+    <p>Short videos to get productive fast.</p>
+    <div class="actions">
+      <a class="btn btn-secondary" href="/videos">Video tutorials</a>
+      <span class="badge">~8 min total</span>
+    </div>
+  </article>
+</section>
 
 ---
 
