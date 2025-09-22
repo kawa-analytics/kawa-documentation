@@ -31,21 +31,20 @@ Kawa unifies your flow from raw data to published apps. Connect sources, model a
 
 <section class="grid">
   <article class="card">
-    <span class="eyebrow">Quickstart</span>
+    <h3>Start Your First Project Now</h3>
     <p>Ready to dive in? Start here:</p>
     <div class="actions">
-      <a class="btn btn-primary" href="/getting-started">Getting started</a>
-      <span class="badge">3 min</span>
+      <a class="btn btn-primary" href="./00_01_getting_started.html">Getting started</a>
     </div>
   </article>
 
   <article class="card">
-    <span class="eyebrow">Videos</span>
     <h3>Learn by watching</h3>
     <p>Short videos to get productive fast.</p>
     <div class="actions">
-      <a class="btn btn-secondary" href="/videos">Video tutorials</a>
-      <span class="badge">~8 min total</span>
+      <a class="btn btn-secondary"
+         href="https://docs.kawa.ai/video-tutorials/english-tutorials"
+         target="_blank" rel="noopener">Video tutorials</a>
     </div>
   </article>
 </section>
