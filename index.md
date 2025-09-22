@@ -6,13 +6,22 @@ nav_order: 1
 
 # What is KAWA?
 
-Kawa is a modern, collaborative analytics workspace to connect, model, and operationalize data — with built-in AI, automations, and Python.
+**Kawa is a unified, collaborative analytics workspace** that takes you **from source to app** — connect data, model in sheets and formulas, explore with views and charts, automate actions, and publish dashboards and apps in one place with a shared source of truth, so teams ship faster.
 
 ---
 
-## Welcome to Kawa Documentation
+## How Kawa works
 
-Accelerate your analytics workflows and start smarter with **Kawa** — the fast, simple, and reliable data platform that lets you **build**, **run**, and **scale** projects in minutes. Leverage an intuitive interface, flexible integrations, and enterprise-grade stability alongside AI-powered guidance for formulas, charts, Python scripts, real-time chat, custom agents. **Try Kawa today!**
+**Build, run, and scale data apps — fast.**  
+Kawa unifies your flow from raw data to published apps. Connect sources, model and compute, explore in views and charts, automate actions, and publish dashboards.
+
+**What you can do**
+- **Collect**: databases, APIs, files, unstructured data.
+- **Model & compute**: sheets, joins, formulas, lookups, mappings.
+- **Explore**: grids, charts, pivots, saved views.
+- **Automate**: no-code triggers, conditions, multi-step actions.
+- **Publish**: dashboards and end-to-end apps for your team.
+- **Extend**: custom logic (Python), reusable libraries, chat & agents.
 
 
 ![home_page](./readme-assets/home1.png)
@@ -24,7 +33,7 @@ Accelerate your analytics workflows and start smarter with **Kawa** — the fast
 
 Ready to dive in? Start here:
 
-[Getting started](./00__getting_started.html){: .btn .btn-primary }
+[Getting started](./00_01_getting_started.html){: .btn .btn-primary }
 
 ---
  
@@ -40,6 +49,7 @@ A step-by-step video guide:
 
 | Section         | Description                                                                                      
 |----------------|--------------------------------------------------------------------------------------------------
+| [Terminology](00_02_terminology.md) |Learn the language of Kawa: clear definitions of key terms  and how they relate across the product.
 | [Data Integration](./01_00_data_integration.html) | Connect to internal or external systems to feed data in KAWA                                     
 | [Data Modeling](./02_00_modeling.html) | Create your sheets to share powerful data models with your teams                                 
 | [Computation](03_00_computations.md) | Apply formulas, lookups, and mappings to transform and enrich your data with ease                

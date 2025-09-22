@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dashboards
+title: Reports
 parent: Reporting and Publishing
 nav_order: 21
 ---
