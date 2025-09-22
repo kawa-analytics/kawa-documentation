@@ -5,7 +5,7 @@ parent: Reporting and Publishing
 nav_order: 21
 ---
 
-# Dashboards
+# Reports
 
 * TOC
 {:toc}
@@ -16,7 +16,7 @@ Dashboards in KAWA serve as dynamic, interactive interfaces that consolidate and
 
 ![Dashboards](./readme-assets/dashboard2.png)
 
-## 1. Creating dashboards and adding new widgets
+## 1.  Dashbords
 
 ### 1.1 Creating new dashboards
 
@@ -65,7 +65,7 @@ _They let you upload any image into your dashboards._
 
 ![Dashboards](./readme-assets/dashboard5.png)
 
-## 2. Managing your widgets
+## 1.3 Managing your widgets
 
 All your widgets can be resized and moved on the dashboard:
 
@@ -84,7 +84,7 @@ Here are all the actions that you can perform on the widgets. They are available
 - _Duplicate:_ This creates a copy of a widget.
 - _Delete:_ This removes the widget from the dashboard. If it was added from a sheet, it will not affect the original view.
 
-## 3. Cross Filters
+## 1.4 Cross Filters
 
 Cross filters let you explore a dashboard by clicking directly on a widget (bar, slice, point, cell, etc.). Each click adds a filter chip to the top bar, and all other linked widgets recalculate. It’s fast, in-context analysis without opening editors or changing the base views.
 
@@ -92,14 +92,14 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 ![Dashboards](./readme-assets/dashboard7.png)
 
-### 3.1 How it works
+### 1.4.1 How it works
 
 - _Source:_ Clicking a value in a Chart, Grid, or Pivot Table adds a filter for that dimension (e.g., Segment = Consumer).
 - _Scope:_ By default, the filter applies to all linked widgets on the dashboard. Widgets with Ignore filters do not react.
 - _Combination logic:_ Selections from different fields combine with AND (e.g., State = Texas AND Segment = Consumer).
 - _Local vs. dashboard:_ Local filters inside a widget still apply; cross filters further narrow the result.
 
-### 3.2 Interacting with widgets
+### 1.4.2 Interacting with widgets
 
 - _Single select:_ Click a bar/slice/point or a value in a table.
 - _Multi-select (same field):_ Hold Ctrl/Cmd and click more items.
