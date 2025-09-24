@@ -2,7 +2,7 @@
 layout: default
 title: KAWA Query cache
 parent: Architecture
-nav_order: 35
+nav_order: 36
 ---
 
 # KAWA Query Cache

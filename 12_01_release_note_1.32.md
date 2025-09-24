@@ -2,7 +2,7 @@
 layout: default
 title: Release note - KAWA 1.32
 parent: Release Notes
-nav_order: 40
+nav_order: 42
 ---
 
 # Release note - KAWA 1.32
