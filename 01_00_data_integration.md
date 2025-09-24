@@ -15,7 +15,7 @@ KAWA supports: Importing files, Connecting to external systems such as CRMs, dat
 
 ## 1. Data Source columns
 
-In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. 
+In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. See definitions in [Terminology](00_02_terminology.md) section.
 
 ### 1.1 Column types
 
