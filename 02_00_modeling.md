@@ -6,9 +6,9 @@ nav_order: 9
 
 # Data Modeling - Sheets
 
-In KAWA, sheets can be used in several ways.
+In KAWA, sheets can be used in several ways. See definitions in [Terminology](00_02_terminology.md) section.
 
-The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: cf [The Visualization section](./04_00_visualization).
+The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: [The Visualization section](./04_00_visualization).
 
 However, sheets are much more powerful than that and can be used to build and share your enterprise data models.
 
@@ -27,7 +27,7 @@ All these concepts will be explored in specific pages.
 
 ### 1.1 The main data source
 
-The main data source of a Sheet (cf [Data Integration](./01_00_data_integration) for details about data sources) will dictate the sheet data granularity. In other words, it will define the primary keys of your sheet. 
+The main data source of a Sheet ([Data Integration](./01_00_data_integration) for details about data sources) will dictate the sheet data granularity. In other words, it will define the primary keys of your sheet. 
 
 For example, if you choose a position system as a main data source, your sheet will show data per asset and portfolio.
 
@@ -43,11 +43,11 @@ In a database vocabulary, the linked data sources will be joined using `LEFT JOI
 
 ### 1.3 Views
 
-A Sheet contains views that offer diverse perspectives on its data. cf the [The Visualization section](./04_00_visualization).
+A Sheet contains views that offer diverse perspectives on its data. See definitions in [Terminology](00_02_terminology.md) section. You can read more about this in the [The Visualization section](./04_00_visualization).
 
 ### 1.4 Columns
 
-The columns of a sheet represent the individual fields or attributes that define the structure of its data. Each column corresponds to a specific type of information, such as:
+The columns of a sheet represent the individual fields or attributes that define the structure of its data. (See definitions in [Terminology](00_02_terminology.md) section.) Each column corresponds to a specific type of information, such as:
 
 - __Dimensions__ – descriptive fields like names, dates, or categories.
 

@@ -141,7 +141,7 @@ The design tab offer special options for Pie charts:
 
 ### 1.4 Configure an indicator chart
 
-Indicator charts are suited to show high level indicators or KPIs in dashboards. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) or to show the latest value for a metric and compare it to the previous one.
+Indicator charts are suited to show high level indicators or KPIs in dashboards. See definitions in [Terminology](00_02_terminology.md) section. They can be used either to show the global aggregation of a measure for the entire dataset (say the global average of profit) or to show the latest value for a metric and compare it to the previous one.
 
 #### a. Show a global metric
 
