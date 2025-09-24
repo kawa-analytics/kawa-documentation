@@ -7,16 +7,18 @@ nav_order: 21
 
 # Reports
 
+See definitions in [Terminology](00_02_terminology.md) section.
+
 * TOC
 {:toc}
+
+## 1.  Dashbords
 
 Dashboards in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA dashboards facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These dashboards are designed to be customizable, catering to diverse user needs and preferences.
 
 ![Dashboard](./readme-assets/dashboard1.png)
 
 ![Dashboards](./readme-assets/dashboard2.png)
-
-## 1.  Dashbords
 
 ### 1.1 Creating new dashboards
 
