@@ -18,12 +18,12 @@ Automation or AI-driven worker that executes tasks on Kawa data using configured
 ## C
 
 ### Column
-A persisted field inside a Sheet representing row-level values. Columns may be raw (ingested from a data source) or computed (formula, lookup, mapping). Column definitions determine type, formatting, and lineage, and serve as the canonical inputs for visual Fields and Indicators.
+A field inside a Sheet that can represent row-level values or aggregated/metric values, depending on its definition. Columns are model attributes/metrics that inherit logic from source Indicators (DS) and Sheet transformations, and act as the canonical inputs for Fields. Columns may be raw (ingested from a data source) or computed (formula, lookup, mapping).
 
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
 ### Control Panel
-A configurable set of user-facing controls (e.g., date range, selectors) that change Filters applied to one or more Views or an entire Report. Control Panels define scope, default state, and propagation rules, enabling governed self-service without editing the underlying model.
+A configurable set of user-facing controls that manages both filters (applied to one or many Views/Sheets/Reports) and variables used to configure scenarios and referenced in formulas/metrics. It defines scope, default values, and propagation rules for governed self-service.a configurable set of user-facing controls that manages both filters (applied to one or many Views/Sheets/Reports) and variables used to configure scenarios and referenced in formulas/metrics. It defines scope, default values, and propagation rules for governed self-service.
 
 **Used in:** [Control Panel](02_01_control_panel.md) section.
 
@@ -54,9 +54,9 @@ A rule that restricts the dataset evaluated or displayed by a View, Sheet, or Re
 ## I
 
 ### Indicator
-A reusable business metric derived from one or more Columns, typically aggregated (sum, average, ratio, percentage). Indicators encapsulate metric logic and grain, ensuring consistent calculation across Views and Reports and supporting governance, naming, and versioning.
+Indicator — a business metric defined at the Data Source level, used as the single source of truth for metrics that Sheets reuse.
 
-**Used in:** [Chart Views](04_02_chart_views.md) section.
+**Used in:** [Data Integration](01_00_data_integration.md) section.
 
 ---
 
@@ -127,9 +127,11 @@ The top-level environment that contains data sources, sheets, views, reports, au
 
 ### Column vs Field vs Indicator
 
-- Column — data in the model (Sheet), row-level or formula.
-- Field — how that column is used in a View (role + aggregation).
-- Indicator — a business metric, typically aggregated and reused.
+- Column — a defined field in a Sheet (the model’s data element), sourced or derived (dimension, measure, calculated, or metadata), used for querying, filtering, grouping, and optional aggregation.
+- Field — the visual role of a column in a View (how it’s presented/aggregated).
+- Indicator — metric at the Data Source level (source of truth for business metrics).
+
+**Relationship**: Indicators (Data Source) → inform Columns (Sheet) → become Fields (View).
 
 ### View vs Reports
 
@@ -138,10 +140,10 @@ The top-level environment that contains data sources, sheets, views, reports, au
 
 ### Data Source vs Sheet
 
-- Data Source — external/raw connection.
-- Sheet — modeled table inside Kawa.
+- Data Source — data imported or synchronized from underlying systems (files, databases, APIs, SaaS еtс).
+- Sheet — Sheet — the data model built on top of one or more data sources, where you define metrics for downstream use.
 
-## Filter vs Control Panel
+### Filter vs Control Panel
 
-- Filter — the rule that limits the dataset.
-- Control Panel — the UI that lets viewers set filters.
+- Filter — a rule that restricts the dataset for a View/Sheet/Report; sets conditions and scope (local/global) and affects the query context without changing stored data.
+- Control Panel — a configurable set of user controls that manages filters and variables across Views/Sheets/Reports; defines scope, default values, and propagation, and exposes variables reusable in formulas/metrics.
