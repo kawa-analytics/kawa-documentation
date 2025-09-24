@@ -54,7 +54,7 @@ A rule that restricts the dataset evaluated or displayed by a View, Sheet, or Re
 ## I
 
 ### Indicator
-Indicator — a business metric defined at the Data Source level, used as the single source of truth for metrics that Sheets reuse.
+A business metric defined at the Data Source level, used as the single source of truth for metrics that Sheets reuse.
 
 **Used in:** [Data Integration](01_00_data_integration.md) section.
 
@@ -141,7 +141,7 @@ The top-level environment that contains data sources, sheets, views, reports, au
 ### Data Source vs Sheet
 
 - Data Source — data imported or synchronized from underlying systems (files, databases, APIs, SaaS еtс).
-- Sheet — Sheet — the data model built on top of one or more data sources, where you define metrics for downstream use.
+- Sheet — the data model built on top of one or more data sources, where you define metrics for downstream use.
 
 ### Filter vs Control Panel
 
