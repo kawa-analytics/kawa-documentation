@@ -17,17 +17,17 @@ When OAuth2 with OIDC is configured on KAWA, a "Login with SSO" button appears o
 
 When users click on that button, here is what happens:
 
-1. The user is redirected to the authorization URL of the Authentication server/IdP. This URL can either be retrieved from `openIdIssuer` or can be manually specified in the configuration (`authenticationDomain` and `loginApiPath`). If Authentication is successful, the authentication server will send a code back to KAWA which will use it to retrieve a token pair (Access and Refresh tokens).
+- **Step 1:** The user is redirected to the authorization URL of the Authentication server/IdP. This URL can either be retrieved from `openIdIssuer` or can be manually specified in the configuration (`authenticationDomain` and `loginApiPath`). If the authentication is successful, the authentication server will send a code back to KAWA which will use it to retrieve a token pair (Access and Refresh tokens).
 
 > ℹ️ It is important to configure the application integration to provide both refresh and access tokens to allow safe and transparent token renewals.
 
 
-2. Once the token pair is obtained, KAWA will use the access token to retrieve the user information from the user info url. This is usually discovered via the `openIdIssuer` but can also be overridden with `userInfoApiPath`. 
+-  **Step 2:** Once the token pair is obtained, KAWA will use the access token to retrieve the user information from the user info url. This is usually discovered via the `openIdIssuer` but can also be overridden with `userInfoApiPath`. 
 
 > ℹ️ Make sure to allow the correct scopes: KAWA will read the following from the user info endpoint: `email`, `name`, `sub` (for user id, can be configured) and `email_verified` (You can decide to turn off email verification if that scope cannot be granted).
 
 
-3. Once the user identity was extracted, we attempt to load the corresponding user on KAWA. Two behaviours are available:
+-  **Step 3:** Once the user identity was extracted, we attempt to load the corresponding user on KAWA. Two behaviors are available:
 
     - The users in KAWA are created on the fly if they are not found
     - The Authentication blocks at that point (Users MUST be created by an admin).
@@ -35,7 +35,7 @@ When users click on that button, here is what happens:
     This is controlled via `blockIfPrincipalDoesNotExist` in the OAuth2 configuration.
 
 
-4. Once the user is authenticated, a short lived access token is generated and sent to the client along with the refresh token sent by the Authentication server in step 2. Once the access token expires, KAWA will use the refresh token to generate a new access token (transparent for the end user).
+- **Step 4:** Once the user is authenticated, a short lived access token is generated and sent to the client along with the refresh token sent by the Authentication server in step 2. Once the access token expires, KAWA will use the refresh token to generate a new access token (transparent for the end user).
 
 
 ## 2. Configuration
@@ -66,7 +66,14 @@ cf [This notebook to configure](https://github.com/kawa-analytics/kywy-documenta
 
 > ⚠️ Make sure to RESTART your KAWA instances after configuration has been changed to take it in account.
 
-> ℹ️ If you want to completely remove the OAuth mechanism, please remove from the database (table: `application_configuration`), the  `OAuth2ClientConfiguration` object. There is not yet an API to perform this action.
+> ℹ️ If you want to completely remove the OAuth mechanism, use the following:
+
+```python
+cmd.run_command(
+        'DeleteConfiguration', 
+        {'configurationClassSimpleName': 'OAuth2ClientConfiguration'}
+)
+```
 
 
 ### 2.1 Client Secret
