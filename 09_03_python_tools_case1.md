@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Data transformation
+title:  Scenario 1 - Data transformation
 parent: Python Integration
 nav_order: 32
 ---
 
-# Scenario description
+# Creating a data transformation with Python
 
 This scenario will demonstrate how to create a datasource from a python script, scheduled to run automatically.
 
