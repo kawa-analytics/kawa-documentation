@@ -84,7 +84,7 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 ## R
 
 ### Reports 
-Published collections of Views arranged with layout, shared Filters, and optional Control Panels for interactivity. Reports define audience, permissions, and refresh behavior, serving as the primary distribution surface for indicators and analyses.
+Published collections of Views arranged with layout, shared Filters, and optional Control Panels for interactivity. Reports define audience, permissions, and refresh behavior, and serve as the primary surface for analyses. User can create three types of reports: Dashboard (infinite canvas), Presentation (fixed slides), and Doc (rich text with embedded widgets). 
 
 **Used in:** [Reports](05_01_reports.md) section.
 
@@ -93,7 +93,7 @@ Published collections of Views arranged with layout, shared Filters, and optiona
 ## S 
 
 ### Sheet
-A tabular model within Kawa that prepares data for analysis. Sheets join sources, apply formulas, lookups, and mappings, and establish validated Columns that downstream Views and Indicators reuse. Sheets are the governed transformation layer of the workspace.
+A data object built on one main data source (defines the sheet grain and primary keys) with optional linked data sources joined by LEFT JOIN to add columns. A sheet contains views (at least a Grid), columns (dimensions, measures, calculated, metadata), and metadata (descriptions, data types, relationships, aggregation/formatting), and also provides a control panel and global sheet filters. Sheets are used to explore/visualize data and to build your data model.
 
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
@@ -130,9 +130,9 @@ The top-level environment that contains data sources, sheets, views, reports, au
 
 ### Column vs Field vs Indicator
 
-- Column — a defined field in a Sheet (the model’s data element), sourced or derived (dimension, measure, calculated, or metadata), used for querying, filtering, grouping, and optional aggregation.
-- Field — the visual role of a column in a View (how it’s presented/aggregated).
-- Indicator — metric at the Data Source level (source of truth for business metrics).
+- Indicator — a Data Source column (one field of the source table). Indicators have a type, can be part of the primary key, appear in the Data Source overview, and are the inputs used when building Sheets.
+- Column — an individual field/attribute in a Sheet that defines the sheet’s data structure. Columns can be dimensions, measures, calculated, or metadata; they may come directly from Data Sources or be derived (formulas, mappings, Python). They determine how the model can be queried, grouped, and visualized.
+- Field — the contextual use of a Column in a View, specifying its role (axis, series, grouping, color, size, value) and aggregation. Fields control rendering and summarization without changing the underlying column.
 
 **Relationship**: Indicators (Data Source) → inform Columns (Sheet) → become Fields (View).
 
