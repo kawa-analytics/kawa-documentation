@@ -12,15 +12,13 @@ See definitions in [Terminology](00_02_terminology.md) section.
 * TOC
 {:toc}
 
-## 1.  Reports
-
-Reports in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA dashboards facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These dashboards are designed to be customizable, catering to diverse user needs and preferences.
+Reports in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA reports facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These reports are designed to be customizable, catering to diverse user needs and preferences.
 
 ![Dashboard](./readme-assets/dashboard1.png)
 
 ![Dashboards](./readme-assets/dashboard2.png)
 
-### 1.1 Creating new Reports
+## 1. Creating new Reports
 
 In order to create a report, go to the Reports section and click on (+ Report). 
 You can then pick one of the three available layouts:
@@ -31,7 +29,9 @@ You can then pick one of the three available layouts:
 
 ![Dashboards](./readme-assets/dashboard3.png)
 
-### 1.2 Adding widgets to dashboards
+## 2.1 Dashboards 
+
+### 2.2 Adding widgets to dashboards
 
 When clicking on the (Add Widget) button, the widget selector will be displayed. It lets you choose views from sheets, widgets from existing dashboards or static blocks to add to your dashboard.
 
@@ -68,7 +68,7 @@ _They let you upload any image into your dashboards._
 
 ![Dashboards](./readme-assets/dashboard5.png)
 
-### 1.3 Managing your widgets
+### 2.3 Managing your widgets
 
 All your widgets can be resized and moved on the dashboard:
 
@@ -87,7 +87,7 @@ Here are all the actions that you can perform on the widgets. They are available
 - _Duplicate:_ This creates a copy of a widget.
 - _Delete:_ This removes the widget from the dashboard. If it was added from a sheet, it will not affect the original view.
 
-### 1.4 Cross Filters
+### 2.4 Cross Filters
 
 Cross filters let you explore a dashboard by clicking directly on a widget (bar, slice, point, cell, etc.). Each click adds a filter chip to the top bar, and all other linked widgets recalculate. It’s fast, in-context analysis without opening editors or changing the base views.
 
@@ -95,14 +95,14 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 ![Dashboards](./readme-assets/dashboard7.png)
 
-#### 1.4.1 How it works
+#### 2.4.1 How it works
 
 - _Source:_ Clicking a value in a Chart, Grid, or Pivot Table adds a filter for that dimension (e.g., Segment = Consumer).
 - _Scope:_ By default, the filter applies to all linked widgets on the dashboard. Widgets with Ignore filters do not react.
 - _Combination logic:_ Selections from different fields combine with AND (e.g., State = Texas AND Segment = Consumer).
 - _Local vs. dashboard:_ Local filters inside a widget still apply; cross filters further narrow the result.
 
-#### 1.4.2 Interacting with widgets
+#### 2.4.2 Interacting with widgets
 
 - _Single select:_ Click a bar/slice/point or a value in a table.
 - _Multi-select (same field):_ Hold Ctrl/Cmd and click more items.
@@ -110,17 +110,17 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 ![Dashboards](./readme-assets/dashboard8.png)
 
-### 3.3 Configure via the Config panel
+### 2.4.3 Configure via the Config panel
 
 Manage cross-filter behavior for the whole dashboard in Configure → Cross filtering.
 
-#### 3.3.1 Enable
+#### 2.4.4 Enable
 
 Go to Cross filtering -> Turn on the Cross filtering toggle — after this, clicks in widgets will add filter chips.
 
 ![Dashboards](./readme-assets/dashboard9.png)
 
-#### 3.3.2 Cross-filter groups
+#### 2.4.5 Cross-filter groups
 
 A cross-filter group is a named set of columns (often from different datasets/widgets) that should be filtered together.
 
@@ -139,7 +139,7 @@ A cross-filter group is a named set of columns (often from different datasets/wi
 
 What happens on click: If a user clicks a value in a column that belongs to a group, the system creates a chip and applies the same filter to all other columns in that group across related widgets. Groups do not affect widgets that don’t use the group’s fields or that have Ignore filters enabled.
 
-#### 3.3.3 Examples:
+#### 2.4.6 Examples:
 
 - _Location:_ State (orders) + State (sales) — clicking a state in the orders table filters sales widgets by that state.
 - _Product:_ Product (orders) + Product (sales) — clicking a product in a pie chart filters KPIs and tables from another dataset.
