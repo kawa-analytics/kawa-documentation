@@ -12,21 +12,22 @@ See definitions in [Terminology](00_02_terminology.md) section.
 * TOC
 {:toc}
 
-## 1.  Dashbords
+## 1.  Reports
 
-Dashboards in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA dashboards facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These dashboards are designed to be customizable, catering to diverse user needs and preferences.
+Reports in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA dashboards facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These dashboards are designed to be customizable, catering to diverse user needs and preferences.
 
 ![Dashboard](./readme-assets/dashboard1.png)
 
 ![Dashboards](./readme-assets/dashboard2.png)
 
-### 1.1 Creating new dashboards
+### 1.1 Creating new Reports
 
-In order to create a dashboard, go to the dashboard section and click on (+ Dashboard). 
-You can then pick one of the two available layouts:
+In order to create a report, go to the Reports section and click on (+ Report). 
+You can then pick one of the three available layouts:
 
 - __Dashboard:__ It is a blank canvas with unlimited height
 - __Presentation:__ It is similar to power point and lets you create slides of fixed size.
+- __Doc:__ It is similar to Notion, a document-style report (free-length page) for rich text with embedded widgets.
 
 ![Dashboards](./readme-assets/dashboard3.png)
 

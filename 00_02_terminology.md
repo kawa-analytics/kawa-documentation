@@ -9,7 +9,7 @@ nav_order: 3
 ## A
 
 ### Agent
-Automation or AI-driven worker that executes tasks on Kawa data using configured tools, prompts, or triggers. Agents can read/write sheets, update views or reports, and participate in workflows. They run with assigned permissions and follow workspace policies.
+A workspace-wide AI assistant available in AI chats. Each agent is configured with instructions, connected knowledge sources (including unstructured data), a set of commands, and defined capabilities to help with tasks and queries. Every workspace includes a default agent (Paul) that can be edited but not removed; users with the Edit Agent flag can create, update, or remove other agents.
 
 **Used in:** [AI Integration](06_00_ai_integration.md) section.
 
@@ -18,7 +18,7 @@ Automation or AI-driven worker that executes tasks on Kawa data using configured
 ## C
 
 ### Column
-A field inside a Sheet that can represent row-level values or aggregated/metric values, depending on its definition. Columns are model attributes/metrics that inherit logic from source Indicators (DS) and Sheet transformations, and act as the canonical inputs for Fields. Columns may be raw (ingested from a data source) or computed (formula, lookup, mapping).
+An individual field/attribute in a Sheet that defines the sheet’s data structure. Columns can be dimensions, measures, calculated fields, or metadata fields. They may come directly from Data Sources or be derived (formulas, mappings, Python). Columns determine how the model can be queried, grouped, and visualized; their values can be shown as-is or further aggregated/formatted for analysis.
 
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
@@ -32,7 +32,7 @@ A configurable set of user-facing controls that manages both filters (applied to
 ## D
 
 ### Data Source
-A managed connection that supplies data to Kawa (database, SaaS, API, file, or internal provider). A Data Source defines connectivity, credentials, sync behavior, and schema discovery. It is the entry point of the modeling flow before transformation within Sheets.
+A single data table in KAWA. It contains Indicators (columns) with defined types (e.g., date, datetime, text, boolean, integer, decimal; lists of texts/numbers are supported) and must have a primary key (single or composite) that uniquely identifies each row.
 
 **Used in:** [Data Integration](01_00_data_integration.md) section.
 
@@ -45,7 +45,7 @@ The contextual use of a Column within a View, specifying role (axis, series, gro
 **Used in:** [Grid views](04_01_grid_views.md) section.
 
 ### Filter
-A rule that restricts the dataset evaluated or displayed by a View, Sheet, or Report. Filters define conditions, scope (local vs global), and interaction with Control Panels; they do not alter persisted data, only the active query context.
+A condition that limits the records returned and shown by KAWA when a View, Sheet, or Report is evaluated. A filter specifies fields, operators, and values; it can be saved with a view, defined on a sheet, or applied report-wide. Filters change what is queried and displayed; they do not modify stored data.
 
 **Used in:** [Filtering data](04_04_filtering.md) section.
 
@@ -54,7 +54,7 @@ A rule that restricts the dataset evaluated or displayed by a View, Sheet, or Re
 ## I
 
 ### Indicator
-A business metric defined at the Data Source level, used as the single source of truth for metrics that Sheets reuse.
+A Data Source column (one field of the source table). Indicators have a defined type (e.g., date, datetime, text, boolean, integer, decimal; lists are also supported) and may be part of the primary key (single or composite) that uniquely identifies rows. Indicators are listed in the Data Source overview and are the inputs used when building Sheets.
 
 **Used in:** [Data Integration](01_00_data_integration.md) section.
 
@@ -63,7 +63,7 @@ A business metric defined at the Data Source level, used as the single source of
 ## K
 
 ### Knowledge
-Curated reference content—definitions, guidelines, and organizational context—available to users and Agents during analysis and automation. Knowledge improves consistency of terms and decisions across a Workspace.
+A workspace section for connecting and integrating unstructured data (documents, files) into KAWA to support data-driven work. This feature requires a connection to OCR (Optical Character Recognition) and to a completion API.
 
 **Used in:** 
 
@@ -72,7 +72,10 @@ Curated reference content—definitions, guidelines, and organizational context�
 ## P
 
 ### Python Tool
-The managed Python execution capability in Kawa for custom logic. Python Tool runs scripts with controlled access to Kawa data and services, supports dependency management, and can be invoked by Workflows or Agents.
+A Python function registered in KAWA with the @kawa_tool decorator (from kywy.client.kawa_decorators). Tools run on KAWA’s Python runtimes configured at the workspace level. You can add tools in two ways:
+1. KAWA File Store — write/edit the script directly in the GUI;
+2. Connected VCS (Git over SSH) — KAWA clones/pulls your repo; each repo includes requirements.txt and a kawa-toolkit.yaml that groups tools into toolkits.
+When a tool is added from VCS, it is not editable in the GUI (update via commits). Tools declare inputs/outputs in the decorator, appear in the Tools section, and require the appropriate workspace permissions and a healthy Python setup.
 
 **Used in:** [Python Tools](09_02_python_tools.md) section.
 
