@@ -182,12 +182,14 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 ## Key “vs” comparisons
 
 ### Column vs Field vs Indicator
+- Indicator (Data Source level) - the source’s original columns; may be part of the primary key. After Create new sheet, these Indicators automatically become the Sheet’s initial Columns. They do not define an analytic role.
+- Column (Sheet level) - built on top of Indicators or computed; used in queries and aggregations. The Sheet’s grain is set by the primary key of the main Data Source (not by the set of Columns). Column ≠ Field.
+- Field (View level) - contextual use of a Column inside a specific View (role: axis/series/group/value, plus aggregation). Affects display only; does not change the data schema.
 
-- Indicator — a Data Source column (one field of the source table). Indicators have a type, can be part of the primary key, appear in the Data Source overview, and are the inputs used when building Sheets.
-- Column — an individual field/attribute in a Sheet that defines the sheet’s data structure. Columns can be dimensions, measures, calculated, or metadata; they may come directly from Data Sources or be derived (formulas, mappings, Python). They determine how the model can be queried, grouped, and visualized.
-- Field — the contextual use of a Column in a View, specifying its role (axis, series, grouping, color, size, value) and aggregation. Fields control rendering and summarization without changing the underlying column.
-
-**Relationship**: Indicators (Data Source) → inform Columns (Sheet) → become Fields (View).
+Consequences of changes:
+- Changes to a Field do not change the Column/Indicator.
+- Changes to a Column apply to all Views that use it.
+- Changes to the Data Source schema affect Indicators and, in turn, any derived Columns in Sheets.
 
 ### View vs Reports
 
