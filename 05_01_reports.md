@@ -110,7 +110,7 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 ![Dashboards](./readme-assets/dashboard8.png)
 
-### 2.4.3 Configure via the Config panel
+#### 2.4.3 Configure via the Config panel
 
 Manage cross-filter behavior for the whole dashboard in Configure → Cross filtering.
 
