@@ -20,11 +20,12 @@ nav_order: 2
 ## C
 
 ### Column
-**In KAWA:** A Column is an individual attribute in a Sheet that defines the structure of the sheet’s data. Columns can be:
+**In KAWA:** A Column is a field (attribute) in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). Columns can be:
 - Dimension — descriptive values (names, dates, categories).
 - Measure (Metric) — numerical values that can be aggregated (sum, count, etc.).
 - Calculated — columns derived from expressions/formulas or based on other columns.
 - Metadata — technical/structural columns, such as IDs or timestamps.
+
 Columns can come directly from the Data Source or be derived (via formulas, mappings, Python). They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis.
 
 **How it relates to data modelling and standard terminology:**
@@ -60,7 +61,10 @@ Data can come through  Importing files, Connecting to external systems such as C
 ## F
 
 ### Field
-The contextual use of a Column within a View, specifying role (axis, series, grouping, color, size, value) and aggregation behavior. Fields control how data is rendered and summarized, without changing the underlying column definition.
+**In KAWA:** The contextual use of a Column within a View, specifying role (axis, series, grouping, color, size, value) and aggregation behavior. Fields control how data is rendered and summarized, without changing the underlying column definition.
+
+**How it relates to data modelling and standard terminology:** In standard terms, this is the presentation layer: a field in a view (a visualization field). It’s not a physical column in the data model, but a projection within a specific View with a chosen role and aggregation. The field controls how data is rendered and summarized, but it doesn’t change the schema or the definition of the Column.
+
 **Used in:** [Grid views](04_01_grid_views.md) section.
 
 ### Filter
