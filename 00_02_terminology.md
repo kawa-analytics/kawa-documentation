@@ -104,6 +104,10 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 **How it relates to data modelling and standard terminology:** An Indicator is a column (attribute) in a Data Source table with a defined data type; it can be part of the primary key. Analytical roles are assigned later within the Sheet.
 
+**Example**
+
+_**See:** Data Source — Example_
+
 **Used in:** [Data Integration](01_00_data_integration.md) section.
 
 ---
@@ -162,7 +166,11 @@ Metadata (Sheet) — descriptive info about the sheet’s model: a global descri
 - The main Data Source in the Sheet defines the level of detail (granularity) and primary keys — this aligns with the “fact/detail” concept in relational or BI modeling.
 - Related data sources are joined using LEFT JOIN — the classic approach of “enriching facts with attributes” without changing the number of rows in the fact table.
 
-- **Used in:** [Data Modeling](02_00_modeling.md) section.
+**Example**
+
+_**See:** Column — Example_
+
+**Used in:** [Data Modeling](02_00_modeling.md) section.
 
 ---
 
@@ -191,6 +199,8 @@ Metadata (Sheet) — descriptive info about the sheet’s model: a global descri
 **Example**
 
 ![Terminology](./readme-assets/terminology8.png)
+
+_**See also:** Field — Example_
 
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
