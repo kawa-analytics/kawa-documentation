@@ -20,7 +20,7 @@ nav_order: 2
 ## C
 
 ### Column
-**In KAWA:** A Column is a field (attribute) in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). Columns can be:
+**In KAWA:** A Column is an attribute in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). Columns can be:
 - Dimension — descriptive values (names, dates, categories).
 - Measure (Metric) — numerical values that can be aggregated (sum, count, etc.).
 - Calculated — columns derived from expressions/formulas or based on other columns.
@@ -31,12 +31,20 @@ Columns can come directly from the Data Source or be derived (via formulas, mapp
 - In standard terms, a column is a table attribute (a field).
 - In KAWA, a Sheet’s granularity (level of detail) is set by the primary key of the main Data Source. The set of columns only defines how data can be queried, grouped, and aggregated in the Sheet.
 
+**Example**
+
+![Terminology](./readme-assets/terminology1.png)
+
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
 ### Control Panel
 **In KAWA:** A configurable set of user-facing controls that manages both filters (applied to one or many Views/Sheets/Reports) and variables used to configure scenarios and referenced in formulas/metrics. It defines scope, default values, and propagation rules for governed self-service.a configurable set of user-facing controls that manages both filters (applied to one or many Views/Sheets/Reports) and variables used to configure scenarios and referenced in formulas/metrics. It defines scope, default values, and propagation rules for governed self-service.
 
 **How it relates to data modelling and standard terminology:** Parameters (similar to parameters in BI) that shape queries and visuals. Scope defines where a setting applies; propagation governs inheritance.
+
+**Example**
+
+![Terminology](./readme-assets/terminology2.png)
 
 **Used in:** [Control Panel](02_01_control_panel.md) section.
 
@@ -53,6 +61,12 @@ Data can come through  Importing files, Connecting to external systems such as C
 - Column in modeling = table column; in KAWA it is represented as Indicator.
 - Primary key in relational database meaning: uniquely identifies a row; can be composite.
 
+**Example**
+
+![Terminology](./readme-assets/terminology3.png)
+
+![Terminology](./readme-assets/terminology4.png)
+
 **Used in:** [Data Integration](01_00_data_integration.md) section.
 
 ---
@@ -60,9 +74,13 @@ Data can come through  Importing files, Connecting to external systems such as C
 ## F
 
 ### Field
-**In KAWA:** The contextual use of a Column within a View, specifying role (axis, series, grouping, color, size, value) and aggregation behavior. Fields control how data is rendered and summarized, without changing the underlying column definition.
+**In KAWA:** The contextual use of a Column within a View, specifying role (axis, series, grouping, value) and aggregation behavior. Fields control how data is rendered and summarized, without changing the underlying column definition.
 
 **How it relates to data modelling and standard terminology:** In standard terms, this is the presentation layer: a field in a view (a visualization field). It’s not a physical column in the data model, but a projection within a specific View with a chosen role and aggregation. The field controls how data is rendered and summarized, but it doesn’t change the schema or the definition of the Column.
+
+**Example**
+
+![Terminology](./readme-assets/terminology5.png)
 
 **Used in:** [Grid views](04_01_grid_views.md) section.
 
@@ -70,6 +88,10 @@ Data can come through  Importing files, Connecting to external systems such as C
 **In KAWA:** A condition that limits the records returned and shown by KAWA when a View, Sheet, or Report is evaluated. A filter specifies fields, operators, and values; it can be saved with a view, defined on a sheet, or applied report-wide. Filters change what is queried and displayed; they do not modify stored data.
 
 **How it relates to data modelling and standard terminology:** The behavior of filters in KAWA follows the common practice of BI and relational systems: a filter returns a subset of rows that meet the conditions.
+
+**Example**
+
+![Terminology](./readme-assets/terminology6.png)
 
 **Used in:** [Filtering data](04_04_filtering.md) section.
 
@@ -121,6 +143,9 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 - The Presentation layer, not the modeling layer. Reports don’t define schemas or modify stored data. Instead, they organize Views into a layout, apply shared Filters, and optionally include Control Panels for user interaction. They also manage the audience, permissions, and refresh behavior.
 - Standard BI alignment: In typical BI terms, Reports correspond to the report/dashboard layer, which visualizes already modeled data through charts, grids, and pivot tables (i.e., widgets/views).
 
+**Example**
+
+![Terminology](./readme-assets/terminology7.png)
 
 **Used in:** [Reports](05_01_reports.md) section.
 
@@ -150,7 +175,7 @@ Metadata (Sheet) — descriptive info about the sheet’s model: a global descri
 - According to standard access control practices, these are user groups in an RBAC (role-based access control) model.
 - This is not directly part of data modeling. Teams use already modeled objects for sharing and security purposes.
 
-- **Used in:** [Sharing and permissions](08_01_permissions.md) section.
+**Used in:** [Sharing and permissions](08_01_permissions.md) section.
 
 ---
 
@@ -162,6 +187,10 @@ Metadata (Sheet) — descriptive info about the sheet’s model: a global descri
 **How it relates to data modelling and standard terminology:**
 - In standard BI terms, a View corresponds to the visualization layer (grid/chart/pivot) built on top of already modeled data from the Sheet.
 - A View does not perform data modeling. It consumes the Sheet model and defines how data is queried and displayed.
+
+**Example**
+
+![Terminology](./readme-assets/terminology8.png)
 
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
