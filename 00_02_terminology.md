@@ -24,7 +24,6 @@ nav_order: 3
 - Dimension — descriptive values (names, dates, categories).
 - Measure (Metric) — numerical values that can be aggregated (sum, count, etc.).
 - Calculated — columns derived from expressions/formulas or based on other columns.
-- Metadata — technical/structural columns, such as IDs or timestamps.
 
 Columns can come directly from the Data Source or be derived (via formulas, mappings, Python). They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis.
 
@@ -131,6 +130,8 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 
 ### Sheet
 **In KAWA:** A data object built on one main data source (defines the sheet grain and primary keys) with optional linked data sources joined by LEFT JOIN to add columns. A sheet contains views (at least a Grid), columns (dimensions, measures, calculated, metadata), and metadata (descriptions, data types, relationships, aggregation/formatting), and also provides a control panel and global sheet filters. Sheets are used to explore/visualize data and to build your data model.
+
+Metadata (Sheet) — descriptive info about the sheet’s model: a global description (for AI), column names and descriptions, data types, links between sources, and rules for aggregation and formatting. It ensures consistency, easy data discovery, and correct analytics in Views/visualizations.
 
 **How it relates to data modelling and standard terminology:**
 - The main Data Source in the Sheet defines the level of detail (granularity) and primary keys — this aligns with the “fact/detail” concept in relational or BI modeling.
