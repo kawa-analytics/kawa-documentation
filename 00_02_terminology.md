@@ -141,7 +141,7 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 ## R
 
 ### Reports 
-**In KAWA:** Published collections of Views arranged with layout, shared Filters, and optional Control Panels for interactivity. Reports define audience, permissions, and refresh behavior, and serve as the primary surface for analyses. User can create three types of reports: Dashboard (infinite canvas), Presentation (fixed slides), and Doc (rich text with embedded widgets). 
+**In KAWA:** Published collections of Views arranged with layout, shared Filters, and optional Control Panels for interactivity. Reports define audience, permissions, and refresh behavior, and serve as the primary surface for analyses. User can create three types of reports: Dashboard (infinite canvas), Slides (fixed-size pages), and Doc (rich text with embedded widgets). 
 
 **How it relates to data modelling and standard terminology:**
 - The Presentation layer, not the modeling layer. Reports don’t define schemas or modify stored data. Instead, they organize Views into a layout, apply shared Filters, and optionally include Control Panels for user interaction. They also manage the audience, permissions, and refresh behavior.

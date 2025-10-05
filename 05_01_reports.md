@@ -24,7 +24,7 @@ In order to create a report, go to the Reports section and click on (+ Report).
 You can then pick one of the three available layouts:
 
 - __Dashboard:__ It is a blank canvas with unlimited height
-- __Presentation:__ It is similar to power point and lets you create slides of fixed size.
+- __Slides:__ It is similar to power point and lets you create slides of fixed size.
 - __Doc:__ It is similar to Notion, a document-style report (free-length page) for rich text with embedded widgets.
 
 ![Dashboards](./readme-assets/dashboard3.png)
@@ -62,11 +62,15 @@ There are two types of content block:
 
 _They provide an easy way to insert static texts to illustrate your dashboards. They support rich text formatting._
 
-- An image block
+- An Image block
 
 _They let you upload any image into your dashboards._
 
 ![Dashboards](./readme-assets/dashboard5.png)
+
+- A Code Block
+
+_Accepts HTML content only and immediately renders it in place._
 
 ### 2.3 Managing your widgets
 
@@ -81,10 +85,13 @@ Here are all the actions that you can perform on the widgets. They are available
 
 - _Refresh:_ Will recompute a given widget. If one of the underlying datasources changed, the widget will be rendered reflecting that change.
 - _Summary:_ This is available for chart widgets. It will show an automatic summary of the data that is displayed. 
-- _Ignore filters:_ Make the selected widget insensitive to the filters applied on the dashboard level (Filters from the control panel as well as filters on the filter menu for the dashboard).
 - _Edit widget:_ This opens the widget in full screen mode and lets you edit its parameters.
-- _Rename:_ This allows to change the name of the widget on the dashboard. 
+- _Full screen widget:_ Opens the widget in view-only full-screen mode.
+- _Rename:_ This allows to change the name of the widget on the dashboard.
+- _Disable all filters:_ Make the selected widget insensitive to the filters applied on the dashboard level (filters from the control panel, filters on the filter menu, cross filters).
 - _Duplicate:_ This creates a copy of a widget.
+- _Synchronize:_ Pulls the latest configuration and schema from the sheet/view, so the widget reflects recent changes; keeps the widget’s size and position on the dashboard.
+- _Go to sheet:_ Navigates to the sheet/view and opens the underlying view used by this widget.
 - _Delete:_ This removes the widget from the dashboard. If it was added from a sheet, it will not affect the original view.
 
 ### 2.4 Cross Filters
@@ -143,3 +150,20 @@ What happens on click: If a user clicks a value in a column that belongs to a gr
 
 - _Location:_ State (orders) + State (sales) — clicking a state in the orders table filters sales widgets by that state.
 - _Product:_ Product (orders) + Product (sales) — clicking a product in a pie chart filters KPIs and tables from another dataset.
+
+### 2.5 Exploration mode
+
+- _What it is:_ Quickly change how a widget shows data.
+- _How to use:_ Click **Explore** (binoculars).
+- _What you see:_ A **Exploration mode** bar in the green board appears.
+
+![Dashboards](./readme-assets/dashboard12.png)
+
+- _Save or undo:_
+  - **Save** — keep the new view for this widget.
+  - **Cancel** — discard the changes.
+- _Scope:_ Affects **only this widget**. The dashboard layout and the source sheet stay the same.
+
+## 2.2 Slides 
+
+## 2.3 Doc
