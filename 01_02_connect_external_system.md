@@ -2,7 +2,7 @@
 layout: default
 title: Connect to an External system
 parent: Data Integration
-nav_order: 5
+nav_order: 6
 ---
 
 # Connect to an External system
