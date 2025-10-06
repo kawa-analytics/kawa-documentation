@@ -168,7 +168,7 @@ What happens on click: If a user clicks a value in a column that belongs to a gr
 
 ## 4. Doc
 
-  This type is especially handy for analytics presentations, technical reports, or hybrid pages that combine explanations and visualizations.
+Doc are a document-style report with flexible page length. They let you build structured documents with text, headings, images, and interactive widgets. This type is especially handy for analytics presentations, technical reports, or hybrid pages that combine explanations and visualizations.
 
 ### 4.1 Create
 
@@ -176,11 +176,11 @@ Go to **Reports** → click **+ Report** → choose **Doc** (next to **Dashboard
 
 ### 4.2 Structure and Editing
 
-- Adding blocks. Use + or type / and choose: Text, Heading 1–3, Bulleted list, Numbered list, Checklist, Сode, Image, Add widget.
+- **Adding blocks.** Use **+** or type **/** and choose: Text, Heading 1–3, Bulleted list, Numbered list, Checklist, Сode, Image, Add widget.
 
 ![Doc](./readme-assets/doc1.png)
 
-- Block context menu. Open it via the Block handle (six-dots icon): Convert to, Move up / Move down, Delete.
+- **Block context menu.** Open it via the Block handle (six-dots icon): Convert to, Move up / Move down, Delete.
 
 ![Doc](./readme-assets/doc2.png)
 
