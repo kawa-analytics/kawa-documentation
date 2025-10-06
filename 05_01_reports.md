@@ -29,9 +29,9 @@ You can then pick one of the three available layouts:
 
 ![Dashboards](./readme-assets/dashboard3.png)
 
-## 2.1 Dashboards 
+## 2. Dashboards
 
-### 2.2 Adding widgets to dashboards
+### 2.1 Adding widgets to dashboards
 
 When clicking on the (Add Widget) button, the widget selector will be displayed. It lets you choose views from sheets, widgets from existing dashboards or static blocks to add to your dashboard.
 
@@ -72,7 +72,7 @@ _They let you upload any image into your dashboards._
 
 _Accepts HTML content only and immediately renders it in place._
 
-### 2.3 Managing your widgets
+### 2.2 Managing your widgets
 
 All your widgets can be resized and moved on the dashboard:
 
@@ -94,7 +94,7 @@ Here are all the actions that you can perform on the widgets. They are available
 - _Go to sheet:_ Navigates to the sheet/view and opens the underlying view used by this widget.
 - _Delete:_ This removes the widget from the dashboard. If it was added from a sheet, it will not affect the original view.
 
-### 2.4 Cross Filters
+### 2.3 Cross Filters
 
 Cross filters let you explore a dashboard by clicking directly on a widget (bar, slice, point, cell, etc.). Each click adds a filter chip to the top bar, and all other linked widgets recalculate. It’s fast, in-context analysis without opening editors or changing the base views.
 
@@ -102,14 +102,14 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 ![Dashboards](./readme-assets/dashboard7.png)
 
-#### 2.4.1 How it works
+#### 2.3.1 How it works
 
 - _Source:_ Clicking a value in a Chart, Grid, or Pivot Table adds a filter for that dimension (e.g., Segment = Consumer).
 - _Scope:_ By default, the filter applies to all linked widgets on the dashboard. Widgets with Ignore filters do not react.
 - _Combination logic:_ Selections from different fields combine with AND (e.g., State = Texas AND Segment = Consumer).
 - _Local vs. dashboard:_ Local filters inside a widget still apply; cross filters further narrow the result.
 
-#### 2.4.2 Interacting with widgets
+#### 2.3.2 Interacting with widgets
 
 - _Single select:_ Click a bar/slice/point or a value in a table.
 - _Multi-select (same field):_ Hold Ctrl/Cmd and click more items.
@@ -117,17 +117,17 @@ Cross filters let you explore a dashboard by clicking directly on a widget (bar,
 
 ![Dashboards](./readme-assets/dashboard8.png)
 
-#### 2.4.3 Configure via the Config panel
+#### 2.3.3 Configure via the Config panel
 
 Manage cross-filter behavior for the whole dashboard in Configure → Cross filtering.
 
-#### 2.4.4 Enable
+#### 2.3.4 Enable
 
 Go to Cross filtering -> Turn on the Cross filtering toggle — after this, clicks in widgets will add filter chips.
 
 ![Dashboards](./readme-assets/dashboard9.png)
 
-#### 2.4.5 Cross-filter groups
+#### 2.3.5 Cross-filter groups
 
 A cross-filter group is a named set of columns (often from different datasets/widgets) that should be filtered together.
 
@@ -146,12 +146,12 @@ A cross-filter group is a named set of columns (often from different datasets/wi
 
 What happens on click: If a user clicks a value in a column that belongs to a group, the system creates a chip and applies the same filter to all other columns in that group across related widgets. Groups do not affect widgets that don’t use the group’s fields or that have Ignore filters enabled.
 
-#### 2.4.6 Examples:
+#### 2.3.6 Examples:
 
 - _Location:_ State (orders) + State (sales) — clicking a state in the orders table filters sales widgets by that state.
 - _Product:_ Product (orders) + Product (sales) — clicking a product in a pie chart filters KPIs and tables from another dataset.
 
-### 2.5 Exploration mode
+### 2.4 Exploration mode
 
 - _What it is:_ Quickly change how a widget shows data.
 - _How to use:_ Click **Explore** (binoculars).
@@ -164,6 +164,51 @@ What happens on click: If a user clicks a value in a column that belongs to a gr
   - **Cancel** — discard the changes.
 - _Scope:_ Affects **only this widget**. The dashboard layout and the source sheet stay the same.
 
-## 2.2 Slides 
+## 3. Slides 
 
-## 2.3 Doc
+## 4. Doc
+
+  This type is especially handy for analytics presentations, technical reports, or hybrid pages that combine explanations and visualizations.
+
+### 4.1 Create
+
+Go to **Reports** → click **+ Report** → choose **Doc** (next to **Dashboard** and **Slides**).
+
+### 4.2 Structure and Editing
+
+- Adding blocks. Use + or type / and choose: Text, Heading 1–3, Bulleted list, Numbered list, Checklist, Сode, Image, Add widget.
+
+![Doc](./readme-assets/doc1.png)
+
+- Block context menu. Open it via the Block handle (six-dots icon): Convert to, Move up / Move down, Delete.
+
+![Doc](./readme-assets/doc2.png)
+
+### 4.3 Adding widgets
+
+- Click **Add widget**.
+
+![Doc](./readme-assets/doc3.png)
+
+- In the dialog, choose **Sheet**.
+- Pick **Existing widget** or **New widget** (chart, grid, pivot).
+- Click **Apply** — the widget will be inserted at the cursor.
+
+> The full list of actions (**Refresh, Summary, Edit widget, Full screen widget, Rename, Disable all filters, Duplicate, Synchronize, Go to sheet, Delete**) is described in **Dashboard → Managing your widgets**.
+
+### 4.4 Formatting content
+
+Text blocks support **Rich text** (bold, italics, underline), **H1–H3 headings, lists, checklists, code snippets**, and **images**. This lets you build full analytical documents with explanations and dynamic data.
+
+![Doc](./readme-assets/doc4.png)
+
+### 4.5 Filters and exploration
+
+**Control panel filters** also work for widgets embedded in a Doc.
+
+**Exploration mode** for Doc widgets works the same as on a dashboard (see **Dashboard → Exploration mode**).
+
+### 4.6 When to choose a Doc
+
+- When you need a narrative plus visualizations on one canvas.
+- For overview reports where charts are interleaved with explanatory text, images, and notes.
