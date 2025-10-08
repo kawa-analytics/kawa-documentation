@@ -43,7 +43,7 @@ In a database vocabulary, the linked data sources will be joined using `LEFT JOI
 
 ### 1.3 Views
 
-A Sheet contains views that offer diverse perspectives on its data. See definitions in [Terminology](00_02_terminology.md) section. You can read more about this in the [The Visualization section](./04_00_visualization).
+A Sheet contains views that offer diverse perspectives on its data. You can read more about this in the [The Visualization section](./04_00_visualization).
 
 ### 1.4 Columns
 
