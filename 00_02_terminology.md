@@ -22,7 +22,7 @@ nav_order: 3
 ### Column
 **In KAWA:** A Column is an attribute in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). Columns can be:
 - Dimension — descriptive values (names, dates, categories).
-- Measure (Metric) — numerical values that can be aggregated (sum, count, etc.).
+- Measure — numerical values that can be aggregated (sum, count, etc.).
 - Calculated — columns derived from expressions/formulas or based on other columns.
 
 Columns can come directly from the Data Source or be derived (via formulas, mappings, Python). They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis.
@@ -202,7 +202,7 @@ _**See:** Column — Example_
 
 _**See also:** Field — Example_
 
-**Used in:** [Data Modeling](02_00_modeling.md) section.
+**Used in:** [Visualization](04_00_visualization.md) section.
 
 ---
 
