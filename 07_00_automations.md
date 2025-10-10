@@ -57,8 +57,11 @@ Click **Add action** — the Actions panel opens; select the needed action.
 - In Match tool inputs (required entries), bind inputs to outputs from previous steps:
   - df → select **1. Transform data** or other prior action.
   - text → bind to a source.
-  - рarameters → optional/named options; they can also be bound to outputs from previous steps.
+- Parameters (optional/named options) → they can also be bound to outputs from previous steps.
 
+If a required field is empty or mis-bound you’ll see Invalid parameter binding.
+
+Behavior (Python step only) — the same row-based guards as in Transform data appear at the bottom.
 
 If Invalid task bindings appears, a required input is missing or linked to the wrong source.
 
@@ -81,3 +84,32 @@ Recipients, Subject, and Body can be entered manually, or use the + on the right
 Сlick **Create workflow**.
 
 ![Workflows](./readme-assets/workflows9.png)
+
+### 1.2 Manual run & history
+
+Click **Run history** (top-right) → **Run** to execute immediately (does not change schedule).
+
+![Workflows](./readme-assets/workflows10.png)
+
+![Workflows](./readme-assets/workflows11.png)
+
+**Status** shows the last result: **Success, Failed, Running, Stopped**.
+
+### 1.3 Reorder / Delete steps
+
+**Reorder**: drag & drop steps in THEN. If you move a step above its data source, dependent steps show Invalid task ref; open them and re-bind fields via +.
+
+**Delete**: trash icon on a step. Steps referencing a deleted step also show Invalid task ref — fix or remove those bindings. Deletion can’t be undone.
+
+## 2. Schedule (WHEN)
+
+- **Daily** — one or more times per day.
+- **Intraday** — runs multiple times per day at a set interval.
+- **Weekly** — choose days of the week and a time.
+- **Monthly** — choose specific days of the month or rules (e.g., “first Friday”).
+- **Manual only** — runs only when Run is clicked in the Workflows list.
+
+Additional:
+
+- **Timezone** — the execution time zone.
+- **Only on business days** — skip weekends/holidays (as configured in the workspace).
