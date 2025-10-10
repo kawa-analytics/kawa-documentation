@@ -8,6 +8,9 @@ nav_order: 25
 
 **Workflows** is KAWA’s builder for multi-step processes. Actions can be started on a schedule or manually, and steps run in sequence: data processing, running Python scripts, sending emails, and calling AI prompts.
 
+* TOC
+{:toc}
+
 ## 1. First workflow: Create
 
 To create a new workflow, go to the **Workflows** section and click on **+ Workflow**.
