@@ -142,7 +142,7 @@ Those three paragraphs: __Data Source__, __Sheet__ and __Dashboard__ are giving 
 | Connect your Python libraries to KAWA | [Python integration](./09_00_python_integration)
 | Build and share data applications     | [Publishing](./05_00_publishing)
 | Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](./09_00_python_integration)
-| Automate your workflows | [Automations](./07_00_automations)
+| Automate your workflows | [Automations](./07_00_workflows)
 | Use AI to chat with your data | [AI Integration](./06_00_ai_integration)
 | Build and share data models | [Data Modeling](./02_00_modeling)
 | Build impactful visualizations | [Visualizations](./04_00_visualization)
