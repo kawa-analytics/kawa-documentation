@@ -58,15 +58,16 @@ Click **Add action** — the Actions panel opens; select the needed action.
 - In **Match tool inputs** (required entries), bind inputs to outputs from previous steps:
   - **df** → select **1. Transform data** or other prior action.
   - **text** → bind to a source.
+> If a required input is empty or mis‑bound you’ll see **Invalid task bindinqs**.
 - **Parameters** (optional/named options) → they can also be bound to outputs from previous steps.
+> If a parametrs is empty you’ll see **Invalid parameter bind**.
 
-If a required field is empty or mis-bound you’ll see **Invalid parameter binding**.
-
-**Behavior** (Python step only) — the same row-based guards as in Transform data appear at the bottom.
+**Behavior** — the same row-based guards as in Transform data appear at the bottom.
 
 ### 3.3 Step 3: Send email
 
 **Recipients**, **Subject**, and **Body** can be entered manually, or use the **+** on the right to insert values from previous steps (e.g., a sales total or a generated table).
+>If a required fields is empty you’ll see **Invalid parameter bind**.
 
 ![Workflows](./readme-assets/workflows7.png)
 
