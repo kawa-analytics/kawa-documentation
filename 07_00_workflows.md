@@ -58,8 +58,11 @@ Click **Add action** — the Actions panel opens; select the needed action.
 - In **Match tool inputs** (required entries), bind inputs to outputs from previous steps:
   - **df** → select **1. Transform data** or other prior action.
   - **text** → bind to a source.
+
 > If a required input is empty or mis‑bound you’ll see **Invalid task bindinqs**.
+
 - **Parameters** (optional/named options) → they can also be bound to outputs from previous steps.
+
 > If a parametrs is empty you’ll see **Invalid parameter bind**.
 
 **Behavior** — the same row-based guards as in Transform data appear at the bottom.
