@@ -20,12 +20,15 @@ nav_order: 3
 ## C
 
 ### Column
-**In KAWA:** A Column is an attribute in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). Columns can be:
+**In KAWA:** A Column is an attribute in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis. Columns can be:
 - Dimension — descriptive values (names, dates, categories).
-- Measure — numerical values that can be aggregated (sum, count, etc.).
-- Calculated — columns derived from expressions/formulas or based on other columns.
+- Metrics — numeric values that come from the Data Source (from a numeric indicator) or are derived from expressions/formulas or other columns.
 
-Columns can come directly from the Data Source or be derived (via formulas, mappings, Python). They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis.
+Metric types:
+
+- Private metric — local to a specific View; changes do not affect the Sheet model.
+- Promoted metric — saved in the Sheet (data model) and shared across all Views in that Sheet.
+They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis.
 
 **How it relates to data modelling and standard terminology:**
 - In standard terms, a column is a table attribute (a field).
