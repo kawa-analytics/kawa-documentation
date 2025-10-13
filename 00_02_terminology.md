@@ -24,11 +24,8 @@ nav_order: 3
 - Dimension — descriptive values (names, dates, categories).
 - Metrics — numeric values that come from the Data Source (from a numeric indicator) or are derived from expressions/formulas or other columns.
 
+> Only promoted metrics are stored in the Sheet and shared across all Views in that Sheet. Private metrics live inside a single View and do not change the Sheet model.
 Metric types:
-
-- Private metric — local to a specific View; changes do not affect the Sheet model.
-- Promoted metric — saved in the Sheet (data model) and shared across all Views in that Sheet.
-They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis.
 
 **How it relates to data modelling and standard terminology:**
 - In standard terms, a column is a table attribute (a field).
