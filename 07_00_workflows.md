@@ -61,6 +61,8 @@ Click **Add action** — the Actions panel opens; select the needed action.
 
 > If a required input is empty or mis‑bound you’ll see **Invalid task bindinqs**.
 
+![Workflows](./readme-assets/workflows7.png)
+
 - **Parameters** (optional/named options) → they can also be bound to outputs from previous steps.
 
 > If a parametrs is empty you’ll see **Invalid parameter bind**.
@@ -72,13 +74,13 @@ Click **Add action** — the Actions panel opens; select the needed action.
 **Recipients**, **Subject**, and **Body** can be entered manually, or use the **+** on the right to insert values from previous steps (e.g., a sales total or a generated table).
 >If a required fields is empty you’ll see **Invalid parameter bind**.
 
-![Workflows](./readme-assets/workflows7.png)
+![Workflows](./readme-assets/workflows8.png)
 
 ### 3.4 Step 4: AI prompt
 
 - Enter the prompt text. Use the **+** button to insert variables/fragments from previous steps (transformation results, script outputs, etc.).
 
-![Workflows](./readme-assets/workflows8.png)
+![Workflows](./readme-assets/workflows9.png)
 
 - Use the prompt for summarization, recommendations, and generating explanations.
 
@@ -86,15 +88,15 @@ Click **Add action** — the Actions panel opens; select the needed action.
 
 Сlick **Create workflow**.
 
-![Workflows](./readme-assets/workflows9.png)
+![Workflows](./readme-assets/workflows10.png)
 
 ## 5. Manual run & history
 
 Click **Run history** (top-right) → **Run** to execute immediately (does not change schedule).
 
-![Workflows](./readme-assets/workflows10.png)
-
 ![Workflows](./readme-assets/workflows11.png)
+
+![Workflows](./readme-assets/workflows12.png)
 
 **Status** shows the last result: **Success, Failed, Running, Stopped**.
 
