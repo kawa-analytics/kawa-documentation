@@ -61,3 +61,64 @@ nav_order:
 - **Widget actions** (Refresh, Summary, Edit, Full screen, Rename, Disable/Enable all filters, Duplicate, Synchronize, Go to sheet, Delete) — identical to Dashboard.
 
 **Doc** turns insights into stories—write your narrative, drop in live widgets, and share a single scrollable page that stays in sync with your data.
+
+### 1.3 Synchronize widgets for all types of Reports
+
+All types of Reports will have a new **Synchronize** option; it pulls the latest configuration and schema from the linked Sheet/View so the widget reflects recent changes while keeping its size and position.
+
+![Release](./readme-assets/release(1.34)9.png)
+
+### 1.4 Exploration mode for all types of Reports
+
+All types of Reports have a new Exploration mode (via the Explore binoculars) to quickly adjust how a widget shows data and changes affect only this widget.
+
+![Release](./readme-assets/release(1.34)10.png)
+
+### 1.5 AI Chat — New section type: Code (streaming)
+
+AI Chat now includes a new Code section that streams code in real time via Server-Sent Events with a pending loader, using the same UI as Analysis.
+
+![Release](./readme-assets/release(1.34)11.png)
+
+### 1.6 Create with AI in Reports 
+
+A new Create with AI option in the + Report menus opens a prompt-based modal to generate a Dashboard/Slides/Docs, with multi-select Sheets and Knowledge, and returns the created object.
+
+![Release](./readme-assets/release(1.34)12.png)
+
+![Release](./readme-assets/release(1.34)13.png)
+
+### 1.7 New sheet creation options in Sheets
+
+The Create sheet menu is expanded: alongside the existing From Data Source option, there are now two new choices — From CSV, which uploads a CSV, initializes a new “from-scratch” dataset with that CSV, auto-creates a sheet, and redirects you to the sheet’s default grid; and From Scratch, which does the same creation and redirect but without a CSV upload.
+
+![Release](./readme-assets/release(1.34)14.png)
+
+### 1.8 Advanced pasting in Edit Sheet
+
+Users editing sheets now have Advanced pasting: a single value fills the selection, N vertical values repeat across it, and any N×M block tiles to cover the range (Google Sheets–style).
+
+## 2. Improvements & Bugs fixes
+
+### 2.1 Data sources
+
+- Improving the Feed Type: Being able to give a name to snapshot ETL runs
+
+### 2.1 Sheets 
+
+- View settings: hiding the name of the aggregation in the grid
+
+### 2.2 Pivot table & charts 
+
+- View settings: hiding the empty fields in the pivot table
+- Adding duplicate formula in pivot and chart
+- Improving the Export pivot
+
+### 2.3 Reports
+
+- Improving the full screen widget
+
+### 2.4 Other
+
+- Upgrading Date and Date time filters
+- New format in number formatting
