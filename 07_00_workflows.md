@@ -27,7 +27,7 @@ To create a new workflow, go to the **Workflows** section and click on **+ Workf
 - For **Weekly/Monthly**, specify days/months.
 - **Manual only** — no schedule.
 
-## 3. Add action:
+## 3. Add action
 
 Click **Add action** — the Actions panel opens; select the needed action.
 
@@ -90,7 +90,11 @@ Click **Add action** — the Actions panel opens; select the needed action.
 
 ![Workflows](./readme-assets/workflows10.png)
 
-## 5. Manual run & history
+## 5. Update workflow
+
+When you open an existing workflow from **Home** → **Workflows**, the editor shows the current **WHEN** (schedule) and **THEN** steps. The **Create workflow** button is replaced with **Update workflow** (bottom-right). Update workflow saves changes to an existing workflow (schedule, steps, bindings, Behavior). After saving, both scheduled and manual runs use the latest version.
+
+## 6. Manual run & history
 
 Click **Run history** (top-right) → **Run** to execute immediately (does not change schedule).
 
@@ -100,7 +104,7 @@ Click **Run history** (top-right) → **Run** to execute immediately (does not c
 
 **Status** shows the last result: **Success, Failed, Running, Stopped**.
 
-## 6. Reorder / Delete steps
+## 7. Reorder / Delete steps
 
 - **Reorder**: drag & drop steps in THEN. If you move a step above its data source, dependent steps show Invalid task ref; open them and re-bind fields via +.
 - **Delete**: trash icon on a step. Steps referencing a deleted step also show Invalid task ref — fix or remove those bindings. Deletion can’t be undone.
