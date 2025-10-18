@@ -199,7 +199,7 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
 
 /* ───────── Тонкий скролбар (контент + сайдбар) ───────── */
 :root{
-    --scrollbar-w: 4px;                 /* товщина */
+    --scrollbar-w: 2px;                 /* товщина */
 
 }
 
