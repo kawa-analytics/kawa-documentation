@@ -199,10 +199,8 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
 
 /* ───────── Тонкий скролбар (контент + сайдбар) ───────── */
 :root{
-    --scrollbar-w: 8px;                 /* товщина */
-    --scrollbar-track: transparent;     /* фон каналу */
-    --scrollbar-thumb: #c7ced9;         /* повзунок */
-    --scrollbar-thumb-hover: #aab4c2;   /* ховер */
+    --scrollbar-w: 4px;                 /* товщина */
+
 }
 
 /* Firefox */
