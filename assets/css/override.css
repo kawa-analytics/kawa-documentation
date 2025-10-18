@@ -7,6 +7,15 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     --gutter-left: 40px;     /* відстань зліва всередині main (видима) */
     --gutter-right: 10px;    /* відступ справа всередині main */
     --sidebar-pad: 40px;     /* трохи повітря для логотипа/контенту в сайдбарі */
+
+    /* fallback, бо нижче використовується var(--gutter) */
+    --gutter: var(--gutter-left);
+
+    /* крок індентації пунктів меню */
+    --nav-indent-l1: .75rem;  /* корінь (після логотипа) */
+    --nav-indent-l2: 1.5rem;  /* 1-й вкладений рівень */
+    --nav-indent-l3: 2.25rem; /* 2-й вкладений рівень */
+    --nav-indent-l4: 3rem;    /* 3-й вкладений рівень+ */
 }
 
 /* не обмежуємо контент штучними max-width */
@@ -28,8 +37,28 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         margin-left: 0 !important;
         padding-left: 0 !important;
     }
+
+    /* Рівень 0 (кореневі лінки) */
     .side-bar .nav-list .nav-list-item > .nav-list-link{
-        padding-left: .5rem !important;
+        padding-left: var(--nav-indent-l1) !important;
+    }
+    /* Рівень 1 */
+    .side-bar nav ul ul > li > a.nav-list-link{
+        padding-left: var(--nav-indent-l2) !important;
+    }
+    /* Рівень 2 */
+    .side-bar nav ul ul ul > li > a.nav-list-link{
+        padding-left: var(--nav-indent-l3) !important;
+    }
+    /* Рівень 3+ (на всяк випадок) */
+    .side-bar nav ul ul ul ul > li > a.nav-list-link,
+    .side-bar nav ul ul ul ul ul > li > a.nav-list-link{
+        padding-left: var(--nav-indent-l4) !important;
+    }
+
+    /* зберігаємо компактність кнопок-розкривачів, якщо вони є */
+    .side-bar .nav-list .nav-list-item > .nav-list-expander{
+        margin-left: 0 !important;
     }
 }
 
@@ -205,7 +234,6 @@ article h4{
     font-size: 1rem !important;       /* ≈ 18px — точно не менше за body */
     line-height: 1.4 !important;
     color: #111117 !important;
-
 
     /* скинути стиль «бейджа», який ставить тема */
     text-transform: none !important;
