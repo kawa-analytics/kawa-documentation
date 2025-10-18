@@ -196,3 +196,59 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
 .btn-secondary{border:1px solid #e6e8ef;color:#111827}
 .btn-secondary:hover{background:#f8fafc}
 .badge{font-size:11px;border:1px solid #e6e8ef;border-radius:999px;padding:4px 8px;color:#374151}
+
+/* ───────── Тонкий скролбар (контент + сайдбар) ───────── */
+:root{
+    --scrollbar-w: 8px;                 /* товщина */
+    --scrollbar-track: transparent;     /* фон каналу */
+    --scrollbar-thumb: #c7ced9;         /* повзунок */
+    --scrollbar-thumb-hover: #aab4c2;   /* ховер */
+}
+
+/* Firefox */
+body, .main, .main-content, #main-content,
+.side-bar, .side-bar .nav-list{
+    scrollbar-width: thin; /* thin | auto */
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Chromium/WebKit */
+body::-webkit-scrollbar,
+.main::-webkit-scrollbar,
+.main-content::-webkit-scrollbar,
+#main-content::-webkit-scrollbar,
+.side-bar::-webkit-scrollbar,
+.side-bar .nav-list::-webkit-scrollbar{
+    width: var(--scrollbar-w);
+    height: var(--scrollbar-w);
+}
+
+body::-webkit-scrollbar-track,
+.main::-webkit-scrollbar-track,
+.main-content::-webkit-scrollbar-track,
+#main-content::-webkit-scrollbar-track,
+.side-bar::-webkit-scrollbar-track,
+.side-bar .nav-list::-webkit-scrollbar-track{
+    background: var(--scrollbar-track);
+}
+
+body::-webkit-scrollbar-thumb,
+.main::-webkit-scrollbar-thumb,
+.main-content::-webkit-scrollbar-thumb,
+#main-content::-webkit-scrollbar-thumb,
+.side-bar::-webkit-scrollbar-thumb,
+.side-bar .nav-list::-webkit-scrollbar-thumb{
+    background: var(--scrollbar-thumb);
+    border-radius: 999px;
+    border: 2px solid transparent;      /* робить thumb візуально тоншим */
+    background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.main::-webkit-scrollbar-thumb:hover,
+.main-content::-webkit-scrollbar-thumb:hover,
+#main-content::-webkit-scrollbar-thumb:hover,
+.side-bar::-webkit-scrollbar-thumb:hover,
+.side-bar .nav-list::-webkit-scrollbar-thumb:hover{
+    background: var(--scrollbar-thumb-hover);
+}
