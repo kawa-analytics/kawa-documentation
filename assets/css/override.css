@@ -8,14 +8,8 @@ html, body { margin: 0 !important; overflow-x: hidden; }
     --gutter-right: 10px;    /* відступ справа всередині main */
     --sidebar-pad: 40px;     /* трохи повітря для логотипа/контенту в сайдбарі */
 
-    /* fallback, бо нижче використовується var(--gutter) */
-    --gutter: var(--gutter-left);
-
     /* крок індентації пунктів меню */
-    --nav-indent-l1: .75rem;  /* корінь (після логотипа) */
-    --nav-indent-l2: 1.5rem;  /* 1-й вкладений рівень */
-    --nav-indent-l3: 2.25rem; /* 2-й вкладений рівень */
-    --nav-indent-l4: 3rem;    /* 3-й вкладений рівень+ */
+    --nav-indent-step: .9rem; /* базовий крок для вкладень у сайдбарі */
 }
 
 /* не обмежуємо контент штучними max-width */
@@ -38,22 +32,24 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding-left: 0 !important;
     }
 
+    /* ІНДЕНТАЦІЯ ЛИШЕ ДЛЯ САЙДБАРА
+       (не торкаємось main, toc, тощо) */
     /* Рівень 0 (кореневі лінки) */
-    .side-bar .nav-list .nav-list-item > .nav-list-link{
-        padding-left: var(--nav-indent-l1) !important;
+    .side-bar .nav-list > .nav-list-item > .nav-list-link{
+        padding-left: var(--nav-indent-step) !important;
     }
     /* Рівень 1 */
-    .side-bar nav ul ul > li > a.nav-list-link{
-        padding-left: var(--nav-indent-l2) !important;
+    .side-bar .nav-list .nav-list > .nav-list-item > .nav-list-link{
+        padding-left: calc(var(--nav-indent-step) * 2) !important;
     }
     /* Рівень 2 */
-    .side-bar nav ul ul ul > li > a.nav-list-link{
-        padding-left: var(--nav-indent-l3) !important;
+    .side-bar .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link{
+        padding-left: calc(var(--nav-indent-step) * 3) !important;
     }
-    /* Рівень 3+ (на всяк випадок) */
-    .side-bar nav ul ul ul ul > li > a.nav-list-link,
-    .side-bar nav ul ul ul ul ul > li > a.nav-list-link{
-        padding-left: var(--nav-indent-l4) !important;
+    /* Рівень 3+ */
+    .side-bar .nav-list .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link,
+    .side-bar .nav-list .nav-list .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link{
+        padding-left: calc(var(--nav-indent-step) * 4) !important;
     }
 
     /* зберігаємо компактність кнопок-розкривачів, якщо вони є */
@@ -64,8 +60,7 @@ html, body { margin: 0 !important; overflow-x: hidden; }
 
 /* ───────── основна колонка + пошук ───────── */
 @media (min-width: 50rem){
-    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main,
-       щоб справа не лишалося порожнього простору */
+    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main */
     .main{
         margin-left: var(--sidebar-width) !important;
         width: calc(100% - var(--sidebar-width)) !important;
@@ -73,11 +68,12 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding: 0 !important;
     }
 
-    /* симетричні відступи для заголовка (з пошуком) і основного контенту */
+    /* симетрія керується окремо: вліво = --gutter-left, вправо = --gutter-right */
     .main-header,
     .main-content,
     #main-content{
-        padding-inline: var(--gutter) !important;  /* лівий = правий */
+        padding-left: var(--gutter-left) !important;
+        padding-right: var(--gutter-right) !important;
         margin: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
@@ -113,16 +109,9 @@ body {
 }
 
 /* Звичайні посилання */
-a {
-    color: #473982;           /* або будь-який інший колір */
-    text-decoration: none;    /* (опціонально) прибрати підкреслення */
-}
-
+a { color: #473982; text-decoration: none; }
 /* Посилання при наведенні */
-a:hover {
-    color: #312759;
-    text-decoration: underline; /* (опціонально) повернути підкреслення */
-}
+a:hover { color: #312759; text-decoration: underline; }
 
 /* Брендові кольори */
 :root{
@@ -133,7 +122,7 @@ a:hover {
 /* Узагальнений таргет для типових класів кнопок */
 a.btn, .btn, a.button, .button, .cta {
     background: var(--brand) !important;
-    background-image: none !important;   /* прибрати градієнт теми */
+    background-image: none !important;
     border-color: var(--brand) !important;
     color: #fff !important;
 }
@@ -151,17 +140,17 @@ a.btn:focus, .btn:focus, a.button:focus, .button:focus {
 h1, h2, h3,
 .main-content h1, .main-content h2, .main-content h3 {
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    letter-spacing: -0.01em;     /* трохи щільніше, виглядає «важче» */
+    letter-spacing: -0.01em;
 }
 h1, .main-content h1 { font-weight: 700; }
 h2, .main-content h2 { font-weight: 700; }
-h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш ще товстіше */
+h3, .main-content h3 { font-weight: 600; }
 
 /* За замовчуванням робимо всі зображення у контенті меншими */
 .main-content img:not(.no-resize) {
     display: block;
     margin: 12px auto;
-    max-width: 75%;   /* було 100%, тепер займає 75% ширини колонки */
+    max-width: 75%;
     height: auto;
 }
 
@@ -170,7 +159,7 @@ h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш �
     .main-content img:not(.no-resize){ max-width: 100%; }
 }
 
-/* 1) Масштабування тільки для «контентних» зображень, а не для іконок у H1–H3 */
+/* Масштабування тільки для «контентних» зображень */
 .main-content p > img:not(.no-resize),
 .main-content figure > img:not(.no-resize){
     display: block;
@@ -183,14 +172,14 @@ h3, .main-content h3 { font-weight: 600; }  /* або 800, якщо хочеш �
     .main-content figure > img:not(.no-resize){ max-width: 100%; }
 }
 
-/* 2) Іконки в заголовках — завжди в одному рядку з текстом */
+/* Іконки в заголовках — завжди рядком */
 h1 > img.icon, h2 > img.icon, h3 > img.icon{
     display: inline-block !important;
     vertical-align: middle;
-    margin: 0 .5rem 0 0;     /* відступ справа від іконки */
-    width: 1.6em !important; /* масштабується разом із розміром заголовка */
+    margin: 0 .5rem 0 0;
+    width: 1.6em !important;
     height: auto !important;
-    float: none !important;  /* на випадок, якщо десь стоїть float */
+    float: none !important;
     border: 0 !important; box-shadow: none !important; background: transparent !important;
 }
 
@@ -235,7 +224,6 @@ article h4{
     line-height: 1.4 !important;
     color: #111117 !important;
 
-    /* скинути стиль «бейджа», який ставить тема */
     text-transform: none !important;
     letter-spacing: 0 !important;
     padding-top: 0 !important;
@@ -255,8 +243,8 @@ article h4{
 .main-content h4 > span,
 .main-content h4 > .label,
 .main-content h4 > .badge{
-    all: unset;                /* скинути все від теми */
-    font: inherit !important;  /* підхопити розмір/вагу H4 */
+    all: unset;
+    font: inherit !important;
 }
 
 .grid{display:grid;gap:16px}
