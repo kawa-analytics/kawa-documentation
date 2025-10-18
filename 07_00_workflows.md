@@ -96,11 +96,23 @@ When you open an existing workflow from **Home** → **Workflows**, the editor s
 
 ## 6. Manual run & history
 
-Click **Run history** (top-right) → **Run** to execute immediately (does not change schedule).
+Use manual runs to test or trigger a workflow on demand. A manual run does not change the schedule.
+
+### 6.1 Run from the workflow editor
+
+- Click Run history (top-right).
+- In the modal, press Run to start immediately.
+- The table shows Start, End, Status, and Error for each attempt. Use the date filters and counters (Total / Success / Failed) to review past runs.
 
 ![Workflows](./readme-assets/workflows11.png)
 
 ![Workflows](./readme-assets/workflows12.png)
+
+### 6.2 Run from Home → Workflows
+
+- Open **Home** → **Workflows**.
+- In the row of a workflow, open the three-dot menu → **Run**.
+- The current **Status** appears in the list; open the workflow and Run history for details.
 
 **Status** shows the last result: **Success, Failed, Running, Stopped**.
 
