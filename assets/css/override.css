@@ -1,15 +1,15 @@
 /* ───────── базове ───────── */
 html, body { margin: 0 !important; overflow-x: hidden; }
 
-/* налаштовувані розміри (можете підкрутити цифри під себе) */
+/* налаштовувані розміри */
 :root{
-    --sidebar-width: 19rem;  /* ширша ліва панель */
-    --gutter-left: 40px;     /* відстань зліва всередині main (видима) */
-    --gutter-right: 10px;    /* відступ справа всередині main */
-    --sidebar-pad: 40px;     /* трохи повітря для логотипа/контенту в сайдбарі */
+    --sidebar-width: 19rem;
+    --gutter-left: 40px;   /* більше НЕ використовується для main */
+    --gutter-right: 10px;  /* більше НЕ використовується для main */
+    --sidebar-pad: 40px;
 
     /* крок індентації пунктів меню */
-    --nav-indent-step: .9rem; /* базовий крок для вкладень у сайдбарі */
+    --nav-indent-step: .9rem;
 }
 
 /* не обмежуємо контент штучними max-width */
@@ -19,9 +19,9 @@ html, body { margin: 0 !important; overflow-x: hidden; }
 /* ───────── лівий сайдбар ───────── */
 @media (min-width: 50rem){
     .side-bar{
-        align-items: flex-start !important;          /* тема ставила flex-end */
-        width: var(--sidebar-width) !important;      /* фіксована ширина панелі */
-        padding-left: var(--sidebar-pad) !important; /* повітря біля логотипа */
+        align-items: flex-start !important;
+        width: var(--sidebar-width) !important;
+        padding-left: var(--sidebar-pad) !important;
         background: none !important;
     }
     .side-bar .site-header,
@@ -32,27 +32,21 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding-left: 0 !important;
     }
 
-    /* ІНДЕНТАЦІЯ ЛИШЕ ДЛЯ САЙДБАРА
-       (не торкаємось main, toc, тощо) */
-    /* Рівень 0 (кореневі лінки) */
+    /* індентація ЛИШЕ в навігації */
     .side-bar .nav-list > .nav-list-item > .nav-list-link{
         padding-left: var(--nav-indent-step) !important;
     }
-    /* Рівень 1 */
     .side-bar .nav-list .nav-list > .nav-list-item > .nav-list-link{
         padding-left: calc(var(--nav-indent-step) * 2) !important;
     }
-    /* Рівень 2 */
     .side-bar .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link{
         padding-left: calc(var(--nav-indent-step) * 3) !important;
     }
-    /* Рівень 3+ */
     .side-bar .nav-list .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link,
     .side-bar .nav-list .nav-list .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link{
         padding-left: calc(var(--nav-indent-step) * 4) !important;
     }
 
-    /* зберігаємо компактність кнопок-розкривачів, якщо вони є */
     .side-bar .nav-list .nav-list-item > .nav-list-expander{
         margin-left: 0 !important;
     }
@@ -60,7 +54,6 @@ html, body { margin: 0 !important; overflow-x: hidden; }
 
 /* ───────── основна колонка + пошук ───────── */
 @media (min-width: 50rem){
-    /* резервуємо місце під сайдбар і ЗАДАЄМО фактичну ширину main */
     .main{
         margin-left: var(--sidebar-width) !important;
         width: calc(100% - var(--sidebar-width)) !important;
@@ -68,18 +61,17 @@ html, body { margin: 0 !important; overflow-x: hidden; }
         padding: 0 !important;
     }
 
-    /* симетрія керується окремо: вліво = --gutter-left, вправо = --gutter-right */
+    /* ВАЖЛИВО: повертаємо як було — без додаткових відступів */
     .main-header,
     .main-content,
     #main-content{
-        padding-left: var(--gutter-left) !important;
-        padding-right: var(--gutter-right) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
         margin: 0 !important;
         width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    /* пошук не виступає за межі основного контенту */
     .main-header .search,
     .main-header .search-input-wrap{
         width: 100% !important;
@@ -103,23 +95,15 @@ table { width: 100%; display: block; overflow-x: auto; }
 /* якщо десь лишився старий full-bleed клас */
 .full-width-content { width: auto !important; margin: 0 !important; max-width: none !important; }
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: #111117;
-}
+body { font-family: 'Inter', sans-serif; color: #111117; }
 
-/* Звичайні посилання */
+/* посилання */
 a { color: #473982; text-decoration: none; }
-/* Посилання при наведенні */
 a:hover { color: #312759; text-decoration: underline; }
 
-/* Брендові кольори */
-:root{
-    --brand: #473982;       /* основний */
-    --brand-hover: #312759; /* ховер/active темніший */
-}
+/* бренд */
+:root{ --brand:#473982; --brand-hover:#312759; }
 
-/* Узагальнений таргет для типових класів кнопок */
 a.btn, .btn, a.button, .button, .cta {
     background: var(--brand) !important;
     background-image: none !important;
@@ -136,123 +120,72 @@ a.btn:focus, .btn:focus, a.button:focus, .button:focus {
     outline-offset: 2px;
 }
 
-/* Якщо тема має власні стилі, таргетимо контентну область теж */
+/* заголовки */
 h1, h2, h3,
-.main-content h1, .main-content h2, .main-content h3 {
+.main-content h1, .main-content h2, .main-content h3{
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    letter-spacing: -0.01em;
+    letter-spacing:-0.01em;
 }
-h1, .main-content h1 { font-weight: 700; }
-h2, .main-content h2 { font-weight: 700; }
-h3, .main-content h3 { font-weight: 600; }
+h1, .main-content h1 { font-weight:700; }
+h2, .main-content h2 { font-weight:700; }
+h3, .main-content h3 { font-weight:600; }
 
-/* За замовчуванням робимо всі зображення у контенті меншими */
-.main-content img:not(.no-resize) {
-    display: block;
-    margin: 12px auto;
-    max-width: 75%;
-    height: auto;
+/* зображення в контенті */
+.main-content img:not(.no-resize){
+    display:block; margin:12px auto; max-width:75%; height:auto;
 }
-
-/* На мобільних повертаємо повну ширину */
-@media (max-width: 768px){
-    .main-content img:not(.no-resize){ max-width: 100%; }
+@media (max-width:768px){
+    .main-content img:not(.no-resize){ max-width:100%; }
 }
-
-/* Масштабування тільки для «контентних» зображень */
 .main-content p > img:not(.no-resize),
 .main-content figure > img:not(.no-resize){
-    display: block;
-    margin: 12px auto;
-    max-width: 75%;
-    height: auto;
+    display:block; margin:12px auto; max-width:75%; height:auto;
 }
-@media (max-width: 768px){
+@media (max-width:768px){
     .main-content p > img:not(.no-resize),
-    .main-content figure > img:not(.no-resize){ max-width: 100%; }
+    .main-content figure > img:not(.no-resize){ max-width:100%; }
 }
 
-/* Іконки в заголовках — завжди рядком */
+/* іконки в заголовках */
 h1 > img.icon, h2 > img.icon, h3 > img.icon{
-    display: inline-block !important;
-    vertical-align: middle;
-    margin: 0 .5rem 0 0;
-    width: 1.6em !important;
-    height: auto !important;
-    float: none !important;
-    border: 0 !important; box-shadow: none !important; background: transparent !important;
+    display:inline-block !important; vertical-align:middle;
+    margin:0 .5rem 0 0; width:1.6em !important; height:auto !important;
+    float:none !important; border:0 !important; box-shadow:none !important; background:transparent !important;
 }
 
-/* рамка всім картинкам з каталогу readme-assets */
+/* рамка картинкам з readme-assets */
 .main-content img[src*="readme-assets/"]{
-    box-sizing: border-box;
-    border: 1.5px solid #dfe6ed;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
+    box-sizing:border-box; border:1.5px solid #dfe6ed; border-radius:6px; background:#fff;
+    box-shadow:0 1px 2px rgba(0,0,0,.06), 0 6px 20px rgba(0,0,0,.06);
 }
 
-/* Більша відстань після заголовків тільки в контенті */
-:root{
-    --h-mb-lg: 1.25rem; /* H1–H2 */
-    --h-mb:    1.0rem;  /* H3 */
-    --h-mb-sm: 0.75rem; /* H4–H6 */
+/* відступи після заголовків у контенті */
+:root{ --h-mb-lg:1.25rem; --h-mb:1rem; --h-mb-sm:.75rem; }
+.main-content h1{ margin-bottom:var(--h-mb-lg) !important; }
+.main-content h2{ margin-bottom:var(--h-mb-lg) !important; }
+.main-content h3{ margin-bottom:var(--h-mb) !important; }
+.main-content h4, .main-content h5, .main-content h6{ margin-bottom:var(--h-mb-sm) !important; }
+@media (max-width:768px){
+    .main-content h1, .main-content h2{ margin-bottom:1rem !important; }
 }
 
-.main-content h1 { margin-bottom: var(--h-mb-lg) !important; }
-.main-content h2 { margin-bottom: var(--h-mb-lg) !important; }
-.main-content h3 { margin-bottom: var(--h-mb) !important; }
-.main-content h4,
-.main-content h5,
-.main-content h6 { margin-bottom: var(--h-mb-sm) !important; }
-
-/* На вузьких екранах трохи щільніше */
-@media (max-width: 768px){
-    .main-content h1,
-    .main-content h2 { margin-bottom: 1rem !important; }
+/* H4 стиль */
+.main-content h4, .page-content h4, .markdown h4, .markdown-body h4, article h4{
+    font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-weight:600 !important; font-size:1rem !important; line-height:1.4 !important; color:#111117 !important;
+    text-transform:none !important; letter-spacing:0 !important;
+    padding-top:0 !important; padding-bottom:0 !important;
+    border:0 !important; background:transparent !important; box-shadow:none !important; border-radius:0 !important;
+    margin-top:1.1rem !important; margin-bottom:.7rem !important;
+}
+.main-content h4 > span, .main-content h4 > .label, .main-content h4 > .badge{
+    all:unset; font:inherit !important;
 }
 
-/* H4 — більше за body, менше за H3; без «бейджа» */
-.main-content h4,
-.page-content h4,
-.markdown h4,
-.markdown-body h4,
-article h4{
-    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1rem !important;       /* ≈ 18px — точно не менше за body */
-    line-height: 1.4 !important;
-    color: #111117 !important;
-
-    text-transform: none !important;
-    letter-spacing: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    border-top: 0 !important;
-    border-right: 0 !important;
-    border-bottom: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-
-    margin-top: 1.1rem !important;
-    margin-bottom: .7rem !important;
-}
-
-/* якщо всередині H4 є span/label, які додають «рамку» — скидаємо їх */
-.main-content h4 > span,
-.main-content h4 > .label,
-.main-content h4 > .badge{
-    all: unset;
-    font: inherit !important;
-}
-
+/* картки/утиліти */
 .grid{display:grid;gap:16px}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-.card{
-    background:#fff;border:1px solid #e6e8ef;border-radius:16px;
-    padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04)
-}
+.card{background:#fff;border:1px solid #e6e8ef;border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
 .eyebrow{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6b7280}
 .card h3{margin:.25rem 0 0;font-size:20px;line-height:1.2}
 .card p{margin:.5rem 0 0;color:#4b5563}
