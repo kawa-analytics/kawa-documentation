@@ -98,6 +98,19 @@ The Create sheet menu is expanded: alongside the existing From Data Source optio
 
 Users editing sheets now have Advanced pasting: a single value fills the selection, N vertical values repeat across it, and any N×M block tiles to cover the range (Google Sheets–style).
 
+### 1.9 Documentation page for Sheets & Data Sources
+
+Introduced a new Documentation tab on Sheets and Data Sources that opens an auto-published report for documenting the dataset.
+
+![Release](./readme-assets/release(1.34)15.png)
+
+![Release](./readme-assets/release(1.34)16.png)
+ 
+- Who can edit: only users with WRITE access to the sheet/data source.
+- Auto-publish: edits are saved immediately.
+- Creation flow: the page is created on first open, linked to the corresponding sheetId or dataSourceId.
+- Visibility: these docs do not appear in Dashboards.
+
 ## 2. Improvements & Bugs fixes
 
 ### 2.1 Data sources
@@ -110,9 +123,14 @@ Users editing sheets now have Advanced pasting: a single value fills the selecti
 
 ### 2.2 Pivot table & charts 
 
+- Added a new Reset every parameter for Show data as: Cumulated.
+
+  When the user selects a column of type DATE or DATETIME, a new option appears (default: NEVER; options: YEAR / SEMESTER / QUARTER / MONTH / WEEK, and for datetime also DAY). It resets the running total at the start of the selected period.
+
 - View settings: hiding the empty fields in the pivot table
 - Adding duplicate formula in pivot and chart
 - Improving the Export pivot
+- Improving copying for Pivot
 
 ### 2.3 Reports
 
