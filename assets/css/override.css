@@ -201,7 +201,8 @@ h1 > img.icon, h2 > img.icon, h3 > img.icon{
 :root{
     --scrollbar-w: 4px;
     --scrollbar-track: transparent;
-
+    --scrollbar-thumb: #c7ced9;
+    --scrollbar-thumb-hover: #aab4c2;
 }
 
 /* Firefox */
