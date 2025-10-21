@@ -55,7 +55,7 @@ Kawa unifies your flow from raw data to published apps. Connect sources, model a
 
 | Section                                                   | Description                                                                                      
 |-----------------------------------------------------------|--------------------------------------------------------------------------------------------------
-| [Terminology](00_02_terminology.md)                       |Learn the language of Kawa: clear definitions of key terms  and how they relate across the product.
+| [Terminology](13_00_terminology.md)                       |Learn the language of Kawa: clear definitions of key terms  and how they relate across the product.
 | [Data Integration](./01_00_data_integration.html)         | Connect to internal or external systems to feed data in KAWA                                     
 | [Data Modeling](./02_00_modeling.html)                    | Create your sheets to share powerful data models with your teams                                 
 | [Computation](03_00_computations.md)                      | Apply formulas, lookups, and mappings to transform and enrich your data with ease                

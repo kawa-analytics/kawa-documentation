@@ -6,7 +6,7 @@ nav_order: 4
 
 # Data Sources
 
-See definitions in [Terminology](00_02_terminology.md) section. 
+See definitions in [Terminology](13_00_terminology.md) section. 
 There are several ways to connect KAWA with your data.
 KAWA supports: Importing files, Connecting to external systems such as CRMs, databases, APIS etc, Linking to existing tables in the main warehouse, Importing unstructured data, Importing data from Python scripts, creating a data source from scratch, importing data from Knowledge.
 
@@ -15,7 +15,7 @@ KAWA supports: Importing files, Connecting to external systems such as CRMs, dat
 
 ## 1. Data Source columns
 
-In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. See definitions in [Terminology](00_02_terminology.md) section.
+In KAWA, a Data Source corresponds to one data table. Each Data Source has a list of columns or`Indicators`. See definitions in [Terminology](13_00_terminology.md) section.
 
 ### 1.1 Column types
 

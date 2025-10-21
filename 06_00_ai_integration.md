@@ -94,7 +94,7 @@ Together, these elements ensure the AI has the necessary context to generate acc
 
 ### 3.1 AI Agents
 
-Each workspace includes a default AI agent named Paul. Agents are configured with specific instructions, connected knowledge sources (including unstructured data), a set of commands, and defined capabilities to assist with tasks and queries. See definitions in [Terminology](00_02_terminology.md) section.
+Each workspace includes a default AI agent named Paul. Agents are configured with specific instructions, connected knowledge sources (including unstructured data), a set of commands, and defined capabilities to assist with tasks and queries. See definitions in [Terminology](13_00_terminology.md) section.
 
 Agents can be configured from the agent section:
 
