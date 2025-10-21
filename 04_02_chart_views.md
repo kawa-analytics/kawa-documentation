@@ -248,11 +248,11 @@ _This chart shows how the Sales of each quarter are distributed across Segments 
 
 ### 1.7 Configure a Map chart
 
-Use the map to visualize a metric grouped by geography. Grouping is available by country, province, region, or other geographic fields. The map supports a single Group by field. Drill-down is not supported - you can’t click from country into provinces/regions.
+Use the map to visualize a metric grouped by geography. Grouping is available by country, province, region, or other geographic fields. The map supports a single Group by Series. Drill-down is not supported - you can’t click from country into provinces/regions.
 
 ![Chart config](./readme-assets/chart_view_map1.png)
 
-_Example: total wine cost by country from the wines sheet._
+_This map shows how the total cost of wine is distributed across countries._
 
 Color scale on the right shows the min/max values and the color gradient:
 
