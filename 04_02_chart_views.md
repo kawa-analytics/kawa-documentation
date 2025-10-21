@@ -246,6 +246,22 @@ Sankey charts work with one series and as many levels of grouping that you need.
 
 _This chart shows how the Sales of each quarter are distributed across Segments then States._
 
+### 1.7 Configure a Map chart
+
+Use the map to visualize a metric grouped by geography. Grouping is available by country, province, region, or other geographic fields. The map supports a single Group by field. Drill-down is not supported - you can’t click from country into provinces/regions.
+
+![Chart config](./readme-assets/chart_view_map1.png)
+
+_Example: total wine cost by country from the wines sheet._
+
+Color scale on the right shows the min/max values and the color gradient:
+
+- Hovering over the scale highlights the countries that fall in that range and shows value labels on them.
+- Labels display the aggregated value from Series (e.g., Sum of price).
+- Moving the cursor away restores the map’s default colors.
+
+![Chart config](./readme-assets/chart_view_map2.png)
+
 ## 2. Series and Groups
 
 Series and Groups define what data will be plotted in the charts. They play different roles in different types of charts.
