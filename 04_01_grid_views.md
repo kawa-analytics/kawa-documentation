@@ -10,7 +10,7 @@ nav_order: 17
 Grid view is the most powerful type of visualization in KAWA.
 They support an unlimited number of rows and have a very wide range of features.
 
-> **Fields:** Each column of the grid is called a _field_. See definitions in [Terminology](00_02_terminology.md) section. They are connected to your data and each one can be configured independently from the others. Note that you can connect many fields to the same data, if you want to show it in multiple ways in the same grid. 
+> **Fields:** Each column of the grid is called a _field_. See definitions in [Terminology](13_00_terminology.md) section. They are connected to your data and each one can be configured independently from the others. Note that you can connect many fields to the same data, if you want to show it in multiple ways in the same grid. 
 
 * TOC
 {:toc}

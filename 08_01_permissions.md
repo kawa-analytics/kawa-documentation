@@ -122,7 +122,7 @@ the permission: `GENERATIVE_AI` must be granted. This grant will apply to the en
 
 ### 1.3 Workspace permissions
 
-Each workspace functions as a separate isolated tenant. See definitions in [Terminology](00_02_terminology.md) section.
+Each workspace functions as a separate isolated tenant. See definitions in [Terminology](13_00_terminology.md) section.
 
 In order to access a given workspace, a user must be explicitly invited in it. 
 A workspace can also be configured as public. If that is the case,  all the registered users in the platform can access it without restriction.
@@ -169,7 +169,7 @@ benefit from ALL those permissions by default.
 
 ### 1.4 Teams
 
-Within each workspace, users can be grouped in Teams. See definitions in [Terminology](00_02_terminology.md) section.
+Within each workspace, users can be grouped in Teams. See definitions in [Terminology](13_00_terminology.md) section.
 Teams can be used to share entities with user groups, such as applications,
 dashboards, sheets and data sources.
 
