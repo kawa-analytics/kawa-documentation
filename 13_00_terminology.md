@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Terminology
-nav_order: 3
+nav_order: 43
 ---
 
 # Terminology
@@ -21,7 +21,7 @@ nav_order: 3
 
 ### Column
 **In KAWA:** A Column is an attribute in a Sheet that’s part of the sheet’s model and is used in queries, grouping, aggregations, and visualizations. Columns can come from the Data Source or be derived (formulas, mappings, Python). They define what the model captures and how the data can be queried, grouped, and visualized; values can be displayed as-is or aggregated/formatted for analysis. Columns can be:
-- **Dimension** — descriptive, categorical data used to group, slice, or label metrics (e.g., names, dates, categories, regions). Can be from a Data Source indicator or Calculated (derived in the Sheet).
+- **Dimension** — descriptive, categorical data used to group, slice, or label metrics (e.g., names, dates, categories, regions).
 - **Measure** — numeric indicator from the Data Source.
 - **Metrics** — numeric values that are derived from expressions/formulas or other columns saved in the Sheet.
 
@@ -35,6 +35,8 @@ nav_order: 3
 
 ![Terminology](./readme-assets/terminology1.png)
 
+![Terminology](./readme-assets/terminology2.png)
+
 **Used in:** [Data Modeling](02_00_modeling.md) section.
 
 ### Control Panel
@@ -44,7 +46,7 @@ nav_order: 3
 
 **Example**
 
-![Terminology](./readme-assets/terminology2.png)
+![Terminology](./readme-assets/terminology3.png)
 
 **Used in:** [Control Panel](02_01_control_panel.md) section.
 
@@ -63,9 +65,9 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 **Example**
 
-![Terminology](./readme-assets/terminology3.png)
-
 ![Terminology](./readme-assets/terminology4.png)
+
+![Terminology](./readme-assets/terminology5.png)
 
 **Used in:** [Data Integration](01_00_data_integration.md) section.
 
@@ -80,7 +82,7 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 **Example**
 
-![Terminology](./readme-assets/terminology5.png)
+![Terminology](./readme-assets/terminology6.png)
 
 **Used in:** [Grid views](04_01_grid_views.md) section.
 
@@ -91,7 +93,7 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 **Example**
 
-![Terminology](./readme-assets/terminology6.png)
+![Terminology](./readme-assets/terminology7.png)
 
 **Used in:** [Filtering data](04_04_filtering.md) section.
 
@@ -149,7 +151,7 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 
 **Example**
 
-![Terminology](./readme-assets/terminology7.png)
+![Terminology](./readme-assets/terminology8.png)
 
 **Used in:** [Reports](05_01_reports.md) section.
 
@@ -198,7 +200,7 @@ _**See:** Column — Example_
 
 **Example**
 
-![Terminology](./readme-assets/terminology8.png)
+![Terminology](./readme-assets/terminology9.png)
 
 _**See also:** Field — Example_
 
@@ -223,7 +225,7 @@ _**See also:** Field — Example_
 
 ### Column vs Field vs Indicator
 - Indicator (Data Source level) - the source’s original columns; may be part of the primary key. After Create new sheet, these Indicators automatically become the Sheet’s initial Columns. They do not define an analytic role.
-- Column (Sheet level) - built on top of Indicators or computed; used in queries and aggregations. The Sheet’s grain is set by the primary key of the main Data Source (not by the set of Columns). Column ≠ Field.
+- Column (Sheet level) - built on top of Indicators or computed; used in queries and aggregations. The Sheet’s grain is set by the primary key of the main Data Source (not by the set of Columns). 
 - Field (View level) - contextual use of a Column inside a specific View (role: axis/series/group/value, plus aggregation). Affects display only; does not change the data schema.
 
 Consequences of changes:
