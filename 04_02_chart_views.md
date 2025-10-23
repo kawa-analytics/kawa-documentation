@@ -248,7 +248,7 @@ _This chart shows how the Sales of each quarter are distributed across Segments 
 
 ### 1.7 Configure a Map chart
 
-Use the map to visualize a metric grouped by geography. Grouping is available by country, province, region, or other geographic fields. The map supports a single Group by Series. Drill-down is not supported - you can’t click from country into provinces/regions.
+Use the map to visualize a metric grouped by country. The map supports a single Group by Series. Drill-down is not supported.
 
 ![Chart config](./readme-assets/chart_view_map1.png)
 
