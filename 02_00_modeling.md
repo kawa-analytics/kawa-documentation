@@ -6,7 +6,7 @@ nav_order: 10
 
 # Data Modeling - Sheets
 
-In KAWA, sheets can be used in several ways. See definitions in [Terminology](13_00_terminology.md) section.
+In KAWA, sheets can be used in several ways. See definitions in [Terminology](./13_00_terminology) section.
 
 The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: [The Visualization section](./04_00_visualization).
 

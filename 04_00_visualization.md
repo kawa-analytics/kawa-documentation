@@ -6,7 +6,7 @@ nav_order: 16
 
 # Visualization - Views
 
-In KAWA, data can be visualized through charts, grids, and pivot tables, offering flexible and intuitive ways to explore and analyze information. (See definitions in [Terminology](13_00_terminology.md) section.) Whether you're tracking trends over time, comparing metrics across dimensions, or drilling down into granular details, KAWA's visualization tools help turn raw data into actionable insights.
+In KAWA, data can be visualized through charts, grids, and pivot tables, offering flexible and intuitive ways to explore and analyze information. (See definitions in [Terminology](./13_00_terminology) section.) Whether you're tracking trends over time, comparing metrics across dimensions, or drilling down into granular details, KAWA's visualization tools help turn raw data into actionable insights.
 
 A sample of some charts, grids and pivot tables to Visualize various aspects of your datasets:
 
