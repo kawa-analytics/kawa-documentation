@@ -7,7 +7,7 @@ nav_order: 22
 
 # Reports
 
-See definitions in [Terminology](13_00_terminology.md) section.
+See definitions in [Terminology](./13_00_terminology) section.
 
 * TOC
 {:toc}

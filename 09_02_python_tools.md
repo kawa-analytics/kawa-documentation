@@ -8,7 +8,7 @@ nav_order: 31
 # Python tools
 
 In addition to proposing a Python SDK (`kywy`) to interact with your data in Python, KAWA also comes in with its own Python runtimes.
-These runtimes can be deployed in your infrastructure and scaled out to fit your use cases and load. See definitions in [Terminology](13_00_terminology.md) section.
+These runtimes can be deployed in your infrastructure and scaled out to fit your use cases and load. See definitions in [Terminology](./13_00_terminology) section.
 
 In order to get started, please make sure that Python is healthy in our workspace. If it is not, please get in touch with the administrators of the system.
 
