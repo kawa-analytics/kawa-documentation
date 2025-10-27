@@ -13,7 +13,7 @@ nav_order: 43
 
 **How it relates to data modelling and standard terminology:** Not a data object; an application component that augments analysis and automation; comparable to BI assistants or workflow bots that sit outside the relational model but can read model metadata and execute queries/commands.
 
-**Used in:** [AI Integration](./06_00_ai_integration.md) section.
+**Used in:** [AI Integration](./06_00_ai_integration) section.
 
 ---
 
@@ -37,7 +37,7 @@ nav_order: 43
 
 ![Terminology](./readme-assets/terminology2.png)
 
-**Used in:** [Data Modeling](./02_00_modeling.md) section.
+**Used in:** [Data Modeling](./02_00_modeling) section.
 
 ### Control Panel
 **In KAWA:** A configurable set of user-facing controls that manages both filters (applied to one or many Views/Sheets/Reports) and variables used to configure scenarios and referenced in formulas/metrics. It defines scope, default values, and propagation rules for governed self-service.a configurable set of user-facing controls that manages both filters (applied to one or many Views/Sheets/Reports) and variables used to configure scenarios and referenced in formulas/metrics. It defines scope, default values, and propagation rules for governed self-service.
@@ -48,7 +48,7 @@ nav_order: 43
 
 ![Terminology](./readme-assets/terminology3.png)
 
-**Used in:** [Control Panel](./02_01_control_panel.md) section.
+**Used in:** [Control Panel](./02_01_control_panel) section.
 
 ---
 
@@ -69,7 +69,7 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 ![Terminology](./readme-assets/terminology5.png)
 
-**Used in:** [Data Integration](./01_00_data_integration.md) section.
+**Used in:** [Data Integration](./01_00_data_integration) section.
 
 ---
 
@@ -84,7 +84,7 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 ![Terminology](./readme-assets/terminology6.png)
 
-**Used in:** [Grid views](./04_01_grid_views.md) section.
+**Used in:** [Grid views](./04_01_grid_views) section.
 
 ### Filter
 **In KAWA:** A condition that limits the records returned and shown by KAWA when a View, Sheet, or Report is evaluated. A filter specifies fields, operators, and values; it can be saved with a view, defined on a sheet, or applied report-wide. Filters change what is queried and displayed; they do not modify stored data.
@@ -95,7 +95,7 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 ![Terminology](./readme-assets/terminology7.png)
 
-**Used in:** [Filtering data](./04_04_filtering.md) section.
+**Used in:** [Filtering data](./04_04_filtering) section.
 
 ---
 
@@ -110,7 +110,7 @@ Data can come through  Importing files, Connecting to external systems such as C
 
 _**See:** Data Source — Example_
 
-**Used in:** [Data Integration](./01_00_data_integration.md) section.
+**Used in:** [Data Integration](./01_00_data_integration) section.
 
 ---
 
@@ -136,7 +136,7 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 
 **How it relates to data modelling and standard terminology:** In standard terms, a Python Tool is a regular Python function with the @kawa_tool decorator, which declares inputs and outputs for use in the GUI and runs in managed Python runtimes at the Workspace level. In other words, a Python Tool belongs to the execution/extension layer of the platform, not to data modelling.
 
-**Used in:** [Python Tools](./09_02_python_tools.md) section.
+**Used in:** [Python Tools](./09_02_python_tools) section.
 
 ---
 
@@ -153,7 +153,7 @@ When a tool is added from VCS, it is not editable in the GUI (update via commits
 
 ![Terminology](./readme-assets/terminology8.png)
 
-**Used in:** [Reports](./05_01_reports.md) section.
+**Used in:** [Reports](./05_01_reports) section.
 
 ---
 
@@ -172,7 +172,7 @@ Metadata (Sheet) — descriptive info about the sheet’s model: a global descri
 
 _**See:** Column — Example_
 
-**Used in:** [Data Modeling](./02_00_modeling.md) section.
+**Used in:** [Data Modeling](./02_00_modeling) section.
 
 ---
 
@@ -185,7 +185,7 @@ _**See:** Column — Example_
 - According to standard access control practices, these are user groups in an RBAC (role-based access control) model.
 - This is not directly part of data modeling. Teams use already modeled objects for sharing and security purposes.
 
-**Used in:** [Sharing and permissions](./08_01_permissions.md) section.
+**Used in:** [Sharing and permissions](./08_01_permissions) section.
 
 ---
 
@@ -204,7 +204,7 @@ _**See:** Column — Example_
 
 _**See also:** Field — Example_
 
-**Used in:** [Visualization](./04_00_visualization.md) section.
+**Used in:** [Visualization](./04_00_visualization) section.
 
 ---
 
@@ -217,7 +217,7 @@ _**See also:** Field — Example_
 - In standard terms, this is the workspace scope: the level of governance and access control (roles, policies, RLS/CLS, sharing rules, resources, and collaboration boundaries).
 - It does not perform data modeling; instead, it defines the security, visibility, and collaboration framework for all platform objects.
 
-**Used in:** [Sharing and permissions](./08_01_permissions.md) section.
+**Used in:** [Sharing and permissions](./08_01_permissions) section.
 
 ---
 
