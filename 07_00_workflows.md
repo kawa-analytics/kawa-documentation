@@ -28,10 +28,16 @@ Use this when the workflow must run automatically.
 - Choose **At a scheduled time**.
 - Configure:
 
-    - Daily / Intraday / Weekly / Monthly.
-    - Run everyday at (or interval for Intraday).
-    - Timezone.
-    - Only on business days (optional).
+  - Daily / Intraday / Weekly / Monthly.
+  - Run time:
+
+>Daily — Run at → pick an exact time (e.g., 09:00).
+Intraday — Run every N [seconds/minutes/hours]; optionally turn on Set custom time period.
+Weekly — Run on (choose weekdays) at (time).
+Monthly — Run every month on (day of month) at (time).
+
+  - Timezone.
+  - Only on business days (optional).
 
 - The header shows the summary (e.g., Runs daily at 09:00).
 
