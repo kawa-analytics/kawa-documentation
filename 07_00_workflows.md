@@ -17,15 +17,37 @@ To create a new workflow, go to the **Workflows** section and click on **+ Workf
 
 ![Workflows](./readme-assets/workflows1.png) 
 
-## 2. Set trigger (At a scheduled time)
+## 2. Set trigger
 
-- Choose **Daily**, set time (e.g., 09:00), **Timezone**, and **Only on business days** if needed.
+KAWA Workflows support two trigger types. Pick one in **WHEN** → Select a trigger.
 
-![Workflows](./readme-assets/workflows2.png)
+### 2.1 At a scheduled time
 
-- For **Intraday**, specify an interval during the day.
-- For **Weekly/Monthly**, specify days/months.
-- **Manual only** — no schedule.
+Use this when the workflow must run automatically.
+
+- Choose **At a scheduled time**.
+- Configure:
+
+    - Daily / Intraday / Weekly / Monthly.
+    - Run everyday at (or interval for Intraday).
+    - Timezone.
+    - Only on business days (optional).
+
+- The header shows the summary (e.g., Runs daily at 09:00).
+
+![Workflows](./readme-assets/workflows2_1.png)
+
+### 2.2 Manual run
+
+Use this when the workflow is started on demand by a user.
+
+- Choose **Manual run**. 
+- (Optional) Click **+ Add input** to define parameters that the user must enter each time they start the run: **Text**, **Number**, **Date**, **Date Time**, **Boolean**.
+- These inputs are available to later steps via bindings:
+    - In Email / AI prompt editors: click **+** → Use data from → Choose data, then choose the input.
+    - In Run python script, Parameters:  click **+** → Use data from → Choose data, then choose the input.
+
+![Workflows](./readme-assets/workflows2_2.png)
 
 ## 3. Add action
 
