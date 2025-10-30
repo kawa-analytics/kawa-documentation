@@ -31,16 +31,16 @@ Use this when the workflow must run automatically.
   - **Daily** / **Intraday** / **Weekly** / **Monthly**.
   - **Run time**:
 
->Daily — Run at → pick an exact time (e.g., 09:00).
-> 
->Intraday — Run every N [seconds/minutes/hours]; optionally turn on Set custom time period.
-> 
->Weekly — Run on (choose weekdays) at (time).
-> 
->Monthly — Run every month on (day of month) at (time).
+**Daily** — Run at → pick an exact time (e.g., 09:00).
 
-   - **Timezone**.
-   - **Only on business days** (optional).
+**Intraday** — Run every N [seconds/minutes/hours]; optionally turn on Set custom time period.
+
+**Weekly** — Run on (choose weekdays) at (time).
+ 
+**Monthly** — Run every month on (day of month) at (time).
+
+  - **Timezone**.
+  - **Only on business days** (optional).
 
 - The header shows the summary (e.g., Runs daily at 09:00).
 
@@ -53,8 +53,8 @@ Use this when the workflow is started on demand by a user.
 - Choose **Manual run**. 
 - (Optional) Click **+ Add input** to define parameters that the user must enter each time they start the run: **Text**, **Number**, **Date**, **Date Time**, **Boolean**.
 - These inputs are available to later steps via bindings:
-    - In Email / AI prompt editors: click **+** → Use data from → Choose data, then choose the input.
-    - In Run python script, Parameters:  click **+** → Use data from → Choose data, then choose the input.
+  - In Email / AI prompt editors: click **+** → Use data from → Choose data, then choose the input.
+  - In Run python script, Parameters:  click **+** → Use data from → Choose data, then choose the input.
 
 ![Workflows](./readme-assets/workflows2_2.png)
 
