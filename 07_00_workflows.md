@@ -39,8 +39,8 @@ Use this when the workflow must run automatically.
 > 
 >Monthly — Run every month on (day of month) at (time).
 
-  - **Timezone**.
-  - **Only on business days** (optional).
+   - **Timezone**.
+   - **Only on business days** (optional).
 
 - The header shows the summary (e.g., Runs daily at 09:00).
 
