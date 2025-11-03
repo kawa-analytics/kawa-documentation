@@ -49,6 +49,20 @@ Use this when the workflow is started on demand by a user.
 
 ![Workflows](./readme-assets/workflows2_2.png)
 
+### 2.3 On data refresh 
+
+Use this trigger to run a workflow right after a data source is successfully refreshed.
+
+- Choose **On data refresh**.
+- Click **+ Add data source**, find it in the list, and select it. Multiple sources are supported.
+
+![Workflows](./readme-assets/workflows2_3.png)
+
+How it fires:
+
+- Fires after a successful refresh of any selected source (Data source -> Overview -> Change data import).
+- With multiple sources it uses OR logic — refresh of any selected source triggers the workflow.
+
 ## 3. Add action
 
 Click **Add action** — the Actions panel opens; select the needed action.
