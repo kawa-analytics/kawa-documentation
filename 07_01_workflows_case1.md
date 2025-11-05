@@ -13,7 +13,7 @@ The pipeline runs on a schedule and, step by step, does the following: loads and
 
 ## 1. Create a workflow
 
-- Go to Home → Workflows and click + Workflow.
+- Go to Home → Workflows and click **+ Workflow**.
 - Enter a name, e.g., **Daily — Signals & Report**.
 
 > Recommendation: create separate workflows for different frequencies (Daily / Intraday) and markets.
@@ -30,22 +30,31 @@ The pipeline runs on a schedule and, step by step, does the following: loads and
 
 ### 3.1 Step 1 — Transform data: prepare market data
 
-1. Go to Add action → Transform data and choose the OHLCV source.
-2. Time — use a single time column for all records. Ensure the timestamp is UTC ISO-8601 (e.g., 2025-10-17T20:00:00Z).
-3. Order matters. Sort by timestamp (New -> Old) so EMA/RSI are calculated correctly.
-4. Adding simple metrics (Enrich → Formula)
+#### 3.1.1 Go to Add action 
 
-4.1 Body ratio — share of the candle body in the day’s range
+→ Transform data and choose the OHLCV source.
+
+#### 3.1.2 Time 
+
+Use a single time column for all records. Ensure the timestamp is UTC ISO-8601 (e.g., 2025-10-17T20:00:00Z).
+
+#### 3.1.3 Order matters
+
+Sort by timestamp (New -> Old) so EMA/RSI are calculated correctly.
+
+#### 3.1.4 Adding simple metrics (Enrich → Formula)
+
+- Body ratio — share of the candle body in the day’s range
 Name: `body_ratio`
 Formula:
 `ROUND( ABS(close - open) / ( ABS(high - low) + 1 / POWER(10, 7) ), 4 )`
 
 Meaning (0…1):
 
-- 0 ≈ neutral/doji (open ≈ close)
-- 1 ≈ strong one-direction day (big body, small wicks)
+  - 0 ≈ neutral/doji (open ≈ close)
+  - 1 ≈ strong one-direction day (big body, small wicks)
 
-4.2 Range % — relative daily volatility
+- Range % — relative daily volatility
 Name: `range_pct`
 Formula:
 
@@ -53,7 +62,7 @@ Formula:
 
 Meaning: Higher = a more volatile day. Good for comparing different tickers.
 
-4.3 Close position in range — where the close sits within the day’s range
+- Close position in range — where the close sits within the day’s range
 Name: `close_pos_in_range`
 Formula:
 
@@ -65,7 +74,7 @@ Meaning (0…1):
 - 0.5 = around the middle
 - 1 = closed near high
 
-5. Enrich → Lookup column
+#### 3.1.5 Enrich → Lookup column
 
 Goal: pull the exchange and currency for each ticker.
 
@@ -74,36 +83,43 @@ Goal: pull the exchange and currency for each ticker.
 
 Result: the source table gets new columns exchange and currency (e.g., NASDAQ, USD) for each symbol.
 
-6. Enrich → Manual input
+#### 3.1.6 Enrich → Manual input
 
 Goal: add simple constants for easier filtering and report/email subjects.
 
-- Add: session
-Value: "EOD"
+- Add: **session**
+- 
+Value: "**EOD**"
+
 Why: marks the daily run; used in the AI report and filters.
 
-- Add: market
-Value: "US"
+- Add: **market**
+- 
+Value: "**US**"
+
 Why: market tag; inserted into email subject and used for grouping.
 
-7. Data quality checks 
+#### 3.1.7 Data quality checks 
 
 - OHLC rules: high ≥ max(open, close), low ≤ min(open, close), high ≥ low.
 - Volume: volume ≥ 0; optionally flag volume = 0.
 - Uniqueness: no duplicate symbol + timestamp.
 - Types: price/volume columns are numeric; no stray text.
 
-8. Row guardrails (Behavior)
+#### 3.1.8 Row guardrails (Behavior)
 
-For our scenario:
+For our scenario set exactly these parameters:
 
-- We expect 3 rows per day (AAPL, MSFT, NVDA).
-- Set a realistic buffer → N = 12.
-  - If more than N rows are found → Interrupt workflow.
-  - Max number of rows → 12.
+- If no rows are found → Interrupt the workflow.
+- If more than [Max num of rows] are found → Interrupt the workflow.
 
->Tip: if you add more symbols, use the rule
-N = 4 × number_of_tickers (e.g., 10 tickers → N = 40).
+> The 1,000 threshold in this field is fixed (not editable).
+
+- Max num of rows → set a value greater than the current number of rows in the table.
+
+  - Example: if the source has ~800 rows, set 1000.
+  - If you add new tickers/history, increase this value accordingly.
+  - If Max num of rows ≤ the table size, the workflow will not start.
 
 ### 3.2 Step 2 — Run python script
 
