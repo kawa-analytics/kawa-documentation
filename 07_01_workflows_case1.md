@@ -44,9 +44,12 @@ Sort by timestamp (New -> Old) so EMA/RSI are calculated correctly.
 
 #### 3.1.4 Adding simple metrics (Enrich → Formula)
 
-- Body ratio — share of the candle body in the day’s range
+- **Body ratio** — share of the candle body in the day’s range
+
 Name: `body_ratio`
+
 Formula:
+
 `ROUND( ABS(close - open) / ( ABS(high - low) + 1 / POWER(10, 7) ), 4 )`
 
 Meaning (0…1):
@@ -54,16 +57,20 @@ Meaning (0…1):
   - 0 ≈ neutral/doji (open ≈ close)
   - 1 ≈ strong one-direction day (big body, small wicks)
 
-- Range % — relative daily volatility
+- **Range %** — relative daily volatility
+
 Name: `range_pct`
+
 Formula:
 
 `ROUND( (high - low) / ( (high + low + close) / 3 + 1 / POWER(10, 7) ), 6 )`
 
 Meaning: Higher = a more volatile day. Good for comparing different tickers.
 
-- Close position in range — where the close sits within the day’s range
+- **Close position in range** — where the close sits within the day’s range
+
 Name: `close_pos_in_range`
+
 Formula:
 
 `ROUND( (close - low) / ( ABS(high - low) + 1 / POWER(10, 7) ), 4 )`
@@ -76,7 +83,7 @@ Meaning (0…1):
 
 #### 3.1.5 Enrich → Lookup column
 
-Goal: pull the exchange and currency for each ticker.
+**Goal**: pull the exchange and currency for each ticker.
 
 - Source sheet: ref_symbols
 - Columns to pull: exchange, currency
@@ -85,17 +92,15 @@ Result: the source table gets new columns exchange and currency (e.g., NASDAQ, U
 
 #### 3.1.6 Enrich → Manual input
 
-Goal: add simple constants for easier filtering and report/email subjects.
+**Goal**: add simple constants for easier filtering and report/email subjects.
 
 - Add: **session**
-- 
-Value: "**EOD**"
+- Value: "**EOD**"
 
 Why: marks the daily run; used in the AI report and filters.
 
 - Add: **market**
-- 
-Value: "**US**"
+- Value: "**US**"
 
 Why: market tag; inserted into email subject and used for grouping.
 
@@ -123,163 +128,229 @@ For our scenario set exactly these parameters:
 
 ### 3.2 Step 2 — Run python script
 
-**Goal**: generate signals from Step 1 data (OHLCV) using the Python tool compute_indicators_and_signals.
+**Goal**: Using the data from Step 1 (OHLCV), calculate EMA(10) and EMA(20), and produce a simple BUY/SELL signal for the last bar of each symbol.
 
-1. Choose the tool
+#### 3.2.1 Create a Python tool in the library
 
-- Open Add action → Run python script.
-- In Select python tool from the library, choose **compute_indicators_and_signals**.
+- Go to **Home** → **Tools** → **+** and create a script named, for example, **compute_indicators_and_signals**.
+- Paste the code and click Save.
 
 ```python
 import logging
-import numpy as np
 import pandas as pd
+from kywy.client.kawa_decorators import kawa_tool
 
-from kywy.client.kawa_decorators import kawa_tool  # for local installs use: from kawa.client.kawa_decorators import kawa_tool
-
-logger = logging.getLogger('script-logger')
-
-
-def _ema(s: pd.Series, span: int) -> pd.Series:
-    return pd.Series(s, dtype="float64").ewm(span=span, adjust=False).mean()
-
-def _rsi(close: pd.Series, period: int = 14) -> pd.Series:
-    c = pd.Series(close, dtype="float64")
-    d = c.diff()
-    up = d.clip(lower=0.0)
-    dn = (-d.clip(upper=0.0))
-    au = up.ewm(alpha=1/period, adjust=False).mean()
-    ad = dn.ewm(alpha=1/period, adjust=False).mean()
-    rs = au / ad.replace(0.0, np.nan)
-    return 100 - (100 / (1 + rs))
-
-def _atr(h: pd.Series, l: pd.Series, c: pd.Series, period: int = 14) -> pd.Series:
-    h = pd.Series(h, dtype="float64"); l = pd.Series(l, dtype="float64"); c = pd.Series(c, dtype="float64")
-    pc = c.shift(1)
-    tr = pd.concat([(h - l).abs(), (h - pc).abs(), (l - pc).abs()], axis=1).max(axis=1)
-    return tr.ewm(alpha=1/period, adjust=False).mean()
-
+logger = logging.getLogger("script-logger")
 
 @kawa_tool(
-    inputs={'symbol': str},              # UI will show a "symbol" input to map a column from Step 1
-    outputs={'signal': str},             # metadata only; we return the full DataFrame
+    inputs={"symbol": str, "close": float},
+    outputs={"ema_fast": float, "ema_slow": float, "signal": str},
 )
-def compute_indicators_and_signals(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Expects from Step 1 columns: timestamp, symbol, open, high, low, close, volume.
-    Returns one row per symbol with signal and basic indicators evaluated on the last bar.
-    """
-    logger.info('Starting compute_indicators_and_signals')
-    if df is None or df.empty:
-        return pd.DataFrame(columns=[
-            "timestamp","symbol","signal","confidence","entry","sl","tp1","tp2",
-            "ema_20","ema_50","rsi_14","atr_14","ema_cross"
-        ])
+def main(df: pd.DataFrame, symbol=None, close=None) -> pd.DataFrame:
+    try:
+        if df is None or df.empty:
+            return _empty_result()
 
-    # Normalize types
-    if 'timestamp' in df.columns:
-        df['timestamp'] = pd.to_datetime(df['timestamp'], utc=True, errors='coerce')
-    for col in ("open","high","low","close","volume"):
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
+        d = df.copy()
 
-    df = df.dropna(subset=['timestamp','symbol','close']).sort_values(['symbol','timestamp'])
+        # Ensure required columns (allow simple aliases)
+        if "symbol" not in d.columns:
+            alt_symbol = next((c for c in ["ticker", "sym"] if c in d.columns), None)
+            if alt_symbol:
+                d.rename(columns={alt_symbol: "symbol"}, inplace=True)
 
-    # Compute indicators across full history
-    df['ema_20'] = df.groupby('symbol', group_keys=False)['close'].apply(lambda s: _ema(s, 20))
-    df['ema_50'] = df.groupby('symbol', group_keys=False)['close'].apply(lambda s: _ema(s, 50))
-    df['rsi_14'] = df.groupby('symbol', group_keys=False)['close'].apply(lambda s: _rsi(s, 14))
-    df['atr_14'] = df.groupby('symbol', group_keys=False).apply(
-        lambda g: _atr(g['high'], g['low'], g['close'], 14)
-    ).reset_index(level=0, drop=True)
+        if "close" not in d.columns:
+            alt_close = next((c for c in ["price", "last", "close_price"] if c in d.columns), None)
+            if alt_close:
+                d.rename(columns={alt_close: "close"}, inplace=True)
 
-    # Take the last bar per ticker and generate a signal
-    last_rows = df.groupby('symbol', as_index=False, group_keys=False).tail(1).copy()
+        if ("symbol" not in d.columns) or ("close" not in d.columns):
+            logger.warning("Missing required columns; returning empty result")
+            return _empty_result()
 
-    def decide(row):
-        fast, slow, rsi = row['ema_20'], row['ema_50'], row['rsi_14']
-        if pd.notna(fast) and pd.notna(slow):
-            if fast > slow and (pd.isna(rsi) or rsi < 70):   # RSI filter
-                return "BUY", 0.7
-            if fast < slow and (pd.isna(rsi) or rsi > 30):
-                return "SELL", 0.7
-        return "HOLD", 0.0
+        # Types & filtering
+        d["symbol"] = d["symbol"].astype(str)
+        d["close"] = pd.to_numeric(d["close"], errors="coerce")
+        d = d[d["close"].notna()]
+        if d.empty:
+            return _empty_result()
 
-    sig_conf = last_rows.apply(lambda r: pd.Series(decide(r), index=['signal','confidence']), axis=1)
-    last_rows[['signal','confidence']] = sig_conf
+        # Detect/normalize time column
+        time_col = next((c for c in ["timestamp", "time", "datetime", "date", "dt"] if c in d.columns), None)
+        if time_col is not None:
+            if not pd.api.types.is_datetime64_any_dtype(d[time_col]):
+                d[time_col] = pd.to_datetime(d[time_col], utc=True, errors="coerce")
+            d = d.sort_values(["symbol", time_col])
+        else:
+            d = d.sort_values(["symbol"])
 
-    # Levels using a simple ATR multiplier
-    def levels(row):
-        entry = float(row['close'])
-        atr = float(row['atr_14']) if pd.notna(row['atr_14']) else entry * 0.01
-        if row['signal'] == 'BUY':
-            return entry - 1.0*atr, entry + 1.0*atr, entry + 2.0*atr
-        if row['signal'] == 'SELL':
-            return entry + 1.0*atr, entry - 1.0*atr, entry - 2.0*atr
-        return None, None, None
+        # EMA(10) / EMA(20)
+        g = d.groupby("symbol", sort=False)
+        d["ema_fast"] = g["close"].transform(lambda s: s.ewm(span=10, adjust=False).mean())
+        d["ema_slow"] = g["close"].transform(lambda s: s.ewm(span=20, adjust=False).mean())
 
-    last_rows[['sl','tp1','tp2']] = last_rows.apply(lambda r: pd.Series(levels(r), index=['sl','tp1','tp2']), axis=1)
-    last_rows['entry'] = last_rows['close']
-    last_rows['ema_cross'] = last_rows['ema_20'] - last_rows['ema_50']
+        # Latest per symbol
+        if time_col is not None and d[time_col].notna().any():
+            idx_last = g.apply(
+                lambda x: x[x[time_col].notna()][time_col].idxmax()
+                if x[time_col].notna().any() else x.index.max()
+            ).values
+        else:
+            idx_last = g.apply(lambda x: x.index.max()).values
 
-    out_cols = ["timestamp","symbol","signal","confidence","entry","sl","tp1","tp2",
-                "ema_20","ema_50","rsi_14","atr_14","ema_cross"]
-    return last_rows.reindex(columns=out_cols).sort_values('symbol').reset_index(drop=True)
+        out = d.loc[idx_last, ["symbol", "close", "ema_fast", "ema_slow"]].copy()
+
+        if time_col is not None and d[time_col].notna().any():
+            out["timestamp"] = d.loc[idx_last, time_col].values
+        else:
+            out["timestamp"] = pd.Timestamp.utcnow()
+
+        out["signal"] = (out["ema_fast"] > out["ema_slow"]).map({True: "BUY", False: "SELL"})
+        out = out[["timestamp", "symbol", "close", "ema_fast", "ema_slow", "signal"]]
+        return out.reset_index(drop=True)
+
+    except Exception as e:
+        logger.exception("compute_indicators_and_signals failed: %s", e)
+        return _empty_result()
+
+
+def _empty_result() -> pd.DataFrame:
+    return pd.DataFrame(columns=["timestamp", "symbol", "close", "ema_fast", "ema_slow", "signal"])
 ```
 
-2. Connect inputs
+#### 3.2.2 Add an action to the Workflow and link it to Step 1
 
-- Map the tool inputs to the outputs from Step 1 (Match tool inputs).
+- In your Workflow, click **Add action** → **Run python script**.
+- **Select python tool from the library** → choose compute_indicators_and_signals.
+- In **Match tool inputs with any of the previous task outputs**:
+  - **df** → choose 1. Transform data (output of Step 1).
+  - **symbol** → the symbol column from Step 1.
+  - **close** → the close column from Step 1.
 
-3. Behavior (guardrails) — use the same limits as in Step 1:
+> The script is created separately in Tools; the linking to Step 1 data is done here, in the Workflow.
+
+#### 3.2.3 Behavior (guardrails) for Step 2
 
 - If no rows are found → Interrupt workflow.
-- If more than N rows are found → Interrupt workflow.
-- Max number of rows → 12 (for our example: 3 tickers × 1 latest bar × small buffer).
-
->These limits protect you from an empty source or a row “explosion” due to duplicates/errors.
+- If more than 1000 rows are found → Interrupt workflow.
+- Max num of rows → set a value higher than the current table size (with a 10–20% buffer).
+  - Example: table ≈ 800 rows → set 1000 or more.
+  - If you add history/new tickers, increase this value.
 
 ### 3.3 Step 3 — AI prompt
 
-Goal: generate a short EOD report in Markdown based on the latest snapshot from Step 2.
+**Goal**: generate a short EOD (end-of-day) report in Markdown using the results from Step 2 — Run python script (one last bar per symbol).
 
-1. Add the action → AI prompt
+#### 3.3.1 Add an action
 
-2. Insert the prompt
+Click Add action → AI prompt.
 
-Copy the text below into the Prompt field.
+#### 3.3.2 Paste the prompt text
+
+Copy this text into the **Prompt** field:
 
 ```
-You are a pragmatic trading assistant. Produce a concise end-of-day (EOD) report in Markdown.
+You are a pragmatic trading assistant. Produce a concise end-of-day (EOD) report in **Markdown**.
 
-## Context
-- Run date (UTC): {{1 - timestamp}}
-- Market: {{1 - market}}
-- Session: {{1 - session}}
+## Data
+Use the table inserted below. Each row is the latest bar per symbol with columns:
+timestamp, symbol, close, ema_fast, ema_slow, signal.
 
-## Instructions
-Use the table **signals_eod** (inserted below) where each row is the latest bar per symbol with columns:
-timestamp, symbol, signal, confidence, entry, sl, tp1, tp2, ema_20, ema_50, rsi_14, atr_14, ema_cross.
+If the table is empty, output exactly: `No fresh data for this session.`
 
-Create:
+## Calculations
+- Compute **ema_spread_pct = (ema_fast - ema_slow) / close * 100**.
+- Count symbols by signal (BUY / SELL). Any other value → treat as **HOLD**.
+- Formatting: prices → 2 decimals; percentages → 2 decimals with `%`. Neutral tone; no advice.
 
-1) **Summary (≤120 words).** Count BUY/SELL/HOLD from the table; mention any outliers (very high RSI or ATR). Keep neutral tone.
+## Output (Markdown)
 
-2) **Signals table.** Render a compact Markdown table with columns:  
-Symbol | Signal | Conf | Entry | SL | TP1 | TP2 | RSI | ATR  
-- Sort: BUY first (by Conf desc), then SELL, then HOLD.  
-- Round prices to 2–4 decimals where appropriate.
+### EOD Summary
+- BUY: <count>, SELL: <count>, HOLD: <count>.
+- Notables: mention any symbols with **|ema_spread_pct| ≥ 1.00%**.
 
-3) **Notes.** Mention if any values are missing (e.g., ATR not available) and any simple risk caveats.
+### Highlights
+**Top BUY** (up to 3 by highest positive ema_spread_pct):  
+List as `TICKER — close $X.XX (spread Y.YY%)`.
 
-## Signals
-{{signals_eod}}
+**Top SELL** (up to 3 by most negative ema_spread_pct):  
+List as `TICKER — close $X.XX (spread −Y.YY%)`.
+
+### Details
+Provide a compact table sorted by `symbol` with columns:  
+`symbol | close | ema_fast | ema_slow | ema_spread_pct | signal`.
+
+### Notes
+Data comes from Step 2 output. All numbers must be computed from the provided table only.
 ```
 
-3. Connect the data
+#### 3.3.3 Connect data from Step 2 (Grid)
 
-- In the prompt toolbar, click + → Use data from.
-For the context variables, insert:
-Use data from → 1. Transform data → Aggregated values → timestamp, market, and session.
+- Place your cursor under the ## **Data** section.
+- Click the **+** button on the right of the toolbar → **Use data from: 2. Run python script → Grid**.
 
-- For the signals table, scroll the prompt to the ## Signals section, click + → Use data from → 2. Run python script → Grid, and insert the grid from Step 2.
+### 3.4 Step 4 — Send email
+
+**Goal**: send the EOD report generated in the previous step (AI prompt), with basic run context.
+
+#### 3.4.1 Add an action
+
+**Add action** → **Send email**.
+
+#### 3.4.2 Fill in the fields
+
+- **Recipients** — specify recipients (comma-separated).
+- **Subject** — Daily — Signals & Report.
+
+#### 3.4.3 Build the Body
+
+Insert the base text:
+
+````
+## Daily — Signals & Report
+
+Run (UTC): 
+Market: 
+Session: 
+
+---
+
+### Report
+````
+
+Now add dynamic “chips” (click the + button on the right side of the toolbar):
+
+- For the lines Run (UTC) / Market / Session:
+
+  - Transform data → Aggregated values → **timestamp**
+  - Transform data → Aggregated values → **market**
+  - Transform data → Aggregated values → **session**
+
+- Under the Report heading:
+
+  - AI prompt → Choose data → **Generated Content**
+   (this is the Markdown text generated by Step 3).
+
+## 4. Finish
+
+- Click **Create workflow**.
+- In **Run history**, make sure the flow reaches the Send email step with **Success** status.
+
+## 5. Result — receiving the email
+
+After the Workflow runs successfully, the report arrives by email.
+
+![Workflows](./readme-assets/workflows_scenario1.png)
+
+![Workflows](./readme-assets/workflows_scenario2.png)
+
+## 6. Conclusion
+
+We built a fully automated EOD pipeline in KAWA:
+
+- Transform data prepares OHLCV and adds helper fields.
+- Run python script calculates EMAs and signals.
+- AI prompt creates a short Markdown report.
+- Send email delivers the final result.
+
+Following the guardrails (especially Max num of rows) and inserting only the needed fields in Steps 3–4 ensures reliable email delivery and no failures—even on “empty” days.
