@@ -44,7 +44,7 @@ Sort by timestamp (New -> Old) so EMA/RSI are calculated correctly.
 
 #### 3.1.4 Adding simple metrics (Enrich → Formula)
 
-- **Body ratio** — share of the candle body in the day’s range
+**Body ratio** — share of the candle body in the day’s range
 
 Name: `body_ratio`
 
@@ -54,10 +54,10 @@ Formula:
 
 Meaning (0…1):
 
-  - 0 ≈ neutral/doji (open ≈ close)
-  - 1 ≈ strong one-direction day (big body, small wicks)
+- 0 ≈ neutral/doji (open ≈ close)
+- 1 ≈ strong one-direction day (big body, small wicks)
 
-- **Range %** — relative daily volatility
+**Range %** — relative daily volatility
 
 Name: `range_pct`
 
@@ -67,7 +67,7 @@ Formula:
 
 Meaning: Higher = a more volatile day. Good for comparing different tickers.
 
-- **Close position in range** — where the close sits within the day’s range
+**Close position in range** — where the close sits within the day’s range
 
 Name: `close_pos_in_range`
 
@@ -133,7 +133,7 @@ For our scenario set exactly these parameters:
 #### 3.2.1 Create a Python tool in the library
 
 - Go to **Home** → **Tools** → **+** and create a script named, for example, **compute_indicators_and_signals**.
-- Paste the code and click Save.
+- Paste the code and click **Save**.
 
 ```python
 import logging
