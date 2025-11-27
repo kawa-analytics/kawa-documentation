@@ -193,20 +193,20 @@ The behavior of **If / Else** is controlled by **path rules** – rows of condit
 
 Each rule has three parts:
 
-#### a. Field / metric
+#### a. The first field is what you check 
 
-The first field is what you check (for example, an aggregate like “high”, a table “Grid”, or text like “Generated Content”).
+(for example, an aggregate like “high”, a table “Grid”, or text like “Generated Content”).
 You pick it via **Use data from** → **Choose data**.
 
-#### b. Operator
+#### b. The second field is the comparison type.
 
-The second field is the comparison type. Available operators depend on the data type.
+Available operators depend on the data type.
 
 ![Workflows](./readme-assets/workflows16.png)
 
-#### c. Value to compare with
+#### c. The third field is what you compare against. 
 
-The third field is what you compare against. You can:
+You can:
 
 - type a value manually (for example, 0, warning, TRUE), or
 - click the + button on the right and select data from previous steps.
