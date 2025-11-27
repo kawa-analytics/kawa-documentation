@@ -120,6 +120,8 @@ Click **Add action** — the Actions panel opens; select the needed action.
 
 - Use the prompt for summarization, recommendations, and generating explanations.
 
+> Logic: If / Else, End run if…, Loop over a list (see 8. If / Else of this section).
+
 ## 4. Save
 
 Сlick **Create workflow**.
@@ -157,3 +159,81 @@ Use manual runs to test or trigger a workflow on demand. A manual run does not c
 - **Reorder**: drag & drop steps in THEN. If you move a step above its data source, dependent steps show Invalid task ref; open them and re-bind fields via +.
 - **Delete**: trash icon on a step. Steps referencing a deleted step also show Invalid task ref — fix or remove those bindings. Deletion can’t be undone.
 
+## 8. If / Else
+
+**If / Else** is a logic step that splits a workflow into two branches:
+
+- **IF** – runs when all conditions are true.
+- **ELSE** – runs when at least one condition is not met.
+
+The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
+
+### 8.1 Add an If / Else step
+
+- In the THEN section, click **+ Add action**.
+- In **KAWA Actions**, scroll to the **Logic** section.
+- Select **If / Else**.
+
+![Workflows](./readme-assets/workflows13.png)
+
+A new block appears in the steps list with two tabs:
+
+- **IF** – conditions and actions for the “true” case.
+- **ELSE** – actions for the alternative path.
+
+![Workflows](./readme-assets/workflows14.png)
+
+Each tab has its own **+ Add action** button to build the branch.
+
+### 8.2 Add path rules
+
+The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
+
+![Workflows](./readme-assets/workflows15.png) 
+
+Each rule has three parts:
+
+#### a. Field / metric
+
+The first field is what you check (for example, an aggregate like “high”, a table “Grid”, or text like “Generated Content”).
+You pick it via **Use data from** → **Choose data**.
+
+#### b. Operator
+
+The second field is the comparison type. Available operators depend on the data type.
+
+![Workflows](./readme-assets/workflows16.png)
+
+#### c. Value to compare with
+
+The third field is what you compare against. You can:
+
+- type a value manually (for example, 0, warning, TRUE), or
+- click the + button on the right and select data from previous steps.
+
+![Workflows](./readme-assets/workflows17.png)
+
+This lets you compare:
+
+- an aggregate with a fixed threshold;
+- AI-generated text with another column;
+- properties from different steps with each other.
+
+**Multiple rules**
+
+- Click **+ AND** to add another condition.
+- All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
+- The total number of rules is shown in the step name (for example, “5. 3 rules”).
+
+### 8.3 Actions in the IF and ELSE branches
+
+After you set up the rules, define what each branch should do.
+
+- Select the **IF** or **ELSE** tab in the **If / Else** block on the left.
+- Click **+ Add action** inside that branch.
+- Add the actions you need, for example.
+
+Execution logic:
+
+- If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
+- If **any rule is false**, the **ELSE** branch runs (if it has actions).
