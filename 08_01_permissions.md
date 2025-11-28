@@ -319,4 +319,4 @@ Workflows can be shared in the workspace in the same way as the other entities.
 
 If a user does not have the required permission on a sheet that is used in a workflow, they cannot modify elements of their model. In this case the workflow editor will show an error, and the update of the view will not be applied until a user with the appropriate permissions modifies the workflow or grants the missing access.
 
-[Impact](./readme-assets/impact_w.png)
+![Impact](./readme-assets/impact_w.png)
