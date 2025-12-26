@@ -21,7 +21,7 @@ and the steps run **one by one** or **in branches** (using Logic steps).
 
 To create a new workflow, go to the **Workflows** section and click on **+ Workflow**.
 
-![Workflows](./readme-assets/workflows1.png) 
+![Workflows](./readme-assets/workflows_create.png) 
 
 ## 2. Set trigger
 
