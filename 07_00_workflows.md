@@ -41,7 +41,7 @@ Use this when the workflow must run automatically.
 
 - The header shows the summary (e.g., Runs daily at 09:00).
 
-![Workflows](./readme-assets/workflows2_1.png)
+![Workflows](./readme-assets/workflows_trigger_1.png)
 
 ### 2.2 Manual run
 
@@ -53,7 +53,7 @@ Use this when the workflow is started on demand by a user.
   - In Email / AI prompt editors: click **+** → Use data from → Choose data, then choose the input.
   - In Run python script, Parameters:  click **+** → Use data from → Choose data, then choose the input.
 
-![Workflows](./readme-assets/workflows2_2.png)
+![Workflows](./readme-assets/workflows_trigger_2.png)
 
 ### 2.3 On data refresh 
 
@@ -62,7 +62,7 @@ Use this trigger to run a workflow right after a data source is successfully ref
 - Choose **On data refresh**.
 - Click **+ Add data source**, find it in the list, and select it. Multiple sources are supported.
 
-![Workflows](./readme-assets/workflows2_3.png)
+![Workflows](./readme-assets/workflows_trigger_3.png)
 
 How it fires:
 
@@ -73,7 +73,7 @@ How it fires:
 
 Click **Add action** — the Actions panel opens; available categories:
 
-![Workflows](./readme-assets/workflows3.png)
+![Workflows](./readme-assets/workflows_add_action.png)
 
 Below is how to set up each step type in practice.
 
@@ -81,11 +81,11 @@ Below is how to set up each step type in practice.
 
 - Choose a **Sheet** from the list.
 
-![Workflows](./readme-assets/workflows4.png)
+![Workflows](./readme-assets/workflows_transform_data1.png)
 
 - If needed, open Enrich data and use the quick transform icons.
 
-![Workflows](./readme-assets/workflows5.png)
+![Workflows](./readme-assets/workflows_transform_data2.png)
 
 - In the **Behavior** block, set:
 
@@ -94,14 +94,11 @@ Below is how to set up each step type in practice.
 ### 3.2 Run python script
 
 - In **Select python tool from the library**, choose a tool.
-
-![Workflows](./readme-assets/workflows6.png)
-
 - In **Match tool inputs with any of the previous task outputs**, connect the required inputs to the results of previous steps (for example, a dataframe from **Transform data**).
 
 > If a required input is empty or mis‑bound you’ll see **Invalid task bindinqs**.
 
-![Workflows](./readme-assets/workflows7.png)
+![Workflows](./readme-assets/workflows_run_python_script.png)
 
 - **Parameters** (optional/named options) → they can also be bound to outputs from previous steps.
 
@@ -115,13 +112,13 @@ Below is how to set up each step type in practice.
 
 >If a required fields is empty you’ll see **Invalid parameter bind**.
 
-![Workflows](./readme-assets/workflows8.png)
+![Workflows](./readme-assets/workflows_send_email.png)
 
 ### 3.4 AI prompt
 
 - Enter the prompt text. Use the **+** button to insert variables/fragments from previous steps (transformation results, script outputs, etc.).
 
-![Workflows](./readme-assets/workflows9.png)
+![Workflows](./readme-assets/workflows_ai_prompt.png)
 
 - Use the prompt for summarization, recommendations, and generating explanations.
 
@@ -153,6 +150,8 @@ Check the result in Preview. Click Test to run generation and see how outputs ar
 
 Set what should happen if no rows are found in the input table (for example, Interrupt workflow).
 
+![Workflows](./readme-assets/workflows_enrich_data_with_ai.png)
+
 **Result**
 
 This step returns a table with extra AI columns (outputs). You can use it in the next actions (email, export, report, logic, etc.).
@@ -161,19 +160,27 @@ This step returns a table with extra AI columns (outputs). You can use it in the
 
 In the **Report** step, open the list, use **Search** if needed, and select the required report from the workspace so you can use it later as an artifact (for example, to send it in an email).
 
+![Workflows](./readme-assets/workflows_report.png)
+
 ### 3.7 Build a chart
 
-- Select a data source
 In the **Build a chart** step, choose a table from:
 
   - **Previous Tasks** (for example, the result of **Run python script** or **Transform data**), or
   - **Sheets** (any available sheet in the workspace).
 
+![Workflows](./readme-assets/workflows_build_chart1.png)
+
 - **Configure the chart** (the Chart configuration panel)
+
+![Workflows](./readme-assets/workflows_build_chart2.png)
 
 ### 3.8 Export to data source  
 
 - In the **Previous Tasks** list, select the step that returns a table (for example, Transform data or Run python script). This choice determines what will be exported.
+
+![Workflows](./readme-assets/workflows_export_to_data_source1.png)
+
 - In the **Add task – Export to data source** window, fill in the data source settings:
   - **Data source name** — required (the destination name).
   - **Description** — optional.
@@ -181,7 +188,11 @@ In the **Build a chart** step, choose a table from:
   - **Default global policy** — access policy.
 - Click Create.
 
+![Workflows](./readme-assets/workflows_export_to_data_source2.png)
+
 After creation, the **Export to data source** task screen will open. Then if needed, click **Go to data source** to open the created data source and change its settings.
+
+![Workflows](./readme-assets/workflows_export_to_data_source3.png)
 
 ### 3.9 Logic: If / Else
 
@@ -198,14 +209,12 @@ The step uses data from previous actions: **Transform data**, **Run python scrip
 - In **KAWA Actions**, scroll to the **Logic** section.
 - Select **If / Else**.
 
-![Workflows](./readme-assets/workflows13.png)
+![Workflows](./readme-assets/workflows_if_then1.png)
 
 A new block appears in the steps list with two tabs:
 
 - **IF** – conditions and actions for the “true” case.
 - **ELSE** – actions for the alternative path.
-
-![Workflows](./readme-assets/workflows14.png)
 
 Each tab has its own **+ Add action** button to build the branch.
 
@@ -213,7 +222,7 @@ Each tab has its own **+ Add action** button to build the branch.
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
-![Workflows](./readme-assets/workflows15.png)
+![Workflows](./readme-assets/workflows_if_then2.png)
 
 Each rule has three parts:
 
@@ -226,7 +235,7 @@ You pick it via **Use data from** → **Choose data**.
 
 Available operators depend on the data type.
 
-![Workflows](./readme-assets/workflows16.png)
+![Workflows](./readme-assets/workflows_if_then3.png)
 
 #### c. The third field is what you compare against.
 
@@ -235,7 +244,7 @@ You can:
 - type a value manually (for example, 0, warning, TRUE), or
 - click the + button on the right and select data from previous steps.
 
-![Workflows](./readme-assets/workflows17.png)
+![Workflows](./readme-assets/workflows_if_then4.png)
 
 This lets you compare:
 
@@ -273,6 +282,8 @@ Choose the table source for Routing:
 - Previous Tasks (for example, Run python script / Transform data), or
 - Sheets (any sheet in the workspace).
 
+![Workflows](./readme-assets/workflows_routing1.png)
+
 After that, a table preview for Routing will open on the right.
 
 #### 3.10.2 How routes work (R1 / R2 / R3)
@@ -281,6 +292,8 @@ Routes are shown as tabs: **R1**, **R2**, **R3**…
 
 - To open a route — click its tab.
 - To add a new route — click + next to the tabs.
+
+![Workflows](./readme-assets/workflows_routing2.png)
 
 #### 3.10.3 Add actions inside a route
 
@@ -300,7 +313,7 @@ Routing creates multiple independent branches where:
 
 Сlick **Create workflow**.
 
-![Workflows](./readme-assets/workflows10.png)
+![Workflows](./readme-assets/workflows_save.png)
 
 ## 5. Update workflow
 
@@ -316,9 +329,9 @@ Use manual runs to test or trigger a workflow on demand. A manual run does not c
 - In the modal, press **Run** to start immediately.
 - The table shows Start, End, Status, and Error for each attempt. Use the date filters and counters (Total / Success / Failed) to review past runs.
 
-![Workflows](./readme-assets/workflows11.png)
+![Workflows](./readme-assets/workflows_run_history1.png)
 
-![Workflows](./readme-assets/workflows12.png)
+![Workflows](./readme-assets/workflows_run_history2.png)
 
 ### 6.2 Run from Home → Workflows
 
