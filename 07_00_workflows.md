@@ -241,8 +241,8 @@ Available operators depend on the data type.
 
 You can:
 
-- type a value manually (for example, 0, warning, TRUE), or
-- click the + button on the right and select data from previous steps.
+  - type a value manually (for example, 0, warning, TRUE), or
+  - click the + button on the right and select data from previous steps.
 
 ![Workflows](./readme-assets/workflows_if_then4.png)
 
