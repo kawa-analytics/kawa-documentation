@@ -225,7 +225,7 @@ KAWA Reference Documentation
 
 **How it relates to data modelling and standard terminology:** A workflow is an automation layer (similar to a pipeline or a “workflow” in tools like Zapier/Airflow). It uses existing KAWA objects (data sources, sheets, reports) and produces results (exports, emails, artifacts), but it does not define the data model itself.
 
-**Used in:** [Workflows](./07_00_workflows)section.
+**Used in:** [Workflows](./07_00_workflows) section.
 
 ---
 

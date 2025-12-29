@@ -226,18 +226,18 @@ The behavior of **If / Else** is controlled by **path rules** – rows of condit
 
 Each rule has three parts:
 
-#### a. The first field is what you check
+- **The first field is what you check**
 
 (for example, an aggregate like “high”, a table “Grid”, or text like “Generated Content”).
 You pick it via **Use data from** → **Choose data**.
 
-#### b. The second field is the comparison type.
+- **The second field is the comparison type**
 
 Available operators depend on the data type.
 
 ![Workflows](./readme-assets/workflows_if_then3.png)
 
-#### c. The third field is what you compare against.
+- **The third field is what you compare against**
 
 You can:
 
@@ -345,7 +345,7 @@ Use manual runs to test or trigger a workflow on demand. A manual run does not c
 
 You can also start a workflow from the **Control panel** using a button:
 
-- Open **Controls** -> **Configure** -> **Add new control**.
+- Open **Controls** → **Configure** → **Add new control**.
 - In Control type, choose **Button**.
 - In **Action**, select **Run workflow**.
 - In the **Select workflows** modal, select one workflow that this control should run.
