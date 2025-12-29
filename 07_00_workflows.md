@@ -6,7 +6,7 @@ nav_order: 25
 
 # Workflows
 
-**Workflows** is a builder in KAWA for creating multi-step processes. A workflow can be started:
+**Workflows** is a builder in KAWA for creating multi-step processes. See definitions in [Terminology](./13_00_terminology) section. A workflow can be started:
 
 - on a schedule,
 - manually,
@@ -108,7 +108,7 @@ Below is how to set up each step type in practice.
 
 ### 3.3 Send email
 
-**Recipients**, **Subject**, and **Body** can be entered manually, or use the **+** on the right to insert values from previous steps (e.g., aggregates, tables, generated text, a link to a report, etc.).
+**Recipients**, **Subject**, and **Body** can be entered manually, or use the **+** on the right to insert values from previous steps (e.g., aggregates, tables, generated text, a link to a report, etc.). You can also add files to the email in the **Attachments** section.
 
 >If a required fields is empty you’ll see **Invalid parameter bind**.
 
@@ -203,7 +203,7 @@ After creation, the **Export to data source** task screen will open. Then if nee
 
 The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
 
-### 3.9.1 Add an If / Else step
+#### 3.9.1 Add an If / Else step
 
 - In the THEN section, click **+ Add action**.
 - In **KAWA Actions**, scroll to the **Logic** section.
@@ -218,7 +218,7 @@ A new block appears in the steps list with two tabs:
 
 Each tab has its own **+ Add action** button to build the branch.
 
-### 3.9.2 Add path rules
+#### 3.9.2 Add path rules
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
@@ -258,7 +258,7 @@ This lets you compare:
 - All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
 - The total number of rules is shown in the step name (for example, “5. 3 rules”).
 
-### 3.9.3 Actions in the IF and ELSE branches
+#### 3.9.3 Actions in the IF and ELSE branches
 
 After you set up the rules, define what each branch should do.
 
@@ -341,6 +341,46 @@ Use manual runs to test or trigger a workflow on demand. A manual run does not c
 
 **Status** shows the last result: **Success, Failed, Running, Stopped**.
 
+### 6.3 Run from the Control panel
+
+You can also start a workflow from the **Control panel** using a button:
+
+- Open **Controls** -> **Configure** -> **Add new control**.
+- In Control type, choose **Button**.
+- In **Action**, select **Run workflow**.
+- In the **Select workflows** modal, select one workflow that this control should run.
+- Click **Save**.
+
+![Workflows](./readme-assets/workflows_run_history3.png)
+
+After that, users can run the selected workflows directly from the controls panel.
+
+### 6.4 Run from AI Chat (Agent commands)
+
+You can run a workflow from **AI Chat** as an agent command, but first you need to add it to the AI agent.
+
+#### a. Step 1. Add the workflow to the AI agent
+
+- Go to **Agents** and open the agent you need.
+- In the **Commands** section, click + (add command).
+- In the **Select workflows** modal:
+  - choose one or more workflows,
+  - click **Apply**.
+
+![Workflows](./readme-assets/workflows_run_history4.png)
+
+After that, the selected workflows will appear as available commands for the agent.
+
+#### b. Step 2. Run the workflow from AI Chat
+
+- Open the **AI Chat** tab.
+- Select the agent in the left panel.
+- In **Agent commands**, click the workflow command you need to start it.
+
+![Workflows](./readme-assets/workflows_run_history5.png)
+
+This is handy when you want to run a workflow without going to the editor or the Workflows list.
+ 
 ## 7. Reorder / Delete steps
 
 - **Reorder**: drag & drop steps in THEN. If you move a step above its data source, dependent steps show Invalid task ref; open them and re-bind fields via +.
