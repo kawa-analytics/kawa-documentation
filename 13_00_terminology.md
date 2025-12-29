@@ -219,6 +219,14 @@ _**See also:** Field — Example_
 
 **Used in:** [Sharing and permissions](./08_01_permissions) section.
 
+### Workflow
+**In KAWA:** A Workflow is a saved automation built in the Workflows builder. It has a trigger (WHEN) and a set of steps/actions (THEN). A workflow can start on a schedule, manually, or after a data source is successfully refreshed. Steps usually run in sequence, but you can also branch the flow using Logic steps (for example, If/Else or Routing). Typical actions include transforming data, running Python tools, running AI prompts, exporting data, creating/using reports, and sending emails (including attachments).
+KAWA Reference Documentation
+
+**How it relates to data modelling and standard terminology:** A workflow is an automation layer (similar to a pipeline or a “workflow” in tools like Zapier/Airflow). It uses existing KAWA objects (data sources, sheets, reports) and produces results (exports, emails, artifacts), but it does not define the data model itself.
+
+**Used in:** [Workflows](./07_00_workflows)section.
+
 ---
 
 ## Key “vs” comparisons
