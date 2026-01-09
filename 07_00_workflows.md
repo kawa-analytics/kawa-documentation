@@ -319,11 +319,11 @@ Routing creates multiple independent branches where:
 
 ### 3.11 Logic: Interrupt workflow
 
-This task has no settings: you simply place it where you need it in the chain. Its purpose is to immediately stop the workflow execution at the point where this step is added. All steps after it will not run.
+This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
 ![Workflows](./readme-assets/workflows_interrupt_workflow.png)
 
-For example, it works like an “emergency stop” inside If / Else or Routing branches, so you can explicitly end routes you don’t need.
+For example, it works like an “emergency stop” inside **If / Else** or **Routing** branches, so you can explicitly end routes you don’t need.
 
 ## 4. Save
 
