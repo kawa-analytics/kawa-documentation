@@ -2,7 +2,7 @@
 layout: default
 title: Release note - KAWA 1.33
 parent: Release Notes
-nav_order: 41
+nav_order: 42
 ---
 
 # Release note - KAWA 1.33
@@ -14,7 +14,7 @@ nav_order: 41
 
 ### 1.1 Workflows — design, schedule, and run multi‑step automations
 
-> You can read more about this in the [The Workflows section](07_00_workflows.md).
+> You can read more about this in the [The Workflows section](./07_00_workflows).
 
 - Set it up in **Home** → **Workflows** (click **+ Workflow**).
 
@@ -42,7 +42,7 @@ nav_order: 41
 
 ### 1.2 Doc — a free-length document page that combines text and interactive widgets.
 
-> You can read more about this in the [The Reports section](05_01_reports.md).
+> You can read more about this in the [The Reports section](./05_01_reports).
 
 - Set it up in **Home** → **+ Report** → **Doc** (next to Dashboard and Slides).
 - Quick **block** insert via + or /: Text, H1–H3, Bulleted/Numbered list, Checklist, Сode, Image, Add widget.
@@ -115,7 +115,7 @@ Introduced a new **Documentation** tab on **Sheets** and **Data Sources** that o
 
 ### 2.1 Data sources
 
-- Improving the Feed Type: Being able to give a name to snapshot ETL runs
+- Improved the Feed Type: Being able to give a name to snapshot ETL runs
 
 ### 2.1 Sheets 
 
@@ -128,15 +128,15 @@ Introduced a new **Documentation** tab on **Sheets** and **Data Sources** that o
   When the user selects a column of type DATE or DATETIME, a new option appears (default: NEVER; options: YEAR / SEMESTER / QUARTER / MONTH / WEEK, and for datetime also DAY). It resets the running total at the start of the selected period.
 
 - View settings: hiding the empty fields in the pivot table
-- Adding duplicate formula in pivot and chart
-- Improving the Export pivot
-- Improving copying for Pivot
+- Added duplicate formula in pivot and chart
+- Improved the Export pivot
+- Improved copying for Pivot
 
 ### 2.3 Reports
 
-- Improving the full screen widget
+- Improved the full screen widget
 
 ### 2.4 Other
 
-- Upgrading Date and Date time filters
+- Upgraded Date and Date time filters
 - New format in number formatting
