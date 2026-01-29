@@ -86,7 +86,7 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 - Improved legend behaviour
 
-## 2.3 Filters
+### 2.3 Filters
 
 - Improved Text filters: User can now paste a list of values copied from Excel into a text filter. KAWA converts line breaks into ; and automatically selects all pasted values (even if they are not currently in the list). The same behavior is supported in the **Control** panel.
 - Improved date filter
