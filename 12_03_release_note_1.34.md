@@ -22,23 +22,23 @@ Workflows now support richer automation from end to end:
 
 ![Release](./readme-assets/release(1.34)_workflows1.png)
 
-- **New actions** to build pipelines without leaving the editor:
+- **New actions** to build pipelines without leaving the editor
 
 ![Release](./readme-assets/release(1.34)_workflows2.png)
 
-  - **Enrich data with AI** (generate output columns per row),
+  - **Enrich data with AI** (generate output columns per row)
   - **Report** (select a report from the workspace and use it later in the workflow as an artifact)
-  - **Build a chart** (from previous steps or any Sheet),
-  - **Export to data source** (export a table result with export mode + access policy),
-  - **Generate output** (produce a text result using variables from prior steps),
+  - **Build a chart** (from previous steps or any Sheet)
+  - **Export to data source** (export a table result with export mode + access policy)
+  - **Generate output** (produce a text result using variables from prior steps)
 
-- **New logic blocks** for advanced orchestration:
+- **New logic blocks** for advanced orchestration
 
-  - **If / Else** with multiple rules (**AND** logic), comparing values from prior steps (grid, aggregates, properties),
-  - **Routing** to split one input table into multiple routes (R1/R2/R3…), each with its own slice and actions,
-  - **Interrupt workflow** to immediately stop execution (useful as an “emergency stop” inside branches/routes).
+  - **If / Else** with multiple rules (**AND** logic), comparing values from prior steps (grid, aggregates, properties)
+  - **Routing** to split one input table into multiple routes (R1/R2/R3…), each with its own slice and actions
+  - **Interrupt workflow** to immediately stop execution (useful as an “emergency stop” inside branches/routes)
 
-- **More ways to run workflows**: from the **Controls panel** (button → Run workflow) and from **AI Chat** as Agent commands (add workflows to an agent and run them directly from chat).
+- **More ways to run workflows**: from the **Controls panel** (button → Run workflow) and from **AI Chat** as Agent commands (add workflows to an agent and run them directly from chat)
 
 ### 1.2 Create Multi-sheets — support Pivot tables and Charts across multiple sheets
 
