@@ -202,7 +202,50 @@ After creation, the **Export to data source** task screen will open. Then if nee
 
 - Purpose: to generate a text output as the result of the workflow run.
 
-### 3.10 Logic: If / Else
+### 3.10 User task
+
+**User task** is a human-in-the-loop step. It **pauses the workflow** and creates a task for a user to complete a form. When the assignee submits the form, the workflow continues and the submitted values become available to the next steps.
+
+Typical use cases:
+- approval / validation before sending an email or exporting data;
+- collecting missing parameters from a business user;
+- routing to a colleague for a decision before continuing automation.
+
+How to set up
+- Add action → **User task**.
+- Fill in:
+  - **Assign Task To** — choose the assignee(s) who will complete the task.
+  - **Task Name** — the task title shown to the assignee.
+  - **Task Description** — instructions (what to check, what to enter, acceptance criteria, etc.).
+
+![Workflows](./readme-assets/workflows_user_task1.png)
+
+- In **Task Input Form**, click **+ Add input** and add at least one field. Supported input types:
+  - **Text Input**
+  - **Select**
+  - **Number Input**
+  - **Date Input**
+  - **Date & Time Input**
+  - **Toggle**
+
+![Workflows](./readme-assets/workflows_user_task2.png)
+
+> If you don’t add any inputs, the step is invalid (you’ll see an error like “At least one form input is required”).
+
+Run behavior
+- When the workflow reaches **User task**, it creates a task and notifies the assignee (typically by email with a link to the form).
+- The assignee opens the form, fills the fields, and clicks **Submit**.
+- After submission, the workflow resumes from the next step.
+
+![Workflows](./readme-assets/workflows_user_task3.png)
+
+Use submitted values in later steps
+- In any next step that supports bindings (e.g., **Send email**, **AI prompt**, **Run python script parameters**, **Generate output**), click **+** and choose:
+  **Use data from** → **User task** → **Form variables**, then select the required field. 
+
+![Workflows](./readme-assets/workflows_user_task4.png)
+
+### 3.11 Logic: If / Else
 
 **If / Else** is a logic step that splits a workflow into two branches:
 
@@ -211,7 +254,7 @@ After creation, the **Export to data source** task screen will open. Then if nee
 
 The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
 
-#### 3.10.1 Add an If / Else step
+#### 3.11.1 Add an If / Else step
 
 - In the THEN section, click **+ Add action**.
 - In **KAWA Actions**, scroll to the **Logic** section.
@@ -224,7 +267,7 @@ A new block appears in the steps list with two tabs:
 
 Each tab has its own **+ Add action** button to build the branch.
 
-#### 3.10.2 Add path rules
+#### 3.11.2 Add path rules
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
@@ -264,7 +307,7 @@ This lets you compare:
 - All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
 - The total number of rules is shown in the step name (for example, “5. 3 rules”).
 
-#### 3.10.3 Actions in the IF and ELSE branches
+#### 3.11.3 Actions in the IF and ELSE branches
 
 After you set up the rules, define what each branch should do.
 
@@ -277,11 +320,11 @@ Execution logic:
 - If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
 - If **any rule is false**, the **ELSE** branch runs (if it has actions).
 
-### 3.11 Logic: Routing
+### 3.12 Logic: Routing
 
 **Routing** is a logic step that lets you split the processing of one table into multiple routes (R1, R2, R3 …). In each route, you set up your own data “slice” (view) and add a separate set of actions.
 
-#### 3.11.1 How to add Routing
+#### 3.12.1 How to add Routing
 
 Choose the table source for Routing:
 
@@ -292,7 +335,7 @@ Choose the table source for Routing:
 
 After that, a table preview for Routing will open on the right.
 
-#### 3.11.2 How routes work (R1 / R2 / R3)
+#### 3.12.2 How routes work (R1 / R2 / R3)
 
 Routes are shown as tabs: **R1**, **R2**, **R3**…
 
@@ -301,13 +344,13 @@ Routes are shown as tabs: **R1**, **R2**, **R3**…
 
 ![Workflows](./readme-assets/workflows_routing2.png)
 
-#### 3.11.3 Add actions inside a route
+#### 3.12.3 Add actions inside a route
 
 - Select the route you need (for example, R1).
 - In the route block, click Add action and add the steps you need (Send email, Export to data source, Report, etc.).
 - Repeat for R2, R3… if needed.
 
-#### 3.11.4 Result
+#### 3.12.4 Result
 
 Routing creates multiple independent branches where:
 
@@ -315,7 +358,7 @@ Routing creates multiple independent branches where:
 - each branch (route) can have its own data view/slice,
 - each branch runs its own set of actions.
 
-### 3.11 Logic: Interrupt workflow
+### 3.13 Logic: Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
