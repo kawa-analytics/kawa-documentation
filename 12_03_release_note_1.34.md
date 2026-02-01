@@ -24,13 +24,14 @@ Workflows now support richer automation from end to end:
 
 - **New actions** to build pipelines without leaving the editor
 
-![Release](./readme-assets/release(1.34)_workflows2.png)
-
   - **Enrich data with AI** (generate output columns per row)
   - **Report** (select a report from the workspace and use it later in the workflow as an artifact)
   - **Build a chart** (from previous steps or any Sheet)
   - **Export to data source** (export a table result with export mode + access policy)
   - **Generate output** (produce a text result using variables from prior steps)
+  - **User task** (assign a task to a user and collect form inputs before the workflow continues)
+
+![Release](./readme-assets/release(1.34)_workflows2.png)
 
 - **New logic blocks** for advanced orchestration
 
@@ -95,6 +96,7 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 - Improved AI widgets
 - Visual polish and UI fixes
+- Added button to duplicate dashboards
 
 ### 2.5 Python
 
@@ -104,3 +106,6 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 - Improved API key management
 
+### 2.7 Other
+
+- Improved Conditional formatting
