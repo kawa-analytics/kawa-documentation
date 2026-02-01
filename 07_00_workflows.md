@@ -48,7 +48,7 @@ Use this when the workflow must run automatically.
 Use this when the workflow is started on demand by a user.
 
 - Choose **Manual run**. 
-- (Optional) Click **+ Add input** to define parameters that the user must enter each time they start the run: **Text**, **Number**, **Date**, **Date Time**, **Boolean**.
+- (Optional) Click **+ Add input** to define parameters that the user must enter each time they start the run: **Text**, **Select**, **Number**, **Date**, **Date Time**, **Boolean**.
 - These inputs are available to later steps via bindings:
   - In Email / AI prompt editors: click **+** → Use data from → Choose data, then choose the input.
   - In Run python script, Parameters:  click **+** → Use data from → Choose data, then choose the input.
@@ -217,8 +217,6 @@ The step uses data from previous actions: **Transform data**, **Run python scrip
 - In **KAWA Actions**, scroll to the **Logic** section.
 - Select **If / Else**.
 
-![Workflows](./readme-assets/workflows_if_then1.png)
-
 A new block appears in the steps list with two tabs:
 
 - **IF** – conditions and actions for the “true” case.
@@ -230,7 +228,7 @@ Each tab has its own **+ Add action** button to build the branch.
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
-![Workflows](./readme-assets/workflows_if_then2.png)
+![Workflows](./readme-assets/workflows_if_then1.png)
 
 Each rule has three parts:
 
@@ -243,7 +241,7 @@ You pick it via **Use data from** → **Choose data**.
 
 Available operators depend on the data type.
 
-![Workflows](./readme-assets/workflows_if_then3.png)
+![Workflows](./readme-assets/workflows_if_then2.png)
 
 - **The third field is what you compare against**
 
@@ -252,7 +250,7 @@ You can:
   - type a value manually (for example, 0, warning, TRUE), or
   - click the + button on the right and select data from previous steps.
 
-![Workflows](./readme-assets/workflows_if_then4.png)
+![Workflows](./readme-assets/workflows_if_then3.png)
 
 This lets you compare:
 
