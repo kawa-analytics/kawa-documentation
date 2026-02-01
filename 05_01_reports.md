@@ -164,6 +164,17 @@ What happens on click: If a user clicks a value in a column that belongs to a gr
   - **Cancel** — discard the changes.
 - _Scope:_ Affects **only this widget**. The dashboard layout and the source sheet stay the same.
 
+### 2.4 View (read-only) mode
+
+Reports include a dedicated View (read-only) mode designed for presenting and consuming content.
+
+- A View mode toggle is available.
+- When a user has read-only access, Reports open in View mode by default.
+- The Control panel works in View mode: if at least one control exists, it is shown so viewers can apply filters without editing the report.
+- Export to PDF is available in View mode.
+
+![Dashboards](./readme-assets/dashboard13.png)
+
 ## 3. Slides 
 
 ## 4. Doc
@@ -206,7 +217,7 @@ Text blocks support **Rich text** (bold, italics, underline), **H1–H3 headings
 
 **Control panel filters** also work for widgets embedded in a Doc.
 
-**Exploration mode** for Doc widgets works the same as on a dashboard (see **Dashboard → Exploration mode**).
+**Exploration mode** and **View mode** for Doc widgets works the same as on a dashboard (see **Dashboard** → **Exploration mode**, **View mode**).
 
 ### 4.6 When to choose a Doc
 
