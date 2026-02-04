@@ -14,6 +14,8 @@ nav_order: 43
 
 ### 1.1 Workflows — more triggers, actions, and control flow
 
+**Workflows** (introduced in [Release note - KAWA 1.33](./12_02_release_note_1.33)) are KAWA’s automation builder: define a trigger (WHEN), chain actions (THEN), pass outputs between steps, and monitor every run in Run history. In 1.34, **Workflows** expand with an On data refresh trigger, more built-in actions (Enrich data with AI, Reports, Build a chart, Export to data source, Generate output, User task), and control-flow blocks (If/Else, Routing, Interrupt workflow) for real-world orchestration.
+
 > You can read more about this in the [The Workflows section](./07_00_workflows).
 
 Workflows now support richer automation from end to end:
