@@ -100,6 +100,10 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 - Visual polish and UI fixes
 - Added button to duplicate dashboards
 
+### 2.4 Applications
+
+- Added Export as CSV content of views in Applications
+
 ### 2.5 Python
 
 - Scripts — built-in script library: Scripts can now be marked as built-in (builtIn: true) and surfaced as a dedicated “built-in” set in the Scripts list (with a filter). Built-in scripts are read-only for users: they can’t be deleted, renamed, edited (description), or shared — only Add to favorites is available.
@@ -111,3 +115,14 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 ### 2.7 Other
 
 - Improved Conditional formatting
+
+## 3. Patch releases (1.34.x)
+
+### 3.1 Patch 1.34.2
+
+- Fixed Python step timeout behavior to ensure workflows fail gracefully instead of hanging the Workflow engine
+
+### 3.2 Patch 1.34.3
+
+- Fixed workflow filters not resolving LAST DATE
+- Fixed workflow computations incorrectly using the server default timezone: scheduled runs now use the workflow creator’s timezone, and all other runs use the triggering user’s timezone  
