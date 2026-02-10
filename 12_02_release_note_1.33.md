@@ -117,11 +117,11 @@ Introduced a new **Documentation** tab on **Sheets** and **Data Sources** that o
 
 - Improved the Feed Type: Being able to give a name to snapshot ETL runs
 
-### 2.1 Sheets 
+### 2.2 Sheets 
 
 - View settings: hiding the name of the aggregation in the grid
 
-### 2.2 Pivot table & charts 
+### 2.3 Pivot table & charts 
 
 - Added a new Reset every parameter for Show data as: Cumulated.
 
@@ -132,11 +132,11 @@ Introduced a new **Documentation** tab on **Sheets** and **Data Sources** that o
 - Improved the Export pivot
 - Improved copying for Pivot
 
-### 2.3 Reports
+### 2.4 Reports
 
 - Improved the full screen widget
 
-### 2.4 Other
+### 2.5 Other
 
 - Upgraded Date and Date time filters
 - New format in number formatting
