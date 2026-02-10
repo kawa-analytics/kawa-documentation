@@ -20,18 +20,18 @@ nav_order: 43
 
 Workflows now support richer automation from end to end:
 
-- **New trigger: On data refresh** — run a workflow automatically right after a selected data source refreshes (supports multiple sources with **OR** logic).
+- **New trigger: On data refresh** — run a Workflow automatically right after a selected data source refreshes (supports multiple sources with **OR** logic).
 
 ![Release](./readme-assets/release(1.34)_workflows1.png)
 
 - **New actions** to build pipelines without leaving the editor
 
   - **Enrich data with AI** (generate output columns per row)
-  - **Report** (select a report from the workspace and use it later in the workflow as an artifact)
+  - **Report** (select a report from the workspace and use it later in the Workflow as an artifact)
   - **Build a chart** (from previous steps or any Sheet)
   - **Export to data source** (export a table result with export mode + access policy)
   - **Generate output** (produce a text result using variables from prior steps)
-  - **User task** (assign a task to a user and collect form inputs before the workflow continues)
+  - **User task** (assign a task to a user and collect form inputs before the Workflow continues)
 
 ![Release](./readme-assets/release(1.34)_workflows2.png)
 
@@ -92,7 +92,7 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 ### 2.3 Filters
 
 - Improved Text filters: User can now paste a list of values copied from Excel into a text filter. KAWA converts line breaks into ; and automatically selects all pasted values (even if they are not currently in the list). The same behavior is supported in the **Control** panel.
-- Improved date filter
+- Improved Date filter
 
 ### 2.4 Reports
 
@@ -120,9 +120,9 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 ### 3.1 Patch 1.34.2
 
-- Fixed Python step timeout behavior to ensure workflows fail gracefully instead of hanging the Workflow engine
+- Fixed Python step timeout behavior to ensure workflows fail gracefully instead of hanging the workflow engine
 
 ### 3.2 Patch 1.34.3
 
-- Fixed workflow filters not resolving LAST DATE
+- Fixed workflow Date filters not resolving LAST DATE
 - Fixed workflow computations incorrectly using the server default timezone: scheduled runs now use the workflow creator’s timezone, and all other runs use the triggering user’s timezone  
