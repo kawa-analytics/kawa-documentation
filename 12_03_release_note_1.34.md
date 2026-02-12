@@ -118,11 +118,18 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 ## 3. Patch releases (1.34.x)
 
-### 3.1 Patch 1.34.2
+### Patch 1.34.2
 
 - Fixed Python step timeout behavior to ensure workflows fail gracefully instead of hanging the workflow engine
 
-### 3.2 Patch 1.34.3
+### Patch 1.34.3
 
 - Fixed workflow Date filters not resolving LAST DATE
 - Fixed workflow computations incorrectly using the server default timezone: scheduled runs now use the workflow creator’s timezone, and all other runs use the triggering user’s timezone  
+
+
+### Patch 1.34.4
+
+- Add environment variable `KAWA_EMAIL_IS_ENABLED` to control email related features. It is FALSE by default.
+- Improve Workflow engine stability when jobs get stuck
+- Improve stability of drag and drop columns on the Grid
