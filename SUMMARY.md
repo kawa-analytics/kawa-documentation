@@ -39,7 +39,10 @@
   * [Security](08_02_security.md)
 
 * [Python integration](09_00_python_integration.md)
-
+  * [Python SDK](09_01_python_sdk.md)
+  * [Python tools](09_02_python_tools.md)
+  * [Python tools — case 1](09_03_python_tools_case1.md)
+  
 * [Architecture](10_00_architecture.md)
   * [Lakehouse](10_01_lakehouse.md)
   * [Snowflake native connector](10_02_snowflake_native_connector.md)

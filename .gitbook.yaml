@@ -34,6 +34,9 @@ redirects:
   08_01_permissions.html: 08_01_permissions.md
   08_02_security.html: 08_02_security.md
   09_00_python_integration.html: 09_00_python_integration.md
+  09_01_python_sdk.html: 09_01_python_sdk.md
+  09_02_python_tools.html: 09_02_python_tools.md
+  09_03_python_tools_case1.html: 09_03_python_tools_case1.md
   10_00_architecture.html: 10_00_architecture.md
   10_01_lakehouse.html: 10_01_lakehouse.md
   10_02_snowflake_native_connector.html: 10_02_snowflake_native_connector.md
