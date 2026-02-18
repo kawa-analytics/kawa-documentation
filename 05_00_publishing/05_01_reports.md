@@ -6,7 +6,7 @@ nav_order: 22
 
 # Reports
 
-See definitions in [Terminology](../13_00_terminology.md) section.
+See definitions in [Terminology](../13_00_terminology.md#reports) section.
 
 Reports in KAWA serve as dynamic, interactive interfaces that consolidate and visualize data from various sources, enabling users to monitor key metrics and derive actionable insights in real-time. By integrating charts, grids, and pivot tables, KAWA reports facilitate a comprehensive view of business operations, allowing for efficient data analysis and decision-making. These reports are designed to be customizable, catering to diverse user needs and preferences.
 

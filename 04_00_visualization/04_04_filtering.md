@@ -6,7 +6,7 @@ nav_order: 20
 
 # Filtering
 
-Filters can be applied to all types of view through the same filter panel. KAWA comes with powerful built-in filters, adapted to all your data types: text, number, booleans, date, date time. See definitions in [Terminology](../13_00_terminology.md) section.
+Filters can be applied to all types of view through the same filter panel. KAWA comes with powerful built-in filters, adapted to all your data types: text, number, booleans, date, date time. See definitions in [Terminology](../13_00_terminology.md#filter) section.
 
 ## 1. The filter panel
 

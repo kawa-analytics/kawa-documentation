@@ -166,7 +166,7 @@ When aggregating values of this formula together, meaning computing:
 
 KAWA will look at all the granularities within the aggregation and will automatically apply the Distinct functions for each one, at the right level. Here, profit will be summed at the Order granularity and Cost by client at the client granularity.
 
-> This system will not work when one aggregation operation deals with multiple granularities originating from multiple linked columns. To make those cases work, please refer to the [Level of detail documentation](../03_01_formulas/#b-levels-of-detail). You would need to wrap each Linked column in its own group function.
+> This system will not work when one aggregation operation deals with multiple granularities originating from multiple linked columns. To make those cases work, please refer to the [Level of detail documentation](03_01_formulas.md#id-1.2-types-and-levels-of-detail). You would need to wrap each Linked column in its own group function.
 
 | order id       | Client name     | Profit      | Cost per Client   | Net Profit    |
 | -------------- | --------------- | ----------- | ----------------- | ------------- |

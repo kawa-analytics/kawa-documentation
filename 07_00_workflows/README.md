@@ -5,7 +5,7 @@ nav_order: 25
 
 # Workflows
 
-**Workflows** is a builder in KAWA for creating multi-step processes. See definitions in [Terminology](../13_00_terminology.md) section. A workflow can be started:
+**Workflows** is a builder in KAWA for creating multi-step processes. See definitions in [Terminology](../13_00_terminology.md#workflow) section. A workflow can be started:
 
 * on a schedule,
 * manually,
