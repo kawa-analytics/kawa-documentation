@@ -50,7 +50,7 @@
 
 * [Exploitation](11_00_exploitation.md)
   * [Backup restore](11_01_backup_restore.md)
-  * [Create monitoring views](11_02_create_monitoring_datasouces.md)
+  * [Create monitoring views](11_02_create_monitoring_datasources.md)
   * [Oauth2 configuration](11_03_oauth2_configuration.md)
 
 * [Release notes](12_00_release_notes.md)
