@@ -45,12 +45,12 @@
   
 * [Architecture](10_00_architecture.md)
   * [Lakehouse](10_01_lakehouse.md)
-  * [Snowflake native connector](10_02_snowflake_native_connector.md)
+  * [Snowflake native connection](10_02_snowflake_native_connection.md)
   * [Query cache](10_03_query_cache.md)
 
 * [Exploitation](11_00_exploitation.md)
   * [Backup restore](11_01_backup_restore.md)
-  * [Create monitoring data](11_02_create_monitoring_data.md)
+  * [Create monitoring views](11_02_create_monitoring_datasouces.md)
   * [Oauth2 configuration](11_03_oauth2_configuration.md)
 
 * [Release notes](12_00_release_notes.md)
