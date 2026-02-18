@@ -5,8 +5,6 @@ nav_order: 24
 
 # AI integration
 
-* TOC {:toc}
-
 ## 1. AI Integration to assist configuration
 
 In KAWA, AI is integrated in various places to assist you configuring your data models and analytics.
@@ -15,7 +13,7 @@ In KAWA, AI is integrated in various places to assist you configuring your data 
 
 Within the sheet section, the formula editor comes with an AI section that can write formulas from a description in natural language.
 
-![AI Assist](.gitbook/assets/ai_assist1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai_assist1.png" alt=""></div>
 
 The AI also provides a list of suggested prompts that you can leverage.
 
@@ -23,7 +21,7 @@ The AI also provides a list of suggested prompts that you can leverage.
 
 When creating new charts, the AI can help by generating the appropriate configuration from a prompt.
 
-![AI Assist](.gitbook/assets/ai_assist2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai_assist2.png" alt=""></div>
 
 Like for the formulas, it suggests a list of relevant charts that you can use.
 
@@ -31,7 +29,7 @@ Like for the formulas, it suggests a list of relevant charts that you can use.
 
 From within the Script section, you can use AI to generate scripts with the correct syntax, tailored to your data and context.
 
-![AI Assist](.gitbook/assets/ai_assist3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai_assist3.png" alt=""></div>
 
 ## 2. Integrated AI Chat
 
@@ -45,7 +43,7 @@ The chat can be found in three places:
 * In a dashboard (Access on the top of the page, `Ask AI`)
 * In an application (Access at the bottom left: `Chat with your data`)
 
-![Chat](.gitbook/assets/ai-chat1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai-chat1.png" alt=""></div>
 
 **Starting a conversation:** To start a new conversation, click the (+Chat) button at the top. Each conversation is private and retains the full history of messages exchanged with Kawa's agents.
 
@@ -73,7 +71,7 @@ Each query that the agents make will result in a visual and interactive section 
 
 The outcome of an analytics session can be bookmarked and, when working within a dashboard, added directly as a widget for easy access.
 
-![Chat](.gitbook/assets/ai-chat2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai-chat2.png" alt=""></div>
 
 ## 3. Configuring Agents and Metadata
 
@@ -91,7 +89,7 @@ Each workspace includes a default AI agent named Paul. Agents are configured wit
 
 Agents can be configured from the agent section:
 
-![Agents](.gitbook/assets/ai_agents1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai_agents1.png" alt=""></div>
 
 Agents can be added, updated and removed. Note: The default agent can be edited but not removed.
 
@@ -107,7 +105,7 @@ When chatting with data, the AI model has access to sheet metadata from multiple
 
 In order to configure the description for each column, go to the sheet model: Model > Three dots menu of any column > Update description
 
-![Meta](.gitbook/assets/ai_meta1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/ai_meta1.png" alt=""></div>
 
 * AI Metadata, which is a free-text field defined in the model. This allows you to provide any additional, context-specific information about your sheets to guide and enrich the AI's responses.
 

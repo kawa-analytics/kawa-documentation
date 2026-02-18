@@ -1,18 +1,14 @@
 ---
-layout: default
 title: Python SDK
 parent: Python Integration
 nav_order: 30
 ---
 
-# The KAWA Python SDK
+# Python SDK
 
 KAWA offers a Python SDK that lets you perform various operations: Computations, Data loading and Advanced administration tasks.
 
 You can find example workbooks and additional documentation here: [KAWA Python SDK Github Repository](https://github.com/kawa-analytics/kywy-documentation).
-
-* TOC
-{:toc}
 
 ## 1. Getting started with the SDK
 
@@ -26,9 +22,9 @@ In order to install the SDK, run the following:
 
 ### 1.2 Retrieve your API Key
 
-The API Key can be retrieved from the KAWA GUI. Click on __Settings__ > __API Key__.
+The API Key can be retrieved from the KAWA GUI. Click on **Settings** > **API Key**.
 
-Please set a date at which the key will expire and click on __Generate key__. 
+Please set a date at which the key will expire and click on **Generate key**.
 
 The key is of the following format:
 
@@ -54,9 +50,9 @@ KAWA_WORKSPACE=1
 
 Specify the following:
 
-- _KAWA_URL:_ Enter your URL with the correct port
-- _KAWA_API_KEY:_ Fill in the API key that was generated at the previous step
-- _KAWA_WORKSPACE:_ Specify in which workspace you want to be authenticated
+* _KAWA\_URL:_ Enter your URL with the correct port
+* _KAWA\_API\_KEY:_ Fill in the API key that was generated at the previous step
+* _KAWA\_WORKSPACE:_ Specify in which workspace you want to be authenticated
 
 When the file has been created, run the following:
 
@@ -77,7 +73,6 @@ kawa.set_active_workspace_id('1')
 ## 2. Upload data to KAWA using the Python SDK
 
 In order to upload any pandas dataframe to KAWA:
-
 
 ```python
 from kywy.client.kawa_client import KawaClient as K
@@ -102,7 +97,6 @@ Please have a look at this [Notebook](https://github.com/kawa-analytics/kywy-doc
 ## 3. Run computations on KAWA from the Python SDK
 
 This feature lets you query your data and download it as a pandas dataframe directly in your existing scripts. The execution of the query (Filtering, Aggregations, etc...) will be deported into the KAWA data warehouse to ensure low latency and a small memory footprint in your own Python runtime.
-
 
 ```python
 from kywy.client.kawa_client import KawaClient as K

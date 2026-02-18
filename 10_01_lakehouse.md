@@ -1,22 +1,18 @@
 ---
-layout: default
 title: Data Lakehouse
 parent: Architecture
 nav_order: 34
 ---
 
-# Data Lakehouse integration
+# Lakehouse
 
 This section illustrates how KAWA can be integrated in your data lakehouse.
-
-* TOC
-{:toc}
 
 ## 1. Overview
 
 KAWA integrates seamlessly into the consumption layer of your data lakehouse, providing an intuitive interface for data exploration and analytics while directly leveraging the Iceberg API to manage KAWA tables and ingest user data—all within a dedicated S3 bucket. It bridges to the processing layer by utilizing existing execution engines like Trino to perform scalable analytical queries using standard SQL. This integration allows users to harness the full suite of KAWA’s features—such as Python ETL, dynamic columns, and rich visualizations—natively within the lakehouse, combining performance, flexibility, and usability in a unified environment.
 
-![Data lakehouse](./readme-assets/lakehouse.png)
+<div data-with-frame="true"><img src=".gitbook/assets/lakehouse.png" alt=""></div>
 
 ## 2. Configuration guide
 
@@ -24,9 +20,9 @@ This configuration guide outlines how to integrate KAWA into a data lakehouse ar
 
 This guide supposes the following prerequisites:
 
-- Working instance of a hive metastore
-- An existing S3 bucket with a R/W account for KAWA
-- A Trino instance with a Read only account for KAWA + CREATE and DROP views in a catalogue managed by KAWA.
+* Working instance of a hive metastore
+* An existing S3 bucket with a R/W account for KAWA
+* A Trino instance with a Read only account for KAWA + CREATE and DROP views in a catalogue managed by KAWA.
 
 ### 2.1 Configuring Trino
 
@@ -82,7 +78,7 @@ export KAWA_WAREHOUSE_TYPE=TRINO
 
 #### 2.2.2 Read+Write configuration
 
-To add the write back capability, __in addition to the four variables described above__, three more variables are necessary
+To add the write back capability, **in addition to the four variables described above**, three more variables are necessary
 
 _Environment variables:_
 
@@ -135,7 +131,7 @@ For these to be taken in account, the KAWA server must be restarted.
 
 ### 2.3 Recap of the configured components
 
-![Data lakehouse](./readme-assets/lakehouse_config.png)
+<div data-with-frame="true"><img src=".gitbook/assets/lakehouse_config.png" alt=""></div>
 
 This diagram shows all the different configuration elements that were covered in the previous paragraphs.
 

@@ -1,16 +1,15 @@
 ---
-layout: default
-title: Visualization 
+title: Visualization
 nav_order: 16
 ---
 
-# Visualization - Views
+# Visualization
 
-In KAWA, data can be visualized through charts, grids, and pivot tables, offering flexible and intuitive ways to explore and analyze information. (See definitions in [Terminology](./13_00_terminology) section.) Whether you're tracking trends over time, comparing metrics across dimensions, or drilling down into granular details, KAWA's visualization tools help turn raw data into actionable insights.
+In KAWA, data can be visualized through charts, grids, and pivot tables, offering flexible and intuitive ways to explore and analyze information. (See definitions in [Terminology](13_00_terminology.md) section.) Whether you're tracking trends over time, comparing metrics across dimensions, or drilling down into granular details, KAWA's visualization tools help turn raw data into actionable insights.
 
 A sample of some charts, grids and pivot tables to Visualize various aspects of your datasets:
 
-![Dashboard](./readme-assets/dashboard1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/dashboard1.png" alt=""></div>
 
 ## Manage your views in sheets
 
@@ -24,14 +23,14 @@ _Reorder tabs:_ Tabs can reorder using drag and drop.
 
 Clicking on the three dots menu next to each tab will display options. Here are the ones common to all types of views:
 
-- Rename your view - the tab will be renamed as well
-- Add a description to your view
-- Duplicate a view
-- Delete a view
+* Rename your view - the tab will be renamed as well
+* Add a description to your view
+* Duplicate a view
+* Delete a view
 
-The sharing of sheets and views is documented here: [Sharing](./08_01_permissions#21-sharing-sheets-and-views)
+The sharing of sheets and views is documented here: [Sharing](08_01_permissions.md#id-2.1-sharing-sheets-and-views)
 
-![Manage views](./readme-assets/view_management.png)
+<div data-with-frame="true"><img src=".gitbook/assets/view_management.png" alt=""></div>
 
 Here is a video that gives a global overview about views and sheets.
 

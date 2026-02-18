@@ -1,13 +1,12 @@
 ---
-layout: default
 title: Control Panel
 parent: Data Modeling
 nav_order: 11
 ---
 
-# Control Panel
+# Control panel
 
-The Controls Panel allows users to dynamically customize and interact with data views within the Sheets workspace. It is designed to provide flexibility, improve data exploration, and support user-driven input directly from the interface. See definitions in [Terminology](./13_00_terminology) section.
+The Controls Panel allows users to dynamically customize and interact with data views within the Sheets workspace. It is designed to provide flexibility, improve data exploration, and support user-driven input directly from the interface. See definitions in [Terminology](13_00_terminology.md) section.
 
 A control is an interactive interface element that is linked to the data on the sheet and allows the user to dynamically filter, configure, or enter values directly in the interface for the immediate updating and viewing of the corresponding data.
 
@@ -15,14 +14,11 @@ The Controls Panel is accessible via the "Controls" button located in the top-ri
 
 By default, the panel displays the message: “No controls available yet …” This indicates that no controls have been configured for the active view. Users are prompted to begin customization via the “Configure” button.
 
-After clicking the Configure button, the Add new control panel opens from the right side of the screen. After opening it, a categorized list of configurable control types is presented. 
+After clicking the Configure button, the Add new control panel opens from the right side of the screen. After opening it, a categorized list of configurable control types is presented.
 
-![Controls panel](./readme-assets/controls_panel_empty.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_empty.png" alt=""></div>
 
 These include:
-
-* TOC
-{:toc}
 
 ## 1. Filter Control
 
@@ -32,57 +28,57 @@ Filter is created from the Add new control modal.
 
 Here is an example of creating a filter for a text field.
 
-![Controls panel](./readme-assets/controls_panel_filter1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter1.png" alt=""></div>
 
 Filter behavior at runtime after saving:
 
-- The filter control appears in the Controls Panel.
-- Users can select one or multiple values from the dropdown menu.
-- The sheet automatically updates to display only the records that match the selected filter criteria.
+* The filter control appears in the Controls Panel.
+* Users can select one or multiple values from the dropdown menu.
+* The sheet automatically updates to display only the records that match the selected filter criteria.
 
 When setting up a Filter control for a text field, the Values list Display type is used by default. It automatically generates a dropdown menu containing all distinct values from the selected column. This option is ideal for filters, as it allows users to easily select from existing dataset entries without the need to type values manually.
 
-![Controls panel](./readme-assets/controls_panel_filter2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter2.png" alt=""></div>
 
-*When configuring a filter control, the Values list display type is selected by default if the column contains text.*
+_When configuring a filter control, the Values list display type is selected by default if the column contains text._
 
 Use Values list to:
 
-- Provide a user-friendly way to filter by predefined column values.
-- Avoid errors associated with free text input.
-- Enable dynamic population of the control based on real data.
-- If Multi selection is enabled, users can select multiple values.
+* Provide a user-friendly way to filter by predefined column values.
+* Avoid errors associated with free text input.
+* Enable dynamic population of the control based on real data.
+* If Multi selection is enabled, users can select multiple values.
 
-The Range display type is used in Filter controls to enable users to filter data by specifying a numeric interval using From and To inputs. 
+The Range display type is used in Filter controls to enable users to filter data by specifying a numeric interval using From and To inputs.
 
-![Controls panel](./readme-assets/controls_panel_filter3.png) 
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter3.png" alt=""></div>
 
 It is automatically selected by default when the target column contains numeric values.
 
-![Controls panel](./readme-assets/controls_panel_filter4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter4.png" alt=""></div>
 
 When configuring a Filter Control, selecting the Free input option as the Display type enables users to manually enter values for filtering — rather than choosing from a predefined list. This mode is ideal for numeric, text, or computed columns where user-entered criteria offer more flexibility.
 
-![Controls panel](./readme-assets/controls_panel_filter5.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter5.png" alt=""></div>
 
-*In the Add new control tab when creating a filter, select Free input Display type.*
+_In the Add new control tab when creating a filter, select Free input Display type._
 
 When Free input is selected, an additional field titled Operator becomes available. This lets users define how the inputted value will be compared against the data in the selected column.
 
-- Default Operator: Equals is set by default.
-- Customizable: Users can choose from a list of comparison operators to tailor the filter logic.
+* Default Operator: Equals is set by default.
+* Customizable: Users can choose from a list of comparison operators to tailor the filter logic.
 
-![Controls panel](./readme-assets/controls_panel_filter6.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter6.png" alt=""></div>
 
 When to Use Free Input?
 
-- For numeric columns like Profit, Quantity, or Score where exact values or thresholds are important.
-- When filtering on fields with large value ranges where dropdowns are impractical.
-- When needing precision control over dataset behavior.
+* For numeric columns like Profit, Quantity, or Score where exact values or thresholds are important.
+* When filtering on fields with large value ranges where dropdowns are impractical.
+* When needing precision control over dataset behavior.
 
 For fields with a different data type (e.g., date, datetime), the Display Type selection is not supported.
 
-![Controls panel](./readme-assets/controls_panel_filter7.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_filter7.png" alt=""></div>
 
 ## 2. Button Control
 
@@ -94,13 +90,13 @@ Once configured, clicking the button will immediately execute the selected Pytho
 
 To link a tool, use the “Python tool” dropdown to choose from available tools, or add a new one from the library.
 
-![Controls panel](./readme-assets/controls_panel_button1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_button1.png" alt=""></div>
 
-*Selecting an available Python tool.*
+_Selecting an available Python tool._
 
-![Controls panel](./readme-assets/controls_panel_button2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_button2.png" alt=""></div>
 
-*Add a new Python tool from the library.*
+_Add a new Python tool from the library._
 
 ## 3. Variable control
 
@@ -128,40 +124,40 @@ A Text control allows the user to manually enter any string value. It is useful 
 
 #### a. Behavior:
 
-- Displays as a single-line text input field.
-- Accepts any user-entered string.
-- Stores the value as a named variable that can be used in filters and formulas.
-- The variable updates in real time and applies within the current sheet view.
+* Displays as a single-line text input field.
+* Accepts any user-entered string.
+* Stores the value as a named variable that can be used in filters and formulas.
+* The variable updates in real time and applies within the current sheet view.
 
 #### b. Example Use Case:
 
-You can bind the Location control to a filter on the City column with the following condition:
-Operator: Begins with → Variable: Location
+You can bind the Location control to a filter on the City column with the following condition: Operator: Begins with → Variable: Location
 
-![Controls panel](./readme-assets/controls_panel_text1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_text1.png" alt=""></div>
 
 This enables dynamic filtering of records based on user input, such as a partial city name.
 
-![Controls panel](./readme-assets/controls_panel_text2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_text2.png" alt=""></div>
 
-Using a Text Control in a Formula: 
-Suppose you have a variable named Location, created using a text control. You want the formula to check whether the city name in the City column contains the text entered by the user in the Location variable.
+Using a Text Control in a Formula: Suppose you have a variable named Location, created using a text control. You want the formula to check whether the city name in the City column contains the text entered by the user in the Location variable.
 
-![Controls panel](./readme-assets/controls_panel_text3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_text3.png" alt=""></div>
 
 How it works:
-- Location is a variable that accepts free text input from the user.
-- City is a column in the table containing city names.
-- CONTAINS() checks whether the entered value appears within the city name.
-- The result is "Match" for rows where a match is found, and "No match" otherwise.
 
-![Controls panel](./readme-assets/controls_panel_text4.png)
+* Location is a variable that accepts free text input from the user.
+* City is a column in the table containing city names.
+* CONTAINS() checks whether the entered value appears within the city name.
+* The result is "Match" for rows where a match is found, and "No match" otherwise.
+
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_text4.png" alt=""></div>
 
 Example:
-- The user enters "con" in the Location field.
-- The formula returns "Match" for Concord.
 
-![Controls panel](./readme-assets/controls_panel_text5.png)
+* The user enters "con" in the Location field.
+* The formula returns "Match" for Concord.
+
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_text5.png" alt=""></div>
 
 ### 3.3 Number variable
 
@@ -169,52 +165,52 @@ A Number control allows the user to manually enter a single numeric value. This 
 
 #### a. Behavior:
 
-- Displays as a single-line numeric input field in the Controls Panel.
-- Accepts any valid number (integer or decimal) entered by the user.
-- Stores the input as a named variable that can be referenced in filters, formulas, and Python tools.
-- The value updates in real time and is applied instantly across the current view wherever the variable is used.
+* Displays as a single-line numeric input field in the Controls Panel.
+* Accepts any valid number (integer or decimal) entered by the user.
+* Stores the input as a named variable that can be referenced in filters, formulas, and Python tools.
+* The value updates in real time and is applied instantly across the current view wherever the variable is used.
 
 #### b. Example Use Case:
 
-You can bind a Number control to a Profit numeric column in a filter. For example:
-Operator: Greater than or equals → Variable: Min Profit
+You can bind a Number control to a Profit numeric column in a filter. For example: Operator: Greater than or equals → Variable: Min Profit
 
-![Controls panel](./readme-assets/controls_panel_number1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number1.png" alt=""></div>
 
 This means: only rows where Profit is greater than or equal to the value entered by the user in the Min Profit field will be shown.
 
-![Controls panel](./readme-assets/controls_panel_number2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number2.png" alt=""></div>
 
 Usage in Formulas. A number variable can be used in a formula for conditional calculations:
 
-- Profit is a numeric column in the table.
-- MinProfit is a variable linked to a Number control.
-- The formula returns "High" for rows where profit is greater than the variable's value, and "Low" otherwise.
+* Profit is a numeric column in the table.
+* MinProfit is a variable linked to a Number control.
+* The formula returns "High" for rows where profit is greater than the variable's value, and "Low" otherwise.
 
-![Controls panel](./readme-assets/controls_panel_number3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number3.png" alt=""></div>
 
 Example:
-- The user enters 150 000 in the Min Profit field.
-- The formula returns "High" for rows where Profit > 150 000.
-- The formula returns "Low" for rows where Profit <= 150 000.
 
-![Controls panel](./readme-assets/controls_panel_number4.png)
+* The user enters 150 000 in the Min Profit field.
+* The formula returns "High" for rows where Profit > 150 000.
+* The formula returns "Low" for rows where Profit <= 150 000.
+
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number4.png" alt=""></div>
 
 ### 3.4 Number range variable
 
 The Number range control allows users to enter a minimum and maximum numeric value to define an interval.
 
-![Controls panel](./readme-assets/controls_panel_number_range1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number_range1.png" alt=""></div>
 
-![Controls panel](./readme-assets/controls_panel_number_range2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number_range2.png" alt=""></div>
 
 #### a. Example Use Case:
 
 Usage in Formulas. To reference the range in a formula, use both boundaries:
 
-![Controls panel](./readme-assets/controls_panel_number_range3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number_range3.png" alt=""></div>
 
-![Controls panel](./readme-assets/controls_panel_number_range4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_number_range4.png" alt=""></div>
 
 ### 3.5 Date variable
 
@@ -222,29 +218,28 @@ The Date control allows users to select a specific calendar date through a visua
 
 #### a. Behavior
 
-- Renders a single date picker input
-- Accepts any valid calendar date
-- Stores the selected date as a named variable
-- Updates all connected components (filters, formulas) in real time
+* Renders a single date picker input
+* Accepts any valid calendar date
+* Stores the selected date as a named variable
+* Updates all connected components (filters, formulas) in real time
 
 #### b. Example Use Case:
 
-You can bind a Date control to a Order Date column in a filter. For example:
-Operator: Is on or after → Variable: StartDate
+You can bind a Date control to a Order Date column in a filter. For example: Operator: Is on or after → Variable: StartDate
 
-![Controls panel](./readme-assets/controls_panel_date1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_date1.png" alt=""></div>
 
 This filter will display only the records where the order was placed on or after the selected date.
 
-![Controls panel](./readme-assets/controls_panel_date2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_date2.png" alt=""></div>
 
 Usage in Formula
 
-![Controls panel](./readme-assets/controls_panel_date3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_date3.png" alt=""></div>
 
 This formula uses the date selected in the control to label rows based on whether the order date is on or after the specified day.
 
-![Controls panel](./readme-assets/controls_panel_date4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_date4.png" alt=""></div>
 
 ### 3.6 Date range variable
 
@@ -254,9 +249,9 @@ The Date range control allows users to select a start and end date to define a t
 
 Usage in Formulas. To reference the range in a formula, use both boundaries:
 
-![Controls panel](./readme-assets/controls_panel_date_range1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_date_range1.png" alt=""></div>
 
-![Controls panel](./readme-assets/controls_panel_date_range2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_date_range2.png" alt=""></div>
 
 ### 3.7 Date time variable
 
@@ -264,29 +259,28 @@ Date Time control allows users to input a precise date and time value, stored as
 
 #### a. Behavior:
 
-- Appears as a combined date and time picker
-- Saves the selected value as a named variable (e.g. StartTime)
-- Variable can be referenced in filters or formulas
-- Updates dynamically — changes take effect across all components using the variable
+* Appears as a combined date and time picker
+* Saves the selected value as a named variable (e.g. StartTime)
+* Variable can be referenced in filters or formulas
+* Updates dynamically — changes take effect across all components using the variable
 
 #### b. Example Use Case:
 
-You can bind a Date time control to a Created At column in a filter. For example:
-Operator: Is on or after → Variable: StartTime
+You can bind a Date time control to a Created At column in a filter. For example: Operator: Is on or after → Variable: StartTime
 
-![Controls panel](./readme-assets/controls_panel_datetime1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_datetime1.png" alt=""></div>
 
 This filters all records that were created on and after the selected date and time.
 
-![Controls panel](./readme-assets/controls_panel_datetime2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_datetime2.png" alt=""></div>
 
 Usage in Formula
 
-![Controls panel](./readme-assets/controls_panel_datetime3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_datetime3.png" alt=""></div>
 
 This formula returns "Late" for records created after the specified time, and "On Time" otherwise.
 
-![Controls panel](./readme-assets/controls_panel_datetime4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_datetime4.png" alt=""></div>
 
 ### 3.8 Datetime range variable
 
@@ -296,9 +290,9 @@ The Datetime range control allows the user to select a range that includes both 
 
 Usage in Formulas. To reference the range in a formula, use both boundaries:
 
-![Controls panel](./readme-assets/controls_panel_datetime_range1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_datetime_range1.png" alt=""></div>
 
-![Controls panel](./readme-assets/controls_panel_datetime_range2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_datetime_range2.png" alt=""></div>
 
 ### 3.9 Switch variable
 
@@ -308,10 +302,10 @@ The Switch control is a toggle input designed for binary user choices such as tr
 
 Usage in Formulas
 
-![Controls panel](./readme-assets/controls_panel_switch.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_switch.png" alt=""></div>
 
-- With MySwitch = Off, SwitchStatus shows “Disabled” 
-- Toggling MySwitch = On changes all SwitchStatus values to “Enabled” instantly
+* With MySwitch = Off, SwitchStatus shows “Disabled”
+* Toggling MySwitch = On changes all SwitchStatus values to “Enabled” instantly
 
 ### 3.10 Single select list variable
 
@@ -319,40 +313,38 @@ The Single Select List control allows users to choose one option from a predefin
 
 #### a. Behavior:
 
-- Appears as a dropdown menu with a fixed list of values
-- Only one value can be selected at a time
-- Stores selection as a named variable (e.g. Location)
-- Variable can be referenced in filters and formulas
+* Appears as a dropdown menu with a fixed list of values
+* Only one value can be selected at a time
+* Stores selection as a named variable (e.g. Location)
+* Variable can be referenced in filters and formulas
 
 A user can add values to a Single select list variable in two ways:
-- Custom values
-The user manually enters a set of predefined values, from which only one can be selected.
 
-![Controls panel](./readme-assets/controls_panel_single1.png)
+* Custom values The user manually enters a set of predefined values, from which only one can be selected.
 
-- From a column
-The user selects a column from a table, and all unique values from that column are automatically used as options.
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_single1.png" alt=""></div>
 
-![Controls panel](./readme-assets/controls_panel_single2.png)
+* From a column The user selects a column from a table, and all unique values from that column are automatically used as options.
+
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_single2.png" alt=""></div>
 
 #### b. Example Use Case:
 
-You can bind a Single Select List control to a City column in a filter. For example:
-Operator: Equals → Variable: Location
+You can bind a Single Select List control to a City column in a filter. For example: Operator: Equals → Variable: Location
 
-![Controls panel](./readme-assets/controls_panel_single3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_single3.png" alt=""></div>
 
 Shows only records that belong to the selected city from the dropdown.
 
-![Controls panel](./readme-assets/controls_panel_single4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_single4.png" alt=""></div>
 
 Usage in Formula
 
-![Controls panel](./readme-assets/controls_panel_single5.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_single5.png" alt=""></div>
 
 Returns Sales only for rows matching the selected category; otherwise returns 0.
 
-![Controls panel](./readme-assets/controls_panel_single6.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_single6.png" alt=""></div>
 
 ### 3.11 Multi select list variable
 
@@ -360,60 +352,58 @@ The Multi select list variable control allows users to choose multiple values fr
 
 #### a. Behavior:
 
-- Appears as a dropdown menu with a fixed list of values
-- Multiple value can be selected at a time
-- Stores selection as a named variable (e.g. Location)
-- Variable can be referenced in filters and formulas
+* Appears as a dropdown menu with a fixed list of values
+* Multiple value can be selected at a time
+* Stores selection as a named variable (e.g. Location)
+* Variable can be referenced in filters and formulas
 
 A user can add values to a Multi select list variable in two ways:
-- Custom values
-  The user manually enters a set of predefined values, from which only one can be selected.
-- From a column
-  The user selects a column from a table, and all unique values from that column are automatically used as options.
+
+* Custom values The user manually enters a set of predefined values, from which only one can be selected.
+* From a column The user selects a column from a table, and all unique values from that column are automatically used as options.
 
 #### b. Example Use Case:
 
 Usage in Formula
 
-![Controls panel](./readme-assets/controls_panel_multi1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_multi1.png" alt=""></div>
 
 Returns Selected only for rows matching the selected category; otherwise returns 0ther.
 
-![Controls panel](./readme-assets/controls_panel_multi2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_multi2.png" alt=""></div>
 
 ## 4. Interaction with controls
 
 Each created control in the Controls panel includes the correct visual and functional elements: reorder handle, type icon, display name, eye icon (Toggle visibility), pencil icon (Edit control) and trash icon (Delete control).
 
-![Controls panel](./readme-assets/controls_panel_interaction1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_interaction1.png" alt=""></div>
 
 The reorder handle is used for drag-and-drop to change the order of controls in the list.
 
 Toggle visibility enables or disables showing the selected control on the panel. When the control is visible (icon active), its filter applies to the table and users can use it. When the control is hidden (icon crossed out), it does not appear in the interface and its settings don’t affect the data view.
 
-![Controls panel](./readme-assets/controls_panel_interaction2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_interaction2.png" alt=""></div>
 
 Edit control opens the selected control in edit mode. Clicking it opens the side panel where you can change the filter’s type, data column, default values, label, and other settings.
 
-![Controls panel](./readme-assets/controls_panel_interaction3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_interaction3.png" alt=""></div>
 
 Delete control permanently removes the selected control from the panel. After clicking, a confirmation dialog “Are you sure you want to delete this filter control?” appears to prevent accidents. Once deleted, the control no longer applies any filter and disappears from the interface.
 
-![Controls panel](./readme-assets/controls_panel_interaction4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_interaction4.png" alt=""></div>
 
 ## 5. Tab-Specific Control Behavior
 
-- Sheets
+* Sheets
 
 You can create Filters, Buttons, and Variables here.
 
-- Dashboards & Applications
+* Dashboards & Applications
 
 You can reuse Buttons and Variables defined in Sheets, but:
 
-  - Filters must be created separately on each tab and have no connection across tabs.
-
-  - Variables, while shareable, store values independently per tab (changing a variable’s value in Dashboards won’t affect its value in Sheets, and vice versa).
+* Filters must be created separately on each tab and have no connection across tabs.
+* Variables, while shareable, store values independently per tab (changing a variable’s value in Dashboards won’t affect its value in Sheets, and vice versa).
 
 This approach lets you define Buttons and Variables once in Sheets for consistency, yet configure Filters and adjust Variable inputs independently on every tab.
 
@@ -427,22 +417,21 @@ Users can set access for the artifacts they create (Sheets, Dashboards, or Appli
 
 ### 7.1 Example: Setting access for a Sheet
 
-- Private
-If a user marks their Sheet as Private, only they can view it and use all controls created for that Sheet.
-- Public
-If a user marks their Sheet as Public, only members of their workspace or of a team within the workspace can access it and its controls.
-  - General access – every member of the workspace.
-  - Teams with access – only the specified teams.
-  - If both options are selected, General access takes priority.
+* Private If a user marks their Sheet as Private, only they can view it and use all controls created for that Sheet.
+* Public If a user marks their Sheet as Public, only members of their workspace or of a team within the workspace can access it and its controls.
+  * General access – every member of the workspace.
+  * Teams with access – only the specified teams.
+  * If both options are selected, General access takes priority.
 
-![Controls panel](./readme-assets/controls_panel_sharing1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_sharing1.png" alt=""></div>
 
 Access levels within Public
-- Viewing
-  - Users can apply the controls the author created, but they use their own values and run their own analysis.
 
-![Controls panel](./readme-assets/controls_panel_sharing2.png) 
+* Viewing
+  * Users can apply the controls the author created, but they use their own values and run their own analysis.
 
-- Editing
-  - Users can create, edit, and delete their own controls on that Sheet.
-  - The Sheet’s author also has access to these new controls and can use them regardless of who created them.
+<div data-with-frame="true"><img src=".gitbook/assets/controls_panel_sharing2.png" alt=""></div>
+
+* Editing
+  * Users can create, edit, and delete their own controls on that Sheet.
+  * The Sheet’s author also has access to these new controls and can use them regardless of who created them.

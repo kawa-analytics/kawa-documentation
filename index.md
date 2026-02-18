@@ -23,7 +23,7 @@ Kawa unifies your flow from raw data to published apps. Connect sources, model a
 * **Publish**: dashboards and end-to-end apps for your team.
 * **Extend**: custom logic (Python), reusable libraries, chat & agents.
 
-![home\_page](.gitbook/assets/home1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/home1.png" alt=""></div>
 
 ***
 
@@ -31,7 +31,7 @@ Kawa unifies your flow from raw data to published apps. Connect sources, model a
 
 Ready to dive in? Start here:
 
-[Getting started](00_01_getting_started.html)
+[Getting started](00_01_getting_started.md)
 
 #### Learn by watching
 
@@ -43,38 +43,38 @@ Short videos to get productive fast.
 
 ## What's Inside
 
-| Section                                                 | Description                                                                                        |
-| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [Terminology](13_00_terminology.md)                     | Learn the language of Kawa: clear definitions of key terms and how they relate across the product. |
-| [Data Integration](01_00_data_integration.html)         | Connect to internal or external systems to feed data in KAWA                                       |
-| [Data Modeling](02_00_modeling.html)                    | Create your sheets to share powerful data models with your teams                                   |
-| [Computation](03_00_computations/)                      | Apply formulas, lookups, and mappings to transform and enrich your data with ease                  |
-| [Visualization](04_00_visualization.html)               | Create charts, grids and pivot tables to explore your data in a few clicks                         |
-| [Reporting and Publishing](05_00_publishing.html)       | Your data models are ready? Let's publish them with Dashboards or even Data applications           |
-| [AI Integration](06_00_ai_integration.html)             | Chat with your data in natural language and create a team of agents to help you with your tasks    |
-| [Workflows](07_00_workflows.html)                       | Design, run, and monitor your own workflows, powered by your data                                  |
-| [Administration and Sharing](08_00_administration.html) | Learn more about data security, sharing and permissions                                            |
-| [Python Integration](09_00_python_integration/)         | Run Python code to automate tasks, process data, or build custom logic into your workflows         |
-| [Architecture](10_00_architecture/)                     | Discover how Kawa manages storage, caching, and native connections behind the scenes               |
-| [Exploitation](11_00_exploitation/)                     | Back up your databases and create monitoring views to track user activity and script execution     |
-| [Release Notes](12_00_release_notes/)                   | Stay up to date with KAWA releases: new features and improvements                                  |
+| Section                                               | Description                                                                                        |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [Data Integration](01_00_data_integration.md)         | Connect to internal or external systems to feed data in KAWA                                       |
+| [Data Modeling](02_00_modeling.md)                    | Create your sheets to share powerful data models with your teams                                   |
+| [Computation](03_00_computations.md)                  | Apply formulas, lookups, and mappings to transform and enrich your data with ease                  |
+| [Visualization](04_00_visualization.md)               | Create charts, grids and pivot tables to explore your data in a few clicks                         |
+| [Reporting and Publishing](05_00_publishing.md)       | Your data models are ready? Let's publish them with Dashboards or even Data applications           |
+| [AI Integration](06_00_ai_integration.md)             | Chat with your data in natural language and create a team of agents to help you with your tasks    |
+| [Workflows](07_00_workflows.md)                       | Design, run, and monitor your own workflows, powered by your data                                  |
+| [Administration and Sharing](08_00_administration.md) | Learn more about data security, sharing and permissions                                            |
+| [Python Integration](09_00_python_integration.md)     | Run Python code to automate tasks, process data, or build custom logic into your workflows         |
+| [Architecture](10_00_architecture.md)                 | Discover how Kawa manages storage, caching, and native connections behind the scenes               |
+| [Exploitation](11_00_exploitation.md)                 | Back up your databases and create monitoring views to track user activity and script execution     |
+| [Release Notes](12_00_release_notes.md)               | Stay up to date with KAWA releases: new features and improvements                                  |
+| [Terminology](13_00_terminology.md)                   | Learn the language of Kawa: clear definitions of key terms and how they relate across the product. |
 
 ***
 
 ## Useful Links
 
-* [Python SDK](https://github.com/kawa-analytics/kywy-documentation){: target="\_blank" }
+* [Python SDK](https://github.com/kawa-analytics/kywy-documentation)
 
 _Get Python running on Kawa in minutes—no hassle._
 
-* [Install the KAWA Platform](https://github.com/kawa-analytics/kawa-docker-install){: target="\_blank" }
+* [Install the KAWA Platform](https://github.com/kawa-analytics/kawa-docker-install)
 
 _A step-by-step guide to installation and setup._
 
-* [KAWA official website](https://www.kawa.ai){: target="\_blank" }
+* [KAWA official website](https://www.kawa.ai)
 
 _Explore all features on the official site._
 
 ***
 
-<div align="center"><img src=".gitbook/assets/logo.png" alt="Kawa Logo" width="120"></div>
+<div align="center"><img src=".gitbook/assets/logo.png" alt="" width="120"></div>

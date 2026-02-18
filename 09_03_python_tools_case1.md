@@ -1,11 +1,10 @@
 ---
-layout: default
-title:  Scenario 1 - Data transformation
+title: Scenario 1 - Data transformation
 parent: Python Integration
 nav_order: 32
 ---
 
-# Creating a data transformation with Python
+# Python tools — case 1
 
 This scenario will demonstrate how to create a datasource from a python script, scheduled to run automatically.
 
@@ -13,26 +12,20 @@ This new datasource will be derived from an existing sheet.
 
 This setup assumes that you are creating python tools directly in KAWA (Without any connection to a Version control system).
 
-* TOC
-{:toc}
-
-
 ## 1. Preparing a sheet
 
 Please create a sheet that has the following columns:
 
-- `date` (a date column)
-- `price` (a numeric column, can be integer or decimal)
-- `quantity` (a numeric column, can be integer or decimal)
-- `key` (a text column)
+* `date` (a date column)
+* `price` (a numeric column, can be integer or decimal)
+* `quantity` (a numeric column, can be integer or decimal)
+* `key` (a text column)
 
 (If you have different names, you can adjust your script to match what you have)
 
-
 ## 2. Creating a new python tool
 
-Here is an example script that you use to derive data from the prepared sheet:
-(please refer to [Computation From Python notebook]
+Here is an example script that you use to derive data from the prepared sheet: (please refer to \[Computation From Python notebook]
 
 ```python
 import logging
@@ -102,45 +95,36 @@ def sync_data(kawa, source_sheet_id, data_preview=False, append=False):
     return df
 ```
 
-> (https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/02_compute_notebook.ipynb) to learn all the 
-transformations you can apply to your data.
+> (https://github.com/kawa-analytics/kywy-documentation/blob/main/notebooks/data-operations/02\_compute\_notebook.ipynb) to learn all the transformations you can apply to your data.
 
-
-> 📚 Please note that we inject to the function two boolean parameters: `data_preview` and `append`. Those will 
-be `True` when (respectively) we are previewing the data to configure the data source or when the load is incremental.
-Use them wisely in your script! in our case, it is read to change the range of the main date filter.
+> 📚 Please note that we inject to the function two boolean parameters: `data_preview` and `append`. Those will be `True` when (respectively) we are previewing the data to configure the data source or when the load is incremental. Use them wisely in your script! in our case, it is read to change the range of the main date filter.
 
 In order to save your script in KAWA, go to the script section and paste the script in a new tool.
 
-![Python](./readme-assets/python_2.png)
-
+<div data-with-frame="true"><img src=".gitbook/assets/python_2.png" alt=""></div>
 
 ## 3. Create your data source
 
-Go to the datasource section, Click on [+] or [+ DataSource] and select: `Load with Python`.
+Go to the datasource section, Click on \[+] or \[+ DataSource] and select: `Load with Python`.
 
 Then, select your newly created script:
 
-![Python](./readme-assets/python_1.png)
-
+<div data-with-frame="true"><img src=".gitbook/assets/python_1.png" alt=""></div>
 
 > 🚨 Make sure to select the correct sheet ID and set the FEED TYPE to Incremental.
 
-
 Click on `Preview Data` and then: `Next`.
 
-![Python](./readme-assets/python_3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/python_3.png" alt=""></div>
 
 > 🚨 In our example, the primary key is called: `key`. Make sure to select your primary keys consistently with the unicity criteria of your dataset. Each execution of the ETL in incremental mode will insert rows with new primary keys and replace rows with existing ones.
-
 
 ## 4. Configure scheduling
 
 Make sure to configure scheduling in your datasource:
 
-![Python](./readme-assets/python_4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/python_4.png" alt=""></div>
 
-You can also declare the parent datasource as _upstream_.
-In that way, each time the parent datasource is refreshed, the child one will be too.
+You can also declare the parent datasource as _upstream_. In that way, each time the parent datasource is refreshed, the child one will be too.
 
-![Python](./readme-assets/python_5.png)
+<div data-with-frame="true"><img src=".gitbook/assets/python_5.png" alt=""></div>
