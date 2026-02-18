@@ -6,7 +6,7 @@ nav_order: 27
 
 # Permissions
 
-## Sharing and permissions   &#x20;
+## Sharing and permissions
 
 ### 1. User management and permissions
 

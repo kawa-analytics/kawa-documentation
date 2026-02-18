@@ -23,7 +23,7 @@ Formulas can be composed of:
 * Variables (From the control panel)
 * Constants
 
-Here is an example of a simple formula, in Visual mode and in Text mode.&#x20;
+Here is an example of a simple formula, in Visual mode and in Text mode.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/formula_1.png" alt=""><figcaption></figcaption></figure></div>
 
