@@ -5,7 +5,7 @@ nav_order: 10
 
 # Modeling
 
-In KAWA, sheets can be used in several ways. See definitions in [Terminology](../13_00_terminology.md) section.
+In KAWA, sheets can be used in several ways. See definitions in [Terminology](../13_00_terminology.md#sheet) section.
 
 The easiest way is to use them like an Excel Workbook, adding multiple views (Tabs) to explore and visualize your data: [The Visualization section](../04_00_visualization/).
 
@@ -45,7 +45,7 @@ A Sheet contains views that offer diverse perspectives on its data. You can read
 
 ### 1.4 Columns
 
-The columns of a sheet represent the individual fields or attributes that define the structure of its data. (See definitions in [Terminology](../13_00_terminology.md) section.) Each column corresponds to a specific type of information, such as:
+The columns of a sheet represent the individual fields or attributes that define the structure of its data. (See definitions in [Terminology](../13_00_terminology.md#column) section.) Each column corresponds to a specific type of information, such as:
 
 * **Dimensions** – descriptive fields like names, dates, or categories.
 * **Measures** – numeric values that can be aggregated, like sales or quantities.

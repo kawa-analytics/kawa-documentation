@@ -7,7 +7,7 @@
   * [Connect external system](01_00_data_integration/01_02_connect_external_system.md)
   * [Manual edit](01_00_data_integration/01_02_manual_edit.md)
   * [Create from scratch](01_00_data_integration/01_03_create_from_scratch.md)
-  * [Load with python](01_00_data_integration/01_04_load_with_python.md)
+  * [Load with Python](01_00_data_integration/01_04_load_with_python.md)
 * [Modeling](02_00_modeling/README.md)
   * [Control panel](02_00_modeling/02_01_control_panel.md)
 * [Computations](03_00_computations/README.md)

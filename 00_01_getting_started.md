@@ -5,11 +5,12 @@ nav_order: 2
 
 # Getting started
 
-KAWA contains 4 main sections:
+KAWA contains 5 main sections:
 
-* Connect your data in the Data Source section
-* Build your models and explore in the Sheet section
-* Publish in the Dashboard and Applications sections
+* Connect your data in the **Data Source** section
+* Build your models and explore in the **Sheet** section
+* Automate actions and processes in the **Workflows** section
+* Publish in the **Dashboard** and **Applications** sections
 
 ## 1. Create your first Data Source
 

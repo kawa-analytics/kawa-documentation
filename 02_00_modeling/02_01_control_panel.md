@@ -6,7 +6,7 @@ nav_order: 11
 
 # Control panel
 
-The Controls Panel allows users to dynamically customize and interact with data views within the Sheets workspace. It is designed to provide flexibility, improve data exploration, and support user-driven input directly from the interface. See definitions in [Terminology](../13_00_terminology.md) section.
+The Controls Panel allows users to dynamically customize and interact with data views within the Sheets workspace. It is designed to provide flexibility, improve data exploration, and support user-driven input directly from the interface. See definitions in [Terminology](../13_00_terminology.md#control-panel) section.
 
 A control is an interactive interface element that is linked to the data on the sheet and allows the user to dynamically filter, configure, or enter values directly in the interface for the immediate updating and viewing of the corresponding data.
 
