@@ -13,7 +13,7 @@ nav_order: 44
 
 **How it relates to data modelling and standard terminology:** Not a data object; an application component that augments analysis and automation; comparable to BI assistants or workflow bots that sit outside the relational model but can read model metadata and execute queries/commands.
 
-**Used in:** [AI Integration](06_00_ai_integration/) section.
+**Used in:** [AI Integration](06_00_ai_integration.md) section.
 
 ***
 
@@ -36,9 +36,9 @@ nav_order: 44
 
 **Example**
 
-![Terminology](.gitbook/assets/terminology1.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology1.png" alt=""></div>
 
-![Terminology](.gitbook/assets/terminology2.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology2.png" alt=""></div>
 
 **Used in:** [Data Modeling](02_00_modeling/) section.
 
@@ -50,9 +50,9 @@ nav_order: 44
 
 **Example**
 
-![Terminology](.gitbook/assets/terminology3.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology3.png" alt=""></div>
 
-**Used in:** [Control Panel](02_01_control_panel/) section.
+**Used in:** [Control Panel](02_00_modeling/02_01_control_panel.md) section.
 
 ***
 
@@ -70,9 +70,9 @@ nav_order: 44
 
 **Example**
 
-![Terminology](.gitbook/assets/terminology4.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology4.png" alt=""></div>
 
-![Terminology](.gitbook/assets/terminology5.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology5.png" alt=""></div>
 
 **Used in:** [Data Integration](01_00_data_integration/) section.
 
@@ -88,9 +88,9 @@ nav_order: 44
 
 **Example**
 
-![Terminology](.gitbook/assets/terminology6.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology6.png" alt=""></div>
 
-**Used in:** [Grid views](04_01_grid_views/) section.
+**Used in:** [Grid views](04_00_visualization/04_01_grid_views.md) section.
 
 ### Filter
 
@@ -100,9 +100,9 @@ nav_order: 44
 
 **Example**
 
-![Terminology](.gitbook/assets/terminology7.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology7.png" alt=""></div>
 
-**Used in:** [Filtering data](04_04_filtering/) section.
+**Used in:** [Filtering data](04_00_visualization/04_04_filtering.md) section.
 
 ***
 
@@ -145,7 +145,7 @@ _**See:** Data Source — Example_
 
 **How it relates to data modelling and standard terminology:** In standard terms, a Python Tool is a regular Python function with the @kawa\_tool decorator, which declares inputs and outputs for use in the GUI and runs in managed Python runtimes at the Workspace level. In other words, a Python Tool belongs to the execution/extension layer of the platform, not to data modelling.
 
-**Used in:** [Python Tools](09_02_python_tools/) section.
+**Used in:** [Python Tools](09_00_python_integration/09_02_python_tools.md) section.
 
 ***
 
@@ -162,9 +162,9 @@ _**See:** Data Source — Example_
 
 **Example**
 
-![Terminology](.gitbook/assets/terminology8.png)
+<div data-with-frame="true"><img src=".gitbook/assets/terminology8.png" alt=""></div>
 
-**Used in:** [Reports](05_01_reports/) section.
+**Used in:** [Reports](05_00_publishing/05_01_reports.md) section.
 
 ***
 
@@ -200,7 +200,7 @@ _**See:** Column — Example_
 * According to standard access control practices, these are user groups in an RBAC (role-based access control) model.
 * This is not directly part of data modeling. Teams use already modeled objects for sharing and security purposes.
 
-**Used in:** [Sharing and permissions](08_01_permissions/) section.
+**Used in:** [Sharing and permissions](08_00_administration/08_01_permissions.md) section.
 
 ***
 
@@ -236,7 +236,7 @@ _**See also:** Field — Example_
 * In standard terms, this is the workspace scope: the level of governance and access control (roles, policies, RLS/CLS, sharing rules, resources, and collaboration boundaries).
 * It does not perform data modeling; instead, it defines the security, visibility, and collaboration framework for all platform objects.
 
-**Used in:** [Sharing and permissions](08_01_permissions/) section.
+**Used in:** [Sharing and permissions](08_00_administration/08_01_permissions.md) section.
 
 ### Workflow
 

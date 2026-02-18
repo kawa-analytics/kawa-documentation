@@ -8,13 +8,11 @@ nav_order: 35
 
 This section illustrates how KAWA can leverage Snowflake as its data warehouse.
 
-* TOC {:toc}
-
 ## 1. Overview
 
 KAWA integrates natively with Snowflake as a primary data warehouse, enabling seamless connectivity to your centralized enterprise datasets. By leveraging Snowflake’s scalable compute and elastic storage architecture, KAWA empowers users to explore, transform, and visualize data through its intuitive analytics interface—while maintaining full SQL compatibility and direct access to live Snowflake tables. This integration unlocks powerful capabilities such as Python-based ETL, dynamic schema augmentation, and real-time insights, all orchestrated within the Snowflake ecosystem. With KAWA, organizations can unify interactive analytics and advanced data workflows on Snowflake, combining performance, governance, and usability in one streamlined platform.
 
-![Snowflake](<../.gitbook/assets/snowflake1 (1).png>)
+<div data-with-frame="true"><img src="../.gitbook/assets/snowflake1 (1).png" alt=""></div>
 
 ## 2. Configuration guide
 
@@ -175,6 +173,6 @@ KAWA_SNOWFLAKE_WRITER_PATH_TO_PRIVATE_KEY="/path/to/private/key/for/writeback/us
 
 _In the snowflake GUI, you can easily retrieve your account identifier_.
 
-![Snowflake](<../.gitbook/assets/snowflake2 (1).png>)
+<div data-with-frame="true"><img src="../.gitbook/assets/snowflake2 (1).png" alt=""></div>
 
-![Snowflake](<../.gitbook/assets/snowflake3 (1).png>)
+<div data-with-frame="true"><img src="../.gitbook/assets/snowflake3 (1).png" alt=""></div>

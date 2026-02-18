@@ -4,17 +4,15 @@ parent: Architecture
 nav_order: 36
 ---
 
-# Query cache
+# KAWA Query Cache
 
 This section explains how to work with KAWA query cache.
-
-* TOC {:toc}
 
 ## 1. Default query cache
 
 KAWA uses a query cache on all datasources that are managed by KAWA. This does not require any particular configuration.
 
-![Query Cache](../.gitbook/assets/qc1.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/qc1.png" alt=""></div>
 
 However, for data sources using the Live Connection option, no query cache is provided by default. This is because KAWA does not know when the data has changed and cannot invalidate the cache when needed.
 
@@ -24,7 +22,7 @@ However, for data sources using the Live Connection option, no query cache is pr
 
 For live connections, you can decide to enable a query cache from the datasource section.
 
-![Query Cache](../.gitbook/assets/qc2.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/qc2.png" alt=""></div>
 
 Here are the settings of the query cache:
 
@@ -38,7 +36,7 @@ Here are the settings of the query cache:
 
 Anyone with access (in readonly or read write) to the datasource, can decide to manually invalidate the cache for this datasource.
 
-![Query Cache](../.gitbook/assets/qc3.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/qc3.png" alt=""></div>
 
 ### 3.2 Eviction based on TTL (time to live)
 
@@ -68,6 +66,6 @@ This command outputs the ids of the datasources that were invalidated. Please co
 
 You can check here for the correct definition of tables:
 
-![Query Cache](../.gitbook/assets/qc4.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/qc4.png" alt=""></div>
 
 > In clickhouse, the schema should be left empty.

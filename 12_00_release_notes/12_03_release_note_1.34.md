@@ -6,13 +6,11 @@ nav_order: 43
 
 # Release note 1.34
 
-* TOC {:toc}
-
 ## 1. New Features
 
 ### 1.1 Workflows — more triggers, actions, and control flow
 
-**Workflows** (introduced in [Release note - KAWA 1.33](../12_02_release_note_1.33)) are KAWA’s automation builder: define a trigger (WHEN), chain actions (THEN), pass outputs between steps, and monitor every run in Run history. In 1.34, **Workflows** expand with an On data refresh trigger, more built-in actions (Enrich data with AI, Reports, Build a chart, Export to data source, Generate output, User task), and control-flow blocks (If/Else, Routing, Interrupt workflow) for real-world orchestration.
+**Workflows** (introduced in [Release note - KAWA 1.33](12_02_release_note_1.33.md)) are KAWA’s automation builder: define a trigger (WHEN), chain actions (THEN), pass outputs between steps, and monitor every run in Run history. In 1.34, **Workflows** expand with an On data refresh trigger, more built-in actions (Enrich data with AI, Reports, Build a chart, Export to data source, Generate output, User task), and control-flow blocks (If/Else, Routing, Interrupt workflow) for real-world orchestration.
 
 > You can read more about this in the [The Workflows section](../07_00_workflows/).
 
@@ -20,7 +18,7 @@ Workflows now support richer automation from end to end:
 
 * **New trigger: On data refresh** — run a Workflow automatically right after a selected data source refreshes (supports multiple sources with **OR** logic).
 
-![Release](../.gitbook/assets/release\(1.34\)_workflows1.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_workflows1.png" alt=""></div>
 
 * **New actions** to build pipelines without leaving the editor
   * **Enrich data with AI** (generate output columns per row)
@@ -30,7 +28,7 @@ Workflows now support richer automation from end to end:
   * **Generate output** (produce a text result using variables from prior steps)
   * **User task** (assign a task to a user and collect form inputs before the Workflow continues)
 
-![Release](../.gitbook/assets/release\(1.34\)_workflows2.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_workflows2.png" alt=""></div>
 
 * **New logic blocks** for advanced orchestration
   * **If / Else** with multiple rules (**AND** logic), comparing values from prior steps (grid, aggregates, properties)
@@ -42,16 +40,16 @@ Workflows now support richer automation from end to end:
 
 Now user can create a **Multi-sheet** (a combined sheet) that consists of several child sheets. A Multi-sheet supports working with multiple primary data sources in one object.
 
-![Release](../.gitbook/assets/release\(1.34\)_multisheets1.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_multisheets1.png" alt=""></div>
 
 * Multi-sheet supports **Pivot Table** and **Chart** as the main modes (Grid Flat is disabled), so user can build visualizations using columns from different child sheets.
 
-![Release](../.gitbook/assets/release\(1.34\)_multisheets2.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_multisheets2.png" alt=""></div>
 
 * **Filters** show all Multi-sheet columns (from all child sheets).
 * A **2-level hierarchy** was added to the column picker: **Data sources** → **Columns**, so sources don’t get mixed into one list and the setup is easier to understand.
 
-![Release](../.gitbook/assets/release\(1.34\)_multisheets3.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_multisheets3.png" alt=""></div>
 
 * For Multi-sheet, the “Join a new data source” option was removed.
 * For Multi-sheet, AI Chat and Automations are disabled; the Model is still available, but read-only.
@@ -61,13 +59,13 @@ Now user can create a **Multi-sheet** (a combined sheet) that consists of severa
 
 Long-running computations can now be interrupted directly from the loading state using a **Cancel** action. A new backend command, InterruptComputation, stops the current computation and returns a **CANCELLED** status (with metadata and empty records).
 
-![Release](../.gitbook/assets/release\(1.34\)_cancel.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_cancel.png" alt=""></div>
 
 ## 1.4 Reports — Read-only (View) mode
 
 Reports now have a clearer **View** (read-only) mode designed for presenting and consuming content:
 
-![Release](../.gitbook/assets/release\(1.34\)_reports_view.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_reports_view.png" alt=""></div>
 
 * A dedicated **View** mode toggle is available.
 * When a user has **read-only** access, Reports open in View mode by default.

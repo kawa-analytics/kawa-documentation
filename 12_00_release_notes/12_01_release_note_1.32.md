@@ -6,21 +6,21 @@ nav_order: 41
 
 # Release note 1.32
 
-* TOC {:toc}
-
 ## 1. New Features
 
 ### 1.1 Cross Filters — on dashboards, filter multiple widgets at once with a single selection
 
 * Set it up in the **Config panel**.
 
-![Release](../.gitbook/assets/release\(1.32\)1.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)1.png" alt=""></div>
 
 * Active filters show as chips at the top.
 
-![Release](../.gitbook/assets/release\(1.32\)2.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)2.png" alt=""></div>
 
-* Each widget has a filter status icon that lists active filters (cross + dashboard + control panel) and displays whether they are enabled/disabled for this widget. ![Release](../.gitbook/assets/release\(1.32\)4.png)
+* Each widget has a filter status icon that lists active filters (cross + dashboard + control panel) and displays whether they are enabled/disabled for this widget.&#x20;
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.32)4.png" alt=""><figcaption></figcaption></figure></div>
 
 Benefits: fewer duplicate filters, faster analysis, shared context across widgets.
 
@@ -28,7 +28,7 @@ Benefits: fewer duplicate filters, faster analysis, shared context across widget
 
 All type of widgets ( charts , pivot and grid) will have an new icon full screen in dashboard and application.
 
-![Release](../.gitbook/assets/release\(1.32\)5.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)5.png" alt=""></div>
 
 ### 1.3 The query cache on external DataSources
 
@@ -38,23 +38,23 @@ Query cache configuration (per data source). Turn caching on/off, set TTL in sec
 
 Add a file-upload field to a script by setting 'fileExtensions'. Users can upload only the allowed formats, and Apply stays disabled until all required files are uploaded.
 
-![Release](../.gitbook/assets/release\(1.32\)6.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)6.png" alt=""></div>
 
 ### 1.5 Run Python tool for scripts without inputs/outputs
 
 Triggers a script with no inputs/outputs (scriptType: "RUNNABLE"). Pick the script in the control settings (FE stores the scriptId; no Python private join/mapping needed). On click the script runs and the view auto-refreshes when it’s done.
 
-![Release](../.gitbook/assets/release\(1.32\)7.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)7.png" alt=""></div>
 
 ### 1.6 Create input table
 
 Create an editable data source in two ways:
 
-![Release](../.gitbook/assets/release\(1.32\)8.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)8.png" alt=""></div>
 
 Start from scratch — same flow as before, with a richer creation modal for custom columns.
 
-![Release](../.gitbook/assets/release\(1.32\)9.png)
+<div data-with-frame="true"><img src="../.gitbook/assets/release(1.32)9.png" alt=""></div>
 
 Quick upload — upload a CSV and start editing right away (uses the existing CSV upload component).
 
