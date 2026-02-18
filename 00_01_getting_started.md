@@ -60,7 +60,7 @@ A good starting point is Grouping. Click on the **(Group)** button (on the top r
 
 <div data-with-frame="true"><img src=".gitbook/assets/start4.png" alt=""></div>
 
-Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](04_01_grid_views.md). There is a special section about [Filtering](04_04_filtering.md).
+Feel free to explore: Sorting, Hide field, Filtering. All the options of the grid view are documented in details in the [Grid View section](04_00_visualization/04_01_grid_views.md). There is a special section about [Filtering](04_00_visualization/04_04_filtering.md).
 
 ### 2.2 Create a new simple formula
 
@@ -94,7 +94,7 @@ In order to explore your data in a more visual way, let's now create a chart. In
 
 <div data-with-frame="true"><img src=".gitbook/assets/start7.png" alt=""></div>
 
-Please refer to the complete [Chart Documentation](04_02_chart_views.md) to learn how to customize your charts.
+Please refer to the complete [Chart Documentation](04_00_visualization/04_02_chart_views.md) to learn how to customize your charts.
 
 ### 2.4 Create a Pivot Table
 
@@ -110,7 +110,7 @@ Pivot tables in KAWA work like in any spreadsheet software, except that they can
 
 <div data-with-frame="true"><img src=".gitbook/assets/start8.png" alt=""></div>
 
-To know what is possible with the pivot tables, go to the [Pivot Documentation](04_03_pivot_table_views.md).
+To know what is possible with the pivot tables, go to the [Pivot Documentation](04_00_visualization/04_03_pivot_table_views.md).
 
 ## 3. Put it together in a Dashboard
 
@@ -126,12 +126,12 @@ Widgets can then be arranged in the layout of your choice. Dashboard are a power
 
 Those three paragraphs: **Data Source**, **Sheet** and **Dashboard** are giving a good overview of the central structure of the KAWA platform. It is the base on which you can start building and sharing your data applications.
 
-| Objective                                                    | Link                                              |
-| ------------------------------------------------------------ | ------------------------------------------------- |
-| Connect your Python libraries to KAWA                        | [Python integration](09_00_python_integration.md) |
-| Build and share data applications                            | [Publishing](05_00_publishing.md)                 |
-| Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](09_01_python_sdk.md)                 |
-| Automate your workflows                                      | [Workflows](07_00_workflows.md)                   |
-| Use AI to chat with your data                                | [AI Integration](06_00_ai_integration.md)         |
-| Build and share data models                                  | [Data Modeling](02_00_modeling.md)                |
-| Build impactful visualizations                               | [Visualizations](04_00_visualization.md)          |
+| Objective                                                    | Link                                                       |
+| ------------------------------------------------------------ | ---------------------------------------------------------- |
+| Connect your Python libraries to KAWA                        | [Python integration](09_00_python_integration/)            |
+| Build and share data applications                            | [Publishing](05_00_publishing/)                            |
+| Connect KAWA to your Jupyter notebook to load and query data | [Python SDK](09_00_python_integration/09_01_python_sdk.md) |
+| Automate your workflows                                      | [Workflows](07_00_workflows/)                              |
+| Use AI to chat with your data                                | [AI Integration](06_00_ai_integration.md)                  |
+| Build and share data models                                  | [Data Modeling](02_00_modeling/)                           |
+| Build impactful visualizations                               | [Visualizations](04_00_visualization/)                     |
