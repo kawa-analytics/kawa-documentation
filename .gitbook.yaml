@@ -39,11 +39,11 @@ redirects:
   09_03_python_tools_case1.html: 09_03_python_tools_case1.md
   10_00_architecture.html: 10_00_architecture.md
   10_01_lakehouse.html: 10_01_lakehouse.md
-  10_02_snowflake_native_connector.html: 10_02_snowflake_native_connector.md
+  10_02_snowflake_native_connection.html: 10_02_snowflake_native_connector.md
   10_03_query_cache.html: 10_03_query_cache.md
   11_00_exploitation.html: 11_00_exploitation.md
   11_01_backup_restore.html: 11_01_backup_restore.md
-  11_02_create_monitoring_data.html: 11_02_create_monitoring_data.md
+  11_02_create_monitoring_datasources.html: 11_02_create_monitoring_data.md
   11_03_oauth2_configuration.html: 11_03_oauth2_configuration.md
   12_00_release_notes.html: 12_00_release_notes.md
   12_01_release_note_1.32.html: 12_01_release_note_1.32.md
