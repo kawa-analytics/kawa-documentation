@@ -122,6 +122,33 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 ### Patch 1.34.4
 
-* Add environment variable `KAWA_EMAIL_IS_ENABLED` to control email related features. It is FALSE by default.
-* Improve Workflow engine stability when jobs get stuck
-* Improve stability of drag and drop columns on the Grid
+* Added environment variable `KAWA_EMAIL_IS_ENABLED` to control email related features. It is FALSE by default
+* Improved Workflow engine stability when jobs get stuck
+* Improved stability of drag and drop columns on the Grid
+
+### Patch 1.34.5
+
+* Added “Send email” toggle to User Input Task configuration — defaults to ON when emails are enabled and is hidden when emails are disabled
+* Added an Abort action in Run history → Run details to interrupt running workflow executions, updating the run status to Interrupted
+* Show who triggered a workflow run (“Triggered by”) in the Workflow run history dialog
+* Speeded up the linked column sheet/view selector by loading a lightweight (shallow) sheets list instead of full sheet data, while preserving server-side suggestions and default view selection
+* Added a KYWY endpoint to list workspace teams and their members (team contents) for a given workspace
+* Added a KYWY reporting endpoint to retrieve who viewed what (which user opened which views/dashboards, and when)
+* Improved Lookup columns UX by displaying the source sheet name in the Model panel, and Lookup column field information
+* Added a new “X” button in dashboards to clear all active cross filters at once (shown when 2+ cross filters are applied, including in the overflow menu), and fixed the “N more…” dropdown to display the correct overflow items
+* Added a new “Last run date” column on the Workflows homepage list to show when each workflow was last executed
+* Added a new “User tasks” (TODOs) section in Workflows, with a badge showing the number of pending tasks and a searchable task list that lets users open and complete task validation forms
+* Added the ability to duplicate conditional formatting rules (both Single and Scale) via a new clone action, which creates a copy and opens it in the rule editor for quick adjustments
+* Added a new “Trigger type” column to the Workflows list grid, displaying whether each workflow is Manual, Scheduled, or On refresh (with corresponding icons)
+* Improved Workflow task naming in the editor: Transform data tasks now show clearer dynamic titles (e.g., “Load data from sheet/task”), and Python tasks display the selected script’s name instead of the generic “Run python script”
+* Added a “Download widget” action for dashboard Sheet widgets (grid/pivot/chart) to export the widget’s current data as CSV — available in view mode via the widget header button and in edit mode via the widget actions dropdown
+* Improved Sheets list loading by lazy-loading `defaultLayoutId` (no longer fetched upfront for every sheet), while keeping sheet opening/navigation, view CRUD, and sharing behavior unchanged
+* Improved performance of sheet selector dropdowns by switching several dialogs to a lightweight “shallow sheets” list (full sheet details load only after selection), speeding up lookup/link/widget configuration flows—especially in workspaces with many sheets
+* Improved the “Link columns” flow by auto-selecting the target column when a matching column display name is found in the targets list (users can still change the selection)
+* Updated Workflow execution to stop using ApiKey and instead run actions as the initiator (PrincipalId) for more accurate permissions and auditing
+* Updated Workflow permissions so users can run a workflow shared in read-only, as long as they have the workspace “Run Workflows” permission (previously it required the workflow to be shared with Edit access)
+* Fixed ETL file authorization so users with Edit access can update datasource files (e.g., replace a CSV) and successfully run the ETL, resolving previous permission-related failures
+* Added Entity Audit (Audit Log) support across entity pages, providing a change history modal with date/user/entity filters, an “only master” toggle, and version comparison for audited entities (e.g., sheets, data sources, reports, workflows, scripts)
+* Fixed missing user timezone on first login by resolving it from the browser during workspace initialization and performing a one-time sync to persist it on the backend (without blocking workspace load)
+* Enhanced Indicator charts to support text outputs
+
