@@ -17,11 +17,7 @@ For programmatic access, **API key authentication is recommended**.
 
 Most endpoints require these headers:
 
-| Header                           | Required | When                       | Description         |
-| -------------------------------- | -------: | -------------------------- | ------------------- |
-| `x-kawa-api-key`                 |      Yes | Always                     | Your API key        |
-| `x-kawa-workspace-id`            |      Yes | Workspace-scoped endpoints | Target workspace ID |
-| `Content-Type: application/json` |      Yes | `POST` requests            | JSON request body   |
+{% include ".gitbook/includes/untitled.md" %}
 
 Workspace-scoped endpoints typically include:
 
@@ -34,8 +30,6 @@ Authentication and health endpoints typically do not require a workspace header:
 * `GET /health`
 
 ### 1.2 Log in with email/password
-
-#### 1.2 Log in with email/password
 
 `POST /authentication/login`
 
@@ -233,6 +227,10 @@ curl -X POST https://your-instance.kawa.ai/commands/secured/run \
 
 ## 4. Workspaces
 
+Most operations are scoped to a workspace. Include `x-kawa-workspace-id` for workspace-scoped endpoints.\
+Some endpoints are global (for example `GET /backoffice/workspaces`) and work without this header.\
+If you provide `x-kawa-workspace-id`, make sure your API key has access to that workspace — otherwise the server may return `403 Forbidden`.
+
 ### 4.1 List workspaces
 
 `GET /backoffice/workspaces`
@@ -240,6 +238,15 @@ curl -X POST https://your-instance.kawa.ai/commands/secured/run \
 ```bash
 curl https://your-instance.kawa.ai/backoffice/workspaces \
   -H "x-kawa-api-key: kawa_abc123xyz"
+```
+
+> Note: This endpoint can be called without `x-kawa-workspace-id`. If you include `x-kawa-workspace-id`, use a workspace you have access to; otherwise you may receive `403 Forbidden`.
+
+```bash
+# Optional: scope the call to an accessible workspace
+curl https://<your-kawa-instance>/backoffice/workspaces \
+  -H "x-kawa-api-key: <your-api-key>" \
+  -H "x-kawa-workspace-id: <accessible-workspace-id>"
 ```
 
 ### 4.2 Get workspace by ID
@@ -623,13 +630,14 @@ curl "https://your-instance.kawa.ai/backoffice/workspaces?name=Finance%20Team" \
 
 ## 10. Error responses
 
-| Status | Meaning                             |
-| ------ | ----------------------------------- |
-| `200`  | Success                             |
-| `202`  | Accepted (async operation started)  |
-| `409`  | Conflict — entity already exists    |
-| `4xx`  | Client error — body contains reason |
-| `5xx`  | Server error                        |
+| Status | Meaning                                                                                   |
+| ------ | ----------------------------------------------------------------------------------------- |
+| `200`  | Success                                                                                   |
+| `202`  | Accepted (async operation started)                                                        |
+| `403`  | Forbidden — API key does not have access to the workspace specified `x-kawa-workspace-id` |
+| `409`  | Conflict — entity already exists                                                          |
+| `4xx`  | Client error — body contains reason                                                       |
+| `5xx`  | Server error                                                                              |
 
 Error body format:
 
