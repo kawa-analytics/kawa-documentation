@@ -32,6 +32,7 @@
   * [Python SDK](09_00_python_integration/09_01_python_sdk.md)
   * [Python tools](09_00_python_integration/09_02_python_tools.md)
   * [Python tools — case 1](09_00_python_integration/09_03_python_tools_case1.md)
+* [HTTP API Reference](http-api-reference.md)
 * [Architecture](10_00_architecture/README.md)
   * [Data Lakehouse integration](10_00_architecture/10_01_lakehouse.md)
   * [Snowflake native connection](10_00_architecture/10_02_snowflake_native_connection.md)
