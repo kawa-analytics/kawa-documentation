@@ -15,28 +15,48 @@ For programmatic access, **API key authentication is recommended**.
 
 ### 1.1 Required headers
 
-```
-x-kawa-api-key: <your-api-key>
-x-kawa-workspace-id: <workspace-id>
-Content-Type: application/json
-```
+Most endpoints require these headers:
 
-> `x-kawa-workspace-id` is required for all endpoints that operate within a workspace context.
+| Header                           | Required | When                       | Description         |
+| -------------------------------- | -------: | -------------------------- | ------------------- |
+| `x-kawa-api-key`                 |      Yes | Always                     | Your API key        |
+| `x-kawa-workspace-id`            |      Yes | Workspace-scoped endpoints | Target workspace ID |
+| `Content-Type: application/json` |      Yes | `POST` requests            | JSON request body   |
+
+Workspace-scoped endpoints typically include:
+
+* `GET /backoffice/*`
+* `POST /commands/secured/run`
+
+Authentication and health endpoints typically do not require a workspace header:
+
+* `POST /authentication/login`
+* `GET /health`
 
 ### 1.2 Log in with email/password
 
+#### 1.2 Log in with email/password
+
 `POST /authentication/login`
 
+Use `-c` to store the returned `accessToken` cookie, then `-b` to reuse it in subsequent requests.
+
 ```bash
+# 1) Login and store cookies
 curl -X POST https://your-instance.kawa.ai/authentication/login \
   -H "Content-Type: application/json" \
+  -c cookies.txt \
   -d '{
     "credentialType": "LOGIN_AND_PASSWORD",
     "credentials": {
-      "email": "user@example.com",
+      "email": "john.doe@example.com",
       "password": "s3cr3t"
     }
   }'
+
+# 2) Reuse the accessToken cookie
+curl https://your-instance.kawa.ai/authentication/current-user \
+  -b cookies.txt
 ```
 
 Returns an `accessToken` cookie used in subsequent requests.
@@ -46,8 +66,13 @@ Returns an `accessToken` cookie used in subsequent requests.
 `GET /authentication/current-user`
 
 ```bash
+# API key auth
 curl https://your-instance.kawa.ai/authentication/current-user \
-  -H "x-kawa-api-key: kawa_abc123xyz"
+  -H "x-kawa-api-key: <your-api-key>" \
+  -H "x-kawa-workspace-id: <workspace-id>"
+
+# Or cookie auth (see 1.2)
+# curl https://your-instance.kawa.ai/authentication/current-user -b cookies.txt
 ```
 
 ## 2. Commands endpoint
@@ -63,7 +88,7 @@ Most write operations (create, update, delete) go through a single command bus:
 }
 ```
 
-> Returns `200 OK` with the created/updated entity, or `409 Conflict` if the entity already exists.
+> Returns `200 OK` for most operations. Some operations may return `202 Accepted` when an async process is started. Returns `409 Conflict` when an entity already exists (depending on the command).
 
 ## 3. Users
 
@@ -107,7 +132,7 @@ curl -X POST https://your-instance.kawa.ai/commands/secured/run \
   }'
 ```
 
-> If a user with this email already exists, the command is a no-op.
+> If a user with this email already exists, the server may return `409 Conflict` (behavior depends on command implementation).
 
 ### 3.4 Change user status
 
@@ -246,7 +271,7 @@ curl -X POST https://your-instance.kawa.ai/commands/secured/run \
   }'
 ```
 
-> Returns `409 Conflict` if a workspace with this name already exists.
+> May return `409 Conflict` if a workspace with this name already exists (behavior depends on command implementation).
 
 ### 4.4 Add users to workspace
 
@@ -590,8 +615,10 @@ GET /backoffice/{entity_kind}/{id}
 **Example — search by name:**
 
 ```bash
-curl "https://your-instance.kawa.ai/backoffice/workspaces?name=Q1+Analytics" \
-  -H "x-kawa-api-key: kawa_abc123xyz"
+# Search by name (server-side filter)
+curl "https://your-instance.kawa.ai/backoffice/workspaces?name=Finance%20Team" \
+  -H "x-kawa-api-key: <your-api-key>" \
+  -H "x-kawa-workspace-id: <workspace-id>"
 ```
 
 ## 10. Error responses
@@ -606,6 +633,11 @@ curl "https://your-instance.kawa.ai/backoffice/workspaces?name=Q1+Analytics" \
 
 Error body format:
 
+```bash
+# Inspect status code + response body
+curl -i "https://your-instance.kawa.ai/backoffice/principals/does-not-exist" \
+  -H "x-kawa-api-key: <your-api-key>" \
+  -H "x-kawa-workspace-id: <workspace-id>"
 ```
-"<human-readable reason string>"
-```
+
+> The error response body is returned by the server and may vary depending on the endpoint. Use curl with -i to inspect the HTTP status code and response body.
