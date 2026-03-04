@@ -2,6 +2,8 @@
 
 KAWA exposes a REST API that lets you manage users, workspaces, datasources, workflows, and more programmatically. All examples use `curl`.
 
+Base URL: `https://<your-kawa-instance>`
+
 ## 1. Authentication
 
 KAWA supports two authentication methods:
@@ -75,11 +77,31 @@ Most write operations (create, update, delete) go through a single command bus:
 
 `POST /commands/secured/run`
 
+Request body:
+
 ```json
 {
   "command": "<CommandName>",
-  "parameters": { ... }
+  "parameters": {}
 }
+```
+
+Example:
+
+```bash
+curl -X POST https://<your-kawa-instance>/commands/secured/run \
+  -H "Content-Type: application/json" \
+  -H "x-kawa-api-key: <your-api-key>" \
+  -H "x-kawa-workspace-id: <workspace-id>" \
+  -d '{
+    "command": "CreateWorkspace",
+    "parameters": {
+      "displayInformation": {
+        "displayName": "My Workspace",
+        "description": ""
+      }
+    }
+  }'
 ```
 
 > Returns `200 OK` for most operations. Some operations may return `202 Accepted` when an async process is started. Returns `409 Conflict` when an entity already exists (depending on the command).
@@ -302,6 +324,8 @@ curl -X POST https://your-instance.kawa.ai/commands/secured/run \
 ```
 
 To also set this as the users' active workspace:
+
+Сommand: `SetCurrentWorkspaceForPrincipals`
 
 ```bash
 curl -X POST https://your-instance.kawa.ai/commands/secured/run \
