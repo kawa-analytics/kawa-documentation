@@ -152,3 +152,11 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 * Fixed missing user timezone on first login by resolving it from the browser during workspace initialization and performing a one-time sync to persist it on the backend (without blocking workspace load)
 * Enhanced Indicator charts to support text outputs
 
+### Patch 1.34.6
+
+* Added “Transpose view” option in the grid context menu (Sheets & dashboard grid widgets) to switch between transposed and standard table layouts (swap rows/columns)
+* Fixed OutOfMemoryError (Java heap space) / 504 Gateway Timeout when loading Backoffice → Computation history
+* Improved Pivot view CSV export to use client-side export with flattened headers, so the exported values/rows/columns match what users see
+* Fixed dashboard full-screen widget mode so it preserves Cross Filters when opening/closing a widget in full screen (previously the cross-filter state was lost and data was reloaded from scratch)
+* Added clickable “Link” properties for Workflow URLs (e.g., View Link, Image Link, Report Link) rendered as \<a>
+* Added “Apply format” option in the Grid column menu, with “To other fields” and “From another field” actions to copy column formatting
