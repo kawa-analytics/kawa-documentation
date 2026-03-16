@@ -253,7 +253,7 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
     * **Dataset B** (right side)
 
     Each selector is tied to a workflow step that returns a table (for example **Transform data** or **Run python script**).
-*   Choose the Join Type
+*   Choose the **Join Type**
 
     Pick one of:
 
@@ -263,7 +263,7 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
     * **Full Outer** — keeps all rows from both datasets and matches where possible.
 
     The task icon in the workflow updates to reflect the selected join type.
-*   Define Join keys
+*   Define **Join keys**
 
     In **Join keys**, define one or more key pairs:
 
@@ -277,7 +277,7 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
     * Column choices are type-filtered as you pick keys, to help you select compatible columns.
     * If a previously selected column becomes unavailable (for example after changing an upstream step), it is shown as invalid/stale (highlighted) and must be fixed before saving.
     * Columns that are already used in another join key row are hidden from the join key dropdowns.
-*   Choose Output columns
+*   Choose **Output columns**
 
     In **Output columns**:
 
@@ -290,7 +290,7 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
     > Output column names must be unique in the resulting table. If both datasets contain columns with the same name, rename at least one of them in the Output columns panel.
 
     Columns already used as join keys are hidden from the output column pickers.
-*   Behavior
+*   **Behavior**
 
     At the bottom of the task, set the row guardrail:
 
