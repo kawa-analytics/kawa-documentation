@@ -71,7 +71,7 @@ Click **Add action** — the Actions panel opens; available categories:
 
 Below is how to set up each step type in practice.
 
-### 3.1 Transform data
+### 3.1 Load data
 
 * Choose a **Sheet** from the list.
 
@@ -117,34 +117,30 @@ Below is how to set up each step type in practice.
 
 ### 3.5 Enrich data with AI
 
-**How to set up**
+#### **3.5.1 How to set up**
 
-#### a. Input table
+* **Input table**
 
 Select a table from the previous step (for example, the result of Transform data). Without a selected table, the step won’t run.
 
-#### b. Prompt
+* **Prompt**
 
 Describe what you want to generate for each row. In the prompt, you can reference fields from the input table (use data from the previous step as shown in the UI).
 
-#### c. Outputs (what the model should generate)
-
-Define the output schema in one of these ways:
-
-* Generate from prompt — the system will try to create the outputs structure automatically from your prompt.
-* Specify manually — manually add the required output fields/columns (recommended if you need a stable format).
-
-#### d. Preview / Test
+* **Outputs** (what the model should generate). Define the output schema in one of these ways:
+  * Generate from prompt — the system will try to create the outputs structure automatically from your prompt.
+  * Specify manually — manually add the required output fields/columns (recommended if you need a stable format).
+* **Preview / Test**
 
 Check the result in Preview. Click Test to run generation and see how outputs are filled.
 
-#### e. Behavior
+* **Behavior**
 
 Set what should happen if no rows are found in the input table (for example, Interrupt workflow).
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_enrich_data_with_ai.png" alt=""></div>
 
-**Result**
+#### **3.7.2 Result**
 
 This step returns a table with extra AI columns (outputs). You can use it in the next actions (email, export, report, logic, etc.).
 
@@ -204,7 +200,7 @@ Typical use cases:
 * collecting missing parameters from a business user;
 * routing to a colleague for a decision before continuing automation.
 
-How to set up
+### 3.10.1 How to set up
 
 * Add action → **User task**.
 * Fill in:
@@ -226,7 +222,7 @@ How to set up
 
 > If you don’t add any inputs, the step is invalid (you’ll see an error like “At least one form input is required”).
 
-Run behavior
+### 3.10.2 Run behavior
 
 * When the workflow reaches **User task**, it creates a task and notifies the assignee (typically by email with a link to the form).
 * The assignee opens the form, fills the fields, and clicks **Submit**.
@@ -240,7 +236,71 @@ Use submitted values in later steps
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_user_task4.png" alt=""></div>
 
-### 3.11 Logic: If / Else
+### 3.11 Join datasets
+
+Use **Join datasets** to combine two tables produced by previous workflow steps into a single result table, using classic join types: **Inner**, **Left**, **Right**, and **Full Outer**.
+
+<figure><img src="../.gitbook/assets/workflows_join_datasets.png" alt=""><figcaption></figcaption></figure>
+
+#### 3.11.1 How to set up
+
+* In a Workflow, click **Add action** and select **Join datasets**.
+*   Select the two datasets
+
+    In **Join configuration**, choose:
+
+    * **Dataset A** (left side)
+    * **Dataset B** (right side)
+
+    Each selector is tied to a workflow step that returns a table (for example **Transform data** or **Run python script**).
+*   Choose the Join Type
+
+    Pick one of:
+
+    * **Inner Join** — keeps only rows that match in both datasets.
+    * **Left Join** — keeps all rows from Dataset A and matches from Dataset B.
+    * **Right Join** — keeps all rows from Dataset B and matches from Dataset A.
+    * **Full Outer** — keeps all rows from both datasets and matches where possible.
+
+    The task icon in the workflow updates to reflect the selected join type.
+*   Define Join keys
+
+    In **Join keys**, define one or more key pairs:
+
+    * Select a column from **Dataset A**
+    * Select a column from **Dataset B**
+    * Click **+ Add join key** to add additional key pairs
+    * Use the trash icon to remove a join key pair
+
+    Notes:
+
+    * Column choices are type-filtered as you pick keys, to help you select compatible columns.
+    * If a previously selected column becomes unavailable (for example after changing an upstream step), it is shown as invalid/stale (highlighted) and must be fixed before saving.
+    * Columns that are already used in another join key row are hidden from the join key dropdowns.
+*   Choose Output columns
+
+    In **Output columns**:
+
+    * **Key columns** are always included in the output and are shown separately. They are read-only as “included”, but support **rename** (so you can control the output column names).
+    * Add non-key columns from **Dataset A** and/or **Dataset B** using **+ Add column** in each dataset section.
+    * For each selected output column, you can **rename** it and **remove** it. If a column was renamed, the original name is shown as a grey sub-label.
+    * You can remove all selected output columns from one dataset using the trash icon in that dataset section header.
+    * The **All columns** option is a shortcut to include all columns; if needed, rename columns so the final output has unique column names.
+
+    > Output column names must be unique in the resulting table. If both datasets contain columns with the same name, rename at least one of them in the Output columns panel.
+
+    Columns already used as join keys are hidden from the output column pickers.
+*   Behavior
+
+    At the bottom of the task, set the row guardrail:
+
+    * **If no rows are found** → **Interrupt workflow** or **Continue without a result** (depending on your workflow logic).
+
+#### 3.11.2 Result
+
+The task outputs a **single joined table**, which can be used as input for later steps (email, AI prompt, export to data source, logic steps, etc.).
+
+### 3.12 Logic: If / Else
 
 **If / Else** is a logic step that splits a workflow into two branches:
 
@@ -249,7 +309,7 @@ Use submitted values in later steps
 
 The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
 
-#### 3.11.1 Add an If / Else step
+#### 3.12.1 Add an If / Else step
 
 * In the THEN section, click **+ Add action**.
 * In **KAWA Actions**, scroll to the **Logic** section.
@@ -262,7 +322,7 @@ A new block appears in the steps list with two tabs:
 
 Each tab has its own **+ Add action** button to build the branch.
 
-#### 3.11.2 Add path rules
+#### 3.12.2 Add path rules
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
@@ -301,7 +361,7 @@ This lets you compare:
 * All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
 * The total number of rules is shown in the step name (for example, “5. 3 rules”).
 
-#### 3.11.3 Actions in the IF and ELSE branches
+#### 3.12.3 Actions in the IF and ELSE branches
 
 After you set up the rules, define what each branch should do.
 
@@ -314,11 +374,11 @@ Execution logic:
 * If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
 * If **any rule is false**, the **ELSE** branch runs (if it has actions).
 
-### 3.12 Logic: Routing
+### 3.13 Logic: Routing
 
 **Routing** is a logic step that lets you split the processing of one table into multiple routes (R1, R2, R3 …). In each route, you set up your own data “slice” (view) and add a separate set of actions.
 
-#### 3.12.1 How to add Routing
+#### 3.13.1 How to add Routing
 
 Choose the table source for Routing:
 
@@ -329,7 +389,7 @@ Choose the table source for Routing:
 
 After that, a table preview for Routing will open on the right.
 
-#### 3.12.2 How routes work (R1 / R2 / R3)
+#### 3.13.2 How routes work (R1 / R2 / R3)
 
 Routes are shown as tabs: **R1**, **R2**, **R3**…
 
@@ -338,13 +398,13 @@ Routes are shown as tabs: **R1**, **R2**, **R3**…
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_routing2.png" alt=""></div>
 
-#### 3.12.3 Add actions inside a route
+#### 3.13.3 Add actions inside a route
 
 * Select the route you need (for example, R1).
 * In the route block, click Add action and add the steps you need (Send email, Export to data source, Report, etc.).
 * Repeat for R2, R3… if needed.
 
-#### 3.12.4 Result
+#### 3.13.4 Result
 
 Routing creates multiple independent branches where:
 
@@ -352,7 +412,7 @@ Routing creates multiple independent branches where:
 * each branch (route) can have its own data view/slice,
 * each branch runs its own set of actions.
 
-### 3.13 Logic: Interrupt workflow
+### 3.14 Logic: Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
