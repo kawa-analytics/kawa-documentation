@@ -200,7 +200,7 @@ Typical use cases:
 * collecting missing parameters from a business user;
 * routing to a colleague for a decision before continuing automation.
 
-### 3.10.1 How to set up
+#### 3.10.1 How to set up
 
 * Add action → **User task**.
 * Fill in:
@@ -222,7 +222,7 @@ Typical use cases:
 
 > If you don’t add any inputs, the step is invalid (you’ll see an error like “At least one form input is required”).
 
-### 3.10.2 Run behavior
+#### 3.10.2 Run behavior
 
 * When the workflow reaches **User task**, it creates a task and notifies the assignee (typically by email with a link to the form).
 * The assignee opens the form, fills the fields, and clicks **Submit**.
