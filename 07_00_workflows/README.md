@@ -285,11 +285,12 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
     * Add non-key columns from **Dataset A** and/or **Dataset B** using **+ Add column** in each dataset section.
     * For each selected output column, you can **rename** it and **remove** it. If a column was renamed, the original name is shown as a grey sub-label.
     * You can remove all selected output columns from one dataset using the trash icon in that dataset section header.
-    * The **All columns** option is a shortcut to include all columns; if needed, rename columns so the final output has unique column names.
+    * The **All columns** option is a shortcut to include all available columns from both datasets; **columns used as join keys are excluded from this list**. If needed, rename columns so the final output has unique column names.
 
-    > Output column names must be unique in the resulting table. If both datasets contain columns with the same name, rename at least one of them in the Output columns panel.
+    Notes:
 
-    Columns already used as join keys are hidden from the output column pickers.
+    * Output column names must be unique in the resulting table. If two output columns end up with the same display name (including across **Key columns**, **Dataset A**, and **Dataset B**), the task shows the validation error **“Output column names must be unique”** and blocks saving. Conflicting columns are highlighted in magenta with a tooltip.
+    * Output columns cannot include join key columns. Join key columns are already included under **Key columns**. Columns already used as join keys are hidden from the output column pickers. If a column was added to Output columns and then later used as a join key, it becomes highlighted in magenta with tooltip **“This column is already used as a join key”**, and saving is blocked until the conflict is resolved.
 *   **Behavior**
 
     At the bottom of the task, set the row guardrail:
