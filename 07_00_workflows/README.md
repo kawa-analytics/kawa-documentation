@@ -87,7 +87,7 @@ Below is how to set up each step type in practice.
 ### 3.2 Run python script
 
 * In **Select python tool from the library**, choose a tool.
-* In **Match tool inputs with any of the previous task outputs**, connect the required inputs to the results of previous steps (for example, a dataframe from **Transform data**).
+* In **Match tool inputs with any of the previous task outputs**, connect the required inputs to the results of previous steps (for example, a dataframe from **Load data**).
 
 > If a required input is empty or mis‑bound you’ll see **Invalid task bindinqs**.
 
@@ -301,7 +301,46 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
 
 The task outputs a **single joined table**, which can be used as input for later steps (email, AI prompt, export to data source, logic steps, etc.).
 
-### 3.12 Logic: If / Else
+### 3.12 Stack datasets
+
+Use **Stack datasets** to combine 2 or more tables produced by previous workflow steps into a single result table by stacking them vertically (Union). The task merges rows from all selected datasets into one output table.
+
+<figure><img src="../.gitbook/assets/workflows_stack_datasets.png" alt=""><figcaption></figcaption></figure>
+
+#### 3.12.1 How to set up
+
+* In a **Workflow**, click **Add action** and select **Stack datasets**.
+* Select the datasets to stack
+* In **Stack configuration**:
+  * Add at least two datasets.
+  * For each dataset slot, select a workflow step that returns a table (for example, Load data from sheet).
+  * Datasets are shown as A, B, C... and are stacked from top to bottom in the order shown in the list.
+  * Click + **Add another dataset** to add more inputs.
+  * If you remove a dataset, its selections are removed from the mapping table.
+  * Choose the **Column matching method**
+* The UI shows four methods:
+  * By column name
+  * By column order
+  * Manual mapping
+  * Auto-mapping
+
+> Currently, only Manual mapping is active.
+
+* Define Mapped columns
+* In Mapped columns:
+  * A dataset column appears only after a source dataset is selected.
+  * Click + **Add mapping row** to add a new output column.
+  * A row may contain mappings for only some datasets; dataset cells with no mapping can be left empty.
+  * Each mapping row must contain at least one selected dataset column. A completely empty mapping row blocks saving/running the task.
+  * When you select a source column, the source column type icon is shown in the Output column name cell.&#x20;
+  * Use the trash icon to remove a mapping row.
+* **Behavior** — the same row-based guards as in **Join datasets** appear at the bottom.
+
+#### 3.12.2 Result
+
+The task outputs a **single stacked table**. Each mapping row becomes an output column, and rows from all selected datasets are appended into one result. This result can be used in later steps (for example, Generate output, Send email, AI prompt, export to data source, or logic steps).
+
+### 3.13 Logic: If / Else
 
 **If / Else** is a logic step that splits a workflow into two branches:
 
@@ -310,7 +349,7 @@ The task outputs a **single joined table**, which can be used as input for later
 
 The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
 
-#### 3.12.1 Add an If / Else step
+#### 3.13.1 Add an If / Else step
 
 * In the THEN section, click **+ Add action**.
 * In **KAWA Actions**, scroll to the **Logic** section.
@@ -323,7 +362,7 @@ A new block appears in the steps list with two tabs:
 
 Each tab has its own **+ Add action** button to build the branch.
 
-#### 3.12.2 Add path rules
+#### 3.13.2 Add path rules
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
@@ -362,7 +401,7 @@ This lets you compare:
 * All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
 * The total number of rules is shown in the step name (for example, “5. 3 rules”).
 
-#### 3.12.3 Actions in the IF and ELSE branches
+#### 3.13.3 Actions in the IF and ELSE branches
 
 After you set up the rules, define what each branch should do.
 
@@ -375,11 +414,11 @@ Execution logic:
 * If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
 * If **any rule is false**, the **ELSE** branch runs (if it has actions).
 
-### 3.13 Logic: Routing
+### 3.14 Logic: Routing
 
 **Routing** is a logic step that lets you split the processing of one table into multiple routes (R1, R2, R3 …). In each route, you set up your own data “slice” (view) and add a separate set of actions.
 
-#### 3.13.1 How to add Routing
+#### 3.14.1 How to add Routing
 
 Choose the table source for Routing:
 
@@ -390,7 +429,7 @@ Choose the table source for Routing:
 
 After that, a table preview for Routing will open on the right.
 
-#### 3.13.2 How routes work (R1 / R2 / R3)
+#### 3.14.2 How routes work (R1 / R2 / R3)
 
 Routes are shown as tabs: **R1**, **R2**, **R3**…
 
@@ -399,13 +438,13 @@ Routes are shown as tabs: **R1**, **R2**, **R3**…
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_routing2.png" alt=""></div>
 
-#### 3.13.3 Add actions inside a route
+#### 3.14.3 Add actions inside a route
 
 * Select the route you need (for example, R1).
 * In the route block, click Add action and add the steps you need (Send email, Export to data source, Report, etc.).
 * Repeat for R2, R3… if needed.
 
-#### 3.13.4 Result
+#### 3.14.4 Result
 
 Routing creates multiple independent branches where:
 
@@ -413,7 +452,7 @@ Routing creates multiple independent branches where:
 * each branch (route) can have its own data view/slice,
 * each branch runs its own set of actions.
 
-### 3.14 Logic: Interrupt workflow
+### 3.15 Logic: Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
