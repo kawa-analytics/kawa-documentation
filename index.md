@@ -39,7 +39,7 @@ Kawa unifies your flow from raw data to published apps. Connect sources, model a
 * **Publish**: dashboards and end-to-end apps for your team.
 * **Extend**: custom logic (Python), reusable libraries, chat & agents.
 
-<div data-with-frame="true"><img src=".gitbook/assets/home1.png" alt=""></div>
+<figure><img src=".gitbook/assets/home.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
