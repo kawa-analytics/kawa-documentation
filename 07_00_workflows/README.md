@@ -65,9 +65,35 @@ How it fires:
 
 ## 3. Add action
 
-Click **Add action** — the Actions panel opens; available categories:
+### 3. Add action
 
-<div data-with-frame="true"><img src="../.gitbook/assets/workflows_add_action.png" alt=""></div>
+Click **Add action** to open the Actions menu. Actions are grouped into categories:
+
+**KAWA Actions**
+
+* Run python script
+* Send email
+* AI prompt
+* Enrich data with AI
+* Report
+* Build a chart
+* Generate output
+* User task
+
+**Data Operations**
+
+* Load data
+* Export to data source
+* Join datasets
+* Stack datasets
+
+**Logic**
+
+* If / Else
+* Routing
+* Interrupt workflow
+
+<figure><img src="../.gitbook/assets/workflows_add_action.png" alt=""><figcaption></figcaption></figure>
 
 Below is how to set up each step type in practice.
 
@@ -323,7 +349,7 @@ Use **Stack datasets** to combine 2 or more tables produced by previous workflow
   * Click + **Add mapping row** to add a new output column.
   * A row may contain mappings for only some datasets; dataset cells with no mapping can be left empty.
   * Each mapping row must contain at least one selected dataset column. A completely empty mapping row blocks saving/running the task.
-  * When you select a source column, the source column type icon is shown in the Output column name cell.&#x20;
+  * When you select a source column, the source column type icon is shown in the **Output column name** cell.&#x20;
   * Use the trash icon to remove a mapping row.
 * **Behavior** — the same row-based guards as in **Join datasets** appear at the bottom.
 
