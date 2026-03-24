@@ -27,17 +27,19 @@ layout:
 
 ## How Kawa works
 
-**Build, run, and scale data apps — fast.**\
-Kawa unifies your flow from raw data to published apps. Connect sources, model and compute, explore in views and charts, automate actions, and publish dashboards.
+#### Run enterprise operations with AI — securely and at scale
 
-**What you can do**
+KAWA AI connects enterprise systems, teams, agents, and internal apps in a single execution layer. It helps organizations coordinate workflows, enforce business logic, manage approvals, and execute actions with full governance, traceability, and control.
 
-* **Collect**: databases, APIs, files, unstructured data.
-* **Model & compute**: sheets, joins, formulas, lookups, mappings.
-* **Explore**: grids, charts, pivots, saved views.
-* **Automate**: no-code triggers, conditions, multi-step actions.
-* **Publish**: dashboards and end-to-end apps for your team.
-* **Extend**: custom logic (Python), reusable libraries, chat & agents.
+#### What you can do
+
+* **Connect:** ERP, CRM, data warehouses, APIs, trading systems, and internal tools.
+* **Orchestrate:** design, automate, and execute workflows across systems and teams.
+* **Apply business logic:** enforce rules, policies, and conditions at every step.
+* **Run AI agents:** enable agents to plan, decide, and act within governed processes.
+* **Validate and approve:** add routing, escalation, and human oversight where needed.
+* **Audit and govern:** keep logs, traceability, security, access, and compliance built in.
+* **Operate at scale:** support human teams, AI agents, and internal apps from one secure execution layer.
 
 <figure><img src=".gitbook/assets/home.png" alt=""><figcaption></figcaption></figure>
 
