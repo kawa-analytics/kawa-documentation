@@ -317,15 +317,6 @@ Use **Stack datasets** to combine 2 or more tables produced by previous workflow
   * Datasets are shown as A, B, C... and are stacked from top to bottom in the order shown in the list.
   * Click + **Add another dataset** to add more inputs.
   * If you remove a dataset, its selections are removed from the mapping table.
-  * Choose the **Column matching method**
-* The UI shows four methods:
-  * By column name
-  * By column order
-  * Manual mapping
-  * Auto-mapping
-
-> Currently, only Manual mapping is active.
-
 * Define Mapped columns
 * In Mapped columns:
   * A dataset column appears only after a source dataset is selected.
