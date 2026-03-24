@@ -159,3 +159,16 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 * Fixed dashboard full-screen widget mode so it preserves Cross Filters when opening/closing a widget in full screen (previously the cross-filter state was lost and data was reloaded from scratch)
 * Added clickable “Link” properties for Workflow URLs (e.g., View Link, Image Link, Report Link) rendered as \<a>
 * Added “Apply format” option in the Grid column menu, with “To other fields” and “From another field” actions to copy column formatting
+
+### Patch 1.34.7
+
+* Added a new “Join datasets” workflow task to combine two datasets using INNER / LEFT / RIGHT / FULL OUTER joins, with support for selecting datasets, configuring one or more join keys, and choosing which output columns to include
+* Added a new “Stack datasets” workflow task to stack (union) multiple datasets into a single output, with support for adding/removing dataset inputs and manual column mapping to define the resulting output columns
+* Fixed OutOfMemoryError (Java heap space) / 504 Gateway Timeout when loading Backoffice → Computation history
+* Added a “Value source” setting for text-type dashboard column filters, allowing users to choose which bound sheet(s) are used to load filter value suggestions (defaulting to all bound sheets) to improve performance on multi-sheet dashboards
+* Improved ClickHouse (CH) connections to support multi-user access (handling multiple user credentials for the same connection)
+* Added entity history tracking and a new API endpoint to retrieve previously stored entity history
+* Added COUNT\_TRUE and COUNT\_FALSE aggregations for boolean columns (available across dashboards, views, and workflows), and updated SUM on booleans to behave as COUNT\_TRUE (also exposed in the formula editor)
+* Added a “Cancel all computations” control to dashboards: the toolbar refresh button now switches to a stop action while any widget is computing, allowing users to cancel all running dashboard computations in one click
+* Added a “Free-form placement” toggle in Dashboard settings, allowing widgets to be dragged and placed anywhere on the grid without automatic re-packing (default behavior remains auto-packing to fill gaps)
+* Added Y-axis range controls to view charts, letting users set custom min/max bounds (with an optional log scale toggle for numeric axes)
