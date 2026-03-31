@@ -4,17 +4,15 @@ parent: Administration and Sharing
 nav_order: 27
 ---
 
-# Permissions
+# Sharing and permissions
 
-## Sharing and permissions
-
-### 1. User management and permissions
+## 1. User management and permissions
 
 Users in KAWA have a global profile that applies across all workspaces and some workspace related permissions.
 
-#### 1.1 Authentication
+### 1.1 Authentication
 
-**a. KAWA internal authentication**
+#### a. KAWA internal authentication
 
 KAWA can be configured to authenticate users without relying on SSO. In this mode, administrators can either choose to let people create accounts using email activation codes or to manage the user accounts themselves through KAWA's Python API.
 
@@ -28,7 +26,7 @@ When using KAWA internal authentication mechanism, the following page will be sh
 
 > **Important:** If you want to allow users to sign up, you need to configure SMTP support
 
-**b. Using external IDPs and SSO**
+#### b. Using external IDPs and SSO
 
 When configured to work with SSO, KAWA will automatically create users in its database when new authenticated users will connect.
 
@@ -38,17 +36,17 @@ When configured to work with SSO, KAWA will automatically create users in its da
 
 **HTTP Header-based Authentication**: Users can be authenticated with HTTP Header based authentication. In that setup, the user information will be extracted from the incoming HTTP requests.
 
-**c. Using API Keys**
+#### c. Using API Keys
 
 KAWA provides a mechanism to allow users to generate API keys in order to authenticate. This is mainly used to work with KAWA's Python API.
 
-#### 1.2 Application wide profile
+### 1.2 Application wide profile
 
 Application wide profiles are configured through KYWY, KAWA's python client.
 
 Please refer to this repository: https://github.com/kawa-analytics/kywy-documentation which contains all the details and examples regarding the usage of this library.
 
-**a. The user roles**
+#### a. The user roles
 
 There are 3 global roles in KAWA. Each user has one role that is valid for the entire application.
 
@@ -72,7 +70,7 @@ There is only one such user for the entire KAWA platform. This user has all the 
 
 Most of the users should have this role. It allows them to benefit from all the features of the platform.
 
-**b. The restricted data source types**
+#### b. The restricted data source types
 
 There are 7 data source types in KAWA:
 
@@ -94,11 +92,11 @@ In the GUI, when users create a data source, the types they are allowed to work 
 
 > **Important:** by default, users will not have access to the **LIVE CONNECT** data type.
 
-**c. The overall permissions**
+#### **c. The overall permissions**
 
 Overall permissions are a list of features that individual users have access to. For example, to benefit from all the Generative AI features, the permission: `GENERATIVE_AI` must be granted. This grant will apply to the entire KAWA platform.
 
-#### 1.3 Workspace permissions
+### 1.3 Workspace permissions
 
 Each workspace functions as a separate isolated tenant. See definitions in [Terminology](../13_00_terminology.md#workspace) section.
 
@@ -142,7 +140,7 @@ Workspace permissions are handled directly on the GUI, from the settings section
 
 > **Warning:** Application wide Administrators will benefit from ALL those permissions by default.
 
-#### 1.4 Teams
+### 1.4 Teams
 
 Within each workspace, users can be grouped in Teams. See definitions in [Terminology](../13_00_terminology.md#team) section. Teams can be used to share entities with user groups, such as applications, dashboards, sheets and data sources.
 
@@ -155,7 +153,7 @@ There are two types of teams:
 * Sharing teams: Those teams are mainly used to share objects between users.
 * Security teams: They work exactly as sharing teams with an additional property: a `security name`. Those are used in row level security and column security configuration policies.
 
-**1.4.1 Designating team administrators**
+#### 1.4.1 Designating team administrators
 
 When adding members to teams, you can designate them as team administrators. Team administrators do NOT need any specific privileges to manage the members of the teams they administrate.
 
@@ -185,11 +183,11 @@ Entities can be shared with particular teams or with all the users who can acces
 
 > **Important:** A user affected by more than one policy will benefit from the higher available access. If a user is targeted by `RESTRICTED`, `VIEWER` and `EDITOR` simultaneously (through different teams perhaps), they will have the `EDITOR` policy on that entity.
 
-#### 2.1 Sharing Sheets and Views
+### 2.1 Sharing Sheets and Views
 
 A Sheet contains multiple views, such as charts, grids and pivot tables. They also contain the business logic, expressed through formulas and python scripts.
 
-**a. Sheets and Views**
+#### a. Sheets and Views
 
 A sheet can be shared in Read or Write mode with other users or teams of the workspace.
 
@@ -209,7 +207,7 @@ In order to configure sharing parameters for a sheet, use the icon at the top ri
 
 When views are shared, a control becomes available on them. It lets users rollback to the latest published version, publish a new version (if the user has write permission on the view) or save the view as a new object.
 
-**b. Columns: Formulas, Links, Mappings, Python**
+#### b. Columns: Formulas, Links, Mappings, Python
 
 Within sheets, you can share your columns:
 
@@ -224,9 +222,9 @@ Sharing columns will make them available to all users accessing the sheet. They 
 
 <div data-with-frame="true"><img src="../.gitbook/assets/sheet_model.png" alt=""></div>
 
-#### 2.2 Sharing Data Sources
+### 2.2 Sharing Data Sources
 
-**a. Data Sources**
+#### a. Data Sources
 
 Data Sources can be shared like sheets, within the application.
 
@@ -239,13 +237,13 @@ In order for a user to be able to configure row level and column security on a d
 * The user must be able to edit the data source (shared with writing permissions)
 * The user must have the `Manage Data Source Security` flag enabled.
 
-**b. Data Providers**
+#### b. Data Providers
 
 Data providers are databases or external APIs to which KAWA is connected to import data. When a data provider is restricted, only users with the `Access restricted data and restricted data providers` flag can access them to create new data sources.
 
 <div data-with-frame="true"><img src="../.gitbook/assets/restricted_provider.png" alt=""></div>
 
-#### 2.3 Sharing Dashboards
+### 2.3 Sharing Dashboards
 
 Dashboards can be shared in the UI, in the same way as sheets and data sources. All the widgets of the dashboards follow the dashboard sharing policies and publications.
 
@@ -257,7 +255,7 @@ When sheets are used in shared dashboards, modifying elements of their model (li
 
 <div data-with-frame="true"><img src="../.gitbook/assets/impact.png" alt=""></div>
 
-#### 2.4 Sharing Apps
+### 2.4 Sharing Apps
 
 Applications can be shared in the UI, in the same way as sheets and data sources. All the pages of the apps follow the zpp sharing policies and publications.
 
@@ -267,11 +265,11 @@ It means that the PUBLISH and ROLLBACK buttons on the app will affect all pages 
 
 When sheets are used in shared apps, modifying elements of their model (like formulas for example), will result in a warning for the users.
 
-#### 2.5 Sharing Knowledge
+### 2.5 Sharing Knowledge
 
 As with the other entities, Knowledge can be shared in the workspace. When a user does not have read access to a knowledge, they will not be able to access the content of the knowledge anywhere. (Parsed data, previews etc)
 
-#### 2.5 Sharing Workflows
+### 2.6 Sharing Workflows
 
 Workflows can be shared in the workspace in the same way as the other entities.
 
