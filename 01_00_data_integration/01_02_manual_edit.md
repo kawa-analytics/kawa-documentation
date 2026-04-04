@@ -51,7 +51,7 @@ And then, click on explore to go to the associated sheet.
 
 #### b. Edit data from the sheet section
 
-When opening a sheet based on an editable datasource, the default view is an editable grid:
+When opening a sheet based on an editable datasource, the default view **can be edited from the sheet page**:
 
 <div data-with-frame="true"><img src="../.gitbook/assets/manual3.png" alt=""></div>
 
@@ -70,7 +70,21 @@ In order to edit a cell, either use double click on a cell to input your value, 
 
 <div data-with-frame="true"><img src="../.gitbook/assets/manual4.png" alt=""></div>
 
-#### c. Edit data from dashboards or applications
+#### c. Use edit mode for the sheet&#x20;
+
+When a user clicks **Edit data**, KAWA opens an edit session for the sheet. During this session, users can make multiple changes in the grid, but those changes are not sent to the backend after each action. Instead, KAWA keeps them as pending edits and sends them only when the user clicks **Save**.
+
+If the user clicks **Cancel**, all pending edits are discarded.
+
+This behavior is useful when users need to make several updates in one pass, because it avoids reloading or recomputing the sheet after every individual change.
+
+While edit mode is active:
+
+* the aggregation bar is hidden,
+* computed columns remain visible but cannot be edited,
+* standard grid controls are unavailable while editing, including **Enrich data**, **Add fields**, **Color**, **Hide fields**, **Sort**, **Top**, and **Filters**.
+
+#### d. Edit data from dashboards or applications
 
 The editable views can be added to your dashboards or you applications to provide more interactivity.
 
