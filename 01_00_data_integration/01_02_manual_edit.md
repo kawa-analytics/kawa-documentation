@@ -28,11 +28,11 @@ Direct edits can only be done in specific data sources: `Create from Scratch`.
 
 They behave like an Excel sheet, meaning that you can:
 
-* Add rows,
-* Add columns,
-* Remove rows and
+* Add rows
+* Add columns
+* Remove rows
 * Edit cells
-* Copy ranges of cells (Coming soon)
+* Copy ranges of cells
 
 **The main differences with Excel are:**
 
@@ -51,22 +51,22 @@ And then, click on explore to go to the associated sheet.
 
 #### b. Edit data from the sheet section
 
-When opening a sheet based on an editable datasource, the default view **can be edited from the sheet page**:
+**Sheets** based on an editable data source can be edited from the sheet page:
 
 <div data-with-frame="true"><img src="../.gitbook/assets/manual3.png" alt=""></div>
 
 It behaves like a regular grid with the following main differences:
 
 * Grouping is not available
-* It always show all the editable columns by default
+* It always shows all the editable columns by default
 
 On this view you can:
 
 * Add new rows (Add row button in the action bar on the top)
-* Add new Columns (Add column button in the action bar on the top)
+* Add new columns (Add column button in the action bar on the top)
 * Remove entire rows by right clicking on any cell and choosing: _Remove row_.
 
-In order to edit a cell, either use double click on a cell to input your value, either on the arrows on the line you wish to edit:
+To edit a cell, either double-click the cell and enter a value, or use the arrows on the row you want to edit:
 
 <div data-with-frame="true"><img src="../.gitbook/assets/manual4.png" alt=""></div>
 
@@ -86,7 +86,7 @@ While edit mode is active:
 
 #### d. Edit data from dashboards or applications
 
-The editable views can be added to your dashboards or you applications to provide more interactivity.
+The editable views can be added to your dashboards or your applications to provide more interactivity.
 
 **In a dashboard**, simply pick the editable view in the widget selector:
 
@@ -104,7 +104,7 @@ _Users of the application will then be able to edit directly from the applicatio
 
 ### 1.2 Data patching
 
-When you datasource is not created only for edits, manual edits are still possible. Those edits behave like patches that can be easily reverted.
+When your datasource is not created only for edits, manual edits are still possible. Those edits behave like patches that can be easily reverted.
 
 **Example**: The DEALS datasource is connected to my trading system and is refreshed every morning. If a user detects an issue in the table during the day (for example: name of the counterparty is wrong), they can edit that value in KAWA - the edit will propagate in all the connected analytics. Once the data is fixed in the original system, that edit can then be removed.
 
@@ -148,7 +148,7 @@ KAWA lets you edit mapping values directly in the grid.
 
 > For this to work, you must have AT LEAST one defined primary key that is not the `automatic_uuid` column. This is very important for _LIVE CONNECT_ data sources.
 
-If your data source is _LIVE CONNECT_, go to the datasource model, and select the correct primary leys for your data source. Make sure that their combination yields to a unique definition of each record from your table.
+If your data source is _LIVE CONNECT_, go to the datasource model, and select the correct primary keys for your data source. Make sure that their combination yields a unique definition of each record in your table.
 
 <div data-with-frame="true"><img src="../.gitbook/assets/pk1.png" alt=""></div>
 
