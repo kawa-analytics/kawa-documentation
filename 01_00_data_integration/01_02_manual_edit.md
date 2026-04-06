@@ -53,7 +53,7 @@ And then, click on explore to go to the associated sheet.
 
 **Sheets** based on an editable data source can be edited from the sheet page:
 
-<div data-with-frame="true"><img src="../.gitbook/assets/manual3.png" alt=""></div>
+<figure><img src="../.gitbook/assets/manual3.png" alt=""><figcaption></figcaption></figure>
 
 It behaves like a regular grid with the following main differences:
 
@@ -68,7 +68,7 @@ On this view you can:
 
 To edit a cell, either double-click the cell and enter a value, or use the arrows on the row you want to edit:
 
-<div data-with-frame="true"><img src="../.gitbook/assets/manual4.png" alt=""></div>
+<figure><img src="../.gitbook/assets/manual4.png" alt=""><figcaption></figcaption></figure>
 
 #### c. Use edit mode for the sheet&#x20;
 
