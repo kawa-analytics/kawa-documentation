@@ -29,7 +29,7 @@ The main data source of a Sheet ([Data Integration](../01_00_data_integration/) 
 
 For example, if you choose a position system as a main data source, your sheet will show data per asset and portfolio.
 
-> The primary data source is set during sheet creation and cannot be modified afterward.
+> The primary data source is selected during sheet creation and defines the sheet granularity and primary keys. On supported sheets, you can later replace it from the **Model** tab using Change Data Source.
 
 ### 1.2 Linked data sources
 
