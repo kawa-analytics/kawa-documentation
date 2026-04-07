@@ -10,6 +10,7 @@
   * [Load with Python](01_00_data_integration/01_04_load_with_python.md)
 * [Modeling](02_00_modeling/README.md)
   * [Control panel](02_00_modeling/02_01_control_panel.md)
+  * [Change Data Source](02_00_modeling/change-data-source.md)
 * [Computations](03_00_computations/README.md)
   * [Formulas](03_00_computations/03_01_formulas.md)
   * [Lookup columns](03_00_computations/03_02_lookup_columns.md)
