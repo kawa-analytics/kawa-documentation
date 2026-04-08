@@ -1,6 +1,6 @@
 # Change Data Source
 
-The **Change data source** feature lets you replace the main data source of an existing sheet from the **Model** tab.
+The **Change data source** feature lets you replace the primary data source of an existing sheet from the **Model** tab.
 
 You can start this flow on an existing sheet even after you have already configured elements such as charts, pivot tables, grouping, filters, formulas, lookup columns, and mapping columns.
 
@@ -23,7 +23,7 @@ Important notes:
 
 <figure><img src="../.gitbook/assets/change_data_source1.png" alt=""><figcaption></figcaption></figure>
 
-_Change Data Source is available from the Model tab of a sheet._
+_The **Change data source** button is available from the **Model** tab of a sheet._
 
 KAWA opens a 3-step dialog:
 
@@ -51,7 +51,7 @@ _Select a replacement data source and review compatibility before continuing._
 
 ## 4. Step 2 — Map columns
 
-In the mapping step, every column from the current main data source must be mapped to one column in the new data source.
+In the mapping step, every column from the current primary data source must be mapped to one column in the new data source.
 
 KAWA automatically matches columns when their **name** and **type** match.
 
