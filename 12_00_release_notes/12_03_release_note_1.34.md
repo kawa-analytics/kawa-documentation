@@ -172,3 +172,15 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 * Added a “Cancel all computations” control to dashboards: the toolbar refresh button now switches to a stop action while any widget is computing, allowing users to cancel all running dashboard computations in one click
 * Added a “Free-form placement” toggle in Dashboard settings, allowing widgets to be dragged and placed anywhere on the grid without automatic re-packing (default behavior remains auto-packing to fill gaps)
 * Added Y-axis range controls to view charts, letting users set custom min/max bounds (with an optional log scale toggle for numeric axes)
+
+### Patch 1.34.8
+
+* Added a “Value source” setting for text-type dashboard column filters, allowing users to choose which bound sheet(s) are used to load filter value suggestions (defaulting to all bound sheets) to improve performance on multi-sheet dashboards
+* Updated ClickHouse installation scripts and CI for compatibility with the latest LTS version
+* Added a collapsible left sidebar for application pages with a persistent icon-only collapsed state
+* Added dashboard size controls to dashboards embedded in applications, matching the same Small / Medium / Large / Full options available in standalone dashboards
+* Standardized indicator card font sizes by using fixed size steps for titles and values, with improved truncation for long text and progressive display of comparison rows as card height increases
+* Improved workflow editor interaction for If/Else and routing blocks by making block backgrounds non-selectable, while allowing branch tabs and route/condition rows to be clicked to select the corresponding task
+* Added read-only mode for mapping column editors and definition view dialogs
+* Added Y-axis range and log scale controls for numeric chart axes, allowing users to set custom min/max bounds
+* Added table support to dashboard text and report editor widgets, with a new “Table” block in the editor toolbox and controls for inserting tables, managing rows and columns
