@@ -184,3 +184,10 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 * Added read-only mode for mapping column editors and definition view dialogs
 * Added Y-axis range and log scale controls for numeric chart axes, allowing users to set custom min/max bounds
 * Added table support to dashboard text and report editor widgets, with a new “Table” block in the editor toolbox and controls for inserting tables, managing rows and columns
+
+### Patch 1.34.9
+
+* Fixed linked column layout permission checks so users with edit access can save linked column layouts correctly instead of seeing a false permission error
+* Improved the line chart series configuration panel by grouping settings into labeled sections for easier navigation, with no functional changes
+* Added “Apply format” support for pivot table and chart fields, allowing users to copy formatting between compatible fields
+* Improved workflow save validation to catch invalid input bindings, incomplete Routing/IF branches, and missing “On data refresh” data sources with clear UI errors
