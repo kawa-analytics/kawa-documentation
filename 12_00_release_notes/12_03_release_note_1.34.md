@@ -195,4 +195,4 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 ### Patch 1.34.10
 
 * Added an API command to transfer workflow ownership between users
-* Fixed a workflow engine issue where executions could hang on the **Join datasets** task instead of completing correctly
+* Fixed a workflow engine issue where executions could hang on the Join datasets task instead of completing correctly
