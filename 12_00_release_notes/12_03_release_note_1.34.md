@@ -191,3 +191,8 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 * Improved the line chart series configuration panel by grouping settings into labeled sections for easier navigation, with no functional changes
 * Added “Apply format” support for pivot table and chart fields, allowing users to copy formatting between compatible fields
 * Improved workflow save validation to catch invalid input bindings, incomplete Routing/IF branches, and missing “On data refresh” data sources with clear UI errors
+
+### Patch 1.34.10
+
+* Added an API command to transfer workflow ownership between users
+* Fixed a workflow engine issue where executions could hang on the **Join datasets** task instead of completing correctly
