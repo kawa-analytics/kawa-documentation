@@ -37,6 +37,7 @@
 * [Architecture](10_00_architecture/README.md)
   * [Data Lakehouse integration](10_00_architecture/10_01_lakehouse.md)
   * [Snowflake native connection](10_00_architecture/10_02_snowflake_native_connection.md)
+  * [BigQuery native connection](10_00_architecture/bigquery-native-connection.md)
   * [KAWA Query Cache](10_00_architecture/10_03_query_cache.md)
 * [Exploitation](11_00_exploitation/README.md)
   * [Backup restore](11_00_exploitation/11_01_backup_restore.md)
