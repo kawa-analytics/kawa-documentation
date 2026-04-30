@@ -43,6 +43,7 @@
   * [Create monitoring views](11_00_exploitation/11_02_create_monitoring_datasources.md)
   * [Oauth2 configuration](11_00_exploitation/11_03_oauth2_configuration.md)
   * [ClickHouse Users Configuration](11_00_exploitation/clickhouse-users-configuration.md)
+  * [Deployment Options](11_00_exploitation/deployment-options.md)
 * [Release notes](12_00_release_notes/README.md)
   * [Release note 1.32](12_00_release_notes/12_01_release_note_1.32.md)
   * [Release note 1.33](12_00_release_notes/12_02_release_note_1.33.md)
