@@ -51,40 +51,29 @@ And then, click on explore to go to the associated sheet.
 
 #### b. Edit data from the sheet section
 
-**Sheets** based on an editable data source can be edited from the sheet page:
+**Sheets** based on an editable data source can be edited from the sheet page by entering edit mode. Note that grouping is not available for editable sheets.
+
+To start editing, click the **Edit data** button in the action bar. This opens an edit session for the sheet.
 
 <figure><img src="../.gitbook/assets/manual3.png" alt=""><figcaption></figcaption></figure>
 
-It behaves like a regular grid with the following main differences:
+In edit mode, the grid always shows all the editable columns by default. Computed columns remain visible but cannot be edited.
 
-* Grouping is not available
-* It always shows all the editable columns by default
-
-On this view you can:
+You can:
 
 * Add new rows (Add row button in the action bar on the top)
 * Add new columns (Add column button in the action bar on the top)
-* Remove entire rows by right clicking on any cell and choosing: _Remove row_.
+* Remove entire rows by right clicking on any cell and choosing: _Remove row_
 
-To edit a cell, either double-click the cell and enter a value, or use the arrows on the row you want to edit:
+To edit a cell, either double-click the cell and enter a value, or use the arrows on the row you want to edit.
 
 <figure><img src="../.gitbook/assets/manual4.png" alt=""><figcaption></figcaption></figure>
 
-#### c. Use edit mode for the sheet&#x20;
+Changes made during the edit session are not sent to the backend after each action. Instead, KAWA keeps them as pending edits and sends them only when the user clicks **Save**. If the user clicks **Cancel**, all pending edits are discarded. This is useful when users need to make several updates in one pass, because it avoids reloading or recomputing the sheet after every individual change.
 
-When a user clicks **Edit data**, KAWA opens an edit session for the sheet. During this session, users can make multiple changes in the grid, but those changes are not sent to the backend after each action. Instead, KAWA keeps them as pending edits and sends them only when the user clicks **Save**.
+While edit mode is active, standard grid controls are unavailable, including **Enrich data**, **Add fields**, **Color**, **Hide fields**, **Sort**, **Top**, and **Filters**.
 
-If the user clicks **Cancel**, all pending edits are discarded.
-
-This behavior is useful when users need to make several updates in one pass, because it avoids reloading or recomputing the sheet after every individual change.
-
-While edit mode is active:
-
-* the aggregation bar is hidden,
-* computed columns remain visible but cannot be edited,
-* standard grid controls are unavailable while editing, including **Enrich data**, **Add fields**, **Color**, **Hide fields**, **Sort**, **Top**, and **Filters**.
-
-#### d. Edit data from dashboards or applications
+#### c. Edit data from dashboards or applications
 
 The editable views can be added to your dashboards or your applications to provide more interactivity.
 
