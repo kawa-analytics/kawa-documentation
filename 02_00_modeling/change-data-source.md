@@ -29,7 +29,7 @@ This article uses the following example files:
 2. Go to **Model**.
 3. Click **Change data source**.
 
-<figure><img src="../.gitbook/assets/change_data_source1.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source1.png" alt=""><figcaption></figcaption></figure></div>
 
 KAWA opens a 4-step flow:
 
@@ -38,7 +38,7 @@ KAWA opens a 4-step flow:
 3. **New columns**
 4. **Review**
 
-<figure><img src="../.gitbook/assets/change_data_source2.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source2.png" alt=""><figcaption></figcaption></figure></div>
 
 ## 3. Step 1 — Select source
 
@@ -119,7 +119,7 @@ In this case, KAWA automatically matches 7 columns and leaves these columns unma
 
 These two columns remain in the sheet, but they will no longer receive data after the change.
 
-<figure><img src="../.gitbook/assets/change_data_source3.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source3.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 4.3 Previously unmapped columns
 
@@ -139,7 +139,7 @@ Suppose you first replace `01_base_sheet_source.csv` with `02_target_fewer_colum
 
 Later, you run **Change data source** again with a source that contains compatible versions of these fields. KAWA shows them in **Previously unmapped columns**, so you can connect them again.
 
-<figure><img src="../.gitbook/assets/change_data_source4.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source4.png" alt=""><figcaption></figcaption></figure></div>
 
 Click **Next** after reviewing the mappings.
 
@@ -163,7 +163,7 @@ In this case:
 
 If you do not select any extra columns, they are ignored.
 
-<figure><img src="../.gitbook/assets/change_data_source5.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source5.png" alt=""><figcaption></figcaption></figure></div>
 
 Click **Next** to continue.
 
@@ -187,7 +187,7 @@ If you replace `01_base_sheet_source.csv` with `02_target_fewer_columns.csv`, th
 * **Columns with no data:** `segment`, `last_order_date`
 * **New columns:** `None`
 
-<figure><img src="../.gitbook/assets/change_data_source6.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source6.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 6.2 Example: additional columns
 
@@ -198,7 +198,7 @@ If you replace `01_base_sheet_source.csv` with `03_target_auto_match_plus_3.csv`
 
 Review the summary, then click **Apply changes**.
 
-<figure><img src="../.gitbook/assets/change_data_source7.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source7.png" alt=""><figcaption></figcaption></figure></div>
 
 ## 7. What happens to columns with no data
 
@@ -220,4 +220,4 @@ After replacing `01_base_sheet_source.csv` with `02_target_fewer_columns.csv`:
 
 This lets you keep the sheet structure and decide later whether to remap or remove the column.
 
-<figure><img src="../.gitbook/assets/change_data_source8.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source8.png" alt=""><figcaption></figcaption></figure></div>

@@ -55,7 +55,7 @@ And then, click on explore to go to the associated sheet.
 
 To start editing, click the **Edit data** button in the action bar. This opens an edit session for the sheet.
 
-<figure><img src="../.gitbook/assets/manual3.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/manual3.png" alt=""><figcaption></figcaption></figure></div>
 
 In edit mode, the grid always shows all the editable columns by default. Computed columns remain visible but cannot be edited.
 
@@ -67,7 +67,7 @@ You can:
 
 To edit a cell, either double-click the cell and enter a value, or use the arrows on the row you want to edit.
 
-<figure><img src="../.gitbook/assets/manual4.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/manual4.png" alt=""><figcaption></figcaption></figure></div>
 
 Changes made during the edit session are not sent to the backend after each action. Instead, KAWA keeps them as pending edits and sends them only when the user clicks **Save**. If the user clicks **Cancel**, all pending edits are discarded. This is useful when users need to make several updates in one pass, because it avoids reloading or recomputing the sheet after every individual change.
 
