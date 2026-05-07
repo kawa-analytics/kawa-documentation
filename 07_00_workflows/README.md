@@ -331,27 +331,39 @@ The task outputs a **single joined table**, which can be used as input for later
 
 Use **Stack datasets** to combine 2 or more tables produced by previous workflow steps into a single result table by stacking them vertically (Union). The task merges rows from all selected datasets into one output table.
 
-<figure><img src="../.gitbook/assets/workflows_stack_datasets.png" alt=""><figcaption></figcaption></figure>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_stack_datasets (1).png" alt=""><figcaption></figcaption></figure></div>
 
 #### 3.12.1 How to set up
 
-* In a **Workflow**, click **Add action** and select **Stack datasets**.
-* Select the datasets to stack
-* In **Stack configuration**:
-  * Add at least two datasets.
-  * For each dataset slot, select a workflow step that returns a table (for example, Load data from sheet).
-  * Datasets are shown as A, B, C... and are stacked from top to bottom in the order shown in the list.
-  * Click + **Add another dataset** to add more inputs.
-  * If you remove a dataset, its selections are removed from the mapping table.
-* Define Mapped columns
-* In Mapped columns:
-  * A dataset column appears only after a source dataset is selected.
-  * Click + **Add mapping row** to add a new output column.
-  * A row may contain mappings for only some datasets; dataset cells with no mapping can be left empty.
-  * Each mapping row must contain at least one selected dataset column. A completely empty mapping row blocks saving/running the task.
-  * When you select a source column, the source column type icon is shown in the **Output column name** cell.&#x20;
-  * Use the trash icon to remove a mapping row.
-* **Behavior** — the same row-based guards as in **Join datasets** appear at the bottom.
+In a **Workflow**, click **Add action** and select **Stack datasets**.
+
+**Stack configuration**
+
+* Add at least two datasets.
+* For each dataset slot, select a workflow step that returns a table (for example, Load data from sheet).
+* Datasets are shown as A, B, C… and are stacked from top to bottom in the order shown in the list.
+* Click **+ Add another dataset** to add more inputs.
+* If you remove a dataset, its selections are removed from the mapping table.
+
+**Column matching method**
+
+Use the **Column matching method** panel to quickly populate or replace the column mappings. Three methods are available:
+
+* **By column name** — automatically matches columns that have the exact same name across all selected datasets.
+* **By column order** — matches columns based on their left-to-right position in each dataset, regardless of column names.
+* **Auto-mapping** — smart matching that uses fuzzy logic and data types. Calls an AI endpoint to intelligently match columns across stacked datasets by name similarity and data type. While the request is in flight, a loading spinner is shown on the button and all matching buttons are disabled.
+
+> If mapped columns already exist when you click any of the three matching methods, an **"Overwrite existing mapping?"** confirmation dialog appears. Confirm to replace the current mappings or cancel to keep them.
+
+**Mapped columns**
+
+* A dataset column appears only after a source dataset is selected.
+* Click **+ Add mapping row** to add a new output column.
+* A row may contain mappings for only some datasets; dataset cells with no mapping can be left empty.
+* Each mapping row must contain at least one selected dataset column. A completely empty mapping row blocks saving/running the task.
+* When you select a source column, the source column type icon is shown in the **Output column name** cell.
+* Use the trash icon to remove a mapping row.
+* Click **Clear all** to remove all mapped columns at once.
 
 #### 3.12.2 Result
 
