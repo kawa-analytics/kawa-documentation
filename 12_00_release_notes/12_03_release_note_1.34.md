@@ -201,3 +201,4 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 * Fixed SSO redirection so users are correctly returned to KAWA after authentication
 * Fixed workflow authentication to correctly load the user’s team memberships for permission and sharing checks
+* Fixed report usage behavior by filtering out editable layouts and technical sheets to prevent missing columns in reported data
