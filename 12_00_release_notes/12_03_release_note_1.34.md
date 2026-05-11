@@ -196,3 +196,8 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 
 * Added an API command to transfer workflow ownership between users
 * Fixed a workflow engine issue where executions could hang on the Join datasets task instead of completing correctly
+
+### Patch 1.34.11
+
+* Fixed SSO redirection so users are correctly returned to KAWA after authentication
+* Updated workflow authentication to correctly include the user’s team context during execution
