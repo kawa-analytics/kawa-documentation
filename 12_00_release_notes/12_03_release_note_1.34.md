@@ -200,4 +200,4 @@ Reports now have a clearer **View** (read-only) mode designed for presenting and
 ### Patch 1.34.11
 
 * Fixed SSO redirection so users are correctly returned to KAWA after authentication
-* Updated workflow authentication to correctly include the user’s team context during execution
+* Fixed workflow authentication to correctly load the user’s team memberships for permission and sharing checks
