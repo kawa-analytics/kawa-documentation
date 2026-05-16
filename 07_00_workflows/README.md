@@ -481,6 +481,24 @@ Routing creates multiple independent branches where:
 * each branch (route) can have its own data view/slice,
 * each branch runs its own set of actions.
 
+### 3.15 Loop
+
+**Loop** iterates over the rows of an input table, repeating a set of nested actions for each row. Use it when the same sequence of steps must run once per row — for example, exporting one report per client, calling a workflow per position, or generating output for each item in a queue.
+
+#### 3.15.1 How to set up
+
+1. In a Workflow, click **+ Add action** and select **Logic → Loop**.
+2. The step appears in the **THEN** column with the title **For each row in `[source task]`**.
+3. Open the **Input table** dropdown and choose the upstream task whose table will be iterated over. The dropdown lists previous tasks of the current workflow that produce a table — for example, **Load data from view**, **Run python script**, **Enrich data with AI**, **Join datasets**, or **Stack datasets**. If no input table is selected, the card shows **"No input table selected"** and the workflow cannot be saved or run.
+4. Click **+ Add action** inside the Loop container to add the steps that should run once per row. Any workflow action can be placed inside the loop body. An empty Loop body shows the validation error **"Missing action"**.
+
+#### 3.15.2 Run behaviour
+
+* For each row, all nested actions run in order before the loop advances to the next row.
+* If a nested action fails on any iteration, the workflow stops at that iteration. Subsequent iterations are not run.
+
+In **Run history**, the Loop step displays the total number of iterations (e.g. **6 iterations**) and a completion badge (e.g. **6 / 6**). Click the **>** arrow on the Loop row to expand and inspect individual iterations.
+
 ### 3.15 Logic: Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
