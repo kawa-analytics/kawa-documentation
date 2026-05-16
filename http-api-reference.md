@@ -19,8 +19,6 @@ For programmatic access, **API key authentication is recommended**.
 
 Most endpoints require these headers:
 
-{% include ".gitbook/includes/untitled.md" %}
-
 Workspace-scoped endpoints typically include:
 
 * `GET /backoffice/*`
