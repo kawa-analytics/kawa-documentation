@@ -79,6 +79,7 @@ Click **Add action** to open the Actions menu. Actions are grouped into categori
 * Build a chart
 * Generate output
 * User task
+* Run workflow
 
 **Data Operations**
 
@@ -91,6 +92,7 @@ Click **Add action** to open the Actions menu. Actions are grouped into categori
 
 * If / Else
 * Routing
+* Loop
 * Interrupt workflow
 
 <figure><img src="../.gitbook/assets/workflows_add_action.png" alt=""><figcaption></figcaption></figure>
@@ -262,13 +264,33 @@ Use submitted values in later steps
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_user_task4.png" alt=""></div>
 
-### 3.11 Join datasets
+### 3.11 Run workflow
+
+**Run workflow** runs an existing workflow as part of the current one. The called workflow executes to completion before the next step proceeds. Use it to reuse shared logic across workflows — for example, calling a standardised data-processing pipeline from multiple parent workflows.
+
+#### 3.11.1 How to set up
+
+* In a Workflow, click **+ Add action** and select **Run workflow**.
+* The step appears in the **THEN** column. Open the **Select a workflow to run** dropdown and pick the workflow you want to call.
+*   If the selected workflow has **Workflow inputs** defined in its Manual run trigger (e.g. Text Input, Number Input), they appear in the **Parameters** section. Bind each parameter using the **+** button — you can bind values from previous tasks, Row values (inside a Loop), or static values.
+
+    If a required parameter is not bound, the card shows **"Invalid parameter binding"** and the workflow cannot be saved or run.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/worklows_run_workflow.png" alt=""><figcaption></figcaption></figure></div>
+
+#### 3.11.2 Run behaviour
+
+The called workflow runs as a **sub-workflow** — all its tasks execute in order within the parent run. The parent workflow waits for the sub-workflow to complete before moving to the next step. If the sub-workflow fails, the parent workflow stops.
+
+In **Run history**, the step displays a **Sub-workflow** badge and a completion counter (e.g. **3 / 3**). Click **˅** to expand and inspect the sub-workflow's individual task results (start time, duration, status, output).
+
+### 3.12 Join datasets
 
 Use **Join datasets** to combine two tables produced by previous workflow steps into a single result table, using classic join types: **Inner**, **Left**, **Right**, and **Full Outer**.
 
 <figure><img src="../.gitbook/assets/workflows_join_datasets.png" alt=""><figcaption></figcaption></figure>
 
-#### 3.11.1 How to set up
+#### 3.12.1 How to set up
 
 * In a Workflow, click **Add action** and select **Join datasets**.
 *   Select the two datasets
@@ -323,17 +345,17 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
 
     * **If no rows are found** → **Interrupt workflow** or **Continue without a result** (depending on your workflow logic).
 
-#### 3.11.2 Result
+#### 3.12.2 Result
 
 The task outputs a **single joined table**, which can be used as input for later steps (email, AI prompt, export to data source, logic steps, etc.).
 
-### 3.12 Stack datasets
+### 3.13 Stack datasets
 
 Use **Stack datasets** to combine 2 or more tables produced by previous workflow steps into a single result table by stacking them vertically (Union). The task merges rows from all selected datasets into one output table.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_stack_datasets (1).png" alt=""><figcaption></figcaption></figure></div>
 
-#### 3.12.1 How to set up
+#### 3.13.1 How to set up
 
 In a **Workflow**, click **Add action** and select **Stack datasets**.
 
@@ -365,11 +387,11 @@ Use the **Column matching method** panel to quickly populate or replace the colu
 * Use the trash icon to remove a mapping row.
 * Click **Clear all** to remove all mapped columns at once.
 
-#### 3.12.2 Result
+#### 3.13.2 Result
 
 The task outputs a **single stacked table**. Each mapping row becomes an output column, and rows from all selected datasets are appended into one result. This result can be used in later steps (for example, Generate output, Send email, AI prompt, export to data source, or logic steps).
 
-### 3.13 Logic: If / Else
+### 3.14 If / Else
 
 **If / Else** is a logic step that splits a workflow into two branches:
 
@@ -378,7 +400,7 @@ The task outputs a **single stacked table**. Each mapping row becomes an output 
 
 The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
 
-#### 3.13.1 Add an If / Else step
+#### 3.14.1 Add an If / Else step
 
 * In the THEN section, click **+ Add action**.
 * In **KAWA Actions**, scroll to the **Logic** section.
@@ -391,7 +413,7 @@ A new block appears in the steps list with two tabs:
 
 Each tab has its own **+ Add action** button to build the branch.
 
-#### 3.13.2 Add path rules
+#### 3.14.2 Add path rules
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
@@ -430,7 +452,7 @@ This lets you compare:
 * All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
 * The total number of rules is shown in the step name (for example, “5. 3 rules”).
 
-#### 3.13.3 Actions in the IF and ELSE branches
+#### 3.14.3 Actions in the IF and ELSE branches
 
 After you set up the rules, define what each branch should do.
 
@@ -443,11 +465,11 @@ Execution logic:
 * If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
 * If **any rule is false**, the **ELSE** branch runs (if it has actions).
 
-### 3.14 Logic: Routing
+### 3.15 Logic: Routing
 
 **Routing** is a logic step that lets you split the processing of one table into multiple routes (R1, R2, R3 …). In each route, you set up your own data “slice” (view) and add a separate set of actions.
 
-#### 3.14.1 How to add Routing
+#### 3.15.1 How to add Routing
 
 Choose the table source for Routing:
 
@@ -458,7 +480,7 @@ Choose the table source for Routing:
 
 After that, a table preview for Routing will open on the right.
 
-#### 3.14.2 How routes work (R1 / R2 / R3)
+#### 3.15.2 How routes work (R1 / R2 / R3)
 
 Routes are shown as tabs: **R1**, **R2**, **R3**…
 
@@ -467,13 +489,13 @@ Routes are shown as tabs: **R1**, **R2**, **R3**…
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_routing2.png" alt=""></div>
 
-#### 3.14.3 Add actions inside a route
+#### 3.15.3 Add actions inside a route
 
 * Select the route you need (for example, R1).
 * In the route block, click Add action and add the steps you need (Send email, Export to data source, Report, etc.).
 * Repeat for R2, R3… if needed.
 
-#### 3.14.4 Result
+#### 3.15.4 Result
 
 Routing creates multiple independent branches where:
 
@@ -481,25 +503,27 @@ Routing creates multiple independent branches where:
 * each branch (route) can have its own data view/slice,
 * each branch runs its own set of actions.
 
-### 3.15 Loop
+### 3.16 Loop
 
 **Loop** iterates over the rows of an input table, repeating a set of nested actions for each row. Use it when the same sequence of steps must run once per row — for example, exporting one report per client, calling a workflow per position, or generating output for each item in a queue.
 
-#### 3.15.1 How to set up
+#### 3.16.1 How to set up
 
-1. In a Workflow, click **+ Add action** and select **Logic → Loop**.
-2. The step appears in the **THEN** column with the title **For each row in `[source task]`**.
-3. Open the **Input table** dropdown and choose the upstream task whose table will be iterated over. The dropdown lists previous tasks of the current workflow that produce a table — for example, **Load data from view**, **Run python script**, **Enrich data with AI**, **Join datasets**, or **Stack datasets**. If no input table is selected, the card shows **"No input table selected"** and the workflow cannot be saved or run.
-4. Click **+ Add action** inside the Loop container to add the steps that should run once per row. Any workflow action can be placed inside the loop body. An empty Loop body shows the validation error **"Missing action"**.
+* In a Workflow, click **+ Add action** and select **Logic → Loop**.
+* The step appears in the **THEN** column with the title **For each row in `[source task]`**.
+* Open the **Input table** dropdown and choose the upstream task whose table will be iterated over. The dropdown lists previous tasks of the current workflow that produce a table — for example, **Load data from view**, **Run python script**, **Enrich data with AI**, **Join datasets**, or **Stack datasets**. If no input table is selected, the card shows **"No input table selected"** and the workflow cannot be saved or run.
+* Click **+ Add action** inside the Loop container to add the steps that should run once per row. Any workflow action can be placed inside the loop body. An empty Loop body shows the validation error **"Missing action"**.
 
-#### 3.15.2 Run behaviour
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_loop.png" alt=""><figcaption></figcaption></figure></div>
+
+#### 3.16.2 Run behaviour
 
 * For each row, all nested actions run in order before the loop advances to the next row.
 * If a nested action fails on any iteration, the workflow stops at that iteration. Subsequent iterations are not run.
 
 In **Run history**, the Loop step displays the total number of iterations (e.g. **6 iterations**) and a completion badge (e.g. **6 / 6**). Click the **>** arrow on the Loop row to expand and inspect individual iterations.
 
-### 3.15 Logic: Interrupt workflow
+### 3.17 Logic: Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
