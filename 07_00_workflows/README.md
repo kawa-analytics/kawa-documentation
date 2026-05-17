@@ -465,7 +465,7 @@ Execution logic:
 * If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
 * If **any rule is false**, the **ELSE** branch runs (if it has actions).
 
-### 3.15 Logic: Routing
+### 3.15 Routing
 
 **Routing** is a logic step that lets you split the processing of one table into multiple routes (R1, R2, R3 …). In each route, you set up your own data “slice” (view) and add a separate set of actions.
 
@@ -523,7 +523,7 @@ Routing creates multiple independent branches where:
 
 In **Run history**, the Loop step displays the total number of iterations (e.g. **6 iterations**) and a completion badge (e.g. **6 / 6**). Click the **>** arrow on the Loop row to expand and inspect individual iterations.
 
-### 3.17 Logic: Interrupt workflow
+### 3.17 Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
