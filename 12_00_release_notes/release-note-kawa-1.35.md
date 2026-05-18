@@ -29,6 +29,29 @@ Sheets based on an editable data source now support a dedicated **Edit mode**. C
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.35)3.png" alt=""><figcaption></figcaption></figure></div>
 
+### 1.5 Sheets — Tab grouping
+
+Views in a sheet can now be organized into groups. Each group is displayed as a colored tab with an icon in the view strip.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.35)4.png" alt=""><figcaption></figcaption></figure></div>
+
+Open the group dropdown: pick a Style (color and icon), rename the group with an optional title, or Ungroup.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.35)5.png" alt=""><figcaption></figcaption></figure></div>
+
+#### 1.6 Sheets — Change data source
+
+A new **Change data source** action in the **Model** tab lets you replace the primary data source of a sheet without losing its structure. KAWA guides you through a 4-step wizard: **Select source → Map columns → New columns → Review**.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/change_data_source1.png" alt=""><figcaption></figcaption></figure></div>
+
+* Columns are auto-matched by name and type. Key columns must remain mapped; non-key columns can be left unmapped.
+* If the new source has extra columns, choose which ones to add to the sheet in the **New columns** step.
+* Unmapped columns stay in the sheet but receive no data — they can be reconnected in a later replacement.
+* Existing charts, pivot tables, filters, formulas, and lookup columns are preserved.
+
+> You can read more about this in the [Change data source section](../02_00_modeling/change-data-source.md).
+
 ## 2. Improvements & Bugs fixes
 
 ### 2.1 Workflows
