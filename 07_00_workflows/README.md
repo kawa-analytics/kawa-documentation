@@ -284,6 +284,36 @@ The called workflow runs as a **sub-workflow** — all its tasks execute in orde
 
 In **Run history**, the step displays a **Sub-workflow** badge and a completion counter (e.g. **3 / 3**). Click **˅** to expand and inspect the sub-workflow's individual task results (start time, duration, status, output).
 
+### 3.12 Load artifact
+
+**Load artifact** loads a stored artifact from the workspace so its properties can be used by later steps. Use it to bring a saved file — a document, dataset, image, presentation, PDF, or application — into a workflow run, for example to reference its details in a **Send email**, **AI prompt**, or **Generate output** step.
+
+#### **3.12.1 How to set up**
+
+* In a Workflow, click **+ Add action** and, in **KAWA Actions**, select **Load artifact**.
+* The step appears in the **THEN** column with the title **Load artifact**.
+* Open the **Artifact** dropdown (**Select an artifact**) and pick the artifact to load. Use the **Search** box to find it by name. Until an artifact is chosen, the card shows **"Artifact is not selected"** and the workflow cannot be saved or run.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_load_artifact1.png" alt=""><figcaption></figcaption></figure></div>
+
+* Open the **Version** dropdown and choose which version to load:
+  * **Latest version** — always loads the most recent version (the default). Use this when the workflow should always pick up the newest file.
+  * **A specific version** (v1, v2, v3 …) — pins the step to a fixed version, shown with its timestamp and author. Use this when the workflow must always use one exact revision.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_load_artifact2.png" alt=""><figcaption></figcaption></figure></div>
+
+#### **3.12.2 Use the artifact in later steps**
+
+Once an artifact is loaded, its **properties** become available to later steps via bindings. In any step that supports bindings (for example, **Send email**, **AI prompt**, **Generate output**, **Run python script**), click the **+** button and choose **Use data from** → **Load artifact** → **Properties**, then select:
+
+* **Author** — the user who created the artifact.
+* **Version** — the loaded version label.
+* **Description** — the artifact's description.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_load_artifact3.png" alt=""><figcaption></figcaption></figure></div>
+
+> If a later step references the loaded artifact but the binding is empty or invalid, the step shows **Invalid parameter binding** and the workflow cannot be saved or run.
+
 ### 3.12 Join datasets
 
 Use **Join datasets** to combine two tables produced by previous workflow steps into a single result table, using classic join types: **Inner**, **Left**, **Right**, and **Full Outer**.

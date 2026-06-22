@@ -1,6 +1,6 @@
 # Artifacts
 
-See definitions in Terminology section.
+See definitions in [Terminology](13_00_terminology.md#artifact) section.
 
 The **Artifacts** tab is a workspace-level library for the files you bring into KAWA. It gives you a single place to upload, store, preview, version, and download files — PDFs, images, presentations, spreadsheets, text, application files, and other binaries — without leaving the platform.
 
