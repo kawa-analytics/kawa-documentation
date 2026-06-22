@@ -314,13 +314,38 @@ Once an artifact is loaded, its **properties** become available to later steps v
 
 > If a later step references the loaded artifact but the binding is empty or invalid, the step shows **Invalid parameter binding** and the workflow cannot be saved or run.
 
-### 3.12 Join datasets
+### 3.13 Save artifact
+
+**Save artifact** stores a file produced by the workflow as a new **version** of an artifact. Use it to persist a workflow's output — an exported dataset, a generated chart, a report, or any file from a previous step — back into the workspace's [Artifacts](../artifacts.md) library, where it can be previewed, downloaded, versioned, and shared.
+
+#### **3.13.1 How to set up**
+
+* In a Workflow, click **+ Add action** and, in **KAWA Actions**, select **Save artifact**.
+* The step appears in the **THEN** column with the title **Save artifact**.
+* Open the **Artifact** dropdown and choose where to save the file:
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_save_artifact1.png" alt=""><figcaption></figcaption></figure></div>
+
+* **+ Create new artifact** — create an empty artifact to store the output. In the **Create artifact** dialog, enter a **Name** (required) and choose a **Type** (for example, Binary), then click **Create**.
+* **An existing artifact** — pick it from the list (use **Search** to find it by name). The file is saved as a new version of that artifact.
+
+Until an artifact is chosen, the card shows **"Artifact is not selected"** and the workflow cannot be saved or run.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_save_artifact2.png" alt=""><figcaption></figcaption></figure></div>
+
+* In the **File** field, click the **+** button and choose **Select from** → a previous step, then under **Select option** pick the file output to save (for example, a **CSV Export** from **Load data from sheet**, or a generated chart). Until a file is bound, the card shows **"File is not selected"** and the workflow cannot be saved or run.
+
+#### **3.13.2 Run behaviour**
+
+When the workflow reaches the **Save artifact** step, it writes the bound file to the selected artifact as a **new version**. Earlier versions are kept, so each run that saves to the same artifact adds another entry to its version history. The saved version is then available in the **Artifacts** tab and to any later **Load artifact** step.
+
+### 3.14 Join datasets
 
 Use **Join datasets** to combine two tables produced by previous workflow steps into a single result table, using classic join types: **Inner**, **Left**, **Right**, and **Full Outer**.
 
 <figure><img src="../.gitbook/assets/workflows_join_datasets.png" alt=""><figcaption></figcaption></figure>
 
-#### 3.12.1 How to set up
+#### 3.14.1 How to set up
 
 * In a Workflow, click **Add action** and select **Join datasets**.
 *   Select the two datasets
@@ -375,17 +400,17 @@ Use **Join datasets** to combine two tables produced by previous workflow steps 
 
     * **If no rows are found** → **Interrupt workflow** or **Continue without a result** (depending on your workflow logic).
 
-#### 3.12.2 Result
+#### 3.14.2 Result
 
 The task outputs a **single joined table**, which can be used as input for later steps (email, AI prompt, export to data source, logic steps, etc.).
 
-### 3.13 Stack datasets
+### 3.15 Stack datasets
 
 Use **Stack datasets** to combine 2 or more tables produced by previous workflow steps into a single result table by stacking them vertically (Union). The task merges rows from all selected datasets into one output table.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_stack_datasets (1).png" alt=""><figcaption></figcaption></figure></div>
 
-#### 3.13.1 How to set up
+#### 3.15.1 How to set up
 
 In a **Workflow**, click **Add action** and select **Stack datasets**.
 
@@ -417,11 +442,11 @@ Use the **Column matching method** panel to quickly populate or replace the colu
 * Use the trash icon to remove a mapping row.
 * Click **Clear all** to remove all mapped columns at once.
 
-#### 3.13.2 Result
+#### 3.15.2 Result
 
 The task outputs a **single stacked table**. Each mapping row becomes an output column, and rows from all selected datasets are appended into one result. This result can be used in later steps (for example, Generate output, Send email, AI prompt, export to data source, or logic steps).
 
-### 3.14 If / Else
+### 3.16 If / Else
 
 **If / Else** is a logic step that splits a workflow into two branches:
 
@@ -430,7 +455,7 @@ The task outputs a **single stacked table**. Each mapping row becomes an output 
 
 The step uses data from previous actions: **Transform data**, **Run python script**, **AI prompt**, **Send email**, etc.
 
-#### 3.14.1 Add an If / Else step
+#### 3.16.1 Add an If / Else step
 
 * In the THEN section, click **+ Add action**.
 * In **KAWA Actions**, scroll to the **Logic** section.
@@ -443,7 +468,7 @@ A new block appears in the steps list with two tabs:
 
 Each tab has its own **+ Add action** button to build the branch.
 
-#### 3.14.2 Add path rules
+#### 3.16.2 Add path rules
 
 The behavior of **If / Else** is controlled by **path rules** – rows of conditions in the panel on the right.
 
@@ -482,7 +507,7 @@ This lets you compare:
 * All rules inside an **If / Else** are combined with **AND** – they all must be true for the **IF** branch to run.
 * The total number of rules is shown in the step name (for example, “5. 3 rules”).
 
-#### 3.14.3 Actions in the IF and ELSE branches
+#### 3.16.3 Actions in the IF and ELSE branches
 
 After you set up the rules, define what each branch should do.
 
@@ -495,11 +520,11 @@ Execution logic:
 * If **all rules are true**, only the **IF** branch runs and the **ELSE** branch is skipped.
 * If **any rule is false**, the **ELSE** branch runs (if it has actions).
 
-### 3.15 Routing
+### 3.17 Routing
 
 **Routing** is a logic step that lets you split the processing of one table into multiple routes (R1, R2, R3 …). In each route, you set up your own data “slice” (view) and add a separate set of actions.
 
-#### 3.15.1 How to add Routing
+#### 3.17.1 How to add Routing
 
 Choose the table source for Routing:
 
@@ -510,7 +535,7 @@ Choose the table source for Routing:
 
 After that, a table preview for Routing will open on the right.
 
-#### 3.15.2 How routes work (R1 / R2 / R3)
+#### 3.17.2 How routes work (R1 / R2 / R3)
 
 Routes are shown as tabs: **R1**, **R2**, **R3**…
 
@@ -519,13 +544,13 @@ Routes are shown as tabs: **R1**, **R2**, **R3**…
 
 <div data-with-frame="true"><img src="../.gitbook/assets/workflows_routing2.png" alt=""></div>
 
-#### 3.15.3 Add actions inside a route
+#### 3.17.3 Add actions inside a route
 
 * Select the route you need (for example, R1).
 * In the route block, click Add action and add the steps you need (Send email, Export to data source, Report, etc.).
 * Repeat for R2, R3… if needed.
 
-#### 3.15.4 Result
+#### 3.17.4 Result
 
 Routing creates multiple independent branches where:
 
@@ -533,11 +558,11 @@ Routing creates multiple independent branches where:
 * each branch (route) can have its own data view/slice,
 * each branch runs its own set of actions.
 
-### 3.16 Loop
+### 3.18 Loop
 
 **Loop** iterates over the rows of an input table, repeating a set of nested actions for each row. Use it when the same sequence of steps must run once per row — for example, exporting one report per client, calling a workflow per position, or generating output for each item in a queue.
 
-#### 3.16.1 How to set up
+#### 3.18.1 How to set up
 
 * In a Workflow, click **+ Add action** and select **Logic → Loop**.
 * The step appears in the **THEN** column with the title **For each row in `[source task]`**.
@@ -546,14 +571,14 @@ Routing creates multiple independent branches where:
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/workflows_loop.png" alt=""><figcaption></figcaption></figure></div>
 
-#### 3.16.2 Run behaviour
+#### 3.18.2 Run behaviour
 
 * For each row, all nested actions run in order before the loop advances to the next row.
 * If a nested action fails on any iteration, the workflow stops at that iteration. Subsequent iterations are not run.
 
 In **Run history**, the Loop step displays the total number of iterations (e.g. **6 iterations**) and a completion badge (e.g. **6 / 6**). Click the **>** arrow on the Loop row to expand and inspect individual iterations.
 
-### 3.17 Interrupt workflow
+### 3.19 Interrupt workflow
 
 This task has **no settings**: you simply place it where you need it in the chain. Its purpose is to **immediately stop** the workflow execution at the point where this step is added. All steps after it will **not** run.
 
