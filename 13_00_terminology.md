@@ -15,6 +15,14 @@ nav_order: 44
 
 **Used in:** [AI Integration](06_00_ai_integration.md) section.
 
+#### Artifact
+
+**In KAWA:** A file stored in the workspace-level **Artifacts** library — PDFs, images, presentations, spreadsheets, text, application files, and other binaries — that you can upload, preview, version, download, and share without leaving the platform. KAWA detects the file type automatically (for example, `TEXT`, `PDF`, `BINARY`) and keeps a full version history (v1, v2, …). An artifact is **Private** (Access: _Restricted_) by default and becomes visible to others only once it is shared.
+
+**How it relates to data modelling and standard terminology:** An artifact is not a data object — it does not define a schema, a granularity, or queryable columns the way a Data Source or Sheet does. It belongs to the content/asset-management layer of the platform: a versioned file store with access control (comparable to object storage or a document library) that sits alongside the data model rather than inside it. Workflows can also produce artifacts as outputs (for example, exports or generated documents).
+
+**Used in:** [Artifacts](artifacts.md) section.
+
 ***
 
 ## C
