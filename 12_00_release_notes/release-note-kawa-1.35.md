@@ -72,3 +72,10 @@ A new **Change data source** action in the **Model** tab lets you replace the pr
 ### 2.2 ClickHouse
 
 * Migrated from the JDBC driver to the native ClickHouse Java client. The new client reuses connection pools across requests and is backward compatible with ClickHouse LTS versions 24, 25, and 26.
+
+## 3. Patch releases (1.35.x)
+
+### Patch 1.35.1
+
+* Splited datasources into Editable (created from scratch or via the Python client — full edit mode with add/remove rows and columns) and Patchable (backed by an external system — in-place cell patching only)
+* Adapted the Print screen feature to the new backend, migrating its capabilities to Playwright on Java
