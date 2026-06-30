@@ -134,7 +134,7 @@ In each workspace, users benefit from a set of permissions:
 
 Workspace permissions are handled directly on the GUI, from the settings section (cog icon at the bottom left)
 
-<div data-with-frame="true"><img src="../.gitbook/assets/manage_workspace_permissions.png" alt=""></div>
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/manage_workspace_permissions.png" alt=""><figcaption></figcaption></figure></div>
 
 > **Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should be reserved to workspace administrators only.
 
