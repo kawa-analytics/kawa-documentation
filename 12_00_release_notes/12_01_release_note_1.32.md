@@ -4,7 +4,7 @@ parent: Release Notes
 nav_order: 41
 ---
 
-# Release note 1.32
+# Release note - KAWA 1.32
 
 ## 1. New Features
 
@@ -32,7 +32,7 @@ All type of widgets ( charts , pivot and grid) will have an new icon full screen
 
 ### 1.3 The query cache on external DataSources
 
-Query cache configuration (per data source). Turn caching on/off, set TTL in seconds, and define an optional daily UTC window when cache is bypassed. Existing Clear query cache action remains available. For complete documentation and setup details, please visit: [KAWA Query Cache](../10_03_query_cache/) section.
+Query cache configuration (per data source). Turn caching on/off, set TTL in seconds, and define an optional daily UTC window when cache is bypassed. Existing Clear query cache action remains available. For complete documentation and setup details, please visit: [KAWA Query Cache](https://github.com/kawa-analytics/kawa-documentation/blob/gitbook-migration/10_03_query_cache/README.md) section.
 
 ### 1.4 Python scripts: File upload parameters
 
