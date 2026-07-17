@@ -2,11 +2,15 @@
 
 KAWA is committed to protecting our customers' data and systems. Our security program is governed by documented policies and enforced through technical and organizational controls that are continuously monitored. This page lists the controls currently in place across our infrastructure, organization, product, internal procedures, and data handling, so customers, prospects, and auditors can see exactly how we protect information.
 
-> KAWA uses Vanta for continuous security monitoring of its controls.
+> This page describes how KAWA (the company) secures its operations and customer data. For in-product controls — roles, permissions, row-level security, and sharing — see [Data security & permissions](08_00_administration/08_02_security.md).
 
-> This page describes how KAWA (the company) secures its operations and customer data. For in-product controls — roles, permissions, row-level security, and sharing — see Data security & permissions.
+## 1. Security partners
 
-## 1. Infrastructure security
+KAWA's security program is continuously monitored and independently assessed by recognized security partners.
+
+<table data-card-size="large" data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td>Security controls continuously monitored through Vanta.</td><td><a href=".gitbook/assets/vanta_card.png">vanta_card.png</a></td></tr><tr><td>Independent security assessment performed by ADVSEC.</td><td><a href=".gitbook/assets/advsec_card.png">advsec_card.png</a></td></tr></tbody></table>
+
+## 2. Infrastructure security
 
 * **Unique production database authentication enforced.** Authentication to production datastores uses authorized secure authentication mechanisms, such as a unique SSH key.
 * **Encryption key access restricted.** Privileged access to encryption keys is restricted to authorized users with a business need.
@@ -29,7 +33,7 @@ KAWA is committed to protecting our customers' data and systems. Our security pr
 * **Network and system hardening standards maintained.** Network and system hardening standards are documented, based on industry best practices, and reviewed at least annually.
 * **Service infrastructure maintained.** Infrastructure supporting the service is patched as part of routine maintenance and as a result of identified vulnerabilities, helping ensure servers are hardened against security threats.
 
-## 2. Organizational security
+## 3. Organizational security
 
 * **Asset disposal procedures utilized.** Electronic media containing confidential information is purged or destroyed in accordance with best practices, and certificates of destruction are issued for each device destroyed.
 * **Production inventory maintained.** A formal inventory of production system assets is maintained.
@@ -45,7 +49,7 @@ KAWA is committed to protecting our customers' data and systems. Our security pr
 * **Visitor procedures enforced.** Visitors are required to sign in, wear a visitor badge, and be escorted by an authorized employee when accessing the data center or secure areas.
 * **Security awareness training implemented.** Employees complete security awareness training within thirty days of hire and at least annually thereafter.
 
-## 3. Product security
+## 4. Product security
 
 * **Data encryption utilized.** Datastores housing sensitive customer data are encrypted at rest.
 * **Company uses Vanta for continuous security monitoring.** The company uses Vanta for continuous security monitoring.
@@ -53,7 +57,7 @@ KAWA is committed to protecting our customers' data and systems. Our security pr
 * **Data transmission encrypted.** Secure data transmission protocols are used to encrypt confidential and sensitive data when transmitted over public networks.
 * **Vulnerability and system monitoring procedures established.** Formal policies outline the requirements for vulnerability management and system monitoring functions related to IT / Engineering.
 
-## 4. Internal security procedures
+## 5. Internal security procedures
 
 * **Continuity and Disaster Recovery plans established.** Business Continuity and Disaster Recovery plans are in place that outline communication plans to maintain information security continuity in the event of the unavailability of key personnel.
 * **Continuity and Disaster Recovery plans tested.** A documented Business Continuity/Disaster Recovery (BC/DR) plan is maintained and tested at least annually.
@@ -92,7 +96,7 @@ KAWA is committed to protecting our customers' data and systems. Our security pr
 * **Vendor management program established.** A vendor management program is in place, including a critical third-party vendor inventory, vendor security and privacy requirements, and a review of critical third-party vendors at least annually.
 * **Vulnerabilities scanned and remediated.** Host-based vulnerability scans are performed at least quarterly on all external-facing systems. Critical and high vulnerabilities are tracked to remediation.
 
-## 5. Data and privacy
+## 6. Data and privacy
 
 * **Data retention procedures established.** Formal retention and disposal procedures are in place to guide the secure retention and disposal of company and customer data.
 * **Customer data deleted upon leaving.** Customer data containing confidential information is purged or removed from the application environment, in accordance with best practices, when customers leave the service.

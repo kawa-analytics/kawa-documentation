@@ -29,7 +29,7 @@
 * [AI integration](06_00_ai_integration.md)
 * [Administration and sharing](08_00_administration/README.md)
   * [Sharing and permissions](08_00_administration/08_01_permissions.md)
-  * [Security](08_00_administration/08_02_security.md)
+  * [Data security](08_00_administration/08_02_security.md)
 * [Security & Trust](security-and-trust.md)
 * [Python integration](09_00_python_integration/README.md)
   * [Python SDK](09_00_python_integration/09_01_python_sdk.md)
