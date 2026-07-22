@@ -4,7 +4,7 @@ parent: Release Notes
 nav_order: 43
 ---
 
-# Release note 1.34
+# Release note - KAWA 1.34
 
 ## 1. New Features
 
@@ -65,7 +65,7 @@ Long-running computations can now be interrupted directly from the loading state
 
 Reports now have a clearer **View** (read-only) mode designed for presenting and consuming content:
 
-<div data-with-frame="true"><img src="../.gitbook/assets/release(1.34)_reports_view.png" alt=""></div>
+<div data-with-frame="true"><img src="../.gitbook/assets/dashboard13.png" alt=""></div>
 
 * A dedicated **View** mode toggle is available.
 * When a user has **read-only** access, Reports open in View mode by default.
