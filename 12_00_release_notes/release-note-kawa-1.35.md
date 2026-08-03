@@ -4,7 +4,7 @@
 
 ### 1.1 New design for home pages
 
-All **home pages** have been restyled — **Data Sources**, **Sheets**, **Workflows,** **Applications**, **Dashboards**, **Scripts**, **Agents**,  and **Knowledge** now share a consistent, updated layout.
+All **home pages** have been restyled — **Data Sources**, **Sheets**, **Workflows,** **Applications**, **Dashboards**, **Scripts**, **Agents**, and **Knowledge** now share a consistent, updated layout.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.35)1.png" alt=""><figcaption></figcaption></figure></div>
 
@@ -37,7 +37,7 @@ Sheets based on an editable data source now support a dedicated **Edit mode**. C
 
 ### 1.6 Sheets — Tab grouping
 
-Views in a sheet can now be organized into groups. Each group is displayed as a colored tab with an icon in the view strip.
+Views in a sheet can now be organized into groups. Each group is displayed as a colored tab with an icon in the view strip.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.35)4.png" alt=""><figcaption></figcaption></figure></div>
 
@@ -67,7 +67,7 @@ A new **Change data source** action in the **Model** tab lets you replace the pr
 
 ### 2.3 Pivot table & charts
 
-* Pivot CSV export now offers two modes: Visible data (exports what's currently rendered, with formatting) and All data (raw) (full unformatted export from the backend).&#x20;
+* Pivot CSV export now offers two modes: Visible data (exports what's currently rendered, with formatting) and All data (raw) (full unformatted export from the backend).
 
 ### 2.2 ClickHouse
 
@@ -79,3 +79,30 @@ A new **Change data source** action in the **Model** tab lets you replace the pr
 
 * Splited datasources into Editable (created from scratch or via the Python client — full edit mode with add/remove rows and columns) and Patchable (backed by an external system — in-place cell patching only)
 * Adapted the Print screen feature to the new backend, migrating its capabilities to Playwright on Java
+
+### Patch 1.35.2
+
+* Added a 3M (three-month) granularity option to date and date-time segmentation across the app
+* Added the ability to duplicate a lookup (linked) column, like duplicating a formula, keeping the same target view, source field, aggregation, and join keys
+* Added an "Edit data" toolbar to dashboard sheet widgets, letting users edit editable sheet views in place without full screen, with a buffered session that commits on Save or discards on Cancel
+* Added a distinct icon for editable sheets wherever sheets are listed&#x20;
+* Added a computed-columns count to each sheet in the home page catalog, updating automatically as computed columns are added or removed in the grid view
+* Added an "Approval" input to the workflow form builder for User Input tasks, seeded with editable Approve/Reject options, that automatically generates an if/else branch per option after the task
+* Added support for the new @kawa\_workflow\_tool decorator in Python workflow scripts, letting scripts declare input files, output files, output scalars, and named output data frames that downstream tasks can bind to, with an overview panel summarizing a tool's inputs and outputs
+* Added view/edit for formula, lookup, and mapping columns in the Sheet model section
+* Added a file trigger variable to workflows, so running a workflow can prompt the user to upload a file that is passed to the run
+* Added a "Preview workflow" button to the sub-process task, opening a read-only preview of the selected sub-workflow
+* Added multi-output support to Python workflow scripts, letting a script produce several named output data frames that downstream tasks can each select and bind to individually
+* Added a "Left Anti Join" type to the workflow Join task, returning rows from Dataset A with no match in Dataset B
+* Added a "Feed type" section to the data source overview showing the current loading mode, letting users switch between Incremental and Reset before insert with an inline warning about the impact, without needing a separate toolbar action
+* Added editable multi-line descriptions to formula, lookup, and mapping columns, accessible from an info icon in their editors
+* Added a per-series Bar / Line type toggle to grid-based charts, so a single chart can mix bar and line series
+* Added support for integer and date columns as mapping keys, so mapping columns can key off numeric and date values in addition to text
+* Added auto-matching of join columns by name, pre-selecting columns that exist on both sides of the join
+* Added the ability to share entities with individual users, not just teams, via a single combined picker in the Share dialog with a Users / Teams toggle and a Viewer/Editor access level per user or team
+* Reworked the workspace permissions UI with clearer role names (Explorer / Admin / Builder), a role field on the User Profile tab, a merged "Share and Write" group, and a highlighted "danger zone" for admin-level permissions
+* Updated the workflow header to a breadcrumb-style header matching other entity pages (with inline rename, favourite star, share, and Workflow / Run history tabs), and improved the creation flow to prompt for a name and description
+* Fixed formula creation in grid view so users without formula edit permission can create a new formula, instead of being blocked by a permission check that was mistakenly applied in create mode
+* Fixed workflow updates to share the layouts backing COMPUTE/CHART tasks, so adding or rebuilding a task no longer leaves those layouts private and breaks workspace mounts for non-admin members
+* Fixed workflow filters so an invalid or missing variable binding is surfaced and blocks saving, instead of failing silently until deploy, with the collapsed filter card showing the binding's real name and turning red when broken
+
