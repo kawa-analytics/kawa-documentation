@@ -6,11 +6,7 @@
 
 The workflow form builder now includes an **Approval** input for **User Input** tasks. It comes seeded with editable "Approve" / "Reject" options, and KAWA automatically generates an **If / Else** branch for each option immediately after the task — so an approver's decision routes the run without any manual branch setup.
 
-\<!-- Read-more callout → link to the Workflows section in GitBook -->
-
-> You can read more about this in the **Workflows** section.
-
-\<!-- \[SCREENSHOT: workflow form builder with the "Approval" input and the auto-generated If/Else branch] -->
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.36)1.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 1.2 Workflows — File input
 
@@ -27,29 +23,25 @@ Python workflow scripts gain a first-class way to declare their interface. The n
 
 * Scripts can now produce **multiple named output data frames** in a single run, and each downstream task selects and binds to the specific output it needs.
 
-\<!-- Read-more callout → link to the Python tools section in GitBook (repo: 09\_02\_python\_tools) -->
-
-> You can read more about this in the **Python tools** section.
-
-\<!-- \[SCREENSHOT: Python script tool overview panel listing inputs and outputs] -->
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.36)2.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 1.4 Dashboards — Edit sheet data in place
 
 Editable sheet views embedded in dashboards can now be edited without opening them full-screen. A new **"Edit data"** toolbar on dashboard sheet widgets opens a buffered edit session: changes are collected as pending edits and either committed on **Save** or discarded on **Cancel**. This extends the sheet **Edit mode** introduced in 1.35 to dashboards.
 
-\<!-- \[SCREENSHOT: dashboard sheet widget with the "Edit data" toolbar and a pending edit session] -->
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.36)3.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 1.5 Data sources — Feed type switcher
 
 The data source overview now shows a **"Feed type"** section with the current loading mode. Users can switch between **Incremental** and **Reset before insert** directly from the overview — with an inline warning about the impact of the change — instead of going through a separate toolbar action.
 
-\<!-- \[SCREENSHOT: data source overview showing the "Feed type" section with the Incremental / Reset before insert toggle and warning] -->
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.36)4.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 1.6 Sharing — Share with individual users
 
 Entities can now be shared with **individual users**, not only teams. The **Share** dialog uses a single combined picker with a **Users / Teams** toggle, and each user or team gets its own **Viewer** / **Editor** access level.
 
-\<!-- \[SCREENSHOT: Share dialog with the Users / Teams toggle and per-user Viewer/Editor access] -->
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.36)5.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 1.7 Permissions — Reworked workspace roles
 
@@ -59,11 +51,7 @@ The workspace permissions UI has been reworked for clarity:
 * Share and write permissions are combined into a single **"Share and Write"** group.
 * Admin-level permissions are grouped into a highlighted **"danger zone"**.
 
-\<!-- Read-more callout → link to the Permissions section in GitBook (repo: 08\_01\_permissions) -->
-
-> You can read more about this in the **Permissions** section.
-
-\<!-- \[SCREENSHOT: reworked workspace permissions UI with roles and the highlighted danger zone] -->
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.36)6.png" alt=""><figcaption></figcaption></figure></div>
 
 ## 2. Improvements & Bugs fixes
 
