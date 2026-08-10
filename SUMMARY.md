@@ -27,6 +27,7 @@
   * [Applications](05_00_publishing/05_02_applications.md)
 * [Artifacts](artifacts.md)
 * [AI integration](06_00_ai_integration.md)
+* [Riyu — AI co-builder](riyu-ai-co-builder.md)
 * [Administration and sharing](08_00_administration/README.md)
   * [Sharing and permissions](08_00_administration/08_01_permissions.md)
   * [Data security](08_00_administration/08_02_security.md)
