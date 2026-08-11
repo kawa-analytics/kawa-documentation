@@ -98,47 +98,53 @@ Overall permissions are a list of features that individual users have access to.
 
 ### 1.3 Workspace permissions
 
-Each workspace functions as a separate isolated tenant. See definitions in [Terminology](../13_00_terminology.md#workspace) section.
+Each workspace functions as a separate isolated tenant. See definitions in the [Terminology](../13_00_terminology.md#workspace) section.
 
 In order to access a given workspace, a user must be explicitly invited in it. A workspace can also be configured as public. If that is the case, all the registered users in the platform can access it without restriction.
 
-In each workspace, users benefit from a set of permissions:
+### Permissions
 
-**Sharing permissions:**
+In each workspace, users benefit from a set of permissions, organised into three groups:
 
-* Share Sheets and Views
-* Share Data Sources
-* Share Dashboards
-* Share Applications
-* Share Knowledge
+**Share and Write:**
 
-**Misc:**
-
-* Access and manage Python scripts
-* Run Python scripts
+* Share sheets and views
+* Share data sources
+* Share reports
+* Share applications
+* Manage artifacts
+* Manage AI agents
+* Manage Python tools
+* Manage workflows
 * Manage directories
 
-**Data access permissions:**
+**Execution:**
 
-> **Warning:** Reserved to administrators of the workspace
+* Run Python scripts
+* Run workflows
 
-* Manage row level and column level security
+**Admin (danger zone):**
+
+> **Warning:** Reserved to administrators of the workspace.
+
+These permissions grant direct or indirect access to all data and are grouped into a highlighted "danger zone" marked with a warning icon:
+
 * Access restricted data and restricted data providers
-
-**Workspace administrative permissions:**
-
-> **Warning:** Reserved to administrators of the workspace
-
+* Manage row-level and column-level security
+* Manage users
 * Edit workspace settings
-* Manage workspace members
 
-Workspace permissions are handled directly on the GUI, from the settings section (cog icon at the bottom left)
+### Managing permissions
+
+Workspace permissions are handled directly in the GUI, from the settings section (cog icon at the bottom left): **Settings → Permissions**.
+
+Permissions can be configured separately for signed-in members (**Users** tab) and for public / anonymous access (**Anonymous** tab). The member list can be searched and filtered by role.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/manage_workspace_permissions.png" alt=""><figcaption></figcaption></figure></div>
 
-> **Warning:** Administrative and data access permissions give users ability to directly or indirectly access all data. Those permissions should be reserved to workspace administrators only.
+> **Warning:** Administrative and data-access permissions give users the ability to directly or indirectly access all data. Those permissions should be reserved to workspace administrators only.
 
-> **Warning:** Application wide Administrators will benefit from ALL those permissions by default.
+> **Warning:** Application-wide Administrators benefit from ALL those permissions by default.
 
 ### 1.4 Teams
 

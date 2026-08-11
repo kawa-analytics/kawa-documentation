@@ -78,3 +78,13 @@ The workspace permissions UI has been reworked for clarity:
 
 * Added a per-series **Bar / Line type toggle** to grid-based charts, so a single chart can mix bar and line series.
 * Added a **3M (three-month) granularity** option to date and date-time segmentation across the app.
+
+## 3. Patch releases (1.36.x)
+
+### Patch 1.36.1
+
+* Added a new "Artifacts" tab — a workspace-level library to upload, store, preview, version, publish, and download files (PDF, Image, PowerPoint, Excel, Word, Text, Application, and other Binary files): create an artifact as an empty container (Name + Type), add files as versions with a full v1/v2… history (timestamp, author, and optional description per version), preview supported types in the browser, and Publish a chosen version with Restricted, Signed-in users, or Anyone with the link visibility
+* Added a new "Load artifact" workflow action to load a stored artifact (Latest or a pinned version) so its properties (Author, Version, Description) can be used by later steps via bindings (e.g., Send email, AI prompt, Generate output, Run python script)
+* Added a new "Save artifact" workflow action to persist a workflow's file output as a new version of an existing or newly created artifact, keeping earlier versions and making the result available in the Artifacts tab and to later Load artifact steps
+* Added an "Anonymous" permissions tab (Workspace → Permissions) to control which actions anonymous artifacts can perform — grouped into READ (Query, Get workflow status, Get workflow definition, List workflow run tasks, Get ETL status, Download file), WRITE (Patch data, Upload file), EXECUTION (Run workflow, Run ETL), and a WARNING group of sensitive actions (Generate by AI); any action left off is disallowed
+* Redesigned the "Add action" selector in the workflow editor — clicking "+" (between tasks or at the end of a branch) now opens a searchable panel over a dimmed backdrop, with the clicked "+" highlighted to show where the action will land; actions are grouped into categorized columns (DATA, TRANSFORM, OUTPUT & LOGIC, Integrations) with a "Recently used" list, support partial and out-of-order search with full keyboard navigation (arrows to move across actions/columns, Enter to add, Esc to close), and actions that need a sheet/view (e.g., Load data, Compute view) open a second step to pick a sheet and then a view
