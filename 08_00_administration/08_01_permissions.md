@@ -102,7 +102,12 @@ Each workspace functions as a separate isolated tenant. See definitions in the [
 
 In order to access a given workspace, a user must be explicitly invited in it. A workspace can also be configured as public. If that is the case, all the registered users in the platform can access it without restriction.
 
-### Permissions
+Workspace permissions are handled directly in the GUI, from the settings section (cog icon at the bottom left): **Settings → Permissions**. They are configured on two tabs:
+
+* **Users** — what signed-in members can access and do in the workspace.
+* **Anonymous** — what unauthenticated users can do through anonymous artifacts.
+
+#### 1.3.1 Users
 
 In each workspace, users benefit from a set of permissions, organised into three groups:
 
@@ -131,20 +136,57 @@ These permissions grant direct or indirect access to all data and are grouped in
 
 * Access restricted data and restricted data providers
 * Manage row-level and column-level security
-* Manage users
+* Manage workspace members
 * Edit workspace settings
 
-### Managing permissions
-
-Workspace permissions are handled directly in the GUI, from the settings section (cog icon at the bottom left): **Settings → Permissions**.
-
-Permissions can be configured separately for signed-in members (**Users** tab) and for public / anonymous access (**Anonymous** tab). The member list can be searched and filtered by role.
+The member list can be searched and filtered by role.
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/manage_workspace_permissions.png" alt=""><figcaption></figcaption></figure></div>
 
 > **Warning:** Administrative and data-access permissions give users the ability to directly or indirectly access all data. Those permissions should be reserved to workspace administrators only.
 
 > **Warning:** Application-wide Administrators benefit from ALL those permissions by default.
+
+#### 1.3.2 Anonymous
+
+Anonymous access controls which actions can be performed anonymously — by unauthenticated users, through anonymous artifacts — in the workspace. By default nothing is allowed: any action that is not explicitly enabled is disallowed.
+
+> Choose which actions anonymous artifacts are allowed to perform in this workspace. Any action left off is disallowed.
+
+Each available action has its own toggle. Actions are grouped into four categories:
+
+**Read** — Actions that read data, status or definitions.
+
+* Query
+* Get workflow status
+* Get workflow definition
+* List workflow run tasks
+* Get ETL status
+* Download file
+
+**Write** — Actions that modify or upload data.
+
+* Patch data
+* Upload file
+
+**Execution** — Actions that run or start processing.
+
+* Run workflow
+* Run ETL
+
+**Warning** — Sensitive actions — enable with caution.
+
+* Generate by AI
+
+Enable the actions you want to allow, then click **Apply** to save. **Apply** stays disabled until you make a change, and saving closes the settings dialog.
+
+> **Warning:** These actions are performed by unauthenticated users. Only enable the actions you are comfortable exposing anonymously.
+
+Only workspace administrators who have the permission to configure anonymous access can change these settings. For everyone else the toggles and **Apply** are disabled (read-only).
+
+If the environment exposes no anonymous actions, the tab shows: _"No anonymous actions are available in this environment."_
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/anonymous_access.png" alt=""><figcaption></figcaption></figure></div>
 
 ### 1.4 Teams
 
@@ -271,11 +313,7 @@ It means that the PUBLISH and ROLLBACK buttons on the app will affect all pages 
 
 When sheets are used in shared apps, modifying elements of their model (like formulas for example), will result in a warning for the users.
 
-### 2.5 Sharing Knowledge
-
-As with the other entities, Knowledge can be shared in the workspace. When a user does not have read access to a knowledge, they will not be able to access the content of the knowledge anywhere. (Parsed data, previews etc)
-
-### 2.6 Sharing Workflows
+### 2.5 Sharing Workflows
 
 Workflows can be shared in the workspace in the same way as the other entities.
 
