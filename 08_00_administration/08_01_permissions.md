@@ -190,7 +190,9 @@ If the environment exposes no anonymous actions, the tab shows: _"No anonymous a
 
 ### 1.4 Teams
 
-Within each workspace, users can be grouped in Teams. See definitions in [Terminology](../13_00_terminology.md#team) section. Teams can be used to share entities with user groups, such as applications, dashboards, sheets and data sources.
+Within each workspace, users can be grouped in Teams. See definitions in [Terminology](../13_00_terminology.md#team) section. Teams let you share entities — such as applications, dashboards, sheets and data sources — with a whole group of users at once, instead of sharing with each person individually.
+
+Entities can also be shared directly with individual users, so a team is no longer required to share with specific people.
 
 Teams are configured on the GUI, from the settings menu.
 
@@ -222,14 +224,16 @@ All entities consuming the data (Sheets, Dashboards, Python computations) are wi
 
 **Sharing options**:
 
-Entities can be shared with particular teams or with all the users who can access the workspace. When sharing an entity:
+Entities can be shared with individual users, with particular teams, or with all the users who can access the workspace. When sharing an entity:
 
 * Set a general access policy:
-  * `RESTRICTED` means users of the workspace cannot access the entity
-  * `VIEWER` means that users of the workspace can access the entity but cannot publish any change on it -`EDITOR` this level means that all the users of the workspace can publish changes on the entity
-* Set a per team access policy: The same levels apply.
+  * RESTRICTED means users of the workspace cannot access the entity
+  * VIEWER means that users of the workspace can access the entity but cannot publish any change on it
+  * EDITOR means that all the users of the workspace can publish changes on the entity
+* Set a per user access policy: the same VIEWER / EDITOR levels apply, chosen per individual.
+* Set a per team access policy: the same levels apply.
 
-> **Important:** A user affected by more than one policy will benefit from the higher available access. If a user is targeted by `RESTRICTED`, `VIEWER` and `EDITOR` simultaneously (through different teams perhaps), they will have the `EDITOR` policy on that entity.
+> **Important:** A user affected by more than one policy will benefit from the higher available access. If a user is targeted by RESTRICTED, VIEWER and EDITOR simultaneously (through different teams, a direct user share, or the general access policy), they will have the EDITOR policy on that entity.
 
 ### 2.1 Sharing Sheets and Views
 
@@ -320,3 +324,7 @@ Workflows can be shared in the workspace in the same way as the other entities.
 If a user does not have the required permission on a sheet that is used in a workflow, they cannot modify elements of their model. In this case the workflow editor will show an error, and the update of the view will not be applied until a user with the appropriate permissions modifies the workflow or grants the missing access.
 
 <div data-with-frame="true"><img src="../.gitbook/assets/impact_w.png" alt=""></div>
+
+### 2.6 Sharing Artifacts
+
+Artifacts can be shared in the workspace in the same way as the other entities. Use the **Share** action on an artifact to open the **Share artifact** dialog, add the teams and/or users who should have access, and set the general access policy.

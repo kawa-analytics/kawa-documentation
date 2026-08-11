@@ -114,7 +114,3 @@ The workspace permissions UI has been reworked for clarity:
 
 * Added a per-series **Bar / Line type toggle** to grid-based charts, so a single chart can mix bar and line series.
 * Added a **3M (three-month) granularity** option to date and date-time segmentation across the app.
-
-## 3. Patch releases (1.36.x)
-
-###
