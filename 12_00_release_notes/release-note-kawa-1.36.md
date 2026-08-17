@@ -114,3 +114,9 @@ The workspace permissions UI has been reworked for clarity:
 
 * Added a per-series **Bar / Line type toggle** to grid-based charts, so a single chart can mix bar and line series.
 * Added a **3M (three-month) granularity** option to date and date-time segmentation across the app.
+
+## 3. Patch releases (1.36.x)
+
+### Patch 1.36.1
+
+* Redesigned the "Add action" selector in the workflow editor — clicking "+" (between tasks or at the end of a branch) now opens a searchable panel over a dimmed backdrop, with the clicked "+" highlighted to show where the action will land; actions are grouped into categorized columns (DATA, TRANSFORM, OUTPUT & LOGIC, Integrations) with a "Recently used" list, support partial and out-of-order search with full keyboard navigation (arrows to move across actions/columns, Enter to add, Esc to close), and actions that need a sheet/view (e.g., Load data, Compute view) open a second step to pick a sheet and then a view
