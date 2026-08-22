@@ -33,6 +33,8 @@
   * [Data security](08_00_administration/08_02_security.md)
 * [Security & Trust](security-and-trust.md)
 * [SDLC — governed delivery & SOX controls](sdlc.md)
+* [DSL](dsl/README.md)
+  * [Export and import](dsl/export-and-import.md)
 * [Python integration](09_00_python_integration/README.md)
   * [Python SDK](09_00_python_integration/09_01_python_sdk.md)
   * [Python tools](09_00_python_integration/09_02_python_tools.md)
