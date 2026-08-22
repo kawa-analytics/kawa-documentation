@@ -1,20 +1,73 @@
-# Export and import
+# Inventory, export and import
 
-`kawa export` snapshots a workspace into a single portable ZIP. `kawa import` applies that ZIP to **any** workspace, on **any** KAWA server.
+Moving a workspace — or part of one — rests on **three commands**, and nothing else:
+
+| Command | What it does |
+| --- | --- |
+| [`kawa inventory`](#1-inventory-what-a-workspace-holds) | Lists every entity in a workspace with its **immutable tag** — the identity you select with, and the only correct way to name an entity |
+| [`kawa export`](#2-export-from-a-workspace) | Snapshots a workspace, or a tag-selected part of it, into a single portable ZIP |
+| [`kawa import`](#3-load-an-export-into-another-workspace) | Applies that ZIP to any workspace, on any KAWA server |
+
+They compose in one direction — **inventory → export → import**:
+
+```bash
+kawa inventory --workspace-id=12                       # 1. find the tags
+kawa export --workspace-id=12 --output=source.zip      # 2. snapshot the source
+kawa import source.zip --workspace-id=77 --plan-only   # 3. dry run on the target
+kawa import source.zip --workspace-id=77 --yes         #    apply
+```
 
 Typical uses: cloning a workspace for a new team, moving a proven build from a sandbox instance to production, seeding a demo environment, or archiving a definition outside KAWA.
 
-The complete round trip:
+All three need only the [connection variables](README.md#connect) — `KAWA_API_URL` and `KAWA_API_KEY`. None of them requires a checkout or a local working directory.
+
+## 1. Inventory: what a workspace holds
 
 ```bash
-kawa export --workspace-id=12 --output=source.zip      # on the source server
-kawa import source.zip --workspace-id=77 --plan-only   # dry run on the target
-kawa import source.zip --workspace-id=77 --yes         # apply
+kawa inventory --workspace-id=12
 ```
 
-Both commands need only the [connection variables](README.md#connect) — `KAWA_API_URL` and `KAWA_API_KEY`.
+It reads the live server and prints one block per kind — scripts, datasources, sheets, dashboards, workflows, agents, applications, artifacts, skills — with each entity's name, immutable tag, creation date, owner and description:
 
-## 1. Export from a workspace
+```
+SCRIPTS (2)
+  NAME                TAG                             CREATED     OWNER  DESCRIPTION
+  send_slack_message  send-slack-message_89f510f5a656  2026-04-21  1
+
+SHEETS (27)
+  NAME       TAG                   CREATED     OWNER  DESCRIPTION
+  Clients    clients_384109515a8e  2026-04-21  1
+  ...
+```
+
+`--workspace-id` is optional inside a directory already bound to a workspace; that workspace is the default.
+
+**This is where tags come from.** A tag is an opaque string — never assemble one from a display name, never edit one by hand, never assume the part before the underscore means anything. Copy it from this listing (or from `--json`) into `kawa export --tags=…`.
+
+`--json` emits the same inventory as a machine-readable document, keyed by kind, one object per entity:
+
+```json
+{
+  "sheets": [
+    {
+      "name": "Clients",
+      "description": "",
+      "tag": "clients_384109515a8e",
+      "created": "2026-04-21",
+      "owner": "1"
+    }
+  ]
+}
+```
+
+### Inventory options
+
+| Flag | Effect |
+| --- | --- |
+| `--workspace-id=<id>` | Workspace to inventory (default: the bound workspace) |
+| `--json` | Machine-readable output instead of the tables |
+
+## 2. Export from a workspace
 
 ### The whole workspace
 
@@ -41,20 +94,7 @@ Overwriting an existing file requires `--force`, so a bundle you still need is n
 
 ### Exporting only part of a workspace
 
-Entities are selected by their immutable tag. List them first:
-
-```bash
-kawa inventory --workspace-id=12
-```
-
-```
-SHEETS (27)
-  NAME       TAG                    CREATED     OWNER  DESCRIPTION
-  Clients    clients_384109515a8e   2026-04-21  1
-  ...
-```
-
-Then export what you need:
+Entities are selected by their **immutable tag** — [`kawa inventory`](#1-inventory-what-a-workspace-holds) is where you read them. Export what you need:
 
 ```bash
 kawa export --workspace-id=12 --tags=clients_384109515a8e --output=clients.zip
@@ -144,7 +184,7 @@ Two ways forward:
 
 Datasources fed by user uploads are converted to **editable** datasources on the way out, so their schema and their rows do travel.
 
-## 2. Load an export into another workspace
+## 3. Load an export into another workspace
 
 ### Step 1 — create the target workspace
 

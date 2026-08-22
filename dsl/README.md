@@ -64,6 +64,24 @@ That is what lets a workspace definition leave the server it was built on. A tre
 
 Run `kawa inventory` to list every entity with its tag.
 
+## Moving a workspace — inventory, export, import
+
+Three commands move a workspace, or any part of one, to another workspace or another server. They are the whole transfer surface, and they compose in one direction:
+
+```bash
+kawa inventory --workspace-id=12                       # what is in there, and its tags
+kawa export --workspace-id=12 --output=source.zip      # snapshot it into a portable bundle
+kawa import source.zip --workspace-id=77 --yes         # apply it to the target
+```
+
+| Command | Path |
+| --- | --- |
+| `kawa inventory` | Reads the live workspace and lists every entity with its **immutable tag** — the identity every selection is made with. No checkout needed. |
+| `kawa export` | Writes a self-contained ZIP: the whole workspace, or `--tags=…` for a selection plus its dependency closure. Carries no secrets and no server-specific ids. |
+| `kawa import` | Applies a bundle to a target workspace — same server or a different one. `--plan-only` shows exactly what it would do before anything is written. |
+
+Full walkthrough: [Inventory, export and import](export-and-import.md).
+
 ## What you can do
 
 | Area | Commands |
@@ -78,4 +96,4 @@ Every subcommand documents its own flags: `kawa <command> --help`.
 
 ## In this section
 
-* [Export and import](export-and-import.md) — snapshot a workspace into a portable bundle and load it into another workspace, on any server.
+* [Inventory, export and import](export-and-import.md) — list a workspace's entities and their tags, snapshot it into a portable bundle, and load that bundle into another workspace on any server.
