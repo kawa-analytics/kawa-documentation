@@ -80,6 +80,14 @@ kawa import source.zip --workspace-id=77 --yes         # apply it to the target
 | `kawa export` | Writes a self-contained ZIP: the whole workspace, or `--tags=…` for a selection plus its dependency closure. Carries no secrets and no server-specific ids. |
 | `kawa import` | Applies a bundle to a target workspace — same server or a different one. `--plan-only` shows exactly what it would do before anything is written. |
 
+Two flags make an unfamiliar bundle safe to open. `--create-workspace` imports into a workspace
+the command creates for you, so nothing existing is touched; `--test-stability` then checks that
+the imported result exports back to the same definition:
+
+```bash
+kawa import source.zip --create-workspace --yes --test-stability
+```
+
 Full walkthrough: [Inventory, export and import](export-and-import.md).
 
 ## What you can do
@@ -89,6 +97,7 @@ Full walkthrough: [Inventory, export and import](export-and-import.md).
 | Workspace lifecycle | `kawa init`, `kawa checkout`, `kawa status`, `kawa list` |
 | Change management | `kawa plan`, `kawa commit`, `kawa refresh`, `kawa pull`, `kawa check` |
 | **Transfer between workspaces and servers** | **`kawa inventory`, `kawa export`, `kawa import`** |
+| Verification | `kawa test stability`, `kawa test generate`, `kawa test evolve`, `kawa test soak` |
 | Governed promotion | `kawa sox snapshot`, `promote`, `deploy`, `drift`, `history` |
 | Data, scripts, artifacts | `kawa datasources`, `kawa scripts`, `kawa artifact`, `kawa files` |
 
@@ -96,4 +105,4 @@ Every subcommand documents its own flags: `kawa <command> --help`.
 
 ## In this section
 
-* [Inventory, export and import](export-and-import.md) — list a workspace's entities and their tags, snapshot it into a portable bundle, and load that bundle into another workspace on any server.
+* [Inventory, export and import](export-and-import.md) — list a workspace's entities and their tags, snapshot it into a portable bundle, load that bundle into another workspace on any server, and verify the result round-trips.
