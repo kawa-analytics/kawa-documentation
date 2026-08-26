@@ -6,6 +6,8 @@ nav_order: 41
 
 # Release note - KAWA 1.32
 
+**Release date:** 23 October 2025
+
 ## 1. New Features
 
 ### 1.1 Cross Filters — on dashboards, filter multiple widgets at once with a single selection

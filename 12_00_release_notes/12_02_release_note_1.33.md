@@ -6,6 +6,8 @@ nav_order: 42
 
 # Release note 1.33
 
+**Release date:** 3 February 2026
+
 ## 1. New Features
 
 ### 1.1 Workflows — design, schedule, and run multi‑step automations

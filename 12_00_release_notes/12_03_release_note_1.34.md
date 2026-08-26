@@ -6,6 +6,8 @@ nav_order: 43
 
 # Release note - KAWA 1.34
 
+**Release date:** 14 May 2026
+
 ## 1. New Features
 
 ### 1.1 Workflows — more triggers, actions, and control flow

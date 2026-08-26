@@ -1,5 +1,7 @@
 # Release note - KAWA 1.36
 
+**Release date:** 25 August 2026
+
 ## 1. New Features
 
 ### 1.1 Artifacts — a workspace library for your files

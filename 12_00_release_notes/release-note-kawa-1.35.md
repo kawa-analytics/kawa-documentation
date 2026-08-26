@@ -1,5 +1,7 @@
 # Release note - KAWA 1.35
 
+**Release date:** 1 August 2026
+
 ## 1. New Features
 
 ### 1.1 New design for home pages
