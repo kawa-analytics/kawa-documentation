@@ -132,8 +132,41 @@ kawa export --workspace-id=12 --tags=sales_ab12cd34ef --no-deps --output=one-das
 | `--output=<path>` | ZIP path or directory (default: `./<name>-<date>.zip`) |
 | `--tags=<tag,tag>` | Export only these entities plus their dependency closure |
 | `--no-deps` | With `--tags`: exactly those entities, no closure |
-| `--no-data` | Schema only — do not include editable-datasource rows |
+| `--no-data` | Schema only — no data travels: neither the editable-datasource rows nor the files feeding file datasources (CSV, Excel, …) |
+| `--anonymize-data` | The data travels with every value replaced and every column's type preserved — see [Choosing what data travels](#choosing-what-data-travels) |
 | `--force` | Overwrite the output file if it already exists |
+
+`--no-data` and `--anonymize-data` are exclusive: they answer the same question two different ways.
+
+### Choosing what data travels
+
+A bundle carries two kinds of data: the **files** that feed file datasources (`src/files/`) and the **rows** of editable datasources (`src/data/`). Three exports, three answers:
+
+| Export | Files | Editable rows | `manifest.data` |
+| --- | --- | --- | --- |
+| `kawa export` | as they are | as they are | `full` |
+| `kawa export --no-data` | omitted | omitted | `none` |
+| `kawa export --anonymize-data` | rewritten | rewritten | `anonymized` |
+
+**`--no-data`** is for sharing a *definition*. Nothing that feeds a datasource leaves the workspace; TOMLs, scripts, views, dashboards and non-data assets (a widget image) still do. On import, a file datasource the target already holds is updated in place, schema only — but the bundle cannot *create* a file datasource on a fresh workspace, because KAWA infers a file datasource's columns from its rows. For a fresh, fully importable bundle without real data, use `--anonymize-data`.
+
+**`--anonymize-data`** replaces every value and keeps every column's **type**, so the import re-infers exactly the schema the source had:
+
+| Declared type | What the anonymized value looks like |
+| --- | --- |
+| `text` | an opaque token (`anon_…`) — never number-, date- or boolean-shaped |
+| `integer` | an integer of the same sign and digit count |
+| `decimal` | always carries a fraction, with the same number of decimals |
+| `boolean` | the same vocabulary and case (`true`/`false`, `yes`/`no`, `1`/`0`, …) |
+| `date` | the same textual format, shifted by up to a year |
+| `date_time` | the same textual format — separator, seconds, fraction, time zone — shifted |
+
+Empty cells stay empty. The replacement is consistent across the whole bundle — the same original value becomes the same token in every file — so joins and primary keys still line up after the swap, and a fresh random seed per export keeps the tokens unlinkable from one export to the next. Column names and TOMLs are definition, not data, and are never touched. CSV, TSV, Excel (`.xlsx`) and Parquet blobs are supported; a workspace holding a blob in another format (`.json`, legacy `.xls`) is refused before anything is written, so an anonymized bundle never carries a raw file.
+
+```bash
+kawa export --workspace-id=12 --anonymize-data --output=sales-anonymized.zip
+kawa import sales-anonymized.zip --create-workspace --yes
+```
 
 ### What a bundle contains
 
@@ -144,10 +177,10 @@ clients.zip
     ├── dsl/datasources/clients_16a2d90d8b22.toml
     ├── dsl/sheets/clients_384109515a8e.toml
     ├── dsl/views/clients_2513ea4a1adc.toml
-    └── data/clients_16a2d90d8b22.csv              ← editable rows (omitted with --no-data)
+    └── data/clients_16a2d90d8b22.csv              ← editable rows (omitted with --no-data, rewritten with --anonymize-data)
 ```
 
-A full-workspace bundle also carries dashboards, workflows, agents and applications under `src/dsl/`, script sources under `src/scripts/`, and file-datasource blobs under `src/files/`.
+A full-workspace bundle also carries dashboards, workflows, agents and applications under `src/dsl/`, script sources under `src/scripts/`, and file-datasource blobs under `src/files/` (omitted with `--no-data`, rewritten with `--anonymize-data`).
 
 `manifest.json` records where the bundle came from, and — for a partial export — both the tags you asked for and the closure that was resolved:
 
@@ -158,6 +191,7 @@ A full-workspace bundle also carries dashboards, workflows, agents and applicati
   "source_workspace_id": "12",
   "source_workspace_name": "Sales Analytics",
   "include_data": true,
+  "data": "full",
   "entity_counts": { "datasources": 1, "sheets": 1, "scripts": 0, "dashboards": 0, "workflows": 0 },
   "selection": {
     "requested_tags": ["clients_384109515a8e"],

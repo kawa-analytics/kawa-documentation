@@ -77,7 +77,7 @@ kawa import source.zip --workspace-id=77 --yes         # apply it to the target
 | Command | Path |
 | --- | --- |
 | `kawa inventory` | Reads the live workspace and lists every entity with its **immutable tag** — the identity every selection is made with. No checkout needed. |
-| `kawa export` | Writes a self-contained ZIP: the whole workspace, or `--tags=…` for a selection plus its dependency closure. Carries no secrets and no server-specific ids. |
+| `kawa export` | Writes a self-contained ZIP: the whole workspace, or `--tags=…` for a selection plus its dependency closure. Carries no secrets and no server-specific ids. `--no-data` ships the definition only; `--anonymize-data` ships the data with every value replaced and every column type preserved. |
 | `kawa import` | Applies a bundle to a target workspace — same server or a different one. `--plan-only` shows exactly what it would do before anything is written. |
 
 Two flags make an unfamiliar bundle safe to open. `--create-workspace` imports into a workspace
