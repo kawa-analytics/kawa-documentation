@@ -18,4 +18,5 @@ _KAWA platform architecture — high-availability components, sandboxed executio
 * [Data Lakehouse](10_01_lakehouse.md)
 * [Snowflake native connection](10_02_snowflake_native_connection.md)
 * [BigQuery native connection](bigquery-native-connection.md)
+* [Databricks native connection](databricks-native-connection.md)
 * [KAWA Query cache](10_03_query_cache.md)
