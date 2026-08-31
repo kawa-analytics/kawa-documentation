@@ -1,5 +1,7 @@
 # Databricks native connection
 
+<div align="center"><img src="../.gitbook/assets/databricks-logo.png" alt="Databricks" width="300"></div>
+
 ## 1. Overview
 
 KAWA's native connection to **Databricks** runs KAWA directly on the lakehouse. KAWA's computation engine sits on top of a live **Databricks SQL Warehouse** — every query KAWA generates is compiled to Spark SQL and executes inside the customer's warehouse, against the customer's actual Delta tables. There is no extraction, no copy, and no separate analytics store.
