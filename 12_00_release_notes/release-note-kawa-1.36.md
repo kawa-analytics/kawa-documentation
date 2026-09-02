@@ -122,3 +122,28 @@ The workspace permissions UI has been reworked for clarity:
 ### Patch 1.36.1
 
 * Redesigned the "Add action" selector in the workflow editor — clicking "+" (between tasks or at the end of a branch) now opens a searchable panel over a dimmed backdrop, with the clicked "+" highlighted to show where the action will land; actions are grouped into categorized columns (DATA, TRANSFORM, OUTPUT & LOGIC, Integrations) with a "Recently used" list, support partial and out-of-order search with full keyboard navigation (arrows to move across actions/columns, Enter to add, Esc to close), and actions that need a sheet/view (e.g., Load data, Compute view) open a second step to pick a sheet and then a view
+
+### Patch 1.36.2
+
+A patch focused on **ClickHouse in a replicated cluster** (deployments with `KAWA_CLICKHOUSE_CLUSTER` set): keep ingestion fast and available when a replica is down, keep the distributed DDL queue free, and give administrators traceability from KAWA down to individual ClickHouse queries. Single-node ClickHouse deployments are unaffected and need no configuration change.
+
+**Resilience & ingestion performance**
+
+* **A replica being down no longer blocks ingestion.** KAWA now sends `distributed_ddl_task_timeout=10` and `distributed_ddl_output_mode=null_status_on_timeout` with every request, so each `ON CLUSTER` statement waits at most 10 seconds for an unreachable replica instead of failing after 180 seconds — the statement stays in the queue and the replica replays it when it comes back. Errors from reachable replicas are still raised. No configuration needed (requires ClickHouse ≥ 21.4).
+* **Statements a replicated table propagates itself are no longer sent `ON CLUSTER`** — `OPTIMIZE`, `TRUNCATE`, `DROP PARTITION`, `ADD COLUMN`, `ADD INDEX` — so they keep working while a replica is down and no longer occupy the single-threaded distributed DDL queue. Catalog statements (`CREATE`, `RENAME`, `DROP`) stay `ON CLUSTER`, as they must on an Atomic database.
+* **`OPTIMIZE` is skipped on tables whose primary key contains the auto-generated record key**: every row is unique, so the merge would deduplicate nothing while still rewriting the table on every replica.
+* **`DROP VIEW` is now `ON CLUSTER`**, like its `CREATE` — no more orphan temporary views on the passive replica.
+
+**New environment variables**
+
+* `KAWA_CLICKHOUSE_SUPPORTS_EXCHANGE` (default `false`) — when set to `true`, the publish step at the end of an ingestion swaps the temporary and live tables with a single atomic `EXCHANGE TABLES` instead of three `RENAME`s. Set it only on deployments where EXCHANGE is known to work (Atomic database on a filesystem with `renameat2`, e.g. Linux with ext4/XFS): there is deliberately no runtime fallback, so verify once with a manual `EXCHANGE TABLES a AND b [ON CLUSTER ...]` on two throwaway tables. The decision is logged at startup (`Table swaps use ...`).
+* `KAWA_CHECK_IMPACT_OF_MODEL_CHANGE` (default `false`) — the workspace-wide impact analysis run before saving a formula, lookup, layout or sheet scope is now **off by default**: on large workspaces it could take minutes per save. Set to `true` to restore the previous behaviour.
+* `KAWA_VALIDATE_DATASOURCES_AT_STARTUP` (default `true`) — set to `false` to skip the startup pass that reads every datasource and recreates missing warehouse tables, for faster restarts. The default keeps the existing behaviour.
+* `KAWA_CLICKHOUSE_KEEP_ALIVE_TIMEOUT_IN_SECONDS` (default `3`) — how long an idle pooled HTTP connection to ClickHouse is kept. It must stay **below** the ClickHouse server's own `keep_alive_timeout`, otherwise the pool can hand out connections the server has already closed ("Broken pipe"). Raise it only if the server's value is known to be higher.
+
+**Connection pool & traceability**
+
+* The ClickHouse client's default `maxConnections` goes from 10 to **50 per ClickHouse user** (tunable with `KAWA_CLICKHOUSE_CLIENT_TIMEOUTS_CONFIGURATION`, e.g. `{"maxConnections":50,"connectionRequestTimeoutInSeconds":10}`). Keep it below the server's `max_concurrent_queries` (default 100), remembering KAWA builds one pool per ClickHouse user.
+* Connection pool usage (active / idle / awaiting / max) is logged every 30 seconds per pool.
+* Every computation event now stores the ClickHouse query ids it ran (`kawa-<uuid>`), next to the acting principal — joinable with `system.query_log.query_id` to attribute warehouse load to KAWA users and build long-running-query reports.
+* The per-request workspace upgrade check now logs at DEBUG (4 fewer INFO lines per HTTP call).
