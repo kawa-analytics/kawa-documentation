@@ -295,6 +295,59 @@ kawa import source.zip --workspace-id=77 \
 
 Without those flags the import uses `KAWA_API_URL` and `KAWA_API_KEY` — that is, it imports into the server you are already connected to.
 
+### Crossing environments: `--connect-to-data`
+
+An import treats **data** one of two ways, and a flag chooses which:
+
+| Flag | When | What happens to the data |
+| --- | --- | --- |
+| `--deploy-data` — **the default** | The same environment: dev → dev, a clone, a demo | The bundled data travels with the definition — file blobs are uploaded, editable rows are seeded |
+| `--connect-to-data` | A different environment: dev → staging → prod | The definition is deployed and **bound to the data the target already holds**. Nothing the bundle carries as data reaches the target |
+
+```bash
+kawa import release.zip --workspace-id=77 --url=https://prod-kawa.mycompany.com --api-key=<prod key> --connect-to-data --plan-only
+kawa import release.zip --workspace-id=77 --url=https://prod-kawa.mycompany.com --api-key=<prod key> --connect-to-data --yes
+```
+
+`--connect-to-data` applies **one rule to every datasource**, matched by immutable tag:
+
+* **The target already has it** — the target owns the data. The import first proves the target's schema can carry the definition (the binding rule below), then binds to it: the bundled file is not uploaded, no data load re-runs, editable rows are not seeded, and the datasource is left exactly as the target has it.
+* **The target does not have it yet** — there is no data to connect to, so the datasource is created the way its kind comes into being. A file datasource is created from its bundled file (KAWA infers the columns from the rows, so in this one case the blob travels whole). An editable datasource is created from its declared columns. A live connection is created with a **placeholder query** reproducing its declared columns — one literal per column, with a comment saying so — for you to replace with the real query on the target:
+
+```
+  [placeholder] a new placeholder was created for datasource "Orders" (live_connect — a query reproducing its declared columns) — please consider configuring it for your environment
+```
+
+#### The binding rule
+
+Binding is safe only when the target **contains** the datasource being deployed. Every column the bundle declares must exist on the target — matched by **column tag**, never by name, so a column renamed on either side still matches — with a compatible type:
+
+| Target holds | Bundle declares | Result |
+| --- | --- | --- |
+| `client_id text, profit decimal, name text` | `client_id text, profit decimal` | binds — the target may hold more |
+| `client_id text, profit decimal` | `client_id text, profit integer` | binds — `integer` and `decimal` are both numeric and bind either way |
+| `client_id text, profit decimal` | `client_id text, profit text` | refused — a type change cannot be applied onto existing data |
+| `client_id text, profit decimal` | `client_id text, email text` | refused — the target has no such column |
+
+Extra columns on the target are normal — production carries columns a deployment knows nothing about — and they are kept. Every problem is reported at once, before anything is applied, and the import stops without touching the target.
+
+The datasource's **kind is not part of the rule**. A python-script datasource in development may be a live connection, a file or an editable grid in production. Once the schema check passes the deployment binds to it, and the plan shows **no drift** for that datasource: its script, query, file or provider settings are the target's business. The same holds on every later promotion — a definition applied again onto a target whose data comes from elsewhere plans as unchanged, not as an update it could never apply.
+
+Two things travel in **both** modes: the definition (TOMLs, scripts, views, dashboards, and non-data assets such as a widget image), and the **names** of secrets — a secret a script references but the target lacks is created with a placeholder value, announced with the same `[placeholder]` line, for you to set on the target. No secret value ever leaves the source.
+
+What a connect-mode run prints, one line per decision:
+
+```
+Mode: --connect-to-data — the target keeps its own data.
+  [connect] datasource "Grid": keeping added_in_prod — the target owns them
+  [connect] datasource "Grid": binding profit: integer → decimal — the target's numeric type is kept
+  [connect] datasource "Sales" already exists on the target — leaving its data alone (bundled files/sales_ab12cd34ef.csv not uploaded)
+  ...
+  [connect] not seeding editable data — the target keeps its own rows
+```
+
+The first `[connect]` line is the extra-column rule at work. The second is the numeric rule: the bundle declared `profit` as an integer, production holds a decimal, and the deployment binds to the decimal.
+
 ### Import options
 
 | Flag | Effect |
@@ -302,6 +355,8 @@ Without those flags the import uses `KAWA_API_URL` and `KAWA_API_KEY` — that i
 | `--workspace-id=<id>` | Target workspace. **Required unless** `--create-workspace` is given |
 | `--create-workspace` | Create a new workspace (named `<bundle> <timestamp>`) and import into it. Mutually exclusive with `--workspace-id` |
 | `--url`, `--api-key` | Target server (default: the connected one) |
+| `--deploy-data` | Same environment: the bundled data travels with the definition. **The default** — what an import with neither flag does |
+| `--connect-to-data` | Different environment: deploy the definition and bind to the data the target already holds — see [Crossing environments](#crossing-environments---connect-to-data). Mutually exclusive with `--deploy-data` |
 | `--plan-only` | Show the plan and stop — nothing is applied |
 | `--test-stability` | After importing, run the stability battery on the bundle. Mutually exclusive with `--plan-only` |
 | `--yes` | Apply without the confirmation prompt |
@@ -413,6 +468,9 @@ kawa test stability source.zip            # a bundle
 | An unknown tag in `--tags` | The tag does not exist in that workspace. Copy it from `kawa inventory` — tags are opaque and must never be typed by hand. |
 | `Error: no src/ tree (dsl/ missing) under: …` | The file is not a KAWA bundle. Check the path. |
 | `Nothing to import — target already matches the bundle.` | There is nothing to apply; the target already holds that definition. |
+| `datasource "…": the target has no column "…" (…). --connect-to-data binds to the data the target already holds instead of creating it` | Connect mode, and the target's datasource lacks a column the definition needs. Add the column on the target, or use `--deploy-data` if this really is the same environment. |
+| `datasource "…": column "…" is "decimal" on the target but "text" in what is being deployed — a type change cannot be applied onto existing data.` | Connect mode, and a column's type differs beyond the numeric allowance (`integer` ↔ `decimal` binds; nothing else does). Align the type on one side. |
+| `datasource "…": column "…" has no tag, so it cannot be matched against the target` | The bundle came from a workspace whose columns were never tagged. Run `kawa checkout` on the source and export again. |
 | `argument --create-workspace: not allowed with argument --workspace-id` | Pass exactly one target — an existing workspace id, or `--create-workspace`. |
 | `one of the arguments --workspace-id --create-workspace is required` | The import has no target. Pass one of the two. |
 | `argument --test-stability: not allowed with argument --plan-only` | `--plan-only` applies nothing, so there is no result to verify. |

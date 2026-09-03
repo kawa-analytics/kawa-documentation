@@ -78,7 +78,7 @@ kawa import source.zip --workspace-id=77 --yes         # apply it to the target
 | --- | --- |
 | `kawa inventory` | Reads the live workspace and lists every entity with its **immutable tag** — the identity every selection is made with. No checkout needed. |
 | `kawa export` | Writes a self-contained ZIP: the whole workspace, or `--tags=…` for a selection plus its dependency closure. Carries no secrets and no server-specific ids. `--no-data` ships the definition only; `--anonymize-data` ships the data with every value replaced and every column type preserved. |
-| `kawa import` | Applies a bundle to a target workspace — same server or a different one. `--plan-only` shows exactly what it would do before anything is written. |
+| `kawa import` | Applies a bundle to a target workspace — same server or a different one. `--plan-only` shows exactly what it would do before anything is written. `--connect-to-data` is for crossing environments (dev → staging → prod): the definition is deployed and bound to the data the target already holds, whatever kind of datasource holds it there. |
 
 Two flags make an unfamiliar bundle safe to open. `--create-workspace` imports into a workspace
 the command creates for you, so nothing existing is touched; `--test-stability` then checks that
