@@ -47,6 +47,7 @@
   * [BigQuery native connection](10_00_architecture/bigquery-native-connection.md)
   * [Databricks native connection](10_00_architecture/databricks-native-connection.md)
   * [KAWA Query Cache](10_00_architecture/10_03_query_cache.md)
+  * [LangChain / LangSmith integration](10_00_architecture/langchain-langsmith-integration.md)
 * [Exploitation](11_00_exploitation/README.md)
   * [Backup restore](11_00_exploitation/11_01_backup_restore.md)
   * [Create monitoring views](11_00_exploitation/11_02_create_monitoring_datasources.md)

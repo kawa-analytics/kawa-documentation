@@ -20,3 +20,4 @@ _KAWA platform architecture — high-availability components, sandboxed executio
 * [BigQuery native connection](bigquery-native-connection.md)
 * [Databricks native connection](databricks-native-connection.md)
 * [KAWA Query cache](10_03_query_cache.md)
+* [LangChain / LangSmith integration](langchain-langsmith-integration.md)
