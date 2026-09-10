@@ -1,6 +1,6 @@
 # KAWA Flow — environments as code
 
-`kawa flow` is the command group that runs the [SDLC](sdlc.md) from a **promotion repository**: a Git repository holding the definition of your workspaces as files. One branch per environment, one file per entity. You describe the environments once in `kawa-flow.yml`, keep the API keys in a git-ignored `.env`, and every verb below reads those two files to know where to connect.
+`kawa flow` is the command group that runs the [SDLC](../sdlc.md) from a **promotion repository**: a Git repository holding the definition of your workspaces as files. One branch per environment, one file per entity. You describe the environments once in `kawa-flow.yml`, keep the API keys in a git-ignored `.env`, and every verb below reads those two files to know where to connect.
 
 Nothing is implicit. A verb either does exactly what its name says or refuses with a reason — it never switches branches, never commits on your behalf, and never deploys a tree that differs from what is checked out.
 
