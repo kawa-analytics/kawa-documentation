@@ -147,3 +147,19 @@ A patch focused on **ClickHouse in a replicated cluster** (deployments with `KAW
 * Connection pool usage (active / idle / awaiting / max) is logged every 30 seconds per pool.
 * Every computation event now stores the ClickHouse query ids it ran (`kawa-<uuid>`), next to the acting principal — joinable with `system.query_log.query_id` to attribute warehouse load to KAWA users and build long-running-query reports.
 * The per-request workspace upgrade check now logs at DEBUG (4 fewer INFO lines per HTTP call).
+
+### Patch 1.36.3
+
+* **The `ON CLUSTER` wait introduced in 1.36.2 is now configurable.** `KAWA_CLICKHOUSE_DISTRIBUTED_DDL_TASK_TIMEOUT_IN_SECONDS` (default `10`, minimum `1`) sets how long a statement waits for the other replicas before carrying on without them. It only applies when `KAWA_CLICKHOUSE_CLUSTER` is set, and the wait only happens when a replica is actually down — nothing fails, and the absent replica replays the statement when it comes back.
+
+  **How to set it** — add the variable to the server environment and **restart KAWA**; it is read at startup. Values below `1` are refused and the server will not start.
+
+  **Choosing a value** — the wait is paid once per `ON CLUSTER` statement for as long as a replica is down, and a full reload is four of them (about 40 seconds at the default). Lower it to `2`–`5` to keep ingestion responsive during a planned replica outage. Leave it at `10` otherwise: the value is also the margin for KAWA's own node, which executes the same queue one statement at a time.
+
+  **Checking it** — the startup log confirms the value in use:
+
+  ```
+  ON CLUSTER statements wait at most 5 s for the other hosts of cluster kawa (KAWA_CLICKHOUSE_DISTRIBUTED_DDL_TASK_TIMEOUT_IN_SECONDS)
+  ```
+
+  No such line means no cluster is configured and the setting does nothing.
