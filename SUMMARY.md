@@ -31,6 +31,7 @@
 * [Administration and sharing](08_00_administration/README.md)
   * [Sharing and permissions](08_00_administration/08_01_permissions.md)
   * [Data security](08_00_administration/08_02_security.md)
+  * [AI token budgets](08_00_administration/08_03_ai_token_budgets.md)
 * [Security & Trust](security-and-trust.md)
 * [SDLC — governed delivery & SOX controls](sdlc.md)
 * [KAWA Flow](kawa-flow/README.md)

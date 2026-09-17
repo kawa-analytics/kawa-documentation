@@ -163,3 +163,20 @@ A patch focused on **ClickHouse in a replicated cluster** (deployments with `KAW
   ```
 
   No such line means no cluster is configured and the setting does nothing.
+
+* **AI token budgets — cap each user's AI consumption in Riyu.** Every user account now carries an **AI token budget**: a number of tokens per calendar day and per calendar month (UTC). Riyu checks it before starting any AI work for the user — chat, autopilot runs and agent-to-agent calls — and refuses with a clear message once either window is used up. Work already in progress is never cut off.
+
+  **Action required after upgrade** — every account starts with a budget of **zero**, and there is no "unlimited" setting: a user cannot use Riyu until an administrator grants them a budget.
+
+  **How to set it** — administrators only, with the new `ReplaceAiTokenBudget` command (HTTP API or Python SDK). Both windows are sent together and both must be greater than zero:
+
+  ```json
+  {
+    "command": "ReplaceAiTokenBudget",
+    "parameters": { "principalId": "p_01", "daily": 500000, "monthly": 10000000 }
+  }
+  ```
+
+  Users cannot change their own budget, and a new account always starts at zero. A change takes effect within a minute. In Riyu, the user menu shows the tokens consumed today and this month against each cap, with the time of the next reset.
+
+  > You can read more about this in the [AI token budgets section](../08_00_administration/08_03_ai_token_budgets.md).

@@ -245,6 +245,27 @@ curl -X POST https://your-instance.kawa.ai/commands/secured/run \
   }'
 ```
 
+### 3.9 Set a user's AI token budget
+
+Command: `ReplaceAiTokenBudget` (administrators only)
+
+```bash
+curl -X POST https://your-instance.kawa.ai/commands/secured/run \
+  -H "x-kawa-api-key: kawa_abc123xyz" \
+  -H "x-kawa-workspace-id: ws_01" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "command": "ReplaceAiTokenBudget",
+    "parameters": {
+      "principalId": "p_01",
+      "daily": 500000,
+      "monthly": 10000000
+    }
+  }'
+```
+
+`daily` and `monthly` are token counts per calendar day and calendar month (UTC). The command replaces the whole budget: send both, and keep both above `0` — a window left at `0` blocks the user. See [AI token budgets](08_00_administration/08_03_ai_token_budgets.md).
+
 ## 4. Workspaces
 
 Most operations are scoped to a workspace. Include `x-kawa-workspace-id` for workspace-scoped endpoints.\
