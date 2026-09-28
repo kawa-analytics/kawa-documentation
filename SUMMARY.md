@@ -56,6 +56,7 @@
   * [ClickHouse Users Configuration](11_00_exploitation/clickhouse-users-configuration.md)
   * [Deployment Options](11_00_exploitation/deployment-options.md)
   * [Deployment Architectures](11_00_exploitation/deployment-architectures.md)
+  * [Single Appliance Deployment](11_00_exploitation/single-appliance-deployment.md)
   * [Disaster Recovery Architecture](11_00_exploitation/disaster-recovery-architecture.md)
 * [Release notes](12_00_release_notes/README.md)
   * [Release note - KAWA 1.32](12_00_release_notes/12_01_release_note_1.32.md)
