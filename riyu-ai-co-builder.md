@@ -230,7 +230,7 @@ Both work on a **perimeter**: you choose a period, it is loaded once into the br
 
 It is built for platform and engineering leads who run AI agents: to control spend against budget, see who consumes what, find the fixes worth the most — context size, caching, model routing, loops — and catch failures early.
 
-<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu8.png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu8.png" alt="Agent Observatory — Overview screen"><figcaption></figcaption></figure></div>
 
 **Where the data comes from.** Agents export one span per turn, model call and tool call. The spans land in the **Agent Telemetry** datasource and sheet, one row per span, where formula and lookup columns add normalised tokens, cost, latency, session totals and flags. Two editable sheets, Settings and Model Pricing, feed every span through lookups, so changing a limit recomputes every flag.
 
@@ -290,7 +290,7 @@ Both can be run on demand from Settings with **Send digest now** and **Run breac
 
 **Model pricing** lists each model's price per million tokens for input, output, cache read and cache write, together with its tier. These prices are used to estimate cost when a span does not report one. Models that appear in the telemetry without a price are listed below the table.
 
-<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu9.png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu9.png" alt="Agent Observatory — Settings screen"><figcaption></figcaption></figure></div>
 
 **AI assistance.** **Generate brief** on the Optimisation screen and **Explain this session** on a session trace call the workspace LLM. They receive aggregated numbers computed from the perimeter, or for a session its span list without prompt text. Answers are generated on demand and never stored.
 
@@ -298,7 +298,7 @@ Both can be run on demand from Settings with **Send digest now** and **Run breac
 
 **Platform Observatory** monitors and audits the KAWA platform itself: activity, adoption and reliability across every user and workspace.
 
-<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu10.png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu10.png" alt="Platform Observatory — Overview screen"><figcaption></figcaption></figure></div>
 
 **Where the data comes from.** KAWA copies its own activity into three monitoring sheets every minute, and the plugin reads them:
 
@@ -344,7 +344,7 @@ Before loading, you can narrow the perimeter by **User email domains**. With eve
 
 Each finding shows its evidence as a table — click a row for details — alongside a short **What to do** list and a link to the screen where you can investigate further. Checks that found nothing are listed at the bottom under **Checks that pass**.
 
-<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu11.png" alt=""><figcaption></figcaption></figure></div>
+<div data-with-frame="true"><figure><img src=".gitbook/assets/riyu11.png" alt="Platform Observatory — Health screen with a workflow's details open"><figcaption></figcaption></figure></div>
 
 **Investigating a single entity.** **Entity lookup** finds any entity by name or id, with filters by type, and lists the most active entities in the perimeter. Clicking an entity opens its full history across the three sheets. **Follow an id** accepts a trace, run, business key, job or process instance id.
 
