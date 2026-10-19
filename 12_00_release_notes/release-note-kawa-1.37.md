@@ -136,7 +136,19 @@ A **Loop** can now run its iterations in parallel. The new **Execution mode** se
 
 > You can read more about this in the [Artifacts section](../artifacts.md).
 
-### 1.9 Administration & connectivity
+### 1.9 Sharing — Admin access level
+
+The **Share** dialog now offers a third access level for individual users and teams: **Viewer**, **Editor** and **Admin**. General access is unchanged and never grants Admin.
+
+* **Admin** includes everything **Editor** allows, and also lets the user manage sharing: add or remove users and teams, change their access levels and change general access.
+* Admin access does not allow deleting or archiving the entity. The user also still needs the workspace permission the owner would need, such as **Manage dashboards** to share a dashboard.
+* On dashboards and applications, only the owner or a KAWA admin can make the entity private. For an Admin who is not the owner, **Apply** stays disabled once everything is restricted, and the dialog shows a notice such as "Only the owner can make this report private."
+* In the **Share sheet** dialog, the switch of a view created by another user is now disabled, with the hint "Only the owner of this view can change its sharing." This also applies to the sheet's owner.
+  Admin access is available for sheets, dashboards, data sources, workflows, skills, artifacts, applications and knowledge.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.37)12.png" alt=""><figcaption></figcaption></figure></div>
+
+### 1.10 Administration & connectivity
 
 * **Databricks** — connections can now authenticate with OAuth. 
 
