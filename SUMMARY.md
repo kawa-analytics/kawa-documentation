@@ -64,4 +64,5 @@
   * [Release note - KAWA 1.34](12_00_release_notes/12_03_release_note_1.34.md)
   * [Release note - KAWA 1.35](12_00_release_notes/release-note-kawa-1.35.md)
   * [Release note - KAWA 1.36](12_00_release_notes/release-note-kawa-1.36.md)
+  * [Release note - KAWA 1.37](12_00_release_notes/release-note-kawa-1.37.md)
 * [Terminology](13_00_terminology.md)
