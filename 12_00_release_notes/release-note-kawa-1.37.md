@@ -148,7 +148,21 @@ The **Share** dialog now offers a third access level for individual users and te
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/release(1.37)12.png" alt=""><figcaption></figcaption></figure></div>
 
-### 1.10 Administration & connectivity
+### 1.10 Administration — User delegation
+
+A KAWA administrator can now let one user (the **delegate**) act on behalf of another user (the **delegator**), for example when a colleague takes over the work of someone who is away or has left. While the delegation is active, the delegate keeps their own access and also gets the delegator's:
+
+* The delegator's private objects — sheets, views, dashboards, workflows and data sources — are visible and can be opened. The delegator's private folder appears as a separate root labelled with the delegator's name.
+* The delegate can rename, delete, share and make private the delegator's objects, and edit their views with the same options as the delegator.
+* Anything shared with the delegator, personally or through their teams, is available at the same access level.
+* The delegator's workspace permissions are added to the delegate's own, and the delegate can work in the delegator's workspaces.
+  Application-wide permissions, such as access to Generative AI and AI Chat, stay personal to the delegate. Objects the delegate creates while delegating are owned by the delegator and stay with them after the delegation ends.
+
+Delegations are created and removed by an administrator with the `ReplaceUserDelegation` command; there is no screen for it in the KAWA UI. Several users can delegate to the same delegate, and a delegation is always one hop. An administrator cannot be a delegator, and an Explorer cannot be a delegate. Changes take effect on the delegate's next page load.
+
+> You can read more about this in the [User delegation section](../08_00_administration/08_04_user_delegation.md).
+
+### 1.11 Administration & connectivity
 
 * **Databricks** — connections can now authenticate with OAuth. 
 
