@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 840" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94A3B8"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#059669"/>
+    </marker>
+    <marker id="arri" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6366F1"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1240" height="840" fill="#FFFFFF"/>
+
+  <!-- header -->
+  <text x="40" y="34" font-size="12" font-weight="700" letter-spacing="1.5" fill="#6366F1">KAWA TRAIN — FROM THE DEV WORKSPACE TO PRODUCTION, WITH ITS PROOF</text>
+  <text x="1200" y="34" font-size="11.5" fill="#64748B" text-anchor="end">time →</text>
+
+  <!-- ═══ row 1: the DEV workspace ═══ -->
+  <text x="40" y="88" font-size="12.5" font-weight="600" fill="#334155">KAWA · DEV</text>
+  <text x="40" y="102" font-size="11" fill="#64748B">one shared workspace</text>
+  <text x="40" y="116" font-size="11" fill="#64748B">everyone builds, as usual</text>
+
+  <rect x="300" y="56" width="910" height="96" rx="12" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="320" y="80" font-size="13.5" font-weight="600" fill="#0F172A">DEV workspace</text>
+  <text x="430" y="80" font-size="11.5" fill="#64748B">builders work in KAWA — no-code, low-code, AI — nobody touches git</text>
+  <!-- builders -->
+  <circle cx="334" cy="116" r="11" fill="#E0E7FF" stroke="#6366F1" stroke-width="1.5"/>
+  <circle cx="362" cy="116" r="11" fill="#E0E7FF" stroke="#6366F1" stroke-width="1.5"/>
+  <circle cx="390" cy="116" r="11" fill="#E0E7FF" stroke="#6366F1" stroke-width="1.5"/>
+  <text x="412" y="120" font-size="11.5" fill="#475569">builders · every entity keeps its owner</text>
+  <!-- the train manager -->
+  <rect x="760" y="86" width="436" height="58" rx="10" fill="#FFFFFF" stroke="#C7D2FE"/>
+  <circle cx="784" cy="116" r="11" fill="#6366F1"/>
+  <text x="804" y="111" font-size="12" font-weight="600" fill="#0F172A">Train manager — the <tspan font-family="ui-monospace, SFMono-Regular, Menlo, monospace">kawa train</tspan> page</text>
+  <text x="804" y="126" font-size="10.5" fill="#64748B">start · name, tickets, members · analyse · save · merge request</text>
+  <text x="804" y="139" font-size="10.5" fill="#64748B">the DEV key only, in the git-ignored .env — no other key on a laptop</text>
+
+  <!-- saves go down into the train -->
+  <line x1="490" y1="152" x2="490" y2="240" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <line x1="870" y1="152" x2="870" y2="240" stroke="#94A3B8" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text x="730" y="190" font-size="10.5" fill="#64748B" text-anchor="middle">a save = the whole workspace over the tree,</text>
+  <text x="730" y="203" font-size="10.5" fill="#64748B" text-anchor="middle">the changes, their owners, the tickets</text>
+
+  <!-- ═══ row 2: trains ═══ -->
+  <text x="40" y="236" font-size="12.5" font-weight="600" fill="#334155">GIT · trains</text>
+  <text x="40" y="250" font-size="11" fill="#64748B">train/&lt;version&gt;</text>
+  <text x="40" y="264" font-size="11" fill="#64748B">one open at a time</text>
+
+  <!-- train/v1.0.0 -->
+  <path d="M350,372 C380,372 380,250 420,250" fill="none" stroke="#C7D2FE" stroke-width="3"/>
+  <line x1="420" y1="250" x2="560" y2="250" stroke="#C7D2FE" stroke-width="3"/>
+  <path d="M560,250 C600,250 600,372 640,372" fill="none" stroke="#C7D2FE" stroke-width="3"/>
+  <circle cx="420" cy="250" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+  <circle cx="490" cy="250" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+  <circle cx="560" cy="250" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+  <text x="545" y="234" font-size="12.5" fill="#3730A3" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">train/v1.0.0</text>
+  <text x="420" y="272" font-size="10.5" fill="#64748B" text-anchor="middle">start</text>
+  <text x="490" y="272" font-size="10.5" fill="#64748B" text-anchor="middle">save</text>
+  <text x="560" y="272" font-size="10.5" fill="#64748B" text-anchor="middle">save</text>
+  <text x="420" y="285" font-size="10" fill="#94A3B8" text-anchor="middle">the record</text>
+  <!-- the record chip -->
+  <rect x="325" y="220" width="150" height="20" rx="10" fill="#EEF2FF" stroke="#C7D2FE"/>
+  <text x="400" y="234" font-size="10" fill="#3730A3" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">train/train-v1.0.0.yml</text>
+  <text x="400" y="210" font-size="10" fill="#64748B" text-anchor="middle">name · tickets · members · saved_at</text>
+  <!-- merge request -->
+  <rect x="405" y="296" width="170" height="20" rx="10" fill="#FEF3C7" stroke="#FCD34D"/>
+  <text x="490" y="310" font-size="10.5" font-weight="600" fill="#B45309" text-anchor="middle">merge request · host review</text>
+  <text x="490" y="330" font-size="10" fill="#B45309" text-anchor="middle">approver not on the train · protected master</text>
+
+  <!-- train/v1.1.0 -->
+  <path d="M640,372 C690,372 690,250 800,250" fill="none" stroke="#C7D2FE" stroke-width="3"/>
+  <line x1="800" y1="250" x2="940" y2="250" stroke="#C7D2FE" stroke-width="3"/>
+  <path d="M940,250 C980,250 980,372 1020,372" fill="none" stroke="#C7D2FE" stroke-width="3"/>
+  <circle cx="800" cy="250" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+  <circle cx="870" cy="250" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+  <circle cx="940" cy="250" r="6" fill="#FFFFFF" stroke="#6366F1" stroke-width="2.5"/>
+  <text x="925" y="234" font-size="12.5" fill="#3730A3" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">train/v1.1.0</text>
+  <text x="800" y="272" font-size="10.5" fill="#64748B" text-anchor="middle">start</text>
+  <text x="870" y="272" font-size="10.5" fill="#64748B" text-anchor="middle">save</text>
+  <text x="940" y="272" font-size="10.5" fill="#64748B" text-anchor="middle">save</text>
+  <text x="800" y="285" font-size="10" fill="#94A3B8" text-anchor="middle">cut from the new tip</text>
+  <rect x="785" y="296" width="170" height="20" rx="10" fill="#FEF3C7" stroke="#FCD34D"/>
+  <text x="870" y="310" font-size="10.5" font-weight="600" fill="#B45309" text-anchor="middle">merge request · host review</text>
+
+  <!-- ═══ row 3: master ═══ -->
+  <text x="40" y="368" font-size="12.5" font-weight="600" fill="#334155">GIT · master</text>
+  <text x="40" y="382" font-size="11" fill="#64748B">the trunk, protected</text>
+  <text x="40" y="396" font-size="11" fill="#64748B">train/ = every train shipped</text>
+
+  <line x1="320" y1="372" x2="1210" y2="372" stroke="#6366F1" stroke-width="3"/>
+  <circle cx="350" cy="372" r="7" fill="#FFFFFF" stroke="#6366F1" stroke-width="3"/>
+  <circle cx="640" cy="372" r="8" fill="#6366F1"/>
+  <circle cx="1020" cy="372" r="8" fill="#6366F1"/>
+  <text x="350" y="398" font-size="10.5" fill="#64748B" text-anchor="middle">v0.9.0</text>
+  <text x="640" y="398" font-size="11" fill="#3730A3" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">train/train-v1.0.0.yml</text>
+  <text x="640" y="412" font-size="10.5" fill="#64748B" text-anchor="middle">on master = v1.0.0 merged, any merge method</text>
+  <text x="1020" y="398" font-size="11" fill="#3730A3" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">train/train-v1.1.0.yml</text>
+  <text x="1020" y="412" font-size="10.5" fill="#64748B" text-anchor="middle">on master = v1.1.0 merged</text>
+
+  <!-- ═══ row 4: the pipeline ═══ -->
+  <text x="40" y="472" font-size="12.5" font-weight="600" fill="#334155">PIPELINE</text>
+  <text x="40" y="486" font-size="11" fill="#64748B">GitLab, Bitbucket, GitHub</text>
+  <text x="40" y="500" font-size="11" fill="#64748B">full clone · push on evidence</text>
+
+  <line x1="640" y1="381" x2="640" y2="440" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="1020" y1="381" x2="1020" y2="440" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="300" y="442" width="230" height="58" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="314" y="462" font-size="11" font-weight="600" fill="#0F172A">The keys</text>
+  <text x="314" y="477" font-size="10.5" fill="#475569">KAWA_API_KEY = the target's service</text>
+  <text x="314" y="490" font-size="10.5" fill="#475569">account, a protected variable per job</text>
+
+  <rect x="560" y="442" width="160" height="58" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="640" y="462" font-size="11.5" font-weight="600" fill="#0F172A" text-anchor="middle">deploy-uat · on merge</text>
+  <text x="640" y="478" font-size="10" fill="#475569" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">deploy uat --ref v1.0.0</text>
+  <text x="640" y="492" font-size="10" fill="#475569" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">--yes --delete --json</text>
+
+  <line x1="720" y1="471" x2="748" y2="471" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="750" y="442" width="200" height="58" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="850" y="462" font-size="11.5" font-weight="600" fill="#0F172A" text-anchor="middle">deploy-prod · manual</text>
+  <text x="850" y="478" font-size="10" fill="#475569" text-anchor="middle">after the change ticket is approved</text>
+  <text x="850" y="492" font-size="10" fill="#475569" text-anchor="middle">deploys the commit UAT tested, or refuses</text>
+
+  <rect x="960" y="442" width="140" height="58" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="1030" y="462" font-size="11.5" font-weight="600" fill="#0F172A" text-anchor="middle">deploy-uat</text>
+  <text x="1030" y="478" font-size="10" fill="#475569" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">--ref v1.1.0</text>
+  <text x="1030" y="492" font-size="10" fill="#475569" text-anchor="middle">one deploy at a time per env</text>
+
+  <!-- ═══ row 5: controlled workspaces ═══ -->
+  <text x="40" y="568" font-size="12.5" font-weight="600" fill="#334155">KAWA · controlled</text>
+  <text x="40" y="582" font-size="11" fill="#64748B">nobody edits</text>
+  <text x="40" y="596" font-size="11" fill="#64748B">the service account writes</text>
+
+  <line x1="640" y1="500" x2="640" y2="538" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="850" y1="500" x2="850" y2="538" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="1030" y1="500" x2="1030" y2="538" stroke="#94A3B8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="300" y="540" width="230" height="58" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="314" y="560" font-size="11" font-weight="600" fill="#0F172A">What a deploy does</text>
+  <text x="314" y="575" font-size="10.5" fill="#475569">the train's tree applied, files and data;</text>
+  <text x="314" y="588" font-size="10.5" fill="#475569">--delete: the workspace equals the train</text>
+
+  <rect x="580" y="540" width="120" height="58" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="640" y="562" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">UAT</text>
+  <text x="640" y="580" font-size="10.5" fill="#475569" text-anchor="middle">workspace 802</text>
+  <text x="640" y="592" font-size="10" fill="#6366F1" text-anchor="middle">v1.0.0</text>
+  <rect x="790" y="540" width="120" height="58" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="850" y="562" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">PROD</text>
+  <text x="850" y="580" font-size="10.5" fill="#475569" text-anchor="middle">workspace 773</text>
+  <text x="850" y="592" font-size="10" fill="#6366F1" text-anchor="middle">v1.0.0</text>
+  <rect x="970" y="540" width="120" height="58" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="1030" y="562" font-size="13" font-weight="600" fill="#0F172A" text-anchor="middle">UAT</text>
+  <text x="1030" y="580" font-size="10.5" fill="#475569" text-anchor="middle">workspace 802</text>
+  <text x="1030" y="592" font-size="10" fill="#6366F1" text-anchor="middle">v1.1.0</text>
+
+  <!-- ═══ row 6: evidence ═══ -->
+  <text x="40" y="700" font-size="12.5" font-weight="600" fill="#334155">GIT · evidence</text>
+  <text x="40" y="714" font-size="11" fill="#64748B">orphan branch, never merged</text>
+  <text x="40" y="728" font-size="11" fill="#64748B">only the pipeline pushes</text>
+
+  <line x1="320" y1="704" x2="1210" y2="704" stroke="#059669" stroke-width="3" stroke-dasharray="8 6"/>
+  <line x1="640" y1="598" x2="640" y2="694" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrg)"/>
+  <line x1="850" y1="598" x2="850" y2="694" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrg)"/>
+  <line x1="1030" y1="598" x2="1030" y2="694" stroke="#059669" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#arrg)"/>
+  <text x="652" y="650" font-size="10" fill="#065F46">started before anything is touched,</text>
+  <text x="652" y="663" font-size="10" fill="#065F46">finished or failed after</text>
+
+  <circle cx="632" cy="704" r="5" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <circle cx="650" cy="704" r="5" fill="#059669"/>
+  <text x="641" y="728" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uat/…-v1.0.0-started</text>
+  <text x="641" y="742" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uat/…-v1.0.0-finished</text>
+  <circle cx="842" cy="704" r="5" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <circle cx="860" cy="704" r="5" fill="#059669"/>
+  <text x="851" y="728" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">prod/…-v1.0.0-started</text>
+  <text x="851" y="742" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">prod/…-v1.0.0-finished</text>
+  <circle cx="1022" cy="704" r="5" fill="#ECFDF5" stroke="#059669" stroke-width="2"/>
+  <circle cx="1040" cy="704" r="5" fill="#059669"/>
+  <text x="1031" y="728" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uat/…-v1.1.0-started</text>
+  <text x="1031" y="742" font-size="10.5" fill="#065F46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uat/…-v1.1.0-finished</text>
+
+  <!-- prod reads the uat record -->
+  <path d="M650,752 C700,800 800,800 842,752" fill="none" stroke="#059669" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#arrg)"/>
+  <text x="746" y="812" font-size="10.5" fill="#065F46" text-anchor="middle">deploy-prod reads the UAT record: the same commit, or refused</text>
+
+  <!-- the rules of the branch -->
+  <rect x="300" y="640" width="230" height="52" rx="10" fill="#ECFDF5" stroke="#A7F3D0"/>
+  <text x="314" y="658" font-size="11" font-weight="600" fill="#065F46">The rules</text>
+  <text x="314" y="672" font-size="10.5" fill="#065F46">no record, no deploy · a start with no end</text>
+  <text x="314" y="685" font-size="10.5" fill="#065F46">holds the environment · --json for the ticket</text>
+  <text x="320" y="770" font-size="10.5" fill="#64748B">the page reads it back: where each train is, since when</text>
+</svg>

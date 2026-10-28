@@ -1,208 +1,124 @@
-# SDLC — the KAWA development lifecycle
+# SDLC — governed delivery & SOX controls
 
-KAWA ships a complete software-development lifecycle for analytics: isolated feature workspaces, Git-backed promotion, environment branches, and gated releases. Builders never touch Git — one CLI verb per lifecycle step drives everything — yet every change reaches production as a reviewed, approved, signed commit. This page describes the working model and the [SOX control framework](#7-sox-controls) it enforces.
+KAWA ships a development lifecycle for analytics that reaches production as a sequence of **release trains**. A team builds in one development workspace, in KAWA, as usual. The train manager puts the workspace on a train, a branch of a Git repository; the Git host's merge request is the review; a pipeline deploys the merged train onto the controlled environments by its version; and every deploy leaves its proof on a dedicated branch. Nothing reaches a governed environment except a merged train, deployed by the pipeline's own service account.
+
+This page is the control view of that model: what each mechanism guarantees and how an auditor verifies it. The tooling itself is documented under [KAWA Train](kawa-flow/README.md): the [step-by-step guide](kawa-flow/step-by-step.md) and the [reference](kawa-flow/reference.md).
 
 ## 1. Two operating models
 
-**Not every use case needs a pipeline.** KAWA offers two operating models, and the choice is per use case, not per platform — most deployments run both side by side.
+**Not every use case needs a pipeline.** KAWA offers two operating models, and the choice is per use case, not per platform. Most deployments run both side by side.
 
-| Model         | How it works                                                                                                             | Use it for                                                                    |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| **Free mode** | One shared workspace. KAWA's native permission system and roles separate **builders** (create and edit) from **explorers** (consume, filter, drill). No branches, no gates — changes are live immediately. | Self-service analytics: internal dashboards, ad-hoc analysis, team reporting. |
-| **SDLC mode** | The lifecycle described on this page: Git-backed environments, feature workspaces, gated promotion, signed deploys.       | Mission-critical and SOX-compliant processes: reconciliation, regulatory reporting (MiFID, EMIR), financial close. |
+| Model | How it works | Use it for |
+| --- | --- | --- |
+| **Free mode** | One shared workspace. KAWA's permission system separates **builders** (create and edit) from **explorers** (consume, filter, drill). No trains, no gates: changes are live immediately. | Self-service analytics: internal dashboards, ad-hoc analysis, team reporting. |
+| **Train mode** | The lifecycle described on this page: a development workspace, release trains on Git, a reviewed merge, controlled environments deployed by the pipeline, evidence per deploy. | Mission-critical and SOX-scoped processes: reconciliation, regulatory reporting (MiFID, EMIR), financial close. |
 
-In Free mode, governance *is* the permission model — see [Sharing and permissions](08_00_administration/08_01_permissions.md). In SDLC mode, governance is structural: nothing reaches a governed environment except through the promotion path. The rest of this page describes SDLC mode.
+In Free mode, governance *is* the permission model, see [Sharing and permissions](08_00_administration/08_01_permissions.md). In Train mode, governance is structural: a controlled environment has one writer, the pipeline, and the pipeline deploys only what the trunk carries. The rest of this page describes Train mode.
 
-## 2. The model
+## 2. The model in one picture
 
-**Git is the source of truth. Workspaces are materializations of branches.**
+<div data-with-frame="true"><figure><img src=".gitbook/assets/sdlc_04_train_git_flow.svg" alt="KAWA Train: builders work in the DEV workspace; the train manager saves it onto train branches; a merge request lands the train's record on master; the pipeline deploys the version onto UAT then PROD with its service account; every deploy writes started and finished records on the evidence branch, and PROD deploys the commit UAT tested"><figcaption></figcaption></figure></div>
 
-In SDLC mode, the definitive state of an environment is not the workspace — it is a Git branch holding the workspace's full definition as a file tree (one file per entity: datasources, sheets, views, workflows, scripts, dashboards). Workspaces are *deployed copies* of those branches:
+Six things, top to bottom:
 
-<div data-with-frame="true"><figure><img src=".gitbook/assets/sdlc_01_branches_workspaces.svg" alt="Git branches deploy to read-only environment workspaces; feature branches hydrate disposable feature workspaces"><figcaption></figcaption></figure></div>
+1. **One DEV workspace where everyone builds.** Builders work in KAWA, no-code, low-code or with AI, and never touch Git. Every entity keeps its owner.
+2. **A train is a branch**, `train/<version>`, cut from the trunk. One train is open at a time. Its commits are *saves*: the whole DEV workspace exported over the tree, with the changes by name, the owner of each changed entity and the tickets in the commit message. The train's **record**, `train/train-<version>.yml`, travels with it: name, description, target date, tickets, members.
+3. **The merge request is the review**, on the Git host, under the host's own rules: protected trunk, required approvals, an approver who is not on the train. When it is merged, the record lands on the trunk, and that is what makes the train **merged**, whatever the merge method. The trunk's `train/` folder is the list of every train that shipped.
+4. **The pipeline deploys by version.** `kawa train deploy uat --ref v1.0.0` finds the trunk commit that carries the train and applies it to the environment, headless, with the environment's service account key from a protected variable. UAT follows a merge; PROD is a manual step, after the change ticket is approved.
+5. **Controlled environments have one writer.** Nobody edits UAT or PROD: the pipeline's service account applies the train, and `--delete` keeps the environment equal to the train.
+6. **Every deploy writes its evidence** to the `evidence` branch: a `started` record before the target is touched, a `finished` or `failed` record after. PROD deploys the exact commit the UAT record names, or refuses.
 
-**The tree is pure logic — KAWA as code.** It contains no data, no credentials, and no environment-specific identifiers: entities are addressed by immutable tags, data sources by abstract connection types. Each environment sits on top of **its own data and its own secrets** — development points at dev data with dev credentials, production at production data with production credentials — and supplies them when a tree is deployed (see [secrets & connection isolation](#73-secrets--connection-isolation)). This is what makes the definition fully portable: the *same commit* deploys unchanged to develop, staging, and production, and only the environment underneath it differs.
+## 3. Who does what
 
-Environment workspaces are **read-only for humans**: their only write path is the CI deploy principal applying an approved commit. There is nothing to police by discipline — hand-editing a governed environment is structurally impossible.
+| Role | Does | Never |
+| --- | --- | --- |
+| **Builders** | Build in the DEV workspace | Commit, merge, deploy |
+| **Train manager** | Starts the train, names it, puts the tickets and members on it, saves the workspace onto it, opens the merge request | Approve the merge, deploy to a controlled environment |
+| **Approver** | Reviews and merges the merge request on the Git host | Build, deploy |
+| **Business owner** | Approves the change ticket that releases the PROD step | Build, merge, deploy |
+| **Pipeline** | Deploys the merged version onto UAT and PROD with its own service account, and writes the evidence | Edit anything |
 
-Every KAWA workspace operates in one of two modes:
+Only the DEV key is on a laptop. The keys of the controlled environments live in the pipeline, as protected variables, and nowhere else.
 
-| Mode            | Who edits             | Purpose                                                            |
-| --------------- | --------------------- | ------------------------------------------------------------------ |
-| **Exploration** | Anyone with access    | Regular KAWA permissions. Ad-hoc analysis, prototyping, AI-assisted building. Outside the SDLC. |
-| **Governed**    | CI deploy only        | Environment workspaces of an SDLC pipeline. Refuses interactive mutation for everyone, admins included. |
+## 4. SOX controls
 
-Feature workspaces are exploration-mode by design — they are private and disposable, so builders keep full freedom, including AI assistance.
+The lifecycle above *is* the control framework. This section maps the controls an auditor looks for onto the mechanism that enforces each one, and says where the enforcement sits: in KAWA Train, on the Git host, or in the pipeline.
 
-## 3. Pipelines
+### 4.1 Change authorisation
 
-**A pipeline binds branches, workspaces, and policy under one name.** Pipelines are declared once, in the promotion repository's `pipelines.toml`:
+**No change reaches a controlled environment without a reviewed merge and an approved ticket.**
 
-```toml
-[pipeline.mifid-reporting]
-repo       = "git@gitlab.example.com:acme/mifid-promotion.git"
-branches   = { develop = "mifid/develop", staging = "mifid/staging", production = "mifid/production" }
-workspaces = { develop = 771, staging = 772, production = 773 }
-policy     = "sox-strict"        # approval gates + evidence profile
-ticketing  = { provider = "jira", project = "MIFID" }
+| Control | Mechanism | Enforced by |
+| --- | --- | --- |
+| Every change is on a train | A save commits the whole DEV workspace; the merge request diff is the train's content | KAWA Train |
+| Every train carries its tickets | The record holds them, and every save repeats them in the commit message | KAWA Train, the ticketing convention of the team |
+| The trunk is protected | Merge requests only, required approvals, no direct push | Git host |
+| The approver is independent | The approver is not the train manager, a member of the train, or an owner of a changed entity | Git host rule today; `kawa train approver`, a host-agnostic check reading the record and the commits, is planned |
+| PROD waits for the business | The PROD job is manual, released after the change ticket is approved | Pipeline |
 
-[pipeline.sales-analytics]
-repo       = "git@gitlab.example.com:acme/sales-promotion.git"
-branches   = { develop = "sales/develop", production = "sales/production" }
-workspaces = { develop = 810, production = 811 }
-policy     = "light"             # peer review only, no ticket linkage
-ticketing  = { provider = "linear", team = "SALES" }
-```
+### 4.2 Segregation of duties
 
-Builders select a pipeline **by name** — branch names and workspace IDs never appear in the human vocabulary. The number of environments per pipeline is free: two for a light internal pipeline, three or more for regulated delivery.
+**No single person builds, approves and deploys.** The same identity never fills two of these roles for one train.
 
-The **policy profile** decides how much ceremony each merge gate carries: required approver roles, mandatory ticket linkage, and the evidence emitted at deploy time. The same lifecycle runs everywhere; only the gates differ.
+| Role | Responsibility | Enforced by |
+| --- | --- | --- |
+| Builder | Builds in the DEV workspace | KAWA permissions on the DEV workspace |
+| Train manager | Commits the workspace onto the train, opens the merge request | Cannot merge: protected trunk |
+| Approver | Merges | Cannot deploy: no controlled environment key |
+| Pipeline service account | The only writer on UAT and PROD | Key custody: the pipeline alone holds the environment's key. The server-side lock, one writer and everyone else an explorer, is being built in the KAWA server |
 
-### 3.1 Ticketing integration
+The service account is a KAWA principal of its own kind: it belongs to one workspace for life, cannot switch workspace, and its key is useless against any other environment on the same server. A UAT key cannot write to PROD.
 
-**Every change is anchored to a ticket in your tracker.** A pipeline plugs into the team's existing ticketing system — Jira, Linear, GitHub Issues, or any provider with a REST API — through the `ticketing` block:
+### 4.3 The same thing is tested and released
 
-* **Validated at start** — `kawa feature start --ticket MIFID-123` checks the ticket *exists*, is *open*, and (under `sox-strict`) is assigned to the requesting builder. No ticket, no feature branch: the audit chain starts before the first edit.
-* **Auto-created where needed** — `kawa release promote` creates the review/change ticket automatically (typed per hop: technical review for staging, change record for production), pre-filled with the plan diff and linked to the merge request. Reviewers work from their tracker, not from Git.
-* **Stamped end to end** — the ticket ID travels through the branch name, every commit message, the merge request, and the signed deploy evidence. From a production deploy, the auditor walks back to the ticket in one hop — and from the ticket, forward to everything it changed.
-* **Status sync** — ticket transitions follow the lifecycle: *In progress* at start, *In review* at request, *Done* when the change reaches its target environment.
+**PROD runs the commit UAT tested.** A version resolves to the trunk commit that brought its record, so two deploys of `v1.0.0` from the same trunk give the same tree. When an environment follows another one in `kawa-flow.yml`, the deploy goes further: it reads the predecessor's last applied record on the evidence branch and deploys that commit. It refuses when UAT has no applied deploy of the version, and when the trunk's lookup now names another commit than the one tested. A sha given by hand skips the chain, and the record then shows the sha where a version would be.
 
-## 4. The feature lifecycle
+### 4.4 Traceability and evidence
 
-**One change = one ticket = one branch = one workspace = one merge request.**
+**Every deployment writes its own evidence, before and after, to a branch nobody merges.**
 
-<div data-with-frame="true"><figure><img src=".gitbook/assets/sdlc_02_feature_lifecycle.svg" alt="Feature lifecycle: start, build (with sync), request, merge gate, merged — then the feature workspace is retired"><figcaption></figcaption></figure></div>
+| Record | Written | Holds |
+| --- | --- | --- |
+| `started` | Once the target answers, before anything is applied | Environment, workspace, URL, version, commit and tree hash, who (git identity and the key's KAWA principal), host, the pipeline's job identifiers, the flags, the environment it was tested on |
+| `finished` | After the apply | The same, plus the result, the retries, what was left out, whether deletions were allowed, the steps |
+| `failed` | After a failure, or by `kawa train close` | The same, plus the error and the step |
 
-### 4.1 Start
+The rules the branch enforces:
 
-```
-$ kawa feature start --pipeline mifid-reporting --ticket JIRA-123 --title "MiFID volume report"
-  ✔ branch mifid/feat/JIRA-123 created off mifid/develop @ a1b2c3d
-  ✔ feature workspace created and hydrated (round-trip verified)
-  → https://kawa.example.com/workspaces/812
-```
+* **No record, no deploy.** A `started` record that cannot be pushed refuses the deploy and leaves nothing behind.
+* **One deploy at a time.** A `started` with no end holds the environment: the next deploy refuses, naming the version, the time and the person, until a `finished` or `failed` follows. Two deploys starting together are settled by the push: one lands, the other reads the branch again and stops.
+* **The ticket gets the record.** `kawa train deploy --json` prints the closing record for the job log and the change ticket.
 
-`start` performs, atomically:
+What makes the branch impartial is the Git host: `evidence` is protected so that only the pipeline's identity pushes to it and nobody force-pushes. A deploy run from a laptop writes with that person's identity, which the review sees.
 
-1. Validates the ticket against the pipeline's tracker — it must exist and be open (see [Ticketing integration](#31-ticketing-integration)).
-2. Creates the feature branch off the head of the pipeline's `develop` branch (the integration baseline is always the base; `--type hotfix` bases off `production` instead).
-3. Creates a fresh KAWA workspace stamped with branch, ticket, and creator.
-4. **Hydrates** it from the branch tree and verifies the round-trip: the hydrated workspace re-exports byte-identical to the branch. Data bindings resolve per environment — see [secrets & connection isolation](#73-secrets--connection-isolation).
-5. Grants the builder full rights on that workspace, and registers the ticket ↔ branch ↔ workspace binding.
+**The audit trail, in one walk.** From a PROD record: the version, the commit, who deployed, when, the UAT record it was tested on. From the commit on the trunk: the train's record with its tickets and members, every save with the changes by name and the owner of each. From the merge request on the host: who approved. From the ticket: who authorised the release. Each hop is a file in Git or a page on the host; none of it is editable in KAWA.
 
-Omitting `--pipeline` lists the pipelines your identity has builder rights on. The KAWA principal who owns the workspace is stamped as the Git author of every subsequent commit — the audit chain has one identity across both systems.
+### 4.5 The controlled environment
 
-### 4.2 Build
+**Nobody edits UAT or PROD.** Each is a KAWA workspace flagged `controlled: true` in `kawa-flow.yml`: deploy-only, written by the pipeline's service account. Today that rests on key custody, the service account's key being in the pipeline and nowhere else, and on the deploy: `--delete` removes what the train does not declare, so the environment equals the train after every deploy, and a hand edit is a difference the next deploy's plan shows and removes. The server-side lock, where the service account is the one writer and everyone else is an explorer, admins included, is being built in the KAWA server.
 
-Work in the feature workspace through the normal KAWA UI — no-code, low-code, or AI-assisted. At any point:
+### 4.6 Secrets and connection isolation
 
-```
-$ kawa feature status JIRA-123
-```
+**The tree never contains credentials or queries.** A datasource is declared by its tag and columns. Where it is a live connection on an environment, an override of that environment in `kawa-flow.yml` says so, and the deploy never pushes its rows: when the environment holds the datasource, its columns must contain the tree's, by tag and type, or the deploy is refused; when it lacks it, the deploy creates the connection with the tree's columns and a placeholder query, and the real query and its credentials are put in on the target, outside the DSL. The keys live in `.env` on the train manager's machine, git-ignored, and in the pipeline's protected variables. No secret is in Git, in a workspace definition, or in the evidence.
 
-re-exports the workspace and prints a plan-style diff against the branch: *what have I changed so far*.
+## 5. What the host and the pipeline must provide
 
-### 4.3 Sync
+KAWA Train enforces what it can see: the trunk, the trains, the evidence, the deploy. Three things are the host's and the pipeline's, and the setup is not complete without them:
 
-The develop baseline moves while your feature is open. Pull it in early:
-
-```
-$ kawa feature sync JIRA-123
-```
-
-merges the latest `develop` into your feature branch and re-hydrates the delta into your workspace. If another merged change touched the same entities, the conflict surfaces **here** — on entity files, reviewable — not silently at merge time.
-
-### 4.4 Request
-
-```
-$ kawa feature request JIRA-123
-  ✔ snapshot of workspace 812 → commit on mifid/feat/JIRA-123
-  ✔ pushed — merge request !47 opened against mifid/develop
-  → https://gitlab.example.com/.../merge_requests/47
-```
-
-Because the feature workspace only ever contained your branch plus your work, **the merge-request diff is exactly your change** — nothing from other builders leaks in. `request` is re-runnable: each snapshot adds a commit to the same branch and updates the same merge request.
-
-### 4.5 The merge gate
-
-CI validates every merge request before a human reviews it:
-
-* **Consistency** — the tree is self-contained; every cross-entity reference resolves inside it.
-* **Fidelity** — the tree hydrates and re-exports byte-identical.
-* **Plan comment** — CI posts a human-readable diff on the merge request: *"merging this changes these entities in develop"* — reviewers read a change summary, not raw definitions.
-* **Approvals** — per the pipeline's policy profile, enforced by Git branch protection: peer review (all profiles), ticket linkage and distinct approver roles (`sox-strict`). The author can never approve their own change.
-
-On merge, CI deploys the new `develop` head into the develop workspace, byte-verifies it, and records evidence. The feature workspace and branch are then retired — explicitly via `kawa feature discard JIRA-123`, or by the reaper once the branch is merged or idle past its TTL.
-
-## 5. Releases
-
-**Promotion between environments is a merge request between environment branches**, driven by a different persona and verb:
-
-<div data-with-frame="true"><figure><img src=".gitbook/assets/sdlc_03_release_promotion.svg" alt="Feature branches merge into develop via peer review; develop promotes to staging and production through approver-gated merge requests; every environment is drift-checked"><figcaption></figcaption></figure></div>
-
-```
-$ kawa release promote --pipeline mifid-reporting --to staging
-$ kawa release promote --pipeline mifid-reporting --to production
-```
-
-| Hop                  | Requested by    | Approved by                        | Gate                                            |
-| -------------------- | --------------- | ---------------------------------- | ----------------------------------------------- |
-| develop → staging    | Release manager | Technical approver                 | Green CI, validation runs on staging            |
-| staging → production | Release manager | Business approver                  | Ticket linkage, staging evidence, change record |
-
-The production deploy itself is **commit-gated**: only a commit on the approved `production` branch history can be applied, and the deploy writes a signed evidence bundle (manifest fingerprint + attestation of who deployed what, when) — see [traceability & evidence](#72-traceability--evidence). Rollback is the same gated mechanism pointed at an earlier approved commit.
-
-**Hotfixes** follow the same path with the same approvals, expedited: branch off `production`, merge request into `production`, then back-merge down through `staging` and `develop` so the tiers reconverge.
-
-## 6. Detective controls
-
-Every environment workspace is **drift-checked on schedule**: KAWA re-exports the workspace and byte-compares it against its branch. Any divergence — a failed deploy, a platform fault, an out-of-band change — raises an alert with the exact entity-level diff. Combined with governed mode (which prevents human drift structurally), the branch and the environment cannot silently disagree.
-
-## 7. SOX controls
-
-For pipelines running the `sox-strict` policy profile, the lifecycle above *is* the control framework — nothing sits beside it. This section maps the controls an auditor looks for onto the mechanics that enforce them.
-
-### 7.1 Segregation of duties
-
-**No single person builds, approves, and deploys.** The same person never fills two of these roles for the same change:
-
-| Role                   | Responsibility                                                       | Enforced by                                                       |
-| ---------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Builder                | Builds in the feature workspace, requests promotion                  | Merge-request authors can never approve their own change          |
-| Technical approver     | Reviews the change; clears the develop and staging gates             | Required approvals on protected branches                          |
-| Business approver      | Confirms business impact; clears the production gate                 | Protected branch + mandatory ticket linkage                       |
-| CI deploy principal    | The only writer on governed workspaces                               | Governed mode refuses interactive mutation, admins included       |
-
-> **Note:** enforced structurally — Git branch protection plus governed workspace mode — not by policy alone. AI assistance is available in feature workspaces only; governed environments are read-only for humans and agents alike.
-
-### 7.2 Traceability & evidence
-
-**Every deployment carries its own evidence**, written by the deploy itself and bound to the change — it cannot drift from what it describes. The signed bundle contains:
-
-* Change ticket ID and merge request
-* Git commit SHA and approver identities
-* The plan diff and validation results
-* A manifest fingerprint of every deployed file
-* Deployment signature, timestamp, and rollback reference
-
-An auditor re-exports the environment and compares it to the manifest, proving byte for byte that what runs is what was approved — and the scheduled [drift checks](#6-detective-controls) run that same proof continuously.
-
-### 7.3 Secrets & connection isolation
-
-**Promoted trees never contain credentials.** A data source is referenced by an abstract, portable type — "Postgres source", "SFTP source" — and each environment resolves it against its own secret store at deploy time. Development, staging, and production therefore run identical logic against different credentials and different data, with no secret ever present in Git, in a workspace definition, or in evidence.
-
-## 8. Command reference
-
-| Verb                                        | Persona           | What it does                                                         |
-| ------------------------------------------- | ----------------- | -------------------------------------------------------------------- |
-| `kawa feature start --pipeline P --ticket T` | Builder           | Branch off develop, create + hydrate the feature workspace           |
-| `kawa feature status T`                     | Builder           | Diff my workspace vs my branch                                       |
-| `kawa feature sync T`                       | Builder           | Merge the latest develop baseline into my branch + workspace         |
-| `kawa feature request T`                    | Builder           | Snapshot → commit → push → open/update the merge request             |
-| `kawa feature discard T`                    | Builder           | Delete the feature workspace, branch, and registry entry             |
-| `kawa release promote --to ENV`             | Release manager   | Open the promotion merge request to the next environment             |
-| `kawa env plan --pipeline P --env E`        | CI / operator     | Dry-run diff: approved branch vs live environment workspace          |
-| `kawa env deploy --pipeline P --env E --commit SHA` | CI        | Apply an approved commit to the environment, verify, emit evidence   |
-| `kawa env drift --pipeline P --env E`       | CI (scheduled)    | Detect divergence between an environment and its branch              |
-
-> **Note:** builders only ever need the `feature` verbs. Git — branches, commits, pushes, merge requests — is fully mediated by the CLI; the only Git surface a builder sees is the merge-request page where their change is reviewed.
+1. **Branch protection** on the trunk (merge requests only, required approvals) and on `evidence` (push by the pipeline identity only, no force-push).
+2. **The pipeline file**, from the templates shipped with the DSL (`pipelines/` in the kawa-dsl repository: GitLab, Bitbucket, GitHub), with the service account keys as protected variables, a full clone, and the PROD step manual.
+3. **The change ticket**, raised after the UAT deploy with the `--json` record, approved by the business owner before the PROD step is released.
+
+## 6. Command reference
+
+| Command | Persona | What it does |
+| --- | --- | --- |
+| `kawa train` | Train manager | Opens the page: start, record, analyse, save, merge request, previous trains, where each is deployed |
+| `kawa train start <version>` | Train manager | Cuts `train/<version>` from the trunk on origin, with its record |
+| `kawa train save [-m note]` | Train manager | Exports the DEV workspace over the train and commits it, pushed |
+| `kawa train status` | Anyone | The train, its saves, merged or not, the shipped trains and their deployments, from Git |
+| `kawa train deploy <env> --ref <version> --yes\|--plan [--delete] [--skip-large] [--json]` | Pipeline | Deploys a version onto an environment, headless, with its evidence |
+| `kawa train close <env> -m "why"` | Pipeline owner | Closes a `started` record no end followed, on record |
+| `kawa flow doctor` | Anyone | Every check: the repository, the remote, the configuration, the servers, the key, the tree, the overrides, the open train |
+
+The full syntax of each verb, the `kawa-flow.yml` file, the record and the evidence branch are in the [reference](kawa-flow/reference.md).
