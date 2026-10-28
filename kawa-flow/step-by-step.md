@@ -128,6 +128,8 @@ kawa train deploy prod v1.0.0 — /builds/acme/mifid
 
 `v1.0.0` resolves to the trunk commit that carries the train: the merge commit, the squash commit, or the train's last save after a fast-forward. Later commits on master are never picked up.
 
+With a `uat` environment before `prod` in `kawa-flow.yml`, `kawa train deploy prod --ref v1.0.0` deploys the commit the uat evidence recorded for `v1.0.0`, and refuses while uat has not applied it: what was tested is what goes live.
+
 The two `evidence` lines are the proof: a `started` record before the target was touched, a `finished` record after, both pushed to the `evidence` branch of your repository. `--json` prints the closing record for the job log and the change ticket.
 
 Two flags a job may need:
