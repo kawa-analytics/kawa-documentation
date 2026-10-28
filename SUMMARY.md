@@ -35,7 +35,7 @@
   * [User delegation section](08_00_administration/08_04_user_delegation.md)
 * [Security & Trust](security-and-trust.md)
 * [SDLC — governed delivery & SOX controls](sdlc.md)
-* [KAWA Flow](kawa-flow/README.md)
+* [KAWA Train](kawa-flow/README.md)
   * [Step-by-step guide](kawa-flow/step-by-step.md)
   * [Reference](kawa-flow/reference.md)
 * [Python integration](09_00_python_integration/README.md)
