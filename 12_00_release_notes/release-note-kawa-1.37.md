@@ -204,3 +204,21 @@ Delegations are created and removed by an administrator with the `ReplaceUserDel
 * Fixed an error when patching data in transformation data sources.
 * The Python data loader now compresses Arrow uploads and raises a clear error when the data source name is already taken.
 * `compute()` in kywy now attaches a request id, which can be printed on demand and is always printed when an exception occurs.
+
+## 3. Patch releases (1.37.x)
+
+### Patch 1.37.1
+
+* **`OPTIMIZE ... FINAL` can skip the partitions that are already merged.** After a load, KAWA runs `OPTIMIZE TABLE ... FINAL` to deduplicate rows on the primary key. By default ClickHouse re-merges **every** partition of the table, including those already merged into a single part. On a very large table, this rewrites the whole table on every incremental load: for example, 15 minutes of a saturated server for a 1-billion-row table. Partitioning the table does not help on its own, because the statement still touches every partition.
+
+  A new environment variable, `KAWA_CLICKHOUSE_OPTIMIZE_SKIP_MERGED_PARTITIONS` (default `false`), turns on the new behaviour. When it is set to `true`, every `OPTIMIZE` that KAWA runs carries `SETTINGS optimize_skip_merged_partitions=1`. This covers post-load, ingestion finalize, schema changes, composed loads and the force-deduplication command. A partition that is already merged into one part is skipped, so only the partitions touched by the load are rewritten. When the variable is unset or `false`, the statement is the same as before.
+
+  **How to set it**: add `KAWA_CLICKHOUSE_OPTIMIZE_SKIP_MERGED_PARTITIONS=true` to the server environment and **restart KAWA**, because the variable is read at startup. It requires ClickHouse 20.12 or later. It works on single-node and clustered deployments, and it pays off most on large tables that are partitioned.
+
+  **Checking it**: the startup log shows the mode in use:
+
+  ```
+  OPTIMIZE FINAL skips the partitions already merged into one part (KAWA_CLICKHOUSE_OPTIMIZE_SKIP_MERGED_PARTITIONS=true)
+  ```
+
+  When the variable is off, the line reads `OPTIMIZE FINAL re-merges every partition (KAWA_CLICKHOUSE_OPTIMIZE_SKIP_MERGED_PARTITIONS=false)`.
