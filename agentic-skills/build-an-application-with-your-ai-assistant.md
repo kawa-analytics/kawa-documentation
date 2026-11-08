@@ -1,10 +1,10 @@
-# Build a dashboard with your AI assistant
+# Build an application with your AI assistant
 
-In a few minutes and without writing code: you download a small folder, give it to your AI assistant together with the description of your sheet, and the assistant builds a dashboard page. You then upload that page into KAWA as an artifact, where it runs live on your data.
+In a few minutes and without writing code: you download a small folder, give it to your AI assistant together with the description of your sheet, and the assistant builds an application page. You then upload that page into KAWA as an artifact, where it runs live on your data.
 
 What you need:
 
-* A KAWA workspace with the sheet you want a dashboard on.
+* A KAWA workspace with the sheet you want an application on.
 * An AI coding assistant that works in a folder on your computer: Claude Code, Cursor, Codex, GitHub Copilot or similar.
 
 ## Step 1 — Download the skill
@@ -32,7 +32,7 @@ The assistant needs to know your sheet: its identifier, and the identifier, type
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/agent-skill-export-sheet.png" alt=""><figcaption>The Model view of a sheet, AI Metadata tab: Export is at the top right.</figcaption></figure></div>
 
 {% hint style="warning" %}
-**Only the columns whose Include switch is on are exported.** Before you click Export, turn the switch on for every column you want in the dashboard, and off for the ones the assistant should not see. In the screenshot above, Sales, Quantity, Profit and Customer Name are off: they would not be exported.
+**Only the columns whose Include switch is on are exported.** Before you click Export, turn the switch on for every column you want in the application, and off for the ones the assistant should not see. In the screenshot above, Sales, Quantity, Profit and Customer Name are off: they would not be exported.
 {% endhint %}
 
 The exported file is short and looks like this. The first line is the sheet, then one line per column with its identifier, its type and its name:
@@ -45,7 +45,7 @@ _ci_customer-id   text  "Customer ID"
 _ci_segment       text  "Segment"
 ```
 
-## Step 3 — Ask for the dashboard
+## Step 3 — Ask for the application
 
 1. Open your AI assistant in the folder that contains `build-kawa-artifact-lite`.
 2. Open the exported file and copy its content.
@@ -68,10 +68,10 @@ _ci_product-name  text  "Product Name"
 _ci_category      text  "Category"
 _ci_sub-category  text  "Sub-Category"
 
-Build me a dashboard on top of this sheet.
+Build me an application on top of this sheet.
 ```
 
-The assistant creates one file in the folder, for example `orders.html`. That file is your dashboard.
+The assistant creates one file in the folder, for example `orders.html`. That file is your application.
 
 You can ask for changes in the same conversation, in plain language: "add a chart of orders per month", "add a table of the latest orders with the city and the state", "use a dark theme". The assistant updates the file.
 
@@ -79,7 +79,7 @@ You can ask for changes in the same conversation, in plain language: "add a char
 You can say what matters to you in the first message: the figures you want to see first, the breakdowns that make sense for your business, the columns to show in the table. The more precise the request, the closer the first result.
 {% endhint %}
 
-## Step 4 — Upload the dashboard into KAWA
+## Step 4 — Upload the application into KAWA
 
 ### A new artifact
 
@@ -92,7 +92,7 @@ You can say what matters to you in the first message: the figures you want to se
 
 <div data-with-frame="true"><figure><img src="../.gitbook/assets/agent-skill-new-artifact.png" alt=""><figcaption>New artifact: type Application, then the file.</figcaption></figure></div>
 
-Open the artifact: the dashboard shows, live on the sheet's data. **Open** shows it full screen. To give it to your team, see [Artifacts](../artifacts.md).
+Open the artifact: the application shows, live on the sheet's data. **Open** shows it full screen. To give it to your team, see [Artifacts](../artifacts.md).
 
 ### A new version of an existing artifact
 
@@ -109,7 +109,7 @@ Select an earlier version in the list to go back to it.
 
 ## Good to know
 
-* The dashboard is not a copy of your data. Each time it opens, it asks KAWA for the current figures.
+* The application is not a copy of your data. Each time it opens, it asks KAWA for the current figures.
 * Filters, quick date ranges, clicking a bar or a slice to filter the page, paging and sorting in tables and row details are built in. You do not need to ask for them.
-* The assistant never connects to KAWA. It only sees what you exported: the identifiers, types and names of the columns you included. No data leaves KAWA while the dashboard is built.
+* The assistant never connects to KAWA. It only sees what you exported: the identifiers, types and names of the columns you included. No data leaves KAWA while the application is built.
 * If the assistant needs a column that was not exported, go back to Step 2, turn its switch on, export again and give the new content to the assistant.

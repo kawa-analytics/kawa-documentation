@@ -29,7 +29,7 @@
 * [AI integration](06_00_ai_integration.md)
 * [Riyu — AI co-builder](riyu-ai-co-builder.md)
 * [Agentic skills](agentic-skills/README.md)
-  * [Build a dashboard with your AI assistant](agentic-skills/build-a-dashboard-with-your-ai-assistant.md)
+  * [Build an application with your AI assistant](agentic-skills/build-an-application-with-your-ai-assistant.md)
 * [Administration and sharing](08_00_administration/README.md)
   * [Sharing and permissions](08_00_administration/08_01_permissions.md)
   * [Data security](08_00_administration/08_02_security.md)

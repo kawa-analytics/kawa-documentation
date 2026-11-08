@@ -6,4 +6,4 @@ You download the folder, put it where you work with your assistant, and ask in p
 
 Available skills:
 
-* [Build a dashboard with your AI assistant](build-a-dashboard-with-your-ai-assistant.md) — a dashboard with figures, charts, filters and tables on top of a sheet, uploaded into KAWA as an artifact.
+* [Build an application with your AI assistant](build-an-application-with-your-ai-assistant.md) — an application with figures, charts, filters and tables on top of a sheet, uploaded into KAWA as an artifact.
