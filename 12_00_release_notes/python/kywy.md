@@ -8,6 +8,12 @@ pip install --upgrade kywy
 
 The versions are listed newest first.
 
+## 0.37.11
+
+**Release date:** 12 November 2026
+
+* **Queries** — two aggregations are added on a column: `concat_unique()` and `concat_unique_not_empty()`.
+
 ## 0.37.10
 
 **Release date:** 12 October 2026

@@ -9,6 +9,14 @@ kawa version
 
 The versions are listed newest first. Each one lists what a user of the command line can see; internal changes are left out.
 
+## 2.5.8
+
+**Release date:** 12 November 2026
+
+* **Datasources** — the file of a file datasource is sent to the server in pieces. A large file on a slow connection no longer stops `kawa commit`, `kawa import` or `kawa train deploy` with "The write operation timed out".
+* **Import** — every call of an import waits up to 300 seconds for the server, from the first one. The first calls waited 60 seconds, which stopped an import on a slow warehouse. `KAWA_READ_TIMEOUT_SECONDS` sets another value.
+* **Sheets** — a lookup column filtered on a column that the same import or commit creates waits for that column. Its filter was left out, and the next plan reported a change.
+
 ## 2.5.7
 
 **Release date:** 10 November 2026

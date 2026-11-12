@@ -222,3 +222,28 @@ Delegations are created and removed by an administrator with the `ReplaceUserDel
   ```
 
   When the variable is off, the line reads `OPTIMIZE FINAL re-merges every partition (KAWA_CLICKHOUSE_OPTIMIZE_SKIP_MERGED_PARTITIONS=false)`.
+
+### Patch 1.37.2
+
+**Server**
+
+* **Health** — `GET /health` also reports the Python runner (`pythonRunner`) and the workflow engine (`workflow`): `OK`, `DISABLED` or `KO: …`. When the warehouse or the KAWA Postgres database fails, the page answers HTTP 503. It answered 501. A runner or an engine that is down does not change the status: read the body.
+* **Version** — `GET /version` needs no login and lists what the server, the workflow engine and the Python runner were built from: version, commit, build date and pipeline.
+* **Authentication** — an OIDC or OAuth2 configuration can take the role of a user from the identity provider's token. `rolesFromClaim` turns it on; `roleClaim` names the claim (a name or a dotted path such as `realm_access.roles`), and `adminRoleValue`, `builderRoleValue` and `explorerRoleValue` give the value that stands for each role. Nothing is defaulted: the four keys are required once `rolesFromClaim` is on.
+* **Authentication** — with the `x-kawa-read-as-admin` header, a builder who holds the export permission of a workspace reads that workspace as an administrator does, on `GET` requests only. A release train uses it to save a workspace whole, including what other members built.
+* **Sharing** — the server computes what an artifact, a dashboard or a view reads, and tells what the people it is about to be shared with would lack to use it (`POST /sharing-requirements/{entityType}/{id}`, for a user who can manage its sharing).
+* **Model** — the server stores the semantic layer of sheets and data sources: column semantics, certification and deprecation status, governance and AI settings.
+* **Databricks** — the tables of new data sources are named after the data source id, as on ClickHouse.
+* **Databricks** — adding a column that the table already has is no longer an error. A data source whose column addition was interrupted can be completed.
+* **Sheets** — several lookup columns that read the same sheet on constant keys are computed with one join on ClickHouse. The sheet was read once per lookup.
+* **Sheets** — a grid with many lookup columns no longer fails on ClickHouse with "Query tree is too big".
+* **Sheets** — the SQL of a view repeats fewer expressions, and `CONCAT` produces a shorter expression.
+* **Formulas** — `NOT LIKE` keeps its negation. It was computed as `LIKE`.
+* **Python** — the commands that start a Python script check the permission to run scripts before anything starts.
+* **Security** — Jackson, Guava and lz4-java are upgraded to versions without known vulnerabilities.
+
+**Workflow engine**
+
+* **Database** — the engine creates its schema (the one named by `currentSchema` in `KAWA_WORKFLOW_JDBC_URL`) when it is absent. The first start failed until the schema was created by hand. The database and the account are still created by hand.
+* **Version** — `GET /version` on the engine says what it was built from, and the start banner shows the same build.
+* **Security** — Jackson and Guava are upgraded to versions without known vulnerabilities.
