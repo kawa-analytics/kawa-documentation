@@ -55,6 +55,8 @@ The page has two screens, on the rail at the left: **Train** and **Set up the fl
 
 The line at the bottom turns to *ready*. The doctor (the dot on the rail) runs every check and shows them; it is green from here on.
 
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_01_setup.png" alt="The Setup screen of the KAWA Train page: the key, the repository and the configuration each with a green dot, the three connection checks, and the ready line"><figcaption>The setup, ready: the key, the repository, the configuration, and the connection check under them.</figcaption></figure></div>
+
 Prefer a terminal? `kawa flow init`, a `.env` with `KAWA_API_KEY=…`, `kawa flow origin <url>` and `kawa flow doctor` do the same, as in the [reference](reference.md#setting-up-from-the-terminal).
 
 ## 2. Start the first train
@@ -64,6 +66,8 @@ On the **Train** screen, *Start a train* asks for a version. Versions are yours 
 ```
 train/v1.0.0 cut from origin/master, checked out and pushed (593a06e) — name it, put the tickets on it, save
 ```
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_02_start.png" alt="The Start a train dialog with the version v1.0.0 typed in"><figcaption>Start a train: the version names the branch, <code>train/v1.0.0</code>.</figcaption></figure></div>
 
 The train is a branch on `origin`, with one commit: its record, `train/train-v1.0.0.yml`. The screen now shows the train, **not merged**, with its record to fill in:
 
@@ -89,11 +93,17 @@ kawa train save — /home/acme/mifid
   ✓ saved on train/v1.0.0 (eb234ab): 27 changes, 2 tickets and pushed
 ```
 
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_03_analyse.png" alt="The Train screen after Analyse changes: the train's name, description, target date, tickets and members, then five changes of the workspace listed by entity as added, changed or deleted"><figcaption>Analyse changes: what the DEV workspace holds that the train does not, by entity.</figcaption></figure></div>
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_04_save.png" alt="The Save to the train dialog with a note typed in"><figcaption>Save: the note becomes the commit's title.</figcaption></figure></div>
+
 The note is the commit's title. The commit message carries the train's record, the tickets, the changes by name and, for each change, the owner of the entity in KAWA. That is how the trail says who built what, although the train manager is the one who commits. The *details* link next to the Saved label shows the message.
 
 A change to the record alone, a new ticket or a renamed train, is saved the same way, with no workspace change.
 
 The saves appear under **changes embedded in the train**, newest first, each with its note and its count; opening one lists what it changed.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_05_saved.png" alt="The Train screen after a save: the Saved label with the commit, and the saves listed under changes embedded in the train, the latest one opened on its changes"><figcaption>After the save: the Saved label, and the save opened on what it changed.</figcaption></figure></div>
 
 Save as often as you like. A train is not one change; it is the DEV workspace at a point in time.
 
@@ -153,6 +163,8 @@ deploy-prod:
 
 Back on the page, the merged train now carries a chip: **prod · Oct 28**. That is read from the evidence branch.
 
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_06_merged.png" alt="The Train screen of a merged train: a merged chip with its date, a prod chip with the deploy date, the fields read-only and the Start the next train button"><figcaption>The train merged and deployed: both chips, the record read-only, <strong>Start the next train</strong>.</figcaption></figure></div>
+
 ## 7. The next train
 
 **Start the next train** cuts `train/v1.1.0` from the new tip of master, so it starts empty however the previous one was merged. The loop from step 3 repeats: build, analyse, save, merge request, merge, deploy.
@@ -169,6 +181,8 @@ Every train that shipped is listed under previous trains, with where it is deplo
   ```
 
 * **A save refused** for uncommitted changes means someone edited the repository by hand. The train commits the workspace as it stands, nothing else: commit or stash the edit first.
+
+<div data-with-frame="true"><figure><img src="../.gitbook/assets/kawa_train_07_health.png" alt="The System Health dialog: one line per check, all green"><figcaption>The doctor: System Health, opened from the dot at the bottom of the rail.</figcaption></figure></div>
 
 ## Quick reference: a train from the terminal
 
