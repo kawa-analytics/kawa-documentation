@@ -231,7 +231,7 @@ kawa train deploy prod --ref v1.0.0 --yes --delete    # applied, no prompt
 
 * **The key does not read the whole workspace.** A save needs an administrator's key, or the key of a user who holds the `WORKSPACE_EXPORTER` permission on the workspace. Before `kawa-dsl` 2.5.7, a save with another key left out what other members had not shared with its user: upgrade and save again.
 * **A `.gitignore` rule hides the file**, `*.csv` for instance. The save refuses and names the rule; before 2.5.7 the file was left out without a word.
-* **The train was already merged.** A save on a merged train stays on its branch and never reaches the trunk: start the next train first.
+* **The train was already merged.** A save on a merged train never reaches the trunk. It stays on the train's branch, or, when the host deleted that branch at the merge, it is refused with `has diverged from origin/train/<version>`. Start the next train first: `kawa train start <version>`.
 * **The save was refused.** It prints `kawa train save: <why>` and commits nothing when the train's branch is not checked out, when the repository has edits made by hand, or when the branch has diverged from origin.
 * **The change is in another workspace** than the DEV one `kawa-flow.yml` names.
 * **It is not a change for the train**: a column list in another order, or an artifact payload above 2 MB that is not an application, which stays on DEV.
