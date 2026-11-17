@@ -169,3 +169,55 @@ Every train that shipped is listed under previous trains, with where it is deplo
   ```
 
 * **A save refused** for uncommitted changes means someone edited the repository by hand. The train commits the workspace as it stands, nothing else: commit or stash the edit first.
+
+## Quick reference: a train from the terminal
+
+Every step of this guide has a command. This is the whole loop for a train manager who works without the page.
+
+**Once, to set up the flow:**
+
+```bash
+pip install --upgrade kawa-dsl
+mkdir mifid && cd mifid
+kawa flow init --name mifid --url https://kawa.acme.com --dev-workspace 771 --prod-workspace 773
+# edit kawa-flow.yml: `build: true` on dev, `controlled: true` on prod
+# put the DEV key in .env: KAWA_API_KEY=kawa-…
+git add kawa-flow.yml && git commit -m "the flow"
+kawa flow origin git@gitlab.com:acme/mifid.git    # adds origin and pushes the trunk
+kawa flow doctor                                  # every line must be ✓
+kawa train check-connection                       # the server, the key, the workspace
+```
+
+**For each train:**
+
+```bash
+kawa train start v1.0.0                     # one train at a time: the previous one must be merged
+kawa train tickets add KAWA-123 KAWA-130    # the tickets on the train
+kawa train save -m "the Q3 cut"             # the whole DEV workspace as one commit, pushed
+kawa train status                           # the saves and the merge request link
+```
+
+The name, the description and the target date are fields of `train/train-v1.0.0.yml`: edit the file, the next save carries it. Save as often as you like; a save ends with `saved on train/v1.0.0 (…): N changes … and pushed`, or says there is nothing to save.
+
+The approver merges the merge request on the host. Then:
+
+```bash
+kawa train status                           # the train reads "merged"
+kawa train start v1.1.0                     # the next train, before any other save
+```
+
+**In the pipeline, with an administrator's key of the target in `KAWA_API_KEY`:**
+
+```bash
+kawa train deploy prod --ref v1.0.0 --plan            # the plan, nothing applied
+kawa train deploy prod --ref v1.0.0 --yes --delete    # applied, no prompt
+```
+
+**If a change is missing from a save:**
+
+* **The key does not read the whole workspace.** A save needs an administrator's key, or the key of a user who holds the `WORKSPACE_EXPORTER` permission on the workspace. Before `kawa-dsl` 2.5.7, a save with another key left out what other members had not shared with its user: upgrade and save again.
+* **A `.gitignore` rule hides the file**, `*.csv` for instance. The save refuses and names the rule; before 2.5.7 the file was left out without a word.
+* **The train was already merged.** A save on a merged train stays on its branch and never reaches the trunk: start the next train first.
+* **The save was refused.** It prints `kawa train save: <why>` and commits nothing when the train's branch is not checked out, when the repository has edits made by hand, or when the branch has diverged from origin.
+* **The change is in another workspace** than the DEV one `kawa-flow.yml` names.
+* **It is not a change for the train**: a column list in another order, or an artifact payload above 2 MB that is not an application, which stays on DEV.
