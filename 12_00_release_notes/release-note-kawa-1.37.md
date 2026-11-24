@@ -247,3 +247,26 @@ Delegations are created and removed by an administrator with the `ReplaceUserDel
 * **Database** — the engine creates its schema (the one named by `currentSchema` in `KAWA_WORKFLOW_JDBC_URL`) when it is absent. The first start failed until the schema was created by hand. The database and the account are still created by hand.
 * **Version** — `GET /version` on the engine says what it was built from, and the start banner shows the same build.
 * **Security** — Jackson and Guava are upgraded to versions without known vulnerabilities.
+
+### Patch 1.37.3
+
+**Server**
+
+* **Workspaces** — a workspace can be made confidential with the `SetWorkspaceConfidentiality` command. Only its owner and its members reach it. An administrator who is not a member no longer sees it in the lists of workspaces, and can neither switch to it, read it nor change it; the `x-kawa-read-as-admin` header gives nothing there. The owner, a member who manages users or an administrator who is a member turns the switch on and off. A confidential workspace is private and cannot be made public.
+* **Workspaces** — the switch removes what the administrator role gives. An administrator can still impersonate a member, or be made the delegate of one.
+* **Artifacts** — an application can show its viewer the workflow forms that wait for them, and answer them on their behalf. `GET /artifact-api/user/tasks` lists the tasks (`workflowTag` narrows the list to some workflows), `GET /artifact-api/user/tasks/{id}` gives the description of a task and the fields of its form, and `POST /artifact-api/user/tasks/{id}/complete` sends the answers in `formData`. Only the tasks of the workspace of the artifact are served, never to an anonymous viewer, and the answers are checked against the form.
+* **Sharing** — the sharing report (`POST /sharing-requirements/{entityType}/{id}`) lists, for each entity the artifact needs, the `actions` that would let the audience use it: `SHARE`, `ADD_DATA_SOURCE_EDITING_RULE` for a data source the artifact writes to, and `CONFIGURE_DATA_SOURCE_ROW_LEVEL_SECURITY` for a data source that denies all rows. Each action says whether the caller may take it (`hasPermission`), and each entity of `via` carries its `displayName`. The actions replace the `level`, `missing` and `isSatisfied` keys of a requirement.
+* **Sharing** — `UpdateArtifactShareStatus` shares what the artifact needs along with the artifact. `dependencies` names the entities and the actions to take on each; `propagate` takes, on every other entity, each proposed action that the caller is allowed to take. Every right is checked before anything changes. Making an artifact private takes nothing back.
+* **Monitoring** — on ClickHouse, a **Warehouse Tables** monitoring sheet has one row per table of the warehouse: its data source, workspace and creator; its engine, partitions, parts, rows and size; its last write; its last query and who ran it, and the queries and users of the last 30 days. It is rewritten every hour. It shows the tables that nobody reads and those whose data source was deleted.
+* **Model** — `UpdateSheetColumn` and `UpdateDataSourceColumn` also set the description of a column, its default aggregation, its default filter, its attribute and its presence in the default view. `UpdateDataSourceColumn` sets the primary key of a LiveConnect data source. `GET /backoffice/extended-datasources/{id}` returns the data source with its effective semantic layer.
+* **Users** — a user can store a personal colour palette with the `ReplacePrincipalPalette` command, whatever their role. It is returned in the `palette` of the user and does not replace the palette of the workspace.
+* **Sheets** — a computation reads each sheet once and works out the type of each part of a formula once. Views on sheets with many lookup columns or long formulas are prepared faster.
+* **Databricks** — a new file or database data source loads again. Its load failed with "loadingAdapterAbstractFactory expected for name=CLICKHOUSE but was null".
+* **Formulas** — an apostrophe in a text literal is kept as one apostrophe. It was doubled.
+* **Formulas** — a formula that chains 50 operands or more is computed again. It was no longer parsed on Java 25.
+* **Formulas** — a conditional with two conditions or more keeps all of its branches when the server rewrites one of its parts.
+* **Python** — a list or a time series of text keeps its values in an Arrow result. The texts came back empty.
+
+**Workflow engine**
+
+* **Errors** — a request that fails answers with its real status, such as 404 or 500. It answered 401.
