@@ -270,3 +270,14 @@ Delegations are created and removed by an administrator with the `ReplaceUserDel
 **Workflow engine**
 
 * **Errors** — a request that fails answers with its real status, such as 404 or 500. It answered 401.
+
+### Patch 1.37.4
+
+**Server**
+
+* **Python** — the server reaches the Python runner again after the address of the runner changed. Scripts failed with "flight server is not healthy" until KAWA was restarted.
+* **Monitoring** — the **Warehouse Tables** monitoring sheet is written again. Its hourly job failed as soon as a sheet had a computed column, and the sheet was not filled.
+* **Data editing** — rows that leave different cells empty are written in one statement per batch. They were written one row at a time, which made loading many rows into an editable data source slow, most visibly on Databricks.
+* **Sheets** — the SQL of a view reads the same from one computation to the next. Lookup columns filtered alike are computed with one sub-query; they were sometimes computed twice, depending on the server start.
+* **Sheets** — a view on a sheet with many lookup columns or long formulas is prepared faster: formulas are parsed with less work, and the constant key of a lookup is read once per source column.
+* **Users** — the appearance a user chooses (light, dark or system) is stored with their profile. `UpdatePrincipalContext` takes an optional `appearance`: `LIGHT`, `DARK` or `SYSTEM`. It is returned with the current user, and an unknown value is refused.
