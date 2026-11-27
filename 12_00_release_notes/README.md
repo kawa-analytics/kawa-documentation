@@ -5,8 +5,9 @@ nav_order: 41
 
 # Release notes
 
-The release notes are in two sections:
+The release notes are in three sections:
 
 * [Backend](backend/README.md) — the KAWA platform: the server and all its backend services, one page per version.
 * [Python](python/README.md) — the Python packages published on PyPI: [kywy](python/kywy.md) and [kawa-dsl](python/kawa-dsl.md).
+* [Riyu](riyu.md) — Riyu, KAWA's AI co-builder: one section per image.
 

@@ -72,4 +72,5 @@
   * [Python](12_00_release_notes/python/README.md)
     * [kywy](12_00_release_notes/python/kywy.md)
     * [kawa-dsl](12_00_release_notes/python/kawa-dsl.md)
+  * [Riyu](12_00_release_notes/riyu.md)
 * [Terminology](13_00_terminology.md)
